@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="使用Docker搭建DPlayer视频弹幕接口API后端 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前有同学要求博主出个DPlayer弹幕后端搭建教程，刚好本博客的Handsome主题更新并完美适配了Dplayer，然后就研究了下，发现了点小问题，如作者提供的弹幕API加载不出弹幕，而且Typecho当中的Dplayer插件有点旧无法对接V3后端，不知道其它程序插件是不是这样，这里博主只能使用HTML代码直接输出调用，经测试已完全正常加载弹幕和观看。这里就说下搭建及使用方法。 简介DPl - John Doe - 南猫"><meta property="article:published_time" content="2019-12-28T11:35:53.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.652Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.652Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="使用Docker搭建DPlayer视频弹幕接口API后端 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前有同学要求博主出个DPlayer弹幕后端搭建教程，刚好本博客的Handsome主题更新并完美适配了Dplayer，然后就研究了下，发现了点小问题，如作者提供的弹幕API加载不出弹幕，而且Typecho当中的Dplayer插件有点旧无法对接V3后端，不知道其它程序插件是不是这样，这里博主只能使用HTML代码直接输出调用，经测试已完全正常加载弹幕和观看。这里就说下搭建及使用方法。 简介DPl - John Doe - 南猫"><meta property="article:published_time" content="2019-12-28T11:35:53.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.652Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.652Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/">
+    <link rel="canonical" href="http://hexo.southcat.net/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/",
+    "url": "http://hexo.southcat.net/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/"
+        "@id": "http://hexo.southcat.net/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/"
     },
     "headline": "使用Docker搭建DPlayer视频弹幕接口API后端 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2019-12-28T11:35:53.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=使用Docker搭建DPlayer视频弹幕接口API后端" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=使用Docker搭建DPlayer视频弹幕接口API后端" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用Docker搭建DPlayer视频弹幕接口API后端&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用Docker搭建DPlayer视频弹幕接口API后端&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=使用Docker搭建DPlayer视频弹幕接口API后端" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=使用Docker搭建DPlayer视频弹幕接口API后端" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEE0lEQVR42u3aQXLbQAxEUd3/0sle9qB/k14I1OcmiSNS81hlDAbA698XXC+RIkWKFCnyJvI1XL/eCD7z/vn3e3/7+bSW98/TdYsUuRVJFkcWdkKdFnr6HHmpaN0iRS5GnhZ0+uJpkWQxKei8B6pLL1mkyIci6S98elE02TitLT1TpMhvRJ7gp4AxJdwpgJ2+T6TIb0CSTZom8FOgIi/odN/071unEJEiPwxJCkif+OefVetEivwg5J3iMC34ngJaSiaaIvatrpZIkR+EbB6cCs5ps6cvgRTG0HpFilyKnIJJ+nkKHKfnpAM2RY/NXZEilyLTIqZCE23yTMAm2FQFb5EilyKbZidpjjaNnWZoiQRAkSK3I2nDhg4DkqYrGU6iL2VMJESKXIqcNm06iHSCkODVBDRyMBApcjOSJM6keNUk0C940UL38XtEilyKJEWspkHbFsDoJp9ePq6gixS5BHlnEIEOHN75/2boUKTIJyBpY7QdZrqSjE+JAC7CiRS5EEkHH8hGTA7F0wtI35de0FhcFilyGZIectvEPBW4Ts9oBirwlKRIkYuQZJO9EoRIsGkCDW06iRS5HZkCRVN4ToO3KZC1wee4JpEiFyJTsksOymQ4ovkcSTpIUiBS5JOQVwb96MGbJAXT81PzVaTI7ci0wU5FZrqJ3xnOTc874kWKXIpMA7rNMAJpHtEiFhkErgYIRYpcgkzDgAmVNnLynHRYT0k8GiAUKXIBkgaKKXiQpmx7mG4Do0iRT0amiwYKUgBukm+yLpEityOnxafEedr4SROWDuiSJmx9ChEp8kORTeGYFLPIPVcGMdpEQKTIpyFpIZds8uk7aAEtHch//F2kyIXIZtNuilA06EzPIYNKY/ASKXIhsmnQkKFCOmSIGjbFIBNK0EWKXIBMgYcO/sVkGQYOmtCjZrBIkQuRV3/5m+SdHM7ToTitBTd8RIpcgCQDhOmhTXO1KWiRAIMSdJEilyBJot0MK5GBCRJE6MubmrEiRW5HTg/FD4b3NYMRpKiFTiEiRS5Apk2aFJOagUNaPGsKZSJFPglJBgXJAptiGBmcmA7StJkrUuRWJG140oG/ZuAiDSS2A0siRT4BSZs3NCDRAtaVQNMUuUSK3Ihsir1puJAMLV1JCughAU1/iBS5AEmT3/iLDg63qfhFGkvkmSJFPgHZLDwOChVJPSk+p+fhwCNS5Icj7wQGUlCiBWlyX9PsESlyM5IMOaSGUFp0av40icXtap1IkQuQaWAwHXCbYaKmAZsGJ1CCLlLkA5FtkYscotMAIxlyxBV0kSIfhKSJfErYU7GqeckIL1LkYmRqbKaiFWnOTPc0h3BcBBcpcikyDRD+RYOGBLn2sB4P3iJFLkQ++RIpUqRIkSIvXv8BpRmmcrbTnUIAAAAASUVORK5CYII=" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEK0lEQVR42u3aQY7cMAxE0b7/pZNtElisX+4sTM/vTZCesa1nYCiK5OfXD/h8RIoUKVKkyC+Rn+Hz1wX//P/Pa6/u8+c1zTOm70+/e7qnSJFbkZd/tIfvr3BXC7zzkq7ud8KTdYsUuRk5BY3T4k4LOi1yWtQUpC4B4OWKFPlW5LTRk6DTbvhTMtIEPJEi34pMweJqYSmBTi+CJOgiRb4ZSSA0SSDXp4U29/n6FCJS5MOQJEA88d//Vq0TKfJByNg0CRv86aCcNvb2QDwdvL/uaokU+SAkLSCl4u60aZNmDylCTw2my+tEilyKbBPllDzQZIIErtOBPCX9IkVuRdIgkQpJaVNvi87T/XFDVqTIxcimqdNs8Kk4fXrWVFjGRWmRIhcim2YrKSaTDT8tlA5Z1AOEIkUuQabNvGl8TsWq6cWkJg4JUugUIlLkEiQaNADFK5oYkABCD9HH70SKXIokiS9d+J0EnRzIyQE+VtBFilyCnJo8qchLi0y02dMkEOkAIFLkRiRJ0kmhlx6+myIWCXp4WEmkyCXI1GhNG//UuE2NHzJEkYrc4/1EilyMJIXi6aDcJujkGtxspdMfIkUuQKZkfErAaeM1XUcSBPL92GkWKXIh8ptCVV1kCrA7wQqdQkSKXIAkRV0y3ESbtaRQleBpfSJFbkZOwYMMEbbDTunATdcTG1UiRS5EfooPbeDQgYdm6LBdn0iRW5GpGDU1asiGf2e48JuBRJEityNpMn1n426K0uk+5H5xIkukyAVIWmRODdapANU8ox0WHA8UIkUuRaZEmCQL00tpkms6EFEn6CJFLkKiIYMwCEGxZPhhOpg3TWGRIjciCYQckung0mlRJGloC8wiRW5E0mYNLVaRBisdUEpJQHy2SJGLkXQ4Yio2k2Gn6UDcvIgpiRApcjuy3fzvNm7JgFJbVJ6gIkVuRcbDZxEkmiEnkmCkYtpY+BYpciGS4O4UkdLAA03yUyMId5pFilyKTIVhEqRSczUdjNN90nNFinwTMm385IBMBplSIEoDEuilihS5ENkUhMnPSWH6zktNw1Vj4BEpcjmSFLeaIaf0+7QInYrTVeARKfKhyLRRk0MxOWCTl0heFD2UixS5FUkPvtMimmGktHCaRNxK0EWKXIAkDdb0x04DRNOsIUl6KmaJFLkR2Wy2FEoOtm2xumn0iBS5HdkmAe1m3d5rCkzVQJRIkcuR9GBLBpZo8Tkl6anxMwYtkSIXIu8EGDK4lArRqVh8dx2xWidS5AJkCjgpkKQEngQq2vBtGsYiRW5GToPv6WepsNUMCJJEHSf9IkW+FNkmym2yT4rTZHhKpMifhDwlzCkwkJdAG0dN01ekyO1I0iwlheO2qUoCCUlUvjqFiBT5MGSTSDcBgDZmUkGMBrZjw0ekyEXIN39EihQpUqTIm5/f556EsL9i1LsAAAAASUVORK5CYII=" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用Docker搭建DPlayer视频弹幕接口API后端&url=http://yoursite.com/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用Docker搭建DPlayer视频弹幕接口API后端&url=http://hexo.southcat.net/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=使用Docker搭建DPlayer视频弹幕接口API后端&url=http://yoursite.com/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=使用Docker搭建DPlayer视频弹幕接口API后端&url=http://hexo.southcat.net/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEE0lEQVR42u3aQXLbQAxEUd3/0sle9qB/k14I1OcmiSNS81hlDAbA698XXC+RIkWKFCnyJvI1XL/eCD7z/vn3e3/7+bSW98/TdYsUuRVJFkcWdkKdFnr6HHmpaN0iRS5GnhZ0+uJpkWQxKei8B6pLL1mkyIci6S98elE02TitLT1TpMhvRJ7gp4AxJdwpgJ2+T6TIb0CSTZom8FOgIi/odN/071unEJEiPwxJCkif+OefVetEivwg5J3iMC34ngJaSiaaIvatrpZIkR+EbB6cCs5ps6cvgRTG0HpFilyKnIJJ+nkKHKfnpAM2RY/NXZEilyLTIqZCE23yTMAm2FQFb5EilyKbZidpjjaNnWZoiQRAkSK3I2nDhg4DkqYrGU6iL2VMJESKXIqcNm06iHSCkODVBDRyMBApcjOSJM6keNUk0C940UL38XtEilyKJEWspkHbFsDoJp9ePq6gixS5BHlnEIEOHN75/2boUKTIJyBpY7QdZrqSjE+JAC7CiRS5EEkHH8hGTA7F0wtI35de0FhcFilyGZIectvEPBW4Ts9oBirwlKRIkYuQZJO9EoRIsGkCDW06iRS5HZkCRVN4ToO3KZC1wee4JpEiFyJTsksOymQ4ovkcSTpIUiBS5JOQVwb96MGbJAXT81PzVaTI7ci0wU5FZrqJ3xnOTc874kWKXIpMA7rNMAJpHtEiFhkErgYIRYpcgkzDgAmVNnLynHRYT0k8GiAUKXIBkgaKKXiQpmx7mG4Do0iRT0amiwYKUgBukm+yLpEityOnxafEedr4SROWDuiSJmx9ChEp8kORTeGYFLPIPVcGMdpEQKTIpyFpIZds8uk7aAEtHch//F2kyIXIZtNuilA06EzPIYNKY/ASKXIhsmnQkKFCOmSIGjbFIBNK0EWKXIBMgYcO/sVkGQYOmtCjZrBIkQuRV3/5m+SdHM7ToTitBTd8RIpcgCQDhOmhTXO1KWiRAIMSdJEilyBJot0MK5GBCRJE6MubmrEiRW5HTg/FD4b3NYMRpKiFTiEiRS5Apk2aFJOagUNaPGsKZSJFPglJBgXJAptiGBmcmA7StJkrUuRWJG140oG/ZuAiDSS2A0siRT4BSZs3NCDRAtaVQNMUuUSK3Ihsir1puJAMLV1JCughAU1/iBS5AEmT3/iLDg63qfhFGkvkmSJFPgHZLDwOChVJPSk+p+fhwCNS5Icj7wQGUlCiBWlyX9PsESlyM5IMOaSGUFp0av40icXtap1IkQuQaWAwHXCbYaKmAZsGJ1CCLlLkA5FtkYscotMAIxlyxBV0kSIfhKSJfErYU7GqeckIL1LkYmRqbKaiFWnOTPc0h3BcBBcpcikyDRD+RYOGBLn2sB4P3iJFLkQ++RIpUqRIkSIvXv8BpRmmcrbTnUIAAAAASUVORK5CYII=" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEK0lEQVR42u3aQY7cMAxE0b7/pZNtElisX+4sTM/vTZCesa1nYCiK5OfXD/h8RIoUKVKkyC+Rn+Hz1wX//P/Pa6/u8+c1zTOm70+/e7qnSJFbkZd/tIfvr3BXC7zzkq7ud8KTdYsUuRk5BY3T4k4LOi1yWtQUpC4B4OWKFPlW5LTRk6DTbvhTMtIEPJEi34pMweJqYSmBTi+CJOgiRb4ZSSA0SSDXp4U29/n6FCJS5MOQJEA88d//Vq0TKfJByNg0CRv86aCcNvb2QDwdvL/uaokU+SAkLSCl4u60aZNmDylCTw2my+tEilyKbBPllDzQZIIErtOBPCX9IkVuRdIgkQpJaVNvi87T/XFDVqTIxcimqdNs8Kk4fXrWVFjGRWmRIhcim2YrKSaTDT8tlA5Z1AOEIkUuQabNvGl8TsWq6cWkJg4JUugUIlLkEiQaNADFK5oYkABCD9HH70SKXIokiS9d+J0EnRzIyQE+VtBFilyCnJo8qchLi0y02dMkEOkAIFLkRiRJ0kmhlx6+myIWCXp4WEmkyCXI1GhNG//UuE2NHzJEkYrc4/1EilyMJIXi6aDcJujkGtxspdMfIkUuQKZkfErAaeM1XUcSBPL92GkWKXIh8ptCVV1kCrA7wQqdQkSKXIAkRV0y3ESbtaRQleBpfSJFbkZOwYMMEbbDTunATdcTG1UiRS5EfooPbeDQgYdm6LBdn0iRW5GpGDU1asiGf2e48JuBRJEityNpMn1n426K0uk+5H5xIkukyAVIWmRODdapANU8ox0WHA8UIkUuRaZEmCQL00tpkms6EFEn6CJFLkKiIYMwCEGxZPhhOpg3TWGRIjciCYQckung0mlRJGloC8wiRW5E0mYNLVaRBisdUEpJQHy2SJGLkXQ4Yio2k2Gn6UDcvIgpiRApcjuy3fzvNm7JgFJbVJ6gIkVuRcbDZxEkmiEnkmCkYtpY+BYpciGS4O4UkdLAA03yUyMId5pFilyKTIVhEqRSczUdjNN90nNFinwTMm385IBMBplSIEoDEuilihS5ENkUhMnPSWH6zktNw1Vj4BEpcjmSFLeaIaf0+7QInYrTVeARKfKhyLRRk0MxOWCTl0heFD2UixS5FUkPvtMimmGktHCaRNxK0EWKXIAkDdb0x04DRNOsIUl6KmaJFLkR2Wy2FEoOtm2xumn0iBS5HdkmAe1m3d5rCkzVQJRIkcuR9GBLBpZo8Tkl6anxMwYtkSIXIu8EGDK4lArRqVh8dx2xWidS5AJkCjgpkKQEngQq2vBtGsYiRW5GToPv6WepsNUMCJJEHSf9IkW+FNkmym2yT4rTZHhKpMifhDwlzCkwkJdAG0dN01ekyO1I0iwlheO2qUoCCUlUvjqFiBT5MGSTSDcBgDZmUkGMBrZjw0ekyEXIN39EihQpUqTIm5/f556EsL9i1LsAAAAASUVORK5CYII=" alt="QRCode">
     </li>
     
 
@@ -594,7 +594,7 @@ o!!!</code></pre><p>还有更多功能及使用方法可以查看→传送门。
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

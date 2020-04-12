@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="小内存VPS安装Caddy+PHP 7+Sqlite 3环境，并快速搭建Typecho博客 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/"><meta property="og:locale" content="en"><meta name="description" content="说明：我们一般搭建博客的方法就是使用lnmp、lamp等一键包，或者宝塔等面板来搭建Web环境，不过都只适合大点内存的VPS服务器，小点的比如96M、128M服务器就不行了，这时候我们就可以通过安装其它环境来搭建网站环境了，这里博主就说下Caddy+PHP7+Sqlite3安装教程，3分钟就可以搭建一个Typecho博客，并成功运行在96M的VPS服务器上，至于96M以下的服务器就不测试了，毕竟很 - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/caddy_ty.png"><meta property="article:published_time" content="2019-12-10T17:12:39.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.650Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.650Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="小内存VPS安装Caddy+PHP 7+Sqlite 3环境，并快速搭建Typecho博客 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/"><meta property="og:locale" content="en"><meta name="description" content="说明：我们一般搭建博客的方法就是使用lnmp、lamp等一键包，或者宝塔等面板来搭建Web环境，不过都只适合大点内存的VPS服务器，小点的比如96M、128M服务器就不行了，这时候我们就可以通过安装其它环境来搭建网站环境了，这里博主就说下Caddy+PHP7+Sqlite3安装教程，3分钟就可以搭建一个Typecho博客，并成功运行在96M的VPS服务器上，至于96M以下的服务器就不测试了，毕竟很 - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/caddy_ty.png"><meta property="article:published_time" content="2019-12-10T17:12:39.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.650Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.650Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/">
+    <link rel="canonical" href="http://hexo.southcat.net/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/",
+    "url": "http://hexo.southcat.net/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/"
+        "@id": "http://hexo.southcat.net/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/"
     },
     "headline": "小内存VPS安装Caddy+PHP 7+Sqlite 3环境，并快速搭建Typecho博客 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2019-12-10T17:12:39.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=小内存VPS安装Caddy+PHP 7+Sqlite 3环境，并快速搭建Typecho博客" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=小内存VPS安装Caddy+PHP 7+Sqlite 3环境，并快速搭建Typecho博客" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=小内存VPS安装Caddy+PHP 7+Sqlite 3环境，并快速搭建Typecho博客&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=小内存VPS安装Caddy+PHP 7+Sqlite 3环境，并快速搭建Typecho博客&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=小内存VPS安装Caddy+PHP 7+Sqlite 3环境，并快速搭建Typecho博客" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=小内存VPS安装Caddy+PHP 7+Sqlite 3环境，并快速搭建Typecho博客" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEnUlEQVR42u2dy1LtMAwE8/8/DatbdQtiTcs5LGJ1NrxyHLcphDQzFNfXwOsSWmihhRZa6JdBX8V19/X/P/fv/V+LF/fdve7n+qv7V3skHEILPQn69oe+2Gy1IfL59Dz6+rtDWq0rtNDToKuNrx6SDoZuOEFUxYxyCC200OsiUcGt1qqes7o3NSVCCy30ZwpZakY6AwMZZMg3Q2ihhW406kVT8PM1RDSoNrwSFWhx/ciUJbTQL4cmDcAb3n5UDRVa6JdCI+MrFDIiAK5eQ8T+NJT8iWsptNAvhe6aYKuHpk11xYBKpCCCIjbwhBb6MOgKhBSrC1xEXCQDBb2WBy+00MOgaUOfBARiAJI1ibBBvzlCCz0FerdRSCbebpiOmu4dA1FooSdBV3BJeN8156nxRgzB6lBK5URooQ+HpsJep5B1TLskROzAxkImtNAHQnfCM0S0fyLwdcJ0NLwjtNDToGOTDhv/TmHsmm/dorYsxkILPQCaDgnJIKdCQnXIZUjm6oXvUXhOaKEPhCbFgYbqqq+TgYKag6nwLp8vtNADoJP5nQpeGj6qokSNuScDj9BCT4NuB9CA4ddpdjoNUcfMw+E5oYU+EDoZ2tVDOuIiGfpT8axEiFgwhRZ6CHQ0s4vClUQEckjEGOya9kILPRWaiOWpcaGDCS2C1ORLe0NTltBCHwhNAzLUvOua9sTASyIlEv6FFnoANBk60lt6ENTIp4ZhW8wUWugh0Glg6AiFSVgkZgFpcDrPElro6dAp8EKEPrJ2GmxoCCitK7TQ06DJ8EEK1dPBhA4jtLDFgUNooQ+ETiYZFfKr4Z+E7XafVUEuC5nQQg+E7gz3aVhJg0wnPPOoQAot9CDonYGDFKvO4NEJ1ZGBYykMCi30wdA7IVMSiNspQk+boxi8EVroQdCdQkUGjiQcVgWQGgDpwJAwKLTQB0OnpiIO6SAQ2xkcUhC3MhnLgUNooQdAt0TzzeYiGXGVkUdCQDFQJ7TQQ6Crpj4ZaXQAIKG7ZOClwvYoiSC00IdB74j4ZCOdUBy9hxzC7f1CCz0AOg0QRFgnwmJH8O+G4ogRKbTQU6DpRqlh32laqIFAm6LY3Agt9BBoYqxVw0G1yU4oJoHsBPCiMCi00AdDV6IfNel2N06eQwTKcj9CCz0AujWEA4E9BV52RcNuA1UGbYQW+mDoXdGfhO06w0Zam5oKpZkvtNADoDuFjJgDpOGhzQgNsJNDF1roidDkF34S3wk8aTxSYa0+juE5oYU+HLrT2O+E5IgJSJsaYugvC7DQQg+BTuJax4RPgTYCmw6SFtcYtBFa6EOhiXjQCdLtGPRf8HokTggt9ADoXVOcDie0KdkxCajYILTQQq9FgW5BSyY/3nA4JBIUEFroCdAdYT2Jb9RsI4IkNR9IIEBooadB08Z+Z7DYEefJ2qmg3q4jtNCDoInYnoaSTgiHiABdoTGaDUILLXTrj0Q7Zn26nxoQ5F6hhRaa/eNbKhZSY4CGf7qCpNBCT4QmRYSE3zpGf9oDbXTSUCK00NOgWybYpoC3c7BlowGK2mOxX2ihXwg96RJaaKGFFlrol1zf3zeZRNn8bioAAAAASUVORK5CYII=" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEpElEQVR42u2ay3IcMQwD/f8/nVztrRHRlPYyYu8lznheza0gJMCffwM/P0ILLbTQQgv9Muif4vPngl/HPn//+/jTsc97rY6ncz/v//T3ikNooadAP/6jXzz86SXozwm2W6jVzysOoYWeBP304CeBSML2dP4pzOrelXA+iqvQQgsd/9NPTc1T85KaoM67CS200OdCtrrpqvmvilMNEWToEFpooXsDR/Vy1TFqStBidATweMoSWuiXQ5OHv+HPr7mhQgv9YugYesEmn4gUaWCSaBIz8Di1FFroF0PvmAGdBqYqRCoybUDw+wst9BDoSixWA0Yy42nQnorXGijS4CK00AOgk+iQQI2YhVUxO/fqmhrLjkxooS+G7jTv5EVJIEeE7tRwjFOW0EIPgCYNPwno0/Jcaio6zQwxQYQWegp0FXRT0LIhKBqbNLBUIV53AUdooadAd036NLynBqKzFEuFDQcMQgs9ALoa7OkwQob+6kUrQa0anqNNBKGFvhSaDO9ksNg1BJNAdQyK9GUJLfQEaLrIkox6WrBKHFPjshPsxdRSaKEvg07GYArMkpFIjYfUuFRFpUG+0EJPgiZi0A3IOyZg1SClMKIyMIQWehp0J0wjxzpG4unAURX/8d2EFnoQdGcoINDEWEiGfho4SMGFFnoadMcgTMYDWVo/MRs7zQhanhNa6EuhdwYKstiSrqVLPScCuRQyoYW+FDqZd6eLMt2lmSRgHfNjKWRCC30xdBXWVQZdGgTSEg5dgK+eRb4AFOAJLfSF0JWwdR9I70cDggRFhw6hhZ4ATRfQaOhOTcbqvpVZkcL48n2FFnoIdNfko8YfDfjT8l4lUNRcEFroKdCkudgNxncE51tLAtENFVroS6FT806GhZN7Ved2h6G4ICu00EOgiTjQAHwnOKDG4k6RhRZ6GnTXxOuG7Qn8GyFAVezYkQkt9GXQHSM+HesEdkToSHBPBxGhhZ4E3THYu0YhXdahxn5a2imbKKGFHgBNBCABULMwgRJx7TRByOwXWujLoImoJIMgFYEUc3chjg4mQgs9BZqGeNXAQAO60+U7EhqWgaLQQg+Gpos2dDCg4TlZwFsJaTIjhBZ6EnQKtKtBPRmIaRmnG76nkGEpnkILPQx6V2hoSBcXYYpzUgiAAgOhhR4CnS5KYd0O5E74norcEjKhhb4YumvOpaaAmoXdgD41OolBaKGnQNMLqdHfDdZWpmEnWECmo9BCD4builHHsKsgkkCSBYBlMYQWegA0GeqpQUgXZYmA0WaIiKLQQk+H7gwcHVORBoDEzCAFXg4cQgt9OTRZHq9eLAlKVVgqdLQRKr8coYUeAJ0a+J1lm87SOjmHLN2goURooQdDVwNDd7mtG+DRsD4FAq0AT2ihL4HeXVLrDAjphalBQJd9otkvtNCXQ3cEjATrlVgRw5BelwwMoYWeDE2WXNPDyDCws3BHzY1oaggttNB4YS6F+WQYocWogsavCZnQQl8MnQL8NIRQw54EBMQMFFpooWuznwzxRLiq81LA11nqWb6/0EIPgU7hGV2k64b1nd/RcKE0/oUWegD0pI/QQgsttNBCv+TzH3u81E+4GhyQAAAAAElFTkSuQmCC" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=小内存VPS安装Caddy+PHP 7+Sqlite 3环境，并快速搭建Typecho博客&url=http://yoursite.com/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=小内存VPS安装Caddy+PHP 7+Sqlite 3环境，并快速搭建Typecho博客&url=http://hexo.southcat.net/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=小内存VPS安装Caddy+PHP 7+Sqlite 3环境，并快速搭建Typecho博客&url=http://yoursite.com/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=小内存VPS安装Caddy+PHP 7+Sqlite 3环境，并快速搭建Typecho博客&url=http://hexo.southcat.net/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEnUlEQVR42u2dy1LtMAwE8/8/DatbdQtiTcs5LGJ1NrxyHLcphDQzFNfXwOsSWmihhRZa6JdBX8V19/X/P/fv/V+LF/fdve7n+qv7V3skHEILPQn69oe+2Gy1IfL59Dz6+rtDWq0rtNDToKuNrx6SDoZuOEFUxYxyCC200OsiUcGt1qqes7o3NSVCCy30ZwpZakY6AwMZZMg3Q2ihhW406kVT8PM1RDSoNrwSFWhx/ciUJbTQL4cmDcAb3n5UDRVa6JdCI+MrFDIiAK5eQ8T+NJT8iWsptNAvhe6aYKuHpk11xYBKpCCCIjbwhBb6MOgKhBSrC1xEXCQDBb2WBy+00MOgaUOfBARiAJI1ibBBvzlCCz0FerdRSCbebpiOmu4dA1FooSdBV3BJeN8156nxRgzB6lBK5URooQ+HpsJep5B1TLskROzAxkImtNAHQnfCM0S0fyLwdcJ0NLwjtNDToGOTDhv/TmHsmm/dorYsxkILPQCaDgnJIKdCQnXIZUjm6oXvUXhOaKEPhCbFgYbqqq+TgYKag6nwLp8vtNADoJP5nQpeGj6qokSNuScDj9BCT4NuB9CA4ddpdjoNUcfMw+E5oYU+EDoZ2tVDOuIiGfpT8axEiFgwhRZ6CHQ0s4vClUQEckjEGOya9kILPRWaiOWpcaGDCS2C1ORLe0NTltBCHwhNAzLUvOua9sTASyIlEv6FFnoANBk60lt6ENTIp4ZhW8wUWugh0Glg6AiFSVgkZgFpcDrPElro6dAp8EKEPrJ2GmxoCCitK7TQ06DJ8EEK1dPBhA4jtLDFgUNooQ+ETiYZFfKr4Z+E7XafVUEuC5nQQg+E7gz3aVhJg0wnPPOoQAot9CDonYGDFKvO4NEJ1ZGBYykMCi30wdA7IVMSiNspQk+boxi8EVroQdCdQkUGjiQcVgWQGgDpwJAwKLTQB0OnpiIO6SAQ2xkcUhC3MhnLgUNooQdAt0TzzeYiGXGVkUdCQDFQJ7TQQ6Crpj4ZaXQAIKG7ZOClwvYoiSC00IdB74j4ZCOdUBy9hxzC7f1CCz0AOg0QRFgnwmJH8O+G4ogRKbTQU6DpRqlh32laqIFAm6LY3Agt9BBoYqxVw0G1yU4oJoHsBPCiMCi00AdDV6IfNel2N06eQwTKcj9CCz0AujWEA4E9BV52RcNuA1UGbYQW+mDoXdGfhO06w0Zam5oKpZkvtNADoDuFjJgDpOGhzQgNsJNDF1roidDkF34S3wk8aTxSYa0+juE5oYU+HLrT2O+E5IgJSJsaYugvC7DQQg+BTuJax4RPgTYCmw6SFtcYtBFa6EOhiXjQCdLtGPRf8HokTggt9ADoXVOcDie0KdkxCajYILTQQq9FgW5BSyY/3nA4JBIUEFroCdAdYT2Jb9RsI4IkNR9IIEBooadB08Z+Z7DYEefJ2qmg3q4jtNCDoInYnoaSTgiHiABdoTGaDUILLXTrj0Q7Zn26nxoQ5F6hhRaa/eNbKhZSY4CGf7qCpNBCT4QmRYSE3zpGf9oDbXTSUCK00NOgWybYpoC3c7BlowGK2mOxX2ihXwg96RJaaKGFFlrol1zf3zeZRNn8bioAAAAASUVORK5CYII=" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEpElEQVR42u2ay3IcMQwD/f8/nVztrRHRlPYyYu8lznheza0gJMCffwM/P0ILLbTQQgv9Muif4vPngl/HPn//+/jTsc97rY6ncz/v//T3ikNooadAP/6jXzz86SXozwm2W6jVzysOoYWeBP304CeBSML2dP4pzOrelXA+iqvQQgsd/9NPTc1T85KaoM67CS200OdCtrrpqvmvilMNEWToEFpooXsDR/Vy1TFqStBidATweMoSWuiXQ5OHv+HPr7mhQgv9YugYesEmn4gUaWCSaBIz8Di1FFroF0PvmAGdBqYqRCoybUDw+wst9BDoSixWA0Yy42nQnorXGijS4CK00AOgk+iQQI2YhVUxO/fqmhrLjkxooS+G7jTv5EVJIEeE7tRwjFOW0EIPgCYNPwno0/Jcaio6zQwxQYQWegp0FXRT0LIhKBqbNLBUIV53AUdooadAd036NLynBqKzFEuFDQcMQgs9ALoa7OkwQob+6kUrQa0anqNNBKGFvhSaDO9ksNg1BJNAdQyK9GUJLfQEaLrIkox6WrBKHFPjshPsxdRSaKEvg07GYArMkpFIjYfUuFRFpUG+0EJPgiZi0A3IOyZg1SClMKIyMIQWehp0J0wjxzpG4unAURX/8d2EFnoQdGcoINDEWEiGfho4SMGFFnoadMcgTMYDWVo/MRs7zQhanhNa6EuhdwYKstiSrqVLPScCuRQyoYW+FDqZd6eLMt2lmSRgHfNjKWRCC30xdBXWVQZdGgTSEg5dgK+eRb4AFOAJLfSF0JWwdR9I70cDggRFhw6hhZ4ATRfQaOhOTcbqvpVZkcL48n2FFnoIdNfko8YfDfjT8l4lUNRcEFroKdCkudgNxncE51tLAtENFVroS6FT806GhZN7Ved2h6G4ICu00EOgiTjQAHwnOKDG4k6RhRZ6GnTXxOuG7Qn8GyFAVezYkQkt9GXQHSM+HesEdkToSHBPBxGhhZ4E3THYu0YhXdahxn5a2imbKKGFHgBNBCABULMwgRJx7TRByOwXWujLoImoJIMgFYEUc3chjg4mQgs9BZqGeNXAQAO60+U7EhqWgaLQQg+Gpos2dDCg4TlZwFsJaTIjhBZ6EnQKtKtBPRmIaRmnG76nkGEpnkILPQx6V2hoSBcXYYpzUgiAAgOhhR4CnS5KYd0O5E74norcEjKhhb4YumvOpaaAmoXdgD41OolBaKGnQNMLqdHfDdZWpmEnWECmo9BCD4builHHsKsgkkCSBYBlMYQWegA0GeqpQUgXZYmA0WaIiKLQQk+H7gwcHVORBoDEzCAFXg4cQgt9OTRZHq9eLAlKVVgqdLQRKr8coYUeAJ0a+J1lm87SOjmHLN2goURooQdDVwNDd7mtG+DRsD4FAq0AT2ihL4HeXVLrDAjphalBQJd9otkvtNCXQ3cEjATrlVgRw5BelwwMoYWeDE2WXNPDyDCws3BHzY1oaggttNB4YS6F+WQYocWogsavCZnQQl8MnQL8NIRQw54EBMQMFFpooWuznwzxRLiq81LA11nqWb6/0EIPgU7hGV2k64b1nd/RcKE0/oUWegD0pI/QQgsttNBCv+TzH3u81E+4GhyQAAAAAElFTkSuQmCC" alt="QRCode">
     </li>
     
 
@@ -567,7 +567,7 @@ Caddy自动申请SSL证书位置：/.caddy/acme/acme-v01.api.letsencrypt.org/sit
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="VPS优化之添加swap交换分区 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/"><meta property="og:locale" content="en"><meta name="description" content="简介Linux中Swap（即：交换分区），类似于Windows的虚拟内存，就是当内存不足的时候，把一部分硬盘空间虚拟成内存使用,从而解决内存容量不足的情况。它的功能就是在内存不够的情况下，操作系统先把内存中暂时不用的数据，存到硬盘的交换空间，腾出内存来让别的程序运行. 相信很多人由于口袋没钱买了个小内存的vps，通常都会使用swap交换分区来给VPS提高一下性能。下面会说下VPS添加swap交换分 - John Doe - 南猫"><meta property="article:published_time" content="2020-02-29T23:05:55.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.657Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.657Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="VPS优化之添加swap交换分区 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/"><meta property="og:locale" content="en"><meta name="description" content="简介Linux中Swap（即：交换分区），类似于Windows的虚拟内存，就是当内存不足的时候，把一部分硬盘空间虚拟成内存使用,从而解决内存容量不足的情况。它的功能就是在内存不够的情况下，操作系统先把内存中暂时不用的数据，存到硬盘的交换空间，腾出内存来让别的程序运行. 相信很多人由于口袋没钱买了个小内存的vps，通常都会使用swap交换分区来给VPS提高一下性能。下面会说下VPS添加swap交换分 - John Doe - 南猫"><meta property="article:published_time" content="2020-02-29T23:05:55.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.657Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.657Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/">
+    <link rel="canonical" href="http://hexo.southcat.net/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/",
+    "url": "http://hexo.southcat.net/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/"
+        "@id": "http://hexo.southcat.net/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/"
     },
     "headline": "VPS优化之添加swap交换分区 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2020-02-29T23:05:55.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=VPS优化之添加swap交换分区" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=VPS优化之添加swap交换分区" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=VPS优化之添加swap交换分区&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=VPS优化之添加swap交换分区&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=VPS优化之添加swap交换分区" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=VPS优化之添加swap交换分区" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMQAAADECAAAAADlzdG3AAADK0lEQVR42u3a0U7DMBBE0f7/T8MTEkT1zl3XmwK6eQGpUeNTybE9u4+Pf3A9RIgQIULEOOJRXF+ff7/v+v+PLy3uud5/fc71vjQuESImEU8nzQWxGuz1ntVgq+8i3/P0HhEiBhFkQtMXARn46oVBxyVCxLsQq4euFqXVgHeeI0LEb0RUk5pO/FcGK0LEuxDVRmu1KawONRU8Pef4LlaEiCaCBgV3/x1JO0SICAgU3BaHlTQhUzhGwoQjqbgIEY36BJnkKSAjG8C08JEfLa7YIkS8iKjC4wrQLcJ0Dz2rH2b5dhIh4hCiAtAQrFq4VkFCKtxUzxQhYhKxEwykgZIFMRXf0fhEiBhApMlKAengRIss1QunXOxEiDiESAFBWri6C2MaZLVAihBxFyJt0sgkqyZyKpp0myJFiLgDkRoU02L0ymFpd3KLEHEnolv0oI2NO8Ec2gCKEHEYQQ8q3aJLmvy08Fg2bYkQcRjRmXA0OK42lqSgQl40IkRMImj4lYKBbhNvVWBJC6AIERMI2kBIN4qpsaXzWVpYRYiYQHQmbSdkJiFEGnAqSIoQcScCLTZwoncDN/yiECFiANE52KQGEtKokgK39GIQIWIakZqn0mGFbN5Sk1bn+ajzTISIFxE7hxgy+QksPbMME0SIGECkMJeGYqmYn4onneYYESImEejmzQVvJ0ygTQIiREwiqoHHULcxmTvNvehQJULEAIJOws7kqzZtpNCIwzgRIgYQu4UTWqRPTWAkTFseoESIGEakQJg2cpHQgBZyyoVQhIghxM5g0qG/CsdIYEAuESImEFVBPDWopA0gKeLQxhaUAIoQcQCRHtYttK82h7RphS6yIkRMIrrFlE7QRYuWpDFGhIg7EKnwSAe9cwDqFPHLoECEiIOIePAA4UH3BZCKLDjEECFiAEEnEynApECsCsdW95RFHBEihhDpcNRdFDvNJ3QjWAbKIkQMIOiGjW4cySK4E16LEPFbELQ5pRo8GXg6kIkQ8W5Ep2GLBmVp0cNBswgRg4hUHI/hLiimd4JlFN6JEDGEoEHBzmLWDaxJYV+EiEnEX75EiBAhQsTY9QkvQ9+95IJWeAAAAABJRU5ErkJggg==" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADpklEQVR42u3dwW7bQAxFUf3/Tyebbmpo+C7HdoY2rjZFHFfSEaAhh2TR6+cLj0uUKFGiRH0d6iqO//7Cv58fP3/8/d13q3PT85L7FCVqCirdJEU8XvzuPKub7J7n9tqiRA1CrU5CPkvfXd1oenjVtW/PL0rUh6DSgnAXrFffJ4tOdW1Ror4FlZLTCx4EWD0gUaI+BVWdhCS21QKzOg9Nbl+epYsS9WZUeqmn/PmyapIoUW9ExaJ7sanrvui0cLraUL6s6yFK1BtRpIjfKfx3Gw6pKNO6P1GiBqBSErranKXN3rMFllXxFK9+okQdQnUayzTw0u9UN02bgWWWLkrUIVRqmJHmAU1CCYw07m6vL0rUMFQVVGkTrhruqAJ5tdkkybUoUZNQKeCmzWEq/JNFIS00JJkWJWoCqiqgEBhZXKrf08YECuSiRA1FdRrVKSgnEC2okga3KFETUJ2ENr3UpCBKB67IICPqeogSdRDVeaE7xchuokzvTZSoyajOAEenaFkVXkgDgDS7RYmahuoO5FYv+DNDV53EFjWyRYk6jNopqqTNXAroqaBJmgmiRE1EpROQAk13gIoUaFJSjboeokQdQKXA12mOdZLjarEigRgntKJE/SGKFjF3Fo3d5nZatESJmooiLyoZCKEv/M4QCH6YokQNQ6ViCR2Aoi94dcM7jQdRoiagSIMgbSg7BUn6IDqNClGipqE6Q05VEO0URklDgQxviRI1DUWHFUkTLg1FdhYFsoiJEjURlQr9dLO3E2zTgyXN65jQihL1xyha4Og2CGgRZTeIx2KmKFGHUHEwEC4AncYAbdbRwRFRoqahaDLaKT6SoNsp8qAHKErUIBS5sc6QCB3oogsCSXRFiZqCokknGXQkg7+p6U0LOLFCK0rUYVR32Io2z3aa1dUAyvJhihI1AJUa2M8MTHUXk9TQqwKxKFFTUHQAIy0WpPGdFoMEa3U9RIk6hCIDGORGO5+RQiltvJXBV5Sog6juDaQGHW1wtzaBV/hPwEWJGoBKoDiMe7F/8EKDKBk+WQZ6UaIGoMhFqouTIZHqZzJETB62KFFTUClI0uQ0Bcqdwd+4MJCJF1GiDqCqBYIWQbovOAnK7eaBKFGDULQgXxUmyaZxp+BTFWfKhUKUqKEo0kijA7zps51hLVGiPhFFG3R0cCs1v3cad6JETUKRBJUOKqIiCWyO06aBKFGTUJ2CR0poaaCmG0OS5IoSNQn1TYcoUaJEifqa4xcfljMv2BAc6QAAAABJRU5ErkJggg==" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=VPS优化之添加swap交换分区&url=http://yoursite.com/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=VPS优化之添加swap交换分区&url=http://hexo.southcat.net/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=VPS优化之添加swap交换分区&url=http://yoursite.com/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=VPS优化之添加swap交换分区&url=http://hexo.southcat.net/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMQAAADECAAAAADlzdG3AAADK0lEQVR42u3a0U7DMBBE0f7/T8MTEkT1zl3XmwK6eQGpUeNTybE9u4+Pf3A9RIgQIULEOOJRXF+ff7/v+v+PLy3uud5/fc71vjQuESImEU8nzQWxGuz1ntVgq+8i3/P0HhEiBhFkQtMXARn46oVBxyVCxLsQq4euFqXVgHeeI0LEb0RUk5pO/FcGK0LEuxDVRmu1KawONRU8Pef4LlaEiCaCBgV3/x1JO0SICAgU3BaHlTQhUzhGwoQjqbgIEY36BJnkKSAjG8C08JEfLa7YIkS8iKjC4wrQLcJ0Dz2rH2b5dhIh4hCiAtAQrFq4VkFCKtxUzxQhYhKxEwykgZIFMRXf0fhEiBhApMlKAengRIss1QunXOxEiDiESAFBWri6C2MaZLVAihBxFyJt0sgkqyZyKpp0myJFiLgDkRoU02L0ymFpd3KLEHEnolv0oI2NO8Ec2gCKEHEYQQ8q3aJLmvy08Fg2bYkQcRjRmXA0OK42lqSgQl40IkRMImj4lYKBbhNvVWBJC6AIERMI2kBIN4qpsaXzWVpYRYiYQHQmbSdkJiFEGnAqSIoQcScCLTZwoncDN/yiECFiANE52KQGEtKokgK39GIQIWIakZqn0mGFbN5Sk1bn+ajzTISIFxE7hxgy+QksPbMME0SIGECkMJeGYqmYn4onneYYESImEejmzQVvJ0ygTQIiREwiqoHHULcxmTvNvehQJULEAIJOws7kqzZtpNCIwzgRIgYQu4UTWqRPTWAkTFseoESIGEakQJg2cpHQgBZyyoVQhIghxM5g0qG/CsdIYEAuESImEFVBPDWopA0gKeLQxhaUAIoQcQCRHtYttK82h7RphS6yIkRMIrrFlE7QRYuWpDFGhIg7EKnwSAe9cwDqFPHLoECEiIOIePAA4UH3BZCKLDjEECFiAEEnEynApECsCsdW95RFHBEihhDpcNRdFDvNJ3QjWAbKIkQMIOiGjW4cySK4E16LEPFbELQ5pRo8GXg6kIkQ8W5Ep2GLBmVp0cNBswgRg4hUHI/hLiimd4JlFN6JEDGEoEHBzmLWDaxJYV+EiEnEX75EiBAhQsTY9QkvQ9+95IJWeAAAAABJRU5ErkJggg==" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADpklEQVR42u3dwW7bQAxFUf3/Tyebbmpo+C7HdoY2rjZFHFfSEaAhh2TR6+cLj0uUKFGiRH0d6iqO//7Cv58fP3/8/d13q3PT85L7FCVqCirdJEU8XvzuPKub7J7n9tqiRA1CrU5CPkvfXd1oenjVtW/PL0rUh6DSgnAXrFffJ4tOdW1Ror4FlZLTCx4EWD0gUaI+BVWdhCS21QKzOg9Nbl+epYsS9WZUeqmn/PmyapIoUW9ExaJ7sanrvui0cLraUL6s6yFK1BtRpIjfKfx3Gw6pKNO6P1GiBqBSErranKXN3rMFllXxFK9+okQdQnUayzTw0u9UN02bgWWWLkrUIVRqmJHmAU1CCYw07m6vL0rUMFQVVGkTrhruqAJ5tdkkybUoUZNQKeCmzWEq/JNFIS00JJkWJWoCqiqgEBhZXKrf08YECuSiRA1FdRrVKSgnEC2okga3KFETUJ2ENr3UpCBKB67IICPqeogSdRDVeaE7xchuokzvTZSoyajOAEenaFkVXkgDgDS7RYmahuoO5FYv+DNDV53EFjWyRYk6jNopqqTNXAroqaBJmgmiRE1EpROQAk13gIoUaFJSjboeokQdQKXA12mOdZLjarEigRgntKJE/SGKFjF3Fo3d5nZatESJmooiLyoZCKEv/M4QCH6YokQNQ6ViCR2Aoi94dcM7jQdRoiagSIMgbSg7BUn6IDqNClGipqE6Q05VEO0URklDgQxviRI1DUWHFUkTLg1FdhYFsoiJEjURlQr9dLO3E2zTgyXN65jQihL1xyha4Og2CGgRZTeIx2KmKFGHUHEwEC4AncYAbdbRwRFRoqahaDLaKT6SoNsp8qAHKErUIBS5sc6QCB3oogsCSXRFiZqCokknGXQkg7+p6U0LOLFCK0rUYVR32Io2z3aa1dUAyvJhihI1AJUa2M8MTHUXk9TQqwKxKFFTUHQAIy0WpPGdFoMEa3U9RIk6hCIDGORGO5+RQiltvJXBV5Sog6juDaQGHW1wtzaBV/hPwEWJGoBKoDiMe7F/8EKDKBk+WQZ6UaIGoMhFqouTIZHqZzJETB62KFFTUClI0uQ0Bcqdwd+4MJCJF1GiDqCqBYIWQbovOAnK7eaBKFGDULQgXxUmyaZxp+BTFWfKhUKUqKEo0kijA7zps51hLVGiPhFFG3R0cCs1v3cad6JETUKRBJUOKqIiCWyO06aBKFGTUJ2CR0poaaCmG0OS5IoSNQn1TYcoUaJEifqa4xcfljMv2BAc6QAAAABJRU5ErkJggg==" alt="QRCode">
     </li>
     
 
@@ -522,7 +522,7 @@
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

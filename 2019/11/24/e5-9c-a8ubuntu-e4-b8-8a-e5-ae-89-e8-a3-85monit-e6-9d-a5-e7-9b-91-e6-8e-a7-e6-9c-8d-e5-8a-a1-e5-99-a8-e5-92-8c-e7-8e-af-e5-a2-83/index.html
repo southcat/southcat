@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="在Ubuntu上安装Monit来监控服务器和环境 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/"><meta property="og:locale" content="en"><meta name="description" content="说明：相信很多人都遇到过 “502错误”、 “2002数据库无法连接” “ERR_NAME_NOT_RESOLVED” 等问题吧，一般来说是Apache Httpd、Nginx、PHP、MySQL等软件崩溃或者不稳定出现了相关问题。这时候我们可以利用Monit来监控服务器和环境，当出现意外的时候还可以自动实现重启。 安装1、更新软件源缓存 apt update2、安装Monit apt insta - John Doe - 南猫"><meta property="article:published_time" content="2019-11-24T14:03:51.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.649Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.649Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="在Ubuntu上安装Monit来监控服务器和环境 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/"><meta property="og:locale" content="en"><meta name="description" content="说明：相信很多人都遇到过 “502错误”、 “2002数据库无法连接” “ERR_NAME_NOT_RESOLVED” 等问题吧，一般来说是Apache Httpd、Nginx、PHP、MySQL等软件崩溃或者不稳定出现了相关问题。这时候我们可以利用Monit来监控服务器和环境，当出现意外的时候还可以自动实现重启。 安装1、更新软件源缓存 apt update2、安装Monit apt insta - John Doe - 南猫"><meta property="article:published_time" content="2019-11-24T14:03:51.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.649Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.649Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/">
+    <link rel="canonical" href="http://hexo.southcat.net/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/",
+    "url": "http://hexo.southcat.net/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/"
+        "@id": "http://hexo.southcat.net/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/"
     },
     "headline": "在Ubuntu上安装Monit来监控服务器和环境 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2019-11-24T14:03:51.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=在Ubuntu上安装Monit来监控服务器和环境" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=在Ubuntu上安装Monit来监控服务器和环境" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=在Ubuntu上安装Monit来监控服务器和环境&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=在Ubuntu上安装Monit来监控服务器和环境&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=在Ubuntu上安装Monit来监控服务器和环境" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=在Ubuntu上安装Monit来监控服务器和环境" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEIElEQVR42u3azXLjQAhFYb//S89sZpHyuLkHlIWQjzep+Cfqr1NGNPD68wWPl0iRIkWKFHkR+SoeP9/z3x/499zP91bvI597v+77a+/Px3WLFLkU+fFL+wF5wlebU23Cp8+/f7Z6Pa5bpMjFyNOCPl2ALJIELbpR9HMiRX4LMn3BT4GGQjoBL/0TRIr8BuRpQTRpJ8l02iSaSIgU+RRkteAquabBo/qdbC69vkiRT0BWQeHOP3+tWidS5I2Q9AZPNyQdpDtJwOlv/npXS6TIGyGrLzLBdorONEmvGkl0vSJFbkfGA2hYOF1gukYKPlWSj04hIkXeHNk9zNIFkENuSipSch4P0CJFLkV2hpROF6FJBGkCpRs+HmgSKXIxMkFSwbnaJJKYk0N1d4BDpMitSDroQIeTaKGrOiiT9cXAKVLkQmQaYCeFYhIs0mvdRB8FMZEiFyLJgsgXnjSMUqKekgM6xCFS5GZkZ9BverhOjVT6erfpK1LkVmS3yEuHJkiDlgYxktyXXS2RIpcgSZJOFk0GG+hmdZL/cXFZpMibI+nhd1K86i6QFL9Qci9S5FJk50BMb+K0sTopSpPgJlLkVmT3pksOrCRxSAuk7y8TFZEilyPJUEQqOKfDLB3cnW7esbgsUuQSJEFMmzKdwzhNztNaRIrcjqwaOukipAidmkiomRrWeGz2ihS5GDkdSKoWmgaDW0FkUGgTKXIzkiTWqSBVFbi6CTodLCyTD5EiFyPpAGFnYIkGMtpE6jSQRIrciiTDgyRRT0XkKumYgNEBXKTIpUiSOHebseQmPkkUqiL4MUEXKfIByDScQBIJgk8JAg1qrQq6SJE3RlZFYpIEx0Yo3KSUQJDPxVOISJELkDQBJl/87jAEbeiS5+KUpEiRi5CkaFU1SlPwIAi6SZ2ERKTIrchOck6as2QQqrr508GomBiIFPkAZHqeFLnIYOJkGCMlAmVlQKTIJcjOBciNnWxAKiLT68R/iEiRi5GdRgwZWJo0fGgjqd3wESlyKbIqNFcH15RUdIecUnBKRWiRIrcjuzdnUnwihbJJktEKRCJFLkReSaJTgbc80B4+TwYicGNYpMilyE5hijZtSMOWNm1p0St2tUSKXICsAgA99NIgcyXp7x6oRYrciiQH1HQjTugrg4PVPyBukEiRS5GdhCA1iOjC0sGaHhCqgWSRIrcjafGJBKA0CJ8aSNMGrUiR25FkuP74xW4m9KRoRoYWcTFbpMilSDr8kwIOGS7qBJB0s4+HdZEiFyM7TZv0meqATANc5zBwDH4iRT4cmYZ9abBIfz9tVCpCixT5DUh6U05BiiYAkyHDy4FHpMgbIWkBq7sIklBUSQApTKNOs0iRi5BXmp/VcFIqUnWLWun3cbVOpMgbIZ/8EClSpEiRIoePvy9m5FAz/MTYAAAAAElFTkSuQmCC" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEMklEQVR42u3aSXLjUAwEUd3/0u6twk1WJSgtCDq16UEW9R8jDGJ6/fyB10ukSJEiRYr8EPkKr/T+2Xvv///fl7793/vPtj+PrtfOLVLkZuThL+3JgduXkc8cfdfRZyOgnFukyO3Io4OSX/z0pb/fP/oMvX4KXEfnFinyqcj2Jenhfvbz6XvSjSDJgkiRT0e2Q6eHdUvuU4BJQUekyL+AnDzI082YAFIQScn516sQkSJvhqQB4m5/frVbJ1LkTZB4eFIS9taUao0wUhSfNa2/NtUSKfIGyElS3ZrLLYEm122NLlIoiBS5GUkveCUopCCRBrqk8dUa1yJFbkamASgpiElwSMsS9GE/XsQQKXIhcrIURJpI8eEc/j0Z2H5tMUKkyBsiWxN4ElA+CVDTgRNapBIpciGSFq7twtPilhTtkwCFh7AiRS5Btgf52U0gg9crS00kSaiBSKTIpcjpha8EAjLgpUsPeMFJpMgHIKeLCW3w2orttqRLi4iaoIsUuQQ5WSKkf28HnwxhSZNMpMgnIScXwoMW0BxuQYUOjmJBL1LkUiRNulMyTYIRSfKnCxloMUKkyEXIVpi2LyNBqi0Q0qYyKcbjAqFIkQuQbUmILvWRIvrqghNpkB2eXaTIhcj0MCYP9SuD0rYUmJrNpHkmUuRmZLsoHczQpb8Gakk/SUpEityMJA/fNoRpRW9MogdJOz2XSJGbkRTyA1/Txld6vwWeutwkUuRCJFmImD7gyWJFGwJPUKeNbZEiFyJb8dmKZbLIRAp0AmwF/ngjS6TIGyJpkj5tTLXknDa2aPFQo6tIkUuQcdnngwNeGdi2ARFJBkYLhCJF3hBJDnp1YEuSaNq0bkVyLZpFilyCbEnwpJim16Q3gQQePIQVKXIRkjaXyMIhAZCB7TQIoQ66SJFLkFe+vAWGVABfKYRbkYyiq0iRC5CpwUsWb9sAtgULkvSTRlktmkWKXIakWLr4QA9GloTTDYvJg0iRS5F0IEuHppOG8XRpcLT4JFLkQmRKcK8W0qQIPgsgtHGFGtMiRT4A2RaFWhOZNrpIwkGvJ1Lkk5DtwKS52z4/WTAiS0/05ogUuRHZEmfShGoPexps0gCYFOd44CNS5AIkecDS4U+7IVcGs3QAVLc/RIpcgCSDUbKwRJaeSFGQCup2lrr9IVLkzZHtsJNF+xaAaDOaFsct+IgUuRXZEoNpAj0JZvRaJCjiqZZIkUuQrZlLG71kIDNZwGg3ZxR4RIq8OXLyC00WINqQ52pzmp5FpMgnIGnAoUk2XTBsN4suSp2eUaTIxUgaREji3X6uXW+aNIynWiJFLkeS4DENDqmRnIY8dDglUuRTkbRRRQ9JlpTaeyRZESlyO5I0msmF04M+Fb7kpk4GxCJFbkaSD6cH+ScDXJIkkKCGlpVEilyAfPJLpEiRIkWKvPj6BxRAdqLcJVm/AAAAAElFTkSuQmCC" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=在Ubuntu上安装Monit来监控服务器和环境&url=http://yoursite.com/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=在Ubuntu上安装Monit来监控服务器和环境&url=http://hexo.southcat.net/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=在Ubuntu上安装Monit来监控服务器和环境&url=http://yoursite.com/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=在Ubuntu上安装Monit来监控服务器和环境&url=http://hexo.southcat.net/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/11/24/e5-9c-a8ubuntu-e4-b8-8a-e5-ae-89-e8-a3-85monit-e6-9d-a5-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-92-8c-e7-8e-af-e5-a2-83/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEIElEQVR42u3azXLjQAhFYb//S89sZpHyuLkHlIWQjzep+Cfqr1NGNPD68wWPl0iRIkWKFHkR+SoeP9/z3x/499zP91bvI597v+77a+/Px3WLFLkU+fFL+wF5wlebU23Cp8+/f7Z6Pa5bpMjFyNOCPl2ALJIELbpR9HMiRX4LMn3BT4GGQjoBL/0TRIr8BuRpQTRpJ8l02iSaSIgU+RRkteAquabBo/qdbC69vkiRT0BWQeHOP3+tWidS5I2Q9AZPNyQdpDtJwOlv/npXS6TIGyGrLzLBdorONEmvGkl0vSJFbkfGA2hYOF1gukYKPlWSj04hIkXeHNk9zNIFkENuSipSch4P0CJFLkV2hpROF6FJBGkCpRs+HmgSKXIxMkFSwbnaJJKYk0N1d4BDpMitSDroQIeTaKGrOiiT9cXAKVLkQmQaYCeFYhIs0mvdRB8FMZEiFyLJgsgXnjSMUqKekgM6xCFS5GZkZ9BverhOjVT6erfpK1LkVmS3yEuHJkiDlgYxktyXXS2RIpcgSZJOFk0GG+hmdZL/cXFZpMibI+nhd1K86i6QFL9Qci9S5FJk50BMb+K0sTopSpPgJlLkVmT3pksOrCRxSAuk7y8TFZEilyPJUEQqOKfDLB3cnW7esbgsUuQSJEFMmzKdwzhNztNaRIrcjqwaOukipAidmkiomRrWeGz2ihS5GDkdSKoWmgaDW0FkUGgTKXIzkiTWqSBVFbi6CTodLCyTD5EiFyPpAGFnYIkGMtpE6jSQRIrciiTDgyRRT0XkKumYgNEBXKTIpUiSOHebseQmPkkUqiL4MUEXKfIByDScQBIJgk8JAg1qrQq6SJE3RlZFYpIEx0Yo3KSUQJDPxVOISJELkDQBJl/87jAEbeiS5+KUpEiRi5CkaFU1SlPwIAi6SZ2ERKTIrchOck6as2QQqrr508GomBiIFPkAZHqeFLnIYOJkGCMlAmVlQKTIJcjOBciNnWxAKiLT68R/iEiRi5GdRgwZWJo0fGgjqd3wESlyKbIqNFcH15RUdIecUnBKRWiRIrcjuzdnUnwihbJJktEKRCJFLkReSaJTgbc80B4+TwYicGNYpMilyE5hijZtSMOWNm1p0St2tUSKXICsAgA99NIgcyXp7x6oRYrciiQH1HQjTugrg4PVPyBukEiRS5GdhCA1iOjC0sGaHhCqgWSRIrcjafGJBKA0CJ8aSNMGrUiR25FkuP74xW4m9KRoRoYWcTFbpMilSDr8kwIOGS7qBJB0s4+HdZEiFyM7TZv0meqATANc5zBwDH4iRT4cmYZ9abBIfz9tVCpCixT5DUh6U05BiiYAkyHDy4FHpMgbIWkBq7sIklBUSQApTKNOs0iRi5BXmp/VcFIqUnWLWun3cbVOpMgbIZ/8EClSpEiRIoePvy9m5FAz/MTYAAAAAElFTkSuQmCC" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEMklEQVR42u3aSXLjUAwEUd3/0u6twk1WJSgtCDq16UEW9R8jDGJ6/fyB10ukSJEiRYr8EPkKr/T+2Xvv///fl7793/vPtj+PrtfOLVLkZuThL+3JgduXkc8cfdfRZyOgnFukyO3Io4OSX/z0pb/fP/oMvX4KXEfnFinyqcj2Jenhfvbz6XvSjSDJgkiRT0e2Q6eHdUvuU4BJQUekyL+AnDzI082YAFIQScn516sQkSJvhqQB4m5/frVbJ1LkTZB4eFIS9taUao0wUhSfNa2/NtUSKfIGyElS3ZrLLYEm122NLlIoiBS5GUkveCUopCCRBrqk8dUa1yJFbkamASgpiElwSMsS9GE/XsQQKXIhcrIURJpI8eEc/j0Z2H5tMUKkyBsiWxN4ElA+CVDTgRNapBIpciGSFq7twtPilhTtkwCFh7AiRS5Btgf52U0gg9crS00kSaiBSKTIpcjpha8EAjLgpUsPeMFJpMgHIKeLCW3w2orttqRLi4iaoIsUuQQ5WSKkf28HnwxhSZNMpMgnIScXwoMW0BxuQYUOjmJBL1LkUiRNulMyTYIRSfKnCxloMUKkyEXIVpi2LyNBqi0Q0qYyKcbjAqFIkQuQbUmILvWRIvrqghNpkB2eXaTIhcj0MCYP9SuD0rYUmJrNpHkmUuRmZLsoHczQpb8Gakk/SUpEityMJA/fNoRpRW9MogdJOz2XSJGbkRTyA1/Txld6vwWeutwkUuRCJFmImD7gyWJFGwJPUKeNbZEiFyJb8dmKZbLIRAp0AmwF/ngjS6TIGyJpkj5tTLXknDa2aPFQo6tIkUuQcdnngwNeGdi2ARFJBkYLhCJF3hBJDnp1YEuSaNq0bkVyLZpFilyCbEnwpJim16Q3gQQePIQVKXIRkjaXyMIhAZCB7TQIoQ66SJFLkFe+vAWGVABfKYRbkYyiq0iRC5CpwUsWb9sAtgULkvSTRlktmkWKXIakWLr4QA9GloTTDYvJg0iRS5F0IEuHppOG8XRpcLT4JFLkQmRKcK8W0qQIPgsgtHGFGtMiRT4A2RaFWhOZNrpIwkGvJ1Lkk5DtwKS52z4/WTAiS0/05ogUuRHZEmfShGoPexps0gCYFOd44CNS5AIkecDS4U+7IVcGs3QAVLc/RIpcgCSDUbKwRJaeSFGQCup2lrr9IVLkzZHtsJNF+xaAaDOaFsct+IgUuRXZEoNpAj0JZvRaJCjiqZZIkUuQrZlLG71kIDNZwGg3ZxR4RIq8OXLyC00WINqQ52pzmp5FpMgnIGnAoUk2XTBsN4suSp2eUaTIxUgaREji3X6uXW+aNIynWiJFLkeS4DENDqmRnIY8dDglUuRTkbRRRQ9JlpTaeyRZESlyO5I0msmF04M+Fb7kpk4GxCJFbkaSD6cH+ScDXJIkkKCGlpVEilyAfPJLpEiRIkWKvPj6BxRAdqLcJVm/AAAAAElFTkSuQmCC" alt="QRCode">
     </li>
     
 
@@ -556,7 +556,7 @@ chmod 0700 /var/certs/monit.pem</code></pre><p>3、创建新配置<br>创建一�
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

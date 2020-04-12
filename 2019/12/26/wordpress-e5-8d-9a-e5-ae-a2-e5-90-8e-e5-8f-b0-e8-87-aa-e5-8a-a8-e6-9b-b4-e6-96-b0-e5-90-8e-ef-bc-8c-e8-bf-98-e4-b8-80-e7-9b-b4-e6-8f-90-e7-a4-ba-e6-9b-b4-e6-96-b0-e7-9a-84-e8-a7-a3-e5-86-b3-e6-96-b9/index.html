@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="WordPress博客后台自动更新后，还一直提示更新的解决方法 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/"><meta property="og:locale" content="en"><meta name="description" content="说明：刚刚将一个自己长时间不管的wordpress博客自动更新到了4.9版本后，发现后台还是一直提示更新，仔细看是因为语言翻译的问题，去翻译文件目录那里看了下，文件是替换成功了，猜想估计是权限问题，读取不了，就找了下方法，发现和之前提到的安装h5ai网盘后读取不出文件的问题是一样的，就是scandir函数被禁用了，这里说下方法。 方法只需要修改php.ini文件就可以了，以军哥lnmp为例，文件位 - John Doe - 南猫"><meta property="article:published_time" content="2019-12-26T08:27:13.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.652Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.652Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="WordPress博客后台自动更新后，还一直提示更新的解决方法 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/"><meta property="og:locale" content="en"><meta name="description" content="说明：刚刚将一个自己长时间不管的wordpress博客自动更新到了4.9版本后，发现后台还是一直提示更新，仔细看是因为语言翻译的问题，去翻译文件目录那里看了下，文件是替换成功了，猜想估计是权限问题，读取不了，就找了下方法，发现和之前提到的安装h5ai网盘后读取不出文件的问题是一样的，就是scandir函数被禁用了，这里说下方法。 方法只需要修改php.ini文件就可以了，以军哥lnmp为例，文件位 - John Doe - 南猫"><meta property="article:published_time" content="2019-12-26T08:27:13.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.652Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.652Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/">
+    <link rel="canonical" href="http://hexo.southcat.net/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/",
+    "url": "http://hexo.southcat.net/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/"
+        "@id": "http://hexo.southcat.net/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/"
     },
     "headline": "WordPress博客后台自动更新后，还一直提示更新的解决方法 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2019-12-26T08:27:13.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=WordPress博客后台自动更新后，还一直提示更新的解决方法" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=WordPress博客后台自动更新后，还一直提示更新的解决方法" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=WordPress博客后台自动更新后，还一直提示更新的解决方法&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=WordPress博客后台自动更新后，还一直提示更新的解决方法&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=WordPress博客后台自动更新后，还一直提示更新的解决方法" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=WordPress博客后台自动更新后，还一直提示更新的解决方法" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFYElEQVR42u2dy1JbURAD+f+fdrYU5SO1TpwFue0NBOz7aFeJGUmEr5eP15cIhCAEIQhBCEKIEL7C4+f3v7/m+/d+fv3d68h5Tq9rH9Pnp/MJQQhCOEN4KxqHk56+lqAur2tfo89v9yUEIQghQ2hC1QQxiRkR4XfPpUJ8I7RCEIIQ7iCkm7gBkAaek5guw5wQhCCEfwshCdYignipOQxnSUDJkicEIQhhg5AWjdNQ1IyVtoidjpmORa/3o1ukEITwMAjUAP1tHz/qNgtBCA+BcB1mDosMNU+I4dsEuh3vo6m0EITwH0KgBkYbasiFUYOEBK9tqGuLlBCEIAQ2JySDo0Egyws1RhaARJCnnw5CEMKDIawB6VLiSqJFimFrMNued22qCEEID4JwE8DQBaiJYCuGLW8AEXUhCEEIHQINWeggtRzv1ihdlq/4JglBCEKowxI1NJp40cGLnO/GxD0BEoIQhNAhJIPjZjipggQHJnJ+cozJbRaCEB4O4XapWctZ9FzEyG3LWjNphSAEIXQILUyhRe824JDzEQMlXWcTRCEIQQhsgSI3QwBQo5MuSDQcXktiQhCCEJifQIKXNtyQz1fTpb0BiyEjBCEI4VV7jHRgSUEpGVSaCdqKGdTkrUUyIQhBCNVUIYUqYl7Q0GZdkJZyVn1ThSAEIdRAtokYMUNWQC28IYsUWQRxKi0EIQgBl65JsEEM1qU4ejuIVaEVghCEgIRxWVBI+ZKATAMQXaiowSIEIQhhh0CLEcuF0ucspU4SxhyvWQhCEMLRaG2BKHk+ES5izJDFaQ1wkNssBCEI4bUYpOkCFpGiw1ET6GT4IAEXghCEECGsN1uNTDDo4JIV/He6lmNxSwhCEAIuZ5PC5E0pgwjqEgaTY1dhFIIQhPDXgexy88kMbQMREVVaAhOCEITQf99hDUQojGZ2tIsmIruWOYQgBCGcIZACJDFRSRGTLEpt8SKvIcudEIQgBJY7kKLFIlakyEEC11b8WosiQhCCENgfzWzhxa35shQ1WyDUhjlaOBGCEITA/ARSsKBLUytm0cLH7bAWBzghCEEItbjVylWrUUqWmpubamJNFiwhCEEIWRipGFHhWUtbdGCiy14raghBCEJgv+/QzMsmRknoWjBDQqDVEJrcZiEI4eEQaDkimRxpQVqWMWLWLPBqiUQIQhACCmSXEmV6Pi1TIAOkwG3HwVukEITwcAht6aFFyWaoLEtQK4jQklgd6oQgBCEchZHcSFuaqIARQSaCR4Ke+EYLQQhCOAojMTHS88jx6IB1E+hSQzf+dBCCEISABoylmDEtMKO4pmGNhC81kBWCEIQw/VE5IlrEmDkJavo6uikghnVYEoIQHg6BDi9kISEFKyq2DRItmUVhFYIQhIDDF1LebMVLGrDSokYrgbQCKipuCUEIQkBFKzLckKErnSuJIBp+YJFECEIQAv99hxbStmFpLWLQoYwWOcgbJQQhCIEZrU10yMGbGUqGriVgoSJbnSUhCEEIL1qISIPH6ebTcdfXrKURHAwJQQhCwCUNaqS0oagZoW1hoqYrDX+FIAQhbH8vkhYgqNHZBHI1cknhcw5fhCAEIeCCNy15LgFIGnRaMYsaw2SZEoIQhNCFcVlGboKb9HpSziIiiQcoIQhBCNFoJSeiAwsJRG+KXklMiTAKQQhCYBBIOXIJUZZlp4XA6dg3S5oQhCCEz0GgYcq6MNGbIdeBBzchCEEIM4Q2jJByx1qoasMSGeLQMigEIQhhXqDSDZFQlQofNVpIYEOCYiEIQQisn0APsJa0TgHKWtRoQxwNk4QgBCHk/6j2iQ8hCEEIQhCCEITw9vEH449pY8BFvX8AAAAASUVORK5CYII=" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFYUlEQVR42u2d267jRhAD/f8/rTwFSBCLLI6MBQKVX876otFMGejtJnl2P5eP6yMCIQhBCEIQghAihE94/P3+vy4Mr6fP/vO9b+t/+3n352/7vrvm7lxCEIIQ7iF8LRpfDpsgkQ3drfft9W97SV9CWu92LSEIQQi3ENrh2qbSWunwdxu9u54UQXIuIQhBCGcQ7m7SGhJ6aLJeAkSbLiEIQQi/L4wUGCmYd80V+RLafoQgBCE8h0AKFj1wElyI8EIKI/ncz6ZIIQjhZRCI0Pp//PlztVkIQngBBGxewgJKBx0iyixGzR9xpYUghBdAOBFJHg0tQIBp8O8gzeKvEIQghK+FMS26Fh8ixqSQBzV6iThTAQtBCEKIAxTZcDNJl8aH3HcRacjwV6dIIQjh5RCWRUmggkIkJu1pACStJQQhCGGHsA42VDwhw9ipoEIGPCEIQQgMAilYJ8GrNpARc5YYvSlQFsUZIQhBCLPQ2gA0aCfN0ZOQRirYx2qzEITwIgip+BGRNRVAEsqiAEizNoswQhCCELCoQpqmRTilIVAaDF8GuVs4QhCCECoEYrimItiCFUv4ihy+DXCx8AtBCEKozdIqmK5Bq0VcOXlOwx9CEIIQ8uxAitzT5oUUtkU4WcMj9W8HIQhBCOiXMcihmmCaIJPCRr80Gi4RghCEcNXCODUaJVDRAtl0vZPn7bNCEIIQPnOz1AzORWylTdcy1C2GEA54C0EIQrjoANI2shQ8ck0TcigcHPAWghCEUIsIETrSZkmT04yTJUi+DlJCEIIQrloYm3BSi00RTdqBnxiwCzAhCEEI+d9PIJsjwQ5i0NDCezJQUYNHCEIQAh+gSBFbzJbVkGmNHCnUpHESghCEsAmtNORJBptmkpDiTMSctv5svghBCC+DkITQZpSQAYiEQxd4RNTFoVEhCEEIcYAimyJNUBpyFsOkGa7rvtAUKQQhvBzCyQ1Ss0SDWMQgoUCX/QtBCELIEB4NIOWQi2Fyaq7QQMex+SIEIbwMAimOtIkhggsNexJzdQmRxQFKCEIQAg5ek2JFDFv6+TVUuhhGsVkSghCEcBFBkwiy6/BDhZA1pNHARFFFCEIQQmyGmhlKzRRSJIkIQ58n8Ti60kIQghAuWsxImGM1b2hRPn0PBb6EIAQhxODWGohKhgcpXGT4aoYtBVOVJSEIQQgXaYBIeLIdngqxxFQ9DX/hpIoQhPByCGRhenBqiC4i7mruLo2TEIQghAyBBjTpgILETrD51JClwayuIQQhCKEOUOSmaWESqiLFcRmmqKlcDVkhCEEI0y+Dtg21wAURX5aC3YaxOngJQQhCqBBagflFoCod6JcDVS26QhCCEGKzRAyNxQShhZYMbvRwTQSqA5QQhCCEixz4RERdDJ3WBNHgWCv2SG0WghBeDuHJINM2S0MgDQYNYZDGSwhCEELWGJsRu4S1ScFbRJG2/hLsjqKKEIQghGspSiTE2SCmokYbndZQkYIoBCEI4YP0hDYgpUaqiRtpo3SQI68lM/g/1wpBCEKI5ku6wVOBE20Krk1N4BbyEoIQhLAZsg0ODWkRY2UxZ2lBr2FUIQhBCLfNUio4J00LCXsszREZ3u7uf7s3IQhBCLUwpmK1NlYtiNGMWirE0oAJTq8JQQgvh7CIG80IJSCJ0UtE1dbI1XCIEIQghGi+0A2l0BQtTkuQcw1+zMEtIQhBCBMEMlyRgYZAOIFFwqJVaBWCEIRw0UVpE9KM0hPRJYVBFpCPCqMQhPBCCCQIdSKOtKK5Bi9IaIsMdUIQghDOhdYT4eJ0MGuhD7puC5sKQQhCYP+v9JseQhCCEIQgBCEI4evjL3JXJ8GkxjNoAAAAAElFTkSuQmCC" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=WordPress博客后台自动更新后，还一直提示更新的解决方法&url=http://yoursite.com/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=WordPress博客后台自动更新后，还一直提示更新的解决方法&url=http://hexo.southcat.net/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=WordPress博客后台自动更新后，还一直提示更新的解决方法&url=http://yoursite.com/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=WordPress博客后台自动更新后，还一直提示更新的解决方法&url=http://hexo.southcat.net/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFYElEQVR42u2dy1JbURAD+f+fdrYU5SO1TpwFue0NBOz7aFeJGUmEr5eP15cIhCAEIQhBCEKIEL7C4+f3v7/m+/d+fv3d68h5Tq9rH9Pnp/MJQQhCOEN4KxqHk56+lqAur2tfo89v9yUEIQghQ2hC1QQxiRkR4XfPpUJ8I7RCEIIQ7iCkm7gBkAaek5guw5wQhCCEfwshCdYignipOQxnSUDJkicEIQhhg5AWjdNQ1IyVtoidjpmORa/3o1ukEITwMAjUAP1tHz/qNgtBCA+BcB1mDosMNU+I4dsEuh3vo6m0EITwH0KgBkYbasiFUYOEBK9tqGuLlBCEIAQ2JySDo0Egyws1RhaARJCnnw5CEMKDIawB6VLiSqJFimFrMNued22qCEEID4JwE8DQBaiJYCuGLW8AEXUhCEEIHQINWeggtRzv1ihdlq/4JglBCEKowxI1NJp40cGLnO/GxD0BEoIQhNAhJIPjZjipggQHJnJ+cozJbRaCEB4O4XapWctZ9FzEyG3LWjNphSAEIXQILUyhRe824JDzEQMlXWcTRCEIQQhsgSI3QwBQo5MuSDQcXktiQhCCEJifQIKXNtyQz1fTpb0BiyEjBCEI4VV7jHRgSUEpGVSaCdqKGdTkrUUyIQhBCNVUIYUqYl7Q0GZdkJZyVn1ThSAEIdRAtokYMUNWQC28IYsUWQRxKi0EIQgBl65JsEEM1qU4ejuIVaEVghCEgIRxWVBI+ZKATAMQXaiowSIEIQhhh0CLEcuF0ucspU4SxhyvWQhCEMLRaG2BKHk+ES5izJDFaQ1wkNssBCEI4bUYpOkCFpGiw1ET6GT4IAEXghCEECGsN1uNTDDo4JIV/He6lmNxSwhCEAIuZ5PC5E0pgwjqEgaTY1dhFIIQhPDXgexy88kMbQMREVVaAhOCEITQf99hDUQojGZ2tIsmIruWOYQgBCGcIZACJDFRSRGTLEpt8SKvIcudEIQgBJY7kKLFIlakyEEC11b8WosiQhCCENgfzWzhxa35shQ1WyDUhjlaOBGCEITA/ARSsKBLUytm0cLH7bAWBzghCEEItbjVylWrUUqWmpubamJNFiwhCEEIWRipGFHhWUtbdGCiy14raghBCEJgv+/QzMsmRknoWjBDQqDVEJrcZiEI4eEQaDkimRxpQVqWMWLWLPBqiUQIQhACCmSXEmV6Pi1TIAOkwG3HwVukEITwcAht6aFFyWaoLEtQK4jQklgd6oQgBCEchZHcSFuaqIARQSaCR4Ke+EYLQQhCOAojMTHS88jx6IB1E+hSQzf+dBCCEISABoylmDEtMKO4pmGNhC81kBWCEIQw/VE5IlrEmDkJavo6uikghnVYEoIQHg6BDi9kISEFKyq2DRItmUVhFYIQhIDDF1LebMVLGrDSokYrgbQCKipuCUEIQkBFKzLckKErnSuJIBp+YJFECEIQAv99hxbStmFpLWLQoYwWOcgbJQQhCIEZrU10yMGbGUqGriVgoSJbnSUhCEEIL1qISIPH6ebTcdfXrKURHAwJQQhCwCUNaqS0oagZoW1hoqYrDX+FIAQhbH8vkhYgqNHZBHI1cknhcw5fhCAEIeCCNy15LgFIGnRaMYsaw2SZEoIQhNCFcVlGboKb9HpSziIiiQcoIQhBCNFoJSeiAwsJRG+KXklMiTAKQQhCYBBIOXIJUZZlp4XA6dg3S5oQhCCEz0GgYcq6MNGbIdeBBzchCEEIM4Q2jJByx1qoasMSGeLQMigEIQhhXqDSDZFQlQofNVpIYEOCYiEIQQisn0APsJa0TgHKWtRoQxwNk4QgBCHk/6j2iQ8hCEEIQhCCEITw9vEH449pY8BFvX8AAAAASUVORK5CYII=" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFYUlEQVR42u2d267jRhAD/f8/rTwFSBCLLI6MBQKVX876otFMGejtJnl2P5eP6yMCIQhBCEIQghAihE94/P3+vy4Mr6fP/vO9b+t/+3n352/7vrvm7lxCEIIQ7iF8LRpfDpsgkQ3drfft9W97SV9CWu92LSEIQQi3ENrh2qbSWunwdxu9u54UQXIuIQhBCGcQ7m7SGhJ6aLJeAkSbLiEIQQi/L4wUGCmYd80V+RLafoQgBCE8h0AKFj1wElyI8EIKI/ncz6ZIIQjhZRCI0Pp//PlztVkIQngBBGxewgJKBx0iyixGzR9xpYUghBdAOBFJHg0tQIBp8O8gzeKvEIQghK+FMS26Fh8ixqSQBzV6iThTAQtBCEKIAxTZcDNJl8aH3HcRacjwV6dIIQjh5RCWRUmggkIkJu1pACStJQQhCGGHsA42VDwhw9ipoEIGPCEIQQgMAilYJ8GrNpARc5YYvSlQFsUZIQhBCLPQ2gA0aCfN0ZOQRirYx2qzEITwIgip+BGRNRVAEsqiAEizNoswQhCCELCoQpqmRTilIVAaDF8GuVs4QhCCECoEYrimItiCFUv4ihy+DXCx8AtBCEKozdIqmK5Bq0VcOXlOwx9CEIIQ8uxAitzT5oUUtkU4WcMj9W8HIQhBCOiXMcihmmCaIJPCRr80Gi4RghCEcNXCODUaJVDRAtl0vZPn7bNCEIIQPnOz1AzORWylTdcy1C2GEA54C0EIQrjoANI2shQ8ck0TcigcHPAWghCEUIsIETrSZkmT04yTJUi+DlJCEIIQrloYm3BSi00RTdqBnxiwCzAhCEEI+d9PIJsjwQ5i0NDCezJQUYNHCEIQAh+gSBFbzJbVkGmNHCnUpHESghCEsAmtNORJBptmkpDiTMSctv5svghBCC+DkITQZpSQAYiEQxd4RNTFoVEhCEEIcYAimyJNUBpyFsOkGa7rvtAUKQQhvBzCyQ1Ss0SDWMQgoUCX/QtBCELIEB4NIOWQi2Fyaq7QQMex+SIEIbwMAimOtIkhggsNexJzdQmRxQFKCEIQAg5ek2JFDFv6+TVUuhhGsVkSghCEcBFBkwiy6/BDhZA1pNHARFFFCEIQQmyGmhlKzRRSJIkIQ58n8Ti60kIQghAuWsxImGM1b2hRPn0PBb6EIAQhxODWGohKhgcpXGT4aoYtBVOVJSEIQQgXaYBIeLIdngqxxFQ9DX/hpIoQhPByCGRhenBqiC4i7mruLo2TEIQghAyBBjTpgILETrD51JClwayuIQQhCKEOUOSmaWESqiLFcRmmqKlcDVkhCEEI0y+Dtg21wAURX5aC3YaxOngJQQhCqBBagflFoCod6JcDVS26QhCCEGKzRAyNxQShhZYMbvRwTQSqA5QQhCCEixz4RERdDJ3WBNHgWCv2SG0WghBeDuHJINM2S0MgDQYNYZDGSwhCEELWGJsRu4S1ScFbRJG2/hLsjqKKEIQghGspSiTE2SCmokYbndZQkYIoBCEI4YP0hDYgpUaqiRtpo3SQI68lM/g/1wpBCEKI5ku6wVOBE20Krk1N4BbyEoIQhLAZsg0ODWkRY2UxZ2lBr2FUIQhBCLfNUio4J00LCXsszREZ3u7uf7s3IQhBCLUwpmK1NlYtiNGMWirE0oAJTq8JQQgvh7CIG80IJSCJ0UtE1dbI1XCIEIQghGi+0A2l0BQtTkuQcw1+zMEtIQhBCBMEMlyRgYZAOIFFwqJVaBWCEIRw0UVpE9KM0hPRJYVBFpCPCqMQhPBCCCQIdSKOtKK5Bi9IaIsMdUIQghDOhdYT4eJ0MGuhD7puC5sKQQhCYP+v9JseQhCCEIQgBCEI4evjL3JXJ8GkxjNoAAAAAElFTkSuQmCC" alt="QRCode">
     </li>
     
 
@@ -513,7 +513,7 @@
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

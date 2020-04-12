@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="利用Caddy快速搭建Aria2控制前端webui-aria2或者AriaNg | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/"><meta property="og:locale" content="en"><meta name="description" content="说明：我们很多喜欢使用Aria2来进行离线下载，而Web前端是必不可少的，之前差不多都是用的lnmp一键包来搭建前端，耗时挺长的，而了解Caddy后，发现利用Caddy来搭建Web前端是炒鸡快的，本人2分钟可以搞定。对于那些暂时找不到别人搭建好的前端而又急用的人来说，这个就可以派上用场了。这里说下webui-aria2和AriaNg两个前端搭建方法，具体安装哪个看个人喜好了。 Aria2服务端安装 - John Doe - 南猫"><meta property="article:published_time" content="2019-10-27T01:03:52.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.645Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.645Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="利用Caddy快速搭建Aria2控制前端webui-aria2或者AriaNg | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/"><meta property="og:locale" content="en"><meta name="description" content="说明：我们很多喜欢使用Aria2来进行离线下载，而Web前端是必不可少的，之前差不多都是用的lnmp一键包来搭建前端，耗时挺长的，而了解Caddy后，发现利用Caddy来搭建Web前端是炒鸡快的，本人2分钟可以搞定。对于那些暂时找不到别人搭建好的前端而又急用的人来说，这个就可以派上用场了。这里说下webui-aria2和AriaNg两个前端搭建方法，具体安装哪个看个人喜好了。 Aria2服务端安装 - John Doe - 南猫"><meta property="article:published_time" content="2019-10-27T01:03:52.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.645Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.645Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/">
+    <link rel="canonical" href="http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/",
+    "url": "http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/"
+        "@id": "http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/"
     },
     "headline": "利用Caddy快速搭建Aria2控制前端webui-aria2或者AriaNg | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2019-10-27T01:03:52.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=利用Caddy快速搭建Aria2控制前端webui-aria2或者AriaNg" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=利用Caddy快速搭建Aria2控制前端webui-aria2或者AriaNg" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=利用Caddy快速搭建Aria2控制前端webui-aria2或者AriaNg&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=利用Caddy快速搭建Aria2控制前端webui-aria2或者AriaNg&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=利用Caddy快速搭建Aria2控制前端webui-aria2或者AriaNg" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=利用Caddy快速搭建Aria2控制前端webui-aria2或者AriaNg" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEFklEQVR42u3awW7bUAxE0fz/T7ebLtLA4tx5dgBTvtkUTSJbR0BoPnK+/nzA15dIkSJFihT5JPJr+Prvgn////6z77/z6Nqf11y9x6PXfvT6P+8n3bdIkVuRD/9oHwCu0NPrTO8zoa++V923SJGLkVMxaIpAKlZT8SLX0fsWKfLOSFp4pjdMD6RBiRT56cirm2s+xKcPd/qgp+IkUuTdkNMHcnqxqWi0vzddlxp+kSLvgqRDpnf792XTOpEi3wgZlyaHH/DThzhp5KcG5OVbLZEi3wiZbpwMtdJhNxaIw2XTdI1IkZuRpJmmxWdq0Mk16RBO7lOkyDsg08CKLHCmD+rp52l41QQoYlhJpMgFyDR8osEGCqMLWdJEjMMvkSIXIgk0FaYUbEhYcpAm3x8HWSJFLkE2N9wEKKYiQa9JYal4YBcpcjHydPFCGgNazFIYoimWIkVuRTaHWrp4oaHdZx7A0VZLpMgFyHTYpY355YAXfK8ZOpMQo0iRd0M2IYSTJpyEJqaimA7gIkVuRzYBXhpyoE0+LShkQBZPISJFLkFeFZA00KLXtcH6FIJIQy+RIjcjSUEgTXQ7oGrDvi/baokUuQBJD7dNI56CEe2gKjXuIkXeCdk02mlwTAvJNFCeHiRZBokUuRlJG/OmwaYFowkxNcM1kSI3I6fhFA0WkWuaMD4N98amXqTIpUhSaEhhIM128yGfhs1Tsy9S5N2QzU2m4vPMgZgOp+NwWaTIhcj2D5uEKNqALxlyk5CUSJFbkaSAnC5cafiBDqObRl2kyK3IOAwqFqOnB+6TJhw9NJEiFyKbIRRpAJpBVbrhFEqKIQ2RIpcim8KTQhMpBEELWjqApwIlUuRW5BRUIIEmGkRqFzvpQaH3ESlyIZKGAFNTTBavaSGUCs10KEANukiRS5DT0rMZSJHDdYMnB4OxkRcpcimSLlzogrY9+JLgBR14x0GWSJFLkO1A+XSQRYdT9OA93otIkQuRKGAAwxJtKJgcfmloCoV6RYpcjIyD2yLgl5ZH5CBODvkxkSVS5BIkLSTpd1MIgn74N8HCMbwoUuRS5FXBII0BCRXRhr0dLk8FT6TIzchmWfrbC5vptZtGXaTIrUhy6J0eAAkspYc5FSF6/digixS5CEmaaPIGaUFKiw75fr3wESlyGZIGDkjIlhYyUsxOFsPjoVmkyGVICifNAGmo6Yf6dAi/ehgiRW5FksLwTKOcBlDtoZocrEWK3I6kh9h2sUOCUGQ4RQuPSJF3QpLg7jRIbkIRZKA1FTz6uiJF3hX5zMD3dOlKikt86CJFfggyhQlT40CXTeSgPQ6/RIpcjDxZ9oyhBDjcagNNJLAkUuR25FRY2qacBJfIgKwJF8eFj0iRi5B3/hIpUqRIkSIPv/4CSJqjn00fobIAAAAASUVORK5CYII=" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAENUlEQVR42u3bS3IjMQwEUd//0jNbh0asSnC8ENqpjR2S+vM6wiAIwF9/fsHrS6RIkSJFivxP5Fd4/XPQt/ffff72Qt++93r86zle3zv9Tu9bpMitSHpz6UKnB3I67oR4fQhHALlvkSIXI19PdPqZAsHkuHcBKL2XHsrx+yJFPhSZ8Om7LUicAkcKNPT+RIp8MpIEDQJvGwCauIsU+RuQp0SXBhUadNKDSJtrGsxEinwCMgWGT/75Y9U6kSI/CDlNmNtiPlnEJwv95LoiRW5GphOmhbcl2ekhpWSAJPntvCJFPgVJk+VpQen0+bSAPEn6RYrciiQHtqJvW6TbAp42BqQhfAyAIkUuRE4HDlLwIEXhVrD+qfOKFLkV2RLq04WnQaMFFNoIToEvFrJEilyCnA7WtkZMSvInjVh6T1ddLZEilyHpIjxJqluiQZq+qbBVMx6RIpcg2wLdFv0ESAVhUqCmRTXU1RIpchEyJbpp8SYFLJK0k80wGdyPgUekyGVI0pQhm9XJJpoMBdLAhoeVRIr8cCT5g24Xngw4tIBDhxjbPwWIFPkE5E8M1k4Sd/p5K6CNpj9EilyCvA0c7fiWMEwGnlKhGQ0QihS5DDlNhFsiQZq3pPhMgtVVw0ekyA9EkgIySbLJ4BEdqkCFY1CoFilyI5IM8940S9N36cKeil2kECZS5EZkGzogFyaNU5pMtGuSorZIkZuRKRAQFC1ApQQgPaT2WWxKiRS5EDkpLOPNKkj0WwGLDiPGexIpcimSJOg3A0N0MJg8JBLsUCFLpMiFyJZQk8Bzc76WDEwL3SJFbkSSoYNRUnwa5gNDwrebBLQLESlyCbIly7ToTBL2tJgTGGkojYvLIkV+GHI6iESCDt1UTx4QGWSq0x8iRS5BTofaScGpJf0kCLWB49T4FSlyO5IWkKdNVppY08DVhoZFinwSMv3xtySZbHpT8kB/v07QRYpchmwJ8yQo0ICVbpIMLOEmrEiRy5AtWaaJM2mQpoSeNHxaURxVBkSK/GDkpPk5TRZi8gwwk4HEOhghUuQyZN2AliS+DfzdBBbSaIoPXKTIpchJc7XdHG2wTpORyXCFSJGbkSRgtOGJ2wShFbomTdu3D1OkyKVIsiluwYU0dVqy3RAkuNVOs0iRS5AtQW+L+PQ40ti9CYC1qyVS5IcjW1GJLNS0cUoS87QxJgVlkSKfgCSF3UmBlzSOjgs42CS0BEakyKcgf6IYRROKVsCa3McxuIkUuRB5M4ybEoGGocOBtKAVk3+RIpciE6ZtqNsmmOAn57oajBApciGyJbxp8zspcKUNMAlik0ApUuRvQJJEnhSvTov5ZPPdmrgiRT4Z2RZoklRMGqm3DR+RIp+CbAMKbcEnDVSy0aXDTS05FylyM5I2Y8iQA0kMJs3c1JStBWmRIhcin/wSKVKkSJEiL19/ARYvAWxTzVFlAAAAAElFTkSuQmCC" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=利用Caddy快速搭建Aria2控制前端webui-aria2或者AriaNg&url=http://yoursite.com/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=利用Caddy快速搭建Aria2控制前端webui-aria2或者AriaNg&url=http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=利用Caddy快速搭建Aria2控制前端webui-aria2或者AriaNg&url=http://yoursite.com/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=利用Caddy快速搭建Aria2控制前端webui-aria2或者AriaNg&url=http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-baaria2-e6-8e-a7-e5-88-b6-e5-89-8d-e7-ab-afwebui-aria2-e6-88-96-e8-80-85ariang/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEFklEQVR42u3awW7bUAxE0fz/T7ebLtLA4tx5dgBTvtkUTSJbR0BoPnK+/nzA15dIkSJFihT5JPJr+Prvgn////6z77/z6Nqf11y9x6PXfvT6P+8n3bdIkVuRD/9oHwCu0NPrTO8zoa++V923SJGLkVMxaIpAKlZT8SLX0fsWKfLOSFp4pjdMD6RBiRT56cirm2s+xKcPd/qgp+IkUuTdkNMHcnqxqWi0vzddlxp+kSLvgqRDpnf792XTOpEi3wgZlyaHH/DThzhp5KcG5OVbLZEi3wiZbpwMtdJhNxaIw2XTdI1IkZuRpJmmxWdq0Mk16RBO7lOkyDsg08CKLHCmD+rp52l41QQoYlhJpMgFyDR8osEGCqMLWdJEjMMvkSIXIgk0FaYUbEhYcpAm3x8HWSJFLkE2N9wEKKYiQa9JYal4YBcpcjHydPFCGgNazFIYoimWIkVuRTaHWrp4oaHdZx7A0VZLpMgFyHTYpY355YAXfK8ZOpMQo0iRd0M2IYSTJpyEJqaimA7gIkVuRzYBXhpyoE0+LShkQBZPISJFLkFeFZA00KLXtcH6FIJIQy+RIjcjSUEgTXQ7oGrDvi/baokUuQBJD7dNI56CEe2gKjXuIkXeCdk02mlwTAvJNFCeHiRZBokUuRlJG/OmwaYFowkxNcM1kSI3I6fhFA0WkWuaMD4N98amXqTIpUhSaEhhIM128yGfhs1Tsy9S5N2QzU2m4vPMgZgOp+NwWaTIhcj2D5uEKNqALxlyk5CUSJFbkaSAnC5cafiBDqObRl2kyK3IOAwqFqOnB+6TJhw9NJEiFyKbIRRpAJpBVbrhFEqKIQ2RIpcim8KTQhMpBEELWjqApwIlUuRW5BRUIIEmGkRqFzvpQaH3ESlyIZKGAFNTTBavaSGUCs10KEANukiRS5DT0rMZSJHDdYMnB4OxkRcpcimSLlzogrY9+JLgBR14x0GWSJFLkO1A+XSQRYdT9OA93otIkQuRKGAAwxJtKJgcfmloCoV6RYpcjIyD2yLgl5ZH5CBODvkxkSVS5BIkLSTpd1MIgn74N8HCMbwoUuRS5FXBII0BCRXRhr0dLk8FT6TIzchmWfrbC5vptZtGXaTIrUhy6J0eAAkspYc5FSF6/digixS5CEmaaPIGaUFKiw75fr3wESlyGZIGDkjIlhYyUsxOFsPjoVmkyGVICifNAGmo6Yf6dAi/ehgiRW5FksLwTKOcBlDtoZocrEWK3I6kh9h2sUOCUGQ4RQuPSJF3QpLg7jRIbkIRZKA1FTz6uiJF3hX5zMD3dOlKikt86CJFfggyhQlT40CXTeSgPQ6/RIpcjDxZ9oyhBDjcagNNJLAkUuR25FRY2qacBJfIgKwJF8eFj0iRi5B3/hIpUqRIkSIPv/4CSJqjn00fobIAAAAASUVORK5CYII=" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAENUlEQVR42u3bS3IjMQwEUd//0jNbh0asSnC8ENqpjR2S+vM6wiAIwF9/fsHrS6RIkSJFivxP5Fd4/XPQt/ffff72Qt++93r86zle3zv9Tu9bpMitSHpz6UKnB3I67oR4fQhHALlvkSIXI19PdPqZAsHkuHcBKL2XHsrx+yJFPhSZ8Om7LUicAkcKNPT+RIp8MpIEDQJvGwCauIsU+RuQp0SXBhUadNKDSJtrGsxEinwCMgWGT/75Y9U6kSI/CDlNmNtiPlnEJwv95LoiRW5GphOmhbcl2ekhpWSAJPntvCJFPgVJk+VpQen0+bSAPEn6RYrciiQHtqJvW6TbAp42BqQhfAyAIkUuRE4HDlLwIEXhVrD+qfOKFLkV2RLq04WnQaMFFNoIToEvFrJEilyCnA7WtkZMSvInjVh6T1ddLZEilyHpIjxJqluiQZq+qbBVMx6RIpcg2wLdFv0ESAVhUqCmRTXU1RIpchEyJbpp8SYFLJK0k80wGdyPgUekyGVI0pQhm9XJJpoMBdLAhoeVRIr8cCT5g24Xngw4tIBDhxjbPwWIFPkE5E8M1k4Sd/p5K6CNpj9EilyCvA0c7fiWMEwGnlKhGQ0QihS5DDlNhFsiQZq3pPhMgtVVw0ekyA9EkgIySbLJ4BEdqkCFY1CoFilyI5IM8940S9N36cKeil2kECZS5EZkGzogFyaNU5pMtGuSorZIkZuRKRAQFC1ApQQgPaT2WWxKiRS5EDkpLOPNKkj0WwGLDiPGexIpcimSJOg3A0N0MJg8JBLsUCFLpMiFyJZQk8Bzc76WDEwL3SJFbkSSoYNRUnwa5gNDwrebBLQLESlyCbIly7ToTBL2tJgTGGkojYvLIkV+GHI6iESCDt1UTx4QGWSq0x8iRS5BTofaScGpJf0kCLWB49T4FSlyO5IWkKdNVppY08DVhoZFinwSMv3xtySZbHpT8kB/v07QRYpchmwJ8yQo0ICVbpIMLOEmrEiRy5AtWaaJM2mQpoSeNHxaURxVBkSK/GDkpPk5TRZi8gwwk4HEOhghUuQyZN2AliS+DfzdBBbSaIoPXKTIpchJc7XdHG2wTpORyXCFSJGbkSRgtOGJ2wShFbomTdu3D1OkyKVIsiluwYU0dVqy3RAkuNVOs0iRS5AtQW+L+PQ40ti9CYC1qyVS5IcjW1GJLNS0cUoS87QxJgVlkSKfgCSF3UmBlzSOjgs42CS0BEakyKcgf6IYRROKVsCa3McxuIkUuRB5M4ybEoGGocOBtKAVk3+RIpciE6ZtqNsmmOAn57oajBApciGyJbxp8zspcKUNMAlik0ApUuRvQJJEnhSvTov5ZPPdmrgiRT4Z2RZoklRMGqm3DR+RIp+CbAMKbcEnDVSy0aXDTS05FylyM5I2Y8iQA0kMJs3c1JStBWmRIhcin/wSKVKkSJEiL19/ARYvAWxTzVFlAAAAAElFTkSuQmCC" alt="QRCode">
     </li>
     
 
@@ -526,7 +526,7 @@ mv webui-aria2/* /var/caddywww</code></pre><hr>
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

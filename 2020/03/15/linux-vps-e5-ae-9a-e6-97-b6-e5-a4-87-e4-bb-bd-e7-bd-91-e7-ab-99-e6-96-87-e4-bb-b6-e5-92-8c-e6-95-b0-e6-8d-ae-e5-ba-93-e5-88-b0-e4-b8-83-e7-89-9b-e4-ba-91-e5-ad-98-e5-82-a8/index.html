@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="Linux vps定时备份网站文件和数据库到七牛云存储 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/"><meta property="og:locale" content="en"><meta name="description" content="之前有说过Linux VPS每日自动备份FTP及数据库通过邮箱发送方法，不过需要自建FTP空间才行，较本教程有点麻烦，如果你没有FTP空间，可以申请一个七牛云存储，免费10G空间备份一般的小站足够了。这里介绍一个备份网站文件和数据库到七牛的脚本，实测效果还不错，Linux vps下弄个定时任务就可以每天定时自动备份了。 本脚本Github项目地址：https:&#x2F;&#x2F;github.com&#x2F;ccbika - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/bfqiniuyun.png"><meta property="article:published_time" content="2020-03-15T14:36:21.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.658Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.658Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="Linux vps定时备份网站文件和数据库到七牛云存储 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/"><meta property="og:locale" content="en"><meta name="description" content="之前有说过Linux VPS每日自动备份FTP及数据库通过邮箱发送方法，不过需要自建FTP空间才行，较本教程有点麻烦，如果你没有FTP空间，可以申请一个七牛云存储，免费10G空间备份一般的小站足够了。这里介绍一个备份网站文件和数据库到七牛的脚本，实测效果还不错，Linux vps下弄个定时任务就可以每天定时自动备份了。 本脚本Github项目地址：https:&#x2F;&#x2F;github.com&#x2F;ccbika - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/bfqiniuyun.png"><meta property="article:published_time" content="2020-03-15T14:36:21.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.658Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.658Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/">
+    <link rel="canonical" href="http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/",
+    "url": "http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/"
+        "@id": "http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/"
     },
     "headline": "Linux vps定时备份网站文件和数据库到七牛云存储 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2020-03-15T14:36:21.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Linux vps定时备份网站文件和数据库到七牛云存储" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=Linux vps定时备份网站文件和数据库到七牛云存储" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Linux vps定时备份网站文件和数据库到七牛云存储&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Linux vps定时备份网站文件和数据库到七牛云存储&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=Linux vps定时备份网站文件和数据库到七牛云存储" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=Linux vps定时备份网站文件和数据库到七牛云存储" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEoklEQVR42u3bMXIbQQxEUd7/0nYqq5bo30MnHHwmcqnI5b4NxkADev1Z+HqJFi1atGjRX4Z+Da9/PvDjd0//fnr/z59P13r32ccb/nW9358jDtGit6CnL0EHRHhQ72C/H97TtegDJQ7Rojehn76MfOl0wE0PaHpg04H09pAKDtGiRc+FyFSg0EJiuofpYT8eUqJFi8bodIil5iSB2kJEtGjRGT017TRAIIcbeXgkmEiH3EddlmjRX45OBf63/Pxvaaho0V+MbkK/pvEg4V56T2pO6gBTtOgFaNrAp0I/he/0+mQAcHp90aI3oKdDgwzqmuB+OsTIgGAKK9D9iRa9DJ3+8/+0OUkHYlOojAFgc5CJFn0ZmiDTl9LALjUdNDQkhdXjdUWLXoBultjIQzoJ8tMSHB3qpwVA0aK3oEmzMQWF5FCaCpBUlEyLeVMhExsO0aIvRaPhF1isI4s47RCfLO3QQb1o0VvQtCg4KVqmEOKkgSCLO2+LINGiF6DTcup0cyksIM1JM8BrgkW0PCda9IXoBtosqqYbn35PD9W0aDOe3qJFX4qein86KE9NBAkqUrFBvncKM0SL3oJO4Tl9GGQ4R5bgTh8qWQQQLXoDui1AmoL/02VZcg8R+gp/gSda9GVo0gA0C25Nc0+bkjakFC16M/qTYR0ZFDRFBl2IJQO8uDEoWvTFaHpQkC+mAUAbVqSAYCpyRIvehp6Gb21wR39HmgeKxcWOaNEL0ORGyWHWhoE0qGgblLFpES16CfpVvtKBRpZYScFz+t5qgCda9GXo1LynMIEcgGQ5Jy3hnAwOUcMhWvTF6CkIIMEgWaJN15sKFFqwvH2/aNHL0CkcPF2Qna5L0OQaJBwULXoLui38SaEwNRrNoIAGiHXDIVr0peimuGiH92l5pgkcUghZDeVFi74YnQoLUty3g3n6vXRRjw76RYvegKYBHynqSWhIQsep6aAPEk84RIu+DJ2+OB0Sp8H+u0KDLvCQBxpDBNGiL0SnRqMJ2ttgnw4E6MJPXBwSLXoJmoT0zaHThPLTkk4zyCOfFS16AzodFicFTFtwtAPEGAC+4Ga/aNGXo+kAjjYETVFCwr0p7EehiGjRC9BtEUAPHhr80/CRDP5ToSJa9AY0Ce3JUs7JgG5qHsjB1AwfRIvegj45INrQoSksGlRd3IgWvQTdhADN0ut00+0SHh3eH20iiBZ9EboJ3tJCTipg2gWapshJy7uiRW9BNwF9OsSmgT5t+BPko2UB0aIXoMkAfRrk0QUYMhhMDy01NVMTIlr0NjQZdJPGgRxCJ4M6hEqfES16CZo0/6nIT4deWtqhAUYzvMddlmjRF6Fp4d4swJ0GhzQknB7GuNAjWvRidArmyPua5TlyINLgEE8tRYu+EE0aiSYcoAfdyaJrCjKqYFC06IvR7QHSLLiThVcSCDZLN2/vW7ToRWiy/HbaXNCbnRoPeriOgaRo0aIRkgQQKZwfA73iUBwLG9GiReMCP+HTZ04al/SQRIvejG4Ct2b5nA7e6NCeNj+iRW9GT8EgCQFJaEAeLA0tyIP9KA0VLfqL0ZteokWLFi1a9Je8/gKSPFTPa/iWPQAAAABJRU5ErkJggg==" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAElklEQVR42u2aQXIbQQwD/f9PO1eX4iEaI1+0bF2cSKvdabqCkAC/vhe+voQWWmihhRb6w6C/htfr5z+/8/Oz3/58und6Zrr29dyUQ2ihN0H/+o/+AHB64Ot3fysCKdp039f30rX/XSO00IugTwd9PcjpYeTnJHqpOCfBohxCCy30DEqKQQQrFXtsNoQWWui3hIw2/wnudJ+TeLWCKrTQQs+NOhGjyUggQ0ljSiShfXvKElroD4dOxtyn/PxTN1RooT8UugrAQqPSCk8y78m9TgL2Z6ml0EJ/GDQJwagpkAZ+Ygg0g8lUBBzgCS30w6DTkEFDutNnTdMzmX5pMJl+SUILvRG6CcdJ0DfdjxS8DQyTESG00Fug06GIELUBfjTlYWOU4JExKLTQD4Nug3Ky7EKWVilcs7gTg3uhhV4AnRZsTgKVltlSI5GCfBIEpmHjOHAILfTDoZuFmjQApEaBXPfOgt44uAgt9ALoSajSIQlkYzJSM6BdphNa6K3Qk0nQhnfE7CMG/a1gVlOW0EI/CJqYbOmz2wAvCR0tNhY3oYVeAE0CuXcOPBUwfYcOPFeLNkIL/XBo8hC63NIKIVmmS+dNy3ZCC70FugnPbpoQOlykxZnmPEfBFFroBdD0P34Uel+E7qkozd+jySC00AuhmwGENP+0YUlLcJNw0vsJLfQG6GZBjQbntOFoTP90JmQSCi30MugUiJPlm6ZhuBHMaWCpEg6hhX4odGuYU9OwKRJZrmkCvihkQgv9cOhk9qVrmwWcmwGkCR3GUEFooRdAJ9G6WWxLjcTN/dK15JcmtNBboKlYtGbfO81MGwJWZr/QQj8YujHxyAESLBUgstDTLOIJLfQWaDIkpIaiCffScJDEiZ45BnhCC/1gaNLM0yaFHPokZjQQoEGB0EJvhW4HAnJAWhhq2lPzfyyg0EIvgCY3uW0qSDFvPk/ieyyg0EIvgU7GQTLdqaGX3iNhfCpWtYkgtNAPhJ7Me/IeMQpoYzK9iLDFIEJooRdA02aCDCeTMZDEpoWiJgVqToQW+kHQBK4RGWrW0SYnDTnEzBBa6E3Q1CyfmhLS0EzDBiliGl5QsyW00Iug6TLcTaBOQUmDQ4V2DPCEFvrB0GmJrQkB6EJOGjRuzERiSAgt9AboaggHwVm6Pr1HFmKJIYjUW2ihHwg9hWhtIB6bA2jMY2GCwii00Jugk5CR0I4OKVND1JoJtFkSWuit0LS5P5kFbVCQFm3IkhwxIYQWeht009SnwzdBPhkuUnGpgAkt9DZoGrIlk78ZKCgcWeghYYXQQm+CbgSLHoocjpgI7zQ14/Kc0EI/FJoae0TUGtM+mfOkQAhUaKGFjuZg00wQsyEZCE34Pz5TaKEXQBOBScZCc9hG/JpFO7KsJ7TQW6CJgN00D9ScnwxDEsjTpkpooTdB3wwAzfIcETtqPiaT8VgooYUWGjcPaeGNCGZa5sODxelZQgstNHpAAzo1IWTBhxgQx3sJLfQi6EZ4moYiBW9pyEghHm16hBZ6E/RNsEYDNNqQtE0POV+1MSi00A+B3vQSWmihhRZa6A95/QPcabgzCK98OgAAAABJRU5ErkJggg==" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux vps定时备份网站文件和数据库到七牛云存储&url=http://yoursite.com/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux vps定时备份网站文件和数据库到七牛云存储&url=http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=Linux vps定时备份网站文件和数据库到七牛云存储&url=http://yoursite.com/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=Linux vps定时备份网站文件和数据库到七牛云存储&url=http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEoklEQVR42u3bMXIbQQxEUd7/0nYqq5bo30MnHHwmcqnI5b4NxkADev1Z+HqJFi1atGjRX4Z+Da9/PvDjd0//fnr/z59P13r32ccb/nW9358jDtGit6CnL0EHRHhQ72C/H97TtegDJQ7Rojehn76MfOl0wE0PaHpg04H09pAKDtGiRc+FyFSg0EJiuofpYT8eUqJFi8bodIil5iSB2kJEtGjRGT017TRAIIcbeXgkmEiH3EddlmjRX45OBf63/Pxvaaho0V+MbkK/pvEg4V56T2pO6gBTtOgFaNrAp0I/he/0+mQAcHp90aI3oKdDgwzqmuB+OsTIgGAKK9D9iRa9DJ3+8/+0OUkHYlOojAFgc5CJFn0ZmiDTl9LALjUdNDQkhdXjdUWLXoBultjIQzoJ8tMSHB3qpwVA0aK3oEmzMQWF5FCaCpBUlEyLeVMhExsO0aIvRaPhF1isI4s47RCfLO3QQb1o0VvQtCg4KVqmEOKkgSCLO2+LINGiF6DTcup0cyksIM1JM8BrgkW0PCda9IXoBtosqqYbn35PD9W0aDOe3qJFX4qein86KE9NBAkqUrFBvncKM0SL3oJO4Tl9GGQ4R5bgTh8qWQQQLXoDui1AmoL/02VZcg8R+gp/gSda9GVo0gA0C25Nc0+bkjakFC16M/qTYR0ZFDRFBl2IJQO8uDEoWvTFaHpQkC+mAUAbVqSAYCpyRIvehp6Gb21wR39HmgeKxcWOaNEL0ORGyWHWhoE0qGgblLFpES16CfpVvtKBRpZYScFz+t5qgCda9GXo1LynMIEcgGQ5Jy3hnAwOUcMhWvTF6CkIIMEgWaJN15sKFFqwvH2/aNHL0CkcPF2Qna5L0OQaJBwULXoLui38SaEwNRrNoIAGiHXDIVr0peimuGiH92l5pgkcUghZDeVFi74YnQoLUty3g3n6vXRRjw76RYvegKYBHynqSWhIQsep6aAPEk84RIu+DJ2+OB0Sp8H+u0KDLvCQBxpDBNGiL0SnRqMJ2ttgnw4E6MJPXBwSLXoJmoT0zaHThPLTkk4zyCOfFS16AzodFicFTFtwtAPEGAC+4Ga/aNGXo+kAjjYETVFCwr0p7EehiGjRC9BtEUAPHhr80/CRDP5ToSJa9AY0Ce3JUs7JgG5qHsjB1AwfRIvegj45INrQoSksGlRd3IgWvQTdhADN0ut00+0SHh3eH20iiBZ9EboJ3tJCTipg2gWapshJy7uiRW9BNwF9OsSmgT5t+BPko2UB0aIXoMkAfRrk0QUYMhhMDy01NVMTIlr0NjQZdJPGgRxCJ4M6hEqfES16CZo0/6nIT4deWtqhAUYzvMddlmjRF6Fp4d4swJ0GhzQknB7GuNAjWvRidArmyPua5TlyINLgEE8tRYu+EE0aiSYcoAfdyaJrCjKqYFC06IvR7QHSLLiThVcSCDZLN2/vW7ToRWiy/HbaXNCbnRoPeriOgaRo0aIRkgQQKZwfA73iUBwLG9GiReMCP+HTZ04al/SQRIvejG4Ct2b5nA7e6NCeNj+iRW9GT8EgCQFJaEAeLA0tyIP9KA0VLfqL0ZteokWLFi1a9Je8/gKSPFTPa/iWPQAAAABJRU5ErkJggg==" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAElklEQVR42u2aQXIbQQwD/f9PO1eX4iEaI1+0bF2cSKvdabqCkAC/vhe+voQWWmihhRb6w6C/htfr5z+/8/Oz3/58und6Zrr29dyUQ2ihN0H/+o/+AHB64Ot3fysCKdp039f30rX/XSO00IugTwd9PcjpYeTnJHqpOCfBohxCCy30DEqKQQQrFXtsNoQWWui3hIw2/wnudJ+TeLWCKrTQQs+NOhGjyUggQ0ljSiShfXvKElroD4dOxtyn/PxTN1RooT8UugrAQqPSCk8y78m9TgL2Z6ml0EJ/GDQJwagpkAZ+Ygg0g8lUBBzgCS30w6DTkEFDutNnTdMzmX5pMJl+SUILvRG6CcdJ0DfdjxS8DQyTESG00Fug06GIELUBfjTlYWOU4JExKLTQD4Nug3Ky7EKWVilcs7gTg3uhhV4AnRZsTgKVltlSI5GCfBIEpmHjOHAILfTDoZuFmjQApEaBXPfOgt44uAgt9ALoSajSIQlkYzJSM6BdphNa6K3Qk0nQhnfE7CMG/a1gVlOW0EI/CJqYbOmz2wAvCR0tNhY3oYVeAE0CuXcOPBUwfYcOPFeLNkIL/XBo8hC63NIKIVmmS+dNy3ZCC70FugnPbpoQOlykxZnmPEfBFFroBdD0P34Uel+E7qkozd+jySC00AuhmwGENP+0YUlLcJNw0vsJLfQG6GZBjQbntOFoTP90JmQSCi30MugUiJPlm6ZhuBHMaWCpEg6hhX4odGuYU9OwKRJZrmkCvihkQgv9cOhk9qVrmwWcmwGkCR3GUEFooRdAJ9G6WWxLjcTN/dK15JcmtNBboKlYtGbfO81MGwJWZr/QQj8YujHxyAESLBUgstDTLOIJLfQWaDIkpIaiCffScJDEiZ45BnhCC/1gaNLM0yaFHPokZjQQoEGB0EJvhW4HAnJAWhhq2lPzfyyg0EIvgCY3uW0qSDFvPk/ieyyg0EIvgU7GQTLdqaGX3iNhfCpWtYkgtNAPhJ7Me/IeMQpoYzK9iLDFIEJooRdA02aCDCeTMZDEpoWiJgVqToQW+kHQBK4RGWrW0SYnDTnEzBBa6E3Q1CyfmhLS0EzDBiliGl5QsyW00Iug6TLcTaBOQUmDQ4V2DPCEFvrB0GmJrQkB6EJOGjRuzERiSAgt9AboaggHwVm6Pr1HFmKJIYjUW2ihHwg9hWhtIB6bA2jMY2GCwii00Jugk5CR0I4OKVND1JoJtFkSWuit0LS5P5kFbVCQFm3IkhwxIYQWeht009SnwzdBPhkuUnGpgAkt9DZoGrIlk78ZKCgcWeghYYXQQm+CbgSLHoocjpgI7zQ14/Kc0EI/FJoae0TUGtM+mfOkQAhUaKGFjuZg00wQsyEZCE34Pz5TaKEXQBOBScZCc9hG/JpFO7KsJ7TQW6CJgN00D9ScnwxDEsjTpkpooTdB3wwAzfIcETtqPiaT8VgooYUWGjcPaeGNCGZa5sODxelZQgstNHpAAzo1IWTBhxgQx3sJLfQi6EZ4moYiBW9pyEghHm16hBZ6E/RNsEYDNNqQtE0POV+1MSi00A+B3vQSWmihhRZa6A95/QPcabgzCK98OgAAAABJRU5ErkJggg==" alt="QRCode">
     </li>
     
 
@@ -554,7 +554,7 @@ QINIU_SECRET_KEY=&quot;SECRET_KEY&quot;
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="iptables封禁BT&#x2F;PT&#x2F;SPAM(垃圾邮件)和自定义端口&#x2F;关键词一键脚本 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/"><meta property="og:locale" content="en"><meta name="description" content="说明：通常我们买的VPS如果乱发垃圾邮件(SPAM)和下载BT、PT等都会导致VPS被IDC封杀。按照博主的经验来看发垃圾邮件被封杀几率是非常大的，不过对于BT、PT来说，有的商家虽然有规定不许下载，但都是睁一只眼闭一只眼，只要不被投诉就没事。但还是要注意点，特别是喜欢分享55R等梯子的人，最好都给封上，以防万一。 安装注意：本脚本邮件端口是完全可以封住的，但是BT和PT就不是100%的了，封不干 - John Doe - 南猫"><meta property="article:published_time" content="2020-01-28T01:52:36.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.655Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.655Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="iptables封禁BT&#x2F;PT&#x2F;SPAM(垃圾邮件)和自定义端口&#x2F;关键词一键脚本 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/"><meta property="og:locale" content="en"><meta name="description" content="说明：通常我们买的VPS如果乱发垃圾邮件(SPAM)和下载BT、PT等都会导致VPS被IDC封杀。按照博主的经验来看发垃圾邮件被封杀几率是非常大的，不过对于BT、PT来说，有的商家虽然有规定不许下载，但都是睁一只眼闭一只眼，只要不被投诉就没事。但还是要注意点，特别是喜欢分享55R等梯子的人，最好都给封上，以防万一。 安装注意：本脚本邮件端口是完全可以封住的，但是BT和PT就不是100%的了，封不干 - John Doe - 南猫"><meta property="article:published_time" content="2020-01-28T01:52:36.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.655Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.655Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/">
+    <link rel="canonical" href="http://hexo.southcat.net/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/",
+    "url": "http://hexo.southcat.net/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/"
+        "@id": "http://hexo.southcat.net/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/"
     },
     "headline": "iptables封禁BT/PT/SPAM(垃圾邮件)和自定义端口/关键词一键脚本 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2020-01-28T01:52:36.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=iptables封禁BT/PT/SPAM(垃圾邮件)和自定义端口/关键词一键脚本" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=iptables封禁BT/PT/SPAM(垃圾邮件)和自定义端口/关键词一键脚本" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=iptables封禁BT/PT/SPAM(垃圾邮件)和自定义端口/关键词一键脚本&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=iptables封禁BT/PT/SPAM(垃圾邮件)和自定义端口/关键词一键脚本&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=iptables封禁BT/PT/SPAM(垃圾邮件)和自定义端口/关键词一键脚本" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=iptables封禁BT/PT/SPAM(垃圾邮件)和自定义端口/关键词一键脚本" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFb0lEQVR42u2dQXZTQRAD//0vbTYsgMy0Su2wAJc3JI5jzy+/p3RLInle3l6PCIQgBCEIQQhCGCE8w+23b/j5+a/3//nx6TFfXviXx5xeY3P/7QzpuoQgBCGcIUyHJU9+O2z6+nT/DfrptU+vh65LCEIQwhXC9MSnJ70d+vbxdGACPQlrAnOEKgQhCGEFIQnhDc5JnG73JVEl3zvBFoIQhPB3IaShhywyzRA2iXP6HiEIQQg9BGp+TI+flp53hTQaJEBEhSAEITAISbD+1X+/zW0WghA+CEIMLYPgNcJHBSwNU8TE+dZUWghC+CAIZIGhIcntwI0Ip0B4szhdr0cIQhBCHJboAkRLHTScuQlr+ho591WAhSAEIYwQNuJHwtsJeCp3JOGk5z1+LgQhCGEcltoFarvwvFPkIGYtASoEIQiBQUjFyE1YSoqitKSZhigCSghCEEKGEMPLsCzRAlUyRjdL0vS8owksBCEIYYTQFCmJGdsUs4jZSsQ0lUdjU0UIQhDCk8IVAiUZtNMgRQc08iYls0UIQhACN1rpEENMjGTWUJM1BSnN8iQEIQihh5BEJxkq1PAkQNMSNYU+JOgVghCE8BVCswClwIMuSs2wkwazZMai8EUIQhBC9R+5NwNUU7hKbwgNjmkZRAhCEEJf0qBG52Ry0ECWXHhrpL6VSgtBCB8MgZis7TDVFsaTwNJiSC28QhCCEOKwRI0KInRkGEpim56bGrvH6xGCEIRwhEANjGbJocZJOjgqYJXBkBCEIATmJ0zlqUaImvLV9sKb8AYFskIQghBQ0NkGrNOQMhkeZCBrDBo0QAlBCEKIRusEgMDY3JI5G0OUAOhq8AhBCEK4CmMaemiwQgLZFNzQwYmWztECJQQhCOHVCFu6ODIwTeHNJGZNKDydXQhCEAKD0IhYCl3TUNUuT8RgJaWP2HIXghCE8EqLUhO2UsO1gdWaPU3BQwhCEEJX0khi2QxJTUmcDle0ND6eTwhCEMIojHTBSctTWoqo0ZqWKVo2xUarEIQghGiCoLLDk39ZNF3CUsCaXoOExEIQghB4SYMGrsRsbYSQDmlNuBvNYSEIQQhjIEvKEWSoomYIMXNJEJMWtyqVFoIQPhwCCTwnc5QaLI3hQk2VxmQ9vslCEIIQxkA2hS3JcEmDTWuGbi6suV8IQhAC/x2tpKhJTNT21ohkKnLFYEkIQhAChpAGpgkOMVDeKX82JdPxuYUgBCEcFyhS4kzFzBTA0HJGMxSlgCeGP0IQghBQSSMNR8RYpQMXNWaasJUuaUIQghAyhGRKJLOjWXzSQpTMmiSqMUwSghCEcB2WqEFJQ9bNYyeDpimDTaIrBCEIoQtfNsWJjUmbSpiTMKcBLRVGhSAEIfQQ4vLx8D+S2xik2yIYWeBwSUMIQhACDmKoOG6XsWnwIaUyKrxCEIIQ+JyQgpTGpCVGChFeUgCjoZEQhCAE9kcuaMCxKUk1RYwkjLS8EYcwIQhBCGhYao0MEuQ0YUxztmQCj2+EEIQghKMwNkIziVpjxKTBh5TD0tficicEIQjhWtLYmJ/NMJOCXxLMbILgMQwSghCEMELAQebT/RJpEsTQUtZYxALiHoVRCEL4cAgkjG0MDAIgLWi0VIZC10EchSAEIeQ5IQ0Y6QWJEUMXHhr6NqKKfjoIQQgfDmG6QBLCEEM1CRkR3LaEEZcxIQhBCFcIKcggRSoinMTEpQtUEs5qixSCEISAIdCLJ4sTKYcS03YT0AhBCEL4PgjNoWkwOw1nBEYb2AhBCELgEKaDbouUJEQl5klalIhgCkEIQuAQyMKRlisibrTcRUIWatqMg5UQhCCEOpD9n29CEIIQhCAEIQjhePsBpmWmUJXJZk8AAAAASUVORK5CYII=" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFVUlEQVR42u3dS5LbQAwEUd7/0uOtFwQqq8lZ2Ext/NNI5FME3CjA4+vHx88lgQgiiCCCCCKsCNfyiC/y1/Puvnb78e71t/e+e927n0/Xc/faIoggwj3CdIPTxU03WxWl4eLuoNLNJ6jxvkQQQYQRgVxMurj0NdMNbojT9aWiSj4wEUQQ4RnCVKDuClYqXBSLHK7IByKCCCK8hzA1SKnopcNR+7XpIDd9GCKIIEKPkA4pJ8WHhDXTTZPD04T0ehcpgggfQ0jF6l/98bW0WQQRPoRAAtEUYqbAZDsMkdfdDkpkcPN4Ki2CCB9C2ArJ9sZkEHLaRKXXTKjpfkQQQYQr7izR4SkJOUnw0QxituZrW95IsCKIIMJ8WEpLWOl5qYiS59IFspPivYYqIoggwkWKCx24puYpBbNNiFovYmyvJYIIIqyHpW1ISsMSumDRhCwNZvo9EUQQIc8dtiaGDmNI2EEXw5owpynQa9osgggiVAEKDUrbpS8S2pAiTpYyYhcpgggirI1OKk7k4psgNB2W6JIWKZ4iiCACC1rJwJQcUtIwpQlstt9vAmIRRBAhI8QBBQBoQ1cyhE0LYbHokUGvCCKIsDZQW8CRFj3T4aUJblORpGFqRBNBBBEQQlpyIIsWJERNQUhqlkiQsn2YIoggwjx8SQPQ7eaeBLFkWatZ4jruIkUQQQRUpFKwQf48FeGTZiqFNmiYI4IIIoyhSh1IXPwfZtJC+7SBSsPYGLSKIIIIeFmCIDUN128FL80HKoIIIjxb8H7jkENQ06HrJKyJhyURRBABL02k59IDFVnoSMFKM5A9DlpFEOHDCCQ8pWApEG0PPU8bqHjNIoggwnpYag4iJ8NQMsw5Ga6cDIpEEEGEbmeJFJ9tQZM+f73Ii32TiOZRbaqIIMKHEdrGhS5lpGUw2oiRQkx+LYIIIuQ8Id0oOfyQQe0WjKSiSBY86AclgggiXDhUoYuUT4okgWzC1KawiyCCCByBNkUpSE2hy1tDFlI0UQMlgggiPP5GMHR4mxY9TwY6JLRBzZUIIoiAFrdSk0IOOnQIQhuqdnizfZgiiCDCjECXL7cmpQ1c6CGHLmSRwQxKm0UQQYQfHEpe7Bta0yWO1GCRpq0p7LdIIoggwlEDRZYtTxqoJtRNC1sJCw1kRRBBBDwkpW+WBic0CGnfgwyScagigggioIMNaYZImLIFJvTQlgpkCnVFEEEE/h/p0tCCHLbIgsVvNFDogxRBBBFiqJKGHGmYShcs3ghN6YFubOBEEEGEtTCeNE9NEEIGsqSI0oFvPZAVQQQRcAjSLHhvN5wuLAWvTTGNzZ4IIohQD2SbQkgGIGnhgxRN2nBFHBFEECGGKnQZg6BtmC0gLaQpXBFBBBF2hO0w0gYZbbPVhiTkkJaGSnhxSwQRPopAGhC6mNWArGEHeJAwNy1xiSCCCPfnhDTooE1UejRLH3RxkwQ2aMFbBBFEqArYSeBClsWbhat0AGpfWwQRRGChyhaOpDdrhqbbAKgJV0+GRiKIIMIeqsSFBtDIkGHtySI3HaaQw5oIIojAEU6WpZph7EkQQ5fDaBgjgggi7AhtMSGDDQK2YbdD1uY5awMlgggi4GWtdmmLPDcVNwreBCvobwcRRPg4AhmUpGYmNUt0oWpr4NrrFUEEEc4R6AIECUO2YkYLcGrwThuouKQhgggi4G/aRJqoNIidCilpxMjCFgmHRBBBhGcIdGBKD1YEgw526KKZCCKI0CFsN3R6s6SxIlBpeJwKKS6MIoggQvUPPMdwAjZbdDGEHoroEHi8DhFEEKEeyP7PDxFEEEEEEUQQ4fbxB477xyHPJG4WAAAAAElFTkSuQmCC" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=iptables封禁BT/PT/SPAM(垃圾邮件)和自定义端口/关键词一键脚本&url=http://yoursite.com/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=iptables封禁BT/PT/SPAM(垃圾邮件)和自定义端口/关键词一键脚本&url=http://hexo.southcat.net/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=iptables封禁BT/PT/SPAM(垃圾邮件)和自定义端口/关键词一键脚本&url=http://yoursite.com/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=iptables封禁BT/PT/SPAM(垃圾邮件)和自定义端口/关键词一键脚本&url=http://hexo.southcat.net/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/01/28/iptables-e5-b0-81-e7-a6-81bt-pt-spam-e5-9e-83-e5-9c-be-e9-82-ae-e4-bb-b6-e5-92-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e7-ab-af-e5-8f-a3-e5-85-b3-e9-94-ae-e8-af-8d-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFb0lEQVR42u2dQXZTQRAD//0vbTYsgMy0Su2wAJc3JI5jzy+/p3RLInle3l6PCIQgBCEIQQhCGCE8w+23b/j5+a/3//nx6TFfXviXx5xeY3P/7QzpuoQgBCGcIUyHJU9+O2z6+nT/DfrptU+vh65LCEIQwhXC9MSnJ70d+vbxdGACPQlrAnOEKgQhCGEFIQnhDc5JnG73JVEl3zvBFoIQhPB3IaShhywyzRA2iXP6HiEIQQg9BGp+TI+flp53hTQaJEBEhSAEITAISbD+1X+/zW0WghA+CEIMLYPgNcJHBSwNU8TE+dZUWghC+CAIZIGhIcntwI0Ip0B4szhdr0cIQhBCHJboAkRLHTScuQlr+ho591WAhSAEIYwQNuJHwtsJeCp3JOGk5z1+LgQhCGEcltoFarvwvFPkIGYtASoEIQiBQUjFyE1YSoqitKSZhigCSghCEEKGEMPLsCzRAlUyRjdL0vS8owksBCEIYYTQFCmJGdsUs4jZSsQ0lUdjU0UIQhDCk8IVAiUZtNMgRQc08iYls0UIQhACN1rpEENMjGTWUJM1BSnN8iQEIQihh5BEJxkq1PAkQNMSNYU+JOgVghCE8BVCswClwIMuSs2wkwazZMai8EUIQhBC9R+5NwNUU7hKbwgNjmkZRAhCEEJf0qBG52Ry0ECWXHhrpL6VSgtBCB8MgZis7TDVFsaTwNJiSC28QhCCEOKwRI0KInRkGEpim56bGrvH6xGCEIRwhEANjGbJocZJOjgqYJXBkBCEIATmJ0zlqUaImvLV9sKb8AYFskIQghBQ0NkGrNOQMhkeZCBrDBo0QAlBCEKIRusEgMDY3JI5G0OUAOhq8AhBCEK4CmMaemiwQgLZFNzQwYmWztECJQQhCOHVCFu6ODIwTeHNJGZNKDydXQhCEAKD0IhYCl3TUNUuT8RgJaWP2HIXghCE8EqLUhO2UsO1gdWaPU3BQwhCEEJX0khi2QxJTUmcDle0ND6eTwhCEMIojHTBSctTWoqo0ZqWKVo2xUarEIQghGiCoLLDk39ZNF3CUsCaXoOExEIQghB4SYMGrsRsbYSQDmlNuBvNYSEIQQhjIEvKEWSoomYIMXNJEJMWtyqVFoIQPhwCCTwnc5QaLI3hQk2VxmQ9vslCEIIQxkA2hS3JcEmDTWuGbi6suV8IQhAC/x2tpKhJTNT21ohkKnLFYEkIQhAChpAGpgkOMVDeKX82JdPxuYUgBCEcFyhS4kzFzBTA0HJGMxSlgCeGP0IQghBQSSMNR8RYpQMXNWaasJUuaUIQghAyhGRKJLOjWXzSQpTMmiSqMUwSghCEcB2WqEFJQ9bNYyeDpimDTaIrBCEIoQtfNsWJjUmbSpiTMKcBLRVGhSAEIfQQ4vLx8D+S2xik2yIYWeBwSUMIQhACDmKoOG6XsWnwIaUyKrxCEIIQ+JyQgpTGpCVGChFeUgCjoZEQhCAE9kcuaMCxKUk1RYwkjLS8EYcwIQhBCGhYao0MEuQ0YUxztmQCj2+EEIQghKMwNkIziVpjxKTBh5TD0tficicEIQjhWtLYmJ/NMJOCXxLMbILgMQwSghCEMELAQebT/RJpEsTQUtZYxALiHoVRCEL4cAgkjG0MDAIgLWi0VIZC10EchSAEIeQ5IQ0Y6QWJEUMXHhr6NqKKfjoIQQgfDmG6QBLCEEM1CRkR3LaEEZcxIQhBCFcIKcggRSoinMTEpQtUEs5qixSCEISAIdCLJ4sTKYcS03YT0AhBCEL4PgjNoWkwOw1nBEYb2AhBCELgEKaDbouUJEQl5klalIhgCkEIQuAQyMKRlisibrTcRUIWatqMg5UQhCCEOpD9n29CEIIQhCAEIQjhePsBpmWmUJXJZk8AAAAASUVORK5CYII=" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFVUlEQVR42u3dS5LbQAwEUd7/0uOtFwQqq8lZ2Ext/NNI5FME3CjA4+vHx88lgQgiiCCCCCKsCNfyiC/y1/Puvnb78e71t/e+e927n0/Xc/faIoggwj3CdIPTxU03WxWl4eLuoNLNJ6jxvkQQQYQRgVxMurj0NdMNbojT9aWiSj4wEUQQ4RnCVKDuClYqXBSLHK7IByKCCCK8hzA1SKnopcNR+7XpIDd9GCKIIEKPkA4pJ8WHhDXTTZPD04T0ehcpgggfQ0jF6l/98bW0WQQRPoRAAtEUYqbAZDsMkdfdDkpkcPN4Ki2CCB9C2ArJ9sZkEHLaRKXXTKjpfkQQQYQr7izR4SkJOUnw0QxituZrW95IsCKIIMJ8WEpLWOl5qYiS59IFspPivYYqIoggwkWKCx24puYpBbNNiFovYmyvJYIIIqyHpW1ISsMSumDRhCwNZvo9EUQQIc8dtiaGDmNI2EEXw5owpynQa9osgggiVAEKDUrbpS8S2pAiTpYyYhcpgggirI1OKk7k4psgNB2W6JIWKZ4iiCACC1rJwJQcUtIwpQlstt9vAmIRRBAhI8QBBQBoQ1cyhE0LYbHokUGvCCKIsDZQW8CRFj3T4aUJblORpGFqRBNBBBEQQlpyIIsWJERNQUhqlkiQsn2YIoggwjx8SQPQ7eaeBLFkWatZ4jruIkUQQQRUpFKwQf48FeGTZiqFNmiYI4IIIoyhSh1IXPwfZtJC+7SBSsPYGLSKIIIIeFmCIDUN128FL80HKoIIIjxb8H7jkENQ06HrJKyJhyURRBABL02k59IDFVnoSMFKM5A9DlpFEOHDCCQ8pWApEG0PPU8bqHjNIoggwnpYag4iJ8NQMsw5Ga6cDIpEEEGEbmeJFJ9tQZM+f73Ii32TiOZRbaqIIMKHEdrGhS5lpGUw2oiRQkx+LYIIIuQ8Id0oOfyQQe0WjKSiSBY86AclgggiXDhUoYuUT4okgWzC1KawiyCCCByBNkUpSE2hy1tDFlI0UQMlgggiPP5GMHR4mxY9TwY6JLRBzZUIIoiAFrdSk0IOOnQIQhuqdnizfZgiiCDCjECXL7cmpQ1c6CGHLmSRwQxKm0UQQYQfHEpe7Bta0yWO1GCRpq0p7LdIIoggwlEDRZYtTxqoJtRNC1sJCw1kRRBBBDwkpW+WBic0CGnfgwyScagigggioIMNaYZImLIFJvTQlgpkCnVFEEEE/h/p0tCCHLbIgsVvNFDogxRBBBFiqJKGHGmYShcs3ghN6YFubOBEEEGEtTCeNE9NEEIGsqSI0oFvPZAVQQQRcAjSLHhvN5wuLAWvTTGNzZ4IIohQD2SbQkgGIGnhgxRN2nBFHBFEECGGKnQZg6BtmC0gLaQpXBFBBBF2hO0w0gYZbbPVhiTkkJaGSnhxSwQRPopAGhC6mNWArGEHeJAwNy1xiSCCCPfnhDTooE1UejRLH3RxkwQ2aMFbBBFEqArYSeBClsWbhat0AGpfWwQRRGChyhaOpDdrhqbbAKgJV0+GRiKIIMIeqsSFBtDIkGHtySI3HaaQw5oIIojAEU6WpZph7EkQQ5fDaBgjgggi7AhtMSGDDQK2YbdD1uY5awMlgggi4GWtdmmLPDcVNwreBCvobwcRRPg4AhmUpGYmNUt0oWpr4NrrFUEEEc4R6AIECUO2YkYLcGrwThuouKQhgggi4G/aRJqoNIidCilpxMjCFgmHRBBBhGcIdGBKD1YEgw526KKZCCKI0CFsN3R6s6SxIlBpeJwKKS6MIoggQvUPPMdwAjZbdDGEHoroEHi8DhFEEKEeyP7PDxFEEEEEEUQQ4fbxB477xyHPJG4WAAAAAElFTkSuQmCC" alt="QRCode">
     </li>
     
 
@@ -553,7 +553,7 @@
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="使用Docker快速安装HTML5-Based Speedtest，可以准确的测试本地到VPS的网络速度 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/"><meta property="og:locale" content="en"><meta name="description" content="前言网页版Speedtest看起来很强，却测试不出来本地到目标服务器的速度？ 在VPS服务器上跑Speedtest-CLI却总感觉测试结果不靠谱？ 现在，有了HTML5-Based Speedtest，这一切都迎刃而解！ 更要命的是居然还Docker化了？真正的一键部署测速环境！ 截图 说明由于Speedtest会尽可能使用最大的带宽，来反馈最真实的网络性能，所以，在部署完成项目后，请不要将你的测 - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/HTML5-Speedtest.png"><meta property="article:published_time" content="2019-11-07T04:25:04.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.646Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.646Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="使用Docker快速安装HTML5-Based Speedtest，可以准确的测试本地到VPS的网络速度 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/"><meta property="og:locale" content="en"><meta name="description" content="前言网页版Speedtest看起来很强，却测试不出来本地到目标服务器的速度？ 在VPS服务器上跑Speedtest-CLI却总感觉测试结果不靠谱？ 现在，有了HTML5-Based Speedtest，这一切都迎刃而解！ 更要命的是居然还Docker化了？真正的一键部署测速环境！ 截图 说明由于Speedtest会尽可能使用最大的带宽，来反馈最真实的网络性能，所以，在部署完成项目后，请不要将你的测 - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/HTML5-Speedtest.png"><meta property="article:published_time" content="2019-11-07T04:25:04.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.646Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.646Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/">
+    <link rel="canonical" href="http://hexo.southcat.net/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/",
+    "url": "http://hexo.southcat.net/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/"
+        "@id": "http://hexo.southcat.net/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/"
     },
     "headline": "使用Docker快速安装HTML5-Based Speedtest，可以准确的测试本地到VPS的网络速度 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2019-11-07T04:25:04.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=使用Docker快速安装HTML5-Based Speedtest，可以准确的测试本地到VPS的网络速度" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=使用Docker快速安装HTML5-Based Speedtest，可以准确的测试本地到VPS的网络速度" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用Docker快速安装HTML5-Based Speedtest，可以准确的测试本地到VPS的网络速度&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用Docker快速安装HTML5-Based Speedtest，可以准确的测试本地到VPS的网络速度&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=使用Docker快速安装HTML5-Based Speedtest，可以准确的测试本地到VPS的网络速度" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=使用Docker快速安装HTML5-Based Speedtest，可以准确的测试本地到VPS的网络速度" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFX0lEQVR42u2dy3IbQQwD9f8/rVxySFRLojErH5JtXSJbr9l2FUwCKOf19vZ+iUAIQhCCEIQghBXCa7n99YLfX189Nj0+Pe/zMz5fe/XZf35vOsvne6brEoIQhHAN4VI0hu9vFzQdYrvAq/dqYG8Q0nUJQQhCmCEksdrgTB+evje9LwE7iWcSWyEIQQj3IaTDUTHdxG47LBXmq3MLQQhC+BlhJINRGnzSe5CFiQxaQhCCEO5D2BaVybAgAOiQMw1Nm2GSjJivbZFCEMLDIBDB+hf//ZrbLAQhPAgCWVKSUNFF6UqwktiliyTD1O1UWghCeBCETUgaOCksSWFNei8yrKWlTQhCEEIPgQQo21J0EsSeim0bxAhBCELoICRTgoSkJLRpS1ZEXFNQjEsaQhDCwyHQBYQOMTj4CGYtDW2250cjVwhCEMIIgYhSCj7IUpUGqZOiRip5jp8lBCEIYQ1f0vJEy5mkENqURUkwnMQ6LlBCEIIQUEGyNT2SKJEl7OSzyCKIA1khCEEI7xScpIPRslRavJpyFxXuEZAQhCAEtEARgVwXE2CAEoHbRJIauqvpKgQhCKEWRjIspcMmEbwzIN06txCEIITRVGmEqilaIMMTfh5Z7mjhSwhCEEL2E8hCsl18eqwtczUFsGQE4y1SCEJ4OAQakGzDT2vKngTB3xRIIQhBCDuEpjhJF5VkwpBhhhqzG6RV2IUgBCGMwkjEajs0HZyS4doYqeT56+ImBCEIAS1QTTDTBLEpML0jhsTUEYIQhNBDIIWHxig9KW4Qc5YEMrH8IQQhCGGEkAQsmSqkTJEKl98USVIcF4IQhHANgRaw26GHlLpOliZqsEYTSAhCEMIqjLTkTcCQ4aUVQxLKkuBICEIQwhsZrVSAaJhKTJoU8FDRTcV0lEoLQQhCQAtQO0w1Za0T0/XOgCQEIQhhh7ANNHRIaYIY8v7pPimP1ROjEIQghFGcyOHbx1ojltxPoVASfiEIQQj3/IQUxp6UPtKh6XudLGhCEIIQGAQiWsRoSWWNFigtlxIzVghCEALrJ5Cvt7DmdAAipms6IxngUCotBCEI4ahskS4+BSTkte1iRsxcIQhBCDOEbUCJw8aL/acWKdChxa22yFEtUEIQghDWskO6T4MPUtygw9ZJSQyVOYUgBCEc/1H6trhBA1dq6KSljxRNhSAEIfR/y50I3BZ80KWKhkB3Fqjxc4QgBCGswkgupAlCE+A00JALa8RYCEIQAoeQlo9tCGnCVWLKbKK6Cl0LXAhCEEIURlLUJAFoOtwmtnR4o8NX/dtBCEJ4MIRmqWkMkWSGNAJ3Z4Far0kIQhACKnOmA7SDDRHLZmlKCxQJiYUgBCHsEL4xoNDSJglhk0GTBiESAgtBCEJ4o+IWFaXNoKULDg1OUsG0MWiEIAQhsNyhXZaIMULN0AQIi10DUghCEMJY0thApBB2AzkduIFEhJUUP9cypxCEIIR3czFkoEoFS7ogEVFrgqDxByEEIQghljSIyKTDJIFrhI+Yq3QRW4VRCEIQQgxP6TDVhDXpeWnIaRYwvEAJQQhCwAXILfygJUsiwCTkbQFFoReCEIQwDktkOSEDyDbApEWMCCQthBBjVghCEEKeE7YA9dRopQZIe//EWEG/HYQghIdDIIe9I5IEbhq+To2f9QclBCEIYYRAitYnJe50EXR4IkVzujgJQQhCuAdhE60UpjSLUyO4jakyBkRCEIIQjoXxxBRpyuM0XGkLo6uoCkEIQqgXqCZIaReYFP40A1AyfIQgBCFwCO3iQYpb20HoYLQFsuR8m1gKQQhCeB31E/7nmxCEIAQhCEEIQri8/QLFCoZw/gtmIAAAAABJRU5ErkJggg==" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFVElEQVR42u2dwY4aURAD+f+fJtfVasYuv0GREorLRjAM/Qqp0207m9fbx/slAiEIQQhCEIIQIoRXePy85ufPu+d/vy9dd/X61fvSZ1zV+fu1eC4hCEEIlxDuCkigSKFX17cCE9A7EKmWeC4hCEEItxCuikjNbi3g7oDt/kvzbV+IEIQghM9BIAPTAiI1P3LwuwFMCEIQwt+BQJaStCi1e1QBpAxraekTghCEsENoQki7OfnwdH26hgBZhBohCEEIGcJJs/sXfn5MbRaCEL4IAhlS6NDSmmq6X2uA1Kghg5cQhCCEnE+ghgn58FQMNX8nA2UwZIUgBCF0COmm7ZCrAdsWpiaY0GWPCjZCEIIQ7iGkAqgBS5caMoSRRkzNHrRACUEIQogHa8PUifhKzdnWLMk16DohCEEIFcJS5GmgksIhcNOBm+AiBCEI4V3NFxqOWESVNlitIQ8irqKwqBCEIIQoqiwiKB1YWiiD3rvVtwguQhCCEFiYky4vNHi1NLom5LYFijZGIQhBCBlCM0rToYjQsQQn2kC0GkOtFiEIQQj3OUZ66HYdCXNhwzQ0aWr2xvcKQQhCuIVAApZ0EKIhLSqY0oGsCTy1MQpBCEKYflkEWaCImEGaaDrUEgCLoo4QhCAEtEDRZYkMOHGBKQsRbdRk4Zq3SCEI4YshkGa3BjFJGJSGP+jztPEKQQhCeNWQBhE7abNahplmAjWIFHBdoIQgBCFgQ7UtQMRcbcPWEv5YjGMhCEEIG4TWaJZgJT0QMUxbQLQtUEQwEoIQhNAhtKWDFEGFVyKukvqIIXv5RQtBCEKoIQ1S4JNGuhg466BGA2VCEIIQOoRmylKBswmj5P1EvF3CZMiQFYIQhPBOpmn7QHrgNYBBRF1acw2MCUEIQpgWqGZgrMFuMvjQMAYxk2voTAhCEEI0X5r40QpcxVMawCA1LcFzIQhBCHmBasIEDXItEE7EWgKAGr1CEIIQesA7LSX0YKdCSTokacpHYowQhCCEy2GJBCOXD6ULTGvMZFBbDKBbQ1YIQhBCDWuToWM1V0m4kxgpqWE3Ewn97SAEIXwxBGqWUPPziSFCl62l9vh+IQhBCHhYIs8T4XMNedADESiTKy0EIQgBmy1EYCHiCwl4kUbczGRs3gpBCEKI5gsVQVozayIJCXEkYWQdxG7NWSEIQQhogVqDVdQ4bQ2RBr9S021NEW+RQhDCl0JopikROE9E1WVBayLKSaBLCEIQAv83UIsx28SRds+l8bZF6SPDkhCEIIQYnloPliCRZvnkzyRAFs0XIQhBCMfBKyKApmKbCLuGyshz1ZAVghCEMC1PRJylAczFCCahDbJIRbVZCEIQAgppLYXQBnoawiQLFA14CUEIQmCNkRgui5hBgh6nQuoCGJsvQhCCEOovsl+b3Sp0kIMvXwpt7EIQghCe6Qnk0EmQOQllkWZMjZePbJFCEMJ/DmEJeDfxowW0qaiyiK6ticZGKQQhCOG2MbbGRIYbMlhRULR5Lgtd3SKFIAQhoGZCG1sahJbhqBk7T0xaIQhBCBwCGXKagJKaKQ2FUMG1LVFVjBGCEIQQRRUyFBGThjY9avSkxW4RV4UgBCF0CGTBWZroIqrQ15fABn1eCEIQAvtPLlrYiUAhYgltZM2waQtUFF+EIAQhRPOliSd0gaHCCA2HkJDIKsYKQQhCeAahDS10OCLhicXgaeEwbL4IQQhCwBDotW1IoU2sCSbrEIXMFyEIQQhogWpDzmmxbUGjQm2qtZ5LCEIQwiy0JlMFDSRwmWlmz21zG78QIQhBCBnCNz+EIAQhCEEIQhDC5eMPCA+HYRUmMzQAAAAASUVORK5CYII=" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用Docker快速安装HTML5-Based Speedtest，可以准确的测试本地到VPS的网络速度&url=http://yoursite.com/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用Docker快速安装HTML5-Based Speedtest，可以准确的测试本地到VPS的网络速度&url=http://hexo.southcat.net/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=使用Docker快速安装HTML5-Based Speedtest，可以准确的测试本地到VPS的网络速度&url=http://yoursite.com/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=使用Docker快速安装HTML5-Based Speedtest，可以准确的测试本地到VPS的网络速度&url=http://hexo.southcat.net/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/11/07/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85html5-based-speedtest-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-87-86-e7-a1-ae-e7-9a-84-e6-b5-8b-e8-af-95-e6-9c-ac-e5-9c-b0-e5-88-b0vps-e7-9a-84/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFX0lEQVR42u2dy3IbQQwD9f8/rVxySFRLojErH5JtXSJbr9l2FUwCKOf19vZ+iUAIQhCCEIQghBXCa7n99YLfX189Nj0+Pe/zMz5fe/XZf35vOsvne6brEoIQhHAN4VI0hu9vFzQdYrvAq/dqYG8Q0nUJQQhCmCEksdrgTB+evje9LwE7iWcSWyEIQQj3IaTDUTHdxG47LBXmq3MLQQhC+BlhJINRGnzSe5CFiQxaQhCCEO5D2BaVybAgAOiQMw1Nm2GSjJivbZFCEMLDIBDB+hf//ZrbLAQhPAgCWVKSUNFF6UqwktiliyTD1O1UWghCeBCETUgaOCksSWFNei8yrKWlTQhCEEIPgQQo21J0EsSeim0bxAhBCELoICRTgoSkJLRpS1ZEXFNQjEsaQhDCwyHQBYQOMTj4CGYtDW2250cjVwhCEMIIgYhSCj7IUpUGqZOiRip5jp8lBCEIYQ1f0vJEy5mkENqURUkwnMQ6LlBCEIIQUEGyNT2SKJEl7OSzyCKIA1khCEEI7xScpIPRslRavJpyFxXuEZAQhCAEtEARgVwXE2CAEoHbRJIauqvpKgQhCKEWRjIspcMmEbwzIN06txCEIITRVGmEqilaIMMTfh5Z7mjhSwhCEEL2E8hCsl18eqwtczUFsGQE4y1SCEJ4OAQakGzDT2vKngTB3xRIIQhBCDuEpjhJF5VkwpBhhhqzG6RV2IUgBCGMwkjEajs0HZyS4doYqeT56+ImBCEIAS1QTTDTBLEpML0jhsTUEYIQhNBDIIWHxig9KW4Qc5YEMrH8IQQhCGGEkAQsmSqkTJEKl98USVIcF4IQhHANgRaw26GHlLpOliZqsEYTSAhCEMIqjLTkTcCQ4aUVQxLKkuBICEIQwhsZrVSAaJhKTJoU8FDRTcV0lEoLQQhCQAtQO0w1Za0T0/XOgCQEIQhhh7ANNHRIaYIY8v7pPimP1ROjEIQghFGcyOHbx1ojltxPoVASfiEIQQj3/IQUxp6UPtKh6XudLGhCEIIQGAQiWsRoSWWNFigtlxIzVghCEALrJ5Cvt7DmdAAipms6IxngUCotBCEI4ahskS4+BSTkte1iRsxcIQhBCDOEbUCJw8aL/acWKdChxa22yFEtUEIQghDWskO6T4MPUtygw9ZJSQyVOYUgBCEc/1H6trhBA1dq6KSljxRNhSAEIfR/y50I3BZ80KWKhkB3Fqjxc4QgBCGswkgupAlCE+A00JALa8RYCEIQAoeQlo9tCGnCVWLKbKK6Cl0LXAhCEEIURlLUJAFoOtwmtnR4o8NX/dtBCEJ4MIRmqWkMkWSGNAJ3Z4Far0kIQhACKnOmA7SDDRHLZmlKCxQJiYUgBCHsEL4xoNDSJglhk0GTBiESAgtBCEJ4o+IWFaXNoKULDg1OUsG0MWiEIAQhsNyhXZaIMULN0AQIi10DUghCEMJY0thApBB2AzkduIFEhJUUP9cypxCEIIR3czFkoEoFS7ogEVFrgqDxByEEIQghljSIyKTDJIFrhI+Yq3QRW4VRCEIQQgxP6TDVhDXpeWnIaRYwvEAJQQhCwAXILfygJUsiwCTkbQFFoReCEIQwDktkOSEDyDbApEWMCCQthBBjVghCEEKeE7YA9dRopQZIe//EWEG/HYQghIdDIIe9I5IEbhq+To2f9QclBCEIYYRAitYnJe50EXR4IkVzujgJQQhCuAdhE60UpjSLUyO4jakyBkRCEIIQjoXxxBRpyuM0XGkLo6uoCkEIQqgXqCZIaReYFP40A1AyfIQgBCFwCO3iQYpb20HoYLQFsuR8m1gKQQhCeB31E/7nmxCEIAQhCEEIQri8/QLFCoZw/gtmIAAAAABJRU5ErkJggg==" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFVElEQVR42u2dwY4aURAD+f+fJtfVasYuv0GREorLRjAM/Qqp0207m9fbx/slAiEIQQhCEIIQIoRXePy85ufPu+d/vy9dd/X61fvSZ1zV+fu1eC4hCEEIlxDuCkigSKFX17cCE9A7EKmWeC4hCEEItxCuikjNbi3g7oDt/kvzbV+IEIQghM9BIAPTAiI1P3LwuwFMCEIQwt+BQJaStCi1e1QBpAxraekTghCEsENoQki7OfnwdH26hgBZhBohCEEIGcJJs/sXfn5MbRaCEL4IAhlS6NDSmmq6X2uA1Kghg5cQhCCEnE+ghgn58FQMNX8nA2UwZIUgBCF0COmm7ZCrAdsWpiaY0GWPCjZCEIIQ7iGkAqgBS5caMoSRRkzNHrRACUEIQogHa8PUifhKzdnWLMk16DohCEEIFcJS5GmgksIhcNOBm+AiBCEI4V3NFxqOWESVNlitIQ8irqKwqBCEIIQoqiwiKB1YWiiD3rvVtwguQhCCEFiYky4vNHi1NLom5LYFijZGIQhBCBlCM0rToYjQsQQn2kC0GkOtFiEIQQj3OUZ66HYdCXNhwzQ0aWr2xvcKQQhCuIVAApZ0EKIhLSqY0oGsCTy1MQpBCEKYflkEWaCImEGaaDrUEgCLoo4QhCAEtEDRZYkMOHGBKQsRbdRk4Zq3SCEI4YshkGa3BjFJGJSGP+jztPEKQQhCeNWQBhE7abNahplmAjWIFHBdoIQgBCFgQ7UtQMRcbcPWEv5YjGMhCEEIG4TWaJZgJT0QMUxbQLQtUEQwEoIQhNAhtKWDFEGFVyKukvqIIXv5RQtBCEKoIQ1S4JNGuhg466BGA2VCEIIQOoRmylKBswmj5P1EvF3CZMiQFYIQhPBOpmn7QHrgNYBBRF1acw2MCUEIQpgWqGZgrMFuMvjQMAYxk2voTAhCEEI0X5r40QpcxVMawCA1LcFzIQhBCHmBasIEDXItEE7EWgKAGr1CEIIQesA7LSX0YKdCSTokacpHYowQhCCEy2GJBCOXD6ULTGvMZFBbDKBbQ1YIQhBCDWuToWM1V0m4kxgpqWE3Ewn97SAEIXwxBGqWUPPziSFCl62l9vh+IQhBCHhYIs8T4XMNedADESiTKy0EIQgBmy1EYCHiCwl4kUbczGRs3gpBCEKI5gsVQVozayIJCXEkYWQdxG7NWSEIQQhogVqDVdQ4bQ2RBr9S021NEW+RQhDCl0JopikROE9E1WVBayLKSaBLCEIQAv83UIsx28SRds+l8bZF6SPDkhCEIIQYnloPliCRZvnkzyRAFs0XIQhBCMfBKyKApmKbCLuGyshz1ZAVghCEMC1PRJylAczFCCahDbJIRbVZCEIQAgppLYXQBnoawiQLFA14CUEIQmCNkRgui5hBgh6nQuoCGJsvQhCCEOovsl+b3Sp0kIMvXwpt7EIQghCe6Qnk0EmQOQllkWZMjZePbJFCEMJ/DmEJeDfxowW0qaiyiK6ticZGKQQhCOG2MbbGRIYbMlhRULR5Lgtd3SKFIAQhoGZCG1sahJbhqBk7T0xaIQhBCBwCGXKagJKaKQ2FUMG1LVFVjBGCEIQQRRUyFBGThjY9avSkxW4RV4UgBCF0CGTBWZroIqrQ15fABn1eCEIQAvtPLlrYiUAhYgltZM2waQtUFF+EIAQhRPOliSd0gaHCCA2HkJDIKsYKQQhCeAahDS10OCLhicXgaeEwbL4IQQhCwBDotW1IoU2sCSbrEIXMFyEIQQhogWpDzmmxbUGjQm2qtZ5LCEIQwiy0JlMFDSRwmWlmz21zG78QIQhBCBnCNz+EIAQhCEEIQhDC5eMPCA+HYRUmMzQAAAAASUVORK5CYII=" alt="QRCode">
     </li>
     
 
@@ -530,7 +530,7 @@ systemctl disable firewalld.service</code></pre><hr>
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="SSH密钥安装器升级，一键安装VPS密钥安全登录 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/"><meta property="og:locale" content="en"><meta name="description" content="说明：使用vps的基本都会有被扫描的情况，可参考：通过Auth.log来查看VPS服务器是否被扫描和暴力破解。一般我们都会修改SSH端口来防止这种事发生，不过安全性更高的操作当属使用密钥登录。之前分享过一个教程，参考：为Linux VPS配置SSH-KEY登录并禁用root密码，感觉有点麻烦，这里分享个由KiritoMiao大佬制作的一键安装脚本，安装很快。 前言有大佬说可以读Github帐号的公 - John Doe - 南猫"><meta property="article:published_time" content="2019-11-06T06:40:22.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.645Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.645Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="SSH密钥安装器升级，一键安装VPS密钥安全登录 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/"><meta property="og:locale" content="en"><meta name="description" content="说明：使用vps的基本都会有被扫描的情况，可参考：通过Auth.log来查看VPS服务器是否被扫描和暴力破解。一般我们都会修改SSH端口来防止这种事发生，不过安全性更高的操作当属使用密钥登录。之前分享过一个教程，参考：为Linux VPS配置SSH-KEY登录并禁用root密码，感觉有点麻烦，这里分享个由KiritoMiao大佬制作的一键安装脚本，安装很快。 前言有大佬说可以读Github帐号的公 - John Doe - 南猫"><meta property="article:published_time" content="2019-11-06T06:40:22.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.645Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.645Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/">
+    <link rel="canonical" href="http://hexo.southcat.net/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/",
+    "url": "http://hexo.southcat.net/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/"
+        "@id": "http://hexo.southcat.net/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/"
     },
     "headline": "SSH密钥安装器升级，一键安装VPS密钥安全登录 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2019-11-06T06:40:22.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=SSH密钥安装器升级，一键安装VPS密钥安全登录" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=SSH密钥安装器升级，一键安装VPS密钥安全登录" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=SSH密钥安装器升级，一键安装VPS密钥安全登录&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=SSH密钥安装器升级，一键安装VPS密钥安全登录&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=SSH密钥安装器升级，一键安装VPS密钥安全登录" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=SSH密钥安装器升级，一键安装VPS密钥安全登录" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEmUlEQVR42u3bS5IaSxAFUfa/6afpM1QV12/CQFR4T2SCbsiTmKLjp9d/C79eokWLFi1a9I+hX8PXXz/09tzV3///ve+PTe/5/nzzvtQhWvQW9OU/evh4gl8d4P3wV5c0XdrVWch5RYvehKYHS8HkNPDdnWV6jbvAefshiBYtenw8BZUpuFwFvAmVgpxo0aJ7NC0u6OtMP0eSJdGiRfcFx5SATInL3WPT6yR8SoS+VmWJFv3jaBpk/vU/v9YNFS36h9Fx6HVQrKdgmIJXm9B8fWopWvQPo1NhkZrytEFPBoSp6KBDh9vkRrToJWgacMiB0yCfXuQUNNMF3RZIokUvQE/BiTQDSdPgLiimQWFKYMjP3GZkokU/HE0X5lLQIIGPNAHToK9d2BEteiO6SeDpgI8u6UyXTC8+JjuiRS9Ap0EaLTroIG8qOOhyTrMIG6eWokU/GE0H5M1CamoatAu55EO4PYNo0QvQJHicNgmmJdf03CdLAlXnRLToh6GnRjtdem0G/LQRQYNj1fgXLXoJmgar1IBvmorpfeiwfrp4tDEoWvTD0G0BkC5rSjro8Jws9JBkB08tRYt+EDr9wj9tuKcmRduQuAuctNEvWvQW9LT0djqUPx3snwSnCE3JiWjRD0STph8d2qeGQPoe8lwKaqJFi+4XbOhFUQRZxKEDgdvBo2jRS9BpAN8Gr3a5plmwaQoU0aI3okmBQBJ6spzTXPKnTco44RAt+qHoVKynw9Ll9rYQOUHF5qZo0UvQUwKPEvnX2X8ATYtztCBKZxYtehOa/uInQ7pmME+bFfS90XKPaNGL0KmhflLIEwROLOAC3ri8I1r0AvQ3mnnpsujrkqE+TZTqJoJo0Q9EN4OxNvEghQa9UHK51fKcaNEPQ5MLIAN5lCDAYEQaiu1AULToLegpEJwU+aRR+I2m/lQQoQmHaNEPR0/F/ckgnn4vCkJwEWc8i2jRC9CfDMjTz7XfRwNoKjJukxvRohegSdCiizgpeWkSiZMlneMmgmjRD0KTZZc0PEtN9nRB0+vSpAUVNKJFL0JPg3ASjKahAHmNFLhOFmJRRiZa9MPQKSgQTBrwkaWeaXGHLtbEQCpa9AJ0u5Q6XUwCEwQNbPRcokVvQ9MFGdr4bxZnaMFBl+TSwF+06E3oFHRSIvCtAR5NZuhgXrTobejUOE+BpU1SUrCaDt4u7YwFh2jRC9BpwZUctklY0kEJnAzrRYvehp4OTJv+NAFJF9AGJ7JMJ1r0JnRbOJAFmZOmYhrIpSUf1HAULXoBmjTh02FSE54WGO2SD02KRIvehm6DWBuoCPZkoYcMF0SL3oZuC3qyxEaCz1RwpOKENCYvPzDRohejp+LiZImNNv1IU4MODdAmgmjRD0PTxTfaZG+CHyk8PkmSqoxMtOgHodNSHC7SYZJACw964XRJT7ToTWjSqKPLrHQR57SgaS46NvtFi16ITsM1EmSahuAnZ6uSE9Gil6JPkwOyZNMMC8j5xg9ItOhF6HaJjRQFbVOwWeAjCwOiRW9FTwUBfdNmQaZZuiMDwRQ4RYvehN70JVq0aNGiRf/I1x92chYAvjqB8wAAAABJRU5ErkJggg==" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEnElEQVR42u3dSW5bQRAEUd7/0vZWsNmVkU1t+Cu4sWVx6NcCSjUBfv1Z+HiJFi1atGjRX4Z+DY+3LwTf+/kc8j7pue+e/+85iEO06C3o04ecnnO6mHeveQc6vd/p8NPrKodo0YvQpwCUgtt0sBhY3mBP70EvZAqkokWL/v/7099PQYQEs+nf09lEixbdB7KpSEgBigS1U1CkyYpo0aJZQKGXMb1uAp6elwLaVHx8XGWJFv3laPLh3/Dnr3VDRYv+YnQceg3NhFPQSY15UjQ0Df5fn1qKFv3FaJpMEPiUXNwMCFOjIhUnokVvRE+BpUkG2kCUChfagEzNiDE5ES36gWjSACBDe5pQTIlJavrd/jBEi96Gvm3Ck4CSviZNQxpwU+ATLXoLmv7Cn4oAuqQzBbFmoYcuAeAJh2jRD0FPiQAdqNPBGh36J/R08bjKEi16ATol7TfNv6mQ+CQBoj+EY2NQtOiHo8lAbQoY5P3SwafLSEu1ZEAgWvQGNEk0piSADA1oUtEUQG3TX7ToTWhSfKTCgwYiMswjTT8SzNAAT7Toh6GnhgFJ8psFdtIQpBd6Ouf1oo1o0Q9Bp2TiNxflyIAgNflSY6LaRBAt+oHotOjSNvhSs4A0H+hCbL0UIFr0AjRtxKdBGk0ayJLN7WVMTQ3RorejybJqWqRJSzY3S3LNgL4OZKJFPwTdHI5cxCcLbilYTsGzqrJEi34oOhUJabCOmuxlwZFeP13gmGSJFr0YTYZ5pKE4AcmwLzX8UpE0DvBEi34gmg7UaBHSDNhS8kMvCA8WRYtegqYBizYDmqKCBq3b4aFo0VvRtMGXmgRN86AdxE2XiYKtaNHL0E1gaJZcpwDZDBFJ4TImVKJFL0CnZvl1wQ6XaGmx0BQZaAtYtOiHotOByUAPFfBlgEqDw6siR7ToBWicrIcEZir+p0OnC08XQ4cVokVvQqdlGdJAIMlM09yrMJ8O5UWLfhD6ZmhOvybBqVmSS0EzNj5Ei16IpgdPSQYNMHTIRxZho0G06CXopkFHC4omGSGJULvYE5MT0aIfjiaFOSn+6YIOGQqmS04BckxORIt+MJoMwshwjiQVqfiYkpUmgUIZmWjRD0WTX/g06ND3nD6/GdBVQ0TRohegTx+eUGkZrklKpmSIFBM4YRItegH6k0NMgYm8huCaZGUqSkSL3oKmh22WWJtlunR57YBhTJ5Ei16CnoIZXYolDQGyjDMFPfI+uOAQLfqh6NuFNlrsp9fQBIgs98XESbToBWgatEjBQQYD5O/N+5BLEC16E7pZVm2GAHQISIfxKWlBCwaiRS9Bk2KALLU1CQlpMDaNQpRMiRa9AD0tzaVAR4Z95HLJAk0aJpJziBa9GZ0CCm0okKIgoUmjAQVH0aIXoGkjnTQGabOONPE/aRoezyta9BJ02yS8TSLoIl4THKsFP9GiF6GnhbZ0QaSwaAqOhGuCoGjRovkwrl2Sow0HWnDUTQrRokVf/8c+tGFPG5Gp4CAJj2jRm9CngoNg6dJL24CggTGdX7TobeimUL9ZdiFNxtsGBQ2UokVvQW96iBYtWrRo0V/y+AtQrjbRTojSOQAAAABJRU5ErkJggg==" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=SSH密钥安装器升级，一键安装VPS密钥安全登录&url=http://yoursite.com/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=SSH密钥安装器升级，一键安装VPS密钥安全登录&url=http://hexo.southcat.net/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=SSH密钥安装器升级，一键安装VPS密钥安全登录&url=http://yoursite.com/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=SSH密钥安装器升级，一键安装VPS密钥安全登录&url=http://hexo.southcat.net/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/11/06/ssh-e5-af-86-e9-92-a5-e5-ae-89-e8-a3-85-e5-99-a8-e5-8d-87-e7-ba-a7-ef-bc-8c-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85vps-e5-af-86-e9-92-a5-e5-ae-89-e5-85-a8-e7-99-bb-e5-bd-95/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEmUlEQVR42u3bS5IaSxAFUfa/6afpM1QV12/CQFR4T2SCbsiTmKLjp9d/C79eokWLFi1a9I+hX8PXXz/09tzV3///ve+PTe/5/nzzvtQhWvQW9OU/evh4gl8d4P3wV5c0XdrVWch5RYvehKYHS8HkNPDdnWV6jbvAefshiBYtenw8BZUpuFwFvAmVgpxo0aJ7NC0u6OtMP0eSJdGiRfcFx5SATInL3WPT6yR8SoS+VmWJFv3jaBpk/vU/v9YNFS36h9Fx6HVQrKdgmIJXm9B8fWopWvQPo1NhkZrytEFPBoSp6KBDh9vkRrToJWgacMiB0yCfXuQUNNMF3RZIokUvQE/BiTQDSdPgLiimQWFKYMjP3GZkokU/HE0X5lLQIIGPNAHToK9d2BEteiO6SeDpgI8u6UyXTC8+JjuiRS9Ap0EaLTroIG8qOOhyTrMIG6eWokU/GE0H5M1CamoatAu55EO4PYNo0QvQJHicNgmmJdf03CdLAlXnRLToh6GnRjtdem0G/LQRQYNj1fgXLXoJmgar1IBvmorpfeiwfrp4tDEoWvTD0G0BkC5rSjro8Jws9JBkB08tRYt+EDr9wj9tuKcmRduQuAuctNEvWvQW9LT0djqUPx3snwSnCE3JiWjRD0STph8d2qeGQPoe8lwKaqJFi+4XbOhFUQRZxKEDgdvBo2jRS9BpAN8Gr3a5plmwaQoU0aI3okmBQBJ6spzTXPKnTco44RAt+qHoVKynw9Ll9rYQOUHF5qZo0UvQUwKPEvnX2X8ATYtztCBKZxYtehOa/uInQ7pmME+bFfS90XKPaNGL0KmhflLIEwROLOAC3ri8I1r0AvQ3mnnpsujrkqE+TZTqJoJo0Q9EN4OxNvEghQa9UHK51fKcaNEPQ5MLIAN5lCDAYEQaiu1AULToLegpEJwU+aRR+I2m/lQQoQmHaNEPR0/F/ckgnn4vCkJwEWc8i2jRC9CfDMjTz7XfRwNoKjJukxvRohegSdCiizgpeWkSiZMlneMmgmjRD0KTZZc0PEtN9nRB0+vSpAUVNKJFL0JPg3ASjKahAHmNFLhOFmJRRiZa9MPQKSgQTBrwkaWeaXGHLtbEQCpa9AJ0u5Q6XUwCEwQNbPRcokVvQ9MFGdr4bxZnaMFBl+TSwF+06E3oFHRSIvCtAR5NZuhgXrTobejUOE+BpU1SUrCaDt4u7YwFh2jRC9BpwZUctklY0kEJnAzrRYvehp4OTJv+NAFJF9AGJ7JMJ1r0JnRbOJAFmZOmYhrIpSUf1HAULXoBmjTh02FSE54WGO2SD02KRIvehm6DWBuoCPZkoYcMF0SL3oZuC3qyxEaCz1RwpOKENCYvPzDRohejp+LiZImNNv1IU4MODdAmgmjRD0PTxTfaZG+CHyk8PkmSqoxMtOgHodNSHC7SYZJACw964XRJT7ToTWjSqKPLrHQR57SgaS46NvtFi16ITsM1EmSahuAnZ6uSE9Gil6JPkwOyZNMMC8j5xg9ItOhF6HaJjRQFbVOwWeAjCwOiRW9FTwUBfdNmQaZZuiMDwRQ4RYvehN70JVq0aNGiRf/I1x92chYAvjqB8wAAAABJRU5ErkJggg==" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEnElEQVR42u3dSW5bQRAEUd7/0vZWsNmVkU1t+Cu4sWVx6NcCSjUBfv1Z+HiJFi1atGjRX4Z+DY+3LwTf+/kc8j7pue+e/+85iEO06C3o04ecnnO6mHeveQc6vd/p8NPrKodo0YvQpwCUgtt0sBhY3mBP70EvZAqkokWL/v/7099PQYQEs+nf09lEixbdB7KpSEgBigS1U1CkyYpo0aJZQKGXMb1uAp6elwLaVHx8XGWJFv3laPLh3/Dnr3VDRYv+YnQceg3NhFPQSY15UjQ0Df5fn1qKFv3FaJpMEPiUXNwMCFOjIhUnokVvRE+BpUkG2kCUChfagEzNiDE5ES36gWjSACBDe5pQTIlJavrd/jBEi96Gvm3Ck4CSviZNQxpwU+ATLXoLmv7Cn4oAuqQzBbFmoYcuAeAJh2jRD0FPiQAdqNPBGh36J/R08bjKEi16ATol7TfNv6mQ+CQBoj+EY2NQtOiHo8lAbQoY5P3SwafLSEu1ZEAgWvQGNEk0piSADA1oUtEUQG3TX7ToTWhSfKTCgwYiMswjTT8SzNAAT7Toh6GnhgFJ8psFdtIQpBd6Ouf1oo1o0Q9Bp2TiNxflyIAgNflSY6LaRBAt+oHotOjSNvhSs4A0H+hCbL0UIFr0AjRtxKdBGk0ayJLN7WVMTQ3RorejybJqWqRJSzY3S3LNgL4OZKJFPwTdHI5cxCcLbilYTsGzqrJEi34oOhUJabCOmuxlwZFeP13gmGSJFr0YTYZ5pKE4AcmwLzX8UpE0DvBEi34gmg7UaBHSDNhS8kMvCA8WRYtegqYBizYDmqKCBq3b4aFo0VvRtMGXmgRN86AdxE2XiYKtaNHL0E1gaJZcpwDZDBFJ4TImVKJFL0CnZvl1wQ6XaGmx0BQZaAtYtOiHotOByUAPFfBlgEqDw6siR7ToBWicrIcEZir+p0OnC08XQ4cVokVvQqdlGdJAIMlM09yrMJ8O5UWLfhD6ZmhOvybBqVmSS0EzNj5Ei16IpgdPSQYNMHTIRxZho0G06CXopkFHC4omGSGJULvYE5MT0aIfjiaFOSn+6YIOGQqmS04BckxORIt+MJoMwshwjiQVqfiYkpUmgUIZmWjRD0WTX/g06ND3nD6/GdBVQ0TRohegTx+eUGkZrklKpmSIFBM4YRItegH6k0NMgYm8huCaZGUqSkSL3oKmh22WWJtlunR57YBhTJ5Ei16CnoIZXYolDQGyjDMFPfI+uOAQLfqh6NuFNlrsp9fQBIgs98XESbToBWgatEjBQQYD5O/N+5BLEC16E7pZVm2GAHQISIfxKWlBCwaiRS9Bk2KALLU1CQlpMDaNQpRMiRa9AD0tzaVAR4Z95HLJAk0aJpJziBa9GZ0CCm0okKIgoUmjAQVH0aIXoGkjnTQGabOONPE/aRoezyta9BJ02yS8TSLoIl4THKsFP9GiF6GnhbZ0QaSwaAqOhGuCoGjRovkwrl2Sow0HWnDUTQrRokVf/8c+tGFPG5Gp4CAJj2jRm9CngoNg6dJL24CggTGdX7TobeimUL9ZdiFNxtsGBQ2UokVvQW96iBYtWrRo0V/y+AtQrjbRTojSOQAAAABJRU5ErkJggg==" alt="QRCode">
     </li>
     
 
@@ -517,7 +517,7 @@ bash key.sh [你的Github用户名]</code></pre><p>完成后，就可以使用�
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

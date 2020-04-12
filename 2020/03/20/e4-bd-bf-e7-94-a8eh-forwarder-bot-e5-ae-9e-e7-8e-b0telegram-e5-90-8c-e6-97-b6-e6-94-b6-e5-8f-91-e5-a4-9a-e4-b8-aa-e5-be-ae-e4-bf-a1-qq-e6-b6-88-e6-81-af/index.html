@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="使用EH Forwarder Bot实现Telegram同时收发多个微信&#x2F;QQ消息 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/"><meta property="og:locale" content="en"><meta name="description" content="说明：EH Forwarder Bot是一个可扩展的聊天隧道框架，允许用户一次发送和接收来自多个IM平台的消息，并最终远程管理他们的帐户，目前可以实现的Telegram收发QQ、微信、Facebook Messenger等消息，你也可以同时一起收发N个微信、N个QQ等，这里就说下Telegram收发微信&#x2F;QQ消息的手动安装及Docker安装。 收发微信提示：使用该功能前，请先确认所使用的微信能成功 - John Doe - 南猫"><meta property="article:published_time" content="2020-03-20T15:22:49.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.659Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.659Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="使用EH Forwarder Bot实现Telegram同时收发多个微信&#x2F;QQ消息 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/"><meta property="og:locale" content="en"><meta name="description" content="说明：EH Forwarder Bot是一个可扩展的聊天隧道框架，允许用户一次发送和接收来自多个IM平台的消息，并最终远程管理他们的帐户，目前可以实现的Telegram收发QQ、微信、Facebook Messenger等消息，你也可以同时一起收发N个微信、N个QQ等，这里就说下Telegram收发微信&#x2F;QQ消息的手动安装及Docker安装。 收发微信提示：使用该功能前，请先确认所使用的微信能成功 - John Doe - 南猫"><meta property="article:published_time" content="2020-03-20T15:22:49.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.659Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.659Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/">
+    <link rel="canonical" href="http://hexo.southcat.net/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/",
+    "url": "http://hexo.southcat.net/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/"
+        "@id": "http://hexo.southcat.net/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/"
     },
     "headline": "使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2020-03-20T15:22:49.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEn0lEQVR42u2c225jMQwD8/8/3X0tFjni0C2wG2vy0jYXx+ODqhLJ9PW18PYSWmihhRZa6A+Dfg23d49/v+/7Gk9f363z/TnvHvt73bQW4RBa6E3Qb3/pw2bfbXLaAHm/uOlwcBOH0EJvg05wU9F4OqypqMVGIuxlKqaPByO00EJ/pYJBilzT/NDHnvYltNBC80L2rgClwpcAUiGc7hdaaKH7gYM0I+1wkBqU6eCmgvprU5bQQn84dGoQPuXrr6qhQgv9odC/Zo4NjQIZVEjzM12Uf+JaCi30fwhNh/1mw6SJSYJF+9w0eAgt9Ebop8IwNf6nm02mfgoB0OYkFjKhhb4MetoI3XxzCKnYtKIgDf0ILfQm6JNQDQnVpQGkDQGQIjc2SEILvQB6ApqKCDH4iAFwIkhOkGOoT2ihF0BTg/1EoJuajvawaYhnbHqEFnoRNF2IiAo0QEsKUtoHESmEFnordDLDaDiGNho/KXrkNbVyIrTQF0CTYpCCaY2gn8Q+Enht1oxTltBCXwpNG4VUOJoGh35PiuM0xAgt9CZoslFS5CggKV5TgSIhvBi0EVroi6FJaJU0JyT40h5Ya7wnY09oobdCExGfioFUGGyGnukQatdSaKEvhCZvkAYKUpQmcPq6NngrtNAboWOj/ur/0VIThiNBgGl9fAGFFnoBdDLvyGMp5JqExNRUEIEjNUtCC70JOsHQEE0j7J2YAyncEw9aaKEXQRMTngwCaYggQgRZkxoBODwntNCXQZ8Y8SeiID0IbMqBiyC00JugaciN/kxEfDKMnBTHGOgTWugl0OlF1Jxv4IlgeGLwVQ6H0EJfCk0K2dQQtANJewi0ufn16i200B8MfRJ6a8S71mQnxiERM4QWeiv0JM5PQ0ULSIN5SfBP91cigtBCXwadvk+DfWPuTUY/KZo0HPD2eUILvQz6JBzTbroZHNIQksSHWjkRWugLoEkxaENxdJNJBJwapNSQINdSaKEvhKYmODa+QViGhOam0AARFoUWejN0IwISoYE2GgkiFcYmpCO00Jug05D+k4GACvq0cBKR8pFBaKGXQlNDrDmYaX0yYBABIYmPQgu9ATo9mYp/pIlIIiQVEUYwMnAILfTF0Ck8g/7oFzDtQdCDTYcgtNBboJuQCza/X/xD3yQY2wwjKBArtNCLoCf4tPCJ2T4NFtOFebpvFCmEFnohNAnWkABqWqtZtzEKhBZa6J99EJQ2JqT4kNe1xoTQQm+DTo1+Et2aIFxqdMjPtHnCwqDQQl8MPTUWrahHho4jca8QCGPQRmihL4U+Cbcl4306PGLC0VBNU8yEFnoDdN20Q6GBBOPIsJEEggQblROhhV4CnYx0avSlRoYIiymEd5wuElroC6GJuZ3EQTokEOGRiBm0eao6MqGFvgiaGvRkKKGF5clgaAxBGsgRWuiN0CREQ5sMOhwQo/AkBPRoPAgttNBfpCEhRvpUyOKgAMQEEr4TWmihswBPhUEUbiuM+EZIFFrojdBJ7G/DcGSNNoyXhI90kYQWegt0atqbECoN4JEAzRTYmYT/xwMUWugF0JtuQgsttNBCC/0htz/Q6hjTl4BIKQAAAABJRU5ErkJggg==" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEnElEQVR42u3aS24bQRAEUd3/0vbKgEFwKiNb3LAruJFlkTP9RkCpfj9/Fr5+RIsWLVq06C9D/wyvxw//97PXf//7/vXrdI13n3/6/6czEodo0VvQ7aGmm72C3+Ffrz19fjrTdM237xEtehGaHPwpYDwFoifc04F/e+/JIVq0aJZkpJ+RBCMlRU8/Ey1a9GcCGUkY3l1vSmTIg53OIlq0aJaok4KCBMCpyEiJTmogfLzKEi36y9HTAb7p68e6oaJFfzH6E4XClBw8NfGn5iEJlLTQOZpaihb9xehUENAk5KnJ1w4Jm+FDSnZEi96OngbjFNI0Jpom5OlDip0T0aIvQ7dNPRpIyKFpo68569i0FC16CfodMN2cPph0rdQQPPkeBTLRoi9Fk2VT0hx4unHTZEgPOBUcMWERLXoBmiYQaRGuKVKaAocu3E6BUrToTWgSPMgwnASoJ3hKSlITAw/uRYtegD4uyGGAoUODtolPmo2iRW9F0wEeaeqdNiBoIkSXB96eUbToJehmyXRqztFXW3zQgiM1JESL3oRON0pBgwRGssRKAhNZqsMZmWjRl6HbhdTUIKCBp7n2dI8mKIoWvQFNFmZo8ZGW3+ggnjQkpkU5XGWJFn0hmg7DUzA5HQA2SQgd4D0+bNGiF6DJ4ZthWUo+UlOBDv/JfcZFG9GiL0an5bN0yKapf7JgMw0O6LBetOgt6NPEny7LVQurMFFqCo5xu0i06IvRpHlwGkjagUEaPpClOxTIRIu+FE0H6XWCX16TBKP0yxqTLNGiF6HpkhxJOqZA2Lz3tMipp5aiRV+GJkMw2ogjh0mFTtPUp9cVLXoT+mTpJQ0H2qZAGgqmogU9BNGil6DbpVPyAJpChhQPzfWPkhPRoi9Bp4ZdGsDR5J8O+0nSk5CPQVm06AXo1NxP7zkpNJoCgizckl+SaNHb0LRBR5IG8uBIs+C06KiaCKJFX4ZOg/YUmNpBfWr2kcHDFNTGwCta9AJ0U7CPyTxowNOH2zQc6LBBtOgtaDoYT8P1FPyeEgiabKQEJCVPokVvQ5Oinhw+NexSMKTLeuQ6MSMTLfpCNAk+J834ZiiPB3DguuMvRLToJWiyKEcLAZrwTEGTBlQS5ESL3oaekoy22Z4OPS3TngYp0igULXoTmjTqm0YebdSRhgUtdEiRI1r0JnTT0CfNdjrEp02MZummyshEi74UTRIQ2nRPxf70+ZTIkAbmODAQLXoJmjQByQCANubT0jttbqSmIV60ES36MjRZoGkW38hhSLMiFSVNMSNa9EZ0SvKn9zWNBLI8nwqhJpiJFr0NTQv+1CBIqHbA3g4T4wKOaNEL0GmAdxLApmY8HaSTJT2CFy1aNMOT4frpcl5q9qUBI9oCFi36UjQJMg2MHoIs7ZDGI33IokVvQpM//mmpJSULTXP+ZPEWLfqJFr0ITQZ56SD0M+TB0cTpqOAQLVr0T0omyLC8Xb4hDXzaZBQtWnQuDBogeQAESAOYaNHb0dMCDF2CS4sx6cGRh0YGdb9uIogW/eVoWkyQBINiU5BCiJCUVJsIokVfgt70Ei1atGjRor/k9RdzO1axdUiFtAAAAABJRU5ErkJggg==" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息&url=http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息&url=http://hexo.southcat.net/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息&url=http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息&url=http://hexo.southcat.net/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEn0lEQVR42u2c225jMQwD8/8/3X0tFjni0C2wG2vy0jYXx+ODqhLJ9PW18PYSWmihhRZa6A+Dfg23d49/v+/7Gk9f363z/TnvHvt73bQW4RBa6E3Qb3/pw2bfbXLaAHm/uOlwcBOH0EJvg05wU9F4OqypqMVGIuxlKqaPByO00EJ/pYJBilzT/NDHnvYltNBC80L2rgClwpcAUiGc7hdaaKH7gYM0I+1wkBqU6eCmgvprU5bQQn84dGoQPuXrr6qhQgv9odC/Zo4NjQIZVEjzM12Uf+JaCi30fwhNh/1mw6SJSYJF+9w0eAgt9Ebop8IwNf6nm02mfgoB0OYkFjKhhb4MetoI3XxzCKnYtKIgDf0ILfQm6JNQDQnVpQGkDQGQIjc2SEILvQB6ApqKCDH4iAFwIkhOkGOoT2ihF0BTg/1EoJuajvawaYhnbHqEFnoRNF2IiAo0QEsKUtoHESmEFnordDLDaDiGNho/KXrkNbVyIrTQF0CTYpCCaY2gn8Q+Enht1oxTltBCXwpNG4VUOJoGh35PiuM0xAgt9CZoslFS5CggKV5TgSIhvBi0EVroi6FJaJU0JyT40h5Ya7wnY09oobdCExGfioFUGGyGnukQatdSaKEvhCZvkAYKUpQmcPq6NngrtNAboWOj/ur/0VIThiNBgGl9fAGFFnoBdDLvyGMp5JqExNRUEIEjNUtCC70JOsHQEE0j7J2YAyncEw9aaKEXQRMTngwCaYggQgRZkxoBODwntNCXQZ8Y8SeiID0IbMqBiyC00JugaciN/kxEfDKMnBTHGOgTWugl0OlF1Jxv4IlgeGLwVQ6H0EJfCk0K2dQQtANJewi0ufn16i200B8MfRJ6a8S71mQnxiERM4QWeiv0JM5PQ0ULSIN5SfBP91cigtBCXwadvk+DfWPuTUY/KZo0HPD2eUILvQz6JBzTbroZHNIQksSHWjkRWugLoEkxaENxdJNJBJwapNSQINdSaKEvhKYmODa+QViGhOam0AARFoUWejN0IwISoYE2GgkiFcYmpCO00Jug05D+k4GACvq0cBKR8pFBaKGXQlNDrDmYaX0yYBABIYmPQgu9ATo9mYp/pIlIIiQVEUYwMnAILfTF0Ck8g/7oFzDtQdCDTYcgtNBboJuQCza/X/xD3yQY2wwjKBArtNCLoCf4tPCJ2T4NFtOFebpvFCmEFnohNAnWkABqWqtZtzEKhBZa6J99EJQ2JqT4kNe1xoTQQm+DTo1+Et2aIFxqdMjPtHnCwqDQQl8MPTUWrahHho4jca8QCGPQRmihL4U+Cbcl4306PGLC0VBNU8yEFnoDdN20Q6GBBOPIsJEEggQblROhhV4CnYx0avSlRoYIiymEd5wuElroC6GJuZ3EQTokEOGRiBm0eao6MqGFvgiaGvRkKKGF5clgaAxBGsgRWuiN0CREQ5sMOhwQo/AkBPRoPAgttNBfpCEhRvpUyOKgAMQEEr4TWmihswBPhUEUbiuM+EZIFFrojdBJ7G/DcGSNNoyXhI90kYQWegt0atqbECoN4JEAzRTYmYT/xwMUWugF0JtuQgsttNBCC/0htz/Q6hjTl4BIKQAAAABJRU5ErkJggg==" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEnElEQVR42u3aS24bQRAEUd3/0vbKgEFwKiNb3LAruJFlkTP9RkCpfj9/Fr5+RIsWLVq06C9D/wyvxw//97PXf//7/vXrdI13n3/6/6czEodo0VvQ7aGmm72C3+Ffrz19fjrTdM237xEtehGaHPwpYDwFoifc04F/e+/JIVq0aJZkpJ+RBCMlRU8/Ey1a9GcCGUkY3l1vSmTIg53OIlq0aJaok4KCBMCpyEiJTmogfLzKEi36y9HTAb7p68e6oaJFfzH6E4XClBw8NfGn5iEJlLTQOZpaihb9xehUENAk5KnJ1w4Jm+FDSnZEi96OngbjFNI0Jpom5OlDip0T0aIvQ7dNPRpIyKFpo68569i0FC16CfodMN2cPph0rdQQPPkeBTLRoi9Fk2VT0hx4unHTZEgPOBUcMWERLXoBmiYQaRGuKVKaAocu3E6BUrToTWgSPMgwnASoJ3hKSlITAw/uRYtegD4uyGGAoUODtolPmo2iRW9F0wEeaeqdNiBoIkSXB96eUbToJehmyXRqztFXW3zQgiM1JESL3oRON0pBgwRGssRKAhNZqsMZmWjRl6HbhdTUIKCBp7n2dI8mKIoWvQFNFmZo8ZGW3+ggnjQkpkU5XGWJFn0hmg7DUzA5HQA2SQgd4D0+bNGiF6DJ4ZthWUo+UlOBDv/JfcZFG9GiL0an5bN0yKapf7JgMw0O6LBetOgt6NPEny7LVQurMFFqCo5xu0i06IvRpHlwGkjagUEaPpClOxTIRIu+FE0H6XWCX16TBKP0yxqTLNGiF6HpkhxJOqZA2Lz3tMipp5aiRV+GJkMw2ogjh0mFTtPUp9cVLXoT+mTpJQ0H2qZAGgqmogU9BNGil6DbpVPyAJpChhQPzfWPkhPRoi9Bp4ZdGsDR5J8O+0nSk5CPQVm06AXo1NxP7zkpNJoCgizckl+SaNHb0LRBR5IG8uBIs+C06KiaCKJFX4ZOg/YUmNpBfWr2kcHDFNTGwCta9AJ0U7CPyTxowNOH2zQc6LBBtOgtaDoYT8P1FPyeEgiabKQEJCVPokVvQ5Oinhw+NexSMKTLeuQ6MSMTLfpCNAk+J834ZiiPB3DguuMvRLToJWiyKEcLAZrwTEGTBlQS5ESL3oaekoy22Z4OPS3TngYp0igULXoTmjTqm0YebdSRhgUtdEiRI1r0JnTT0CfNdjrEp02MZummyshEi74UTRIQ2nRPxf70+ZTIkAbmODAQLXoJmjQByQCANubT0jttbqSmIV60ES36MjRZoGkW38hhSLMiFSVNMSNa9EZ0SvKn9zWNBLI8nwqhJpiJFr0NTQv+1CBIqHbA3g4T4wKOaNEL0GmAdxLApmY8HaSTJT2CFy1aNMOT4frpcl5q9qUBI9oCFi36UjQJMg2MHoIs7ZDGI33IokVvQpM//mmpJSULTXP+ZPEWLfqJFr0ITQZ56SD0M+TB0cTpqOAQLVr0T0omyLC8Xb4hDXzaZBQtWnQuDBogeQAESAOYaNHb0dMCDF2CS4sx6cGRh0YGdb9uIogW/eVoWkyQBINiU5BCiJCUVJsIokVfgt70Ei1atGjRor/k9RdzO1axdUiFtAAAAABJRU5ErkJggg==" alt="QRCode">
     </li>
     
 
@@ -661,7 +661,7 @@ docker run -d -t --name &quot;efbwechat&quot; -e TOKEN=xxxx -e ADMIN=xxxx mikubi
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

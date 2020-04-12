@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="Haproxy一键安装脚本，可转发端口改善服务器的网络状况 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/"><meta property="og:locale" content="en"><meta name="description" content="说明：一般用海外服务器的都会遇到线路爆炸，网络不好的情况，这时候连接SSH或者使用55R的时候，会出现连接不上或者速度变慢的问题，为了改善这种状况，我们可以使用haproxy转发端口进行中转加速。 假设你的本地电脑为A，haproxy服务器为B，需要转发的服务器为C。A当然可以直接去连C，但效果可能不会很理想。如果B是一个对C和A连接效果都好的服务器。那么A连接C就等于A连接B，通过B连接C，这样 - John Doe - 南猫"><meta property="article:published_time" content="2019-11-12T09:20:23.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.646Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.646Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="Haproxy一键安装脚本，可转发端口改善服务器的网络状况 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/"><meta property="og:locale" content="en"><meta name="description" content="说明：一般用海外服务器的都会遇到线路爆炸，网络不好的情况，这时候连接SSH或者使用55R的时候，会出现连接不上或者速度变慢的问题，为了改善这种状况，我们可以使用haproxy转发端口进行中转加速。 假设你的本地电脑为A，haproxy服务器为B，需要转发的服务器为C。A当然可以直接去连C，但效果可能不会很理想。如果B是一个对C和A连接效果都好的服务器。那么A连接C就等于A连接B，通过B连接C，这样 - John Doe - 南猫"><meta property="article:published_time" content="2019-11-12T09:20:23.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.646Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.646Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/">
+    <link rel="canonical" href="http://hexo.southcat.net/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/",
+    "url": "http://hexo.southcat.net/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/"
+        "@id": "http://hexo.southcat.net/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/"
     },
     "headline": "Haproxy一键安装脚本，可转发端口改善服务器的网络状况 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2019-11-12T09:20:23.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Haproxy一键安装脚本，可转发端口改善服务器的网络状况" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=Haproxy一键安装脚本，可转发端口改善服务器的网络状况" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Haproxy一键安装脚本，可转发端口改善服务器的网络状况&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Haproxy一键安装脚本，可转发端口改善服务器的网络状况&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=Haproxy一键安装脚本，可转发端口改善服务器的网络状况" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=Haproxy一键安装脚本，可转发端口改善服务器的网络状况" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFVklEQVR42u2dwW7bUAwE/f8/rZ4KBIbInX12DoHGFzeJbD2OAZbc3aavy8f1EoEQhCAEIQhBCCuE1/KYrvn/vbvnn9f//Hq69v377z97v4a+HtUlBCEI4RYCvel0yKnoBGk75N29tgLvIMS6hCAEIYwQtsaXGmb6M2lg04Gn80zXbucXghCE8H0I6eDTa6amefdzUnga2oQgBCH8HoSpCDoc0QFpFUCWZjs1bSEIQQjnEKbC6PM0tNAGl4olzTp9WEIQghAYhCRu/NXnr6nNQhDCgyCQIWUTRKgoShrhJ2bPr7rSQhDCgyBQQZUsKxukT8zfdA9qyApBCEJgEFLAIgUuSLNKAigxdjdg6b1RcEsIQhBCHJKImEoaWDpcap4pFELeexRVhCAEIeCQFRFe2wBWasBtMKsNeghBCELoIKShqGl6jeCRhh9SZIKEG6MQhPBQCKQAEuakRdBwaGrMzf3QAiUEIQhhbUjJbEmvTUsOHZRICIx+kFVjFIIQHgphW3baYFR7LTV40pJHgcekihCEIAT0BhTS6QBEB6IUHG3PIAQhCGGGQMWTRohJwwppsEn8pUKKEIQgBAYhGbIkVElFGSK0bK+lgu529iNXWghCeBAEIlKSRkgL/cSQpe+NwyZCEIIQoqhCQNCG1TTPNJy1YQ90PiEIQQhxgSIHJI0rNiUwNG1NtQlvjHCFIAQh1EJrI74kUNvhTwxWEvishyUhCEEIr9SQUDDycOmarqGBEXI9NmSFIAQhjANGK4LQASmZqI1oUpmv2wIlBCEI4ZVMFyp8EDPmW2HPJKbSD00IQhAC0xNog0sNlZi7RIihxgsNjFbmixCE8FAIZGAhQSoSuiDDVgOQiKzrGYQgBCHUQmu7oJBAGHkkk4UOa6u5JAQhCGEMbqWv6VJEFqwkuhCDNQ1U23IlBCEIoftFtUmoIIJsKrodrNqwVj0sCUEIQrho40pATkNeaQlqGicRUVZlSQhCEEIMTNHwFVlWTpazrTmmpnq0RQpBCEKIJisxOkjDbIIcBGBzbuxKC0EIQsBGJjU5qJFChqJNcKXD2hY4EYIQhMByjCloQcIYdJghjfi06cZhTAhCEMK6QFEB5MRkSXDaIFkKh5CahCAEIeRhiYgllelZhC0n8NuHQkCNfwkIQQhCWINbabGh4mwCnJYlYvik+5NahCAEIdwLrZ+En6hxSyA2hg01drGoIgQhCGFcaqiAGoXMYLA2okkzbNHFTghCEEJujK0JkgpMBmrbIFsIK0QhCEEIyHwhDTMVngSaDVYbECPLW+1ACUEID4fQhKI2Q4UMT41A2oRAkpgiBCEIgUMgYioJWjWhbLpAtUYRASAEIQgh/0L7tumQ5aotmoYxTkUYIQhBCBxCGp6a0EQKU21CLBFoqPmLzRchCEEIcUBqxFEivlBxNn2van4bOCEIQQhrcGtrTik81RirJPS5DWa08dYLlBCEIIT6H2w2Zg0VaNM92gAYDZ4JQQhCuJD5Qh80HEHDmPSDaBrlGkIRghCEEEUVKpKeDFSkiRFBl5o02JAVghCEgM3UdDMqmDTNNy0/rcBzbMgKQQgPhEDDGkR03cA2hk0SVtfCoAkjBCEI4UKNMQWwPhVLkmHbLFCtuIuHJSEI4eEQtpBWCkiQYlKYgpi/1IhtTF8hCEEI3/mPb6iBeiLmJsGFFI3FXSEIQQjHEMjwsS1cTXiCNkkSPFsbpRCEIIQjCGlIaiC0BmsjsJABTQhCEAKDQExRcrNNZEmLVxquviKuCkEIQogQ0jLTBCBIkc2AROC2wREhCEEIM4QnP4QgBCEIQQhCEMLt4x9Im4dhIxXOawAAAABJRU5ErkJggg==" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFUElEQVR42u3bS27jQBAEUd7/0vJ6hO7KyCZhwMPQxgNbIptPQKF+c318fS4JRBBBBBFEEGFEuIbXPx9Y/O3739/vXd548dnVPVaf+77X93tXZ5ueSwQRRFgjTIfdHW53w+mBE9r373b3ISjouUQQQYQtwu6QKXhNP9MDrx56etjTc23PIoIIIhwhTBfaBR0SUKeEbTpbSqBEEEGE30HYJUK73zUFDS3eCJ4IIohwH2FqfqRD7j7fBMUEmgLo7kt6pIoUQYSXIaSA9Vd/PtZtFkGEFyGQAEeCFh2o0MC4uyYN5I9OpUUQ4UUIUyBJyVM61C5ZIsXSDuzOQFYEEUTICLQIIoUQHaLQQUvTVDkJqCKIIMJnbKq0Q5J2QNIMUpqmSrtsIoIIInzGfkJVdJSLnHRxohmepIKLBGoRRBCB9RhTATUFK5rIkIZNE3SbgI4yRhFEeDHCdNAUMO8sdDdNFDKgbRZGRBBBhDkwkoWopuChTdZ0PTpkpQXUdklDBBFEiIPUpgmamh/pui0EKezIgpcIIojAljnpQjU5eNOwSQVU00hFCyQiiCBCXNJISRNpxJBEhwTDdA668FVvqoggwosRSIMkFUk0MLaLYalJezKIGYcvIoggQhympgOkwooMR1PDlgxc6CKHCCKIkBHoclVbRBEg0nAhD00aRGPGKIIIIqBBS7MEkYaxJ8kVLYZuV5EiiCDC8SCEDkuaYWm6V5MUTQ3WMVkSQQQR+oEFKLJIw4QOWelAhy6GiSCCCKzH2Cxm0ubFyaIoSZCagfDY2BFBBBFQYCQ/SbGTEE+XMZoFjxFcBBFE2A5kaWFCHvIKL5KMTUGNXJsMbkUQQQT+nz5ookQDY90EhYsgtEG7fE4RRBAhFlBtIKMFUBr2kEVQ2nBN1xdBBBFyP4EsWdLlCzKMpY3bJnGbgjyqIkUQQYS4YEkLGvoAJzikwZvuEweyIoggwoc0OskCBE16aOCi709JVTy/CCKIMAbGFHhOGh4ELQXnCYsOipfvFUEEEbbDl7RYSVGe+BwFScVeCo4iiCDCvf0E8nDXjRdJfFJR1wRYEUQQYUbYBZyUCJEmbbPkSRu2JECKIIIIPQJpiqBAQ5qbMKEhjV2CM36xIoggQgyM6WCk0UHhpgM2gyEyvI3dZhFEEOFoIEtv0hZKZGGUNFLTcqcIIogwI5Dg2P7ttCGTFsDow6UvRwQRRMiLWzQgkuFsKr5I0JsWOUgwR8WXCCKIEAMjLXBSM5QsZaVFrbsFVCzQRBBBhBgYU1GTGpgJrBnckPuTZG2LJoIIIiwRUBAJQ1TS7CQFVrvcRc8igggiMASaiKTARrBOljHIsgd9H5pKiyDCyxFIA6M9YHMgOtRphyzHEygRRHg5Ann4lHykJi19qBSEm+YqgRBBBBGuKjCShyILoLRhQ65DA3VdRYoggghxoNoMO0+XPifw6Ro0gRuXSkUQQYQtwlhowIYpHc6mQJYaqO1SxzbpEkEEEcYCiiQyJOBMRQ8JYCQ5o68x2IogggjVQDYtQ5CBLF3ITgXUSUB9ZCotgggvRiDNynbo0iCRQog2fkmwFUEEEdj/dyDNiyaxIg+S4OkXQBrHIoggwryk0TxYasDQIHkSYMk9EkzdbRZBhBciNAExFVPNolUKvG0BVZ9RBBFE2CKQhIQsXNK/nxRQtGlCBssiiCDCMwikgdkugJAgTZoqzTBZBBFEOEegw9JmKEKHJM1gJz2LCCKIwBGaZUuy5NUuV5KiqS3M0hcggggi9I3WhEEbKiSRaQeypFEzDnZEEEGEeiD7P79EEEEEEUQQQYTl6wflxibQASwHrgAAAABJRU5ErkJggg==" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=Haproxy一键安装脚本，可转发端口改善服务器的网络状况&url=http://yoursite.com/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Haproxy一键安装脚本，可转发端口改善服务器的网络状况&url=http://hexo.southcat.net/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=Haproxy一键安装脚本，可转发端口改善服务器的网络状况&url=http://yoursite.com/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=Haproxy一键安装脚本，可转发端口改善服务器的网络状况&url=http://hexo.southcat.net/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/11/12/haproxy-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91-e7-ab-af-e5-8f-a3-e6-94-b9-e5-96-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e7-bd-91-e7-bb-9c-e7-8a-b6/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFVklEQVR42u2dwW7bUAwE/f8/rZ4KBIbInX12DoHGFzeJbD2OAZbc3aavy8f1EoEQhCAEIQhBCCuE1/KYrvn/vbvnn9f//Hq69v377z97v4a+HtUlBCEI4RYCvel0yKnoBGk75N29tgLvIMS6hCAEIYwQtsaXGmb6M2lg04Gn80zXbucXghCE8H0I6eDTa6amefdzUnga2oQgBCH8HoSpCDoc0QFpFUCWZjs1bSEIQQjnEKbC6PM0tNAGl4olzTp9WEIQghAYhCRu/NXnr6nNQhDCgyCQIWUTRKgoShrhJ2bPr7rSQhDCgyBQQZUsKxukT8zfdA9qyApBCEJgEFLAIgUuSLNKAigxdjdg6b1RcEsIQhBCHJKImEoaWDpcap4pFELeexRVhCAEIeCQFRFe2wBWasBtMKsNeghBCELoIKShqGl6jeCRhh9SZIKEG6MQhPBQCKQAEuakRdBwaGrMzf3QAiUEIQhhbUjJbEmvTUsOHZRICIx+kFVjFIIQHgphW3baYFR7LTV40pJHgcekihCEIAT0BhTS6QBEB6IUHG3PIAQhCGGGQMWTRohJwwppsEn8pUKKEIQgBAYhGbIkVElFGSK0bK+lgu529iNXWghCeBAEIlKSRkgL/cSQpe+NwyZCEIIQoqhCQNCG1TTPNJy1YQ90PiEIQQhxgSIHJI0rNiUwNG1NtQlvjHCFIAQh1EJrI74kUNvhTwxWEvishyUhCEEIr9SQUDDycOmarqGBEXI9NmSFIAQhjANGK4LQASmZqI1oUpmv2wIlBCEI4ZVMFyp8EDPmW2HPJKbSD00IQhAC0xNog0sNlZi7RIihxgsNjFbmixCE8FAIZGAhQSoSuiDDVgOQiKzrGYQgBCHUQmu7oJBAGHkkk4UOa6u5JAQhCGEMbqWv6VJEFqwkuhCDNQ1U23IlBCEIoftFtUmoIIJsKrodrNqwVj0sCUEIQrho40pATkNeaQlqGicRUVZlSQhCEEIMTNHwFVlWTpazrTmmpnq0RQpBCEKIJisxOkjDbIIcBGBzbuxKC0EIQsBGJjU5qJFChqJNcKXD2hY4EYIQhMByjCloQcIYdJghjfi06cZhTAhCEMK6QFEB5MRkSXDaIFkKh5CahCAEIeRhiYgllelZhC0n8NuHQkCNfwkIQQhCWINbabGh4mwCnJYlYvik+5NahCAEIdwLrZ+En6hxSyA2hg01drGoIgQhCGFcaqiAGoXMYLA2okkzbNHFTghCEEJujK0JkgpMBmrbIFsIK0QhCEEIyHwhDTMVngSaDVYbECPLW+1ACUEID4fQhKI2Q4UMT41A2oRAkpgiBCEIgUMgYioJWjWhbLpAtUYRASAEIQgh/0L7tumQ5aotmoYxTkUYIQhBCBxCGp6a0EQKU21CLBFoqPmLzRchCEEIcUBqxFEivlBxNn2van4bOCEIQQhrcGtrTik81RirJPS5DWa08dYLlBCEIIT6H2w2Zg0VaNM92gAYDZ4JQQhCuJD5Qh80HEHDmPSDaBrlGkIRghCEEEUVKpKeDFSkiRFBl5o02JAVghCEgM3UdDMqmDTNNy0/rcBzbMgKQQgPhEDDGkR03cA2hk0SVtfCoAkjBCEI4UKNMQWwPhVLkmHbLFCtuIuHJSEI4eEQtpBWCkiQYlKYgpi/1IhtTF8hCEEI3/mPb6iBeiLmJsGFFI3FXSEIQQjHEMjwsS1cTXiCNkkSPFsbpRCEIIQjCGlIaiC0BmsjsJABTQhCEAKDQExRcrNNZEmLVxquviKuCkEIQogQ0jLTBCBIkc2AROC2wREhCEEIM4QnP4QgBCEIQQhCEMLt4x9Im4dhIxXOawAAAABJRU5ErkJggg==" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFUElEQVR42u3bS27jQBAEUd7/0vJ6hO7KyCZhwMPQxgNbIptPQKF+c318fS4JRBBBBBFEEGFEuIbXPx9Y/O3739/vXd548dnVPVaf+77X93tXZ5ueSwQRRFgjTIfdHW53w+mBE9r373b3ISjouUQQQYQtwu6QKXhNP9MDrx56etjTc23PIoIIIhwhTBfaBR0SUKeEbTpbSqBEEEGE30HYJUK73zUFDS3eCJ4IIohwH2FqfqRD7j7fBMUEmgLo7kt6pIoUQYSXIaSA9Vd/PtZtFkGEFyGQAEeCFh2o0MC4uyYN5I9OpUUQ4UUIUyBJyVM61C5ZIsXSDuzOQFYEEUTICLQIIoUQHaLQQUvTVDkJqCKIIMJnbKq0Q5J2QNIMUpqmSrtsIoIIInzGfkJVdJSLnHRxohmepIKLBGoRRBCB9RhTATUFK5rIkIZNE3SbgI4yRhFEeDHCdNAUMO8sdDdNFDKgbRZGRBBBhDkwkoWopuChTdZ0PTpkpQXUdklDBBFEiIPUpgmamh/pui0EKezIgpcIIojAljnpQjU5eNOwSQVU00hFCyQiiCBCXNJISRNpxJBEhwTDdA668FVvqoggwosRSIMkFUk0MLaLYalJezKIGYcvIoggQhympgOkwooMR1PDlgxc6CKHCCKIkBHoclVbRBEg0nAhD00aRGPGKIIIIqBBS7MEkYaxJ8kVLYZuV5EiiCDC8SCEDkuaYWm6V5MUTQ3WMVkSQQQR+oEFKLJIw4QOWelAhy6GiSCCCKzH2Cxm0ubFyaIoSZCagfDY2BFBBBFQYCQ/SbGTEE+XMZoFjxFcBBFE2A5kaWFCHvIKL5KMTUGNXJsMbkUQQQT+nz5ookQDY90EhYsgtEG7fE4RRBAhFlBtIKMFUBr2kEVQ2nBN1xdBBBFyP4EsWdLlCzKMpY3bJnGbgjyqIkUQQYS4YEkLGvoAJzikwZvuEweyIoggwoc0OskCBE16aOCi709JVTy/CCKIMAbGFHhOGh4ELQXnCYsOipfvFUEEEbbDl7RYSVGe+BwFScVeCo4iiCDCvf0E8nDXjRdJfFJR1wRYEUQQYUbYBZyUCJEmbbPkSRu2JECKIIIIPQJpiqBAQ5qbMKEhjV2CM36xIoggQgyM6WCk0UHhpgM2gyEyvI3dZhFEEOFoIEtv0hZKZGGUNFLTcqcIIogwI5Dg2P7ttCGTFsDow6UvRwQRRMiLWzQgkuFsKr5I0JsWOUgwR8WXCCKIEAMjLXBSM5QsZaVFrbsFVCzQRBBBhBgYU1GTGpgJrBnckPuTZG2LJoIIIiwRUBAJQ1TS7CQFVrvcRc8igggiMASaiKTARrBOljHIsgd9H5pKiyDCyxFIA6M9YHMgOtRphyzHEygRRHg5Ann4lHykJi19qBSEm+YqgRBBBBGuKjCShyILoLRhQ65DA3VdRYoggghxoNoMO0+XPifw6Ro0gRuXSkUQQYQtwlhowIYpHc6mQJYaqO1SxzbpEkEEEcYCiiQyJOBMRQ8JYCQ5o68x2IogggjVQDYtQ5CBLF3ITgXUSUB9ZCotgggvRiDNynbo0iCRQog2fkmwFUEEEdj/dyDNiyaxIg+S4OkXQBrHIoggwryk0TxYasDQIHkSYMk9EkzdbRZBhBciNAExFVPNolUKvG0BVZ9RBBFE2CKQhIQsXNK/nxRQtGlCBssiiCDCMwikgdkugJAgTZoqzTBZBBFEOEegw9JmKEKHJM1gJz2LCCKIwBGaZUuy5NUuV5KiqS3M0hcggggi9I3WhEEbKiSRaQeypFEzDnZEEEGEeiD7P79EEEEEEUQQQYTl6wflxibQASwHrgAAAABJRU5ErkJggg==" alt="QRCode">
     </li>
     
 
@@ -519,7 +519,7 @@
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

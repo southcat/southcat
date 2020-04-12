@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="CentOS安装OpenVZ Web Panel，可以创建和管理VPS服务器 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/"><meta property="og:locale" content="en"><meta name="description" content="简介OpenVZ Web Panel是一个在物理服务器上开OpenVZ虚拟服务器的一个管理软件，可以通过WEB端进行创建和管理OpenVZ服务器。 安装本方法在Vultr CentOS 6 x64下完美测试通过。且只适用于KVM构架的VPS或独立服务器。 1、关闭SELinux &#x2F;usr&#x2F;sbin&#x2F;sestatus -v #如果返回以下信息则为关闭状态 SELinux status:        - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/Openvz_Web_Panel(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Openvz_Web_Panel(2).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Openvz_Web_Panel(6).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Openvz_Web_Panel(3).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Openvz_Web_Panel(4).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Openvz_Web_Panel(5).png"><meta property="article:published_time" content="2020-02-20T01:22:32.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.656Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.656Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="CentOS安装OpenVZ Web Panel，可以创建和管理VPS服务器 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/"><meta property="og:locale" content="en"><meta name="description" content="简介OpenVZ Web Panel是一个在物理服务器上开OpenVZ虚拟服务器的一个管理软件，可以通过WEB端进行创建和管理OpenVZ服务器。 安装本方法在Vultr CentOS 6 x64下完美测试通过。且只适用于KVM构架的VPS或独立服务器。 1、关闭SELinux &#x2F;usr&#x2F;sbin&#x2F;sestatus -v #如果返回以下信息则为关闭状态 SELinux status:        - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/Openvz_Web_Panel(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Openvz_Web_Panel(2).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Openvz_Web_Panel(6).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Openvz_Web_Panel(3).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Openvz_Web_Panel(4).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Openvz_Web_Panel(5).png"><meta property="article:published_time" content="2020-02-20T01:22:32.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.656Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.656Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/">
+    <link rel="canonical" href="http://hexo.southcat.net/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/",
+    "url": "http://hexo.southcat.net/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/"
+        "@id": "http://hexo.southcat.net/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/"
     },
     "headline": "CentOS安装OpenVZ Web Panel，可以创建和管理VPS服务器 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2020-02-20T01:22:32.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=CentOS安装OpenVZ Web Panel，可以创建和管理VPS服务器" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=CentOS安装OpenVZ Web Panel，可以创建和管理VPS服务器" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=CentOS安装OpenVZ Web Panel，可以创建和管理VPS服务器&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=CentOS安装OpenVZ Web Panel，可以创建和管理VPS服务器&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=CentOS安装OpenVZ Web Panel，可以创建和管理VPS服务器" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=CentOS安装OpenVZ Web Panel，可以创建和管理VPS服务器" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEI0lEQVR42u3cwXLbMAxFUf//T7erLuoR+e6jvBDs601Sx5F1OBMQBOC+/vzA4yVSpEiRIkXeRL42j/fX/Pv+/Wt67dXrr37//Vr/3fDb8+i+RYocikwXXSFXF18GgrBQV4tCfr68b5EiByOvAsIusKwCzC5YrACrRaCvXQY7kSJ/BEkxJJCdLoBIkb+OTJt+SrrJdVY/Wz0nUuQ3I0kynYLR7nCdAle7uB89hYgU+TDkLjA8+evHqnUiRT4I2SbWTWFqVxTeJeq7BSeHAZEiJyPvbr67A/YnE/T2fkWKnIykCffuMEwLzynhOC2m4QRdpMiHI082/pQ8pySAJAZkMVKxWqTIychmgyYNWNoM2jWQmuGly4UVKXIgMuFI8ZcOUpy+JylWo2qdSJFDkLTh2TzuLBxJTtAwhUiRA5FpI04H410QIcWo1eI2771MGESKHIg8LebSgJAWICX7JBAuEwWRIgciSTChG/iuadpu7E0QWi6GSJEDkaTQRA69pBidhiho8MHvJVLkQCRp4twpZKXGEBmoIM3heAoRKXIYkjZTm6YPSf7TAXqXAMRimkiRQ5HNDbZDfuS5ZhCCfjBApMipyPRH3QwNkY2+GcpfJQY00IkUORXZfgCFJAakMZM2/dSMSgmCSJFTkfHwCd6wHTDcbuIv/iE4lKCLFDkM2Qw+UFxKppukgw5sbBN0kSKHIMkferpg+llTNCOJCW0GiRQ5FUluoh2KoE1XerimzSNUXBYpcgiyGXggQeHuTZIiVh14RIocgKSJdBqKSE0cMhjcFMWqrpZIkcOQzb9TgXg3hEsGpFLwIUVwkSKnItMNkYQ9FapJ8akaoIfDSyJFTkXu/sCbxmkbNJqmbgpyaPpDpMgByNSsSQtBk/UEpwWzpvAlUuR05O57MqCwCwoEQ4NRSjxEipyMJMPsdw/LJ03WdFAnw0siRU5Fkk03DgbBAUDSnD0uJqdClkiRg5AJi4cRwHWaAQmcjJPAI1LkIORus6VBgSTO7QAhLZTh6CpS5FBkGqinRax2yH53XfJ7VeARKfLhSDIAeFJsJoGNDDykQz0+hYgU+WAkvfmmOdoMSZDCWROELgOPSJGDkCmJbi5+Ak1Jezoo4wFCkSIHIekAUNqEySAESejJAt1K0EWKfDCSFJPJgxa3duh0LTp4LFLkdGQ6zKbNuQk4aXCYFKdxY1ikyOHINMDQDuLSwUOSVKQghQtZIkU+HHkSGFKSQBLvtlDVvE6kyOnIFHAIkDRgaAOXNoNT0iJS5GQkPeg2h2CaoKeCV5vwixT57ciUGKThWpJMp0GMNHgYE3SRIr8IuRwGeuX/VDpt5HSgadcAFinyG5F0cIk8n5q3BICarCHoiRQ5Fdk2UJuicUq0TwvIKLEQKXIg8psfIkWKFClS5OHjL/vWob1+TZ+OAAAAAElFTkSuQmCC" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEIklEQVR42u3aQXLbQAxEUd3/0skqVS5FRP8mvSCor01iWxrNG5chDIDXny94vESKFClSpMiLyNfw+Pfzn899f83Pr/97k7fvH61F1n5fP+1bpMjNyI9/tB8AE6Q5rKPXfzqIQ0DYt0iR25FHb/Zp8RSYUvA52vj0uiYIihT5ZCQNBu2GaGIxJQ0iRX4jkm5s2lSTJEwJ+ZSsiBT5NOSY6B48JyX19AOdJOwJfekWIlLkzZAkMNzx31+v1okUeQMkDSjkMEjReSpKpWJWEwRFityKTBfiqZlzlAjQADGhcHAZGkMiRW5Fpg/elCinRiu5HE9Bq7lsj4MRIkUuQNLLbnvJnQLKlGiQA8UNXpEilyKbwlUzPEQasynQTIcRg51IkQuRqZFCvp8uudPgE024yZDimPGIFLkEmRDTQmTo72wjhx7yuD+RIpci6YBDKjZNH9DVZXcYLCTDiSJFbkfSRkqTfJOCMP26OSiRIp+ATA2WacF2sIgm91cL2yJFbkdOxWTaJCWN3aZQRdasGj4iRS5CkgEHUkROAw+pcB2HHcDghEiR25Fpk82QAhliahL0Fl4Xl0WKvCmSXJBp8Egf9E0wSwWx8TIhUuRCZCoskzcfB4Zgg4YME9K9iBS5HUkuzPRDPAWHFKyaJi9OBkSKXIScGj8UmAaBaXBJDZ+0p9jVEilyAZJ+8KYhItIUokk6vbDjwQiRIhch48WzTNLT8EQzBJWeH9cTKXI5kjZ6UrKQAgwZCEyDiSQQihS5FUkHgtDCaVihGEZKF4i6gi5S5BJkas5MgYUONqCEGrwfWVOkyCcgG0wKUNPARUr2aQJeNXxEilyIJIXl5lJLntsMOE2Hhi/NIkUuQDZ/yBN6+oAn6LMX8nENkSIXIptCMWnA0iHAdgiCHIRIkU9FpmZMChZksCithy/GU3IvUuRSZPqDp42gdFhNwEl7I0MaIkVuRNLmDbm0NgcxNXnI4aDEQ6TI5chUvKI/I0k7xZ9N7kWKfBKSNGvODBjSgYsrWBx4RIq8MfJoA6RxmoaTpsBDCtDpeePlX6TIhcgJe2YYN61FhyHa78XiskiRS5A0iSYFKRI00uZIYYsWwUSK3IicXkyScFo0ToUv2hwivwyRIjcjm8ZnG3BIE5UOIzaHJ1LkZmS6hDZAsqkm6Sd7GxtCIkUuRdIXTgMLzdARLXiRotp4KRApcjmSFKlIM6gdKiSHQYcjRIrcjmwXnxalSTe58JICWH1pFilyCfJM4XZqwtCfpwGpM40g3GkWKfLmSDrkly69JLkmAa1JGvD0h0iRD0ZOg31tQTr9nzR5RYr8FiRNjEnC3jRqrwQ1kSKfgKSX1VSEboMNLZ6RovPpW4hIkTdDkkZKKhzTYjEdRGqGJw5/USJFLkQ++SFSpEiRIkWefPwFnm63U8O9QIMAAAAASUVORK5CYII=" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=CentOS安装OpenVZ Web Panel，可以创建和管理VPS服务器&url=http://yoursite.com/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=CentOS安装OpenVZ Web Panel，可以创建和管理VPS服务器&url=http://hexo.southcat.net/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=CentOS安装OpenVZ Web Panel，可以创建和管理VPS服务器&url=http://yoursite.com/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=CentOS安装OpenVZ Web Panel，可以创建和管理VPS服务器&url=http://hexo.southcat.net/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/02/20/centos-e5-ae-89-e8-a3-85openvz-web-panel-ef-bc-8c-e5-8f-af-e4-bb-a5-e5-88-9b-e5-bb-ba-e5-92-8c-e7-ae-a1-e7-90-86vps-e6-9c-8d-e5-8a-a1-e5-99-a8/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEI0lEQVR42u3cwXLbMAxFUf//T7erLuoR+e6jvBDs601Sx5F1OBMQBOC+/vzA4yVSpEiRIkXeRL42j/fX/Pv+/Wt67dXrr37//Vr/3fDb8+i+RYocikwXXSFXF18GgrBQV4tCfr68b5EiByOvAsIusKwCzC5YrACrRaCvXQY7kSJ/BEkxJJCdLoBIkb+OTJt+SrrJdVY/Wz0nUuQ3I0kynYLR7nCdAle7uB89hYgU+TDkLjA8+evHqnUiRT4I2SbWTWFqVxTeJeq7BSeHAZEiJyPvbr67A/YnE/T2fkWKnIykCffuMEwLzynhOC2m4QRdpMiHI082/pQ8pySAJAZkMVKxWqTIychmgyYNWNoM2jWQmuGly4UVKXIgMuFI8ZcOUpy+JylWo2qdSJFDkLTh2TzuLBxJTtAwhUiRA5FpI04H410QIcWo1eI2771MGESKHIg8LebSgJAWICX7JBAuEwWRIgciSTChG/iuadpu7E0QWi6GSJEDkaTQRA69pBidhiho8MHvJVLkQCRp4twpZKXGEBmoIM3heAoRKXIYkjZTm6YPSf7TAXqXAMRimkiRQ5HNDbZDfuS5ZhCCfjBApMipyPRH3QwNkY2+GcpfJQY00IkUORXZfgCFJAakMZM2/dSMSgmCSJFTkfHwCd6wHTDcbuIv/iE4lKCLFDkM2Qw+UFxKppukgw5sbBN0kSKHIMkferpg+llTNCOJCW0GiRQ5FUluoh2KoE1XerimzSNUXBYpcgiyGXggQeHuTZIiVh14RIocgKSJdBqKSE0cMhjcFMWqrpZIkcOQzb9TgXg3hEsGpFLwIUVwkSKnItMNkYQ9FapJ8akaoIfDSyJFTkXu/sCbxmkbNJqmbgpyaPpDpMgByNSsSQtBk/UEpwWzpvAlUuR05O57MqCwCwoEQ4NRSjxEipyMJMPsdw/LJ03WdFAnw0siRU5Fkk03DgbBAUDSnD0uJqdClkiRg5AJi4cRwHWaAQmcjJPAI1LkIORus6VBgSTO7QAhLZTh6CpS5FBkGqinRax2yH53XfJ7VeARKfLhSDIAeFJsJoGNDDykQz0+hYgU+WAkvfmmOdoMSZDCWROELgOPSJGDkCmJbi5+Ak1Jezoo4wFCkSIHIekAUNqEySAESejJAt1K0EWKfDCSFJPJgxa3duh0LTp4LFLkdGQ6zKbNuQk4aXCYFKdxY1ikyOHINMDQDuLSwUOSVKQghQtZIkU+HHkSGFKSQBLvtlDVvE6kyOnIFHAIkDRgaAOXNoNT0iJS5GQkPeg2h2CaoKeCV5vwixT57ciUGKThWpJMp0GMNHgYE3SRIr8IuRwGeuX/VDpt5HSgadcAFinyG5F0cIk8n5q3BICarCHoiRQ5Fdk2UJuicUq0TwvIKLEQKXIg8psfIkWKFClS5OHjL/vWob1+TZ+OAAAAAElFTkSuQmCC" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEIklEQVR42u3aQXLbQAxEUd3/0skqVS5FRP8mvSCor01iWxrNG5chDIDXny94vESKFClSpMiLyNfw+Pfzn899f83Pr/97k7fvH61F1n5fP+1bpMjNyI9/tB8AE6Q5rKPXfzqIQ0DYt0iR25FHb/Zp8RSYUvA52vj0uiYIihT5ZCQNBu2GaGIxJQ0iRX4jkm5s2lSTJEwJ+ZSsiBT5NOSY6B48JyX19AOdJOwJfekWIlLkzZAkMNzx31+v1okUeQMkDSjkMEjReSpKpWJWEwRFityKTBfiqZlzlAjQADGhcHAZGkMiRW5Fpg/elCinRiu5HE9Bq7lsj4MRIkUuQNLLbnvJnQLKlGiQA8UNXpEilyKbwlUzPEQasynQTIcRg51IkQuRqZFCvp8uudPgE024yZDimPGIFLkEmRDTQmTo72wjhx7yuD+RIpci6YBDKjZNH9DVZXcYLCTDiSJFbkfSRkqTfJOCMP26OSiRIp+ATA2WacF2sIgm91cL2yJFbkdOxWTaJCWN3aZQRdasGj4iRS5CkgEHUkROAw+pcB2HHcDghEiR25Fpk82QAhliahL0Fl4Xl0WKvCmSXJBp8Egf9E0wSwWx8TIhUuRCZCoskzcfB4Zgg4YME9K9iBS5HUkuzPRDPAWHFKyaJi9OBkSKXIScGj8UmAaBaXBJDZ+0p9jVEilyAZJ+8KYhItIUokk6vbDjwQiRIhch48WzTNLT8EQzBJWeH9cTKXI5kjZ6UrKQAgwZCEyDiSQQihS5FUkHgtDCaVihGEZKF4i6gi5S5BJkas5MgYUONqCEGrwfWVOkyCcgG0wKUNPARUr2aQJeNXxEilyIJIXl5lJLntsMOE2Hhi/NIkUuQDZ/yBN6+oAn6LMX8nENkSIXIptCMWnA0iHAdgiCHIRIkU9FpmZMChZksCithy/GU3IvUuRSZPqDp42gdFhNwEl7I0MaIkVuRNLmDbm0NgcxNXnI4aDEQ6TI5chUvKI/I0k7xZ9N7kWKfBKSNGvODBjSgYsrWBx4RIq8MfJoA6RxmoaTpsBDCtDpeePlX6TIhcgJe2YYN61FhyHa78XiskiRS5A0iSYFKRI00uZIYYsWwUSK3IicXkyScFo0ToUv2hwivwyRIjcjm8ZnG3BIE5UOIzaHJ1LkZmS6hDZAsqkm6Sd7GxtCIkUuRdIXTgMLzdARLXiRotp4KRApcjmSFKlIM6gdKiSHQYcjRIrcjmwXnxalSTe58JICWH1pFilyCfJM4XZqwtCfpwGpM40g3GkWKfLmSDrkly69JLkmAa1JGvD0h0iRD0ZOg31tQTr9nzR5RYr8FiRNjEnC3jRqrwQ1kSKfgKSX1VSEboMNLZ6RovPpW4hIkTdDkkZKKhzTYjEdRGqGJw5/USJFLkQ++SFSpEiRIkWefPwFnm63U8O9QIMAAAAASUVORK5CYII=" alt="QRCode">
     </li>
     
 
@@ -536,7 +536,7 @@ service vz start </code></pre><p><strong>4、安装OpenVZ Web Panel</strong></p>
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

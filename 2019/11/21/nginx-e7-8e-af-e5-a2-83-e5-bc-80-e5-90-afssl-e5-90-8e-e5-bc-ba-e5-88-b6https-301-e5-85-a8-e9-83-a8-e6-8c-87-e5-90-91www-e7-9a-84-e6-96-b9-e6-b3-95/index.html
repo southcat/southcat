@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="Nginx环境开启ssl后强制https 301全部指向www的方法 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前说过LNMP环境配置SSL证书最简单教程和Nginx环境强制http 301跳转https的方法，可能有人强制http跳转到https:&#x2F;&#x2F;www.yourdomain.com后，会出现这样的情况，浏览器直接输入https:&#x2F;&#x2F;yourdomain.com跳转不到之前设置的https:&#x2F;&#x2F;www.yourdomain.com，相信很多强迫症的人会很不习惯，这可能之前只设置了80端口的跳转 - John Doe - 南猫"><meta property="article:published_time" content="2019-11-21T02:13:20.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.648Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.648Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="Nginx环境开启ssl后强制https 301全部指向www的方法 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前说过LNMP环境配置SSL证书最简单教程和Nginx环境强制http 301跳转https的方法，可能有人强制http跳转到https:&#x2F;&#x2F;www.yourdomain.com后，会出现这样的情况，浏览器直接输入https:&#x2F;&#x2F;yourdomain.com跳转不到之前设置的https:&#x2F;&#x2F;www.yourdomain.com，相信很多强迫症的人会很不习惯，这可能之前只设置了80端口的跳转 - John Doe - 南猫"><meta property="article:published_time" content="2019-11-21T02:13:20.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.648Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.648Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/">
+    <link rel="canonical" href="http://hexo.southcat.net/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/",
+    "url": "http://hexo.southcat.net/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/"
+        "@id": "http://hexo.southcat.net/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/"
     },
     "headline": "Nginx环境开启ssl后强制https 301全部指向www的方法 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2019-11-21T02:13:20.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Nginx环境开启ssl后强制https 301全部指向www的方法" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=Nginx环境开启ssl后强制https 301全部指向www的方法" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Nginx环境开启ssl后强制https 301全部指向www的方法&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Nginx环境开启ssl后强制https 301全部指向www的方法&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=Nginx环境开启ssl后强制https 301全部指向www的方法" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=Nginx环境开启ssl后强制https 301全部指向www的方法" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEHklEQVR42u3aS3LbWhAEUe1/088jD54DtysL1AANJicOUxKIcyPY6N/Pf1/w+hEpUqRIkSI/RP4Mr//9wcX/p9/9+97pOld//++1Tu/T+xYpcivy8kt78WEnSDqI0+9f3TAGkPsWKXIx8uqDrrCngJGulwJTeo9+jkiR34RMN5se/AlPAsrpIESK/CYkDUj0wU6Sbpp4iBT5VuT0RT8lyAk8Fc2p+E4B8FerEJEiH4acCtQn//tr3TqRIh+EjEOTIahMD//m91OzjBQLH021RIp8EDIl0ukAUjLdXvdO8X1smIkUuRSZHrykqL2T1DdJd0r6Y9EsUuQyJCl8m8YuGeSmxlcT3PCykkiRD0c2jaHpYd8sQ0yDV7rQRJJ8kSI3IsnyXlpcIIPaZgjbBqljABUpciGSJAXNcHQa5LSLw+ln6T2RIrcimwKXNJVOwYsmBW2ScDw0kSIXIk+BhiQFNKG/s3RBFyRwZ0CkyOXIttFMAxJN6KeDIfcrUuR2ZFoITAn3FEhoE6tZ6idDI5EityLjFzgEHzLgIcv6qbCmy/0iRb4FSQc/zcI9PZh0/XZ5UKTItyBJY7gpgJum13QAHyfoIkUuQZIgQxLupsAlgDZBFynyLUhSEJNA8RsHcydJwM1lkSIXIUlzKBW4pLGUFqTS9ZvCXKTIrchpwSgttNNlJrLEQB767fVEityMnBrIqZFMhrO0EG4LhSnwiRS5ETndRLwIeGjTZSc60CVDI5EiNyNTQZsK42nJqGk0k2SjuT+RIrcimyR4+vDUoCLXSwGvTdRFinwTkvw84clghja+SHIhUuQbkKl4poMcWgQ3SQMZ9IxNMZEiFyJjgxY2smiTOQWLNFBqDkukyI3INCilSTxtQLeH0Sbwx+gqUuRSJF1Kist7odFFFwebBB8HHpEiH4xsHt5TwLmT4DfF9DRYioFHpMhFyBRcyFCobUKRIep0mOmgRIrcjEzF7JSIT79LFpWaIpoeikiR25F3E2YaHCisWZ7CRYBIkQuRKWjQpJoMbOiSIE3e0wBXpMitSDL8JMtHZLliCnh0wSIdjkiR25HNAtCnTae04EAb2WjhQqTI5chpGeKTgSkd+KTPIoGyGviIFPlwJBnmtE2qO8n+nUEUWiAUKXIB8nTBdkmiWcadrk+CV0pWRIrcjkxD0DQcIot9aRhErkOKdpEi34Sk8GZBMBXcKZFomtDHRpZIkYuQ9EvcPJjvDIfIQ75ZqBIpcjMyPZSnoESS8PT/afBLg1JsZIkUuQyZCuIGPQWoVOyORTBIzkWK/DbklFyTwpsOi9ohLNr+ECnyJUi65HsnUaBLSc3ylEiRb0DSG08DU7JokRLvdjB8TP5FilyKJAkvXTQiN5mGPKmITsuJIkVuRr75JVKkSJEiRd58/QGfIAUwbn0AAgAAAABJRU5ErkJggg==" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEqElEQVR42u2dwW7dQAwD8/8/3Z4b2OJw0wJ9q/Elh/jZOwqgSCSRfP1aeH0JLbTQQgst9IdBfw3X93v+eMC3+57uf3vW2zO/P+fpfU/vxhxCC70E+u0lTwedvkeut3c+FePp69O7MYfQQi+CfjvYU0OYGs90qASePtc0yMcfkNBCCx2HiKnhUZimSZ7eK7TQQucBgQwg072pEU4LjtBCC322cNAmMi31b3BNkd6WkX+yZQkt9IdDtw3pf/3619RQoYX+YOhoeg0CQisOvjWyE4AkRPzItRRa6A+GTgvBJA5OphpdTEiRCRx5vtBCb4BOgv7bAYhYn56bBg7SUCvRQWihF0CfhmtSyIaafUToa42D18IJLfQCaPoLnw4Z04tJkZK4SL//eDahhV4ATcKqSXCnZh81Bqh4kYYUoYXeCE0WhBRIpQtLE5ClSw95p9BCb4SmSwQNrKfgahIV0mCTChEnMqGFvhQ6Lt6lYN+E4xIoXTrSciS00Jug6YdpkaiY3wr6qSGmgJ/QQm+BTs2LiO9ErEtNpjHjUvFeGYQWehE0CcSeCPNtiI6KinTxGRuZ0EJfCD0KaVDUbwWJdB8RGmmBhBZ6I3Qa2tMB03JAhb82UEd+OKOIILTQF0KThzXLBRUaSKA+Nah2QBFa6A3QjYFOBgZysHRRsZAEBtBwIrTQF0I3oZdmcU8LB10mTsSMyuEQWuhLodMHT8SHyYw/aYZ04YjDidBCXw5NxHgCMYl2k5hHjXkSDsJBG6GFvhSaLhqNMJgWjaaxNed8/YzQQi+ApgFWPADQ4b80A0mjwgae0EJfDD0N+dMi0BptqWh04ZhC7tMPTWiht0M3C0AaHoh5T0MzKUQ7LkZCC70EmgzyxMRvFoLWcG+eicV+oYW+EJqY22SQSAWgzW4aPlIRUgMWWugt0GQwaI0AGlIlpn0yEt/OMgZihRb6YujWiKdAxNRLzYoGfNJZhRZ6C/SJwD6JfsQkb8V/sqwkIVJoobdCnzaWUyE+NTQiOGBDUGihl0CTw0zLPhET24AcFSKSwSe00NugyS98GmahwVfanOgilMI6Qgu9CTqF3prCkINRU54a/lWQQGihF0A3C3oTgElgVIAghjw5q9BCb4FO4gFdHijQT4tERMPX5im00AugU9CFGPM0ZJMWDhLKoYvPYxGEFnoBNBX+kkhwEtJJ95ICTCGAqIYKLfSF0FFMA0b8iUnXGIJNkGcstNBCL4AmBjkdNlIhEwRplr/CNQoLQgu9ADoNF6mxJbGOFKMx5RuRIW5ZQgt9KfQERhcCGrppBEh6PzH3hRZ6EzQWy7+6P6xIhf3GAKDviFuW0EJfCk0G9xORgRjqNEDTNsM4nAgt9EJoIgw2A//UaE6EP9JsUdBGaKEvg06htMZ8n8RFshQQY7BZOqqFQ2ihL4KeBpDJACCDQWpkqVDJhEiLiNBCb4WmYVQSaEtFSYJ+czUNWGihheb/0Lptekn0I4Zcs+AILbTQ/A8otSY7ESWa99PlSGihN0E3AZgmuEoDtU3B0rN/LCIILfSHQzdiQGOqT0PGT80FEuCtkghCC30J9KZLaKGFFlpooT/k+g2q2NNeQuTMvwAAAABJRU5ErkJggg==" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=Nginx环境开启ssl后强制https 301全部指向www的方法&url=http://yoursite.com/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Nginx环境开启ssl后强制https 301全部指向www的方法&url=http://hexo.southcat.net/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=Nginx环境开启ssl后强制https 301全部指向www的方法&url=http://yoursite.com/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=Nginx环境开启ssl后强制https 301全部指向www的方法&url=http://hexo.southcat.net/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/11/21/nginx-e7-8e-af-e5-a2-83-e5-bc-80-e5-90-afssl-e5-90-8e-e5-bc-ba-e5-88-b6https-301-e5-85-a8-e9-83-a8-e6-8c-87-e5-90-91www-e7-9a-84-e6-96-b9-e6-b3-95/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEHklEQVR42u3aS3LbWhAEUe1/088jD54DtysL1AANJicOUxKIcyPY6N/Pf1/w+hEpUqRIkSI/RP4Mr//9wcX/p9/9+97pOld//++1Tu/T+xYpcivy8kt78WEnSDqI0+9f3TAGkPsWKXIx8uqDrrCngJGulwJTeo9+jkiR34RMN5se/AlPAsrpIESK/CYkDUj0wU6Sbpp4iBT5VuT0RT8lyAk8Fc2p+E4B8FerEJEiH4acCtQn//tr3TqRIh+EjEOTIahMD//m91OzjBQLH021RIp8EDIl0ukAUjLdXvdO8X1smIkUuRSZHrykqL2T1DdJd0r6Y9EsUuQyJCl8m8YuGeSmxlcT3PCykkiRD0c2jaHpYd8sQ0yDV7rQRJJ8kSI3IsnyXlpcIIPaZgjbBqljABUpciGSJAXNcHQa5LSLw+ln6T2RIrcimwKXNJVOwYsmBW2ScDw0kSIXIk+BhiQFNKG/s3RBFyRwZ0CkyOXIttFMAxJN6KeDIfcrUuR2ZFoITAn3FEhoE6tZ6idDI5EityLjFzgEHzLgIcv6qbCmy/0iRb4FSQc/zcI9PZh0/XZ5UKTItyBJY7gpgJum13QAHyfoIkUuQZIgQxLupsAlgDZBFynyLUhSEJNA8RsHcydJwM1lkSIXIUlzKBW4pLGUFqTS9ZvCXKTIrchpwSgttNNlJrLEQB767fVEityMnBrIqZFMhrO0EG4LhSnwiRS5ETndRLwIeGjTZSc60CVDI5EiNyNTQZsK42nJqGk0k2SjuT+RIrcimyR4+vDUoCLXSwGvTdRFinwTkvw84clghja+SHIhUuQbkKl4poMcWgQ3SQMZ9IxNMZEiFyJjgxY2smiTOQWLNFBqDkukyI3INCilSTxtQLeH0Sbwx+gqUuRSJF1Kist7odFFFwebBB8HHpEiH4xsHt5TwLmT4DfF9DRYioFHpMhFyBRcyFCobUKRIep0mOmgRIrcjEzF7JSIT79LFpWaIpoeikiR25F3E2YaHCisWZ7CRYBIkQuRKWjQpJoMbOiSIE3e0wBXpMitSDL8JMtHZLliCnh0wSIdjkiR25HNAtCnTae04EAb2WjhQqTI5chpGeKTgSkd+KTPIoGyGviIFPlwJBnmtE2qO8n+nUEUWiAUKXIB8nTBdkmiWcadrk+CV0pWRIrcjkxD0DQcIot9aRhErkOKdpEi34Sk8GZBMBXcKZFomtDHRpZIkYuQ9EvcPJjvDIfIQ75ZqBIpcjMyPZSnoESS8PT/afBLg1JsZIkUuQyZCuIGPQWoVOyORTBIzkWK/DbklFyTwpsOi9ohLNr+ECnyJUi65HsnUaBLSc3ylEiRb0DSG08DU7JokRLvdjB8TP5FilyKJAkvXTQiN5mGPKmITsuJIkVuRr75JVKkSJEiRd58/QGfIAUwbn0AAgAAAABJRU5ErkJggg==" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEqElEQVR42u2dwW7dQAwD8/8/3Z4b2OJw0wJ9q/Elh/jZOwqgSCSRfP1aeH0JLbTQQgst9IdBfw3X93v+eMC3+57uf3vW2zO/P+fpfU/vxhxCC70E+u0lTwedvkeut3c+FePp69O7MYfQQi+CfjvYU0OYGs90qASePtc0yMcfkNBCCx2HiKnhUZimSZ7eK7TQQucBgQwg072pEU4LjtBCC322cNAmMi31b3BNkd6WkX+yZQkt9IdDtw3pf/3619RQoYX+YOhoeg0CQisOvjWyE4AkRPzItRRa6A+GTgvBJA5OphpdTEiRCRx5vtBCb4BOgv7bAYhYn56bBg7SUCvRQWihF0CfhmtSyIaafUToa42D18IJLfQCaPoLnw4Z04tJkZK4SL//eDahhV4ATcKqSXCnZh81Bqh4kYYUoYXeCE0WhBRIpQtLE5ClSw95p9BCb4SmSwQNrKfgahIV0mCTChEnMqGFvhQ6Lt6lYN+E4xIoXTrSciS00Jug6YdpkaiY3wr6qSGmgJ/QQm+BTs2LiO9ErEtNpjHjUvFeGYQWehE0CcSeCPNtiI6KinTxGRuZ0EJfCD0KaVDUbwWJdB8RGmmBhBZ6I3Qa2tMB03JAhb82UEd+OKOIILTQF0KThzXLBRUaSKA+Nah2QBFa6A3QjYFOBgZysHRRsZAEBtBwIrTQF0I3oZdmcU8LB10mTsSMyuEQWuhLodMHT8SHyYw/aYZ04YjDidBCXw5NxHgCMYl2k5hHjXkSDsJBG6GFvhSaLhqNMJgWjaaxNed8/YzQQi+ApgFWPADQ4b80A0mjwgae0EJfDD0N+dMi0BptqWh04ZhC7tMPTWiht0M3C0AaHoh5T0MzKUQ7LkZCC70EmgzyxMRvFoLWcG+eicV+oYW+EJqY22SQSAWgzW4aPlIRUgMWWugt0GQwaI0AGlIlpn0yEt/OMgZihRb6YujWiKdAxNRLzYoGfNJZhRZ6C/SJwD6JfsQkb8V/sqwkIVJoobdCnzaWUyE+NTQiOGBDUGihl0CTw0zLPhET24AcFSKSwSe00NugyS98GmahwVfanOgilMI6Qgu9CTqF3prCkINRU54a/lWQQGihF0A3C3oTgElgVIAghjw5q9BCb4FO4gFdHijQT4tERMPX5im00AugU9CFGPM0ZJMWDhLKoYvPYxGEFnoBNBX+kkhwEtJJ95ICTCGAqIYKLfSF0FFMA0b8iUnXGIJNkGcstNBCL4AmBjkdNlIhEwRplr/CNQoLQgu9ADoNF6mxJbGOFKMx5RuRIW5ZQgt9KfQERhcCGrppBEh6PzH3hRZ6EzQWy7+6P6xIhf3GAKDviFuW0EJfCk0G9xORgRjqNEDTNsM4nAgt9EJoIgw2A//UaE6EP9JsUdBGaKEvg06htMZ8n8RFshQQY7BZOqqFQ2ihL4KeBpDJACCDQWpkqVDJhEiLiNBCb4WmYVQSaEtFSYJ+czUNWGihheb/0Lptekn0I4Zcs+AILbTQ/A8otSY7ESWa99PlSGihN0E3AZgmuEoDtU3B0rN/LCIILfSHQzdiQGOqT0PGT80FEuCtkghCC30J9KZLaKGFFlpooT/k+g2q2NNeQuTMvwAAAABJRU5ErkJggg==" alt="QRCode">
     </li>
     
 
@@ -527,7 +527,7 @@
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

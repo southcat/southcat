@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="在Linux上快速搭建Git服务器教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="说明：Git是一个分布式的版本控制系统，也就意味着它可以在有网络环境或者没有网络环境的时候使用。而通常情况下会搭建一个服务端，所有用户的更改统一发布到服务端上。 服务器上的Git一般情况下如果想与他人合作，就需要一个远程的Git仓库。尽管技术上可以从个人的仓库里推送和拉取修改内容，但我们不鼓励这样做，因为一不留心就很容易弄混其他人的进度。另外，你也一定希望合作者们即使在自己不开机的时候也能从仓库获 - John Doe - 南猫"><meta property="article:published_time" content="2019-10-30T09:44:09.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.645Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.645Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="在Linux上快速搭建Git服务器教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="说明：Git是一个分布式的版本控制系统，也就意味着它可以在有网络环境或者没有网络环境的时候使用。而通常情况下会搭建一个服务端，所有用户的更改统一发布到服务端上。 服务器上的Git一般情况下如果想与他人合作，就需要一个远程的Git仓库。尽管技术上可以从个人的仓库里推送和拉取修改内容，但我们不鼓励这样做，因为一不留心就很容易弄混其他人的进度。另外，你也一定希望合作者们即使在自己不开机的时候也能从仓库获 - John Doe - 南猫"><meta property="article:published_time" content="2019-10-30T09:44:09.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.645Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.645Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/">
+    <link rel="canonical" href="http://hexo.southcat.net/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/",
+    "url": "http://hexo.southcat.net/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/"
+        "@id": "http://hexo.southcat.net/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/"
     },
     "headline": "在Linux上快速搭建Git服务器教程 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2019-10-30T09:44:09.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=在Linux上快速搭建Git服务器教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=在Linux上快速搭建Git服务器教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=在Linux上快速搭建Git服务器教程&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=在Linux上快速搭建Git服务器教程&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=在Linux上快速搭建Git服务器教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=在Linux上快速搭建Git服务器教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADt0lEQVR42u3c0Y6bQAxGYd7/pbu3qy7j/3iSgIMON1V3CeFDYuyx3R7/HngcokSJEiXqcaijOH6fc3Z+dY3fP//z5Yvrn53//+/K+xQlagjq9KUrvrS6qRV09V30ptF9ihI1CLW6yNlLfPYyp4Wjum61SKzOO32QokR9CeosoK4gq0BbnU8WB1GinoSqbqK7UFQPYXWuKFHfiKoukjaH1cavSpDJdVuJtyhRQ1C7CejVf76tmiRK1AdRsei+CIbpJa4CKy3afKzrIUrUB1Fpo0aLKeSFTo0D0jwok15Rogag0gc6gbmz4UtNBboxFCVqIiptDlMBplPMTA3szoPCCa0oURejukWRneJI1WhIyXSV7IoSNRFVFfk7hftU5Kwa4WQQJS5KokQNQFVF/c7AFVkISOAlm8flRlaUqCGodEOdG6bDJDvBOf5dlKhBKDoIlYIqDbrdgI4WH1GiBqHSC042hd1NHV0scJFHlKghKDJktdNwpgNaZGgLPVRRooahUgLaSS7TA6PNPlLkESVqEqoalCLN46pBRzeBZKCLLFSiRE1AkUGMnc1hN2jTwZAqMRYlagKKbvBIIE2NhSrZJYMh8ZqiRA1AkYFe+kKn69FiaacAFIOvKFEXo7obQ5rQpkWAJMpkkESUqGmodw0CVwkwHu5oLkCtLF2UqAtR1WLwjqENOuSYFoZWQitK1M0oktDuDCR2CpZ0QGX5OVGiBqDSxcnvuwWUqjBKGtovdz1Eifowihbmd5vVJHCmQJ8SZlGipqDIjaTBw2rogzbZSODd7iSKEnUTKhXqaZOgM0RCvo8EclGiJqF2iiRkIJgO/L5SmEHVJFGibkB1B606A707DyQl1ahBIErUjahXCi8pkJMGddVooNcQJWoKqmq20SZ3p/DSKfC0GhWiRA1BpWBIk1Wyqew0EzoPXpSoKag0eNFJaFOSS4ubnaHi0+ArStSNqCq4kYH7TuGEFlw6D0+UqGkoksx2CyZpM7i7MKXGgShRk1C0CImHnw72j5l3Gwd44EqUqItRJMCmIEmb1LSgSZPcVkYhStRFqHTQjV9V5OwUSzufWzbdRIm6EYVfQji0Wy0cZCHoDHWh4CtK1A0osoEjhY8UzOMmDywKokR9C6p6MbsNgfQ5MhxCBpbRcIgoUUNRdDCKDEmRB0gTg5cWClGibkaRAcNYcDzYf96bmtZxkyhK1M0o2izrLhC04Ema2q0hRlGibkSlpDU1n3cXik5DnGxGRYmagHrSIUqUKFGiHnP8AKo504AANyeQAAAAAElFTkSuQmCC" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADs0lEQVR42u3a0W4bMQxE0fz/T7dPBYqgmrlU4i5jXL+0aezdPSosUiQ/fr3h60OUKFGiRL0d6iO8Pv/+z8//vOBf/06v+fn9p9+Ra4oStQmVHvJ0k/be0+fbZ9NC1MUUJWoR6nSRdLETIG0CbRHoIv3zc6JE/QAU2TRS4E0P/xWoKFE/FXVMHsvDtCDaHpwEaVGiNqNSopgCa7o5TXpToJ48pyhRW1A3X+wn/vzWapIoUS9C4eJ7KHCeklpSYCEFmZd1PUSJegFqUtifBGjacLg5hB6vI0rUAhRprNEifVoI0sxrwb8+pyhRS1Bk02ibQ2qwpSCd/t4CL0poRYl6CJUejCSubQAkFWrSQqXgfiy8iBL1MIoGTzIAQg6Hk0JLK6jGjEKUqAdQ9AtOsW0whDT46OIcE1pRoh5ETQ5ikyHFdACk7yMDxFfBV5SoF6JSYX/6wDdf+kkArkNZokQtQJHD4G1xhAbtdgjEm44oUYtQJPBODnOp+DnZBNqQpChRG1EJQYqRaeOgjemvDF2JErUJRYY/JkUZsjA3zQNyQBUlagsqBUPawCbBthU96SD+cSMSJWoBqg1fEMA0CSWDkg1ZO4miRD2Emgz30uGsycPTBkJrGIgStQl1MySVGgrkOtMDI7qHKFFLUKRRTQY9yIFuGoxpI06UqI0oejj7SlGTvO/msChK1BYUSU5bIZMW80lDgGwox+AtStQCFGmKteGMdgCkiTMZAEmNBlGiNqCORYzBgG5LXNsC0uHg+h8gStQCFClSkmZbWxjyPtJMRwNXokQ9iCIPP2lIp42A3KcVLkdZuihRD6FoUpoKL2SzSUkt3WTic4kStQTVhjmmRZJ2UEwF0ptBYlGiNqFagZAe6iYNunY4vG6WixK1BFUbxLC4OC7oDwZDyMYkStQG1G0zux0U6VDHNPDHjUiUqAWoVCyZBM/vGN4ixdJYHBIlaglq0iSbBNvWuKOL2ZJtUaI2odogYWvKfaUYSYsuLfiLErURRYrxrYHWvuxk00mbQls0UaI2oFqD+WZ4kSxAGuSavFBGIUrUf0SRwDg5PE6KOa3x1xKDmNCKEvUQqn0Jyc1JYYVcmywi7nqIEvUganJwmxYw0+JND471YCpK1CIUaTxPijM0CZ0k1tfdeVGiFqLIMFUb4CIHQjIsghvZokQtRJHgSQY8SCOBDnQdD5CiRC1CtSI+SS7bg5PPTRrb11m6KFEvRk2SRtJgmxb+afO8BmlRohag3uklSpQoUaLe5vUb0JozL4p1m6UAAAAASUVORK5CYII=" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=在Linux上快速搭建Git服务器教程&url=http://yoursite.com/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=在Linux上快速搭建Git服务器教程&url=http://hexo.southcat.net/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=在Linux上快速搭建Git服务器教程&url=http://yoursite.com/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=在Linux上快速搭建Git服务器教程&url=http://hexo.southcat.net/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/10/30/e5-9c-a8linux-e4-b8-8a-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-bagit-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-95-99-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADt0lEQVR42u3c0Y6bQAxGYd7/pbu3qy7j/3iSgIMON1V3CeFDYuyx3R7/HngcokSJEiXqcaijOH6fc3Z+dY3fP//z5Yvrn53//+/K+xQlagjq9KUrvrS6qRV09V30ptF9ihI1CLW6yNlLfPYyp4Wjum61SKzOO32QokR9CeosoK4gq0BbnU8WB1GinoSqbqK7UFQPYXWuKFHfiKoukjaH1cavSpDJdVuJtyhRQ1C7CejVf76tmiRK1AdRsei+CIbpJa4CKy3afKzrIUrUB1Fpo0aLKeSFTo0D0jwok15Rogag0gc6gbmz4UtNBboxFCVqIiptDlMBplPMTA3szoPCCa0oURejukWRneJI1WhIyXSV7IoSNRFVFfk7hftU5Kwa4WQQJS5KokQNQFVF/c7AFVkISOAlm8flRlaUqCGodEOdG6bDJDvBOf5dlKhBKDoIlYIqDbrdgI4WH1GiBqHSC042hd1NHV0scJFHlKghKDJktdNwpgNaZGgLPVRRooahUgLaSS7TA6PNPlLkESVqEqoalCLN46pBRzeBZKCLLFSiRE1AkUGMnc1hN2jTwZAqMRYlagKKbvBIIE2NhSrZJYMh8ZqiRA1AkYFe+kKn69FiaacAFIOvKFEXo7obQ5rQpkWAJMpkkESUqGmodw0CVwkwHu5oLkCtLF2UqAtR1WLwjqENOuSYFoZWQitK1M0oktDuDCR2CpZ0QGX5OVGiBqDSxcnvuwWUqjBKGtovdz1Eifowihbmd5vVJHCmQJ8SZlGipqDIjaTBw2rogzbZSODd7iSKEnUTKhXqaZOgM0RCvo8EclGiJqF2iiRkIJgO/L5SmEHVJFGibkB1B606A707DyQl1ahBIErUjahXCi8pkJMGddVooNcQJWoKqmq20SZ3p/DSKfC0GhWiRA1BpWBIk1Wyqew0EzoPXpSoKag0eNFJaFOSS4ubnaHi0+ArStSNqCq4kYH7TuGEFlw6D0+UqGkoksx2CyZpM7i7MKXGgShRk1C0CImHnw72j5l3Gwd44EqUqItRJMCmIEmb1LSgSZPcVkYhStRFqHTQjV9V5OwUSzufWzbdRIm6EYVfQji0Wy0cZCHoDHWh4CtK1A0osoEjhY8UzOMmDywKokR9C6p6MbsNgfQ5MhxCBpbRcIgoUUNRdDCKDEmRB0gTg5cWClGibkaRAcNYcDzYf96bmtZxkyhK1M0o2izrLhC04Ema2q0hRlGibkSlpDU1n3cXik5DnGxGRYmagHrSIUqUKFGiHnP8AKo504AANyeQAAAAAElFTkSuQmCC" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADs0lEQVR42u3a0W4bMQxE0fz/T7dPBYqgmrlU4i5jXL+0aezdPSosUiQ/fr3h60OUKFGiRL0d6iO8Pv/+z8//vOBf/06v+fn9p9+Ra4oStQmVHvJ0k/be0+fbZ9NC1MUUJWoR6nSRdLETIG0CbRHoIv3zc6JE/QAU2TRS4E0P/xWoKFE/FXVMHsvDtCDaHpwEaVGiNqNSopgCa7o5TXpToJ48pyhRW1A3X+wn/vzWapIoUS9C4eJ7KHCeklpSYCEFmZd1PUSJegFqUtifBGjacLg5hB6vI0rUAhRprNEifVoI0sxrwb8+pyhRS1Bk02ibQ2qwpSCd/t4CL0poRYl6CJUejCSubQAkFWrSQqXgfiy8iBL1MIoGTzIAQg6Hk0JLK6jGjEKUqAdQ9AtOsW0whDT46OIcE1pRoh5ETQ5ikyHFdACk7yMDxFfBV5SoF6JSYX/6wDdf+kkArkNZokQtQJHD4G1xhAbtdgjEm44oUYtQJPBODnOp+DnZBNqQpChRG1EJQYqRaeOgjemvDF2JErUJRYY/JkUZsjA3zQNyQBUlagsqBUPawCbBthU96SD+cSMSJWoBqg1fEMA0CSWDkg1ZO4miRD2Emgz30uGsycPTBkJrGIgStQl1MySVGgrkOtMDI7qHKFFLUKRRTQY9yIFuGoxpI06UqI0oejj7SlGTvO/msChK1BYUSU5bIZMW80lDgGwox+AtStQCFGmKteGMdgCkiTMZAEmNBlGiNqCORYzBgG5LXNsC0uHg+h8gStQCFClSkmZbWxjyPtJMRwNXokQ9iCIPP2lIp42A3KcVLkdZuihRD6FoUpoKL2SzSUkt3WTic4kStQTVhjmmRZJ2UEwF0ptBYlGiNqFagZAe6iYNunY4vG6WixK1BFUbxLC4OC7oDwZDyMYkStQG1G0zux0U6VDHNPDHjUiUqAWoVCyZBM/vGN4ixdJYHBIlaglq0iSbBNvWuKOL2ZJtUaI2odogYWvKfaUYSYsuLfiLErURRYrxrYHWvuxk00mbQls0UaI2oFqD+WZ4kSxAGuSavFBGIUrUf0SRwDg5PE6KOa3x1xKDmNCKEvUQqn0Jyc1JYYVcmywi7nqIEvUganJwmxYw0+JND471YCpK1CIUaTxPijM0CZ0k1tfdeVGiFqLIMFUb4CIHQjIsghvZokQtRJHgSQY8SCOBDnQdD5CiRC1CtSI+SS7bg5PPTRrb11m6KFEvRk2SRtJgmxb+afO8BmlRohag3uklSpQoUaLe5vUb0JozL4p1m6UAAAAASUVORK5CYII=" alt="QRCode">
     </li>
     
 
@@ -548,7 +548,7 @@ $ git --bare init</code></pre><p>将<code>git</code>用户设置为不可使用<
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

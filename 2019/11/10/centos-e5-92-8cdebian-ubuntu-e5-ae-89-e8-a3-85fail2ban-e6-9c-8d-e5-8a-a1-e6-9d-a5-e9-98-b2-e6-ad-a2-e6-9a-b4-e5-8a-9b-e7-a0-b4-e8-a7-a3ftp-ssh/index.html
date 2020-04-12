@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="CentOS和Debian&#x2F;Ubuntu 安装Fail2ban服务来防止暴力破解FTP&#x2F;SSH | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/"><meta property="og:locale" content="en"><meta name="description" content="说明：一般用过VPS的人查一下系统日志，可以参考：通过Auth.log来查看SSH是否被扫，会发现ssh经常被人扫描，多的有几万次，万一被破解会造成很多问题，特别是在上面备份东西和网站的人来说，损失巨大，所以我们要采取一些措施来尽量减少这样的事发生，这里说下通过安装Fail2ban来防止暴力破解。用Fail2ban可以进行FTP&#x2F;SSH登录频率限制，如果登录尝试多少次的IP地址，然后给予限制。 更 - John Doe - 南猫"><meta property="article:published_time" content="2019-11-10T10:56:24.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.646Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.646Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="CentOS和Debian&#x2F;Ubuntu 安装Fail2ban服务来防止暴力破解FTP&#x2F;SSH | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/"><meta property="og:locale" content="en"><meta name="description" content="说明：一般用过VPS的人查一下系统日志，可以参考：通过Auth.log来查看SSH是否被扫，会发现ssh经常被人扫描，多的有几万次，万一被破解会造成很多问题，特别是在上面备份东西和网站的人来说，损失巨大，所以我们要采取一些措施来尽量减少这样的事发生，这里说下通过安装Fail2ban来防止暴力破解。用Fail2ban可以进行FTP&#x2F;SSH登录频率限制，如果登录尝试多少次的IP地址，然后给予限制。 更 - John Doe - 南猫"><meta property="article:published_time" content="2019-11-10T10:56:24.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.646Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.646Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/">
+    <link rel="canonical" href="http://hexo.southcat.net/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/",
+    "url": "http://hexo.southcat.net/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/"
+        "@id": "http://hexo.southcat.net/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/"
     },
     "headline": "CentOS和Debian/Ubuntu 安装Fail2ban服务来防止暴力破解FTP/SSH | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2019-11-10T10:56:24.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=CentOS和Debian/Ubuntu 安装Fail2ban服务来防止暴力破解FTP/SSH" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=CentOS和Debian/Ubuntu 安装Fail2ban服务来防止暴力破解FTP/SSH" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=CentOS和Debian/Ubuntu 安装Fail2ban服务来防止暴力破解FTP/SSH&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=CentOS和Debian/Ubuntu 安装Fail2ban服务来防止暴力破解FTP/SSH&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=CentOS和Debian/Ubuntu 安装Fail2ban服务来防止暴力破解FTP/SSH" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=CentOS和Debian/Ubuntu 安装Fail2ban服务来防止暴力破解FTP/SSH" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEIElEQVR42u3bS3LjQAwEUd3/0jN7WURl0VoQ7dTGETY//TghEA1gXv/+wOclUqRIkSJF/hL5Gj4/Tnr7/dU57z+n+7wfP93701qmdYsUuRX58Us7LPD9mE+/S9ecHtIVnNxHpMhTkDQY0JulhVxd79O9rx78tG6RIk9GTgtNCQSBXS5yCHIiRf5lJE3YSfJMA86UCIgU+ReQVy/yq6R6CirN+STpmJBf2YWIFPkwJC0yPe3n16p1IkU+CBmbJsPLdjouBSlayE6J/1e6WiJFPgg5fZET9s5ip2IxCXp0vSJFnoRsi7zTglMiT5L0uwVtkSI3I+9slqcHkQpUU0Ahf0tJh0iRW5FTc2X6opNkoIGT5DxtFH7cX6TIpcipIUOSA9qwSQsmA4TTNcZClkiRi5Dp5Tu9gMnxqYlDE/Q2KRAp8gRkQqUgc2eQkCYS5CHijEekyIci00ACfeE3AwzTw0rXbJo/IkVuRKZGCgkgKcnHgQI2jnDwEilyIbJZRHscTdYpkgxtoK6WSJFLkHc2uDTZpoWuKQCS4BgDj0iRD0c2CyQBJwWSNJBEC1VksFCkyK3I9ua0aUsGkkixetrI1w0fkSIfjqSNG7qBTotvN9FkWOqy0StS5ELk9BInFyeDFTQwpYJyW3AWKXIrMjVQmw0yWXAaoE/AXzd8RIp8MDIVlWgi3gz+kodKEvyYyIgUuRBJNsBpeJZuumnDJyUc6RyRIrcjySLJppoON9HG7gQiyYFIkSchU4JON69NYYsOQH0t8IgU+UBkKkC1w/ApMDWJB0300S5EpMglyHSDKYknDRpSMG6ScBrIRIrciqTDt6TIVTdJX/k/oU5JfvyHESlyMbINOuShoCQaDg6TplMMPCJFLkBOQYY2W+hDaZq+JBGJDVyRIhci7zRUyMuZDlQ0CUUz8CRS5GbktHFtBgNjA6Zo4JLmUUrSRYrcjKTF4TQkOF0rDUiQBD0FLpEityPbLz9NsimsKXDXzWKRIhciE6z54pMiExnYbRtRuNMsUuQyJGmqNA2ctJFuB3ingYoq4xEp8sFIdPCNgjINJu0GuWpUiRS5GEmKzFNwaoIHLY6RxhHuaokUuQh5tWjS8LmDJwtMxTI0kCFS5EIkTb6bxIEORJCNAUk6ql2ISJEPRzYDCSSRpoFoahRNm+ypCC5S5ClImhCToaMUyH47xEQegEiRpyCbAYam0NQmC6nwRZJ4kSK3IklgaAITbSC155HN92VxWaTIZUi6KaYPY0r8p0SgGayY4CJFnoBMCTd5IdNz6eBS2hjEQClS5MFIEnxSICLJON2ck0RDpMhTkc3mOA0RkmGo9JK/tWkWKXIZkjQ70/Ae2dCmASWaTJCGlEiRW5HkQjRhboaT2oGLZnBYpMityJM/IkWKFClS5M3Pf1uOQ/9gyyXCAAAAAElFTkSuQmCC" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEH0lEQVR42u3byW7jQAxFUf//T6dXvUmLfJdloyHKV5sMiOU6AlzFKa+fL7heIkWKFClS5JvIV3P9/pvq57+/6+559fvqdf8stni/uG6RIpciLz+0xe8JrFtwde/uQVQPOq5JpMjFyGpDqN60wlX3JagrUAVL6xYp8snItCgCphtSt/GQ9YgU+W3IyQbQBdCnD+m/bDwiRd4A2R3WFN1tGCcPqHq/j2chIkXeDEk2iDt+/Vi1TqTIGyFpsaoLllMBuDvwu40lJewf62qJFHkjZPdB7g5f0gRKzZ9J4ZkkACJFPgF5mrCSYnTacFLhedrsKQN0kSKXIVMxmAw1pPulQGPyfnjTEylyKTIFz+n7k+EjGuyT4KQM8kWKXIgkC6SJbXdwTwYtyAATCS5EityMfPfA7u5HCsG0oDYaehIpcimyCgq6TWdSCCYBfWrC0u/bap1IkQuQ9ANOFjkpjtF7psD9qKslUuSNkeSQT5tTCqxxkvvmQH9ZXBYpchGSLDglwrQZRB4AGcxIgb9IkZuRk+HdhE4PjWxCdIgRFdpEilyITIsihaxpQjvZdCYF7NhpFilyAbI8SCGK/jNMataQ5LsburgM3kWKXIik0AQiGxY97E+KZZfrESlyIbIbipgUc08WP93QJg9fpMityLTxEAgd0qfD9mTwgjSkRIrciEyLnhSWqu8nw0okMaD3FClyK3JSTJ4OHE2S3DL5hZubSJFPQZIGTDrgaRM1DWK0G8k00RYpcimSfOhJ4Yj+TBs3afhwXMgSKXIBkmwA9BCn90uJLwkI0jpFityMJI0beshPDvXUWKXNnhigixS5CEmSW3KokyGkk4fW/U28p0iRC5HdRRLTyUUap7Q4RppUIkVuRZJNhQbP5L7TQjFJFNAAoUiRC5BkwIEEACSZpUPDkyGmcRNWpMhFyG4DSEMK5H5TBBkqbJNvkSIXI0nhOA0Z0UCbBgZpaFGkyCciT5utJJAg95gOMHXJQyxkiRS5BDltipJDfJogdw86BR24kCVS5FJkGgpMRapuUyDF4lR87pIHvPGIFHlTZEqAyUBCGm5Iwfc0yU4FN5EityNJU6dr3NDX0sQ4FbVww0mkyOVIkozSxtDpwzgZNowBukiRi5GTQm567TRAT8XqNASMNx6RIm+MnBR1JwH4ZND33WA9BugiRS5DnjRkU/A+HYroAhGSOF++XqTI5UgCp0k0HQCeBAKTQWCRIrciadM0bTAkgE8HfUrcxwm+SJFLkXSAiA4o0MHAkyYrGbAQKfIJyNPBhBREvMJFCtb0XiJFfhOSNHFiwPx67x/S6HuKFPl0JBlYSEk2uTdJ0FPwLlLkU5CkiNwlvqQgTYMNAkJDEyJFLkXS4Ln7+5TITgegyHvGwF6kyIXIJ18iRYoUKVLk4fUHrfUjLoSeQgUAAAAASUVORK5CYII=" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=CentOS和Debian/Ubuntu 安装Fail2ban服务来防止暴力破解FTP/SSH&url=http://yoursite.com/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=CentOS和Debian/Ubuntu 安装Fail2ban服务来防止暴力破解FTP/SSH&url=http://hexo.southcat.net/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=CentOS和Debian/Ubuntu 安装Fail2ban服务来防止暴力破解FTP/SSH&url=http://yoursite.com/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=CentOS和Debian/Ubuntu 安装Fail2ban服务来防止暴力破解FTP/SSH&url=http://hexo.southcat.net/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/11/10/centos-e5-92-8cdebian-ubuntu-e5-ae-89-e8-a3-85fail2ban-e6-9c-8d-e5-8a-a1-e6-9d-a5-e9-98-b2-e6-ad-a2-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3ftp-ssh/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEIElEQVR42u3bS3LjQAwEUd3/0jN7WURl0VoQ7dTGETY//TghEA1gXv/+wOclUqRIkSJF/hL5Gj4/Tnr7/dU57z+n+7wfP93701qmdYsUuRX58Us7LPD9mE+/S9ecHtIVnNxHpMhTkDQY0JulhVxd79O9rx78tG6RIk9GTgtNCQSBXS5yCHIiRf5lJE3YSfJMA86UCIgU+ReQVy/yq6R6CirN+STpmJBf2YWIFPkwJC0yPe3n16p1IkU+CBmbJsPLdjouBSlayE6J/1e6WiJFPgg5fZET9s5ip2IxCXp0vSJFnoRsi7zTglMiT5L0uwVtkSI3I+9slqcHkQpUU0Ahf0tJh0iRW5FTc2X6opNkoIGT5DxtFH7cX6TIpcipIUOSA9qwSQsmA4TTNcZClkiRi5Dp5Tu9gMnxqYlDE/Q2KRAp8gRkQqUgc2eQkCYS5CHijEekyIci00ACfeE3AwzTw0rXbJo/IkVuRKZGCgkgKcnHgQI2jnDwEilyIbJZRHscTdYpkgxtoK6WSJFLkHc2uDTZpoWuKQCS4BgDj0iRD0c2CyQBJwWSNJBEC1VksFCkyK3I9ua0aUsGkkixetrI1w0fkSIfjqSNG7qBTotvN9FkWOqy0StS5ELk9BInFyeDFTQwpYJyW3AWKXIrMjVQmw0yWXAaoE/AXzd8RIp8MDIVlWgi3gz+kodKEvyYyIgUuRBJNsBpeJZuumnDJyUc6RyRIrcjySLJppoON9HG7gQiyYFIkSchU4JON69NYYsOQH0t8IgU+UBkKkC1w/ApMDWJB0300S5EpMglyHSDKYknDRpSMG6ScBrIRIrciqTDt6TIVTdJX/k/oU5JfvyHESlyMbINOuShoCQaDg6TplMMPCJFLkBOQYY2W+hDaZq+JBGJDVyRIhci7zRUyMuZDlQ0CUUz8CRS5GbktHFtBgNjA6Zo4JLmUUrSRYrcjKTF4TQkOF0rDUiQBD0FLpEityPbLz9NsimsKXDXzWKRIhciE6z54pMiExnYbRtRuNMsUuQyJGmqNA2ctJFuB3ingYoq4xEp8sFIdPCNgjINJu0GuWpUiRS5GEmKzFNwaoIHLY6RxhHuaokUuQh5tWjS8LmDJwtMxTI0kCFS5EIkTb6bxIEORJCNAUk6ql2ISJEPRzYDCSSRpoFoahRNm+ypCC5S5ClImhCToaMUyH47xEQegEiRpyCbAYam0NQmC6nwRZJ4kSK3IklgaAITbSC155HN92VxWaTIZUi6KaYPY0r8p0SgGayY4CJFnoBMCTd5IdNz6eBS2hjEQClS5MFIEnxSICLJON2ck0RDpMhTkc3mOA0RkmGo9JK/tWkWKXIZkjQ70/Ae2dCmASWaTJCGlEiRW5HkQjRhboaT2oGLZnBYpMityJM/IkWKFClS5M3Pf1uOQ/9gyyXCAAAAAElFTkSuQmCC" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEH0lEQVR42u3byW7jQAxFUf//T6dXvUmLfJdloyHKV5sMiOU6AlzFKa+fL7heIkWKFClS5JvIV3P9/pvq57+/6+559fvqdf8stni/uG6RIpciLz+0xe8JrFtwde/uQVQPOq5JpMjFyGpDqN60wlX3JagrUAVL6xYp8snItCgCphtSt/GQ9YgU+W3IyQbQBdCnD+m/bDwiRd4A2R3WFN1tGCcPqHq/j2chIkXeDEk2iDt+/Vi1TqTIGyFpsaoLllMBuDvwu40lJewf62qJFHkjZPdB7g5f0gRKzZ9J4ZkkACJFPgF5mrCSYnTacFLhedrsKQN0kSKXIVMxmAw1pPulQGPyfnjTEylyKTIFz+n7k+EjGuyT4KQM8kWKXIgkC6SJbXdwTwYtyAATCS5EityMfPfA7u5HCsG0oDYaehIpcimyCgq6TWdSCCYBfWrC0u/bap1IkQuQ9ANOFjkpjtF7psD9qKslUuSNkeSQT5tTCqxxkvvmQH9ZXBYpchGSLDglwrQZRB4AGcxIgb9IkZuRk+HdhE4PjWxCdIgRFdpEilyITIsihaxpQjvZdCYF7NhpFilyAbI8SCGK/jNMataQ5LsburgM3kWKXIik0AQiGxY97E+KZZfrESlyIbIbipgUc08WP93QJg9fpMityLTxEAgd0qfD9mTwgjSkRIrciEyLnhSWqu8nw0okMaD3FClyK3JSTJ4OHE2S3DL5hZubSJFPQZIGTDrgaRM1DWK0G8k00RYpcimSfOhJ4Yj+TBs3afhwXMgSKXIBkmwA9BCn90uJLwkI0jpFityMJI0beshPDvXUWKXNnhigixS5CEmSW3KokyGkk4fW/U28p0iRC5HdRRLTyUUap7Q4RppUIkVuRZJNhQbP5L7TQjFJFNAAoUiRC5BkwIEEACSZpUPDkyGmcRNWpMhFyG4DSEMK5H5TBBkqbJNvkSIXI0nhOA0Z0UCbBgZpaFGkyCciT5utJJAg95gOMHXJQyxkiRS5BDltipJDfJogdw86BR24kCVS5FJkGgpMRapuUyDF4lR87pIHvPGIFHlTZEqAyUBCGm5Iwfc0yU4FN5EityNJU6dr3NDX0sQ4FbVww0mkyOVIkozSxtDpwzgZNowBukiRi5GTQm567TRAT8XqNASMNx6RIm+MnBR1JwH4ZND33WA9BugiRS5DnjRkU/A+HYroAhGSOF++XqTI5UgCp0k0HQCeBAKTQWCRIrciadM0bTAkgE8HfUrcxwm+SJFLkXSAiA4o0MHAkyYrGbAQKfIJyNPBhBREvMJFCtb0XiJFfhOSNHFiwPx67x/S6HuKFPl0JBlYSEk2uTdJ0FPwLlLkU5CkiNwlvqQgTYMNAkJDEyJFLkXS4Ln7+5TITgegyHvGwF6kyIXIJ18iRYoUKVLk4fUHrfUjLoSeQgUAAAAASUVORK5CYII=" alt="QRCode">
     </li>
     
 
@@ -526,7 +526,7 @@ maxretry = 5 #最大尝试次数</code></pre><p>启动的时候需要把前面<c
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="CentOS 7安装Lsyncd实现文件实时同步备份 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/"><meta property="og:locale" content="en"><meta name="description" content="说明：lsyncd是基于inotify + rsync的开源同步软件，支持增量同步，之前也讲到过通过Rsync同步方法，可参考：通过SSH使用Rsync同步两个VPS的文件，而本文所谈到的lsyncd与Resilio Sync相比优势是更加安全、占用资源更低，多种参数自定义配置更加方便。劣势是配置要比Resilio Sync麻烦一点，如果多台服务器的情况下速度可能不及Resilio Sync，因为 - John Doe - 南猫"><meta property="article:published_time" content="2019-12-13T16:08:48.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.651Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.651Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="CentOS 7安装Lsyncd实现文件实时同步备份 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/"><meta property="og:locale" content="en"><meta name="description" content="说明：lsyncd是基于inotify + rsync的开源同步软件，支持增量同步，之前也讲到过通过Rsync同步方法，可参考：通过SSH使用Rsync同步两个VPS的文件，而本文所谈到的lsyncd与Resilio Sync相比优势是更加安全、占用资源更低，多种参数自定义配置更加方便。劣势是配置要比Resilio Sync麻烦一点，如果多台服务器的情况下速度可能不及Resilio Sync，因为 - John Doe - 南猫"><meta property="article:published_time" content="2019-12-13T16:08:48.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.651Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.651Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/">
+    <link rel="canonical" href="http://hexo.southcat.net/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/",
+    "url": "http://hexo.southcat.net/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/"
+        "@id": "http://hexo.southcat.net/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/"
     },
     "headline": "CentOS 7安装Lsyncd实现文件实时同步备份 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2019-12-13T16:08:48.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=CentOS 7安装Lsyncd实现文件实时同步备份" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=CentOS 7安装Lsyncd实现文件实时同步备份" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=CentOS 7安装Lsyncd实现文件实时同步备份&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=CentOS 7安装Lsyncd实现文件实时同步备份&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=CentOS 7安装Lsyncd实现文件实时同步备份" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=CentOS 7安装Lsyncd实现文件实时同步备份" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEIElEQVR42u3aS3IbMQxFUe1/08nUJYt4F6QHROtqEpdLUvdhymj8Xv++4PUSKVKkSJEiD5Gv4vXzPe8/r97//jO5xqfP/rrht9+j+xYpciiSfOn7zXwCdW5ydbOfrvPpAMh1RIqcjEwXSgGJBKl0YAmTAqBIkd+ErP7Ydw+BPPDpoYgU+U3I1UM5JeDdRD4l46vAJVLkE5EpGacP7E4wId9JD+KoChEp8jIkbTLd9u+fdetEirwIGYcmjSK2ShyqxhX53hTgjqZaIkVehEyJdHVjqTmcEvR0qLSZvWpqixQ5EUkCDymiCWZVNNOhULcgEClyIjIFi93DoA3lNMytDrVKOkSKnIxcvgk0nNOQtjOorZIMcuC/vkOkyIFI8lDvDmRWSTQZ6nYL7fKQRYocjkw3QQrqNGztDF9TsIqHIFLkQOROcKEXoUtLtOgmRXwr4xEp8lJkpxBOiXxqVlXNrYRJhYNIkU9CpsU/WizvfEdK0FNze3kYIkUORXYXDuhDnd4UWXwgxXRM0EWKHIDsDlZPFuc7mGqhKS05ihT5NGRniEoGpuT9KQE/StBFihyGPAkAJMCQgQ8OJuGaIkU+FUmaTqRxRRNrMrztFOwiRU5F0gQ8DW7Icn63KCaBCiXoIkUOQlY3SxcIdxrInaUKMiBCCbpIkUOQ1U3TApcm+SmgpYBClxxFipyKJAl2tdSUHvxksQktHhVLVcsDEylyIJI2kqpAQZtZZSO4cTh4eCRS5IOQKXFPN1kdAkmwO0u+24FHpMgLkWlxsNuE2lmySDec7m9ZPIgUORBJAkc3+SYNsbRgSAr41gKhSJGDkBSSBjppwakKNFUSsVPIixQ5GUkS553mUxXUyO9oorI8RJEihyLThcjyUhoSkQI9JeWdQbBIkVOR5OFPhq90kTclAt3mM14gFClyCDI1gWkyTBb/aAOqWzS0FwhFirwYmZLydFESNGjS0TlolKyIFDkY2W3q0uFL53u7iUMq+EWKnI4kzSry0CZBqToA0kBLgySRIicjyTJCd2kiJegrGF0wbg18RIociCRNYAInTS4yxE1DV/Q5kSIHImnTaTdwkGZ1Cmg0Qd+aaokUeSEyJci0yUUHOSQw0aK5PfARKfJyJGlMpRtJxW9qbO0U6GjoJFLkQCRZKqKNKPLQ32lckf8EkSKfhCQPbDK0Ob6pw+vHjEekyGHIKjlOxXMKOjQZT585qkJEihyATMsNpMG7u+xLkvo0jEXJgEiRw5BpyJKCBmlAdYesdOB6tNQrUuTFyE7CnYBkwZA0ntNiVEr8RYp8KrJqDHeL4r8OLmXgEynyi5Bp2EOGOzRBT4lJXIwQKXIgEv8xNxaHSHOLLhR3mmQiRU5HpoUI0lQmiw7pYBKQLG6IFDkd+eSXSJEiRYoUufn6D2pB4m6Ft4uhAAAAAElFTkSuQmCC" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEL0lEQVR42u3dS27kMAxFUe9/093TpGDxXcoZmKpbk6Ar/ugIsEyRbOT69wWfS6RIkSJFinyIvIrPz2PS8T9/9+tGN+dWx1b3vTu2HLdIkUORtw/tzfdpwOm7z+t8Hn/38/NanXGLFDkZeTfI1QO/WiTI+dWCspqs6rzyeJEiD0VW398Bqompzk2LWHUtkSK/EUmA1XXTBuBJQCFS5GnI1YDTgNJLPG2i06RUm+Y/24WIFPkyZEpOvfXnn2XrRIp8ETIWTUJiOSW+UgI5vtCLe/5ZVUukyBchqweZTEA67gKf1TXTpjmNV6TIyUiy8FSLBS3QpiRVSjanMbd2ISJFvhSZCjdV8bWzIa4WLnqfanJjs5JIkYOQaSFIL22acCbJaxq4rwpKIkWegKyKKCnBWzVB0OZBuvmmxViRIicjO5vi1FxLC0Dd4m5a1LZ3ISJFvhBJAoKdJqI0MdV3JMlVBQsiRZ6ATMkqMti0aFSNFp1GJJRsEylyMJIuRFWAnoL4NFkpeZW+R5tmkSKHIKuHOy0cpLBDFpV0fDVxt/8WKXIgkiSlaJME2VynZNROIjoGAyJFDkSmRae6AWkK7jRedK8lUuQ3IDsF2O45ZJO8E6Avk8siRQ5C0oRxp7DTbTrqNF+QIF+kyOnITuKJNDM9KfagJiT6HwFEihyKJImqzkJAmyg6jfedxiiRIicjU5BMCz20gEQbmVJRN11DpMjJSLpYpMYJ8jtalE1FWlKIFSlyIpI239JAmhZt6Ob3UXO/SJGDkbSYSgICskGuNr6ksQIlrUWKHIgkAfpOIxINztMLnY7v8S5EpMiXIGkzYBV8pwkhQUYCpqIRLviIFDkEuYMjwQRdsGiDUqf4I1LkVGT5Qm02C6YAoSrqdu+TGnxFipyIpIUVmtxKCWAyAaRxYoUTKfIEJC280kWmCybJs27yW6TIE5D0ImQD3GlkoIsc+feyWUmkyGFI8sDTBanT0EBf/nRSRYqcjkybYlLwLF/IF/8jJp2CTzUBIkVORqbiCm1SSA1HZfPtxf/I5naALlLkMCQd4E7AvLMwpYA/BQ4iRU5FpuRVKsDSRHEK3ElgnzYLqAgrUuTLkZ0EM03+0sbCLpoUfESKPAHZTQCnQIIMjibGaHBwu1CJFDkQmTapneRRFWynBPbOubHZUKTIgchuM1G6QbfRKCWtqqRaCtJFipyKJMUf8uB3ikh0o042EstriRQ5HLmzQaabYBJAkORVK3EtUuRAJH2Q241CF/8jCySo6BRzRYqcjqRFUNKI+ySAIBNAmw1FipyOJIll8vKmE5KKQ1XQ0Q7QRYo8DEkWoARM16BJ5s55IkWeiqwWjW7Dbtrw0sQxmXCRIicjaZKXvqBTQSktJATeqjSLFDkIWQ2UNEiQwDwtQrTBKU2QSJHTkSd/RIoUKVKkyM3Pf4qXpJBAcKK0AAAAAElFTkSuQmCC" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=CentOS 7安装Lsyncd实现文件实时同步备份&url=http://yoursite.com/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=CentOS 7安装Lsyncd实现文件实时同步备份&url=http://hexo.southcat.net/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=CentOS 7安装Lsyncd实现文件实时同步备份&url=http://yoursite.com/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=CentOS 7安装Lsyncd实现文件实时同步备份&url=http://hexo.southcat.net/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/12/14/centos-7-e5-ae-89-e8-a3-85lsyncd-e5-ae-9e-e7-8e-b0-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-a4-87-e4-bb-bd/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEIElEQVR42u3aS3IbMQxFUe1/08nUJYt4F6QHROtqEpdLUvdhymj8Xv++4PUSKVKkSJEiD5Gv4vXzPe8/r97//jO5xqfP/rrht9+j+xYpciiSfOn7zXwCdW5ydbOfrvPpAMh1RIqcjEwXSgGJBKl0YAmTAqBIkd+ErP7Ydw+BPPDpoYgU+U3I1UM5JeDdRD4l46vAJVLkE5EpGacP7E4wId9JD+KoChEp8jIkbTLd9u+fdetEirwIGYcmjSK2ShyqxhX53hTgjqZaIkVehEyJdHVjqTmcEvR0qLSZvWpqixQ5EUkCDymiCWZVNNOhULcgEClyIjIFi93DoA3lNMytDrVKOkSKnIxcvgk0nNOQtjOorZIMcuC/vkOkyIFI8lDvDmRWSTQZ6nYL7fKQRYocjkw3QQrqNGztDF9TsIqHIFLkQOROcKEXoUtLtOgmRXwr4xEp8lJkpxBOiXxqVlXNrYRJhYNIkU9CpsU/WizvfEdK0FNze3kYIkUORXYXDuhDnd4UWXwgxXRM0EWKHIDsDlZPFuc7mGqhKS05ihT5NGRniEoGpuT9KQE/StBFihyGPAkAJMCQgQ8OJuGaIkU+FUmaTqRxRRNrMrztFOwiRU5F0gQ8DW7Icn63KCaBCiXoIkUOQlY3SxcIdxrInaUKMiBCCbpIkUOQ1U3TApcm+SmgpYBClxxFipyKJAl2tdSUHvxksQktHhVLVcsDEylyIJI2kqpAQZtZZSO4cTh4eCRS5IOQKXFPN1kdAkmwO0u+24FHpMgLkWlxsNuE2lmySDec7m9ZPIgUORBJAkc3+SYNsbRgSAr41gKhSJGDkBSSBjppwakKNFUSsVPIixQ5GUkS553mUxXUyO9oorI8RJEihyLThcjyUhoSkQI9JeWdQbBIkVOR5OFPhq90kTclAt3mM14gFClyCDI1gWkyTBb/aAOqWzS0FwhFirwYmZLydFESNGjS0TlolKyIFDkY2W3q0uFL53u7iUMq+EWKnI4kzSry0CZBqToA0kBLgySRIicjyTJCd2kiJegrGF0wbg18RIociCRNYAInTS4yxE1DV/Q5kSIHImnTaTdwkGZ1Cmg0Qd+aaokUeSEyJci0yUUHOSQw0aK5PfARKfJyJGlMpRtJxW9qbO0U6GjoJFLkQCRZKqKNKPLQ32lckf8EkSKfhCQPbDK0Ob6pw+vHjEekyGHIKjlOxXMKOjQZT585qkJEihyATMsNpMG7u+xLkvo0jEXJgEiRw5BpyJKCBmlAdYesdOB6tNQrUuTFyE7CnYBkwZA0ntNiVEr8RYp8KrJqDHeL4r8OLmXgEynyi5Bp2EOGOzRBT4lJXIwQKXIgEv8xNxaHSHOLLhR3mmQiRU5HpoUI0lQmiw7pYBKQLG6IFDkd+eSXSJEiRYoUufn6D2pB4m6Ft4uhAAAAAElFTkSuQmCC" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEL0lEQVR42u3dS27kMAxFUe9/093TpGDxXcoZmKpbk6Ar/ugIsEyRbOT69wWfS6RIkSJFinyIvIrPz2PS8T9/9+tGN+dWx1b3vTu2HLdIkUORtw/tzfdpwOm7z+t8Hn/38/NanXGLFDkZeTfI1QO/WiTI+dWCspqs6rzyeJEiD0VW398Bqompzk2LWHUtkSK/EUmA1XXTBuBJQCFS5GnI1YDTgNJLPG2i06RUm+Y/24WIFPkyZEpOvfXnn2XrRIp8ETIWTUJiOSW+UgI5vtCLe/5ZVUukyBchqweZTEA67gKf1TXTpjmNV6TIyUiy8FSLBS3QpiRVSjanMbd2ISJFvhSZCjdV8bWzIa4WLnqfanJjs5JIkYOQaSFIL22acCbJaxq4rwpKIkWegKyKKCnBWzVB0OZBuvmmxViRIicjO5vi1FxLC0Dd4m5a1LZ3ISJFvhBJAoKdJqI0MdV3JMlVBQsiRZ6ATMkqMti0aFSNFp1GJJRsEylyMJIuRFWAnoL4NFkpeZW+R5tmkSKHIKuHOy0cpLBDFpV0fDVxt/8WKXIgkiSlaJME2VynZNROIjoGAyJFDkSmRae6AWkK7jRedK8lUuQ3IDsF2O45ZJO8E6Avk8siRQ5C0oRxp7DTbTrqNF+QIF+kyOnITuKJNDM9KfagJiT6HwFEihyKJImqzkJAmyg6jfedxiiRIicjU5BMCz20gEQbmVJRN11DpMjJSLpYpMYJ8jtalE1FWlKIFSlyIpI239JAmhZt6Ob3UXO/SJGDkbSYSgICskGuNr6ksQIlrUWKHIgkAfpOIxINztMLnY7v8S5EpMiXIGkzYBV8pwkhQUYCpqIRLviIFDkEuYMjwQRdsGiDUqf4I1LkVGT5Qm02C6YAoSrqdu+TGnxFipyIpIUVmtxKCWAyAaRxYoUTKfIEJC280kWmCybJs27yW6TIE5D0ImQD3GlkoIsc+feyWUmkyGFI8sDTBanT0EBf/nRSRYqcjkybYlLwLF/IF/8jJp2CTzUBIkVORqbiCm1SSA1HZfPtxf/I5naALlLkMCQd4E7AvLMwpYA/BQ4iRU5FpuRVKsDSRHEK3ElgnzYLqAgrUuTLkZ0EM03+0sbCLpoUfESKPAHZTQCnQIIMjibGaHBwu1CJFDkQmTapneRRFWynBPbOubHZUKTIgchuM1G6QbfRKCWtqqRaCtJFipyKJMUf8uB3ikh0o042EstriRQ5HLmzQaabYBJAkORVK3EtUuRAJH2Q241CF/8jCySo6BRzRYqcjqRFUNKI+ySAIBNAmw1FipyOJIll8vKmE5KKQ1XQ0Q7QRYo8DEkWoARM16BJ5s55IkWeiqwWjW7Dbtrw0sQxmXCRIicjaZKXvqBTQSktJATeqjSLFDkIWQ2UNEiQwDwtQrTBKU2QSJHTkSd/RIoUKVKkyM3Pf4qXpJBAcKK0AAAAAElFTkSuQmCC" alt="QRCode">
     </li>
     
 
@@ -586,7 +586,7 @@ systemctl enable lsyncd</code></pre><hr>
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

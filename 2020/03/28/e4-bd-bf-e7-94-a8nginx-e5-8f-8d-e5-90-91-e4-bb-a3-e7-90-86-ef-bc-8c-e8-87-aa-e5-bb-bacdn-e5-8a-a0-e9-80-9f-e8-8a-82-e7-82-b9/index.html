@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="使用Nginx反向代理，自建CDN加速节点 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/"><meta property="og:locale" content="en"><meta name="description" content="说明：博客刚刚搬到了美西，感觉速度不如香港，于是准备拿香港的服务器自建CDN加速了，对于自建CND，之前讲过Fikker，查看：CentOS安装Fikker自建CDN系统，支持Https&#x2F;反向代理&#x2F;防CC攻击，使用非常方便，功能也很强大，不过免费版不支持页面缓存、也不支持HTTP&#x2F;2，所以放弃了。就使用Nginx反向代理实现自建CDN加速了，这里分享下方法。 安装1、安装Nginx #这里使用的是 - John Doe - 南猫"><meta property="article:published_time" content="2020-03-27T18:45:25.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.659Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.659Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="使用Nginx反向代理，自建CDN加速节点 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/"><meta property="og:locale" content="en"><meta name="description" content="说明：博客刚刚搬到了美西，感觉速度不如香港，于是准备拿香港的服务器自建CDN加速了，对于自建CND，之前讲过Fikker，查看：CentOS安装Fikker自建CDN系统，支持Https&#x2F;反向代理&#x2F;防CC攻击，使用非常方便，功能也很强大，不过免费版不支持页面缓存、也不支持HTTP&#x2F;2，所以放弃了。就使用Nginx反向代理实现自建CDN加速了，这里分享下方法。 安装1、安装Nginx #这里使用的是 - John Doe - 南猫"><meta property="article:published_time" content="2020-03-27T18:45:25.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.659Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.659Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/">
+    <link rel="canonical" href="http://hexo.southcat.net/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/",
+    "url": "http://hexo.southcat.net/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/"
+        "@id": "http://hexo.southcat.net/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/"
     },
     "headline": "使用Nginx反向代理，自建CDN加速节点 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2020-03-27T18:45:25.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=使用Nginx反向代理，自建CDN加速节点" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=使用Nginx反向代理，自建CDN加速节点" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用Nginx反向代理，自建CDN加速节点&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用Nginx反向代理，自建CDN加速节点&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=使用Nginx反向代理，自建CDN加速节点" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=使用Nginx反向代理，自建CDN加速节点" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEGElEQVR42u3awZLTQAxF0fz/T8OGBTU4evd1UkXkXG/IQOL0aWpktaTHry+4HiJFihQpUuSLyMdw/fOhP3/3979dvSaf//ma/tysW6TIrcjLX9ofoKsvmb7s6n5X93z2+hmIrlukyO3Iq1/4FFhI0LgKRNNi6XvTd4oU+U3IFBSmQDUlAw1CpMhvRU4Pahp8nr2PbMizhF+kyLsjp0R3CkTTgbZZ8FXgaTbipVOISJEfhpwOvp/859uqdSJFfhAyNk1AQtw+6E+KZFPR+uWulkiRH4QkxWVSPE4H5KYATQ4LKCkRKXIpsk2Gm+LXlHCfXlOhWaTIuyBToXdqlqZFnDZZTxpIIkXeAdk0dsjmkMZpWuArgVGkyO1I0lAhxWFa/KVBjATDMaCJFHkjJAXRwcLUMCXNVlpkEylyM5IMC9IG6kkSkJLuZsjpaeARKXIhkhxO2wGiFIhIQRoXraZhJZEilyFpQXlqiL7joJyGn5ris0iRW5E0yKSg0wSeVFBu1jZusEiRC5FpcU0gapo30/dNTV1SCBMpcjMyLa5tsqYkoWnA0oLW0/8IkSIXItNipmEhUoRKA/Ptwb0aYhIpcjGSFpROAhUZ6m2DGmn6ihS5EZmCSvMgpxtEE4UpcUeDxCJFLkTSYSKStDdF56a4lQ4SOEEXKXIBMiXjJKg0Q0sp4Z8SdJpYiBS5HdkMI5FG6cnhmAStdqBRpMiNyKmRShZBilwxkQ7vb5pBVWVApMgPRZIk+qQAfNLMPWkOo+KySJFLkDQBJkNEaZD3pJH0SpIuUuRGZAo85BCcEvp0qG4HoHDBWqTIpUhSxCVDgfSzZAOnwjcZyhApciuSPvhTIkCG/5rEnCYCY7AUKXIhsm3SnBSq0kbQAje5RywuixT54cijwTxY4E0BjSbw9D5xMEKkyCXIlAxTCD34kqLWUdNVpMibIKcbTkkDbehMr9MQIilwixR5J2RKok8WNiXdKdlvByTqQ7NIkQuQZCCJFo3Te2kzZxqIOKqgixS5BJkevM2QbloUTToa+HjwFilyOXJKokmjlm4ChdJi2NO1iBS5FNkehlODphlyaIIXCYCxWidS5Icj0yE5DSCQZJkOM6Sg1SQvIkVuRZ4UclMSkB74JHikQhVak0iRC5HTA53CyKZMgY4ehGkhWqTI7UhyYG6asnQQsb0P2RyRIu+EpF+ckgZaoJo2MxWcyeFcpMiNyFcG95oBiSkxIJ+jCYBIkXdANg9m2pClgxNkGIMEnjgYIVLkMmQ7NPQAV/s+1FiFTVmRIr8B2Rx4aeP19NCNAqFIkTdHpsZoM9REkv+TTXtbdBUp8j8j352gN8NN0/3oQGEcjBApchGSJM5ts4UOUNCmEx3eOKrWiRT5Qcg7XyJFihQpUuTh9RuofbZiGBsAVAAAAABJRU5ErkJggg==" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEL0lEQVR42u3czVKcABBF4Xn/lzYbF0ah77moVTSe2RgNA3yk7Om/yuvtD7xeIkWKFClS5DeRr+H13xvev//48+Z9H4///Oej83254eHYs+uLFLkVefhLe/Lz6djpARwd9/n4s6+HAHDfIkVuRk43RIIBCVRnAYgGsrOHcno+kSIfimwCUAo0JNkgyYhIkX8ZeXaSlEA3BUAC0ociUuRTkFPSnQJSKoRTAnFUTJMC+8eqEJEib4acAsOdv/5Yt06kyBshadJNCuijIpc2qSnkV6ZaIkXeCElOSG7oDPaCryZZoA9ApMgnIJtkemoWXzkuDWanB1sNfESKvDEyDVZJgkAHtzTJnh7IWXC7lPGIFLkAmRaIUpO3aQo3jS2C+/K9SJELkWnIcpZsp8Ka/JkuTSRo1a0TKXIpkjSeaPHcfNiTB57AIkVuR6YPWnrhdC6SmKfARxaaRIp8ApIsBLYJOUkmmuXftDQlUuRTkNMHNG1cpYT+u4EoFcooQRcpchESJ73FUIgk43Foc2EZQ6TIzcipML6SHF9dRiJFwfQAD+9JpMiFyHTwlQSB/N2UaKdE5XIVIlLkEmRK0KfBChnKTsGiWVz61SpEpMibINMbSQJNE+wUuOiDpYFMpMitSBI4SOJOhkUkOSDNLBQsRYpciEyDzLZobQIFWZhIicR4ryJFLkSSi5PmMi2U6bmmBja+V5EiFyJJkpyGrKQwJosVTeGNml0iRS5FTgVsGp5OjaZUGF95QOkfZWwuixS5ADkVvGmxjyQONPCQYdLU7MKLESJF3hxJit9mGEQTdLr00CbmIkU+CTktEDYXaI6hi1DNcFekyO3IBEs3TgYyKaFuE4k38BIpciOSDnNI8pAWJ0jh3CxWVEWzSJFLkGQBom0+nd0kChZl4jAGKpEiFyJTYZuWkdIyw1lx3Dau03vQlqRIkQuQdNFhCiY0+SbNsHTtqhEtUuRiZAoSVxOAKwsSJIGvE3SRIpchE4jcRDNcJc2slMin94kUuRGZEoJ0kXZgShYkUrGMB7ciRS5EogWDMpCQZnT7EGkzPE61RIq8OTL9UjfLgFc/yEnwI802lAyIFHlzJE3Q043RApkuRDULEKf3JFLkQiTBTidsG8akEd0EvrFQEClyIbIZoKZGV2pwkeFR00ibri9S5FYkKX7TkvuV4U17jSnQ4CpEpMglyGbhgHzwT0sRzVJUExxRxiNS5DJkgpMmEymg2wdIkobD5ECkyIVIOjAlAWMKBGSZ/8qSUlWFiBS5BEkXH8iNpg/3FDxSkCLNLJEin4BECW+RYE8JNQlyqZmNziVS5MORKVFuzkkaUXHImhb+RYr8A8iUQKcbIQVvsxyBi2aRIpchaaO5gY4F7av/T1TaZQuRIrciyTCGLAYmHLk5ukg4JSMiRW5GPvklUqRIkSJFXnz9AygC5FBcZeDWAAAAAElFTkSuQmCC" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用Nginx反向代理，自建CDN加速节点&url=http://yoursite.com/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用Nginx反向代理，自建CDN加速节点&url=http://hexo.southcat.net/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=使用Nginx反向代理，自建CDN加速节点&url=http://yoursite.com/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=使用Nginx反向代理，自建CDN加速节点&url=http://hexo.southcat.net/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/03/28/e4-bd-bf-e7-94-a8nginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-ef-bc-8c-e8-87-aa-e5-bb-bacdn-e5-8a-a0-e9-80-9f-e8-8a-82-e7-82-b9/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEGElEQVR42u3awZLTQAxF0fz/T8OGBTU4evd1UkXkXG/IQOL0aWpktaTHry+4HiJFihQpUuSLyMdw/fOhP3/3979dvSaf//ma/tysW6TIrcjLX9ofoKsvmb7s6n5X93z2+hmIrlukyO3Iq1/4FFhI0LgKRNNi6XvTd4oU+U3IFBSmQDUlAw1CpMhvRU4Pahp8nr2PbMizhF+kyLsjp0R3CkTTgbZZ8FXgaTbipVOISJEfhpwOvp/859uqdSJFfhAyNk1AQtw+6E+KZFPR+uWulkiRH4QkxWVSPE4H5KYATQ4LKCkRKXIpsk2Gm+LXlHCfXlOhWaTIuyBToXdqlqZFnDZZTxpIIkXeAdk0dsjmkMZpWuArgVGkyO1I0lAhxWFa/KVBjATDMaCJFHkjJAXRwcLUMCXNVlpkEylyM5IMC9IG6kkSkJLuZsjpaeARKXIhkhxO2wGiFIhIQRoXraZhJZEilyFpQXlqiL7joJyGn5ris0iRW5E0yKSg0wSeVFBu1jZusEiRC5FpcU0gapo30/dNTV1SCBMpcjMyLa5tsqYkoWnA0oLW0/8IkSIXItNipmEhUoRKA/Ptwb0aYhIpcjGSFpROAhUZ6m2DGmn6ihS5EZmCSvMgpxtEE4UpcUeDxCJFLkTSYSKStDdF56a4lQ4SOEEXKXIBMiXjJKg0Q0sp4Z8SdJpYiBS5HdkMI5FG6cnhmAStdqBRpMiNyKmRShZBilwxkQ7vb5pBVWVApMgPRZIk+qQAfNLMPWkOo+KySJFLkDQBJkNEaZD3pJH0SpIuUuRGZAo85BCcEvp0qG4HoHDBWqTIpUhSxCVDgfSzZAOnwjcZyhApciuSPvhTIkCG/5rEnCYCY7AUKXIhsm3SnBSq0kbQAje5RywuixT54cijwTxY4E0BjSbw9D5xMEKkyCXIlAxTCD34kqLWUdNVpMibIKcbTkkDbehMr9MQIilwixR5J2RKok8WNiXdKdlvByTqQ7NIkQuQZCCJFo3Te2kzZxqIOKqgixS5BJkevM2QbloUTToa+HjwFilyOXJKokmjlm4ChdJi2NO1iBS5FNkehlODphlyaIIXCYCxWidS5Icj0yE5DSCQZJkOM6Sg1SQvIkVuRZ4UclMSkB74JHikQhVak0iRC5HTA53CyKZMgY4ehGkhWqTI7UhyYG6asnQQsb0P2RyRIu+EpF+ckgZaoJo2MxWcyeFcpMiNyFcG95oBiSkxIJ+jCYBIkXdANg9m2pClgxNkGIMEnjgYIVLkMmQ7NPQAV/s+1FiFTVmRIr8B2Rx4aeP19NCNAqFIkTdHpsZoM9REkv+TTXtbdBUp8j8j352gN8NN0/3oQGEcjBApchGSJM5ts4UOUNCmEx3eOKrWiRT5Qcg7XyJFihQpUuTh9RuofbZiGBsAVAAAAABJRU5ErkJggg==" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEL0lEQVR42u3czVKcABBF4Xn/lzYbF0ah77moVTSe2RgNA3yk7Om/yuvtD7xeIkWKFClS5DeRr+H13xvev//48+Z9H4///Oej83254eHYs+uLFLkVefhLe/Lz6djpARwd9/n4s6+HAHDfIkVuRk43RIIBCVRnAYgGsrOHcno+kSIfimwCUAo0JNkgyYhIkX8ZeXaSlEA3BUAC0ociUuRTkFPSnQJSKoRTAnFUTJMC+8eqEJEib4acAsOdv/5Yt06kyBshadJNCuijIpc2qSnkV6ZaIkXeCElOSG7oDPaCryZZoA9ApMgnIJtkemoWXzkuDWanB1sNfESKvDEyDVZJgkAHtzTJnh7IWXC7lPGIFLkAmRaIUpO3aQo3jS2C+/K9SJELkWnIcpZsp8Ka/JkuTSRo1a0TKXIpkjSeaPHcfNiTB57AIkVuR6YPWnrhdC6SmKfARxaaRIp8ApIsBLYJOUkmmuXftDQlUuRTkNMHNG1cpYT+u4EoFcooQRcpchESJ73FUIgk43Foc2EZQ6TIzcipML6SHF9dRiJFwfQAD+9JpMiFyHTwlQSB/N2UaKdE5XIVIlLkEmRK0KfBChnKTsGiWVz61SpEpMibINMbSQJNE+wUuOiDpYFMpMitSBI4SOJOhkUkOSDNLBQsRYpciEyDzLZobQIFWZhIicR4ryJFLkSSi5PmMi2U6bmmBja+V5EiFyJJkpyGrKQwJosVTeGNml0iRS5FTgVsGp5OjaZUGF95QOkfZWwuixS5ADkVvGmxjyQONPCQYdLU7MKLESJF3hxJit9mGEQTdLr00CbmIkU+CTktEDYXaI6hi1DNcFekyO3IBEs3TgYyKaFuE4k38BIpciOSDnNI8pAWJ0jh3CxWVEWzSJFLkGQBom0+nd0kChZl4jAGKpEiFyJTYZuWkdIyw1lx3Dau03vQlqRIkQuQdNFhCiY0+SbNsHTtqhEtUuRiZAoSVxOAKwsSJIGvE3SRIpchE4jcRDNcJc2slMin94kUuRGZEoJ0kXZgShYkUrGMB7ciRS5EogWDMpCQZnT7EGkzPE61RIq8OTL9UjfLgFc/yEnwI802lAyIFHlzJE3Q043RApkuRDULEKf3JFLkQiTBTidsG8akEd0EvrFQEClyIbIZoKZGV2pwkeFR00ibri9S5FYkKX7TkvuV4U17jSnQ4CpEpMglyGbhgHzwT0sRzVJUExxRxiNS5DJkgpMmEymg2wdIkobD5ECkyIVIOjAlAWMKBGSZ/8qSUlWFiBS5BEkXH8iNpg/3FDxSkCLNLJEin4BECW+RYE8JNQlyqZmNziVS5MORKVFuzkkaUXHImhb+RYr8A8iUQKcbIQVvsxyBi2aRIpchaaO5gY4F7av/T1TaZQuRIrciyTCGLAYmHLk5ukg4JSMiRW5GPvklUqRIkSJFXnz9AygC5FBcZeDWAAAAAElFTkSuQmCC" alt="QRCode">
     </li>
     
 
@@ -584,7 +584,7 @@ server {
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

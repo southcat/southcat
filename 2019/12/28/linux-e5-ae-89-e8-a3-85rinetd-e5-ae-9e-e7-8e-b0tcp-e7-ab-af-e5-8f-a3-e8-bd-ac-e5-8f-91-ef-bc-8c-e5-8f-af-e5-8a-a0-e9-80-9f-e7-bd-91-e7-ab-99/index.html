@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="Linux安装rinetd实现TCP端口转发，可加速网站 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/"><meta property="og:locale" content="en"><meta name="description" content="说明：网站服务器在国外的如果延迟很高，网络爆炸，会造成国内访问放慢，可以使用CDN加速，自建教程查看：使用Nginx反向代理，自建CDN加速节点，不过设置方法对于新手很不友好，这里再说个方法，可以使用rinetd转发端口来加速网站。当然也可以用来加速一些55r等DaiL。 安装1、安装依赖 #CentOS系统 yum -y install gcc make  #Debian&#x2F;Ubuntu系统 ap - John Doe - 南猫"><meta property="article:published_time" content="2019-12-28T09:19:55.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.652Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.652Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="Linux安装rinetd实现TCP端口转发，可加速网站 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/"><meta property="og:locale" content="en"><meta name="description" content="说明：网站服务器在国外的如果延迟很高，网络爆炸，会造成国内访问放慢，可以使用CDN加速，自建教程查看：使用Nginx反向代理，自建CDN加速节点，不过设置方法对于新手很不友好，这里再说个方法，可以使用rinetd转发端口来加速网站。当然也可以用来加速一些55r等DaiL。 安装1、安装依赖 #CentOS系统 yum -y install gcc make  #Debian&#x2F;Ubuntu系统 ap - John Doe - 南猫"><meta property="article:published_time" content="2019-12-28T09:19:55.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.652Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.652Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/">
+    <link rel="canonical" href="http://hexo.southcat.net/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/",
+    "url": "http://hexo.southcat.net/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/"
+        "@id": "http://hexo.southcat.net/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/"
     },
     "headline": "Linux安装rinetd实现TCP端口转发，可加速网站 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2019-12-28T09:19:55.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Linux安装rinetd实现TCP端口转发，可加速网站" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=Linux安装rinetd实现TCP端口转发，可加速网站" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Linux安装rinetd实现TCP端口转发，可加速网站&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Linux安装rinetd实现TCP端口转发，可加速网站&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=Linux安装rinetd实现TCP端口转发，可加速网站" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=Linux安装rinetd实现TCP端口转发，可加速网站" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAELUlEQVR42u3d2W7bUAxFUf//T6dPBYpU5Nm8dgBR2X5pBtnWUmGKU9HX1y94vESKFClSpMg3ka/m8f2Yv19XP/v3+Ktjq+dcHVc9b3TeIkUuRV5+aAvk1cl0J9q9T/cc8n08b5EiFyOrwFAFjfS8KkhVz+/w1YWP7y9S5IORVdCpAk2ZNBcBKL3O1XmJFPnbkd3NmSTOJOB0PyeJhEiRT0HS5DnBUqBJxW8KND9ShYgUeTNkChB3/fNj3TqRIm+EnCTUKYEmDax0EcmxH59qiRR5I2T3QZ5ASJFNimva2ELnK1LkUmQavJCkeHKRqoCTXj8Fs5igixS5EJlu+icN5XQjTwMk0vBGy0oiRS5A0uT6NLik5hZJ0Gnw+u9YkSIXIsnyAknm00IhWQokgyA6+BEpcisyBSDyhieD25QcEHwqnkWK3IzsbvzpmJTcT5OMrqgmfxEiRW5H0oHndBBDE/8UcCZJvUiRT0GeFMUkeNBEgf4uLRWXyYBIkUuQJ4nyZFhKggZZ2k/Ho86ASJFLkAQzGQp1eApMQyWy8CRS5EbkO80j0gRL/5CFwGMTufpapMilSJL0pqFN12Q6OY4MdtPAV6TIjciu0J0kzZMkgASfk2AXE3SRIhch04umBffupt01p95JEj5ShYgUeUMkSdLbJu4bDeQu4aZJf3nhRIpciJwElrSARJYeThtUdHkRNbJEirwxMh1Mb9gpOU8LR6k4IM9BVYhIkUuRZJFvUgh3hTFJtslxqJElUuTNkTQY0OSbNLvIQu6k8EZDWJEiFyFp4js5QZKgnywJTl5TpMityHSyk2Wi9Oa0KZYWLkYDH5EilyFpUEmD2tPlJzIMOloyFClyITIVqanZRZIDklzTYJeCnkiRT0GSxYM0fCXB7BOLguT3IkVuRnbNIPqBnywpnTSoU7O6LZpFilyEnBSmaGlvMHylC4jdax8NfESKXIJMCTIpcvFyX0j2U5GMBlAiRS5FToYuJOiQZlZ3kegib2ymiRS5FEk+/JNliXSR2kIXvBcptEWK3IxMH+KT4cv0ObTx/PZUS6TIJcjTm/xkqYkMkGihnoZFIkVuRZ68AVlwIoOdSbOsuuG3Sb9IkQuR5IRPmtCTxJ8MhshQqBzCihS5CEkS5pSwp5v75CLQxQlUUIsUuRDZFahpgYEsK9HEPiUH04VekSI3I2nDKr3pycmSxGCSzIsU+SQkCR7099NlpmmhjRIVkSIXIklgmCQMXQBLjSgaBPFylEiRS5E0cJBiOC4Qvfh/kEKKaTSEFSlyIZIMeCaD1Ulyn4p0EiTbBF2kyIchSRBAiwqDgjs1pqtgViboIkU+CJmCA2kuT5eSJgNckSKfiCQNKtrwpYFhchFJoMIbWSJF3hxJhp3khCdLSXQxaTKUPe7WiRR5I+STHyJFihQpUuTh4w9IqEMOx1DkSwAAAABJRU5ErkJggg==" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEK0lEQVR42u3d0W7bQAxEUf//T6evQSBx7sguIMrXL2lcR/JxkV0uOUBfP1/weIkUKVKkSJFvIl/D4/drfn/9+/zf1xw9f3Svs78/+v7o3vF9ixS5FHn4S3vyRo9u3mKn+014cj2RIp+CPFsQ/l787LVnz02QdP3pw07vW6TIJyPT4jMtENPm3bxmel8iRX4jMm3oaeEiAFJ8/NeFR6TIGyGngnkquqdFhB602w/l46cQkSJvhpwueuevH+vWiRR5I2QcmgyFdDpck42dLFypsH97qiVS5I2Q5GJtkU4WtebQTQt/kSKfgiRF+jR4mRrNafO+0hzDzWiRIhcim+HMdNClg5qmmZyK86riESlyGTKFHNLmTxpOpDl25TBw+g8iUuRCZDoU02YXCTKkRYYEn9JrcAddpMibIuPQJBxYyTB2+nMK9U7PixT5Dchmw54WnrTBk4PxlYUIddBFilyAJAtBOjSTRewTASgcwhApcimSDGWawjg2fWEYsClIYjEgUuQSJCmaSQFOh62pId0MfGKBL1LkQuSEbRpdZFBEwoB0CEUOBCJFPgGJhylFw4qGm1IjOn0VKfIJyCaYRxYCGihqmtYNdJxqiRS5AEkfTVBoGhg1C0obkBAp8inIK8Vx+j4NeUjBTQL5U+EhUuRTkPQwTYP3tACfDuGXFkCRIhciaVAwNYjp5t+ECNOAKTW0RIrcihw31LARk43+SgFAghtpYCRS5EZkGtikTbcJ5rYhB3o9XPGIFLkAmX6IHF5JQ5kMiug98UBYpMjFSHqgTYdZckCeFqtmMBuLepEiFyNJkY2CtACSwhO0IKlCvSJFLkGSw+70Z7IAXdn8aXBxXBxFilyIJD80NXxjiC8EGppwEglUiRS5HUlDRqnpNR2em8WNAHGYQ6TIpUgSqk2D0FSop8EtaaaR4j0OfESKvDmSNKroQkALdNI4I4f5eG2RIpciaSAhBf2a4U0TeCIfRjyFiBS5BJneMB3kkMZSGhqRIAYNYIgUuRlJGsa0idSEb2kouGmUiRT5JGQTjH+nWZyKbnrtGJYSKXIhkhTddPDTBpuaBnb7cyJFbkU2gYPU4KVB3FTsv9OAHosBkSIXIEnjl7zhpqncLFJ0wRMp8qnIs+ZU/CV/df8BWLoWDRtXAx+RIhcgyUGWhIvaUENz7bP7xCaXSJFLkTQM0WzSacMmDa30ocYFSqTI5cgJXl0cNqTTIkQGvHjgI1LkEmS7KJBNfCoS0sC1XehwB12kyEVIsuDggBAs2Ekj+cqAV6TIpyBTqIgsEDSMSwLEV4Mbp8WASJEPQk43oq8lQ5+pYd1+uCJFfgMyDXXo4TYVByn8RAp8kSK3I5vQX3rdFH6ahjZXQlAfOYWIFHkz5PRL34YJmzdHQxTkkDAOfESKXIR88kOkSJEiRYq8+PgHOPRDDgHNHq8AAAAASUVORK5CYII=" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux安装rinetd实现TCP端口转发，可加速网站&url=http://yoursite.com/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux安装rinetd实现TCP端口转发，可加速网站&url=http://hexo.southcat.net/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=Linux安装rinetd实现TCP端口转发，可加速网站&url=http://yoursite.com/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=Linux安装rinetd实现TCP端口转发，可加速网站&url=http://hexo.southcat.net/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAELUlEQVR42u3d2W7bUAxFUf//T6dPBYpU5Nm8dgBR2X5pBtnWUmGKU9HX1y94vESKFClSpMg3ka/m8f2Yv19XP/v3+Ktjq+dcHVc9b3TeIkUuRV5+aAvk1cl0J9q9T/cc8n08b5EiFyOrwFAFjfS8KkhVz+/w1YWP7y9S5IORVdCpAk2ZNBcBKL3O1XmJFPnbkd3NmSTOJOB0PyeJhEiRT0HS5DnBUqBJxW8KND9ShYgUeTNkChB3/fNj3TqRIm+EnCTUKYEmDax0EcmxH59qiRR5I2T3QZ5ASJFNimva2ELnK1LkUmQavJCkeHKRqoCTXj8Fs5igixS5EJlu+icN5XQjTwMk0vBGy0oiRS5A0uT6NLik5hZJ0Gnw+u9YkSIXIsnyAknm00IhWQokgyA6+BEpcisyBSDyhieD25QcEHwqnkWK3IzsbvzpmJTcT5OMrqgmfxEiRW5H0oHndBBDE/8UcCZJvUiRT0GeFMUkeNBEgf4uLRWXyYBIkUuQJ4nyZFhKggZZ2k/Ho86ASJFLkAQzGQp1eApMQyWy8CRS5EbkO80j0gRL/5CFwGMTufpapMilSJL0pqFN12Q6OY4MdtPAV6TIjciu0J0kzZMkgASfk2AXE3SRIhch04umBffupt01p95JEj5ShYgUeUMkSdLbJu4bDeQu4aZJf3nhRIpciJwElrSARJYeThtUdHkRNbJEirwxMh1Mb9gpOU8LR6k4IM9BVYhIkUuRZJFvUgh3hTFJtslxqJElUuTNkTQY0OSbNLvIQu6k8EZDWJEiFyFp4js5QZKgnywJTl5TpMityHSyk2Wi9Oa0KZYWLkYDH5EilyFpUEmD2tPlJzIMOloyFClyITIVqanZRZIDklzTYJeCnkiRT0GSxYM0fCXB7BOLguT3IkVuRnbNIPqBnywpnTSoU7O6LZpFilyEnBSmaGlvMHylC4jdax8NfESKXIJMCTIpcvFyX0j2U5GMBlAiRS5FToYuJOiQZlZ3kegib2ymiRS5FEk+/JNliXSR2kIXvBcptEWK3IxMH+KT4cv0ObTx/PZUS6TIJcjTm/xkqYkMkGihnoZFIkVuRZ68AVlwIoOdSbOsuuG3Sb9IkQuR5IRPmtCTxJ8MhshQqBzCihS5CEkS5pSwp5v75CLQxQlUUIsUuRDZFahpgYEsK9HEPiUH04VekSI3I2nDKr3pycmSxGCSzIsU+SQkCR7099NlpmmhjRIVkSIXIklgmCQMXQBLjSgaBPFylEiRS5E0cJBiOC4Qvfh/kEKKaTSEFSlyIZIMeCaD1Ulyn4p0EiTbBF2kyIchSRBAiwqDgjs1pqtgViboIkU+CJmCA2kuT5eSJgNckSKfiCQNKtrwpYFhchFJoMIbWSJF3hxJhp3khCdLSXQxaTKUPe7WiRR5I+STHyJFihQpUuTh4w9IqEMOx1DkSwAAAABJRU5ErkJggg==" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEK0lEQVR42u3d0W7bQAxEUf//T6evQSBx7sguIMrXL2lcR/JxkV0uOUBfP1/weIkUKVKkSJFvIl/D4/drfn/9+/zf1xw9f3Svs78/+v7o3vF9ixS5FHn4S3vyRo9u3mKn+014cj2RIp+CPFsQ/l787LVnz02QdP3pw07vW6TIJyPT4jMtENPm3bxmel8iRX4jMm3oaeEiAFJ8/NeFR6TIGyGngnkquqdFhB602w/l46cQkSJvhpwueuevH+vWiRR5I2QcmgyFdDpck42dLFypsH97qiVS5I2Q5GJtkU4WtebQTQt/kSKfgiRF+jR4mRrNafO+0hzDzWiRIhcim+HMdNClg5qmmZyK86riESlyGTKFHNLmTxpOpDl25TBw+g8iUuRCZDoU02YXCTKkRYYEn9JrcAddpMibIuPQJBxYyTB2+nMK9U7PixT5Dchmw54WnrTBk4PxlYUIddBFilyAJAtBOjSTRewTASgcwhApcimSDGWawjg2fWEYsClIYjEgUuQSJCmaSQFOh62pId0MfGKBL1LkQuSEbRpdZFBEwoB0CEUOBCJFPgGJhylFw4qGm1IjOn0VKfIJyCaYRxYCGihqmtYNdJxqiRS5AEkfTVBoGhg1C0obkBAp8inIK8Vx+j4NeUjBTQL5U+EhUuRTkPQwTYP3tACfDuGXFkCRIhciaVAwNYjp5t+ECNOAKTW0RIrcihw31LARk43+SgFAghtpYCRS5EZkGtikTbcJ5rYhB3o9XPGIFLkAmX6IHF5JQ5kMiug98UBYpMjFSHqgTYdZckCeFqtmMBuLepEiFyNJkY2CtACSwhO0IKlCvSJFLkGSw+70Z7IAXdn8aXBxXBxFilyIJD80NXxjiC8EGppwEglUiRS5HUlDRqnpNR2em8WNAHGYQ6TIpUgSqk2D0FSop8EtaaaR4j0OfESKvDmSNKroQkALdNI4I4f5eG2RIpciaSAhBf2a4U0TeCIfRjyFiBS5BJneMB3kkMZSGhqRIAYNYIgUuRlJGsa0idSEb2kouGmUiRT5JGQTjH+nWZyKbnrtGJYSKXIhkhTddPDTBpuaBnb7cyJFbkU2gYPU4KVB3FTsv9OAHosBkSIXIEnjl7zhpqncLFJ0wRMp8qnIs+ZU/CV/df8BWLoWDRtXAx+RIhcgyUGWhIvaUENz7bP7xCaXSJFLkTQM0WzSacMmDa30ocYFSqTI5cgJXl0cNqTTIkQGvHjgI1LkEmS7KJBNfCoS0sC1XehwB12kyEVIsuDggBAs2Ekj+cqAV6TIpyBTqIgsEDSMSwLEV4Mbp8WASJEPQk43oq8lQ5+pYd1+uCJFfgMyDXXo4TYVByn8RAp8kSK3I5vQX3rdFH6ahjZXQlAfOYWIFHkz5PRL34YJmzdHQxTkkDAOfESKXIR88kOkSJEiRYq8+PgHOPRDDgHNHq8AAAAASUVORK5CYII=" alt="QRCode">
     </li>
     
 
@@ -547,7 +547,7 @@ systemctl disable firewalld.service</code></pre><p>这时候可以修改本地<c
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

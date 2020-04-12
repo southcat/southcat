@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="使用crt和ca-bundle文件给网站配置ssl证书教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前看到namecheap搞的免费换一年Comodo ssl证书活动，就去搞了一年，申请下来的证书文件就ca-bundle和crt文件，习惯用crt和key文件来配置ssl证书的我，就直接无视了ca-bundle文件，估计很多人也会和我一样，于是用crt文件和之前生成的key文件配置ssl后，会发现有的浏览器提示不安全，查了下问题后，发现证书链不完整导致的，感觉不能忽视ca-bundle文件 - John Doe - 南猫"><meta property="article:published_time" content="2019-12-12T10:48:19.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.651Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.651Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="使用crt和ca-bundle文件给网站配置ssl证书教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前看到namecheap搞的免费换一年Comodo ssl证书活动，就去搞了一年，申请下来的证书文件就ca-bundle和crt文件，习惯用crt和key文件来配置ssl证书的我，就直接无视了ca-bundle文件，估计很多人也会和我一样，于是用crt文件和之前生成的key文件配置ssl后，会发现有的浏览器提示不安全，查了下问题后，发现证书链不完整导致的，感觉不能忽视ca-bundle文件 - John Doe - 南猫"><meta property="article:published_time" content="2019-12-12T10:48:19.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.651Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.651Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/">
+    <link rel="canonical" href="http://hexo.southcat.net/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/",
+    "url": "http://hexo.southcat.net/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/"
+        "@id": "http://hexo.southcat.net/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/"
     },
     "headline": "使用crt和ca-bundle文件给网站配置ssl证书教程 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2019-12-12T10:48:19.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=使用crt和ca-bundle文件给网站配置ssl证书教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=使用crt和ca-bundle文件给网站配置ssl证书教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用crt和ca-bundle文件给网站配置ssl证书教程&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用crt和ca-bundle文件给网站配置ssl证书教程&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=使用crt和ca-bundle文件给网站配置ssl证书教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=使用crt和ca-bundle文件给网站配置ssl证书教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEGElEQVR42u3azY7iQAxFYd7/pXtWLY0Q5XtssojTh82MoEnqQ0qV/14/f+D1EilSpEiRIr9EvorX+9/8/v//99/f+/T+C7ze7/N+vU/3iOsWKXIp8uNDe8CcFhE3geJvTtjqB0DrFilyMfLTRU+bSnXD0zXSoqrrkR/+43VEinwwslp8dSCnTaY69KvAQ6TIv4xMCydBc3W4p3ud3hMp8snIdEiTG5PAPC22c//LshCRIm+GTBvEXf+9rFonUuSNkJMC1LeHOEnO00F/aVdLpMgbIasHeYI9FbZoYp0aS3S9IkVuRlagdPhWqAQmQNLsQUmzSJGLkKQglR72acL7TcErJtAiRS5FVl8mAQLZTMjGRgrWrWKbSJHLkekArg54Umy6IiDo/NAiRW5EToeCqoCcBgqTxDz9ACJFbkeSom5KoDuHP1kkuTYaThQpciGyCtKrom61yZCkOy4QBhS4qyVS5BIkLViRgb00dESaqd3kGQ8QihS5BJmCgOq9FKCngLszQNxtQokUuRVJhmonAQApeE3uQwpoIkU+CZkumgCkSE0GnDpFq+N3RYpciEyFpPSAVz8OScDJ4lNCcCygiRS5EEkvTovPZLNKm1HawGhhTKTI7UhyQdokSod2J0G4JEAXKXIJsjOgRIJo2nBNBeNOYe24fpEilyJTs2eKJEF/99DvXE+kyKcg0yFPi8zdQhRJCMhGJlLkZmQaeCADgVVhiVyPBBHp+qOGj0iRN0aeHnzysHcWS5LqTuJdfiZS5EJkp/FDBxjINclCLw3QRYpcgkwPOQnIydASGTAkAT8tvIkUuRlJk1/y0HeaQuR+JKBoDUaIFHlzZLo5LSD/FC8CTwF62thigC5S5BIkKRh1hwBJAp02mc6gxvF7IkUuRk6GGzoBQ7d5Q37o2IASKXIhspscpwEJevCnIhcN/nFxWaTIJchvk9Nqw6LAqsGaimDlPUWKXIhMQ3/dRafho5Sg08QaXVOkyIXIVMAiSS/5nDReyY+Smr9lw0ekyAXISaEpHeBkqIF+lsCjYSWRIhcgU9OGwNMCU+OVFMoITqTIJyCrRJlsUpMDvouigYpIkZuRNIhODVDSSKVNHDo0EYvdIkUuRaZhINocIkE8LX5V36ebj0iRG5HVwZ8O6c7GkxLpalNKyTVu+IgUuQSZgm6S7HaHlzrNos5gr0iRT0KSJPrKzadzDzJ0WA4QihS5BEk2hlRsnibLqaFbFa1HE1kiRS5BdjYc2nxNjR/abCXrQBuPSJHLkGkToZvLJOGlm94LvMqNR6TIhyC7IBI80IEHcp9LNh6RIpchyWASLVYldCcYL/EiRS5GdgYKCWCSYHeKze1Os0iRi5DdJifdiNIw1GTzGzV8RIpchHzyS6RIkSJFihy+/gGh0SYBeFU6AQAAAABJRU5ErkJggg==" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEMElEQVR42u3cy46bChBFUf//TyfTTgTn7AIPKHp7EiUXAwvJRb10P39+wecjUqRIkSJF3kR+wufnMf8fS/5OvvvPTR189+fxR8fG+xYpciny8EcbbvToIkffaec++m4619E9xfsWKXIx8uyGWzBJN0sfIDlfe/CHx4sU+VLkGS691I9gZw+ABLQUoESK/G3IsyQ5BZizmz4KZOml3x6kSJFvRaabnABbIt1e7jSYfbUKESnyYcgUGJ7859e6dSJFPghZhyYgUJxdNB3XiuZ23q9OtUSKfBAy/ZBJQ3iSdKcH0Yp0EnhEinwDMhWrVwdBKVFvCQcpBHDSL1LkUmQrlknTiAaQScM5FdRoICtS5FJke5lPfuwpULUBD21q0WuJFLkZSYY77d/JzZIlQ1IUoPOKFLkQSV6skws0TAs4kwR93EEXKXIRkmLp4ny6ebqkmIa8LUCKFPk2JC1s6RAoDXRI8pCKhFo0ixS5EEmHMyRgkHPTJJ820w6/J1LkQuSdovj05OXB0MDSglUNaiJFLkTSwQ4tnNuwlgyV2vAIL0aJFLkYSQLGNEloRe2kOG9Dp5qgixS5BNle0OnFTYthugRBku/WBMNTLZEiH4yMywWf+f/UgDaWW5LQFqFqg1ukyKXI6eAzXZg8qDsJ+qjgFilyKTLBJsNRcs4rza5JcBIpcjuyNX1JU6sl6qTIbg+lnS8GHpEilyHTgJT84FOyPHmRkwWNUTEuUuRSJGkiXW0ik2bXdMBEHrpIkVuRdeEHJsgpYEwDGQmEZIlRpMi3IOmwNTWbabLRAs10GCxS5HbkpQZROnEotK8kHnRxCSfoIkU+HJmSgDRQbf9t8nJvhfSfix+RIjcj26IEQaSXNUXT810umkWKXIokRTJ5SJOFqMmSRFuKEinyLUjSoKJDG3JcQ5OG2HiBUKTIByPvLum1IWkreslSUlsSPh02iRS5EJkCDxmGTpCtCXXnoYgU+SZkusg0qb6TvLcH1QJSnGqJFLkEOXn5kpf3pGmcggsNMPFhixS5EDkpRNuANQUO+qJv16fnEylyK7K9yOkSPknOJwl6CoJ4WVGkyMXI9PK+epM0SadDW1owiBT5BuRkaEqHtZOmcbsWXXQ6rUJEilyITIGHXJQMZSYv/RZ0WkEgUuRGJA0+dxPxBPwmfrRoL1LkQ5GtYCY3fKXwbskAaabFQkGkyOVIkoDTYNGWA1vDmAY9vCUpUuQSZPshk6BAAlcKWK2BRorwW81lkSIfhiQDWdJwnjSKSXE+OQZtf4gUuQg5WSqiCxBkaYksOpDk/PABiBT5UiRpbrXiuxXabbjahr54qVekyJcgafFMG7+0YTZpdt9KBkSKfBhy0kyiBXRLuElDiyb7t4pmkSIfhiQNJTIEJYn5lUYxKRC+siUpUuQDkG/+iBQpUqRIkRc/fwHGE0IdGYXUAgAAAABJRU5ErkJggg==" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用crt和ca-bundle文件给网站配置ssl证书教程&url=http://yoursite.com/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用crt和ca-bundle文件给网站配置ssl证书教程&url=http://hexo.southcat.net/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=使用crt和ca-bundle文件给网站配置ssl证书教程&url=http://yoursite.com/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=使用crt和ca-bundle文件给网站配置ssl证书教程&url=http://hexo.southcat.net/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEGElEQVR42u3azY7iQAxFYd7/pXtWLY0Q5XtssojTh82MoEnqQ0qV/14/f+D1EilSpEiRIr9EvorX+9/8/v//99/f+/T+C7ze7/N+vU/3iOsWKXIp8uNDe8CcFhE3geJvTtjqB0DrFilyMfLTRU+bSnXD0zXSoqrrkR/+43VEinwwslp8dSCnTaY69KvAQ6TIv4xMCydBc3W4p3ud3hMp8snIdEiTG5PAPC22c//LshCRIm+GTBvEXf+9rFonUuSNkJMC1LeHOEnO00F/aVdLpMgbIasHeYI9FbZoYp0aS3S9IkVuRlagdPhWqAQmQNLsQUmzSJGLkKQglR72acL7TcErJtAiRS5FVl8mAQLZTMjGRgrWrWKbSJHLkekArg54Umy6IiDo/NAiRW5EToeCqoCcBgqTxDz9ACJFbkeSom5KoDuHP1kkuTYaThQpciGyCtKrom61yZCkOy4QBhS4qyVS5BIkLViRgb00dESaqd3kGQ8QihS5BJmCgOq9FKCngLszQNxtQokUuRVJhmonAQApeE3uQwpoIkU+CZkumgCkSE0GnDpFq+N3RYpciEyFpPSAVz8OScDJ4lNCcCygiRS5EEkvTovPZLNKm1HawGhhTKTI7UhyQdokSod2J0G4JEAXKXIJsjOgRIJo2nBNBeNOYe24fpEilyJTs2eKJEF/99DvXE+kyKcg0yFPi8zdQhRJCMhGJlLkZmQaeCADgVVhiVyPBBHp+qOGj0iRN0aeHnzysHcWS5LqTuJdfiZS5EJkp/FDBxjINclCLw3QRYpcgkwPOQnIydASGTAkAT8tvIkUuRlJk1/y0HeaQuR+JKBoDUaIFHlzZLo5LSD/FC8CTwF62thigC5S5BIkKRh1hwBJAp02mc6gxvF7IkUuRk6GGzoBQ7d5Q37o2IASKXIhspscpwEJevCnIhcN/nFxWaTIJchvk9Nqw6LAqsGaimDlPUWKXIhMQ3/dRafho5Sg08QaXVOkyIXIVMAiSS/5nDReyY+Smr9lw0ekyAXISaEpHeBkqIF+lsCjYSWRIhcgU9OGwNMCU+OVFMoITqTIJyCrRJlsUpMDvouigYpIkZuRNIhODVDSSKVNHDo0EYvdIkUuRaZhINocIkE8LX5V36ebj0iRG5HVwZ8O6c7GkxLpalNKyTVu+IgUuQSZgm6S7HaHlzrNos5gr0iRT0KSJPrKzadzDzJ0WA4QihS5BEk2hlRsnibLqaFbFa1HE1kiRS5BdjYc2nxNjR/abCXrQBuPSJHLkGkToZvLJOGlm94LvMqNR6TIhyC7IBI80IEHcp9LNh6RIpchyWASLVYldCcYL/EiRS5GdgYKCWCSYHeKze1Os0iRi5DdJifdiNIw1GTzGzV8RIpchHzyS6RIkSJFihy+/gGh0SYBeFU6AQAAAABJRU5ErkJggg==" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEMElEQVR42u3cy46bChBFUf//TyfTTgTn7AIPKHp7EiUXAwvJRb10P39+wecjUqRIkSJF3kR+wufnMf8fS/5OvvvPTR189+fxR8fG+xYpciny8EcbbvToIkffaec++m4619E9xfsWKXIx8uyGWzBJN0sfIDlfe/CHx4sU+VLkGS691I9gZw+ABLQUoESK/G3IsyQ5BZizmz4KZOml3x6kSJFvRaabnABbIt1e7jSYfbUKESnyYcgUGJ7859e6dSJFPghZhyYgUJxdNB3XiuZ23q9OtUSKfBAy/ZBJQ3iSdKcH0Yp0EnhEinwDMhWrVwdBKVFvCQcpBHDSL1LkUmQrlknTiAaQScM5FdRoICtS5FJke5lPfuwpULUBD21q0WuJFLkZSYY77d/JzZIlQ1IUoPOKFLkQSV6skws0TAs4kwR93EEXKXIRkmLp4ny6ebqkmIa8LUCKFPk2JC1s6RAoDXRI8pCKhFo0ixS5EEmHMyRgkHPTJJ820w6/J1LkQuSdovj05OXB0MDSglUNaiJFLkTSwQ4tnNuwlgyV2vAIL0aJFLkYSQLGNEloRe2kOG9Dp5qgixS5BNle0OnFTYthugRBku/WBMNTLZEiH4yMywWf+f/UgDaWW5LQFqFqg1ukyKXI6eAzXZg8qDsJ+qjgFilyKTLBJsNRcs4rza5JcBIpcjuyNX1JU6sl6qTIbg+lnS8GHpEilyHTgJT84FOyPHmRkwWNUTEuUuRSJGkiXW0ik2bXdMBEHrpIkVuRdeEHJsgpYEwDGQmEZIlRpMi3IOmwNTWbabLRAs10GCxS5HbkpQZROnEotK8kHnRxCSfoIkU+HJmSgDRQbf9t8nJvhfSfix+RIjcj26IEQaSXNUXT810umkWKXIokRTJ5SJOFqMmSRFuKEinyLUjSoKJDG3JcQ5OG2HiBUKTIByPvLum1IWkreslSUlsSPh02iRS5EJkCDxmGTpCtCXXnoYgU+SZkusg0qb6TvLcH1QJSnGqJFLkEOXn5kpf3pGmcggsNMPFhixS5EDkpRNuANQUO+qJv16fnEylyK7K9yOkSPknOJwl6CoJ4WVGkyMXI9PK+epM0SadDW1owiBT5BuRkaEqHtZOmcbsWXXQ6rUJEilyITIGHXJQMZSYv/RZ0WkEgUuRGJA0+dxPxBPwmfrRoL1LkQ5GtYCY3fKXwbskAaabFQkGkyOVIkoDTYNGWA1vDmAY9vCUpUuQSZPshk6BAAlcKWK2BRorwW81lkSIfhiQDWdJwnjSKSXE+OQZtf4gUuQg5WSqiCxBkaYksOpDk/PABiBT5UiRpbrXiuxXabbjahr54qVekyJcgafFMG7+0YTZpdt9KBkSKfBhy0kyiBXRLuElDiyb7t4pmkSIfhiQNJTIEJYn5lUYxKRC+siUpUuQDkG/+iBQpUqRIkRc/fwHGE0IdGYXUAgAAAABJRU5ErkJggg==" alt="QRCode">
     </li>
     
 
@@ -511,7 +511,7 @@
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

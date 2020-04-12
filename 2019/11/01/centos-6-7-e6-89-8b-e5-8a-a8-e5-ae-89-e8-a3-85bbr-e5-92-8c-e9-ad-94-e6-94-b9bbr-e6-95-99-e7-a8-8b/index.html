@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="CentOS 6&#x2F;7手动安装BBR和魔改BBR教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="说明：现在的BBR一键脚本很多，脚本虽然方便，但也有缺陷，就是不能照顾到所有商家的系统，偶尔也会出点错。所以我们不能完全依赖一键脚本，得学会手动开启BBR或者魔改BBR，这里就说下CentOS 6&#x2F;7手动开启教程。Debian&#x2F;Ubuntu系统的手动开启教程很久前就说过了，查看：Linux VPS使用Google BBR拥塞算法加速TCP教程、Debian&#x2F;Ubuntu开启超级暴力版魔改BBR教程 - John Doe - 南猫"><meta property="article:published_time" content="2019-10-31T20:30:43.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.645Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.645Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="CentOS 6&#x2F;7手动安装BBR和魔改BBR教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="说明：现在的BBR一键脚本很多，脚本虽然方便，但也有缺陷，就是不能照顾到所有商家的系统，偶尔也会出点错。所以我们不能完全依赖一键脚本，得学会手动开启BBR或者魔改BBR，这里就说下CentOS 6&#x2F;7手动开启教程。Debian&#x2F;Ubuntu系统的手动开启教程很久前就说过了，查看：Linux VPS使用Google BBR拥塞算法加速TCP教程、Debian&#x2F;Ubuntu开启超级暴力版魔改BBR教程 - John Doe - 南猫"><meta property="article:published_time" content="2019-10-31T20:30:43.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.645Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.645Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/">
+    <link rel="canonical" href="http://hexo.southcat.net/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/",
+    "url": "http://hexo.southcat.net/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/"
+        "@id": "http://hexo.southcat.net/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/"
     },
     "headline": "CentOS 6/7手动安装BBR和魔改BBR教程 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2019-10-31T20:30:43.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=CentOS 6/7手动安装BBR和魔改BBR教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=CentOS 6/7手动安装BBR和魔改BBR教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=CentOS 6/7手动安装BBR和魔改BBR教程&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=CentOS 6/7手动安装BBR和魔改BBR教程&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=CentOS 6/7手动安装BBR和魔改BBR教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=CentOS 6/7手动安装BBR和魔改BBR教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADuUlEQVR42u3d227bUAxEUf3/T7dPBRLU5GwqsQ9tbL00cBxJS4DOZUig158PPC5RokSJEvVxqKs5vv1B8fnX3/37+evn1TUefefhjTbn+O9cokQtQXUnqy7c/Vwhu5ukv2vvU5SoRah0gUeDAn3R040/Om81AHVYUaLeCfXoczIpV9+pHtRkIhcl6p1RZHK9wlENAnTRLErUO6HSSarvJnQFvrNJ/bVVuihRT0Z1J93076+lSaJEPREVQ/fwgpNQM52nW+A+peohStQTUTTErzZ41c2lwScFNZP7EyVqK6p7wemA0C0+6Y2T4AYPFKJEHUbRsHFaTLtTqE4PA6VJokQdRNEBgYSe3WKWBC2kgI5XFKJEHUB1A8JkAdu99OTm0nnbDacoUQtQZIIjA0cqLtACBCl2l9cVJWoRqgtbuvCRNhpOJudpgU+UqE0ourkjzRlp4JgMOnTxK0rUZhTZ2JEGkGloSQIfskAQJWoDqjoZLQS0QchwcUwD1dGCVpSoF6NSg1UaNEjRIG0Guwc7CTdFidqKogvQ9KJPimx3No+oM1OUqAMoEjLSSZk2GXd/RxpD0CpdlKhDKNroTkJ+El5SGC3GiRK1CUWK0CnAnDR/0II3bcQqqx6iRB1GdZPxtPk+DQKT4J8EpqJEbULR5kS6eZwEOfSh0g2pKFFbUJPNGxlMUJj/w2uhAoEoUQdRk0XmBHZnQUwn63GBQJSoF6BIsE+ae6cFvNR0dadZWJSoLajp5pA0dtxpuEqDRVpgixK1AdUVt2hhgDbudg+nGwhuVxJFiTqAosXrFMaQAvQ04KTFb1GiNqFIIbt7gclDSZvEadhZLnZFiVqESjfdTYpk0dptBkkROxUMRInagqIXnUzOZIGaCtakcQvvfEWJOoBKhS3SpJiCFVIg74KWUceLKFGHUSQgSQtY2miVBqhJgUKUqK2oFIaQglkqopHmkVisvmCzvShRB1FpIiSNhtOgJBUeUjAaF7SiRB1GkQXtNCChmzxSGEdBjihRi1CpqNVdDIUisDkybVhRgUCUqIMoAiKYVGyjwc2kMbhtuBIl6hAqHSk0oS//ZIKnf9c2XIkSdQhFX0IyUdINHy2I04W1KFHbUOSmJmE9DSsnAWgV6pQDhShRh1GTRl8SctJCQxqISOFPlKh3RFUbR7rBpIvXyUZRlKh3ReHmjGv+HwZNQpi4iBYlahGqC/hTkWDSYJKK5OSasYlRlKjDKDq5TQt1k2apO8EOKrqJEvVi1CcdokSJEiXqY46/rWdx/l9SwskAAAAASUVORK5CYII=" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADr0lEQVR42u3d227jMAxFUf//T7dPAwyKiGdTjmPG2H5pp/VtBZBEkcT0+HngcYgSJUqUqMehjuL4e86/7/9e9//PX53z8gXCtat7le8pStQQ1Oqhr+Ddh1UfyCvg6pnoPUWJGoRa3SQN4hWg+nd1zzSZlBOUKFFfgkoDvVpo24MdLuiiRD0FVQW9NEh+df0KKUrUt6LSTVa/I4twek5a9N8epYsSdTEqDeopX9+WTRIl6kJUTLoXC2cVqKYNZbWYk2ToqaqHKFEXokiwutrArTZzaUBXCZ3qGfH9RIkagErB7E5ihX44KXlDEqOiRE1D7W4SqyIcLZ6RQh2dVESJmojqNHKQhZVMOJ2FNgW4okRNQFVBKHlAZ6JJ19JnLH8uStQQFA1uSeIknU83grQxRZSoaahukrEziOm53UkCBbSiRN2MIoVqkgBNm8GqoECAJVKUqEGoNFl0CwRpASbNkCSBGhdfUaI+jIpBIgxKU6IyLfRp40mK2qJETUF1CmO08bDTQJUSoKQwIUrUFBQd+LTYlhqnjnB0kjG440WUqA+i0iJIGhXJgO8UqjsJmOXsJ0rUTSjSXEibEklCtNNwVRXScXVelKgPo1IBLd2MFr+re6aJIH1AokRNQlUndYrOaUCfAVUbWlGipqHenaAkL08+DJqwiclMUaKGoEiBgBTnUsCbCuY06BUlahKKBJBVooQkb2hTI3mf2HAlStSNqJSc7wS6ZHNJJ5plcqVaxEWJGoDqNBruLL6dAgFN4Cw3qaJEDUClYJQsgp3GkNR0QgPtWPUQJeomVDfZnwoK5UNB0Eo3kGjxFSXqBhTZyHUmidTUmDaXZBMaEy+iRN2M6hbX0mCmG0MyYZBmSFGiJqGqYDUlQMjAT01UqSBANqyiRE1CkYJ1pxGkXBxh8WCnOC5K1BRUp9hMIaRhsbshJAkYUaImoFKQScCdovSZppMqUSpK1FRUSoDsNH3QQZ8SP/F6UaIGoKpJoZt8QQ8++H/kVuHKiUKUqAGotLlLE0k3ObrzfQzARYkagOok9WmRjCZWaJPi6YYrUaI+iIpNTI2E/c6iW92bLuiiRE1CkU0fTaLsNEztJENbs58oUTeg6MuTxZcCSAMXbUoRJWoiihTJdpoNSSE8bURTYCtK1LejSIEsBawpMUmLDaJEfTsqJTljU9TR+0PHdBMqStQ0VEqApAFNA12aXKH33dokihJ1MerMApsC2+r3qSiQzt/OJokSdSHqSYcoUaJEiXrM8QsfJhUxgB0u6QAAAABJRU5ErkJggg==" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=CentOS 6/7手动安装BBR和魔改BBR教程&url=http://yoursite.com/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=CentOS 6/7手动安装BBR和魔改BBR教程&url=http://hexo.southcat.net/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=CentOS 6/7手动安装BBR和魔改BBR教程&url=http://yoursite.com/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=CentOS 6/7手动安装BBR和魔改BBR教程&url=http://hexo.southcat.net/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/11/01/centos-6-7-e6-89-8b-e5-8a-a8-e5-ae-89-e8-a3-85bbr-e5-92-8c-e9-ad-94-e6-94-b9bbr-e6-95-99-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADuUlEQVR42u3d227bUAxEUf3/T7dPBRLU5GwqsQ9tbL00cBxJS4DOZUig158PPC5RokSJEvVxqKs5vv1B8fnX3/37+evn1TUefefhjTbn+O9cokQtQXUnqy7c/Vwhu5ukv2vvU5SoRah0gUeDAn3R040/Om81AHVYUaLeCfXoczIpV9+pHtRkIhcl6p1RZHK9wlENAnTRLErUO6HSSarvJnQFvrNJ/bVVuihRT0Z1J93076+lSaJEPREVQ/fwgpNQM52nW+A+peohStQTUTTErzZ41c2lwScFNZP7EyVqK6p7wemA0C0+6Y2T4AYPFKJEHUbRsHFaTLtTqE4PA6VJokQdRNEBgYSe3WKWBC2kgI5XFKJEHUB1A8JkAdu99OTm0nnbDacoUQtQZIIjA0cqLtACBCl2l9cVJWoRqgtbuvCRNhpOJudpgU+UqE0ourkjzRlp4JgMOnTxK0rUZhTZ2JEGkGloSQIfskAQJWoDqjoZLQS0QchwcUwD1dGCVpSoF6NSg1UaNEjRIG0Guwc7CTdFidqKogvQ9KJPimx3No+oM1OUqAMoEjLSSZk2GXd/RxpD0CpdlKhDKNroTkJ+El5SGC3GiRK1CUWK0CnAnDR/0II3bcQqqx6iRB1GdZPxtPk+DQKT4J8EpqJEbULR5kS6eZwEOfSh0g2pKFFbUJPNGxlMUJj/w2uhAoEoUQdRk0XmBHZnQUwn63GBQJSoF6BIsE+ae6cFvNR0dadZWJSoLajp5pA0dtxpuEqDRVpgixK1AdUVt2hhgDbudg+nGwhuVxJFiTqAosXrFMaQAvQ04KTFb1GiNqFIIbt7gclDSZvEadhZLnZFiVqESjfdTYpk0dptBkkROxUMRInagqIXnUzOZIGaCtakcQvvfEWJOoBKhS3SpJiCFVIg74KWUceLKFGHUSQgSQtY2miVBqhJgUKUqK2oFIaQglkqopHmkVisvmCzvShRB1FpIiSNhtOgJBUeUjAaF7SiRB1GkQXtNCChmzxSGEdBjihRi1CpqNVdDIUisDkybVhRgUCUqIMoAiKYVGyjwc2kMbhtuBIl6hAqHSk0oS//ZIKnf9c2XIkSdQhFX0IyUdINHy2I04W1KFHbUOSmJmE9DSsnAWgV6pQDhShRh1GTRl8SctJCQxqISOFPlKh3RFUbR7rBpIvXyUZRlKh3ReHmjGv+HwZNQpi4iBYlahGqC/hTkWDSYJKK5OSasYlRlKjDKDq5TQt1k2apO8EOKrqJEvVi1CcdokSJEiXqY46/rWdx/l9SwskAAAAASUVORK5CYII=" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADr0lEQVR42u3d227jMAxFUf//T7dPAwyKiGdTjmPG2H5pp/VtBZBEkcT0+HngcYgSJUqUqMehjuL4e86/7/9e9//PX53z8gXCtat7le8pStQQ1Oqhr+Ddh1UfyCvg6pnoPUWJGoRa3SQN4hWg+nd1zzSZlBOUKFFfgkoDvVpo24MdLuiiRD0FVQW9NEh+df0KKUrUt6LSTVa/I4twek5a9N8epYsSdTEqDeopX9+WTRIl6kJUTLoXC2cVqKYNZbWYk2ToqaqHKFEXokiwutrArTZzaUBXCZ3qGfH9RIkagErB7E5ihX44KXlDEqOiRE1D7W4SqyIcLZ6RQh2dVESJmojqNHKQhZVMOJ2FNgW4okRNQFVBKHlAZ6JJ19JnLH8uStQQFA1uSeIknU83grQxRZSoaahukrEziOm53UkCBbSiRN2MIoVqkgBNm8GqoECAJVKUqEGoNFl0CwRpASbNkCSBGhdfUaI+jIpBIgxKU6IyLfRp40mK2qJETUF1CmO08bDTQJUSoKQwIUrUFBQd+LTYlhqnjnB0kjG440WUqA+i0iJIGhXJgO8UqjsJmOXsJ0rUTSjSXEibEklCtNNwVRXScXVelKgPo1IBLd2MFr+re6aJIH1AokRNQlUndYrOaUCfAVUbWlGipqHenaAkL08+DJqwiclMUaKGoEiBgBTnUsCbCuY06BUlahKKBJBVooQkb2hTI3mf2HAlStSNqJSc7wS6ZHNJJ5plcqVaxEWJGoDqNBruLL6dAgFN4Cw3qaJEDUClYJQsgp3GkNR0QgPtWPUQJeomVDfZnwoK5UNB0Eo3kGjxFSXqBhTZyHUmidTUmDaXZBMaEy+iRN2M6hbX0mCmG0MyYZBmSFGiJqGqYDUlQMjAT01UqSBANqyiRE1CkYJ1pxGkXBxh8WCnOC5K1BRUp9hMIaRhsbshJAkYUaImoFKQScCdovSZppMqUSpK1FRUSoDsNH3QQZ8SP/F6UaIGoKpJoZt8QQ8++H/kVuHKiUKUqAGotLlLE0k3ObrzfQzARYkagOok9WmRjCZWaJPi6YYrUaI+iIpNTI2E/c6iW92bLuiiRE1CkU0fTaLsNEztJENbs58oUTeg6MuTxZcCSAMXbUoRJWoiihTJdpoNSSE8bURTYCtK1LejSIEsBawpMUmLDaJEfTsqJTljU9TR+0PHdBMqStQ0VEqApAFNA12aXKH33dokihJ1MerMApsC2+r3qSiQzt/OJokSdSHqSYcoUaJEiXrM8QsfJhUxgB0u6QAAAABJRU5ErkJggg==" alt="QRCode">
     </li>
     
 
@@ -585,7 +585,7 @@ sysctl -p</code></pre><p>检查开启状态</p>
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

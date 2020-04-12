@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="Linux VPS一键安装锐速(LotServer)脚本，可与BBR共存 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/"><meta property="og:locale" content="en"><meta name="description" content="说明：最近萌咖大佬的锐速脚本更新了，支持的锐速版本差不多到最新的了，与之前的版本比较，修复了崩溃等众多问题，而且支持的内核更高了(包括4.9+内核)，也就意味着我们在锐速和BBR之间切换安装的时候不需要重复更换内核了，貌似锐速和BBR还能共存，但博主感觉效果提升并不大，反而流量可能会爆增，具体的就需要人去探究了，这里只大概说下脚本。 安装Github地址：https:&#x2F;&#x2F;github.com&#x2F;Mo - John Doe - 南猫"><meta property="article:published_time" content="2019-10-14T14:49:40.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.644Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.644Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="Linux VPS一键安装锐速(LotServer)脚本，可与BBR共存 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/"><meta property="og:locale" content="en"><meta name="description" content="说明：最近萌咖大佬的锐速脚本更新了，支持的锐速版本差不多到最新的了，与之前的版本比较，修复了崩溃等众多问题，而且支持的内核更高了(包括4.9+内核)，也就意味着我们在锐速和BBR之间切换安装的时候不需要重复更换内核了，貌似锐速和BBR还能共存，但博主感觉效果提升并不大，反而流量可能会爆增，具体的就需要人去探究了，这里只大概说下脚本。 安装Github地址：https:&#x2F;&#x2F;github.com&#x2F;Mo - John Doe - 南猫"><meta property="article:published_time" content="2019-10-14T14:49:40.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.644Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.644Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/">
+    <link rel="canonical" href="http://hexo.southcat.net/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/",
+    "url": "http://hexo.southcat.net/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/"
+        "@id": "http://hexo.southcat.net/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/"
     },
     "headline": "Linux VPS一键安装锐速(LotServer)脚本，可与BBR共存 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2019-10-14T14:49:40.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Linux VPS一键安装锐速(LotServer)脚本，可与BBR共存" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=Linux VPS一键安装锐速(LotServer)脚本，可与BBR共存" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Linux VPS一键安装锐速(LotServer)脚本，可与BBR共存&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Linux VPS一键安装锐速(LotServer)脚本，可与BBR共存&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=Linux VPS一键安装锐速(LotServer)脚本，可与BBR共存" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=Linux VPS一键安装锐速(LotServer)脚本，可与BBR共存" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEGUlEQVR42u3aQXLbQAxEUd3/0sk2SZHo36MsCPprY8dFUfNYlVEPgM+vH/D6iBQpUqRIkV8iP8Prz2v+/PnXjS6u/ff6q/um664+5+pzx3WLFLkUefmf9uamV4tK8On9d7jpAdF1ixS5GXm1MdyB7jYiutC02LuHmO4tUuRPR94tLAbni4dDf0+blkiRPwFJN4fPwYuEgrtwIVLkm5EJQQ7O02LSITsdqtN9vzqFiBT5MCTdFJ72879V60SKfBCShGlSLL4L1bQonK6h4f+oqyVS5IOQtNiUCsYkYJOGUnNwnx6USJFbkVNhiRSuaGE4HbbT508F6XhoFilyGZIWk6ZCcvNAps2KNJhwQ1akyMXINBCUwvUdnAZ2OtzUPGCRIjcip8WlQjKBp9DfhgQS/kWK3IycmjZNMG6as2OoDpsLLbqJFLkZSYpKNLyng3TTvD0paKFClkiRD0aShmsKAU0gTw/1ZFO63RhFilyKPNkkyGAuafCkL/SmEB1PISJFLkM2IZr8flKETof1dL1IkW9Aki/stIBmkXToqWkG4cQjUuTDkengSxY8Fb7S35pgcBzQRYpchky4pliVvvzpkCIJJTigixS5CEk/KDViaWOVFNBocE/D+CJFbkSSBkz7BU4W0ISKdO96IkukyAcjybBuE8LJ5kUHJciwxhhQRIpciiRDed8ccskm0TR80hpFityMbJoqTbPm2wGlNqRfPmSRIhcjm4ElUngmw380HNCDdtx4RIpchpyGkHDjMzwIEg7IgR0NMokUuRiZAjUtPrWBvyla05dIkZuR03AuCcrTv0kBLAWF6WHigC5S5DIkbfC0w38k4JNNLA1F3B4WRIpciJwW0mwEbTHr5ABA3nebeESKXIIkjZdmEKIZJqSfS4cqRIp8A5IiTorLJEynEN8cqMcBQpEiFyHbhg1tnE4LP9lISHiJxWWRIh+ObG/8PwpTKUQ0RbFxYxQpciGSNnua4lI7PEE2smZQSqTIzUhSuDo5uNLC8BTCG9wY0EWKXIQkhVo6yEfeQ947DRBWnylS5EJkupA0eZqwkEI1CfIpUIgUuR2ZbkIOuN+E8PSA6ADVmHhEilyIJI3ZacNqmjLfDFCkA4JIkduR9As93hQOHRIEHU6sEo9IkQuQpKCbvsRpESqFDRIOqo1SpMilSLoR0CGj1ERqhhZPNkeRIt+CbAtJRwNE4DBdNVqngCFS5EIk2RxSo7VpolIAbULVFXSRIhcgyYZDB4tII5U0bk4O0SJFvgnZFnxJSP6EVxPST+4nUuSbkdMGk/7eFJ/aw/S4qYkU+VLkODgLC8HNBjUd1pvBJ5EiNyNJoTneFHzRpwELOkSFwoNIkUuRU+Clw7kkwJ8MIJ0ezkWK3Ip880ukSJEiRYo8fP0Gw8UkHx7gnNwAAAAASUVORK5CYII=" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEI0lEQVR42u2d0W7jMAwE8/8/3Xvt9WLurJIDzHT80tqJZY0KUyR3gT6+fsHxEFJIIYUUUsgXIR/D8dcN386f/Z7u+/n5z+99/87TCT8ZN81bSCG3QqZBryb/c9JX5/QZV4t1dS2OKaSQiyGvAsMUcK4edHX/9PnV2G3AE1LI3wCZEoO00afFmzb4dL+QQv5mSJK80wQ63ZMSdyGF/HTI0836pNglE02B6q1ViJBC3gySBIg7/nxbt05IIW8EGUWTsHk3yTyZfEoq/ouqJaSQN4KcXuQEnYrnKUCQRU3JQRpTSCE3Q6aHToIpLayv7qHPahplQgq5GfI0iJyIRjTIkKBzZFYSUsibQ6bGLm0ikU16ElZJoEoC0z9jCCnkQshms58MQ9TgEJPqQtyJnwkp5ELIyRCUBB4q2JKgUQk5weArpJDbIRtBhRTMtPBOQY4s+th0E1LIpZCpUVtvwmDDJ0VBayYUUshPgUyNpVZUJQlBE0jSH+CyQBBSyOWQaaNOC5GS8tTMevV5L5mVhBTyZpBJVEHG9nCdNJepqHPcQRdSyCWQTVJATPDEAEET+JPgJKSQmyFT0tyIr0mUbYIaNUZdzldIIRdCTpv29PkrCXdraiIJ+hh4hBRyESQxGqXzFICIeDMl6m9J0IUUcgkkMSSRQjkFrXcl6ElMElLI7ZDTZClcMhalcVNAaeYZm8tCCrkEMpnzGuNeKoDbhJs8p+rWCSnkEsgToy4pjpuGcRuUxkJbSCEXQhLxJv0+NbRaMYgGriT+CCnkVkhq/mk24zQeCSyT8IuLCCGFXApJhVcioqbNnSTopybGOkEXUsgbQk7iDBVvGhG1MUCRpH9MKIQUcinkiTGBNLhS07kFTWLxWIUIKeRCyCSsNBNNRXO7EClxGBN0IYVcBEle9KYATtdpAU4gK8FHSCGXQCaRlBSopNhuFoSaDaNILKSQCyFPXvKmmCbGCWJOaoRcIYXcDNkEk0l0bcyEX8NBF5GMK6SQmyGbSbXBiYi3NIlIxuIqQRdSyBtCkgKUDEyS7WScaM1PWPARUshFkOTFJo1kco2YflNjmyYrQgq5FTIJrbGBGxIDYopqjE2V6CukkEshiTmCbs40CW+K7NMFEFLIjZBTwpwawm2yfSIETQuekhMhhdwISRrDLTyZUNOsInMQUshPgkyN5WQ6aiBODIRpvMsGm5BCLoekBe5J4Ts1sF4xAmOXpJBCLoGkQYG+7JNxojUzNUYqVIUIKeQSSNq4ms6x0fbB/lkgFXmOnMtCCrkAcmre0gDQFLspuBEjVEz2hRTygyGTWY+Okb6XhFvaDBNSyE+HbIWftEBtUKLJu5BCfgokMQLSZhMVbWiy0ZochRRyOyQ1BdHCmQpHpEhOgQ4ZCIUUchHkJx9CCimkkEIKeXj8ARfhhLCC3rp1AAAAAElFTkSuQmCC" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux VPS一键安装锐速(LotServer)脚本，可与BBR共存&url=http://yoursite.com/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux VPS一键安装锐速(LotServer)脚本，可与BBR共存&url=http://hexo.southcat.net/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=Linux VPS一键安装锐速(LotServer)脚本，可与BBR共存&url=http://yoursite.com/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=Linux VPS一键安装锐速(LotServer)脚本，可与BBR共存&url=http://hexo.southcat.net/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/10/14/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e9-94-90-e9-80-9flotserver-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-b8-8ebbr-e5-85-b1-e5-ad-98/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEGUlEQVR42u3aQXLbQAxEUd3/0sk2SZHo36MsCPprY8dFUfNYlVEPgM+vH/D6iBQpUqRIkV8iP8Prz2v+/PnXjS6u/ff6q/um664+5+pzx3WLFLkUefmf9uamV4tK8On9d7jpAdF1ixS5GXm1MdyB7jYiutC02LuHmO4tUuRPR94tLAbni4dDf0+blkiRPwFJN4fPwYuEgrtwIVLkm5EJQQ7O02LSITsdqtN9vzqFiBT5MCTdFJ72879V60SKfBCShGlSLL4L1bQonK6h4f+oqyVS5IOQtNiUCsYkYJOGUnNwnx6USJFbkVNhiRSuaGE4HbbT508F6XhoFilyGZIWk6ZCcvNAps2KNJhwQ1akyMXINBCUwvUdnAZ2OtzUPGCRIjcip8WlQjKBp9DfhgQS/kWK3IycmjZNMG6as2OoDpsLLbqJFLkZSYpKNLyng3TTvD0paKFClkiRD0aShmsKAU0gTw/1ZFO63RhFilyKPNkkyGAuafCkL/SmEB1PISJFLkM2IZr8flKETof1dL1IkW9Aki/stIBmkXToqWkG4cQjUuTDkengSxY8Fb7S35pgcBzQRYpchky4pliVvvzpkCIJJTigixS5CEk/KDViaWOVFNBocE/D+CJFbkSSBkz7BU4W0ISKdO96IkukyAcjybBuE8LJ5kUHJciwxhhQRIpciiRDed8ccskm0TR80hpFityMbJoqTbPm2wGlNqRfPmSRIhcjm4ElUngmw380HNCDdtx4RIpchpyGkHDjMzwIEg7IgR0NMokUuRiZAjUtPrWBvyla05dIkZuR03AuCcrTv0kBLAWF6WHigC5S5DIkbfC0w38k4JNNLA1F3B4WRIpciJwW0mwEbTHr5ABA3nebeESKXIIkjZdmEKIZJqSfS4cqRIp8A5IiTorLJEynEN8cqMcBQpEiFyHbhg1tnE4LP9lISHiJxWWRIh+ObG/8PwpTKUQ0RbFxYxQpciGSNnua4lI7PEE2smZQSqTIzUhSuDo5uNLC8BTCG9wY0EWKXIQkhVo6yEfeQ947DRBWnylS5EJkupA0eZqwkEI1CfIpUIgUuR2ZbkIOuN+E8PSA6ADVmHhEilyIJI3ZacNqmjLfDFCkA4JIkduR9As93hQOHRIEHU6sEo9IkQuQpKCbvsRpESqFDRIOqo1SpMilSLoR0CGj1ERqhhZPNkeRIt+CbAtJRwNE4DBdNVqngCFS5EIk2RxSo7VpolIAbULVFXSRIhcgyYZDB4tII5U0bk4O0SJFvgnZFnxJSP6EVxPST+4nUuSbkdMGk/7eFJ/aw/S4qYkU+VLkODgLC8HNBjUd1pvBJ5EiNyNJoTneFHzRpwELOkSFwoNIkUuRU+Clw7kkwJ8MIJ0ezkWK3Ip880ukSJEiRYo8fP0Gw8UkHx7gnNwAAAAASUVORK5CYII=" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEI0lEQVR42u2d0W7jMAwE8/8/3Xvt9WLurJIDzHT80tqJZY0KUyR3gT6+fsHxEFJIIYUUUsgXIR/D8dcN386f/Z7u+/n5z+99/87TCT8ZN81bSCG3QqZBryb/c9JX5/QZV4t1dS2OKaSQiyGvAsMUcK4edHX/9PnV2G3AE1LI3wCZEoO00afFmzb4dL+QQv5mSJK80wQ63ZMSdyGF/HTI0836pNglE02B6q1ViJBC3gySBIg7/nxbt05IIW8EGUWTsHk3yTyZfEoq/ouqJaSQN4KcXuQEnYrnKUCQRU3JQRpTSCE3Q6aHToIpLayv7qHPahplQgq5GfI0iJyIRjTIkKBzZFYSUsibQ6bGLm0ikU16ElZJoEoC0z9jCCnkQshms58MQ9TgEJPqQtyJnwkp5ELIyRCUBB4q2JKgUQk5weArpJDbIRtBhRTMtPBOQY4s+th0E1LIpZCpUVtvwmDDJ0VBayYUUshPgUyNpVZUJQlBE0jSH+CyQBBSyOWQaaNOC5GS8tTMevV5L5mVhBTyZpBJVEHG9nCdNJepqHPcQRdSyCWQTVJATPDEAEET+JPgJKSQmyFT0tyIr0mUbYIaNUZdzldIIRdCTpv29PkrCXdraiIJ+hh4hBRyESQxGqXzFICIeDMl6m9J0IUUcgkkMSSRQjkFrXcl6ElMElLI7ZDTZClcMhalcVNAaeYZm8tCCrkEMpnzGuNeKoDbhJs8p+rWCSnkEsgToy4pjpuGcRuUxkJbSCEXQhLxJv0+NbRaMYgGriT+CCnkVkhq/mk24zQeCSyT8IuLCCGFXApJhVcioqbNnSTopybGOkEXUsgbQk7iDBVvGhG1MUCRpH9MKIQUcinkiTGBNLhS07kFTWLxWIUIKeRCyCSsNBNNRXO7EClxGBN0IYVcBEle9KYATtdpAU4gK8FHSCGXQCaRlBSopNhuFoSaDaNILKSQCyFPXvKmmCbGCWJOaoRcIYXcDNkEk0l0bcyEX8NBF5GMK6SQmyGbSbXBiYi3NIlIxuIqQRdSyBtCkgKUDEyS7WScaM1PWPARUshFkOTFJo1kco2YflNjmyYrQgq5FTIJrbGBGxIDYopqjE2V6CukkEshiTmCbs40CW+K7NMFEFLIjZBTwpwawm2yfSIETQuekhMhhdwISRrDLTyZUNOsInMQUshPgkyN5WQ6aiBODIRpvMsGm5BCLoekBe5J4Ts1sF4xAmOXpJBCLoGkQYG+7JNxojUzNUYqVIUIKeQSSNq4ms6x0fbB/lkgFXmOnMtCCrkAcmre0gDQFLspuBEjVEz2hRTygyGTWY+Okb6XhFvaDBNSyE+HbIWftEBtUKLJu5BCfgokMQLSZhMVbWiy0ZochRRyOyQ1BdHCmQpHpEhOgQ4ZCIUUchHkJx9CCimkkEIKeXj8ARfhhLCC3rp1AAAAAElFTkSuQmCC" alt="QRCode">
     </li>
     
 
@@ -563,7 +563,7 @@ sysctl -p</code></pre><hr>
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

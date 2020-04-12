@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="多种功能强大的BT离线下载程序Docker镜像及安装 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/"><meta property="og:locale" content="en"><meta name="description" content="说明：最近看到很多小伙伴对离线下载啥的，兴趣蛮大，博主以前也水了不少了BT下载相关的脚本和安装，不过都没Docker简单，这里就找了一些用的人比较多，也经常在维护的BT离线程序的Docker镜像，包括Aria2、utorrent、Deluge、Transmission、Rutorrent、Qbittorrent，算是比较全了，这里就分享下。 安装Docker首先安装下面程序之前，需要在服务器上安装 - John Doe - 南猫"><meta property="article:published_time" content="2019-10-19T23:28:30.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.644Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.644Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="多种功能强大的BT离线下载程序Docker镜像及安装 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/"><meta property="og:locale" content="en"><meta name="description" content="说明：最近看到很多小伙伴对离线下载啥的，兴趣蛮大，博主以前也水了不少了BT下载相关的脚本和安装，不过都没Docker简单，这里就找了一些用的人比较多，也经常在维护的BT离线程序的Docker镜像，包括Aria2、utorrent、Deluge、Transmission、Rutorrent、Qbittorrent，算是比较全了，这里就分享下。 安装Docker首先安装下面程序之前，需要在服务器上安装 - John Doe - 南猫"><meta property="article:published_time" content="2019-10-19T23:28:30.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.644Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.644Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/">
+    <link rel="canonical" href="http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/",
+    "url": "http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/"
+        "@id": "http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/"
     },
     "headline": "多种功能强大的BT离线下载程序Docker镜像及安装 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2019-10-19T23:28:30.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=多种功能强大的BT离线下载程序Docker镜像及安装" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=多种功能强大的BT离线下载程序Docker镜像及安装" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=多种功能强大的BT离线下载程序Docker镜像及安装&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=多种功能强大的BT离线下载程序Docker镜像及安装&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=多种功能强大的BT离线下载程序Docker镜像及安装" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=多种功能强大的BT离线下载程序Docker镜像及安装" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEmklEQVR42u2bwW7jUAwD+/8/vXsNAlscvuQSa3Jp6zq2RwFUiWT//i18/QkttNBCCy30j0H/Da/X3199f3nhl3Per//6vvf3v9/j6ue7cwiH0EJvgr57+LuHubvpFTwp1FTQu+um866OCy30JmjScK4unJrJVXObGh5piFPRp0ILLbTQc1Oamtn0UHf3vvueNE+hhRaaN7KrGza/m5rcNBSlRUdooYXuFw4y7KeHaQo2FSUNO1/bsoQW+sehkzD4K1+/qoYKLfSPQiPjqxw+pocjgsSJ2P9111JooX8Umppgk+FGhxqydDQLT7N4CC30Rug02JMFgZrryRCgIkQjUggt9AZoapI3wuGd6J+WBfocpMEdLRxCC/0Q6NQkGsGPQKQhZ7o/DeJdDlRCC70AujHAU3gmNZ9WhCAiBfkQhBZ6E3QCSAWhwwlZDNLxJqx3WRihhV4A3V6MDjHHgjxolM2HIrTQG6FbIZAOC1NTmRpp8zMxF4QWehM0HUBIIVJjRIs+COGlQt4eF1roJdCpkTVGGQ3I0MJRUQM1ZqGFXgBNloWpUTVGWmo8NLzTfjBCC70NmgbkiCHQNjUqDpw2SaGF3gbdiAnNcpGExnRN+oEkMVFooTdCN8MIEeZo+I0WJB3HAqTQQi+AnsR8MuRPcMQwPxEKSOgOTWRCC/1A6BNhLg0VU9Mi56dBJZmJt8ae0EIvgKaCQDLMGhGxCcq1ATu0cAgt9IOhW4EwgZMQHg3IEKGAFE9oobdBkwdNQ8p0nFw3DS+noqPQQm+E/oYhTgeVFJJLRmDbdJGIILTQD4QmSwINu6Thgph/rWCJCi200AugU/ilDc6lgYWYDNNgchIOElrobdBkeB/Nbti40jVT4abiESFBaKE3QFOx/NNFownn3DVCauhVrqXQQj8UuikAMflOjbomgEMNRqGF3gZN//inhnQySEwLChmWSOBWaKG3QdPwDAnBNgICWWiSQEECPkILvQn6xFijAj0V5FNxp2ZJm6jQQm+BTgEWCksWlhS4IcMQEQ1vhQehhV4AnR6ADiLEmKNBAGrQE4NvNOWFFvqh0FP4jDzcFFyjYVnSBNuBSmihN0Jj82toXMlgI+LdBP7JECS00NugqRlGzDZiptEFgxSXBAZiYlBooRdAUzEhNZf03k+uRY07oYXeBp0WidQ06E3pMkKDddP9b5cZoYVeAP3JUHHagOiyQoI9qaC1aym00A+ATuI8AaPLStsUT8K5KGgjtNAPhY6LdxF6bcQIYh4mE4+eK7TQm6AbQ7wJt5AHacwAYgSkogst9BbopllQ4TAVipjvNMiXii200JugmzALEdvpIEIb3slQEg08oYVeCJ2aWXN+E8Sjpj1diMZ0kdBCPxA6NQM6zLdDxWQqfCo6YrFfaKEfCt0ado1J3ojzTXMipt64ZQkt9MOhU9gtPWwSGZqGSQTIVgQRWmih+T9xN6JhEgem4ymckwYnoYUWOg8wjRhwMuTEgQM0RKGF3gidhHoy0JPziYBHBEQ6mAgt9EZosgiQQpAml8CSwU9CfLf3EVroBdCbXkILLbTQQgv9I6//GaZXotUPqtUAAAAASUVORK5CYII=" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEoElEQVR42u2dwZLTUBAD9/9/Gi4cYMkbtV72Ek/nQrHYsdsuhEaaKr5+Lfx8CS200EILLfSHQX8Nn39O+PP7Vz//fnz6rr+P+f7d9Hhyzf+OEVroJdAv/9J/+0Jy/KsHcwI7nT8d/wq04hBa6EXQ00WnY0/CQc473Sy9TrqG0EILnYXkJCJJqCYxu7kGebBCCy30+YuJYNFhIonRZH6SORFaaKG56EzhwumCU/hARSoJ3o9PWUIL/eHQZHD4hF9/LA0VWugPho6l1xDknR5c+jkRPRoMTobmurUUWugPhk4DRRryaehHSsI0rJCXM3630EIvgE6mfSrn00WIyJHifzp+ChKOA4fQQj8YmizWTKZjCt9TiEiukQKNtAAUl+eEFvph0OQm6UJdW/oRQZsGlWSMhBZ6IzQxFSRgIA+MwN0syqV7FFrojdBkKGhCAmIqCCgNHEjRJ7TQW6CToDSLNqTkf7dkT4XjUTiFFnoR9I1RmESEDgRtiZDEaww2hBZ6AXQyKY3QkBujJRz9eVP8CS30FuhmWKdmhi7atEXdFC7E5QKhhV4ATYrtplQjw8HttWg5iLaLhBb6odCTASBmgg4hRJSoqN2UBUILvQn6drini3YElohTevhpKBJa6A3QN4M/WW5tQ/smRKALdCgNFVroh0K35dpkEqgokWGEmiHyIoQWegM0DfqbxTdyYzRUaB5GKvqEFnoLNA3yaSGfBg5SMBDTMj1c3FoKLfTDoKlBaMP1G3GkAUMjsEILvQ2aDAxkOZYM+NPDpQux6T7HQERooZdA08A+Ldc0S6wkzGtCQnSu0EIvgCZLpU1o3wwF1Jy0ZfzxhQot9AJoImRJbJqiPf1ZehDE1ODkRGihHwqdBgNSoFOD0gwxbWhYT1lCC/1A6NPJ0z/+Nw+gESm6hENfiNBCb4VuFliSqUimZBom6GJPGzgKLfQW6CgAA3gaWkjJnqDpQk/6CC30BmgCRcxDEhgSKhAhnIQtmhmhhV4ATRfkmuL+drGGhIep9B8DRqGFXgCdhgyyoNYODjSsIKUDNUxCC70FullSe8d03BoSWvIlARZa6C3QRKxoQEdEcBK1Zkk2nRc3BoUWegE0XX5r4d8SH1DgUTMjtNAboJuBYRITUr43g0NjbKbhJToyoYV+MHQSh5tgjgbxsXyD5cPEILTQW6BTQEAGkJuA8CfEkCwGCC30Rmhq/NsBpRk4SEnYFg2jkAkt9AOhk8lvCnfyIEhYkAYbamJiaym00A+FbsJzvHw6CCQp7RtjkgIGoYXeBE0XzVPw1j4oUuCR0I8WA0ILvQmaFOOT8U9DfzIoZMGmMURCC70ZmpqLd4LAJFy0yE+ilZZ1hBZ6M/S7NxuNAgj7mkUcFEYILfQC6BSqJ5ORzElTBNJijrwAXOAJLfQDoVOxlswKuTgNJWhBMAkkKuWFFvrh0DQcIMKXlu1uQv13BhmhhRa6+09waUHQhI+02KMhhtBCC82W2kjQTxbpJhNCRDSFEUILvQ2a3jQN+KahJQ0Gbdk3GRuhhd4ITUXhZlmWDPi0AKRF3vEFCS30AuhNH6GFFlpooYX+kM9vmMsWAGaNLIQAAAAASUVORK5CYII=" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=多种功能强大的BT离线下载程序Docker镜像及安装&url=http://yoursite.com/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=多种功能强大的BT离线下载程序Docker镜像及安装&url=http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=多种功能强大的BT离线下载程序Docker镜像及安装&url=http://yoursite.com/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=多种功能强大的BT离线下载程序Docker镜像及安装&url=http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEmklEQVR42u2bwW7jUAwD+/8/vXsNAlscvuQSa3Jp6zq2RwFUiWT//i18/QkttNBCCy30j0H/Da/X3199f3nhl3Per//6vvf3v9/j6ue7cwiH0EJvgr57+LuHubvpFTwp1FTQu+um866OCy30JmjScK4unJrJVXObGh5piFPRp0ILLbTQc1Oamtn0UHf3vvueNE+hhRaaN7KrGza/m5rcNBSlRUdooYXuFw4y7KeHaQo2FSUNO1/bsoQW+sehkzD4K1+/qoYKLfSPQiPjqxw+pocjgsSJ2P9111JooX8Umppgk+FGhxqydDQLT7N4CC30Rug02JMFgZrryRCgIkQjUggt9AZoapI3wuGd6J+WBfocpMEdLRxCC/0Q6NQkGsGPQKQhZ7o/DeJdDlRCC70AujHAU3gmNZ9WhCAiBfkQhBZ6E3QCSAWhwwlZDNLxJqx3WRihhV4A3V6MDjHHgjxolM2HIrTQG6FbIZAOC1NTmRpp8zMxF4QWehM0HUBIIVJjRIs+COGlQt4eF1roJdCpkTVGGQ3I0MJRUQM1ZqGFXgBNloWpUTVGWmo8NLzTfjBCC70NmgbkiCHQNjUqDpw2SaGF3gbdiAnNcpGExnRN+oEkMVFooTdCN8MIEeZo+I0WJB3HAqTQQi+AnsR8MuRPcMQwPxEKSOgOTWRCC/1A6BNhLg0VU9Mi56dBJZmJt8ae0EIvgKaCQDLMGhGxCcq1ATu0cAgt9IOhW4EwgZMQHg3IEKGAFE9oobdBkwdNQ8p0nFw3DS+noqPQQm+E/oYhTgeVFJJLRmDbdJGIILTQD4QmSwINu6Thgph/rWCJCi200AugU/ilDc6lgYWYDNNgchIOElrobdBkeB/Nbti40jVT4abiESFBaKE3QFOx/NNFownn3DVCauhVrqXQQj8UuikAMflOjbomgEMNRqGF3gZN//inhnQySEwLChmWSOBWaKG3QdPwDAnBNgICWWiSQEECPkILvQn6xFijAj0V5FNxp2ZJm6jQQm+BTgEWCksWlhS4IcMQEQ1vhQehhV4AnR6ADiLEmKNBAGrQE4NvNOWFFvqh0FP4jDzcFFyjYVnSBNuBSmihN0Jj82toXMlgI+LdBP7JECS00NugqRlGzDZiptEFgxSXBAZiYlBooRdAUzEhNZf03k+uRY07oYXeBp0WidQ06E3pMkKDddP9b5cZoYVeAP3JUHHagOiyQoI9qaC1aym00A+ATuI8AaPLStsUT8K5KGgjtNAPhY6LdxF6bcQIYh4mE4+eK7TQm6AbQ7wJt5AHacwAYgSkogst9BbopllQ4TAVipjvNMiXii200JugmzALEdvpIEIb3slQEg08oYVeCJ2aWXN+E8Sjpj1diMZ0kdBCPxA6NQM6zLdDxWQqfCo6YrFfaKEfCt0ado1J3ojzTXMipt64ZQkt9MOhU9gtPWwSGZqGSQTIVgQRWmih+T9xN6JhEgem4ymckwYnoYUWOg8wjRhwMuTEgQM0RKGF3gidhHoy0JPziYBHBEQ6mAgt9EZosgiQQpAml8CSwU9CfLf3EVroBdCbXkILLbTQQgv9I6//GaZXotUPqtUAAAAASUVORK5CYII=" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEoElEQVR42u2dwZLTUBAD9/9/Gi4cYMkbtV72Ek/nQrHYsdsuhEaaKr5+Lfx8CS200EILLfSHQX8Nn39O+PP7Vz//fnz6rr+P+f7d9Hhyzf+OEVroJdAv/9J/+0Jy/KsHcwI7nT8d/wq04hBa6EXQ00WnY0/CQc473Sy9TrqG0EILnYXkJCJJqCYxu7kGebBCCy30+YuJYNFhIonRZH6SORFaaKG56EzhwumCU/hARSoJ3o9PWUIL/eHQZHD4hF9/LA0VWugPho6l1xDknR5c+jkRPRoMTobmurUUWugPhk4DRRryaehHSsI0rJCXM3630EIvgE6mfSrn00WIyJHifzp+ChKOA4fQQj8YmizWTKZjCt9TiEiukQKNtAAUl+eEFvph0OQm6UJdW/oRQZsGlWSMhBZ6IzQxFSRgIA+MwN0syqV7FFrojdBkKGhCAmIqCCgNHEjRJ7TQW6CToDSLNqTkf7dkT4XjUTiFFnoR9I1RmESEDgRtiZDEaww2hBZ6AXQyKY3QkBujJRz9eVP8CS30FuhmWKdmhi7atEXdFC7E5QKhhV4ATYrtplQjw8HttWg5iLaLhBb6odCTASBmgg4hRJSoqN2UBUILvQn6drini3YElohTevhpKBJa6A3QN4M/WW5tQ/smRKALdCgNFVroh0K35dpkEqgokWGEmiHyIoQWegM0DfqbxTdyYzRUaB5GKvqEFnoLNA3yaSGfBg5SMBDTMj1c3FoKLfTDoKlBaMP1G3GkAUMjsEILvQ2aDAxkOZYM+NPDpQux6T7HQERooZdA08A+Ldc0S6wkzGtCQnSu0EIvgCZLpU1o3wwF1Jy0ZfzxhQot9AJoImRJbJqiPf1ZehDE1ODkRGihHwqdBgNSoFOD0gwxbWhYT1lCC/1A6NPJ0z/+Nw+gESm6hENfiNBCb4VuFliSqUimZBom6GJPGzgKLfQW6CgAA3gaWkjJnqDpQk/6CC30BmgCRcxDEhgSKhAhnIQtmhmhhV4ATRfkmuL+drGGhIep9B8DRqGFXgCdhgyyoNYODjSsIKUDNUxCC70FullSe8d03BoSWvIlARZa6C3QRKxoQEdEcBK1Zkk2nRc3BoUWegE0XX5r4d8SH1DgUTMjtNAboJuBYRITUr43g0NjbKbhJToyoYV+MHQSh5tgjgbxsXyD5cPEILTQW6BTQEAGkJuA8CfEkCwGCC30Rmhq/NsBpRk4SEnYFg2jkAkt9AOhk8lvCnfyIEhYkAYbamJiaym00A+FbsJzvHw6CCQp7RtjkgIGoYXeBE0XzVPw1j4oUuCR0I8WA0ILvQmaFOOT8U9DfzIoZMGmMURCC70ZmpqLd4LAJFy0yE+ilZZ1hBZ6M/S7NxuNAgj7mkUcFEYILfQC6BSqJ5ORzElTBNJijrwAXOAJLfQDoVOxlswKuTgNJWhBMAkkKuWFFvrh0DQcIMKXlu1uQv13BhmhhRa6+09waUHQhI+02KMhhtBCC82W2kjQTxbpJhNCRDSFEUILvQ2a3jQN+KahJQ0Gbdk3GRuhhd4ITUXhZlmWDPi0AKRF3vEFCS30AuhNH6GFFlpooYX+kM9vmMsWAGaNLIQAAAAASUVORK5CYII=" alt="QRCode">
     </li>
     
 
@@ -702,7 +702,7 @@ rm -rf ~/qbittorrent</code></pre><p>这里顺便推荐个磁力链接聚合搜�
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

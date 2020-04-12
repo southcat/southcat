@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="使用socat进行单个端口的转发，同时支持tcp和udp | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/"><meta property="og:locale" content="en"><meta name="description" content="说明：由于用iptables经常不成功。所以只能寻求另一种办法，就是用socat工具来完成端口转发，如果你只有少数几个端口要转发的话，那么socat就是比较好的选择了。socat唯一麻烦的地方就是好像我没找到如何转发端口段，只能一个命令一个端口。不过如果只是自用转发少量端口的话还是蛮好用的。 socat安装使用命令： #CentOS系统 yum install -y socat  #Ubuntu或 - John Doe - 南猫"><meta property="article:published_time" content="2020-03-29T00:51:59.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.659Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.659Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="使用socat进行单个端口的转发，同时支持tcp和udp | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/"><meta property="og:locale" content="en"><meta name="description" content="说明：由于用iptables经常不成功。所以只能寻求另一种办法，就是用socat工具来完成端口转发，如果你只有少数几个端口要转发的话，那么socat就是比较好的选择了。socat唯一麻烦的地方就是好像我没找到如何转发端口段，只能一个命令一个端口。不过如果只是自用转发少量端口的话还是蛮好用的。 socat安装使用命令： #CentOS系统 yum install -y socat  #Ubuntu或 - John Doe - 南猫"><meta property="article:published_time" content="2020-03-29T00:51:59.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.659Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.659Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/">
+    <link rel="canonical" href="http://hexo.southcat.net/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/",
+    "url": "http://hexo.southcat.net/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/"
+        "@id": "http://hexo.southcat.net/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/"
     },
     "headline": "使用socat进行单个端口的转发，同时支持tcp和udp | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2020-03-29T00:51:59.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=使用socat进行单个端口的转发，同时支持tcp和udp" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=使用socat进行单个端口的转发，同时支持tcp和udp" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用socat进行单个端口的转发，同时支持tcp和udp&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用socat进行单个端口的转发，同时支持tcp和udp&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=使用socat进行单个端口的转发，同时支持tcp和udp" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=使用socat进行单个端口的转发，同时支持tcp和udp" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEqElEQVR42u2cQXIjMQwD8/9P715TWQ/QlPcQiz0Xp2J5Ri1XWCSAytefhdeX0EILLbTQQn8Y9Fe4vq/5/vrzc//c/OE+6ZlP9zxd93KN0EIvgX75R//j968O4dUGnjaXDi597umw0p4e9y200Iugn274alMJNm2kFbh0GOkgCYfQQgv9+jU1F7HZLw3HtBl5KmRCCy10hybNQGo6yJDxqlimZklooYU+GzjaptIgcjI8JCGA7uPtKUtooT8cmj7ot7/+NzVUaKE/GHoyKLQGgj68NT/08OmwI7TQm6DbQJCGi3QgTRxo5t5k2KDChtBCb4JuZncT9Yigl35Oh5kKKDUNhBZ6C3Qzzpq4QIf9JCQ0EWISDIgHJ7TQC6AJGBkGSFPRwjbTwjp5T2iht0BTk+2dYteG/4noR5oQ1JwILfSl0NMGggqIk4ANgTkdQoQWejs0Mdhbo0FDsq1Apn1RU/+xIxNa6AXQRLBrofOJUUALVRsyaEMjtNDboEmRaEWIinxInAemAW1khBZ6E3QrCqRJecd8pyF3un4Uchda6MugiVhHh4smFpyI/um+dGARWuht0KfNwVSAPxH/3w29Cy30Nugm0hOhjzYjxECYBtdTgUSJQaGFvhCahlynZnsbXtpaOlg0cVFooTdB0wKV1k6EfGIWtENMVyrQQgu9Dbo1LK15ocY7DdDS5qcdoNBCb4QmG6QmOTEE6WdaoW2mhNBCb4OeNPet4CThva05ERdIqCcqJ0ILfSk0DcMRky2J+yfm26QRqeKk0EIvgKbFIg0RUyGhhXqmoTl8X6GFXgA9NblboZuYa7SZaU0LXiu00Eugm+hGzbMTA48cBjX72xAitNAboIkQSI27VMRoAZyEdci948AhtNCXQp8adlSYo0NJC9mRwG4UK4QWegF0M9yIENCCOel9ehA0NBC/BKGFXgA9CcfQgZ7ek5oGpyY86siEFvpC6KnJNhERmolPgrdpbTMPa0cmtNCXQTdxjgwGacAnQ0oDTs0OaW6EFnoTNDHnUwFpQgEtgs1cmAiPuCMTWuhLoZto0Ix6Kh5ODoocEC2cQgu9CToFXiZm+iRY0w46FblJ4arpIqGFvhh6+qBUtCaF8SRsQwojDsQKLfRl0KTIJNG9NTBEGKAG3GQgqgae0EJfCt0MuncFQCrKE8OgBXbqIQgt9CJoOphPArOtIE4aECroR0FCaKEXQJ8IA+QwSCGcioIng5HQQm+DJmZ4Cs6RsGwLzpBQHflSashOaKEXQLdiRUOuVMQnAwc13snhPQqDQgt9KXQT2NuaSbNCQ3WkwZnuT2ihN0GnYSEJ/q0IUeGQGnfEbBBa6O3QVFibiHKkYXlHTGhBgMdiK7TQi6GpMd6CL6TQUCEymRLkyxFa6A3QzZgjBaY+bBjIIQ0QDeThjkxooS+CTkVkEoIhmyOmIYWjpoLQQm+EJmLbxJhrRZIE4dpQMw4ECC200PifNz09bGICEKOvDR2j5kRooZdCpzXESD8x4VIxo8VRaKE3Q5+IciksQ4vdZIiZBnOEFnorNG0cyGDQTHpiHjRBozVBaOAQWuhLoTddQgsttNBCC/0h118t0tVALRqfbgAAAABJRU5ErkJggg==" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEqElEQVR42u2dQXLjQAwD/f9P7572sC6JaMg5xMPWJYkjj6YnVQwJIJXXn4XXS2ihhRZaaKG/DPo1XO/3/Pv8v4UuXr9b5+p972tc3f++1rTHkUNooZdAN5u628i03tUG7553B0gOOnIILfQi6KuHpQ1fbWba9PSM6QCmQkU5hBZa6PuH0YJHYOgBp6+FFlroZ9BTA3BXgFIhoo0IKapCCy10B5KuBH+34Um4IOLEj05ZQgv95dAU4Ld//DE1VGihvxg6ml6gaUliXSpKn4qKP+5aCi30F0NTsWAS2un32vWnYSOZhpd7EFroBdBPjLA0mNABgRhzk1mfDv924BBa6IOhU0MwCfGTed6Idk2jkpqmsfAJLfQS6PbN6ZBSUIYMM+TwG+NfaKG3QCeRjTYxqdFIRe+JkE8GnThwCC30YdCpuW/CcJ80NmmoSWtNzxZa6E3QpJGfwm7JfCcmOzHm6D7RwCG00AdDt4Y8bUJoQD0Zfk1IoHI4hBb6UOgWfly0CKUTQaIRM8iehBZ6CzQJrtaB8hf/IzciXjQmIArPCS30odAkYN6YaVNTQsQ9+oOYDvx2z0ILvQg6CXTJcJ8KWBLymrDd9FocjoQWegn0tJlJFKwGeDgwJCGwNfBGh0NooQ+GToP4NFS0DcSnoRwS2BNa6K3QxKSjD0mFrTEAmnANGZqEFnoLdLyxHEame+nQn5ojOqAILfRG6CQGEpGPivBTkUzmAipUKbQntNALoFOoJRUwEopLG2zDO9PQMwoRQgu9DJo2Bp+EZtugXtOIRPFRaKEXQJOi1BagqbA0Aj0xFKr9CS30ImhSgJI42JhsJHT3ZI1RuBRa6CXQqTjRhoQMAETgezLY3N07GnhCC30gNIEkIbXGpCOHSMSLdvgQWugt0HTYeGLYkfe2IR06eAgt9HZo8kt+KkBE3COiQQrETubeOBwJLfQS6KciYDLBp/WpIfc0BHR5uEILvQQ6mXWTiJjEOiLYf3Ig1CwQWugt0DRQQ43xtsg1w8WTEN4o9gst9IHQzWCRmoJU/J42IY05WKWLhBZ6AXQzeLTCPxUdqEhIBhGsnAgt9IHQSYgjxSeFchpxjwoXtOgJLfQWaNoEkPfQokfEAHJwxHwQWuhN0CmoRsw9IkbgoQAIjDgsNwmDQgt9KPR4E2hOaPgtHWQqnCRcOw06Qgu9BZoCkiaCFkJi2BGDgexnbE6EFvpQaDr0UyM9QaUhpw3TY8NAaKGXQKehPpln1IAjjU47cKQ1hBZ6GzRpIkiBSwdCxDsqTiTBH4fchRb6cGjSTLQhG3KYJMDeNEvYwBNa6EOhKWAz1Kfi8iSM0wTmo2sptNCHQjcNfBOYS4VxKkA0TNMURKGF3g5NBfb4oFf3Dzlp2C6FfpCBJ7TQB0K/houYYlRwIAZhev5UuFDxE1roJdCNyU5FfRKmSwWSmopJfBBa6I3QU2EgRYcUmDT0J/D0vcmoF1poobMokET4tLHWMGgblo8LmdBCHw5NmpEk9NMwDzX9qsZJaKEXQVOYqSilkGpzAER0nO4RWujN0ASmaUKI6ZaKVRIlKbzQQm+D3nQJLbTQQgst9JdcfwH5SZWAynmrywAAAABJRU5ErkJggg==" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用socat进行单个端口的转发，同时支持tcp和udp&url=http://yoursite.com/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用socat进行单个端口的转发，同时支持tcp和udp&url=http://hexo.southcat.net/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=使用socat进行单个端口的转发，同时支持tcp和udp&url=http://yoursite.com/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=使用socat进行单个端口的转发，同时支持tcp和udp&url=http://hexo.southcat.net/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/03/29/e4-bd-bf-e7-94-a8socat-e8-bf-9b-e8-a1-8c-e5-8d-95-e4-b8-aa-e7-ab-af-e5-8f-a3-e7-9a-84-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-90-8c-e6-97-b6-e6-94-af-e6-8c-81tcp-e5-92-8cudp/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEqElEQVR42u2cQXIjMQwD8/9P715TWQ/QlPcQiz0Xp2J5Ri1XWCSAytefhdeX0EILLbTQQn8Y9Fe4vq/5/vrzc//c/OE+6ZlP9zxd93KN0EIvgX75R//j968O4dUGnjaXDi597umw0p4e9y200Iugn274alMJNm2kFbh0GOkgCYfQQgv9+jU1F7HZLw3HtBl5KmRCCy10hybNQGo6yJDxqlimZklooYU+GzjaptIgcjI8JCGA7uPtKUtooT8cmj7ot7/+NzVUaKE/GHoyKLQGgj68NT/08OmwI7TQm6DbQJCGi3QgTRxo5t5k2KDChtBCb4JuZncT9Yigl35Oh5kKKDUNhBZ6C3Qzzpq4QIf9JCQ0EWISDIgHJ7TQC6AJGBkGSFPRwjbTwjp5T2iht0BTk+2dYteG/4noR5oQ1JwILfSl0NMGggqIk4ANgTkdQoQWejs0Mdhbo0FDsq1Apn1RU/+xIxNa6AXQRLBrofOJUUALVRsyaEMjtNDboEmRaEWIinxInAemAW1khBZ6E3QrCqRJecd8pyF3un4Uchda6MugiVhHh4smFpyI/um+dGARWuht0KfNwVSAPxH/3w29Cy30Nugm0hOhjzYjxECYBtdTgUSJQaGFvhCahlynZnsbXtpaOlg0cVFooTdB0wKV1k6EfGIWtENMVyrQQgu9Dbo1LK15ocY7DdDS5qcdoNBCb4QmG6QmOTEE6WdaoW2mhNBCb4OeNPet4CThva05ERdIqCcqJ0ILfSk0DcMRky2J+yfm26QRqeKk0EIvgKbFIg0RUyGhhXqmoTl8X6GFXgA9NblboZuYa7SZaU0LXiu00Eugm+hGzbMTA48cBjX72xAitNAboIkQSI27VMRoAZyEdci948AhtNCXQp8adlSYo0NJC9mRwG4UK4QWegF0M9yIENCCOel9ehA0NBC/BKGFXgA9CcfQgZ7ek5oGpyY86siEFvpC6KnJNhERmolPgrdpbTMPa0cmtNCXQTdxjgwGacAnQ0oDTs0OaW6EFnoTNDHnUwFpQgEtgs1cmAiPuCMTWuhLoZto0Ix6Kh5ODoocEC2cQgu9CToFXiZm+iRY0w46FblJ4arpIqGFvhh6+qBUtCaF8SRsQwojDsQKLfRl0KTIJNG9NTBEGKAG3GQgqgae0EJfCt0MuncFQCrKE8OgBXbqIQgt9CJoOphPArOtIE4aECroR0FCaKEXQJ8IA+QwSCGcioIng5HQQm+DJmZ4Cs6RsGwLzpBQHflSashOaKEXQLdiRUOuVMQnAwc13snhPQqDQgt9KXQT2NuaSbNCQ3WkwZnuT2ihN0GnYSEJ/q0IUeGQGnfEbBBa6O3QVFibiHKkYXlHTGhBgMdiK7TQi6GpMd6CL6TQUCEymRLkyxFa6A3QzZgjBaY+bBjIIQ0QDeThjkxooS+CTkVkEoIhmyOmIYWjpoLQQm+EJmLbxJhrRZIE4dpQMw4ECC200PifNz09bGICEKOvDR2j5kRooZdCpzXESD8x4VIxo8VRaKE3Q5+IciksQ4vdZIiZBnOEFnorNG0cyGDQTHpiHjRBozVBaOAQWuhLoTddQgsttNBCC/0h118t0tVALRqfbgAAAABJRU5ErkJggg==" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEqElEQVR42u2dQXLjQAwD/f9P7572sC6JaMg5xMPWJYkjj6YnVQwJIJXXn4XXS2ihhRZaaKG/DPo1XO/3/Pv8v4UuXr9b5+p972tc3f++1rTHkUNooZdAN5u628i03tUG7553B0gOOnIILfQi6KuHpQ1fbWba9PSM6QCmQkU5hBZa6PuH0YJHYOgBp6+FFlroZ9BTA3BXgFIhoo0IKapCCy10B5KuBH+34Um4IOLEj05ZQgv95dAU4Ld//DE1VGihvxg6ml6gaUliXSpKn4qKP+5aCi30F0NTsWAS2un32vWnYSOZhpd7EFroBdBPjLA0mNABgRhzk1mfDv924BBa6IOhU0MwCfGTed6Idk2jkpqmsfAJLfQS6PbN6ZBSUIYMM+TwG+NfaKG3QCeRjTYxqdFIRe+JkE8GnThwCC30YdCpuW/CcJ80NmmoSWtNzxZa6E3QpJGfwm7JfCcmOzHm6D7RwCG00AdDt4Y8bUJoQD0Zfk1IoHI4hBb6UOgWfly0CKUTQaIRM8iehBZ6CzQJrtaB8hf/IzciXjQmIArPCS30odAkYN6YaVNTQsQ9+oOYDvx2z0ILvQg6CXTJcJ8KWBLymrDd9FocjoQWegn0tJlJFKwGeDgwJCGwNfBGh0NooQ+GToP4NFS0DcSnoRwS2BNa6K3QxKSjD0mFrTEAmnANGZqEFnoLdLyxHEame+nQn5ojOqAILfRG6CQGEpGPivBTkUzmAipUKbQntNALoFOoJRUwEopLG2zDO9PQMwoRQgu9DJo2Bp+EZtugXtOIRPFRaKEXQJOi1BagqbA0Aj0xFKr9CS30ImhSgJI42JhsJHT3ZI1RuBRa6CXQqTjRhoQMAETgezLY3N07GnhCC30gNIEkIbXGpCOHSMSLdvgQWugt0HTYeGLYkfe2IR06eAgt9HZo8kt+KkBE3COiQQrETubeOBwJLfQS6KciYDLBp/WpIfc0BHR5uEILvQQ6mXWTiJjEOiLYf3Ig1CwQWugt0DRQQ43xtsg1w8WTEN4o9gst9IHQzWCRmoJU/J42IY05WKWLhBZ6AXQzeLTCPxUdqEhIBhGsnAgt9IHQSYgjxSeFchpxjwoXtOgJLfQWaNoEkPfQokfEAHJwxHwQWuhN0CmoRsw9IkbgoQAIjDgsNwmDQgt9KPR4E2hOaPgtHWQqnCRcOw06Qgu9BZoCkiaCFkJi2BGDgexnbE6EFvpQaDr0UyM9QaUhpw3TY8NAaKGXQKehPpln1IAjjU47cKQ1hBZ6GzRpIkiBSwdCxDsqTiTBH4fchRb6cGjSTLQhG3KYJMDeNEvYwBNa6EOhKWAz1Kfi8iSM0wTmo2sptNCHQjcNfBOYS4VxKkA0TNMURKGF3g5NBfb4oFf3Dzlp2C6FfpCBJ7TQB0K/houYYlRwIAZhev5UuFDxE1roJdCNyU5FfRKmSwWSmopJfBBa6I3QU2EgRYcUmDT0J/D0vcmoF1poobMokET4tLHWMGgblo8LmdBCHw5NmpEk9NMwDzX9qsZJaKEXQVOYqSilkGpzAER0nO4RWujN0ASmaUKI6ZaKVRIlKbzQQm+D3nQJLbTQQgst9JdcfwH5SZWAynmrywAAAABJRU5ErkJggg==" alt="QRCode">
     </li>
     
 
@@ -522,7 +522,7 @@ nohup后台运行。可以把这个命令写到/etc/rc.local里面开机启动�
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->

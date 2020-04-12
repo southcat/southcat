@@ -149,15 +149,15 @@
     
 
 
-    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="使用Forsaken Mail搭建一个临时邮箱系统，即收即毁 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/"><meta property="og:locale" content="en"><meta name="description" content="说明：Forsaken Mail是一个临时邮箱系统，可以供任何人接受邮件，即收即毁，支持自定义邮箱地址前缀，这里就说下Docker和NPM两种安装教程，任选一种即可，有兴趣或者有需求的可以玩玩。 截图 需求1、VPS需要开启25端口，这个直接发工单要主机商开启。2、域名解析，如果你想邮件地址格式都为*@xx.com的形式，则为xx.com设置MX记录，需要添加以下2条解析记录。 #MX记录 xx. - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/Forsaken_Mail(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Forsaken_Mail(2).png"><meta property="article:published_time" content="2019-10-11T08:10:06.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.644Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.644Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="使用Forsaken Mail搭建一个临时邮箱系统，即收即毁 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/"><meta property="og:locale" content="en"><meta name="description" content="说明：Forsaken Mail是一个临时邮箱系统，可以供任何人接受邮件，即收即毁，支持自定义邮箱地址前缀，这里就说下Docker和NPM两种安装教程，任选一种即可，有兴趣或者有需求的可以玩玩。 截图 需求1、VPS需要开启25端口，这个直接发工单要主机商开启。2、域名解析，如果你想邮件地址格式都为*@xx.com的形式，则为xx.com设置MX记录，需要添加以下2条解析记录。 #MX记录 xx. - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/Forsaken_Mail(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Forsaken_Mail(2).png"><meta property="article:published_time" content="2019-10-11T08:10:06.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.644Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.644Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
     <!-- ### Canonical link ### -->
-    <link rel="canonical" href="http://yoursite.com/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/">
+    <link rel="canonical" href="http://hexo.southcat.net/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/">
 
     <meta name="generator" content="Hexo 4.2.0">
 
@@ -178,18 +178,18 @@
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "url": "http://yoursite.com/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/",
+    "url": "http://hexo.southcat.net/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/",
     "@type": "BlogPosting",
-    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/"
+        "@id": "http://hexo.southcat.net/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/"
     },
     "headline": "使用Forsaken Mail搭建一个临时邮箱系统，即收即毁 | 南猫",
     
     "image": {
         "@type": "ImageObject",
-        "url": "http://yoursite.com/img/suka-favicon.ico"
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
     },
     
     "datePublished": "2019-10-11T08:10:06.000Z",
@@ -199,7 +199,7 @@
         "name": "John Doe",
         "image": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/default_avatar.png"
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
         },
         "description": "Hi, nice to meet you."
     },
@@ -208,13 +208,13 @@
         "name": "南猫",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://yoursite.com/img/suka-favicon.ico"
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
         }
     },
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://yoursite.com/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -264,56 +264,56 @@
         <!-- Share Weibo -->
         
         <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
         </li>
         
 
         <!-- Share Twitter -->
         
         <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
         </li>
         
 
         <!-- Share Facebook -->
         
         <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
         </li>
         
 
         <!-- Share Google+ -->
         
         <li class="menu-item">
-            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
         </li>
         
 
         <!-- Share LinkedIn -->
         
         <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=使用Forsaken Mail搭建一个临时邮箱系统，即收即毁" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=使用Forsaken Mail搭建一个临时邮箱系统，即收即毁" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
         </li>
         
 
         <!-- Share QQ -->
         
         <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用Forsaken Mail搭建一个临时邮箱系统，即收即毁&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用Forsaken Mail搭建一个临时邮箱系统，即收即毁&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
         </li>
         
 
         <!-- Share Telegram -->
         
         <li class="menu-item">
-            <a href="https://t.me/share/url?url=http://yoursite.com&text=使用Forsaken Mail搭建一个临时邮箱系统，即收即毁" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=使用Forsaken Mail搭建一个临时邮箱系统，即收即毁" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
         </li>
         
 
         <!-- QRCode -->
         
         <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEoklEQVR42u2dQW4bQRAD/f9PJ1fD2GkWJ85B26WLBVnSbg0Qppsk4K8/Cx9fQgsttNBCC/1h0F/D4/t7vr/39Pzna+l9T5/5ee2n10/3GDmEFnoJ9OM/+ocvPP3+9NnTIT197+n7p/s4PT9yCC30IuhJiNKBnH5OYjMOEVDsJrF9PDShhRZ6FCMiPpMwksckekILLfQ9dBKQCYi8fjrUG0EVWmih89LQmAHp4s0AkiD/y5YltNAfDp1u4FN+/pobKrTQHwwdQy8oRqdDTMbiaUhJZiA1JK5SS6GF/mDotBC0h3IzjCT4f1l0hBZ6G3QT3tEggAwMU2BAQY5wJ1NCaKEXQVOzLhl41KRLh0pC/OaehRZ6K3QSB2qyp4CPLiNkMUmvCS30NmgyMLQFWRoUTIfbDFDJmBBa6C3QJCQjC0cqtjaHlALFdukQWuhN0MS0o4cyleQa8DhkgCJdNZwILfSLoMmgQIYLKnYNFCkLkGKQ0EJvg07mXmPmT4bgZBCmzxFjIxXqhBZ6A/T4JghCQ/a0KKShqFk2cHlOaKFfCJ0WhyaIbwy+FN4TQ5IcmNBCb4OejPmmQJOMQWouUhOiNh+EFnoRdFzAL0vqyRBsg3i6gFQLh9BCvwg6iUSzMEzGQmMSklB/WoKORoPQQi+AJiHeJEKpSEeDglS8I8DRKBRa6CXQN+FbW7JpRG4y/0nQiJsIQgv9UuimIJNEjhiFbUkulX/IEiS00Jugm6WgNf4nU4IG7TSsrxYOoYV+MfRNmNaE9mQwIeW36f5IoVdooTdAxyEdilwaKlI4R8yIm4BQaKG3QtPQPAleujnyvXRBaQcWoYXeBk0FpzLY4cKRjILb0p7QQm+EpkEevRAxA8hiQY0MIqRCC70J+reLb82hpcJNKuklg2NUb6GFfik0DcPTzZAiziRKafmYBhd0EEILvQSamnfUkEs3SRYPEhrSgxda6I3QqdzShPN0IKEDDzkotCwJLfQC6EnMToE7Eal2EEnhOxlEYulGaKGXQbcLfDL4CVw63BsD8ngdoYVeAt0MHWkBoIU68jpdiJJYCi30Juj0n30rcsQQmK5FDzUJ4+MhCS30Auh2KW+DP2o2JCGiA9I4NAkt9AJoujC0xgIJA8jyQa81Ca/QQm+EJmJFQvQkisQsICWBVAR4FEihhV4CTcWA/B4FacAoICVZIohju0hooV8MPQlEI2ZJHNNAkhaSFNjhJoLQQr8YejLhbgpzqZRDjEYqTmlYuirPCS30B0MTM4Eu/SScuw3V0wGRUEBooTdAk3B9ErIU8tFSHinI3R6C0EJvgybLAQ0E0vc14Rs1NdLgJLTQm6Cbssq00BMRpIebrpOE88gktNCLockS0Hy2GWxIyE+NjUrIhBb6BdBkQUgLO3meinRU8IhZcbVwCC30i6BpqDYt7mSxSOWZZDLeHIrQQm+FpgU1UkwlIlndbGEujqVcoYUWuhYYWtpJRh8JEpvvEFpooftC22TaJVMgFXCI8RAPT2ihF0GnAgwtsyVQGhgQoBQsCC30VmgSghPjPl70i/+BA3roaWASWuht0JseQgsttNBCC/0hj7/isjXgbtZqFwAAAABJRU5ErkJggg==" alr="QRCode">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEm0lEQVR42u2bQXLbQBAD9f9PO1fH1g4atC7kNC9JybS4zVShZgDk9bXwegkttNBCCy30zaBfw/XfL3z7bLrn3b1vD3C45+ff09VwCC30FujToU73nB74E7z9vvTi373cikNooRdB/3zQu89PQjWJ1gkkCeXpTJOQTRxCCy30GYo8eBIeIlKnF5eETGihhc7Qp4ePCzsQoUkgJzGcBh6hhRaaD/XT/el3piXjykun5xJa6I3QSVzu8ufH3FChhb4xdDNkTIMDHVJIMDANLidD8qOppdBC3xiamG7psMR4b74/hX807BNa6K3QE0j6WWvgk0A+/Q5dZuLCIbTQD4VOQXkK5Bsxm0SRmH7Nd/26R2ihF0C3iwUNyCcDnxb1SCCQCgKjiSC00A+FJoY6MQuJcUfLc0RUyVBzFDKhhX4oNFq+h89I4YYuBdSATEYG3rKEFvqB0LRMQ4x2aig0RmMaREiBR2iht0LT4Jua8un3iNkwluHAfVHIhBb6YdDURL86oJD7qelAygNVeU5ooRdAE1NwWlTIEpGCP/oPUIcRQgu9ADoF7mk5J2X0FM5Pi8RkPJLQf1w4hBb6gdC06ILMdPDyrg4lSTSRuSi00AugyUOmQ+FhHxbSyTCTArxjGUdooRdAU4MvfSExDMiLpP8Yl0xGoYVeCN2YAleHjtaEoIIbA0ahhV4A3Rr+KfxOxn9rHP7FtBBa6K3QaVAhpjwp4NFQgRoDdNEQWuhN0ATkynASTTpQZkfiBMuzQgu9CZqUTBuxI8EcGWiSqUHOWm9ZQgt9c+hkqDeFuCRITRhIF5QmgBBa6A3QSaRIkEaGBhKk0zIPLRL8EjahhV4G3QjDdEgqOFXxrXjZ9ZYltNAPg27KrHTRp1cy95P52AT+Qgu9BZosD6kYR4cIsuTQIl0aaIQWejN0Kzpf4PpraN+U5CZRFlrobdAEiIgOCf7SwkFKcsQ8jKG80EI/GJouHu0wQ0L5ZnFow0Cs3kIL/TDo5tDJtJ8WjSYAJEWb2lwUWugF0C0AGfxpiEeMv/TymjMJLfQW6HSQdrloijLxoMHEIJ8LLfRG6CuDRhsUEKFqDI1W1IQWehM0Dd2aoC69xCZ8T8sQEUehhd4EfTowLas2RiMN6YmJ38ALLfQm6GZwbxaIsfjyYv8pZRpqErjQQm+EpsHY1WGCCBoaLmBx9viShRZ6EfQkWKRU15RvYtB2oQifXrbQQm+GTgHalfC8KeckiDToHMVRaKGXQKfr6gHo8pHMv6Y4MD5faKEXQDfCQQYDMuAQgyANM1TM3g4nQgv9cOimME6WDTJ4EBMhmRmNeSG00FugaWmtvZeaEeSZRLSQqSG00IuhaVCXRC4ZjukZaQlJL+jSliW00DeGJoMHGUKulGdSGY6YEPTFCS30JugkYO0hSXgeSzHAWGgGHKGF3gZNyqjpXjp4UAOCBA6NAAsttNBcwEiQlsSJFl6TkfERIRNa6AdD07JbWjra0DAZGjT0F1rojdB/CeHIstIITwoEkol4fKbQQi+Bpmb96eckYE9iGA2AYBiggEFooRdAb7qEFlpooYUW+ibXPwtGVM9nqtgFAAAAAElFTkSuQmCC" alr="QRCode">
         </li>
         
 
@@ -366,56 +366,56 @@
     <!-- Share Weibo -->
     
     <li class="menu-item">
-        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用Forsaken Mail搭建一个临时邮箱系统，即收即毁&url=http://yoursite.com/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用Forsaken Mail搭建一个临时邮箱系统，即收即毁&url=http://hexo.southcat.net/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
     </li>
     
 
     <!-- Share Twitter -->
     
     <li class="menu-item">
-        <a href="https://twitter.com/intent/tweet?text=使用Forsaken Mail搭建一个临时邮箱系统，即收即毁&url=http://yoursite.com/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        <a href="https://twitter.com/intent/tweet?text=使用Forsaken Mail搭建一个临时邮箱系统，即收即毁&url=http://hexo.southcat.net/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
     </li>
     
 
     <!-- Share Facebook -->
     
     <li class="menu-item">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
     </li>
     
 
     <!-- Share Google+ -->
     
     <li class="menu-item">
-        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
     </li>
     
 
     <!-- Share LinkedIn -->
     
     <li class="menu-item">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
     </li>
     
 
     <!-- Share QQ -->
     
     <li class="menu-item">
-        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
     </li>
     
 
     <!-- Share Telegram -->
     
     <li class="menu-item">
-        <a href="https://t.me/share/url?url=http://yoursite.com/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/10/11/e4-bd-bf-e7-94-a8forsaken-mail-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e9-82-ae-e7-ae-b1-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8d-b3-e6-94-b6-e5-8d-b3-e6-af-81/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
     </li>
     
 
     <!-- QRCode -->
     
     <li class="menu-item">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEoklEQVR42u2dQW4bQRAD/f9PJ1fD2GkWJ85B26WLBVnSbg0Qppsk4K8/Cx9fQgsttNBCC/1h0F/D4/t7vr/39Pzna+l9T5/5ee2n10/3GDmEFnoJ9OM/+ocvPP3+9NnTIT197+n7p/s4PT9yCC30IuhJiNKBnH5OYjMOEVDsJrF9PDShhRZ6FCMiPpMwksckekILLfQ9dBKQCYi8fjrUG0EVWmih89LQmAHp4s0AkiD/y5YltNAfDp1u4FN+/pobKrTQHwwdQy8oRqdDTMbiaUhJZiA1JK5SS6GF/mDotBC0h3IzjCT4f1l0hBZ6G3QT3tEggAwMU2BAQY5wJ1NCaKEXQVOzLhl41KRLh0pC/OaehRZ6K3QSB2qyp4CPLiNkMUmvCS30NmgyMLQFWRoUTIfbDFDJmBBa6C3QJCQjC0cqtjaHlALFdukQWuhN0MS0o4cyleQa8DhkgCJdNZwILfSLoMmgQIYLKnYNFCkLkGKQ0EJvg07mXmPmT4bgZBCmzxFjIxXqhBZ6A/T4JghCQ/a0KKShqFk2cHlOaKFfCJ0WhyaIbwy+FN4TQ5IcmNBCb4OejPmmQJOMQWouUhOiNh+EFnoRdFzAL0vqyRBsg3i6gFQLh9BCvwg6iUSzMEzGQmMSklB/WoKORoPQQi+AJiHeJEKpSEeDglS8I8DRKBRa6CXQN+FbW7JpRG4y/0nQiJsIQgv9UuimIJNEjhiFbUkulX/IEiS00Jugm6WgNf4nU4IG7TSsrxYOoYV+MfRNmNaE9mQwIeW36f5IoVdooTdAxyEdilwaKlI4R8yIm4BQaKG3QtPQPAleujnyvXRBaQcWoYXeBk0FpzLY4cKRjILb0p7QQm+EpkEevRAxA8hiQY0MIqRCC70J+reLb82hpcJNKuklg2NUb6GFfik0DcPTzZAiziRKafmYBhd0EEILvQSamnfUkEs3SRYPEhrSgxda6I3QqdzShPN0IKEDDzkotCwJLfQC6EnMToE7Eal2EEnhOxlEYulGaKGXQbcLfDL4CVw63BsD8ngdoYVeAt0MHWkBoIU68jpdiJJYCi30Juj0n30rcsQQmK5FDzUJ4+MhCS30Auh2KW+DP2o2JCGiA9I4NAkt9AJoujC0xgIJA8jyQa81Ca/QQm+EJmJFQvQkisQsICWBVAR4FEihhV4CTcWA/B4FacAoICVZIohju0hooV8MPQlEI2ZJHNNAkhaSFNjhJoLQQr8YejLhbgpzqZRDjEYqTmlYuirPCS30B0MTM4Eu/SScuw3V0wGRUEBooTdAk3B9ErIU8tFSHinI3R6C0EJvgybLAQ0E0vc14Rs1NdLgJLTQm6Cbssq00BMRpIebrpOE88gktNCLockS0Hy2GWxIyE+NjUrIhBb6BdBkQUgLO3meinRU8IhZcbVwCC30i6BpqDYt7mSxSOWZZDLeHIrQQm+FpgU1UkwlIlndbGEujqVcoYUWuhYYWtpJRh8JEpvvEFpooftC22TaJVMgFXCI8RAPT2ihF0GnAgwtsyVQGhgQoBQsCC30VmgSghPjPl70i/+BA3roaWASWuht0JseQgsttNBCC/0hj7/isjXgbtZqFwAAAABJRU5ErkJggg==" alt="QRCode">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEm0lEQVR42u2bQXLbQBAD9f9PO1fH1g4atC7kNC9JybS4zVShZgDk9bXwegkttNBCCy30zaBfw/XfL3z7bLrn3b1vD3C45+ff09VwCC30FujToU73nB74E7z9vvTi373cikNooRdB/3zQu89PQjWJ1gkkCeXpTJOQTRxCCy30GYo8eBIeIlKnF5eETGihhc7Qp4ePCzsQoUkgJzGcBh6hhRaaD/XT/el3piXjykun5xJa6I3QSVzu8ufH3FChhb4xdDNkTIMDHVJIMDANLidD8qOppdBC3xiamG7psMR4b74/hX807BNa6K3QE0j6WWvgk0A+/Q5dZuLCIbTQD4VOQXkK5Bsxm0SRmH7Nd/26R2ihF0C3iwUNyCcDnxb1SCCQCgKjiSC00A+FJoY6MQuJcUfLc0RUyVBzFDKhhX4oNFq+h89I4YYuBdSATEYG3rKEFvqB0LRMQ4x2aig0RmMaREiBR2iht0LT4Jua8un3iNkwluHAfVHIhBb6YdDURL86oJD7qelAygNVeU5ooRdAE1NwWlTIEpGCP/oPUIcRQgu9ADoF7mk5J2X0FM5Pi8RkPJLQf1w4hBb6gdC06ILMdPDyrg4lSTSRuSi00AugyUOmQ+FhHxbSyTCTArxjGUdooRdAU4MvfSExDMiLpP8Yl0xGoYVeCN2YAleHjtaEoIIbA0ahhV4A3Rr+KfxOxn9rHP7FtBBa6K3QaVAhpjwp4NFQgRoDdNEQWuhN0ATkynASTTpQZkfiBMuzQgu9CZqUTBuxI8EcGWiSqUHOWm9ZQgt9c+hkqDeFuCRITRhIF5QmgBBa6A3QSaRIkEaGBhKk0zIPLRL8EjahhV4G3QjDdEgqOFXxrXjZ9ZYltNAPg27KrHTRp1cy95P52AT+Qgu9BZosD6kYR4cIsuTQIl0aaIQWejN0Kzpf4PpraN+U5CZRFlrobdAEiIgOCf7SwkFKcsQ8jKG80EI/GJouHu0wQ0L5ZnFow0Cs3kIL/TDo5tDJtJ8WjSYAJEWb2lwUWugF0C0AGfxpiEeMv/TymjMJLfQW6HSQdrloijLxoMHEIJ8LLfRG6CuDRhsUEKFqDI1W1IQWehM0Dd2aoC69xCZ8T8sQEUehhd4EfTowLas2RiMN6YmJ38ALLfQm6GZwbxaIsfjyYv8pZRpqErjQQm+EpsHY1WGCCBoaLmBx9viShRZ6EfQkWKRU15RvYtB2oQifXrbQQm+GTgHalfC8KeckiDToHMVRaKGXQKfr6gHo8pHMv6Y4MD5faKEXQDfCQQYDMuAQgyANM1TM3g4nQgv9cOimME6WDTJ4EBMhmRmNeSG00FugaWmtvZeaEeSZRLSQqSG00IuhaVCXRC4ZjukZaQlJL+jSliW00DeGJoMHGUKulGdSGY6YEPTFCS30JugkYO0hSXgeSzHAWGgGHKGF3gZNyqjpXjp4UAOCBA6NAAsttNBcwEiQlsSJFl6TkfERIRNa6AdD07JbWjra0DAZGjT0F1rojdB/CeHIstIITwoEkol4fKbQQi+Bpmb96eckYE9iGA2AYBiggEFooRdAb7qEFlpooYUW+ibXPwtGVM9nqtgFAAAAAElFTkSuQmCC" alt="QRCode">
     </li>
     
 
@@ -565,7 +565,7 @@ echo &quot;xx.com {
     <!-- footer copyright -->
     
         <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
-            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
         </p>
 
     <!-- footer custom text -->
