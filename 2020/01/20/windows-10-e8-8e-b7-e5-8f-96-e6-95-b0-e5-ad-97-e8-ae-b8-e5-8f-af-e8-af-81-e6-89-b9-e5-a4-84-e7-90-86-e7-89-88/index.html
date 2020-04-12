@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Windows 10获取数字许可证 批处理版 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Windows 10获取数字许可证 批处理版 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/01/20/windows-10-e8-8e-b7-e5-8f-96-e6-95-b0-e5-ad-97-e8-ae-b8-e5-8f-af-e8-af-81-e6-89-b9-e5-a4-84-e7-90-86-e7-89-88/"><meta property="og:locale" content="en"><meta name="description" content="说明：一般我们激活Windows 10系统都是自己搭建KMS服务器，查看：Linux VPS一键搭建KMS服务器，不过还是有点限制的，现在激活Windows 10又多了种数字许可证激活的方法，他和KMS不一样，数字许可证会记录你的硬件信息，激活一次后，只要你不换CPU等硬件，重装多少次都会自动激活，这里分享个由Vicer大佬制作的Windows 10数字权利激活工具。 截图 说明 兼容大于等于wi - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/Win10Activation.png"><meta property="article:published_time" content="2020-01-20T04:56:04.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.654Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.654Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/01/20/windows-10-e8-8e-b7-e5-8f-96-e6-95-b0-e5-ad-97-e8-ae-b8-e5-8f-af-e8-af-81-e6-89-b9-e5-a4-84-e7-90-86-e7-89-88/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/01/20/windows-10-e8-8e-b7-e5-8f-96-e6-95-b0-e5-ad-97-e8-ae-b8-e5-8f-af-e8-af-81-e6-89-b9-e5-a4-84-e7-90-86-e7-89-88/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/01/20/windows-10-e8-8e-b7-e5-8f-96-e6-95-b0-e5-ad-97-e8-ae-b8-e5-8f-af-e8-af-81-e6-89-b9-e5-a4-84-e7-90-86-e7-89-88/"
+    },
+    "headline": "Windows 10获取数字许可证 批处理版 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-01-20T04:56:04.000Z",
+    "dateModified": "2020-04-12T04:09:09.654Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：一般我们激活Windows 10系统都是自己搭建KMS服务器，查看：Linux VPS一键搭建KMS服务器，不过还是有点限制的，现在激活Windows 10又多了种数字许可证激活的方法，他和KMS不一样，数字许可证会记录你的硬件信息，激活一次后，只要你不换CPU等硬件，重装多少次都会自动激活，这里分享个由Vicer大佬制作的Windows 10数字权利激活工具。 截图 说明 兼容大于等于wi - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Windows 10获取数字许可证 批处理版" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Windows 10获取数字许可证 批处理版&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=Windows 10获取数字许可证 批处理版" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADq0lEQVR42u3awZKCQAxFUf//p2f2Fp130yoE6rqZUVE4VJlOJ3n9PfDxEiVKlChRj0O9isf7MeT5++tH51gd9/5/9R2H1ylK1BDU4Y9u8fr7iVbvH510dUOOYNVNWF2nKFGTUKsvqQLE0ecrIDnf6gaQz4kSdRdUtejRgLIKEKtzkIVclKinobrHpqCTXhcl6k6oTtK6Slar98jNIIv8V7J0UaJ+jKJB4Oq/X6smiRL1Q1QsuhdBodpEkkDR2Yx+teshStQPUdUPMRXtdwr66aIrdFUkFSVqEqragKWCSTcBXZ0zbgDBOUSJmoKiP2wSFLrNg9RIWH1Pu5okStTJqN2GNFlYuwXNNDyyLNiIEjUYlYY2usNWnQvtNrNFiZqESoi0gUOJJmiiVRvEdkIrStQA1ApHmtFkYJEUW8gGtXwuStQAFGkAdIv49PXULKgSY9zIFiXqZBQd4EgXlgIJHQahA41lg0CUqAGolGCmRbZTsEmbv59k6aJEnYRKSWpaKLv/04Q4bSxRRiFK1AWoVDSkBUua2NLv7hRXRYmahkoJJW3MkYZ4aqzhZkAaDBYl6iJUKobsDHp0h65Iw4EEFlGiJqBIktkZuCfBghRZ6EBwGf1EiboIRYsbpAiZmtndm9Zp5IkSNQWFB29hIzoVKukAP/kbF19Rok5G0R94p4HdaSJ0ApUoUXdC7QxYVQUSusi+Nh4xoRUlagCKLoQ7SS05vjomFUBFiZqEqjZxnQIkWYRJQTQNE5eDWKJEDUB1EJ0FlwxyfdQM6CS0okSdiKoaZnSIkA4edhsJ7WsUJWoAKm38YhIJi5hpWLGb9IoSNRWVFlVyod2CZiqIkk3p4feLEjUERQZFaEJLmwaoOAmGKEWJmojaSUw7Q1LkJtGCaXmjRIkagCINAtpEow01OuxBrk+UqImozuDT7qDW7pBjdV1lJ1GUqItQpLBCh612iiidxTndaFGiJqI6w1Mpee0OPdLC5TK4iRI1CFU1s1MhsSqM0EIpCU4xgRYlagDq06JiChAJQDageEhYlKgBqFh0byajqeFWLab0c8v3RIkagCI/QtK4JosuKZDShl9r4kWUqJNRNEDQYSwy8EgCEBkcjhVaUaIuQpEmM12oabGmSmxTMDk8VpSom6BokSYNk5CFnDbPy2KmKFHDUeT1zoJKiqMksCyHGEWJGoCqFtI0HJIWZNLk7r6HAoUoURehOo1qUrTsXkz1eXqzRImagnrSQ5QoUaJEPebxD0Uosb6Wez1HAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Windows 10获取数字许可证 批处理版</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-01-20</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Windows 10获取数字许可证 批处理版&url=http://yoursite.com/2020/01/20/windows-10-e8-8e-b7-e5-8f-96-e6-95-b0-e5-ad-97-e8-ae-b8-e5-8f-af-e8-af-81-e6-89-b9-e5-a4-84-e7-90-86-e7-89-88/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Windows 10获取数字许可证 批处理版&url=http://yoursite.com/2020/01/20/windows-10-e8-8e-b7-e5-8f-96-e6-95-b0-e5-ad-97-e8-ae-b8-e5-8f-af-e8-af-81-e6-89-b9-e5-a4-84-e7-90-86-e7-89-88/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/01/20/windows-10-e8-8e-b7-e5-8f-96-e6-95-b0-e5-ad-97-e8-ae-b8-e5-8f-af-e8-af-81-e6-89-b9-e5-a4-84-e7-90-86-e7-89-88/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/01/20/windows-10-e8-8e-b7-e5-8f-96-e6-95-b0-e5-ad-97-e8-ae-b8-e5-8f-af-e8-af-81-e6-89-b9-e5-a4-84-e7-90-86-e7-89-88/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/01/20/windows-10-e8-8e-b7-e5-8f-96-e6-95-b0-e5-ad-97-e8-ae-b8-e5-8f-af-e8-af-81-e6-89-b9-e5-a4-84-e7-90-86-e7-89-88/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/01/20/windows-10-e8-8e-b7-e5-8f-96-e6-95-b0-e5-ad-97-e8-ae-b8-e5-8f-af-e8-af-81-e6-89-b9-e5-a4-84-e7-90-86-e7-89-88/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/01/20/windows-10-e8-8e-b7-e5-8f-96-e6-95-b0-e5-ad-97-e8-ae-b8-e5-8f-af-e8-af-81-e6-89-b9-e5-a4-84-e7-90-86-e7-89-88/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADq0lEQVR42u3awZKCQAxFUf//p2f2Fp130yoE6rqZUVE4VJlOJ3n9PfDxEiVKlChRj0O9isf7MeT5++tH51gd9/5/9R2H1ylK1BDU4Y9u8fr7iVbvH510dUOOYNVNWF2nKFGTUKsvqQLE0ecrIDnf6gaQz4kSdRdUtejRgLIKEKtzkIVclKinobrHpqCTXhcl6k6oTtK6Slar98jNIIv8V7J0UaJ+jKJB4Oq/X6smiRL1Q1QsuhdBodpEkkDR2Yx+teshStQPUdUPMRXtdwr66aIrdFUkFSVqEqragKWCSTcBXZ0zbgDBOUSJmoKiP2wSFLrNg9RIWH1Pu5okStTJqN2GNFlYuwXNNDyyLNiIEjUYlYY2usNWnQvtNrNFiZqESoi0gUOJJmiiVRvEdkIrStQA1ApHmtFkYJEUW8gGtXwuStQAFGkAdIv49PXULKgSY9zIFiXqZBQd4EgXlgIJHQahA41lg0CUqAGolGCmRbZTsEmbv59k6aJEnYRKSWpaKLv/04Q4bSxRRiFK1AWoVDSkBUua2NLv7hRXRYmahkoJJW3MkYZ4aqzhZkAaDBYl6iJUKobsDHp0h65Iw4EEFlGiJqBIktkZuCfBghRZ6EBwGf1EiboIRYsbpAiZmtndm9Zp5IkSNQWFB29hIzoVKukAP/kbF19Rok5G0R94p4HdaSJ0ApUoUXdC7QxYVQUSusi+Nh4xoRUlagCKLoQ7SS05vjomFUBFiZqEqjZxnQIkWYRJQTQNE5eDWKJEDUB1EJ0FlwxyfdQM6CS0okSdiKoaZnSIkA4edhsJ7WsUJWoAKm38YhIJi5hpWLGb9IoSNRWVFlVyod2CZiqIkk3p4feLEjUERQZFaEJLmwaoOAmGKEWJmojaSUw7Q1LkJtGCaXmjRIkagCINAtpEow01OuxBrk+UqImozuDT7qDW7pBjdV1lJ1GUqItQpLBCh612iiidxTndaFGiJqI6w1Mpee0OPdLC5TK4iRI1CFU1s1MhsSqM0EIpCU4xgRYlagDq06JiChAJQDageEhYlKgBqFh0byajqeFWLab0c8v3RIkagCI/QtK4JosuKZDShl9r4kWUqJNRNEDQYSwy8EgCEBkcjhVaUaIuQpEmM12oabGmSmxTMDk8VpSom6BokSYNk5CFnDbPy2KmKFHDUeT1zoJKiqMksCyHGEWJGoCqFtI0HJIWZNLk7r6HAoUoURehOo1qUrTsXkz1eXqzRImagnrSQ5QoUaJEPebxD0Uosb6Wez1HAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#说明"><span class="post-toc-number">2.</span> <span class="post-toc-text">说明</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#功能"><span class="post-toc-number">3.</span> <span class="post-toc-text">功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注意"><span class="post-toc-number">4.</span> <span class="post-toc-text">注意</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载"><span class="post-toc-number">5.</span> <span class="post-toc-text">下载</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>一般我们激活<code>Windows 10</code>系统都是自己搭建<code>KMS</code>服务器，查看：Linux VPS一键搭建KMS服务器，不过还是有点限制的，现在激活<code>Windows 10</code>又多了种数字许可证激活的方法，他和<code>KMS</code>不一样，数字许可证会记录你的硬件信息，激活一次后，只要你不换<code>CPU</code>等硬件，重装多少次都会自动激活，这里分享个由<code>Vicer</code>大佬制作的<code>Windows 10</code>数字权利激活工具。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/Win10Activation.png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
+<li>兼容大于等于<code>win7</code>(<code>win server 2008</code>) 的各个版本的激活信息(包括<code>Office</code>)查询，备份，还原。</li>
+<li>自动激活(获取数字许可证)只支持<code>win10</code>。</li>
+<li>获取数字许可证之后，以后重装系统只要联网就会自动激活！无需输入许可证密钥，无需<code>KMS</code>。</li>
+</ul>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ol>
+<li>自动激活并获取数字激活许可证。</li>
+<li>删除(初始化)系统激活信息。</li>
+<li>备份系统激活信息。</li>
+<li>还原系统激活信息。</li>
+<li>查看激活状态。</li>
+<li>查看支持列表。</li>
+</ol>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<li>激活时请保持电脑连网状态，否则无法顺利激活。</li>
+<li>激活时请保持<code>Windows Update</code>服务为启动状态。</li>
+<li>如果已使用密钥激活<code>Office</code>等产品，会丢失其激活状态。</li>
+<li>建议备份激活信息后再操作。</li>
+</ul>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><strong>批处理版：</strong> Win10Activation.zip<br><strong>批处理打包exe版：</strong> Win10Activation.exe</p>
+<p>支持的<code>Windows10</code>版本/初始密钥</p>
+<pre><code>#Windows 10 Cloud
+V3WVW-N2PV2-CGWC3-34QGF-VMJ2C
+
+#Windows 10 CloudN
+NH9J3-68WK7-6FB93-4K3DF-DJ4F6
+
+#Windows 10 Core
+YTMG3-N6DKC-DKB77-7M9GH-8HVX7
+
+#Windows 10 CoreN
+4CPRK-NM3K3-X6XXQ-RXX86-WXCHW
+
+#Windows 10 CoreCountrySpecific
+N2434-X9D7W-8PF6X-8DV9T-8TYMD
+
+#Windows 10 CoreSingleLanguage
+BT79Q-G7N6G-PGBYW-4YWX6-6F4BT
+
+#Windows 10 Education
+YNMGQ-8RYV3-4PGQ3-C8XTP-7CFBY
+
+#Windows 10 EducationN
+84NGF-MHBT6-FXBX8-QWJK7-DRR8H
+
+#Windows 10 Enterprise
+XGVPP-NMH47-7TTHJ-W3FW7-8HV2C
+
+#Windows 10 EnterpriseN
+WGGHN-J84D6-QYCPR-T7PJ7-X766F
+
+#Windows 10 EnterpriseS / LTSB
+NK96Y-D9CD8-W44CQ-R8YTK-DYJWX
+
+#Windows 10 EnterpriseSN / LTSBN
+RW7WN-FMT44-KRGBK-G44WK-QV7YK
+
+#Windows 10 Professional
+VK7JG-NPHTM-C97JM-9MPGT-3V66T
+
+#Windows 10 ProfessionalN
+2B87N-8KFHP-DKV6R-Y2C8J-PKCKT
+
+#Windows 10 ProfessionalEducation
+8PTT6-RNW4C-6V7J2-C2D3X-MHBPB
+
+#Windows 10 ProfessionalEducationN
+GJTYN-HDMQY-FRR76-HVGC7-QPF8P
+
+#Windows 10 ProfessionalWorkstation
+DXG7C-N36C4-C4HTG-X4T3X-2YV77
+
+#Windows 10 ProfessionalWorkstationN
+WYPNQ-8C467-V2W6J-TX4WX-WT2RQ</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-01-20T04:56:04.000Z" itemprop="datePublished">2020-01-20</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.654Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/01/20/cloudcone-ef-bc-9a-e7-94-b5-e4-bf-a1-e8-81-94-e9-80-9a-e7-9b-b4-e8-bf-9e-1g-e5-b8-a6-e5-ae-bd-2t-e6-b5-81-e9-87-8f-e5-85-8d-e8-b4-b9ddos-e9-98-b2-e6-8a-a4-e6-8d-a2ip-e4-bb-850-5-e6-9c-88-e4-bb-98/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">CloudCone：电信联通直连/1G带宽/2T流量/免费DDOS防护/换IP仅$0.5/月付最低$1.25</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/01/20/e4-b8-80-e4-b8-aa-e5-8f-af-e4-bb-a5-e8-87-aa-e5-8a-a8-e5-ae-89-e8-a3-85-e5-a4-9a-e7-bd-91-e7-ab-99-e7-a8-8b-e5-ba-8f-e7-9a-84-e9-9d-a2-e6-9d-bf-ef-bc-9ayunohost-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一个可以自动安装多网站程序的面板 ：YunoHost安装教程</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

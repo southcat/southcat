@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>大疆IOS设备用户开启FCC/Boost/32信道等最新详细教程 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="大疆IOS设备用户开启FCC&#x2F;Boost&#x2F;32信道等最新详细教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/03/19/e5-a4-a7-e7-96-86ios-e8-ae-be-e5-a4-87-e7-94-a8-e6-88-b7-e5-bc-80-e5-90-affcc-boost-32-e4-bf-a1-e9-81-93-e7-ad-89-e6-9c-80-e6-96-b0-e8-af-a6-e7-bb-86-e6-95-99-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="说明：目前大疆无人机已经出了很多品种，能开FCC的比如有：精灵3s、精灵3p、精灵3se、精灵3 4k、精灵4a、精灵4p、精灵4p 2.0、御air、御pro、御2、悟2、悟1、M600P、晓Spark等。博主之前发了几个FCC教程，查看：无人机开启FCC教程、识别是否开启了FCC、关于FCC的科普及答疑等，基本很详细了，不过有些方法存在失效的问题，所以这里博主就专门针对苹果IOS设备再发一篇详 - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/IOS_FCC21.png"><meta property="og:image" content="https://www.moerats.com/usr/picture/IOS_FCC22.png"><meta property="og:image" content="https://www.moerats.com/usr/picture/IOS_FCC23.png"><meta property="og:image" content="https://www.moerats.com/usr/picture/IOS_FCC24.png"><meta property="og:image" content="https://www.moerats.com/usr/picture/IOS_FCC25.png"><meta property="og:image" content="https://www.moerats.com/usr/picture/IOS_FCC26.png"><meta property="article:published_time" content="2020-03-18T20:55:28.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.659Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.659Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/03/19/e5-a4-a7-e7-96-86ios-e8-ae-be-e5-a4-87-e7-94-a8-e6-88-b7-e5-bc-80-e5-90-affcc-boost-32-e4-bf-a1-e9-81-93-e7-ad-89-e6-9c-80-e6-96-b0-e8-af-a6-e7-bb-86-e6-95-99-e7-a8-8b/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/03/19/e5-a4-a7-e7-96-86ios-e8-ae-be-e5-a4-87-e7-94-a8-e6-88-b7-e5-bc-80-e5-90-affcc-boost-32-e4-bf-a1-e9-81-93-e7-ad-89-e6-9c-80-e6-96-b0-e8-af-a6-e7-bb-86-e6-95-99-e7-a8-8b/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/03/19/e5-a4-a7-e7-96-86ios-e8-ae-be-e5-a4-87-e7-94-a8-e6-88-b7-e5-bc-80-e5-90-affcc-boost-32-e4-bf-a1-e9-81-93-e7-ad-89-e6-9c-80-e6-96-b0-e8-af-a6-e7-bb-86-e6-95-99-e7-a8-8b/"
+    },
+    "headline": "大疆IOS设备用户开启FCC/Boost/32信道等最新详细教程 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-03-18T20:55:28.000Z",
+    "dateModified": "2020-04-12T04:09:09.659Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：目前大疆无人机已经出了很多品种，能开FCC的比如有：精灵3s、精灵3p、精灵3se、精灵3 4k、精灵4a、精灵4p、精灵4p 2.0、御air、御pro、御2、悟2、悟1、M600P、晓Spark等。博主之前发了几个FCC教程，查看：无人机开启FCC教程、识别是否开启了FCC、关于FCC的科普及答疑等，基本很详细了，不过有些方法存在失效的问题，所以这里博主就专门针对苹果IOS设备再发一篇详 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=大疆IOS设备用户开启FCC/Boost/32信道等最新详细教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=大疆IOS设备用户开启FCC/Boost/32信道等最新详细教程&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=大疆IOS设备用户开启FCC/Boost/32信道等最新详细教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEpUlEQVR42u2cQXIbQQwD9f9PJ9ckpSEaI+egZetiy7J2p+kqmgRgv34tfLyEFlpooYUW+sugX8Pj9D1/XeiPr/358d+vvXv93X2OBz6cqeIQWugl0KebnG6QoP89xLvnp4NO93tX3IpDaKEXQb+7cTpYOsh03VS8UwFSE5zuJ7TQQudGdWpSqTBp2JmuTwcfoYUWOjeyCWgqVGqIzZBxGqCEFlrofJNpOGgFg6lhpSY5nenHtyyhhf5y6ElQ+6aPP6aGCi30F0NH0ysIhETYS8sIWXbokvMjrqXQQn8xdFoI0g2ScECHkWQsTMZhur7QQm+Dbgy6T56n4iTDnxRj4hJa6A3QrchHwjBUpE+GPRUAiUEotNCboKehYhLnTkNCGlzIokHDOERQFFroTdCkqTTLwOlgqaiTyXBz37c/EKGFXgDdNIvGtL8tyE3B08AktNAboWlgrjXmp+ElCX3TQjMGak5BAKGFXgBNDTAi4k9CQSoWAbwJ81XpIqGFfhB0CqORoSQ1wMakp0IFuabQQm+DJgJ+c7AmnNOY8qmg8XWhhV4CnYIr9PBk2GkFfxrI+ShdJLTQD4ImonlqPjRk08KRopIfltBCb4Imxjg1ykljJE2RBHKbJUZoobdCH0VyIMxNQmJqakSUTOYhanJCC70Imv7Cbwx6WkTycWp6WDwUWugl0DeN5TZwl4pB3kuGJRyIFVroB0In0T01jAaWmPHTQESDAtjAE1roh0GnUAtZBMjQ0RqDtFD/JQUstNBfDJ3CaUSwI2L9jVCRRMn6HkILvQD65hd9aliNOE+E/0rQf/3AX9UKLfQDoCeB4KY4zevU3GsEjVHsF1roBdDNot40sUbwbxeLOmwrtNBLoMnQTg6YQjeT8ZYEhdY0fNv0hBZ6ATQ5ABnuibHXGH9kcUnNFQVthBZ6CXQaEqiw1xryt0E7JFwILfQC6OmQpEklQ4+Yf3ThaBsqmsiEFvph0EloJwvCDTwx9GhTTNcWWuhN0EQUJMtD8z3YcIMFJ4OJ0EJvh0ZL+QcCYrM4TINKE6YTWuiN0CkQmwJzxEwjQwkt7PQ5Hk6EFvpB0ORgdPEng0qztEyC/k0zE1roDdDkQcX2RgAkxgEx/1IDFFrobdDNgkAWdgLSDiFtYbHYL7TQD4aeGk8aPEhx2uWiES6ne1UOh9BCPww6NapkmJOwKh0miBDZLh1CC70BmsKmAqGB/8X+wQQN0TQDlNBCb4FOQj81ARIYFeXTIkPuexyqhBZ6ATQVE8jrNASXhpJk1qcAbFw4hBb6wdCfwE5DTROYS9ejJkJ8j9BCL4GmIn4S71MQhr6fCAnk+kILvRH6ZnmPyzoIo9+E3dNQFIP6Qgu9GDodhpp7RDi8GURIgaKIILTQD4T+ZOCnTYuYeySQQ4yI6fxCC70FumlgtIk04n97PToYoSSC0EI/FLoNldPG0y4GU/COBHlG4UNooYVGfzBCwjDkcNNQRBaUaNwLLbTQ6B8Ut4bcTVCPmHfJ3Bda6E3Qp4WDPCcNLA01NLCXzLup2Qkt9BboqfHQgOqtuU/FiSNIAS600BugNz2EFlpooYUW+ksevwEqO3SvxJnj5AAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">大疆IOS设备用户开启FCC/Boost/32信道等最新详细教程</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-03-19</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=大疆IOS设备用户开启FCC/Boost/32信道等最新详细教程&url=http://yoursite.com/2020/03/19/e5-a4-a7-e7-96-86ios-e8-ae-be-e5-a4-87-e7-94-a8-e6-88-b7-e5-bc-80-e5-90-affcc-boost-32-e4-bf-a1-e9-81-93-e7-ad-89-e6-9c-80-e6-96-b0-e8-af-a6-e7-bb-86-e6-95-99-e7-a8-8b/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=大疆IOS设备用户开启FCC/Boost/32信道等最新详细教程&url=http://yoursite.com/2020/03/19/e5-a4-a7-e7-96-86ios-e8-ae-be-e5-a4-87-e7-94-a8-e6-88-b7-e5-bc-80-e5-90-affcc-boost-32-e4-bf-a1-e9-81-93-e7-ad-89-e6-9c-80-e6-96-b0-e8-af-a6-e7-bb-86-e6-95-99-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/19/e5-a4-a7-e7-96-86ios-e8-ae-be-e5-a4-87-e7-94-a8-e6-88-b7-e5-bc-80-e5-90-affcc-boost-32-e4-bf-a1-e9-81-93-e7-ad-89-e6-9c-80-e6-96-b0-e8-af-a6-e7-bb-86-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/03/19/e5-a4-a7-e7-96-86ios-e8-ae-be-e5-a4-87-e7-94-a8-e6-88-b7-e5-bc-80-e5-90-affcc-boost-32-e4-bf-a1-e9-81-93-e7-ad-89-e6-9c-80-e6-96-b0-e8-af-a6-e7-bb-86-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/03/19/e5-a4-a7-e7-96-86ios-e8-ae-be-e5-a4-87-e7-94-a8-e6-88-b7-e5-bc-80-e5-90-affcc-boost-32-e4-bf-a1-e9-81-93-e7-ad-89-e6-9c-80-e6-96-b0-e8-af-a6-e7-bb-86-e6-95-99-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/03/19/e5-a4-a7-e7-96-86ios-e8-ae-be-e5-a4-87-e7-94-a8-e6-88-b7-e5-bc-80-e5-90-affcc-boost-32-e4-bf-a1-e9-81-93-e7-ad-89-e6-9c-80-e6-96-b0-e8-af-a6-e7-bb-86-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/03/19/e5-a4-a7-e7-96-86ios-e8-ae-be-e5-a4-87-e7-94-a8-e6-88-b7-e5-bc-80-e5-90-affcc-boost-32-e4-bf-a1-e9-81-93-e7-ad-89-e6-9c-80-e6-96-b0-e8-af-a6-e7-bb-86-e6-95-99-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEpUlEQVR42u2cQXIbQQwD9f9PJ9ckpSEaI+egZetiy7J2p+kqmgRgv34tfLyEFlpooYUW+sugX8Pj9D1/XeiPr/358d+vvXv93X2OBz6cqeIQWugl0KebnG6QoP89xLvnp4NO93tX3IpDaKEXQb+7cTpYOsh03VS8UwFSE5zuJ7TQQudGdWpSqTBp2JmuTwcfoYUWOjeyCWgqVGqIzZBxGqCEFlrofJNpOGgFg6lhpSY5nenHtyyhhf5y6ElQ+6aPP6aGCi30F0NH0ysIhETYS8sIWXbokvMjrqXQQn8xdFoI0g2ScECHkWQsTMZhur7QQm+Dbgy6T56n4iTDnxRj4hJa6A3QrchHwjBUpE+GPRUAiUEotNCboKehYhLnTkNCGlzIokHDOERQFFroTdCkqTTLwOlgqaiTyXBz37c/EKGFXgDdNIvGtL8tyE3B08AktNAboWlgrjXmp+ElCX3TQjMGak5BAKGFXgBNDTAi4k9CQSoWAbwJ81XpIqGFfhB0CqORoSQ1wMakp0IFuabQQm+DJgJ+c7AmnNOY8qmg8XWhhV4CnYIr9PBk2GkFfxrI+ShdJLTQD4ImonlqPjRk08KRopIfltBCb4Imxjg1ykljJE2RBHKbJUZoobdCH0VyIMxNQmJqakSUTOYhanJCC70Imv7Cbwx6WkTycWp6WDwUWugl0DeN5TZwl4pB3kuGJRyIFVroB0In0T01jAaWmPHTQESDAtjAE1roh0GnUAtZBMjQ0RqDtFD/JQUstNBfDJ3CaUSwI2L9jVCRRMn6HkILvQD65hd9aliNOE+E/0rQf/3AX9UKLfQDoCeB4KY4zevU3GsEjVHsF1roBdDNot40sUbwbxeLOmwrtNBLoMnQTg6YQjeT8ZYEhdY0fNv0hBZ6ATQ5ABnuibHXGH9kcUnNFQVthBZ6CXQaEqiw1xryt0E7JFwILfQC6OmQpEklQ4+Yf3ThaBsqmsiEFvph0EloJwvCDTwx9GhTTNcWWuhN0EQUJMtD8z3YcIMFJ4OJ0EJvh0ZL+QcCYrM4TINKE6YTWuiN0CkQmwJzxEwjQwkt7PQ5Hk6EFvpB0ORgdPEng0qztEyC/k0zE1roDdDkQcX2RgAkxgEx/1IDFFrobdDNgkAWdgLSDiFtYbHYL7TQD4aeGk8aPEhx2uWiES6ne1UOh9BCPww6NapkmJOwKh0miBDZLh1CC70BmsKmAqGB/8X+wQQN0TQDlNBCb4FOQj81ARIYFeXTIkPuexyqhBZ6ATQVE8jrNASXhpJk1qcAbFw4hBb6wdCfwE5DTROYS9ejJkJ8j9BCL4GmIn4S71MQhr6fCAnk+kILvRH6ZnmPyzoIo9+E3dNQFIP6Qgu9GDodhpp7RDi8GURIgaKIILTQD4T+ZOCnTYuYeySQQ4yI6fxCC70FumlgtIk04n97PToYoSSC0EI/FLoNldPG0y4GU/COBHlG4UNooYVGfzBCwjDkcNNQRBaUaNwLLbTQ6B8Ut4bcTVCPmHfJ3Bda6E3Qp4WDPCcNLA01NLCXzLup2Qkt9BboqfHQgOqtuU/FiSNIAS600BugNz2EFlpooYUW+ksevwEqO3SvxJnj5AAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#说明"><span class="post-toc-number">1.</span> <span class="post-toc-text">说明</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法一"><span class="post-toc-number">2.</span> <span class="post-toc-text">方法一</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法二"><span class="post-toc-number">3.</span> <span class="post-toc-text">方法二</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>目前大疆无人机已经出了很多品种，能开<code>FCC</code>的比如有：<code>精灵3s</code>、<code>精灵3p</code>、<code>精灵3se</code>、<code>精灵3 4k</code>、<code>精灵4a</code>、<code>精灵4p</code>、<code>精灵4p 2.0</code>、<code>御air</code>、<code>御pro</code>、<code>御2</code>、<code>悟2</code>、<code>悟1</code>、<code>M600P</code>、<code>晓Spark</code>等。博主之前发了几个<code>FCC</code>教程，查看：无人机开启FCC教程、识别是否开启了FCC、关于FCC的科普及答疑等，基本很详细了，不过有些方法存在失效的问题，所以这里博主就专门针对苹果<code>IOS</code>设备再发一篇详细的最新开启<code>FCC</code>及<code>Boost</code>等教程。至于安卓设备的最新开启方法过几天再发，有兴趣的可以关注下。</p>
+<pre><code>#科普防骗知识
+1、比如闲鱼上很多无良商家拿本文这个APP去卖，实际上只有7天时间，7天后就闪退。
+2、还有说御2最新固件安卓机用户支持开启fcc的都是骗子，大家注意谨防上当受骗。</code></pre><p>本文主要讨论，<code>IOS</code>设备如何在未越狱的情况下安装修改的<code>DJI GO4 APP</code>，开启<code>FCC</code>、<code>Boost</code>、<code>32</code>信道。这里分享<code>2</code>种方法，每一种复杂程度不一样，第一种新号，没双重验证，第二种是开启了双重验证的方法。大家视情况自行决定。</p>
+<pre><code>注意：以下内容仅作技术交流，请勿用于实际用途，并且请按照当地法律法规操作无线电，否则后果自负！
+
+提示：如果有不懂的或者该方法失效了，可以去该论坛提问，地址：www.pilotbbs.com，里面会有大神帮助你。</code></pre><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><pre><code>#本文所需要的APP下载地址，且APP以后会经常增加到最新版，随时关注
+百度网盘：https://pan.baidu.com/s/1kss2DOAdMgI6AxXzLIBDgA 
+提取码：b3jb 
+#并且软件为俄罗斯大神Daniil Zobov破解，第一版为4.2.22，最新版为4.3.9。
+#这个签名是用的个人证书，只能使用7天，7天后就要重新签名，不然会闪退。或者购买苹果个人开发者证书，1年只需要签名一次。</code></pre><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>我们可以用<code>SuperImpactor</code>来安装，官网地址：点击访问，下载安装后，点击<code>install</code>选择你需要的<code>DJI GO4 MOD</code>版。<br><img src="https://www.moerats.com/usr/picture/IOS_FCC21.png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/IOS_FCC22.png" alt="请输入图片描述" title="请输入图片描述"><br>然后输入自己的<code>appleid</code>，也可以新申请一个。演示的为新申请的，没有二次验证。下面用<code>impactor</code>的是有二次验证的账号。<br><img src="https://www.moerats.com/usr/picture/IOS_FCC23.png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/IOS_FCC24.png" alt="请输入图片描述" title="请输入图片描述"><br>点击<code>install</code>，第一次会提示出错，我们关掉。然后继续点击<code>Install</code>，耐心等待<code>10</code>分钟左右。返回手机或者平板查看是否安装上。如果发现手机上没有相关软件，而软件又提示完成，那么重启下手机或者平板即可。那么可以重启下手机看看。软件<code>7</code>天快到期时，点击<code>resign</code>重新签名即可<br><img src="https://www.moerats.com/usr/picture/IOS_FCC25.png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/IOS_FCC26.png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>我们用<code>Impactor</code>(也叫冲击钻)，官网地址：点击访问，为了让广大飞友容易上手，修改版<code>APP</code>的补丁文件独家汉化并内置了，不用担心看不懂，也不用再导入什么配置文件了。教程每一步我也截图了，这里就发下。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-03-18T20:55:28.000Z" itemprop="datePublished">2020-03-19</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.659Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/03/19/linux-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85aria2yaawfilemanager-e5-ae-9e-e7-8e-b0bt-e7-a3-81-e5-8a-9b-e4-b8-8b-e8-bd-bd-ef-bc-8c-e5-b9-b6-e5-9c-a8-e7-ba-bf-e6-9f-a5-e7-9c-8b-e8-a7-82-e7-9c-8b/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux一键安装Aria2+Yaaw+FileManager实现BT磁力下载，并在线查看/观看</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/03/18/e5-a4-9a-e6-9c-8d-e5-8a-a1-e5-99-a8-ef-bc-8c-e4-ba-91-e6-8e-a2-e9-92-88-ef-bc-8c-e4-ba-91-e7-9b-91-e6-8e-a7-ef-bc-9aserverstatus-e7-be-8e-e5-8c-96-e7-89-88-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">多服务器，云探针，云监控：ServerStatus美化版一键安装脚本</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

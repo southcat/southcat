@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>使用PlayTube搭建私人的视频网站 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="使用PlayTube搭建私人的视频网站 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/12/10/e4-bd-bf-e7-94-a8playtube-e6-90-ad-e5-bb-ba-e7-a7-81-e4-ba-ba-e7-9a-84-e8-a7-86-e9-a2-91-e7-bd-91-e7-ab-99/"><meta property="og:locale" content="en"><meta name="description" content="简介PlayTube是一个视频分享程序，它能快速的建立一个视频上传、导入、分享的网站，具有多语言、用户管理、广告管理、视频上传、从youtube和vime等网站导入视频等功能。 截图 功能 上传视频：上传本地视频。 导入视频：非常简单的从YouTube、Dailymotion、和Vimeo等站点批量导入视频，此功能需要对应网站的API。 自动导入视频：设置一些关键词并创建导入任务，轻松从YouTu - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/PlayTube(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/PlayTube(2).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/PlayTube(3).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/PlayTube(4).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/PlayTube(5).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/PlayTube(6).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/PlayTube(7).png"><meta property="article:published_time" content="2019-12-10T07:00:21.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.650Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.650Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/12/10/e4-bd-bf-e7-94-a8playtube-e6-90-ad-e5-bb-ba-e7-a7-81-e4-ba-ba-e7-9a-84-e8-a7-86-e9-a2-91-e7-bd-91-e7-ab-99/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/12/10/e4-bd-bf-e7-94-a8playtube-e6-90-ad-e5-bb-ba-e7-a7-81-e4-ba-ba-e7-9a-84-e8-a7-86-e9-a2-91-e7-bd-91-e7-ab-99/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/12/10/e4-bd-bf-e7-94-a8playtube-e6-90-ad-e5-bb-ba-e7-a7-81-e4-ba-ba-e7-9a-84-e8-a7-86-e9-a2-91-e7-bd-91-e7-ab-99/"
+    },
+    "headline": "使用PlayTube搭建私人的视频网站 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-10T07:00:21.000Z",
+    "dateModified": "2020-04-12T04:09:09.650Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "简介PlayTube是一个视频分享程序，它能快速的建立一个视频上传、导入、分享的网站，具有多语言、用户管理、广告管理、视频上传、从youtube和vime等网站导入视频等功能。 截图 功能 上传视频：上传本地视频。 导入视频：非常简单的从YouTube、Dailymotion、和Vimeo等站点批量导入视频，此功能需要对应网站的API。 自动导入视频：设置一些关键词并创建导入任务，轻松从YouTu - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=使用PlayTube搭建私人的视频网站" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用PlayTube搭建私人的视频网站&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=使用PlayTube搭建私人的视频网站" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADnElEQVR42u3cW46jQBAFUfa/6Z5fC5m8kTVGlaDwT0+7MeYgUZUvzfH3wtchSpQoUaJehzqK17djPt/79u/P38+fOR/zedzV8ee/ldcpStQQ1NWXkpN/+/vVceefnYsm1ylK1CRUdQHn98kDTWHVRdPrESXqySj6UJOFpVokyIIiStRTUfRCE/pqEUgbvyhRT0RVJ6kSwxTgpqSyu7n/JEoXJepmFEnOJvz8WTVJlKgbUbHoHk6aNsurm0cWkNu6HqJE3YhKiRqBkmD2KomsglySSIoSNR1FAOQi6aJAkkdyo0WJmorqFmLIJtxt0NEC6FI1SZSom1GpAfbrB50URMmNjFG6KFGbUOSE1QPbGbqig1grN0mUqImo9OVp462a2fS91EgoFylRooagaIOgE3TSYstqcPyzrocoUTei6IZcNahXAl0yHIKKOaJEDUPRxC0NUXWLnN33UYNAlKhNqJR4VQ0w+mCnc3QD2ssFTZSoAajORpeSNVIUJcFv9Vm8+YoStRm1cpJu04A2CKobXi0eokRNQK0U8auEkAw60mA43ajYyBYlagMqBabdwUPSaFgZrELnFCVqAOoqeSOF/pQ40s+vHFMGtKJEbUalpJAU6Luba7XhkqGTGNCKErUZRYoqpFCSAlOyqNABMFGipqLw5haK+90hR7qY4Ka6KFEDUDSYTYWUznBUJ4kkw12iRE1CkeEOMpiRgk/azF5tmosSNQWVLpwUM9MFdgujVWOuXLBEiRqCIs2tzoBWOmdn+IQE2qJETUOlBI4+rNXG2C3mdJJKUaImoUiQSQJYchPokFb12fJ6RIkagEpFDfrA0iZDTPRAkoo3X1GiNqHIwFXamKuEkQxQkU0/vUSJmoDqJmadYJRsunRxSINZokRNQXWLlelCO8McNGimiaMoURNQKxtfKsLQwg25eXQREiVqOooOcaTjUrOa4klQK0rUFFRn2Gn1gU8NA9L8aw1ciRK1GbUysPG/mzQZHqkKmaJETUSR5I02DrrJYaeBjhYpUaIGoGKQCBeKmMAd7D+VSoPA5WYuStQAVApaScBLmtYpUUxA1KQTJWoIiiRwpAHXKeKQRnr7e0WJGoSiw76dAmdn8ek27WKULkrUA1DVhpqSQlrArILlarMWJepJKPKQrg49ksEPOsgoStQkVHVx1eaZBiCrhabbDIjDkKJEDUGRAaduQbJaKGhQ2ymyihI1BfWmlyhRokSJes3rHy+R04CRfmIqAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">使用PlayTube搭建私人的视频网站</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-10</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用PlayTube搭建私人的视频网站&url=http://yoursite.com/2019/12/10/e4-bd-bf-e7-94-a8playtube-e6-90-ad-e5-bb-ba-e7-a7-81-e4-ba-ba-e7-9a-84-e8-a7-86-e9-a2-91-e7-bd-91-e7-ab-99/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=使用PlayTube搭建私人的视频网站&url=http://yoursite.com/2019/12/10/e4-bd-bf-e7-94-a8playtube-e6-90-ad-e5-bb-ba-e7-a7-81-e4-ba-ba-e7-9a-84-e8-a7-86-e9-a2-91-e7-bd-91-e7-ab-99/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/10/e4-bd-bf-e7-94-a8playtube-e6-90-ad-e5-bb-ba-e7-a7-81-e4-ba-ba-e7-9a-84-e8-a7-86-e9-a2-91-e7-bd-91-e7-ab-99/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/12/10/e4-bd-bf-e7-94-a8playtube-e6-90-ad-e5-bb-ba-e7-a7-81-e4-ba-ba-e7-9a-84-e8-a7-86-e9-a2-91-e7-bd-91-e7-ab-99/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/12/10/e4-bd-bf-e7-94-a8playtube-e6-90-ad-e5-bb-ba-e7-a7-81-e4-ba-ba-e7-9a-84-e8-a7-86-e9-a2-91-e7-bd-91-e7-ab-99/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/12/10/e4-bd-bf-e7-94-a8playtube-e6-90-ad-e5-bb-ba-e7-a7-81-e4-ba-ba-e7-9a-84-e8-a7-86-e9-a2-91-e7-bd-91-e7-ab-99/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/12/10/e4-bd-bf-e7-94-a8playtube-e6-90-ad-e5-bb-ba-e7-a7-81-e4-ba-ba-e7-9a-84-e8-a7-86-e9-a2-91-e7-bd-91-e7-ab-99/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADnElEQVR42u3cW46jQBAFUfa/6Z5fC5m8kTVGlaDwT0+7MeYgUZUvzfH3wtchSpQoUaJehzqK17djPt/79u/P38+fOR/zedzV8ee/ldcpStQQ1NWXkpN/+/vVceefnYsm1ylK1CRUdQHn98kDTWHVRdPrESXqySj6UJOFpVokyIIiStRTUfRCE/pqEUgbvyhRT0RVJ6kSwxTgpqSyu7n/JEoXJepmFEnOJvz8WTVJlKgbUbHoHk6aNsurm0cWkNu6HqJE3YhKiRqBkmD2KomsglySSIoSNR1FAOQi6aJAkkdyo0WJmorqFmLIJtxt0NEC6FI1SZSom1GpAfbrB50URMmNjFG6KFGbUOSE1QPbGbqig1grN0mUqImo9OVp462a2fS91EgoFylRooagaIOgE3TSYstqcPyzrocoUTei6IZcNahXAl0yHIKKOaJEDUPRxC0NUXWLnN33UYNAlKhNqJR4VQ0w+mCnc3QD2ssFTZSoAajORpeSNVIUJcFv9Vm8+YoStRm1cpJu04A2CKobXi0eokRNQK0U8auEkAw60mA43ajYyBYlagMqBabdwUPSaFgZrELnFCVqAOoqeSOF/pQ40s+vHFMGtKJEbUalpJAU6Luba7XhkqGTGNCKErUZRYoqpFCSAlOyqNABMFGipqLw5haK+90hR7qY4Ka6KFEDUDSYTYWUznBUJ4kkw12iRE1CkeEOMpiRgk/azF5tmosSNQWVLpwUM9MFdgujVWOuXLBEiRqCIs2tzoBWOmdn+IQE2qJETUOlBI4+rNXG2C3mdJJKUaImoUiQSQJYchPokFb12fJ6RIkagEpFDfrA0iZDTPRAkoo3X1GiNqHIwFXamKuEkQxQkU0/vUSJmoDqJmadYJRsunRxSINZokRNQXWLlelCO8McNGimiaMoURNQKxtfKsLQwg25eXQREiVqOooOcaTjUrOa4klQK0rUFFRn2Gn1gU8NA9L8aw1ciRK1GbUysPG/mzQZHqkKmaJETUSR5I02DrrJYaeBjhYpUaIGoGKQCBeKmMAd7D+VSoPA5WYuStQAVApaScBLmtYpUUxA1KQTJWoIiiRwpAHXKeKQRnr7e0WJGoSiw76dAmdn8ek27WKULkrUA1DVhpqSQlrArILlarMWJepJKPKQrg49ksEPOsgoStQkVHVx1eaZBiCrhabbDIjDkKJEDUGRAaduQbJaKGhQ2ymyihI1BfWmlyhRokSJes3rHy+R04CRfmIqAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">2.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#功能"><span class="post-toc-number">3.</span> <span class="post-toc-text">功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><code>PlayTube</code>是一个视频分享程序，它能快速的建立一个视频上传、导入、分享的网站，具有多语言、用户管理、广告管理、视频上传、从<code>youtube</code>和<code>vime</code>等网站导入视频等功能。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/PlayTube(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/PlayTube(2).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/PlayTube(3).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/PlayTube(4).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
+<li>上传视频：上传本地视频。</li>
+<li>导入视频：非常简单的从<code>YouTube</code>、<code>Dailymotion</code>、和<code>Vimeo</code>等站点批量导入视频，此功能需要对应网站的<code>API</code>。</li>
+<li>自动导入视频：设置一些关键词并创建导入任务，轻松从<code>YouTube</code>和<code>Dailymotion</code>导入视频到你的网站。</li>
+<li>高性能：<code>PlayTube</code>可以轻松的处理超过<code>1B</code>的视频。</li>
+<li><code>WoWonder</code>登录集成：无缝对接<code>WoWonder</code>社交系统，可以使用社交系统的帐户授权登入。</li>
+<li>喜欢&amp;反感：用户可以对某视频进行喜欢投票。</li>
+<li>评论系统：注册用户可以对视频进行评论。</li>
+<li>订阅、历史、接下来观看：功能也是比较人性化的。</li>
+<li>用户频道：完整的用户展示页。</li>
+<li>广告系统：可以创建视频、页面的广告，一切都在后台的广告设置里。</li>
+<li>站点地图建立：建立站点地图并自动发送到<code>Google/Bing</code>。</li>
+<li><code>SEO</code>友好：搜索引擎优化友好的链接，非常有利于谷歌收录。</li>
+<li>完整的后台：功能完善的后台控制面板。</li>
+<li>漂亮的<code>UI</code>：非常容易修改而且还很漂亮的模板。</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>环境要求：<code>PHP &gt;= 5.5</code>、<code>MySQL</code>、<code>GD Library</code>、<code>mbstring</code>、<code>cURL</code>、<code>allow_url_fopen</code>。</p>
+<p>这里使用宝塔面板做演示，如果你有基础的话，也可以使用其它面板或者<code>lnmp</code>一键包。</p>
+<p><strong>1、安装宝塔</strong></p>
+<pre><code>#Centos系统
+yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh
+#Ubuntu系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; sudo bash install.sh
+#Debian系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; bash install.sh</code></pre><p>安装完成后，进入面板安装<code>PHP</code>、<code>Mysql</code>、<code>Nginx</code>、<code>phpmyadmin</code>。</p>
+<p><strong>2、安装程序</strong><br>添加域名，然后下载程序源码，并将程序上传到网站根目录解压，源码下载：</p>
+<pre><code>#v1.4.1完整源码
+https://www.moerats.com/usr/down/Playtube/playtube-v1.4.1-full.zip
+#增量包，升级时需要一个一个挨着解压覆盖
+https://www.moerats.com/usr/down/Playtube/playtube-v1.4.2-update.zip
+https://www.moerats.com/usr/down/Playtube/playtube-v1.4.3-update.zip
+https://www.moerats.com/usr/down/Playtube/playtube-v1.4.5-update.zip
+https://www.moerats.com/usr/down/Playtube/playtube-v1.4.5.1-update.zip
+https://www.moerats.com/usr/down/Playtube/playtube-v1.5-update.zip
+https://www.moerats.com/usr/down/Playtube/playtube-v1.5.1-update.zip
+https://www.moerats.com/usr/down/Playtube/playtube-v1.6-update.zip
+#语言包
+https://www.moerats.com/usr/down/Playtube/lang1.4.1-v1.4.2-cn.zip
+
+#升级方法，比如v1.4.1升级到v1.4.2
+将v1.4.2增量包上传至根目录，解压并直接替换根目录文件，再访问http://xx.com/update.php进行更新即可。
+
+#v1.4.5.1开心完整版源码
+https://www.moerats.com/usr/down/Playtube/playtube-v1.4.5.1-nulled.zip
+
+#v1.6开心完整版源码，安装的时候购买代码和其他版本不一样，V1.6购买代码为：顶点网破解
+https://www.moerats.com/usr/down/Playtube/playtube-v1.6-nulled.zip</code></pre><p>再添加<code>Nginx</code>伪静态：</p>
+<pre><code>if (!-f $request_filename){
+    set $rule_0 1$rule_0;
+}
+if (!-d $request_filename){
+    set $rule_0 2$rule_0;
+}
+if ($rule_0 = &quot;21&quot;){
+    rewrite ^/$ /index.php?link1=home ;
+}
+rewrite ^/$ /index.php?link1=home ;
+rewrite ^/reset-password/([^/]+)(/|)$ /index.php?link1=reset-password&amp;code=$1 ;
+rewrite ^/confirm/(.*)/(.*)$ /index.php?link1=confirm&amp;code=$1&amp;email=$2 ;
+rewrite ^/api/v(([0-9])([.][0-9]+))(/|)$ /api.php?v=$1 ;
+rewrite ^/admin-cp$ /admincp.php ;
+rewrite ^/admin-cp/(.*)$ /admincp.php?page=$1 ;
+rewrite ^/admin-cdn/(.*)$ /admin-panel/$1 last;
+rewrite ^/videos/category/(.*)/rss(/|)$ /index.php?link1=videos&amp;page=category&amp;id=$1&amp;feed=rss ;
+rewrite ^/videos/category/(.*)$ /index.php?link1=videos&amp;page=category&amp;id=$1 ;
+rewrite ^/videos/(.*)/rss(/|)$ /index.php?link1=videos&amp;page=$1&amp;feed=rss ;
+rewrite ^/videos/(.*)$ /index.php?link1=videos&amp;page=$1 ;
+rewrite ^/articles(/|)$ /index.php?link1=articles ;
+rewrite ^/articles/category/(.*)$ /index.php?link1=articles&amp;category_id=$1 ;
+rewrite ^/articles/read/(.*)$ /index.php?link1=read&amp;id=$1 ;
+if (!-f $request_filename){
+    set $rule_14 1$rule_14;
+}
+if (!-d $request_filename){
+    set $rule_14 2$rule_14;
+}
+if ($rule_14 = &quot;21&quot;){
+    rewrite ^/aj/([^/.]+)/?$ /ajax.php?type=$1&amp;first=$2 last;
+}
+rewrite ^/aj/([^/.]+)/([^/.]+)/?$ /ajax.php?type=$1&amp;first=$2 last;
+rewrite ^/aj/([^/.]+)/([^/.]+)/([^/.]+)/?$ /ajax.php?type=$1&amp;first=$2&amp;second=$3 last;
+rewrite ^/edit-video/(.*)?$ /index.php?link1=edit-video&amp;id=$1 last;
+rewrite ^/watch/([^/]+)(/|)?$ /index.php?link1=watch&amp;id=$1 last;
+rewrite ^/watch/([^/]+)/list/([^/]+)(/|)?$ /index.php?link1=watch&amp;id=$1&amp;list=$2 last;
+rewrite ^/embed/(.*)?$ /index.php?link1=embed&amp;id=$1 last;
+rewrite ^/resend/(.*)/(.*)?$ /index.php?link1=resend&amp;id=$1&amp;u_id=$2 last;
+rewrite ^/redirect/(.*)?$ /index.php?link1=redirect&amp;id=$1 last;
+rewrite ^/settings/(.*)/(.*)$ /index.php?link1=settings&amp;page=$1&amp;user=$2 ;
+rewrite ^/settings/(.*)$ /index.php?link1=settings&amp;page=$1 ;
+rewrite ^/terms/([^/]+)(/|)$ /index.php?link1=terms&amp;type=$1 ;
+rewrite ^/go_pro(/|)$ /index.php?link1=go_pro ;
+rewrite ^/ads(/|)$ /index.php?link1=ads ;
+rewrite ^/ads/create(/|)$ /index.php?link1=create_ads ;
+rewrite ^/ads/edit/(d+)(/|)$ /index.php?link1=edit_ads&amp;id=$1 ;
+rewrite ^/contact-us(/|)$ /index.php?link1=contact ;
+rewrite ^/@([^/]+)(/|)$ /index.php?link1=timeline&amp;id=$1 ;
+rewrite ^/messages/(.*)$ /index.php?link1=messages&amp;id=$1 ;
+if (!-f $request_filename){
+    set $rule_33 1$rule_33;
+}
+if (!-d $request_filename){
+    set $rule_33 2$rule_33;
+}
+if ($rule_33 = &quot;21&quot;){
+    rewrite ^/([^/]+)(/|)$ /index.php?link1=$1 ;
+}</code></pre><p>最后打开域名进行安装配置，授权码：<code>nulled-by-reishi</code>，直接使用<code>v1.4.5.1</code>完整版的可能不需要授权。<br><img src="https://www.moerats.com/usr/picture/PlayTube(5).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/PlayTube(6).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/PlayTube(7).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p><strong>3、中文设置</strong><br>我们通过<code>phpmyadmin</code>进入到数据库，找到<code>PlayTube</code>所使用数据库，删除<code>langs.sql</code>，再将语言包的<code>langs.sql</code>文件导入到数据库即可。</p>
+<p>然后刷新网站会看到有右下角语言有<code>中文</code>的，如果选择<code>中文</code>后，分类显示不出来，可能是分类语言乱码，这时候我们去根目录<code>assets/langs</code>，将乱码的语言文件改成<code>中文.php</code>即可。</p>
+<p><strong>4、安装ffmpeg</strong><br>要使用程序完整的功能，我们还需要安装<code>ffmpeg</code>。安装参考：使用静态ffmpeg二进制文件秒安装ffmpeg。</p>
+<p>再打开宝塔，点击左侧软件管理-<code>PHP</code>设置-禁用函数-删除<code>shell_exec</code>。最后在后台设置<code>FFmpeg</code>二进制文件路径为<code>/usr/bin/ffmpeg</code>。</p>
+<p><strong>5、更多设置</strong></p>
+<pre><code>#视频分类设置
+网站目录./assets/langs/中文.php修改。
+#编辑样式表
+./themes/default/css，主样式文件是style.css
+#添加自己的代码
+想在head、body、footer标签中添加自己的代码，请在./themes/default/layout/container.html修改</code></pre><p>差不多到这里就算安装完成了，然后更多功能自行研究吧。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-10T07:00:21.000Z" itemprop="datePublished">2019-12-10</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.650Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/10/ipinfo-ef-bc-9a-e4-b8-80-e6-ac-be-e6-95-b4-e5-90-88-e4-ba-86-e5-a4-9a-e6-8e-a5-e5-8f-a3-e7-9a-84ip-e5-9c-b0-e5-9d-80-e6-9f-a5-e8-af-a2-e5-b7-a5-e5-85-b7/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">IPinfo：一款整合了多接口的IP地址查询工具</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/10/password-ef-bc-9a-e4-b8-80-e4-b8-aa-e7-ae-80-e5-8d-95-e7-9a-84-e8-ae-b0-e5-bd-95-e5-92-8c-e7-ae-a1-e7-90-86-e5-a4-9a-e4-b8-aa-e8-b4-a6-e5-8f-b7-e5-af-86-e7-a0-81-e7-9a-84-e5-b7-a5-e5-85-b7/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">PassWord：一个简单的记录和管理多个账号密码的工具</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

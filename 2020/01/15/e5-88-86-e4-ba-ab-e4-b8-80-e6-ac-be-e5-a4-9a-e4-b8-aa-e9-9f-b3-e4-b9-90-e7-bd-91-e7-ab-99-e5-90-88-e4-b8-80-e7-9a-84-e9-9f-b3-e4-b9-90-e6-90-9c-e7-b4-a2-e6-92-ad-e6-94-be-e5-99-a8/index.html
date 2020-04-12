@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>分享一款多个音乐网站合一的音乐搜索播放器 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="分享一款多个音乐网站合一的音乐搜索播放器 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/01/15/e5-88-86-e4-ba-ab-e4-b8-80-e6-ac-be-e5-a4-9a-e4-b8-aa-e9-9f-b3-e4-b9-90-e7-bd-91-e7-ab-99-e5-90-88-e4-b8-80-e7-9a-84-e9-9f-b3-e4-b9-90-e6-90-9c-e7-b4-a2-e6-92-ad-e6-94-be-e5-99-a8/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前分享过一款很漂亮的音乐播放器源码，查看：MKOnlineMusicPlayer：一款开源的基于Meting的在线音乐播放器，现在再分享个，支持的音乐网站更广，就是界面没前者好看，有兴趣的可以用用。 简介麦葱特制多站合一音乐搜索解决方案，支持搜索试听以下网站音乐： 网易云音乐 QQ音乐 酷狗音乐 酷我音乐 虾米音乐 百度音乐 一听音乐 咪咕音乐 荔枝FM 蜻蜓FM 喜马拉雅FM 全民K歌  - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/all_music(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/all_music(2).png"><meta property="article:published_time" content="2020-01-15T05:36:56.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.653Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.653Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/01/15/e5-88-86-e4-ba-ab-e4-b8-80-e6-ac-be-e5-a4-9a-e4-b8-aa-e9-9f-b3-e4-b9-90-e7-bd-91-e7-ab-99-e5-90-88-e4-b8-80-e7-9a-84-e9-9f-b3-e4-b9-90-e6-90-9c-e7-b4-a2-e6-92-ad-e6-94-be-e5-99-a8/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/01/15/e5-88-86-e4-ba-ab-e4-b8-80-e6-ac-be-e5-a4-9a-e4-b8-aa-e9-9f-b3-e4-b9-90-e7-bd-91-e7-ab-99-e5-90-88-e4-b8-80-e7-9a-84-e9-9f-b3-e4-b9-90-e6-90-9c-e7-b4-a2-e6-92-ad-e6-94-be-e5-99-a8/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/01/15/e5-88-86-e4-ba-ab-e4-b8-80-e6-ac-be-e5-a4-9a-e4-b8-aa-e9-9f-b3-e4-b9-90-e7-bd-91-e7-ab-99-e5-90-88-e4-b8-80-e7-9a-84-e9-9f-b3-e4-b9-90-e6-90-9c-e7-b4-a2-e6-92-ad-e6-94-be-e5-99-a8/"
+    },
+    "headline": "分享一款多个音乐网站合一的音乐搜索播放器 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-01-15T05:36:56.000Z",
+    "dateModified": "2020-04-12T04:09:09.653Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：之前分享过一款很漂亮的音乐播放器源码，查看：MKOnlineMusicPlayer：一款开源的基于Meting的在线音乐播放器，现在再分享个，支持的音乐网站更广，就是界面没前者好看，有兴趣的可以用用。 简介麦葱特制多站合一音乐搜索解决方案，支持搜索试听以下网站音乐： 网易云音乐 QQ音乐 酷狗音乐 酷我音乐 虾米音乐 百度音乐 一听音乐 咪咕音乐 荔枝FM 蜻蜓FM 喜马拉雅FM 全民K歌  - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=分享一款多个音乐网站合一的音乐搜索播放器" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=分享一款多个音乐网站合一的音乐搜索播放器&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=分享一款多个音乐网站合一的音乐搜索播放器" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEgklEQVR42u3cS27cQBAE0bn/pe2tLQwrI5vakBXaWAYksl8PXKgf/Pmz8OsjWrRo0aJFPwz9Gb7++4V//v7t56bvfz7j6l1X757e3zhEi96C/vqP/uLF06V8w37Dp8v7eXFXZ/t2oeNliRa9CH368ingTc+9ev8U6KaLTw7RokVfH/LqIOkiaBIyQVMgEy1aNEMnSCoKaFHTJkuiRYvuCg4KScXEFBCnC6EJ069WWaJFPxydXvqUP3+tGypa9IPRceg1BJYp+KVgd3XYKVmhQfT21FK06AejaTMuNf+mwR1JVuhwMF3ImDCJFr0ATYZsU8MuDeTT9ydDPjJwGJsIokW/HE2bCASamnSpkXjSCMTJjmjRC9AnC28kmJDAmBp/pLlBPwjRoreg7xyONN7Jkm16Xht0LwOnaNFL0GR5hQ7uCYwEsLawQB+AaNFL0CmgnA7N7yzXngzy4yWJFr0YTZKN9tCkKEgNgZNlPdGiN6Gn4EULADqEbwNae4Z6KC9a9AJ0avCTwflUlEzJS3Ox7VBAtOgtaFL80yW2ZsHupKlPm4B40Ua06JejaQFAA1JacGsGeWTIH5d2RItehG6H8M1ltQUHaRrS5EW06M3otkF49eK2qdA0E1NgHX9PtOglaBqgaGJAG/B3hvnNsq1o0dvQdMhO4XSZ7s6gnjQjRIveik5NupODNwM8Ojxogl1s9osW/VI0OVzTvJsSiHb43i7upAsRLXobug1maVhAl2pJoCNFTGwqiBa9AE2KeRJcpoWdtLBOgxwJblMAFS16Czo17cgA4M7P0aVckoRMlyJa9AY0Kf7pEG9KEFJhc7ewQOcVLXoBmhQdbVJyUsiQgEgKmGrCIVr0S9E0QE3De9JUbBp+qenYFCaiRW9CN4k8PRxZeK2a9AOcNjxEi96CbgMWbaxPAXIKcikxOWkmiha9DT0NyMjLSZJyuthDl32mD0m06G3ok4FduiTSXCCNw3bpbrxo0aIXoekQjQailJjQpkFKeOizRYvehE5JRpMoTI06mrDQBkVThIgWvQ09BSoS0EhBkYZxJGlBAYtOLUWLfjH6NMDQATzB0oF7Crq3t4BFi34wmh6gGaKThiN5Bi4kQsAULXoTekok2qDUNg+ucE2RUjUMRYtegG4XYtIAnQ4DyYLedClt81C06E1oerAp6KRhXztsS8GOLPHEjUHRol+MpqB2YY4MBsjzaXIyNilEi16EJgUHTUKa4oM0CumQMA0LRIvegk6LNi0eDdPg0k67mIsGeKJFvxxNUFPzrsE3i2+nzcjL54kWvQBNinfacE9FAAlS5BKbQCtatOjrJAA31UFRcPLMNhkap5aiRb8UfRJkSIOBJDOkMUAD3tTUFC16G7odnKVFl2Z4Pw3m0hCwLmBEi16EJk02MlBvDkySj2kIQBbhRYsW3f2n5mQITxv6pFmQgm+VnIgWLRofhCzHt4N9msiIFi16Dk7TAswUvFITgDYY0oeQkhzRorehSdKeBuAJni6ZFjFkIIEKDtGiX4re9CVatGjRokU/5OsvZ9NS7eJh7u8AAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">分享一款多个音乐网站合一的音乐搜索播放器</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-01-15</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=分享一款多个音乐网站合一的音乐搜索播放器&url=http://yoursite.com/2020/01/15/e5-88-86-e4-ba-ab-e4-b8-80-e6-ac-be-e5-a4-9a-e4-b8-aa-e9-9f-b3-e4-b9-90-e7-bd-91-e7-ab-99-e5-90-88-e4-b8-80-e7-9a-84-e9-9f-b3-e4-b9-90-e6-90-9c-e7-b4-a2-e6-92-ad-e6-94-be-e5-99-a8/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=分享一款多个音乐网站合一的音乐搜索播放器&url=http://yoursite.com/2020/01/15/e5-88-86-e4-ba-ab-e4-b8-80-e6-ac-be-e5-a4-9a-e4-b8-aa-e9-9f-b3-e4-b9-90-e7-bd-91-e7-ab-99-e5-90-88-e4-b8-80-e7-9a-84-e9-9f-b3-e4-b9-90-e6-90-9c-e7-b4-a2-e6-92-ad-e6-94-be-e5-99-a8/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/01/15/e5-88-86-e4-ba-ab-e4-b8-80-e6-ac-be-e5-a4-9a-e4-b8-aa-e9-9f-b3-e4-b9-90-e7-bd-91-e7-ab-99-e5-90-88-e4-b8-80-e7-9a-84-e9-9f-b3-e4-b9-90-e6-90-9c-e7-b4-a2-e6-92-ad-e6-94-be-e5-99-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/01/15/e5-88-86-e4-ba-ab-e4-b8-80-e6-ac-be-e5-a4-9a-e4-b8-aa-e9-9f-b3-e4-b9-90-e7-bd-91-e7-ab-99-e5-90-88-e4-b8-80-e7-9a-84-e9-9f-b3-e4-b9-90-e6-90-9c-e7-b4-a2-e6-92-ad-e6-94-be-e5-99-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/01/15/e5-88-86-e4-ba-ab-e4-b8-80-e6-ac-be-e5-a4-9a-e4-b8-aa-e9-9f-b3-e4-b9-90-e7-bd-91-e7-ab-99-e5-90-88-e4-b8-80-e7-9a-84-e9-9f-b3-e4-b9-90-e6-90-9c-e7-b4-a2-e6-92-ad-e6-94-be-e5-99-a8/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/01/15/e5-88-86-e4-ba-ab-e4-b8-80-e6-ac-be-e5-a4-9a-e4-b8-aa-e9-9f-b3-e4-b9-90-e7-bd-91-e7-ab-99-e5-90-88-e4-b8-80-e7-9a-84-e9-9f-b3-e4-b9-90-e6-90-9c-e7-b4-a2-e6-92-ad-e6-94-be-e5-99-a8/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/01/15/e5-88-86-e4-ba-ab-e4-b8-80-e6-ac-be-e5-a4-9a-e4-b8-aa-e9-9f-b3-e4-b9-90-e7-bd-91-e7-ab-99-e5-90-88-e4-b8-80-e7-9a-84-e9-9f-b3-e4-b9-90-e6-90-9c-e7-b4-a2-e6-92-ad-e6-94-be-e5-99-a8/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEgklEQVR42u3cS27cQBAE0bn/pe2tLQwrI5vakBXaWAYksl8PXKgf/Pmz8OsjWrRo0aJFPwz9Gb7++4V//v7t56bvfz7j6l1X757e3zhEi96C/vqP/uLF06V8w37Dp8v7eXFXZ/t2oeNliRa9CH368ingTc+9ev8U6KaLTw7RokVfH/LqIOkiaBIyQVMgEy1aNEMnSCoKaFHTJkuiRYvuCg4KScXEFBCnC6EJ069WWaJFPxydXvqUP3+tGypa9IPRceg1BJYp+KVgd3XYKVmhQfT21FK06AejaTMuNf+mwR1JVuhwMF3ImDCJFr0ATYZsU8MuDeTT9ydDPjJwGJsIokW/HE2bCASamnSpkXjSCMTJjmjRC9AnC28kmJDAmBp/pLlBPwjRoreg7xyONN7Jkm16Xht0LwOnaNFL0GR5hQ7uCYwEsLawQB+AaNFL0CmgnA7N7yzXngzy4yWJFr0YTZKN9tCkKEgNgZNlPdGiN6Gn4EULADqEbwNae4Z6KC9a9AJ0avCTwflUlEzJS3Ox7VBAtOgtaFL80yW2ZsHupKlPm4B40Ua06JejaQFAA1JacGsGeWTIH5d2RItehG6H8M1ltQUHaRrS5EW06M3otkF49eK2qdA0E1NgHX9PtOglaBqgaGJAG/B3hvnNsq1o0dvQdMhO4XSZ7s6gnjQjRIveik5NupODNwM8Ojxogl1s9osW/VI0OVzTvJsSiHb43i7upAsRLXobug1maVhAl2pJoCNFTGwqiBa9AE2KeRJcpoWdtLBOgxwJblMAFS16Czo17cgA4M7P0aVckoRMlyJa9AY0Kf7pEG9KEFJhc7ewQOcVLXoBmhQdbVJyUsiQgEgKmGrCIVr0S9E0QE3De9JUbBp+qenYFCaiRW9CN4k8PRxZeK2a9AOcNjxEi96CbgMWbaxPAXIKcikxOWkmiha9DT0NyMjLSZJyuthDl32mD0m06G3ok4FduiTSXCCNw3bpbrxo0aIXoekQjQailJjQpkFKeOizRYvehE5JRpMoTI06mrDQBkVThIgWvQ09BSoS0EhBkYZxJGlBAYtOLUWLfjH6NMDQATzB0oF7Crq3t4BFi34wmh6gGaKThiN5Bi4kQsAULXoTekok2qDUNg+ucE2RUjUMRYtegG4XYtIAnQ4DyYLedClt81C06E1oerAp6KRhXztsS8GOLPHEjUHRol+MpqB2YY4MBsjzaXIyNilEi16EJgUHTUKa4oM0CumQMA0LRIvegk6LNi0eDdPg0k67mIsGeKJFvxxNUFPzrsE3i2+nzcjL54kWvQBNinfacE9FAAlS5BKbQCtatOjrJAA31UFRcPLMNhkap5aiRb8UfRJkSIOBJDOkMUAD3tTUFC16G7odnKVFl2Z4Pw3m0hCwLmBEi16EJk02MlBvDkySj2kIQBbhRYsW3f2n5mQITxv6pFmQgm+VnIgWLRofhCzHt4N9msiIFi16Dk7TAswUvFITgDYY0oeQkhzRorehSdKeBuAJni6ZFjFkIIEKDtGiX4re9CVatGjRokU/5OsvZ9NS7eJh7u8AAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#相关链接"><span class="post-toc-number">2.</span> <span class="post-toc-text">相关链接</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#界面截图"><span class="post-toc-number">3.</span> <span class="post-toc-text">界面截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常见问题"><span class="post-toc-number">4.</span> <span class="post-toc-text">常见问题</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>之前分享过一款很漂亮的音乐播放器源码，查看：MKOnlineMusicPlayer：一款开源的基于Meting的在线音乐播放器，现在再分享个，支持的音乐网站更广，就是界面没前者好看，有兴趣的可以用用。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>麦葱特制多站合一音乐搜索解决方案，支持搜索试听以下网站音乐：</p>
+<pre><code>网易云音乐 QQ音乐 酷狗音乐 酷我音乐 虾米音乐 百度音乐 一听音乐 咪咕音乐 荔枝FM 蜻蜓FM 喜马拉雅FM 全民K歌 5sing原创 5sing翻唱</code></pre><p>数据调用的是各网站的<code>API</code>接口，有的接口并不是开放的，随时可能失效，本项目相关代码仅供参考。</p>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p><strong>在线演示：</strong><a href="http://music.2333.me/" target="_blank" rel="noopener">http://music.2333.me/</a><br><strong>GitHub地址：</strong><a href="https://github.com/maicong/music" target="_blank" rel="noopener">https://github.com/maicong/music</a><br><strong>下载地址：</strong>开发版、稳定版<br><strong>更新日志：</strong>CHANGELOG.md</p>
+<h2 id="界面截图"><a href="#界面截图" class="headerlink" title="界面截图"></a>界面截图</h2><p><img src="https://www.moerats.com/usr/picture/all_music(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/all_music(2).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p><strong>1、提示数据获取失败</strong></p>
+<pre><code>#方案1
+修改index.php文件里的MC_PROXY为您的代理地址。
+将core/music.php里需要代理的URL &apos;proxy&apos;=&gt;false改为&apos;proxy&apos; =&gt; true。
+
+#方案2
+在core/music.php里查找setTimeout，将其后面的数值20改为更大。
+在static/js/music.js里查找timeout，将其数值30000改为更大。
+
+#方案3
+服务器要支持curl。
+更换服务器，选择延迟更低的服务器。
+
+
+#音乐链接为空
+1、音乐需要付费才能收听。
+2、版权限制，外站无法获取。
+3、服务器IP所在地不在源站允许的区域。
+4、音乐下架了，链接被去除。
+
+#音乐链接不为空
+1、当前IP所在地因版权限制而无法播放。
+2、音乐格式浏览器无法正常解析。</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-01-15T05:36:56.000Z" itemprop="datePublished">2020-01-15</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.653Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/01/15/linux-vps-e5-88-a9-e7-94-a8iptables-string-e6-a8-a1-e5-9d-97-e5-b1-8f-e8-94-bd-e6-8c-87-e5-ae-9a-e7-9a-84-e7-bd-91-e7-ab-99-e3-80-81-e6-96-87-e4-bb-b6-e7-ad-89/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux VPS利用iptables string模块屏蔽指定的网站、文件等</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/01/15/debian-e7-b3-bb-e7-bb-9f-e7-8e-af-e5-a2-83-e7-b2-be-e7-ae-80-e4-bc-98-e5-8c-96/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Debian系统环境精简优化</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

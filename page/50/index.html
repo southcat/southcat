@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="website"><meta property="og:url" content="http://yoursite.com/page/50/"><meta property="og:locale" content="en"><meta name="description" content="John Doe - 南猫">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/page/50/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Blog",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    "url": "http://yoursite.com",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "John Doe - 南猫"
+}
+</script>
+
+
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABgUlEQVR42u3a0Q6CMAyFYd7/pfXW4NpzOgy05udGorB9Jg1rO45Xg+MAAQLECMSRHJ+/n8+/Bjx9r8YF0RvhDhpd94msjAuiN2IVkOHNi3ui67NxQcxEZJM4aBD/icgWMhD/i4gWGico1WJ2eRUFcTtCJbq7nz/NtkHchpBFazTA6TwKxJ9U5SBuRTgLz2pCp4iWeBBtEdGF0UKVFcWXOzUg2iBUUhsFp0qC0sIaxCiESlCy4FPBCqI/ovSAMYoep/kGoi9i9bBxE9/KZksamCDaIiqNc4VShTWIvogsWXGbp5U/AGIGQiWyu8mMbMKDaItwQZUGmZMQgeiJcBojTqBmyZHciAPRFrEKOmfD1il8yokuiMcQ1Y36LNlVi5vdYAfxKMJdiJwHl1ssgeiNcDfss6bZTmEMojdCvYDjJDLuyz4g5iCsRlfSCNlpzoOYidhJYKNCSDZJQIxBZJOr83QzH0RrhJrg6qYMiFkIN9F1XgArFdIgWiKePECAANEa8Qbu8ZqK7lO1/QAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            <div class="container">
+    <div class="main-container">
+        <main>
+            <div class="post-stream-container">
+                <!-- # Post List # -->
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/11/29/e5-8d-9a-e5-ae-a2-e5-b7-b2-e6-90-ac-e5-88-b0impactvps-ef-bc-8c-e9-a1-ba-e4-be-bf-e8-af-b4-e4-b8-8b-e7-bd-91-e7-ab-99-e5-bf-ab-e9-80-9f-e6-90-ac-e5-ae-b6-e7-9a-84-e6-96-b9-e6-b3-95/" rel="bookmark">博客已搬到ImpactVPS，顺便说下网站快速搬家的方法</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：之前博客是放在Vultr日本服务器上，不过由于网络等一些因素，不少人反馈需要FQ才能访问，为了尽量减少这种情况，只能选择搬家了，刚好手上...
+    <a href="/2019/11/29/e5-8d-9a-e5-ae-a2-e5-b7-b2-e6-90-ac-e5-88-b0impactvps-ef-bc-8c-e9-a1-ba-e4-be-bf-e8-af-b4-e4-b8-8b-e7-bd-91-e7-ab-99-e5-bf-ab-e9-80-9f-e6-90-ac-e5-ae-b6-e7-9a-84-e6-96-b9-e6-b3-95/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-11-29</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/11/29/sc-private-letter-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-9f-ba-e4-ba-8eserverchan-e5-be-ae-e4-bf-a1-e6-8e-a8-e9-80-81-e6-9c-8d-e5-8a-a1-e7-9a-84-e7-a7-81-e4-bf-a1-e5-8f-91-e9-80-81-e7-ab-99/" rel="bookmark">SC private letter： 一个基于serverchan微信推送服务的私信发送站</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：对于我们很多有博客的人来说，都需要一个能让访客即时联系到的功能，而友链博主Tsuk1ko花时N天打造了这么一款工具SC pr...
+    <a href="/2019/11/29/sc-private-letter-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-9f-ba-e4-ba-8eserverchan-e5-be-ae-e4-bf-a1-e6-8e-a8-e9-80-81-e6-9c-8d-e5-8a-a1-e7-9a-84-e7-a7-81-e4-bf-a1-e5-8f-91-e9-80-81-e7-ab-99/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-11-29</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/11/28/e4-b8-80-e6-ac-be-e5-b0-8f-e5-b7-a7-e4-b8-94-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-8f-91-e5-8d-a1-e7-b3-bb-e7-bb-9f-ef-bc-9a-e4-ba-91-e5-b0-9a-e5-8f-91-e5-8d-a1-e7-b3-bb-e7-bb-9f/" rel="bookmark">一款小巧且功能强大的发卡系统：云尚发卡系统</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        前言本发卡系统由hostloc大佬codeas...
+    <a href="/2019/11/28/e4-b8-80-e6-ac-be-e5-b0-8f-e5-b7-a7-e4-b8-94-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-8f-91-e5-8d-a1-e7-b3-bb-e7-bb-9f-ef-bc-9a-e4-ba-91-e5-b0-9a-e5-8f-91-e5-8d-a1-e7-b3-bb-e7-bb-9f/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-11-28</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/11/28/openvz-e5-b9-b3-e5-8f-b0-e9-ad-94-e6-94-b9bbr-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-e4-b9-8brinetd-e6-96-b9-e5-bc-8f/" rel="bookmark">OpenVZ平台魔改BBR一键脚本之Rinetd方式</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：Rinetd就是另外一种lkl bbr，好处是不需要开启TUN/TAP，对于后台没有或者找不到这个模块的，刚好...
+    <a href="/2019/11/28/openvz-e5-b9-b3-e5-8f-b0-e9-ad-94-e6-94-b9bbr-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-e4-b9-8brinetd-e6-96-b9-e5-bc-8f/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-11-28</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/11/28/e5-8f-b3-e4-b8-8b-e8-a7-92-e6-b5-8f-e8-a7-88-e5-99-a8-ef-bc-9a-e5-8f-af-e4-bc-aa-e8-a3-85-e6-88-90-e5-bc-b9-e7-aa-97-e5-b9-bf-e5-91-8a-e7-9a-84-e6-b5-8f-e8-a7-88-e5-99-a8-ef-bc-8c-e5-ad-a6-e7-94-9f/" rel="bookmark">右下角浏览器：可伪装成弹窗广告的浏览器，学生和上班族必备</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：有很多学生在在机房学知识的时候，上班的在电脑前做正事的时候，都喜欢偷点懒，喜欢刷贴吧，百度，微博等等，却又怕被老师或者领导发现，一直提心吊胆，不过这个浏览器的出现可以很好的解决这个问题。使...
+    <a href="/2019/11/28/e5-8f-b3-e4-b8-8b-e8-a7-92-e6-b5-8f-e8-a7-88-e5-99-a8-ef-bc-9a-e5-8f-af-e4-bc-aa-e8-a3-85-e6-88-90-e5-bc-b9-e7-aa-97-e5-b9-bf-e5-91-8a-e7-9a-84-e6-b5-8f-e8-a7-88-e5-99-a8-ef-bc-8c-e5-ad-a6-e7-94-9f/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-11-28</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/11/28/e4-bd-bf-e7-94-a8searx-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e7-a7-81-e4-ba-ba-e7-9a-84-e6-90-9c-e7-b4-a2-e5-bc-95-e6-93-8e-e5-b9-b3-e5-8f-b0-ef-bc-8c-e5-8f-af-e5-b1-95-e7-8e-b0google-bing-e7-ad-8970/" rel="bookmark">使用Searx搭建一个私人的搜索引擎平台，可展现Google/Bing等70多种搜索网站的搜索结果</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：现在百毒各种犀利操作导致很多人都转向了谷歌，不过由于谷歌在国内被墙，对一些人来说访问起来是有点困难的，除了挂梯子以外，反代谷歌也可以，很久前就发过这种教程→传送门，不过最近找到了个好项目
+    <a href="/2019/11/28/e4-bd-bf-e7-94-a8searx-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e7-a7-81-e4-ba-ba-e7-9a-84-e6-90-9c-e7-b4-a2-e5-bc-95-e6-93-8e-e5-b9-b3-e5-8f-b0-ef-bc-8c-e5-8f-af-e5-b1-95-e7-8e-b0google-bing-e7-ad-8970/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-11-28</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/11/28/e4-bd-bf-e7-94-a8avs-e6-90-ad-e5-bb-ba-e6-88-91-e4-bb-ac-e7-9a-84-e8-a7-86-e9-a2-91-e7-85-a7-e7-89-87-e6-b8-b8-e6-88-8f-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0/" rel="bookmark">使用AVS搭建我们的视频/照片/游戏分享平台</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        简介AVS在线视频上传分享脚本是一个老牌的国外视频CMS
+    <a href="/2019/11/28/e4-bd-bf-e7-94-a8avs-e6-90-ad-e5-bb-ba-e6-88-91-e4-bb-ac-e7-9a-84-e8-a7-86-e9-a2-91-e7-85-a7-e7-89-87-e6-b8-b8-e6-88-8f-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-11-28</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/11/28/smartping-ef-bc-9a-e4-b8-80-e4-b8-aa-e6-9c-8d-e5-8a-a1-e5-99-a8ping-e5-80-bc-e7-9b-91-e6-b5-8b-e5-b7-a5-e5-85-b7-ef-bc-8c-e5-b8-a6-e6-8a-a5-e8-ad-a6-e5-8a-9f-e8-83-bd/" rel="bookmark">SmartPing：一个服务器Ping值监测工具，带报警功能</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：之前博主发过一个雨落大神写的Ping值监测工具uPing，不过有点单一，也缺少Web界面，今天再分享个SmartPing
+    <a href="/2019/11/28/smartping-ef-bc-9a-e4-b8-80-e4-b8-aa-e6-9c-8d-e5-8a-a1-e5-99-a8ping-e5-80-bc-e7-9b-91-e6-b5-8b-e5-b7-a5-e5-85-b7-ef-bc-8c-e5-b8-a6-e6-8a-a5-e8-ad-a6-e5-8a-9f-e8-83-bd/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-11-28</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/11/28/debian-9-ubuntu-17-e6-b7-bb-e5-8a-a0rc-local-e5-bc-80-e6-9c-ba-e8-87-aa-e5-90-af-e7-9a-84-e6-96-b9-e6-b3-95/" rel="bookmark">Debian 9/Ubuntu 17+添加rc.local开机自启的方法</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：很多时候有些程序或者脚本都需要添加开机自启，最简单的方法就是使用rc.local自启，不过由于系统版本更替，很多新版本系统都没有rc.local
+    <a href="/2019/11/28/debian-9-ubuntu-17-e6-b7-bb-e5-8a-a0rc-local-e5-bc-80-e6-9c-ba-e8-87-aa-e5-90-af-e7-9a-84-e6-96-b9-e6-b3-95/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-11-28</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/11/27/e5-87-ba-e7-8e-b0command-gcc-failed-with-exit-status-1-e9-94-99-e8-af-af-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9-e6-b3-95/" rel="bookmark">出现"command 'gcc' failed with exit status 1"错误的解决方法</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：今天在安装Python库软件的时候遇到&quot;command &#39;gcc&#39; failed with exit status 1&qu...
+    <a href="/2019/11/27/e5-87-ba-e7-8e-b0command-gcc-failed-with-exit-status-1-e9-94-99-e8-af-af-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9-e6-b3-95/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-11-27</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+            </div>
+        </main>
+        
+<nav>
+<ul class="pagination">
+    
+        <li class="page-item page-prev">
+            <a href="/page/49/" rel="prev">
+                <span class="page-item-subtitle"><i class="icon icon-back" aria-hidden="true"></i></span>
+                <span class="page-item-title">Previous</span>
+            </a>
+        </li>
+    
+    
+        <li class="page-item page-next">
+            <a href="/page/51/" rel="next">
+                <span class="page-item-title">Next</span>
+                <span class="page-item-subtitle"><i class="icon icon-forward" aria-hidden="true"></i></span>
+            </a>
+        </li>
+    
+</ul>
+</nav>
+
+
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>tinyPortMapper端口转发一键脚本，可转发UDP和TCP流量 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="tinyPortMapper端口转发一键脚本，可转发UDP和TCP流量 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/11/09/tinyportmapper-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91udp-e5-92-8ctcp-e6-b5-81-e9-87-8f/"><meta property="og:locale" content="en"><meta name="description" content="说明：tinyPortMapper是一个易安装配置的端口转发工具，可转发UDP和TCP流量，其实和博主之前发的Socat差不多，查看：Socat一键安装脚本，都只能一次转发单个端口。虽然没啥明显区别，但此类工具不嫌多，就拿出来说下。 脚本系统要求：支持CentOS 6+ 、Debian 7+、Ubuntu 14+。脚本说明：脚本默认开启UDP、TCP转发，带开机自启功能，且一次只能转发单个端口，如 - John Doe - 南猫"><meta property="article:published_time" content="2019-11-09T00:01:20.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.646Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.646Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/11/09/tinyportmapper-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91udp-e5-92-8ctcp-e6-b5-81-e9-87-8f/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/11/09/tinyportmapper-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91udp-e5-92-8ctcp-e6-b5-81-e9-87-8f/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/11/09/tinyportmapper-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91udp-e5-92-8ctcp-e6-b5-81-e9-87-8f/"
+    },
+    "headline": "tinyPortMapper端口转发一键脚本，可转发UDP和TCP流量 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-11-09T00:01:20.000Z",
+    "dateModified": "2020-04-12T04:09:09.646Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：tinyPortMapper是一个易安装配置的端口转发工具，可转发UDP和TCP流量，其实和博主之前发的Socat差不多，查看：Socat一键安装脚本，都只能一次转发单个端口。虽然没啥明显区别，但此类工具不嫌多，就拿出来说下。 脚本系统要求：支持CentOS 6+ 、Debian 7+、Ubuntu 14+。脚本说明：脚本默认开启UDP、TCP转发，带开机自启功能，且一次只能转发单个端口，如 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=tinyPortMapper端口转发一键脚本，可转发UDP和TCP流量" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=tinyPortMapper端口转发一键脚本，可转发UDP和TCP流量&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=tinyPortMapper端口转发一键脚本，可转发UDP和TCP流量" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEkUlEQVR42u3bwXIUSwxEUf//T/PW8CjlzbJZTOl64wCPe/r0RBSSUnz9Wvj1JVq0aNGiRX8Y+mv4+u0XDj9Lv9+8drzhP67Z3odo0ZvQpzdJb/43VPO65oGlPxOHaNGb0Kc3TG90et3fDpjTIUQOLXKgTg7RokX//03TQXV6QN8pdOgHIlq06A49HT6nG0+FyHQATgURLXhEi96MPl1wOpymh9EOJdBNHwqWH++yRIv+cDRp5D/h+49NQ0WL/mA0LQxII58e5HQgTo3JhP0nqaVo0R+MTg0BfQgU0FyfBHbN9UWL3oC+adKnIv80qG8OKdJg0Hs/FieiRT+KJsM1suxygpKh4U3I3gQAokVvQtMDYzq4aIBHhnxNeEcHiqJFb0K3y610IW4qQEgx0i7PkQGDaNFb0DeHUWpGyLLdvw7mY4AnWvSj6GnwR26MLqemRoI2PPTARV2WaNGPoaeDgg7cp0NtuubU9BNQet8YyosW/TCahmhksJ+KFzJUbIYbuHgRLXoBOi2ek9C+HdClAQMJBsmwUrTorWjShNNwnYR05PUJmMK/atgvWvRDaPIPPAnqUrBGHmYT2t0E/6JFb0Lf3hxecgnNSzUMCMNMtGgjWvSjaDK4o0F9GuLRwL59PbaIFr0AnXCp4EiLLqSYIaHdTZESGw7Roh9E00F6gk1FQQrlaOgwDQdTwCda9DZ0GuCnA6opEuhAkhxydMFPtOiN6FRMNI1Au1RHhgvfKX5Ei96EJri0iEOvRRsLsrRTv4do0UvQNwtyZDG1GdCTwggN9EWLFl3/5zOyrEqv24SHzQJenXCIFv0ImjT7tFihRQwJCvFCXLFEJ1r0FnQK0kkzQhfeEm5anqHXP36AokUvQTeBXfUmw01/p6GZQsTxQYoWvQBNm/ubYR0tQpqwj4T4x5+LFr0ETYZtN4EaCQLI8C/BcYAoWvQCNGk46GFEl+ZSkZMAtCk6hvKiRS9EN00EGfA3ocF0sJFDE3VZokU/jG6WaOhgrwnop0KD/gwt4IkWvQidDq/29anwSEO/m2BvampEi96GpkVBE8SRoiI96NuFXHx6ixb9IJo0DWTAR5p/uohDipc0bIybCKJFP45uwnYaxjW4m+U5UgyJFr0JTW4oLbtMD4oOHMnff2fJTrToLWg6JEhBGm1MSMP/E8VMVZGJFv0QmgZwpBBIgXoTtk331IYRokVvRDdLM3RBhzQUNOQnw4hUBIkWvQFNQrB0UNEihzYzdFmgDfBFi96AvllUbxuMdrDYNBRk4Ue06G1oGnLTpdb0oFLARwP8JngULXoLmg7W2uU1MnxIA/8UwNcfmmjRi9FTU5++k6ECwZFhIB0oiBa9Bd00CdOQnyywpkKGLNuQDwAN+0WLfhg9HWAEmn6fNC8krE/NSDoURYvehJ4G6bSgTwOCm2KFfBCkkREtWjT7D+FpQNAeVFOhcnN4iRYtuluAI8UDGRbQoIEsC6CEQ7Tox9HTQUUvPh0yZHiXmhxywI4DRtGil6BTcUFvMC2yocMmFB8kBIgBnmjRD6M3fYkWLVq0aNEf8vUf+WnUTxnR30kAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">tinyPortMapper端口转发一键脚本，可转发UDP和TCP流量</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-11-09</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=tinyPortMapper端口转发一键脚本，可转发UDP和TCP流量&url=http://yoursite.com/2019/11/09/tinyportmapper-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91udp-e5-92-8ctcp-e6-b5-81-e9-87-8f/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=tinyPortMapper端口转发一键脚本，可转发UDP和TCP流量&url=http://yoursite.com/2019/11/09/tinyportmapper-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91udp-e5-92-8ctcp-e6-b5-81-e9-87-8f/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/09/tinyportmapper-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91udp-e5-92-8ctcp-e6-b5-81-e9-87-8f/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/11/09/tinyportmapper-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91udp-e5-92-8ctcp-e6-b5-81-e9-87-8f/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/11/09/tinyportmapper-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91udp-e5-92-8ctcp-e6-b5-81-e9-87-8f/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/11/09/tinyportmapper-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91udp-e5-92-8ctcp-e6-b5-81-e9-87-8f/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/11/09/tinyportmapper-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91udp-e5-92-8ctcp-e6-b5-81-e9-87-8f/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEkUlEQVR42u3bwXIUSwxEUf//T/PW8CjlzbJZTOl64wCPe/r0RBSSUnz9Wvj1JVq0aNGiRX8Y+mv4+u0XDj9Lv9+8drzhP67Z3odo0ZvQpzdJb/43VPO65oGlPxOHaNGb0Kc3TG90et3fDpjTIUQOLXKgTg7RokX//03TQXV6QN8pdOgHIlq06A49HT6nG0+FyHQATgURLXhEi96MPl1wOpymh9EOJdBNHwqWH++yRIv+cDRp5D/h+49NQ0WL/mA0LQxII58e5HQgTo3JhP0nqaVo0R+MTg0BfQgU0FyfBHbN9UWL3oC+adKnIv80qG8OKdJg0Hs/FieiRT+KJsM1suxygpKh4U3I3gQAokVvQtMDYzq4aIBHhnxNeEcHiqJFb0K3y610IW4qQEgx0i7PkQGDaNFb0DeHUWpGyLLdvw7mY4AnWvSj6GnwR26MLqemRoI2PPTARV2WaNGPoaeDgg7cp0NtuubU9BNQet8YyosW/TCahmhksJ+KFzJUbIYbuHgRLXoBOi2ek9C+HdClAQMJBsmwUrTorWjShNNwnYR05PUJmMK/atgvWvRDaPIPPAnqUrBGHmYT2t0E/6JFb0Lf3hxecgnNSzUMCMNMtGgjWvSjaDK4o0F9GuLRwL59PbaIFr0AnXCp4EiLLqSYIaHdTZESGw7Roh9E00F6gk1FQQrlaOgwDQdTwCda9DZ0GuCnA6opEuhAkhxydMFPtOiN6FRMNI1Au1RHhgvfKX5Ei96EJri0iEOvRRsLsrRTv4do0UvQNwtyZDG1GdCTwggN9EWLFl3/5zOyrEqv24SHzQJenXCIFv0ImjT7tFihRQwJCvFCXLFEJ1r0FnQK0kkzQhfeEm5anqHXP36AokUvQTeBXfUmw01/p6GZQsTxQYoWvQBNm/ubYR0tQpqwj4T4x5+LFr0ETYZtN4EaCQLI8C/BcYAoWvQCNGk46GFEl+ZSkZMAtCk6hvKiRS9EN00EGfA3ocF0sJFDE3VZokU/jG6WaOhgrwnop0KD/gwt4IkWvQidDq/29anwSEO/m2BvampEi96GpkVBE8SRoiI96NuFXHx6ixb9IJo0DWTAR5p/uohDipc0bIybCKJFP45uwnYaxjW4m+U5UgyJFr0JTW4oLbtMD4oOHMnff2fJTrToLWg6JEhBGm1MSMP/E8VMVZGJFv0QmgZwpBBIgXoTtk331IYRokVvRDdLM3RBhzQUNOQnw4hUBIkWvQFNQrB0UNEihzYzdFmgDfBFi96AvllUbxuMdrDYNBRk4Ue06G1oGnLTpdb0oFLARwP8JngULXoLmg7W2uU1MnxIA/8UwNcfmmjRi9FTU5++k6ECwZFhIB0oiBa9Bd00CdOQnyywpkKGLNuQDwAN+0WLfhg9HWAEmn6fNC8krE/NSDoURYvehJ4G6bSgTwOCm2KFfBCkkREtWjT7D+FpQNAeVFOhcnN4iRYtuluAI8UDGRbQoIEsC6CEQ7Tox9HTQUUvPh0yZHiXmhxywI4DRtGil6BTcUFvMC2yocMmFB8kBIgBnmjRD6M3fYkWLVq0aNEf8vUf+WnUTxnR30kAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#脚本"><span class="post-toc-number">1.</span> <span class="post-toc-text">脚本</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#卸载"><span class="post-toc-number">2.</span> <span class="post-toc-text">卸载</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong><code>tinyPortMapper</code>是一个易安装配置的端口转发工具，可转发<code>UDP</code>和<code>TCP</code>流量，其实和博主之前发的<code>Socat</code>差不多，查看：Socat一键安装脚本，都只能一次转发单个端口。虽然没啥明显区别，但此类工具不嫌多，就拿出来说下。</p>
+<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><p><strong>系统要求：</strong>支持<code>CentOS 6+</code> 、<code>Debian 7+</code>、<code>Ubuntu 14+</code>。<br><strong>脚本说明：</strong>脚本默认开启<code>UDP</code>、<code>TCP</code>转发，带开机自启功能，且一次只能转发单个端口，如果想转发多个端口请重复运行本脚本。</p>
+<p>使用<code>root</code>运行以下命令：</p>
+<pre><code>wget https://www.moerats.com/usr/shell/tinyPortMapper.sh &amp;&amp; bash tinyPortMapper.sh</code></pre><p>按要求输入以下信息：</p>
+<pre><code>#如果你要用本地服务器的2222端口转发IP为1.2.3.4服务器的8888端口，那就依次填入指定参数。
+请输入本地端口:2222
+请输入远程端口:8888
+请输入远程IP:1.2.3.4</code></pre><p>输入后直到配置完成。</p>
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><p><strong>1、删除tinyPortMapper</strong></p>
+<pre><code>rm -rf /tinyPortMapper
+
+
+#CentOS系统，编辑/etc/rc.d/rc.local，删除tinyPortMapper启动命令。
+#Debian/Ubuntu系统，编辑/etc/rc.local，删除tinyPortMapper启动命令。</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-11-09T00:01:20.000Z" itemprop="datePublished">2019-11-09</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.646Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/11/09/e4-b8-80-e4-b8-aa-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-9a-84-e4-bc-81-e4-b8-9awiki-e5-92-8c-e5-9b-a2-e9-98-9f-e7-9f-a5-e8-af-86-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9amm-wiki-e6-90-ad-e5-bb-ba-e6-95-99/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一个轻量级的企业Wiki和团队知识分享平台：MM-Wiki搭建教程</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/11/08/serverreview-benchmark-ef-bc-9alinux-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-80-a7-e8-83-bd-e6-b5-8b-e8-af-95-e8-84-9a-e6-9c-ac/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">serverreview-benchmark：Linux服务器性能测试脚本</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

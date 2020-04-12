@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>一个WordPress超酷炫网页背景效果canvas-nest | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="一个WordPress超酷炫网页背景效果canvas-nest | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/11/26/e4-b8-80-e4-b8-aawordpress-e8-b6-85-e9-85-b7-e7-82-ab-e7-bd-91-e9-a1-b5-e8-83-8c-e6-99-af-e6-95-88-e6-9e-9ccanvas-nest/"><meta property="og:locale" content="en"><meta name="description" content="简介一个基于html5画布绘制的网页背景效果，非常赞！如果需要wordpress插件，在插件库搜索canvas-nest或者看项目canvas-nest-for-wp。 在线演示：http:&#x2F;&#x2F;www.atool.org&#x2F;。 特征 不依赖于jQuery或其他JavaScript框架。 很轻，只有1.6kb。 所以很容易使用，即使你不是网页开发者。  用法在&amp;lt;body&amp;gt;和&amp;lt;&#x2F;bod - John Doe - 南猫"><meta property="article:published_time" content="2019-11-25T16:54:35.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.649Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.649Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/11/26/e4-b8-80-e4-b8-aawordpress-e8-b6-85-e9-85-b7-e7-82-ab-e7-bd-91-e9-a1-b5-e8-83-8c-e6-99-af-e6-95-88-e6-9e-9ccanvas-nest/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/11/26/e4-b8-80-e4-b8-aawordpress-e8-b6-85-e9-85-b7-e7-82-ab-e7-bd-91-e9-a1-b5-e8-83-8c-e6-99-af-e6-95-88-e6-9e-9ccanvas-nest/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/11/26/e4-b8-80-e4-b8-aawordpress-e8-b6-85-e9-85-b7-e7-82-ab-e7-bd-91-e9-a1-b5-e8-83-8c-e6-99-af-e6-95-88-e6-9e-9ccanvas-nest/"
+    },
+    "headline": "一个WordPress超酷炫网页背景效果canvas-nest | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-11-25T16:54:35.000Z",
+    "dateModified": "2020-04-12T04:09:09.649Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "简介一个基于html5画布绘制的网页背景效果，非常赞！如果需要wordpress插件，在插件库搜索canvas-nest或者看项目canvas-nest-for-wp。 在线演示：http://www.atool.org/。 特征 不依赖于jQuery或其他JavaScript框架。 很轻，只有1.6kb。 所以很容易使用，即使你不是网页开发者。  用法在&amp;amp;lt;body&amp;amp;gt;和&amp;amp;lt;/bod - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=一个WordPress超酷炫网页背景效果canvas-nest" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=一个WordPress超酷炫网页背景效果canvas-nest&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=一个WordPress超酷炫网页背景效果canvas-nest" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADnklEQVR42u3cS27DMAxFUe9/0+20KCy+S8Gx6eBm0k8aVyeARYpke/x84eMQJUqUKFFfhzqKx/LFf54/+zx9/f/zs+v+/R5dpyhRU1Crha9+5uyiZx/Pnk8LTdcv1ylK1CAUXeQKd7YR7LwJ1YYU3yxRol6EIhsJ2VBoACebiyhRb0VViyaYTvK6SqZFiXobqnOR5SEtBNLqUEkOkJdl6aJEfRhV3diTPl5WTRIl6oOoWHRfbAadG3gVqGlx5fKuhyhRH0TRoFp9TYP06s3pBPQy6RUlagiKFuK7m0Iq1qwOg6nw0mpkixJ1M4rctKmBRr5PD5Wk+BIPiaJEPYgiL64S2p2DHg24JPCLEjURRZrPVzXUSCDvbBqiRE1FxcAWAutuYT+9Ph0WUZYuStSNKFr8oIdHugF0fj8utIoSNQBFD4AkQHY3HLqRVIFblKhpKFokIc0AsoidhBYfVkWJGoIizeZUBCGLp8VR2qCICa0oUQ+hyDBwGmqsGmMEQAqWsfApStQgVDq40U2jE1g7xRaEFyVqEGq1MDKgQYd36TB+2hyW1xAlahiqs0iSyJLiJU1cU4AXJWoKqguIFyZ/aAIHvLqNC1GiJqBSQ7szeEiKJKRASRsKokRNRVUX7iSUVeAlg1R0c0LDIaJEPYQivyj9LDrAHQce8upsFKJETUORZDYdDslNTxt6O0UcUaKmoaohQdIoo8EWB9GD/WNfUaKmo6oAmYopNNmlyXDaXNoDV6JE3YgiRRKazJLmXbVR0IOjKFFTUVXhvdosukOOZMEpYY6FVlGiBqA6N2RaMG2cpWS5Smir50WJmoLqFiPJoBRptHUOlCSpFiVqAirdzDQo0oCckuLqcBkLRaJEDUHtFP9JI657oKwGF1NBVZSoiShajCeFkBRwV4G229jGhRdRom5EkWIlHdC9IiCThhxOaEWJuhlFG2LdgyIdBknXo8UYUaImoTqF+6rYkhrO3eZe5w0VJWoaqrpxry7SpI0pFWWWcFGiBqBwkxgMQO0OaKWEFjfVRYkagIpJ4majmTQF0rAjDdiiRE1CkYJH54alyS4N7J1EV5SoKajd5LW6uekN3mmQx2acKFGDUJ1DHClS0qHfdFjtXEOUqLehUtCsNopqGIUUQNsnX1GihqN2g28aWNwJsq3hEFGiHkKlpnU6uHWHpzqDk7S5LkrUFFRKPknw6wwpkkYBKZairocoUTejvukhSpQoUaK+5vELsh6Sz8VEwlUAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">一个WordPress超酷炫网页背景效果canvas-nest</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-11-26</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=一个WordPress超酷炫网页背景效果canvas-nest&url=http://yoursite.com/2019/11/26/e4-b8-80-e4-b8-aawordpress-e8-b6-85-e9-85-b7-e7-82-ab-e7-bd-91-e9-a1-b5-e8-83-8c-e6-99-af-e6-95-88-e6-9e-9ccanvas-nest/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=一个WordPress超酷炫网页背景效果canvas-nest&url=http://yoursite.com/2019/11/26/e4-b8-80-e4-b8-aawordpress-e8-b6-85-e9-85-b7-e7-82-ab-e7-bd-91-e9-a1-b5-e8-83-8c-e6-99-af-e6-95-88-e6-9e-9ccanvas-nest/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/26/e4-b8-80-e4-b8-aawordpress-e8-b6-85-e9-85-b7-e7-82-ab-e7-bd-91-e9-a1-b5-e8-83-8c-e6-99-af-e6-95-88-e6-9e-9ccanvas-nest/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/11/26/e4-b8-80-e4-b8-aawordpress-e8-b6-85-e9-85-b7-e7-82-ab-e7-bd-91-e9-a1-b5-e8-83-8c-e6-99-af-e6-95-88-e6-9e-9ccanvas-nest/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/11/26/e4-b8-80-e4-b8-aawordpress-e8-b6-85-e9-85-b7-e7-82-ab-e7-bd-91-e9-a1-b5-e8-83-8c-e6-99-af-e6-95-88-e6-9e-9ccanvas-nest/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/11/26/e4-b8-80-e4-b8-aawordpress-e8-b6-85-e9-85-b7-e7-82-ab-e7-bd-91-e9-a1-b5-e8-83-8c-e6-99-af-e6-95-88-e6-9e-9ccanvas-nest/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/11/26/e4-b8-80-e4-b8-aawordpress-e8-b6-85-e9-85-b7-e7-82-ab-e7-bd-91-e9-a1-b5-e8-83-8c-e6-99-af-e6-95-88-e6-9e-9ccanvas-nest/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADnklEQVR42u3cS27DMAxFUe9/0+20KCy+S8Gx6eBm0k8aVyeARYpke/x84eMQJUqUKFFfhzqKx/LFf54/+zx9/f/zs+v+/R5dpyhRU1Crha9+5uyiZx/Pnk8LTdcv1ylK1CAUXeQKd7YR7LwJ1YYU3yxRol6EIhsJ2VBoACebiyhRb0VViyaYTvK6SqZFiXobqnOR5SEtBNLqUEkOkJdl6aJEfRhV3diTPl5WTRIl6oOoWHRfbAadG3gVqGlx5fKuhyhRH0TRoFp9TYP06s3pBPQy6RUlagiKFuK7m0Iq1qwOg6nw0mpkixJ1M4rctKmBRr5PD5Wk+BIPiaJEPYgiL64S2p2DHg24JPCLEjURRZrPVzXUSCDvbBqiRE1FxcAWAutuYT+9Ph0WUZYuStSNKFr8oIdHugF0fj8utIoSNQBFD4AkQHY3HLqRVIFblKhpKFokIc0AsoidhBYfVkWJGoIizeZUBCGLp8VR2qCICa0oUQ+hyDBwGmqsGmMEQAqWsfApStQgVDq40U2jE1g7xRaEFyVqEGq1MDKgQYd36TB+2hyW1xAlahiqs0iSyJLiJU1cU4AXJWoKqguIFyZ/aAIHvLqNC1GiJqBSQ7szeEiKJKRASRsKokRNRVUX7iSUVeAlg1R0c0LDIaJEPYQivyj9LDrAHQce8upsFKJETUORZDYdDslNTxt6O0UcUaKmoaohQdIoo8EWB9GD/WNfUaKmo6oAmYopNNmlyXDaXNoDV6JE3YgiRRKazJLmXbVR0IOjKFFTUVXhvdosukOOZMEpYY6FVlGiBqA6N2RaMG2cpWS5Smir50WJmoLqFiPJoBRptHUOlCSpFiVqAirdzDQo0oCckuLqcBkLRaJEDUHtFP9JI657oKwGF1NBVZSoiShajCeFkBRwV4G229jGhRdRom5EkWIlHdC9IiCThhxOaEWJuhlFG2LdgyIdBknXo8UYUaImoTqF+6rYkhrO3eZe5w0VJWoaqrpxry7SpI0pFWWWcFGiBqBwkxgMQO0OaKWEFjfVRYkagIpJ4majmTQF0rAjDdiiRE1CkYJH54alyS4N7J1EV5SoKajd5LW6uekN3mmQx2acKFGDUJ1DHClS0qHfdFjtXEOUqLehUtCsNopqGIUUQNsnX1GihqN2g28aWNwJsq3hEFGiHkKlpnU6uHWHpzqDk7S5LkrUFFRKPknw6wwpkkYBKZairocoUTejvukhSpQoUaK+5vELsh6Sz8VEwlUAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#特征"><span class="post-toc-number">2.</span> <span class="post-toc-text">特征</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#用法"><span class="post-toc-number">3.</span> <span class="post-toc-text">用法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>一个基于<code>html5</code>画布绘制的网页背景效果，非常赞！如果需要<code>wordpress</code>插件，在插件库搜索<code>canvas-nest</code>或者看项目canvas-nest-for-wp。</p>
+<p><strong>在线演示：</strong><code>http://www.atool.org/</code>。</p>
+<h2 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h2><ul>
+<li>不依赖于<code>jQuery</code>或其他<code>JavaScript</code>框架。</li>
+<li>很轻，只有<code>1.6kb</code>。</li>
+<li>所以很容易使用，即使你不是网页开发者。</li>
+</ul>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>在<code>&lt;body&gt;</code>和<code>&lt;/body&gt;</code>中间插入这段<code>js</code>代码即可，注意不要放在<code>head</code>里面。</p>
+<pre><code>&lt; script  src = “ //cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js ” &gt; &lt;/ script &gt;</code></pre><p>如下所示：</p>
+<pre><code>&lt; html &gt;
+&lt; head &gt;
+    ...
+&lt;/ head &gt;
+&lt; body &gt;
+    ...
+    ...
+    ...
+    &lt; script  src = “ //cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js ” &gt; &lt; / script &gt;
+&lt;/ body &gt;
+&lt;/ html &gt;</code></pre><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
+<li><p>color：画布线颜色，默认值：’0,0,0’; 颜色为（R，G，B）。</p>
+</li>
+<li><p>opacity：线的不透明度（0〜1），默认值：0.5。</p>
+</li>
+<li><p>count：行数，默认值：150。</p>
+</li>
+<li><p>zIndex：z空间的索引，默认值：-1。</p>
+<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+
+
+</li>
+</ul>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-11-25T16:54:35.000Z" itemprop="datePublished">2019-11-26</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.649Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/11/26/e6-8e-a8-e8-8d-903-e6-ac-be-e6-b5-81-e8-a1-8c-e7-9a-84linux-vps-e4-b8-bb-e6-9c-baftp-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e8-bd-af-e4-bb-b6/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">推荐3款流行的Linux VPS主机FTP文件管理软件</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/11/26/e4-bd-bf-e7-94-a8xshell-e8-bf-9e-e6-8e-a5vps-e5-90-8e-e5-bb-b6-e8-bf-9f-e8-bf-87-e9-ab-98-e6-88-96-e8-80-85-e8-bf-9e-e6-8e-a5-e4-b8-8d-e4-b8-8a-e7-9a-84-e8-a7-a3-e5-86-b3-e5-8a-9e-e6-b3-95/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">使用Xshell连接VPS后延迟过高或者连接不上的解决办法</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

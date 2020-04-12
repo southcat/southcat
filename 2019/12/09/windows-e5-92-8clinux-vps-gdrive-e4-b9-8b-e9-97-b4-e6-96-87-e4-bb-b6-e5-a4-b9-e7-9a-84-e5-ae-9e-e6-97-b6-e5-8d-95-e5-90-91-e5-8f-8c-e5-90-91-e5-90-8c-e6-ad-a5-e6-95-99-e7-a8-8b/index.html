@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Windows和Linux VPS/GDrive之间文件夹的实时单向/双向同步教程 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Windows和Linux VPS&#x2F;GDrive之间文件夹的实时单向&#x2F;双向同步教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/12/09/windows-e5-92-8clinux-vps-gdrive-e4-b9-8b-e9-97-b4-e6-96-87-e4-bb-b6-e5-a4-b9-e7-9a-84-e5-ae-9e-e6-97-b6-e5-8d-95-e5-90-91-e5-8f-8c-e5-90-91-e5-90-8c-e6-ad-a5-e6-95-99-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="说明：一般我们同步Windows和Linux之间的文件时，常用的方法有nfs挂载，inotify + rsync同步等，有钱的或许会买成熟的storenext系统，当然后者基本上都是公司在用，storenext由于价格太贵，个人使用基本可以无视，而nfs由于兼容性问题，在实际挂载中会出现很多小问题，算是inotify + rsync使用的比较多，不过鉴于前两天水过一篇Mutagen，博主发现用来实 - John Doe - 南猫"><meta property="article:published_time" content="2019-12-08T17:20:37.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.650Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.650Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/12/09/windows-e5-92-8clinux-vps-gdrive-e4-b9-8b-e9-97-b4-e6-96-87-e4-bb-b6-e5-a4-b9-e7-9a-84-e5-ae-9e-e6-97-b6-e5-8d-95-e5-90-91-e5-8f-8c-e5-90-91-e5-90-8c-e6-ad-a5-e6-95-99-e7-a8-8b/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/12/09/windows-e5-92-8clinux-vps-gdrive-e4-b9-8b-e9-97-b4-e6-96-87-e4-bb-b6-e5-a4-b9-e7-9a-84-e5-ae-9e-e6-97-b6-e5-8d-95-e5-90-91-e5-8f-8c-e5-90-91-e5-90-8c-e6-ad-a5-e6-95-99-e7-a8-8b/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/12/09/windows-e5-92-8clinux-vps-gdrive-e4-b9-8b-e9-97-b4-e6-96-87-e4-bb-b6-e5-a4-b9-e7-9a-84-e5-ae-9e-e6-97-b6-e5-8d-95-e5-90-91-e5-8f-8c-e5-90-91-e5-90-8c-e6-ad-a5-e6-95-99-e7-a8-8b/"
+    },
+    "headline": "Windows和Linux VPS/GDrive之间文件夹的实时单向/双向同步教程 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-08T17:20:37.000Z",
+    "dateModified": "2020-04-12T04:09:09.650Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：一般我们同步Windows和Linux之间的文件时，常用的方法有nfs挂载，inotify + rsync同步等，有钱的或许会买成熟的storenext系统，当然后者基本上都是公司在用，storenext由于价格太贵，个人使用基本可以无视，而nfs由于兼容性问题，在实际挂载中会出现很多小问题，算是inotify + rsync使用的比较多，不过鉴于前两天水过一篇Mutagen，博主发现用来实 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Windows和Linux VPS/GDrive之间文件夹的实时单向/双向同步教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Windows和Linux VPS/GDrive之间文件夹的实时单向/双向同步教程&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=Windows和Linux VPS/GDrive之间文件夹的实时单向/双向同步教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAErElEQVR42u3dS3LbQBAEUd7/0vLGCwVFdGWBWojTyY1siQbwhhHt/jn8+Fr4eogWLVq0aNEfhn4Mrx9/6P/3rr4+X+/5Z9P9Xr336prfv9c4RIvegr66UUK/eu/391yBXr2HHvqr61CHaNGb0FcP+fxzcigkuEzXv/r1q2tWhy1atOivKSmYkCnwpWD1Cp6SItGiRXeBbEpSpsCSCo1Y/IcCSLRo0bzgIHgKTYlLW6ikAkm06K1oWhD89a+/1g0VLfqD0SQxmIqGlDxMgWwqMFLASgOCt6aWokV/MHoKBCn5J6CUjKTrvzPAEy16I5oEralwT4GkKR7SYJAM9caBn2jRS9BNET897NV1mkBHB+4poYmBTLTog9EkeNzBtwtudAGHNhR/HLZo0YvQZDmVLsqSwEITChLY6EBCtOgt6Ls3mgIVKSDIQJ0mQ+QZRIvehiZD9DtNPNpEbIoM1AickhPRog9GE1wq0MmDk+BHF3GmYcLloYkWvQBNk3fSTEiFRILSJOTq8OqhvGjRh6OnRfVmIZ0mJaSAaAYEcWggWvQCdN1cgwGkaQzcXXInDYfY7Bct+jB0W0yQZKVt7jWDQHq/cYAnWvTBaBLQaIHQDAHaJOROYlQv2ogWfQD6zlCMJC0xqBQFR7NcM34gokUvRTeLNlOTjh4WTX5oEoSb/aJFH4wmf8mTwR1Z2EnvJ8sCaUEXVVmiRR+KTsU9LUjapZx0eE2DAz27aNEL0HHo9cj/qHwKJHcKiGYBiNxDtOhN6KmJl4p22qxP100DONJkTMFOtOgt6KnJngIZfYB2ybZt/k3XFS16GzoV6am5lxrszVCBDOfbBaExOREt+lB0wpEARZfjmoY/LThIMSNa9BZ00wSgy3PpwEjTrx3k1wWHaNEL0HSZNQ0J8OILeVDQtMALQ6JFL0DTJgFpBja/JwEqFTHkgHBGJlr0QWgSvMhDpWZEEwRJY6I5ONGit6BT07wZgKfBOBnokQDaNj1Ei96ETkl7GsZPv04D9lggFAlP+tBEi96EbhoBzVCdNCNSQKWJCElkRIvegCYBIS3OEAQtamgwox9EHOCJFn0YOgWENDC784AkmZgCKVm6QRmZaNEHon9jga5JMKaG4p1hfnPgokVvQNNluPSwV039FPxI8KTNx9jsEC16CboddjfBrSlSaDKTBn+XByda9CJ0ChrkRiSAtY3E5oCiQbToBeimkU+G6wl2d4FmSn5IkiJa9BZ0SiYIhjbhSTKUAuLdoYJo0dvQ6cLNMCA1Fcai4JH/o4S4+EqbCKJFH45ORTu5wZ0hHkksyLLNW1NL0aIPQpPFUpLEkGFggtNBwxQMLz9M0aIXoGmgIMX7FAhpoCLNBhoEq86JaNGHo0mhQRHTddoBXttsrAKZaNEHoAmCFgYpYUnXapv7U7FRFxyiRR+EpgGINPrb5l2z4NouD+ABnmjRB6JJ854umpOBYPWwoFFRFRyiRS9HN0078rM2mKVhPlkMEC1adNFEDwM7MtSbmgH0oG5NLUWLPhRNl9imBZhULJBmPV2qaZbwRIvehiZJ+1QoVM05kLA0iwE0ERItegt600u0aNGiRYv+kNc/YBE07/0QhBcAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Windows和Linux VPS/GDrive之间文件夹的实时单向/双向同步教程</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-09</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Windows和Linux VPS/GDrive之间文件夹的实时单向/双向同步教程&url=http://yoursite.com/2019/12/09/windows-e5-92-8clinux-vps-gdrive-e4-b9-8b-e9-97-b4-e6-96-87-e4-bb-b6-e5-a4-b9-e7-9a-84-e5-ae-9e-e6-97-b6-e5-8d-95-e5-90-91-e5-8f-8c-e5-90-91-e5-90-8c-e6-ad-a5-e6-95-99-e7-a8-8b/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Windows和Linux VPS/GDrive之间文件夹的实时单向/双向同步教程&url=http://yoursite.com/2019/12/09/windows-e5-92-8clinux-vps-gdrive-e4-b9-8b-e9-97-b4-e6-96-87-e4-bb-b6-e5-a4-b9-e7-9a-84-e5-ae-9e-e6-97-b6-e5-8d-95-e5-90-91-e5-8f-8c-e5-90-91-e5-90-8c-e6-ad-a5-e6-95-99-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/09/windows-e5-92-8clinux-vps-gdrive-e4-b9-8b-e9-97-b4-e6-96-87-e4-bb-b6-e5-a4-b9-e7-9a-84-e5-ae-9e-e6-97-b6-e5-8d-95-e5-90-91-e5-8f-8c-e5-90-91-e5-90-8c-e6-ad-a5-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/12/09/windows-e5-92-8clinux-vps-gdrive-e4-b9-8b-e9-97-b4-e6-96-87-e4-bb-b6-e5-a4-b9-e7-9a-84-e5-ae-9e-e6-97-b6-e5-8d-95-e5-90-91-e5-8f-8c-e5-90-91-e5-90-8c-e6-ad-a5-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/12/09/windows-e5-92-8clinux-vps-gdrive-e4-b9-8b-e9-97-b4-e6-96-87-e4-bb-b6-e5-a4-b9-e7-9a-84-e5-ae-9e-e6-97-b6-e5-8d-95-e5-90-91-e5-8f-8c-e5-90-91-e5-90-8c-e6-ad-a5-e6-95-99-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/12/09/windows-e5-92-8clinux-vps-gdrive-e4-b9-8b-e9-97-b4-e6-96-87-e4-bb-b6-e5-a4-b9-e7-9a-84-e5-ae-9e-e6-97-b6-e5-8d-95-e5-90-91-e5-8f-8c-e5-90-91-e5-90-8c-e6-ad-a5-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/12/09/windows-e5-92-8clinux-vps-gdrive-e4-b9-8b-e9-97-b4-e6-96-87-e4-bb-b6-e5-a4-b9-e7-9a-84-e5-ae-9e-e6-97-b6-e5-8d-95-e5-90-91-e5-8f-8c-e5-90-91-e5-90-8c-e6-ad-a5-e6-95-99-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAErElEQVR42u3dS3LbQBAEUd7/0vLGCwVFdGWBWojTyY1siQbwhhHt/jn8+Fr4eogWLVq0aNEfhn4Mrx9/6P/3rr4+X+/5Z9P9Xr336prfv9c4RIvegr66UUK/eu/391yBXr2HHvqr61CHaNGb0FcP+fxzcigkuEzXv/r1q2tWhy1atOivKSmYkCnwpWD1Cp6SItGiRXeBbEpSpsCSCo1Y/IcCSLRo0bzgIHgKTYlLW6ikAkm06K1oWhD89a+/1g0VLfqD0SQxmIqGlDxMgWwqMFLASgOCt6aWokV/MHoKBCn5J6CUjKTrvzPAEy16I5oEralwT4GkKR7SYJAM9caBn2jRS9BNET897NV1mkBHB+4poYmBTLTog9EkeNzBtwtudAGHNhR/HLZo0YvQZDmVLsqSwEITChLY6EBCtOgt6Ls3mgIVKSDIQJ0mQ+QZRIvehiZD9DtNPNpEbIoM1AickhPRog9GE1wq0MmDk+BHF3GmYcLloYkWvQBNk3fSTEiFRILSJOTq8OqhvGjRh6OnRfVmIZ0mJaSAaAYEcWggWvQCdN1cgwGkaQzcXXInDYfY7Bct+jB0W0yQZKVt7jWDQHq/cYAnWvTBaBLQaIHQDAHaJOROYlQv2ogWfQD6zlCMJC0xqBQFR7NcM34gokUvRTeLNlOTjh4WTX5oEoSb/aJFH4wmf8mTwR1Z2EnvJ8sCaUEXVVmiRR+KTsU9LUjapZx0eE2DAz27aNEL0HHo9cj/qHwKJHcKiGYBiNxDtOhN6KmJl4p22qxP100DONJkTMFOtOgt6KnJngIZfYB2ybZt/k3XFS16GzoV6am5lxrszVCBDOfbBaExOREt+lB0wpEARZfjmoY/LThIMSNa9BZ00wSgy3PpwEjTrx3k1wWHaNEL0HSZNQ0J8OILeVDQtMALQ6JFL0DTJgFpBja/JwEqFTHkgHBGJlr0QWgSvMhDpWZEEwRJY6I5ONGit6BT07wZgKfBOBnokQDaNj1Ei96ETkl7GsZPv04D9lggFAlP+tBEi96EbhoBzVCdNCNSQKWJCElkRIvegCYBIS3OEAQtamgwox9EHOCJFn0YOgWENDC784AkmZgCKVm6QRmZaNEHon9jga5JMKaG4p1hfnPgokVvQNNluPSwV039FPxI8KTNx9jsEC16CboddjfBrSlSaDKTBn+XByda9CJ0ChrkRiSAtY3E5oCiQbToBeimkU+G6wl2d4FmSn5IkiJa9BZ0SiYIhjbhSTKUAuLdoYJo0dvQ6cLNMCA1Fcai4JH/o4S4+EqbCKJFH45ORTu5wZ0hHkksyLLNW1NL0aIPQpPFUpLEkGFggtNBwxQMLz9M0aIXoGmgIMX7FAhpoCLNBhoEq86JaNGHo0mhQRHTddoBXttsrAKZaNEHoAmCFgYpYUnXapv7U7FRFxyiRR+EpgGINPrb5l2z4NouD+ABnmjRB6JJ854umpOBYPWwoFFRFRyiRS9HN0078rM2mKVhPlkMEC1adNFEDwM7MtSbmgH0oG5NLUWLPhRNl9imBZhULJBmPV2qaZbwRIvehiZJ+1QoVM05kLA0iwE0ERItegt600u0aNGiRYv+kNc/YBE07/0QhBcAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#同步到VPS服务器"><span class="post-toc-number">2.</span> <span class="post-toc-text">同步到VPS服务器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#同步到GDrive网盘"><span class="post-toc-number">3.</span> <span class="post-toc-text">同步到GDrive网盘</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>一般我们同步<code>Windows</code>和<code>Linux</code>之间的文件时，常用的方法有<code>nfs</code>挂载，<code>inotify + rsync</code>同步等，有钱的或许会买成熟的<code>storenext</code>系统，当然后者基本上都是公司在用，<code>storenext</code>由于价格太贵，个人使用基本可以无视，而<code>nfs</code>由于兼容性问题，在实际挂载中会出现很多小问题，算是<code>inotify + rsync</code>使用的比较多，不过鉴于前两天水过一篇Mutagen，博主发现用来实现<code>Windows</code>和<code>Linux VPS</code>之间双向同步的时候，速度还行，资源占用都不算很大，这里就大致水下使用方法，顺便也可以结合下<code>Rclone</code>，间接实现不挂梯子达到<code>Windows</code>和<code>Gdrive</code>双向同步的目的。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/mutagen-io/mutagen" target="_blank" rel="noopener">https://github.com/mutagen-io/mutagen</a></p>
+<p><strong>说明：</strong>这里<code>Windows</code>使用<code>Mutagen</code>前提条件需要<code>OpenSSH</code>，而<code>Windows 10</code>内置<code>OpenSSH</code>，不过貌似<code>mutagen</code>目前不支持默认的<code>SSH</code>，所以就需要我们安装一个额外的<code>OpenSSH</code>了，官方是推荐<code>Git for Windows</code>的，里面自带<code>OpenSSH</code>客户端，我们可以手动下载安装→传送门，也可以使用其它方法安装，这里博主就使用比较简单的<code>Scoop</code>命令行安装，好处就是安装和卸载都很方便。</p>
+<p>以下方法适用于以下系统：</p>
+<pre><code>Windows 10
+Windows Server 2012 R2
+Windows Server 2012
+Windows Server 2008 R2 SP1
+Windows 8.1
+Windows 7 SP1</code></pre><p>这里<code>Windows 10</code>可以跳过<code>1</code>、<code>2</code>步骤；其它系统需要进行<code>1</code>、<code>2</code>步骤升级到<code>PowerShell 5</code>。</p>
+<p><strong>1、安装.NET Framework 4.5.2</strong></p>
+<pre><code>#下载地址
+https://www.microsoft.com/en-us/download/details.aspx?id=42642</code></pre><p><strong>2、安装Management Framework 5.1</strong></p>
+<pre><code>#下载地址
+https://www.microsoft.com/en-us/download/details.aspx?id=54616
+
+##对应的系统下载包名
+#Win 2012 64位
+W2K12-KB3191565-x64.msu    
+#Win 7和Win 2008 R2 64位
+Win7AndW2K8R2-KB3191566-x64.zip    
+#Win 7 32位
+Win7-KB3191566-x86.zip    
+#Win 8.1和Win 2012 R2 64位
+Win8.1AndW2K12R2-KB3191564-x64.msu
+#Win 8.1 32位
+Win8.1-KB3191564-x86.msu</code></pre><p>都安装完成后记得重启电脑生效。</p>
+<p><strong>3、安装Scoop</strong><br>先在电脑左下角程序搜索框输入<code>PowerShell</code>，然后双击<code>Windows PowerShell</code>工具，再使用命令：</p>
+<pre><code>iex (new-object net.webclient).downloadstring(&apos;https://get.scoop.sh&apos;)</code></pre><p>如果安装不上，可能还需要更改执行策略，使用命令：</p>
+<pre><code>Set-ExecutionPolicy RemoteSigned -scope CurrentUser</code></pre><p>出现提示，选择<code>Y</code>即可，然后再重新执行上面的命令安装<code>Scoop</code>。</p>
+<p><strong>4、安装Git</strong></p>
+<pre><code>scoop install git</code></pre><p><strong>5、下载Mutagen</strong></p>
+<pre><code>#先在D盘根目录新建mutagen文件夹
+mkdir D:\mutagen
+#替换下面最新版的Windows二进制文件地址，查看地址：https://github.com/mutagen-io/mutagen/releases
+$ws = New-Object Net.WebClient
+$url = &quot;https://github.com/mutagen-io/mutagen/releases/download/v0.10.0/mutagen_windows_amd64_v0.10.0.zip&quot;
+#设置下载路径，默认D盘根目录mutagen文件夹
+$downdir = &quot;D:\mutagen\mutagen.zip&quot;
+#开始下载，这里挂梯子下载貌似会快些
+$ws.DownloadFile($url,$downdir)
+#解压文件
+Expand-Archive -Path D:\mutagen\mutagen.zip -DestinationPath D:\mutagen</code></pre><p>这里除了可以在<code>PowerShell</code>使用命令下载，还可以直接使用浏览器下载压缩包，然后在<code>D</code>盘新建<code>mutagen</code>文件夹，并解压到该文件夹即可。</p>
+<h2 id="同步到VPS服务器"><a href="#同步到VPS服务器" class="headerlink" title="同步到VPS服务器"></a>同步到VPS服务器</h2><p>这里我们需要先设置一个变量<code>MUTAGEN_SSH_PATH</code>，指向<code>SSH</code>、<code>SCP</code>可执行文件目录，不然会无法识别<code>SSH</code>可执行文件。</p>
+<pre><code>$env:MUTAGEN_SSH_PATH= &quot;$env:GIT_INSTALL_ROOT\usr\bin&quot;</code></pre><p>比如我要同步本地<code>D</code>盘根目录的<code>BACK</code>文件夹和远程<code>Linux</code>服务器的<code>/moerats</code>文件夹，使用命令：</p>
+<pre><code>#双向同步，创建会话为rats，D:\BACK为BACK文件夹绝对路径
+D:\mutagen\mutagen.exe sync create --name=rats D:\BACK root@远程服务器ip:ssh端口:/moerats
+
+#单向同步，创建会话为rats，D:\BACK为BACK文件夹绝对路径
+D:\mutagen\mutagen.exe sync create --name=rats -m one-way-safe D:\BACK root@远程服务器ip:ssh端口:/moerats</code></pre><p>如果期间遇到提示，选择<code>yes</code>，第一次可能会多要你输入几次服务器密码。</p>
+<h2 id="同步到GDrive网盘"><a href="#同步到GDrive网盘" class="headerlink" title="同步到GDrive网盘"></a>同步到GDrive网盘</h2><pre><code>提示：这里挂载网盘的同步参数会比上面多个--probe-mode=assume，不然远程会不停的产生很多缓存文件。</code></pre><p>首先在<code>VPS</code>上使用<code>rclone</code>挂载<code>Google Drive</code>网盘，挂载教程→传送门，当然这里挂载<code>OneDrive</code>什么也是可以的，不过没啥必要，毕竟有<code>OneDrive</code>客户端。</p>
+<p>接下来设置一个变量<code>MUTAGEN_SSH_PATH</code>，指向<code>SSH</code>、<code>SCP</code>可执行文件目录，不然会无法识别<code>SSH</code>可执行文件。</p>
+<pre><code>$env:MUTAGEN_SSH_PATH= &quot;$env:GIT_INSTALL_ROOT\usr\bin&quot;</code></pre><p>比如我要同步本地<code>D</code>盘根目录的<code>BACK</code>文件夹和远程<code>Linux</code>服务器挂载<code>Gdrive</code>网盘的<code>/moerats</code>文件夹，使用命令：</p>
+<pre><code>#双向同步，创建会话为rats，D:\BACK为BACK文件夹绝对路径
+D:\mutagen\mutagen.exe sync create --name=rats --probe-mode=assume D:\BACK root@远程服务器ip:ssh端口:/moerats
+
+#单向同步，创建会话为rats，D:\BACK为BACK文件夹绝对路径
+D:\mutagen\mutagen.exe sync create --name=rats -m one-way-safe --probe-mode=assume D:\BACK root@远程服务器ip:ssh端口:/moerats</code></pre><p>如果期间遇到提示，选择<code>yes</code>，第一次可能会多要你输入几次服务器密码。</p>
+<p>具体的使用命令可以查看→传送门，基本上都差不多。注意电脑每次重启后，都需要重新设置变量和创建一个同步会话，即重复同步步骤即可。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-08T17:20:37.000Z" itemprop="datePublished">2019-12-09</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.650Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/09/nodequery-ef-bc-9a-e4-b8-80-e6-ac-be-e5-a5-bd-e7-9c-8b-e7-9a-84linux-vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-bf-a1-e6-81-af-e7-9b-91-e6-8e-a7-e5-b7-a5-e5-85-b7/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">NodeQuery：一款好看的Linux VPS服务器信息监控工具</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/08/e4-b8-80-e6-ac-be-e5-bf-ab-e9-80-9f-ef-bc-8c-e8-b7-a8-e5-b9-b3-e5-8f-b0-ef-bc-8c-e5-a4-9a-e5-90-91-e7-9a-84-e6-96-87-e4-bb-b6-e5-ae-9e-e6-97-b6-e5-90-8c-e6-ad-a5-e5-b7-a5-e5-85-b7-ef-bc-9amutagen/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一款快速，跨平台，多向的文件实时同步工具：Mutagen</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

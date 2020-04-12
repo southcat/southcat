@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>使用PHPDNS为DNSmasq搭建一个WEB界面 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="使用PHPDNS为DNSmasq搭建一个WEB界面 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/01/05/e4-bd-bf-e7-94-a8phpdns-e4-b8-badnsmasq-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aaweb-e7-95-8c-e9-9d-a2/"><meta property="og:locale" content="en"><meta name="description" content="说明：DNSmasq是一个小巧且方便地用于配置DNS和DHCP的工具，适用于小型网络，它提供了DNS功能和可选择的DHCP功能。使用DNSmasq可以很方便的搭建递归DNS（公共DNS），诸如类似的119.29.29.29，可以有效的帮助我们防止DNS劫持、屏蔽广告等，博主很久前发过一个DNSmasq搭建教程，查看：Linux安装DNSmasq搭建自己的公共DNS，使用起来还是有点麻烦，现在小Z大 - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/PHP_DNSmasq(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/PHP_DNSmasq(2).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/PHP_DNSmasq(3).png"><meta property="article:published_time" content="2020-01-04T21:09:14.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.653Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.653Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/01/05/e4-bd-bf-e7-94-a8phpdns-e4-b8-badnsmasq-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aaweb-e7-95-8c-e9-9d-a2/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/01/05/e4-bd-bf-e7-94-a8phpdns-e4-b8-badnsmasq-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aaweb-e7-95-8c-e9-9d-a2/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/01/05/e4-bd-bf-e7-94-a8phpdns-e4-b8-badnsmasq-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aaweb-e7-95-8c-e9-9d-a2/"
+    },
+    "headline": "使用PHPDNS为DNSmasq搭建一个WEB界面 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-01-04T21:09:14.000Z",
+    "dateModified": "2020-04-12T04:09:09.653Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：DNSmasq是一个小巧且方便地用于配置DNS和DHCP的工具，适用于小型网络，它提供了DNS功能和可选择的DHCP功能。使用DNSmasq可以很方便的搭建递归DNS（公共DNS），诸如类似的119.29.29.29，可以有效的帮助我们防止DNS劫持、屏蔽广告等，博主很久前发过一个DNSmasq搭建教程，查看：Linux安装DNSmasq搭建自己的公共DNS，使用起来还是有点麻烦，现在小Z大 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=使用PHPDNS为DNSmasq搭建一个WEB界面" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用PHPDNS为DNSmasq搭建一个WEB界面&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=使用PHPDNS为DNSmasq搭建一个WEB界面" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADoUlEQVR42u3a2a7iMBBFUf7/p7vf6aTOPm7ABm1erhC5iVckDzU8/vzg5yFKlChRon4O9Rg+//zT02931z//fjmAp/vcXX/3rMvnihJ1COruoWQgaYB08NNLpuMUJeok1DSAq8GnhWOa3Ff3py9xwooS9U2otDmTDftqg74a/N0LFSXql1DpUEmvI5v+3csRJeqbUO1NSEBHFoy0STcHb1GiTkGtHDx3/H1ZNkmUqDeiYtI9JC7vJvK0iExBZloYXlL1ECXqjSgaBN5ueAsH3jv03cGYjk+UqBNQ7aROE3wK+FYOxtO9RIk6FUWCtbvvNMnfXtPcX5SoU1GrE7XZtGkxoG02ESXqJFRTfG4Oos19yCYfC3miRB2AapugyIuYFgGyQDSNKSjyFSVqAyoFdy12ZXFIi0RqSBEl6gTUdJCdDrBt4xQJFJuCdxX5ihL1YRQJyFLjIsGQgkLakJcytKJEfRiVYE1yMS08U1KlSfygbJIoURtQTSMiDf6mAabAkr7kcfMVJWojqtlIaeG52aTTS6oKCaJEHYRKTU0peblSXCAvpgoYRYk6BEUOmTSZ2RQQ2vvFRhFRog5A0YmeNt4UXJLESioUxOeLEnUAalowUlCYCgSooQM0F9PvokSdgkoJywRtm3rTIbVJiIoSdRqKJD9o02/6ngI/0pgyNpmIEnUIKiVfUrBI70MSPfRQPCYzRYnaiFqZuKkBmCZXXrEAxWySKFEbULQonQrWJIhML6otDMRKoihRG1ApedIWr1NhmhTuUmBYd2aKEvVBFJ3IbXMHKZyRhAp92aJEnYCijU9NU/BKQhQVAJpKoihRm1CrRemmAaRpvmqLC6JEnYZqF4hXJzKbYnYsQogSdRCKTnJ6OE1F7dSoSA+76EQhStQHUSnxQr5PBeiVgaYCOC66iRK1AZUOsaQxIx1sVzfstICh5hBRojaj0CZXFMZogZwWyfGBVpSoTajV4LABT9eS68jBWpSo01DthF4pav9vsqWqJIoStQmFJuDCorHaXJwWEnygFSVqE4o+iGyUpEFrStKk32KhQpSoA1Arg06TexXaFCyqhitRoj6MSgfKphE/AaZCAUmeihL1LSgSxKXm+JXFJyVHSdFAlKhvRJGkSZMEpU0jU/F77HgRJerLUfQgOy0CdJPFhWxRojaiaFFtWhRiQ1RRlCaBaFwoRInahFppcErNvWizBM+bXuhyNkmUqDeifukjSpQoUaJ+5vMXqgwxTSxAxE8AAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">使用PHPDNS为DNSmasq搭建一个WEB界面</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-01-05</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用PHPDNS为DNSmasq搭建一个WEB界面&url=http://yoursite.com/2020/01/05/e4-bd-bf-e7-94-a8phpdns-e4-b8-badnsmasq-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aaweb-e7-95-8c-e9-9d-a2/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=使用PHPDNS为DNSmasq搭建一个WEB界面&url=http://yoursite.com/2020/01/05/e4-bd-bf-e7-94-a8phpdns-e4-b8-badnsmasq-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aaweb-e7-95-8c-e9-9d-a2/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/01/05/e4-bd-bf-e7-94-a8phpdns-e4-b8-badnsmasq-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aaweb-e7-95-8c-e9-9d-a2/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/01/05/e4-bd-bf-e7-94-a8phpdns-e4-b8-badnsmasq-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aaweb-e7-95-8c-e9-9d-a2/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/01/05/e4-bd-bf-e7-94-a8phpdns-e4-b8-badnsmasq-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aaweb-e7-95-8c-e9-9d-a2/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/01/05/e4-bd-bf-e7-94-a8phpdns-e4-b8-badnsmasq-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aaweb-e7-95-8c-e9-9d-a2/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/01/05/e4-bd-bf-e7-94-a8phpdns-e4-b8-badnsmasq-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aaweb-e7-95-8c-e9-9d-a2/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADoUlEQVR42u3a2a7iMBBFUf7/p7vf6aTOPm7ABm1erhC5iVckDzU8/vzg5yFKlChRon4O9Rg+//zT02931z//fjmAp/vcXX/3rMvnihJ1COruoWQgaYB08NNLpuMUJeok1DSAq8GnhWOa3Ff3py9xwooS9U2otDmTDftqg74a/N0LFSXql1DpUEmvI5v+3csRJeqbUO1NSEBHFoy0STcHb1GiTkGtHDx3/H1ZNkmUqDeiYtI9JC7vJvK0iExBZloYXlL1ECXqjSgaBN5ueAsH3jv03cGYjk+UqBNQ7aROE3wK+FYOxtO9RIk6FUWCtbvvNMnfXtPcX5SoU1GrE7XZtGkxoG02ESXqJFRTfG4Oos19yCYfC3miRB2AapugyIuYFgGyQDSNKSjyFSVqAyoFdy12ZXFIi0RqSBEl6gTUdJCdDrBt4xQJFJuCdxX5ihL1YRQJyFLjIsGQgkLakJcytKJEfRiVYE1yMS08U1KlSfygbJIoURtQTSMiDf6mAabAkr7kcfMVJWojqtlIaeG52aTTS6oKCaJEHYRKTU0peblSXCAvpgoYRYk6BEUOmTSZ2RQQ2vvFRhFRog5A0YmeNt4UXJLESioUxOeLEnUAalowUlCYCgSooQM0F9PvokSdgkoJywRtm3rTIbVJiIoSdRqKJD9o02/6ngI/0pgyNpmIEnUIKiVfUrBI70MSPfRQPCYzRYnaiFqZuKkBmCZXXrEAxWySKFEbULQonQrWJIhML6otDMRKoihRG1ApedIWr1NhmhTuUmBYd2aKEvVBFJ3IbXMHKZyRhAp92aJEnYCijU9NU/BKQhQVAJpKoihRm1CrRemmAaRpvmqLC6JEnYZqF4hXJzKbYnYsQogSdRCKTnJ6OE1F7dSoSA+76EQhStQHUSnxQr5PBeiVgaYCOC66iRK1AZUOsaQxIx1sVzfstICh5hBRojaj0CZXFMZogZwWyfGBVpSoTajV4LABT9eS68jBWpSo01DthF4pav9vsqWqJIoStQmFJuDCorHaXJwWEnygFSVqE4o+iGyUpEFrStKk32KhQpSoA1Arg06TexXaFCyqhitRoj6MSgfKphE/AaZCAUmeihL1LSgSxKXm+JXFJyVHSdFAlKhvRJGkSZMEpU0jU/F77HgRJerLUfQgOy0CdJPFhWxRojaiaFFtWhRiQ1RRlCaBaFwoRInahFppcErNvWizBM+bXuhyNkmUqDeifukjSpQoUaJ+5vMXqgwxTSxAxE8AAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装DNSmasq"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装DNSmasq</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装PHPDNS"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装PHPDNS</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong><code>DNSmasq</code>是一个小巧且方便地用于配置<code>DNS</code>和<code>DHCP</code>的工具，适用于小型网络，它提供了<code>DNS</code>功能和可选择的<code>DHCP</code>功能。使用<code>DNSmasq</code>可以很方便的搭建递归<code>DNS</code>（公共<code>DNS</code>），诸如类似的<code>119.29.29.29</code>，可以有效的帮助我们防止<code>DNS</code>劫持、屏蔽广告等，博主很久前发过一个<code>DNSmasq</code>搭建教程，查看：Linux安装DNSmasq搭建自己的公共DNS，使用起来还是有点麻烦，现在小<code>Z</code>大佬使用<code>PHPDNS</code>为<code>DNSmasq</code>写了个<code>Web</code>界面，让我们使用更加方便了。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/PHP_DNSmasq(1).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="安装DNSmasq"><a href="#安装DNSmasq" class="headerlink" title="安装DNSmasq"></a>安装DNSmasq</h2><p><strong>系统要求：</strong><code>CentOS 6</code>、<code>7</code>，且需要国内服务器。</p>
+<p><strong>1、安装DNSmasq</strong><br>先使用<code>ifconfig</code>命令查看服务器<code>IP</code>，并记录，比如下图中的<code>192.168.0.4</code>。<br><img src="https://www.moerats.com/usr/picture/PHP_DNSmasq(2).png" alt="请输入图片描述" title="请输入图片描述"><br>再执行下面的命令安装<code>DNSmasq</code></p>
+<pre><code>#安装epel源
+yum -y install epel-release
+#安装DNSmasq
+wget https://raw.githubusercontent.com/helloxz/dnsmasq/master/dns.sh --no-check-certificate
+chmod +x dns.sh
+#注意后面填写ifconfig看到的IP
+./dns.sh 192.168.0.4</code></pre><p>如果是阿里云等服务器，注意防火墙还要放行<code>tcp/udp 53</code>端口。输入<code>netstat -apn|grep &#39;dnsmasq&#39;</code>可查看<code>DNSmasq</code>是否运行正常。</p>
+<p><strong>2、常用命令</strong></p>
+<pre><code>启动：service dnsmasq start
+停止：service dnsmasq stop
+重启：service dnsmasq restart</code></pre><h2 id="安装PHPDNS"><a href="#安装PHPDNS" class="headerlink" title="安装PHPDNS"></a>安装PHPDNS</h2><p><strong>Github地址：</strong><a href="https://github.com/helloxz/phpdns" target="_blank" rel="noopener">https://github.com/helloxz/phpdns</a></p>
+<p><strong>1、运行原理</strong></p>
+<pre><code>#PHPDNS生成DNSmasq格式的配置文件
+#服务器crontab定时检测配置文件变化，若有改动则重启DNSmasq使其生效</code></pre><p><strong>2、环境要求</strong></p>
+<pre><code>PHP 5.6+（需要PDO组件支持）、SQLite 3</code></pre><p><strong>3、安装PHPDNS</strong><br>先访问master.zip下载最新源码，并解压到站点根目录，同时注意站点目录所属用户权限可读可写。</p>
+<p>再编辑<code>application/helpers/check_helper.php</code>设置用户名、密码，里面有注释说明。</p>
+<p>最后访问您的域名<code>http://domain.com/</code>登录测试。</p>
+<p><strong>4、Nginx伪静态设置</strong><br>如果是<code>Apache</code>已经自带了<code>.htaccess</code>规则，无需额外设置。如果是<code>Nginx</code>请再<code>server</code>段内添加：</p>
+<pre><code>location ^~ /application {
+        deny all;
+}
+location ^~ /system {
+        deny all;
+}
+location ^~ /(application|system) {
+        deny all;
+}
+location / {
+    try_files $uri $uri/ /index.php?$query_string;
+}</code></pre><p>添加完成后别忘记重启一次<code>nginx</code>。</p>
+<p><strong>5、编写Shell脚本</strong><br><code>PHPDNS</code>通过<code>shell</code>脚本检测<code>DNSmasq</code>文件变化，使用<code>vi reload.sh</code>命令新建<code>Shell</code>脚本，并写入以下内容，路径请自行修改。</p>
+<p><code>CentOS 7</code>系统：</p>
+<pre><code>#!/bin/bash
+find /data/wwwroot/xxx.com/application/conf/ -name &apos;*.conf&apos; -mmin -1 -exec /usr/bin/systemctl restart dnsmasq.service {} \;</code></pre><p><code>CentOS 6</code>系统：</p>
+<pre><code>#!/bin/bash
+find /data/wwwroot/xxx.com/application/conf/ -name &apos;*.conf&apos; -mmin -1 -exec /sbin/service dnsmasq restart {} \;</code></pre><p>参数说明：</p>
+<pre><code>/data/wwwroot/xxx.com/application/conf/是DNSmasq配置文件目录，改为自己的目录。
+/usr/bin/systemctl是CentOS 7 systemctl的目录
+/sbin/service是CentOS 6的service目录</code></pre><p>别忘记赋予脚本执行权限：<code>chmod +x reload.sh</code>。</p>
+<p><strong>6、设置crontab定时任务</strong></p>
+<pre><code>#安装crontab
+yum install crontabs
+#新建定时任务
+crontab -e
+#写入下面的内容，注意路径
+*/1 * * * * /root/shell/reload.sh
+#重载crontab
+service crond reload</code></pre><p><code>/root/shell/reload.sh</code>是上面<code>shell</code>脚本的绝对路径，请注意修改。</p>
+<p><strong>7、建立软连接</strong><br>软连接默认已经生成好了，直接登录<code>PHPDNS</code>后台，将命令复制到<code>Linux</code>终端执行即可。<br><img src="https://www.moerats.com/usr/picture/PHP_DNSmasq(3).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-01-04T21:09:14.000Z" itemprop="datePublished">2020-01-05</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.653Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/01/05/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85filerun-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-bd-91-e7-9b-98/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">使用Docker快速安装FileRun多功能网盘</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/01/04/vps-e7-99-bb-e9-99-86phpmyadmin-e5-87-ba-e7-8e-b02002-e6-97-a0-e6-b3-95-e7-99-bb-e5-bd-95-mysql-e6-9c-8d-e5-8a-a1-e5-99-a8-e9-94-99-e8-af-af-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9-e6-b3-95/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">VPS登陆phpMyAdmin出现&#34;#2002 无法登录 MySQL 服务器&#34;错误的解决方法</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

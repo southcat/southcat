@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>使用GetSub一键下载指定视频的ass/srt等字幕文件 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="使用GetSub一键下载指定视频的ass&#x2F;srt等字幕文件 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/02/04/e4-bd-bf-e7-94-a8getsub-e4-b8-80-e9-94-ae-e4-b8-8b-e8-bd-bd-e6-8c-87-e5-ae-9a-e8-a7-86-e9-a2-91-e7-9a-84ass-srt-e7-ad-89-e5-ad-97-e5-b9-95-e6-96-87-e4-bb-b6/"><meta property="og:locale" content="en"><meta name="description" content="说明：很多时候我们下载视频的时候，都是么得字幕的，对于强迫症或者有其他需求的人来说，都需要加进去，一般都是首先去其它字幕网站下载后，使用ffmpeg或者一些转码程序将字幕烧录进去，通常来说，手动获取字幕还是比较麻烦的，这里就分享一个工具GetSub，可以自动给我们根据某个视频或者视频文件夹，匹配出相应的ass&#x2F;srt字幕文件，字幕来源于subhd、zimuzu和zimuku，获取速度也是很快的，有 - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/getsub.png"><meta property="article:published_time" content="2020-02-03T23:38:47.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.655Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.655Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/02/04/e4-bd-bf-e7-94-a8getsub-e4-b8-80-e9-94-ae-e4-b8-8b-e8-bd-bd-e6-8c-87-e5-ae-9a-e8-a7-86-e9-a2-91-e7-9a-84ass-srt-e7-ad-89-e5-ad-97-e5-b9-95-e6-96-87-e4-bb-b6/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/02/04/e4-bd-bf-e7-94-a8getsub-e4-b8-80-e9-94-ae-e4-b8-8b-e8-bd-bd-e6-8c-87-e5-ae-9a-e8-a7-86-e9-a2-91-e7-9a-84ass-srt-e7-ad-89-e5-ad-97-e5-b9-95-e6-96-87-e4-bb-b6/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/02/04/e4-bd-bf-e7-94-a8getsub-e4-b8-80-e9-94-ae-e4-b8-8b-e8-bd-bd-e6-8c-87-e5-ae-9a-e8-a7-86-e9-a2-91-e7-9a-84ass-srt-e7-ad-89-e5-ad-97-e5-b9-95-e6-96-87-e4-bb-b6/"
+    },
+    "headline": "使用GetSub一键下载指定视频的ass/srt等字幕文件 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-02-03T23:38:47.000Z",
+    "dateModified": "2020-04-12T04:09:09.655Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：很多时候我们下载视频的时候，都是么得字幕的，对于强迫症或者有其他需求的人来说，都需要加进去，一般都是首先去其它字幕网站下载后，使用ffmpeg或者一些转码程序将字幕烧录进去，通常来说，手动获取字幕还是比较麻烦的，这里就分享一个工具GetSub，可以自动给我们根据某个视频或者视频文件夹，匹配出相应的ass/srt字幕文件，字幕来源于subhd、zimuzu和zimuku，获取速度也是很快的，有 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=使用GetSub一键下载指定视频的ass/srt等字幕文件" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用GetSub一键下载指定视频的ass/srt等字幕文件&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=使用GetSub一键下载指定视频的ass/srt等字幕文件" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEpElEQVR42u2c0W7bQAwE/f8/3T4VaBuJOyunQH0cvTiJ7dPNGSHI3U1ePxZeL6GFFlpooYX+MOjXcP3xhnBdve7X978/d7fWdJ+rdcj7vrxGaKGXQF/+0l/8/O5A7t7396bTRsl69LnL1wgt9CLou8JBCw05KFIs20JHOYQWWujrDaSidbfG1UHcFZ6rddK6QgstNIemjcfdc1NBS0VzOiShhRa6HzhoA0KaDDKYtJD/ZMoSWugPh6ZF5n9//DY1VGihPxg6ml5hsKei/GQe3BWvRiz4VtdSaKE/GJqIcakpmcCpoNgIA61gKbTQm6DfKV7EVCNrNGLhE4FRaKE3QqdGfhLvqYAwNTDEZJ8OHu1NaKGXQT8JpRHDjwTx6EE1+/tyX6GFXgBNCgMJpbabpYG7qWC25r/QQm+BpsM5LWwEmJjvdeA1fVBCC70EOpnkRGRP4nsy2ptADhEaLwub0EIvgiaFhBgDT4NzzesJKHI4hBb6UOg05NPBgJjsaYNtUJZwCC30JugUiEnC3tTApKakFRqo6YfCc0ILfTA0NciowEBMcyrUU5GABOmEFnoLNAnNpUJHRbwUcKVGfxL8o2sptNCHQk8DPyk8SXSnRa1tWmgTJbTQm6GJoJeafzKcPDEE0v6+JYkgtNCHQKchgtyIBuHIQDNBkLVrsV9ooQ+DTs3FaIq9+B+TkIJHRIZGjBBa6G3QdJiIottr/scrRGhMwwopcChoI7TQC6DbwbwRE5NAQA63aYhuPwyhhV4C/QJXKlw0eENNuyYI+6g5EVrow6FJ4C0JDK1YT8RE2pggFqGFXgBNBb9JfJsMgzQUEMH/aQAPOxxCC30gNClkxLwnosB0QKkZIvu9XVtooRdBp8EgiYBEAGjWnooiEfgrA09ooQ+CbgcDaqIlEz6FcJJh3xoMQgu9CTqJb6R4tYJfE+5JoTsa0hNa6A3QjSiQClWz0Ubso+snQVJooTdAk6BNHWh5I/CWIJthJCYRhBb6UOh3bkyFQmoCkAGmHUaEFnoj9BMTjTYs5BCTuEiK6lQ4hRZ6C3RjntHBoRH6moNtDu/ya6GFXgLdmGZEWJ+COU3TQUV8OugILfQG6BR6IcMFMeymoMyT4pWGHaGF3gr9RKSnZtzTQE5qdGgBQylgoYU+FJo0KxSmKXIpVNMeFhL7hRb6cOhYAMqwHC12RBRsBqIoSAgt9AJoElihAZfpMIhgTw+2KYZCC70NmopsRGCgjQQV6okYOBkW48AhtNAHQ9PCRIMzrdBITPlGmMBTltBCL4JOQ0ITdp9Cdc2miRA4FkShhV4CTYb9VOgIXBL1SSinDeoJLfQ26ElYI41KIxjQwyVBeRJ0v21OhBZ6IfTUODRiItkMFe9p0xNFBKGFPhj6NVy0CBGBjzQjSYQgYsUYmBVa6CXQTwoHNdzTQEBCrcn0TyaF0EJvhCaFgQ7tzTqTcD89knWFFlpoJtg1QiFpgkhoDwsFw+AitNBCPxPe6QAyNTHJnGuCdUILvRGabpKApTAO2iAYNohBKLTQG6FTw5DCa1SwR2EYaOxPe0cDh9BCHwq96RJaaKGFFlroD7l+AsMldpEogeX7AAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">使用GetSub一键下载指定视频的ass/srt等字幕文件</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-02-04</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用GetSub一键下载指定视频的ass/srt等字幕文件&url=http://yoursite.com/2020/02/04/e4-bd-bf-e7-94-a8getsub-e4-b8-80-e9-94-ae-e4-b8-8b-e8-bd-bd-e6-8c-87-e5-ae-9a-e8-a7-86-e9-a2-91-e7-9a-84ass-srt-e7-ad-89-e5-ad-97-e5-b9-95-e6-96-87-e4-bb-b6/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=使用GetSub一键下载指定视频的ass/srt等字幕文件&url=http://yoursite.com/2020/02/04/e4-bd-bf-e7-94-a8getsub-e4-b8-80-e9-94-ae-e4-b8-8b-e8-bd-bd-e6-8c-87-e5-ae-9a-e8-a7-86-e9-a2-91-e7-9a-84ass-srt-e7-ad-89-e5-ad-97-e5-b9-95-e6-96-87-e4-bb-b6/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/02/04/e4-bd-bf-e7-94-a8getsub-e4-b8-80-e9-94-ae-e4-b8-8b-e8-bd-bd-e6-8c-87-e5-ae-9a-e8-a7-86-e9-a2-91-e7-9a-84ass-srt-e7-ad-89-e5-ad-97-e5-b9-95-e6-96-87-e4-bb-b6/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/02/04/e4-bd-bf-e7-94-a8getsub-e4-b8-80-e9-94-ae-e4-b8-8b-e8-bd-bd-e6-8c-87-e5-ae-9a-e8-a7-86-e9-a2-91-e7-9a-84ass-srt-e7-ad-89-e5-ad-97-e5-b9-95-e6-96-87-e4-bb-b6/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/02/04/e4-bd-bf-e7-94-a8getsub-e4-b8-80-e9-94-ae-e4-b8-8b-e8-bd-bd-e6-8c-87-e5-ae-9a-e8-a7-86-e9-a2-91-e7-9a-84ass-srt-e7-ad-89-e5-ad-97-e5-b9-95-e6-96-87-e4-bb-b6/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/02/04/e4-bd-bf-e7-94-a8getsub-e4-b8-80-e9-94-ae-e4-b8-8b-e8-bd-bd-e6-8c-87-e5-ae-9a-e8-a7-86-e9-a2-91-e7-9a-84ass-srt-e7-ad-89-e5-ad-97-e5-b9-95-e6-96-87-e4-bb-b6/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/02/04/e4-bd-bf-e7-94-a8getsub-e4-b8-80-e9-94-ae-e4-b8-8b-e8-bd-bd-e6-8c-87-e5-ae-9a-e8-a7-86-e9-a2-91-e7-9a-84ass-srt-e7-ad-89-e5-ad-97-e5-b9-95-e6-96-87-e4-bb-b6/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEpElEQVR42u2c0W7bQAwE/f8/3T4VaBuJOyunQH0cvTiJ7dPNGSHI3U1ePxZeL6GFFlpooYX+MOjXcP3xhnBdve7X978/d7fWdJ+rdcj7vrxGaKGXQF/+0l/8/O5A7t7396bTRsl69LnL1wgt9CLou8JBCw05KFIs20JHOYQWWujrDaSidbfG1UHcFZ6rddK6QgstNIemjcfdc1NBS0VzOiShhRa6HzhoA0KaDDKYtJD/ZMoSWugPh6ZF5n9//DY1VGihPxg6ml5hsKei/GQe3BWvRiz4VtdSaKE/GJqIcakpmcCpoNgIA61gKbTQm6DfKV7EVCNrNGLhE4FRaKE3QqdGfhLvqYAwNTDEZJ8OHu1NaKGXQT8JpRHDjwTx6EE1+/tyX6GFXgBNCgMJpbabpYG7qWC25r/QQm+BpsM5LWwEmJjvdeA1fVBCC70EOpnkRGRP4nsy2ptADhEaLwub0EIvgiaFhBgDT4NzzesJKHI4hBb6UOg05NPBgJjsaYNtUJZwCC30JugUiEnC3tTApKakFRqo6YfCc0ILfTA0NciowEBMcyrUU5GABOmEFnoLNAnNpUJHRbwUcKVGfxL8o2sptNCHQk8DPyk8SXSnRa1tWmgTJbTQm6GJoJeafzKcPDEE0v6+JYkgtNCHQKchgtyIBuHIQDNBkLVrsV9ooQ+DTs3FaIq9+B+TkIJHRIZGjBBa6G3QdJiIottr/scrRGhMwwopcChoI7TQC6DbwbwRE5NAQA63aYhuPwyhhV4C/QJXKlw0eENNuyYI+6g5EVrow6FJ4C0JDK1YT8RE2pggFqGFXgBNBb9JfJsMgzQUEMH/aQAPOxxCC30gNClkxLwnosB0QKkZIvu9XVtooRdBp8EgiYBEAGjWnooiEfgrA09ooQ+CbgcDaqIlEz6FcJJh3xoMQgu9CTqJb6R4tYJfE+5JoTsa0hNa6A3QjSiQClWz0Ubso+snQVJooTdAk6BNHWh5I/CWIJthJCYRhBb6UOh3bkyFQmoCkAGmHUaEFnoj9BMTjTYs5BCTuEiK6lQ4hRZ6C3RjntHBoRH6moNtDu/ya6GFXgLdmGZEWJ+COU3TQUV8OugILfQG6BR6IcMFMeymoMyT4pWGHaGF3gr9RKSnZtzTQE5qdGgBQylgoYU+FJo0KxSmKXIpVNMeFhL7hRb6cOhYAMqwHC12RBRsBqIoSAgt9AJoElihAZfpMIhgTw+2KYZCC70NmopsRGCgjQQV6okYOBkW48AhtNAHQ9PCRIMzrdBITPlGmMBTltBCL4JOQ0ITdp9Cdc2miRA4FkShhV4CTYb9VOgIXBL1SSinDeoJLfQ26ElYI41KIxjQwyVBeRJ0v21OhBZ6IfTUODRiItkMFe9p0xNFBKGFPhj6NVy0CBGBjzQjSYQgYsUYmBVa6CXQTwoHNdzTQEBCrcn0TyaF0EJvhCaFgQ7tzTqTcD89knWFFlpoJtg1QiFpgkhoDwsFw+AitNBCPxPe6QAyNTHJnGuCdUILvRGabpKApTAO2iAYNohBKLTQG6FTw5DCa1SwR2EYaOxPe0cDh9BCHwq96RJaaKGFFlroD7l+AsMldpEogeX7AAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>很多时候我们下载视频的时候，都是么得字幕的，对于强迫症或者有其他需求的人来说，都需要加进去，一般都是首先去其它字幕网站下载后，使用<code>ffmpeg</code>或者一些转码程序将字幕烧录进去，通常来说，手动获取字幕还是比较麻烦的，这里就分享一个工具<code>GetSub</code>，可以自动给我们根据某个视频或者视频文件夹，匹配出相应的<code>ass</code>/<code>srt</code>字幕文件，字幕来源于subhd、zimuzu和zimuku，获取速度也是很快的，有需求的可以用下。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/getsub.png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/gyh1621/GetSubtitles" target="_blank" rel="noopener">https://github.com/gyh1621/GetSubtitles</a></p>
+<p><strong>环境要求：</strong><code>Python 2</code>或<code>3</code>，建议使用<code>Python 3</code>。</p>
+<p><strong>1、安装pip或pip3</strong></p>
+<pre><code>提示：pip和pip3自己选一种进行安装。</code></pre><p>安装<code>pip</code>：</p>
+<pre><code>#CentOS 6.x 32位
+rpm -ivh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+yum install -y python-pip
+
+#CentOS 6.x 64位
+rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum install -y python-pip
+
+#CentOS 7.x
+yum install -y epel-release
+yum install -y python-pip
+#如果CentOS 7安装出现No package python-pip available，可以用以下命令进行安装
+wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+
+#Debian/Ubuntu系统
+apt -y update
+apt -y install python-pip</code></pre><p>安装<code>pip3</code>：</p>
+<pre><code>#CenOS 6系统
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+yum install python34 -y
+wget https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py
+
+#CenOS 7系统
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum install python36 -y
+wget https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py
+
+#Debian/Ubuntu系统
+apt update
+apt install python3-pip python3-setuptools python3-wheel -y</code></pre><p><strong>2、安装GetSub</strong></p>
+<pre><code>#pip安装
+pip install getsub
+
+#pip3安装
+pip3 install getsub</code></pre><p><strong>3、使用方法</strong></p>
+<pre><code>#使用命令
+getsub [-h] [-q] [-s] [-o] [-m] [-n NUMBER] [-b] [-d DOWNLOADER] [--debug] [--plex] name
+
+#参数详解
+-h          帮助
+-q          查询模式，手动选择下载的压缩包，多选使用&apos;,&apos;或&apos;，&apos;分隔
+-s          手动选择下载压缩包中要解压的字幕
+-o          若视频存在同名字幕，替换已经存在的字幕
+-m          保存原始下载字幕压缩包（通常一个字幕压缩包含有多个字幕）
+-b          若一个字母压缩包内同时有.ass、.srt类型字幕，保存两种字幕
+-n          查询模式下显示最大候选字幕数
+-d          选择下载器，subhd、zimuku、zimuzu
+--plex      在下载完成的字幕名中插入.zh标识供plex识别为中文字幕
+--debug     显示报错详细信息</code></pre><p>下载指定视频的字幕，使用命令：</p>
+<pre><code>#自动给你匹配它认为最合适的字幕，一般是ass格式、双语字幕
+getsub Aladdin.2019.720p.WEBRip.x264
+
+#自动查询字幕文件，并让你选择合适的下载
+getsub -q -s Aladdin.2019.720p.WEBRip.x264</code></pre><p>以上命令默认将字幕文件下载到当前执行目录，如果想下载到指定目录，比如<code>/moerats</code>，那后面就使用<code>/moerats/电影名称</code>。</p>
+<p>批量下载视频文件夹所有视频的字幕，使用命令：</p>
+<pre><code>#自动匹配/moerats文件夹里的所有视频最合适的字幕，并直接给你下载到/moerats目录
+getsub /moerats
+
+#批量查询/moerats文件夹里的所有视频的字幕文件，并让你选择合适的下载
+getsub -q -s /moerats</code></pre><p>最后就可以自行将字幕烧录进视频了。</p>
+<p>使用<code>ffmpeg</code>烧录字幕的方法大致为：</p>
+<pre><code>#安装ffmpeg
+wget https://www.moerats.com/usr/down/ffmpeg/ffmpeg-git-$(getconf LONG_BIT)bit-static.tar.xz
+tar xvf ffmpeg-git-*-static.tar.xz
+mv ffmpeg-git-*/ffmpeg  ffmpeg-git-*/ffprobe /usr/bin/
+rm -rf ffmpeg-git-*
+
+#简单的烧录命令
+ffmpeg -i input.mp4 -vf subtitles=input.ass output.mp4</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-02-03T23:38:47.000Z" itemprop="datePublished">2020-02-04</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.655Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/02/05/centos-debian-e5-ae-89-e8-a3-85-e4-ba-ba-e4-ba-ba-e5-bd-b1-e8-a7-86-e5-ae-a2-e6-88-b7-e7-ab-af-ef-bc-8c-e4-b8-8b-e8-bd-bd-e8-b5-84-e6-ba-90-e5-b9-b6-e8-87-aa-e5-8a-a8-e4-b8-8a-e4-bc-a0-e5-88-b0onedriv/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">CentOS/Debian安装人人影视客户端，下载资源并自动上传到OneDrive网盘</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/02/04/linux-vps-e4-b8-80-e9-94-ae-e6-b7-bb-e5-8a-a0-e5-88-a0-e9-99-a4swap-e8-99-9a-e6-8b-9f-e5-86-85-e5-ad-98/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux VPS一键添加/删除Swap虚拟内存</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

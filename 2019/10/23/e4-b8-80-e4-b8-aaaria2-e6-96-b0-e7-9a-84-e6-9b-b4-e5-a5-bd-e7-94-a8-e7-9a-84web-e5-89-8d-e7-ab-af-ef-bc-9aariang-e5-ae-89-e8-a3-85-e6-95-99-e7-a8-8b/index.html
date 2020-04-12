@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>一个Aria2新的更好用的Web前端：AriaNg安装教程 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="一个Aria2新的更好用的Web前端：AriaNg安装教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/10/23/e4-b8-80-e4-b8-aaaria2-e6-96-b0-e7-9a-84-e6-9b-b4-e5-a5-bd-e7-94-a8-e7-9a-84web-e5-89-8d-e7-ab-af-ef-bc-9aariang-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="说明：AriaNg是一个很实用的Aria2前端，比起Aria2 WebUI来说，好用多了，关于Aria2服务端搭建方法可参考：BT种子&#x2F;磁力链接下载工具：Aria2一键安装管理脚本，这里说下前端AriaNg搭建方法。 自己也搭建了个AriaNg，可以参考：https:&#x2F;&#x2F;www.moerats.com&#x2F;Aria2&#x2F; 相关说明AriaNg功能覆盖了Aria2 WebUI和YAAW的功能。与之前的前端 - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/AriaNg.png"><meta property="article:published_time" content="2019-10-22T22:39:49.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.644Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.644Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/10/23/e4-b8-80-e4-b8-aaaria2-e6-96-b0-e7-9a-84-e6-9b-b4-e5-a5-bd-e7-94-a8-e7-9a-84web-e5-89-8d-e7-ab-af-ef-bc-9aariang-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/10/23/e4-b8-80-e4-b8-aaaria2-e6-96-b0-e7-9a-84-e6-9b-b4-e5-a5-bd-e7-94-a8-e7-9a-84web-e5-89-8d-e7-ab-af-ef-bc-9aariang-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/10/23/e4-b8-80-e4-b8-aaaria2-e6-96-b0-e7-9a-84-e6-9b-b4-e5-a5-bd-e7-94-a8-e7-9a-84web-e5-89-8d-e7-ab-af-ef-bc-9aariang-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/"
+    },
+    "headline": "一个Aria2新的更好用的Web前端：AriaNg安装教程 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-10-22T22:39:49.000Z",
+    "dateModified": "2020-04-12T04:09:09.644Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：AriaNg是一个很实用的Aria2前端，比起Aria2 WebUI来说，好用多了，关于Aria2服务端搭建方法可参考：BT种子/磁力链接下载工具：Aria2一键安装管理脚本，这里说下前端AriaNg搭建方法。 自己也搭建了个AriaNg，可以参考：https://www.moerats.com/Aria2/ 相关说明AriaNg功能覆盖了Aria2 WebUI和YAAW的功能。与之前的前端 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=一个Aria2新的更好用的Web前端：AriaNg安装教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=一个Aria2新的更好用的Web前端：AriaNg安装教程&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=一个Aria2新的更好用的Web前端：AriaNg安装教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAELElEQVR42u2aQXLjMAwE/f9P715TiohpUD4ITOvixJEpNVOGBoP5/PsDx0dIIYUUUkghH0J+iuPXh368fz3n5/vX1+vP12us1rxbr3PfQgo5FfL2S3sBSEC3F4GbVn32el7rvoUUcjAkLQbV4qs10gZWRYacu7qmkEKeCrkqBneAKzgiNhJIKnpCCvmXINODmghnKtBXYnwl3IUU8kTIVQFIRYQWiNX1yM2S3x91IUIK+TJIWhTe9vo1t05IIV8EGYcmoRiQv1ODmlw/nb811RJSyBdBpmFMEgRJYH9joJQMrOV6Qgo5FLIycCvoSjTvmNC0aU7FTEghJ0NWxYEaWqsi8kQYEEM5bqiQQg6EJAOYKnBETWAiwEkBq9b7da6QQg6FTGbvqiARYzoFkaoNJWb3VoBQSCEHQHaCENWDOf2dXq8TmFg2GEIKORSyKirpi05MJSL6aXEizbeQQp4ASUMQyfglgpoY17R5xgMfIYUcAkm+0KnRJU00MYeToE9FT0ghT4YkgpkIAjIsImKfCHQcVhJSyGGQKfhQGUykOHQDFZ0ihQuPkEK+GLLTvKYwPQkxdA00MjQqjSwhhRwEmRrl1FB3BfqTEFPH/BZSyFMgyZCHNtAd8UBCD0lEtCbNQgr5UsjUMBNzmQiEHQHw1ZSkkEIOgkzNZ/qyV8XpaTCJbCIa+Agp5BDIHZN4NxTRGeh0C+JtMRNSyIGQqUiQxrjTzHbN6+6gV0ghp0PS0G1VNDoFgQQMiRhHgQshhRwISYJEKcjQGdbsms0pZCykkCdBpgJSCeSnZjMJLH2ah5BCToekRhYJBpKAxLfNsGURFFLIgZDE4KWvyehKooKuS4NMQgo5EbISy12jqQPYCUuRoCLuQoQUcghkGnzSBpbeDBkmkTXK4imkkEMhSaCvMqxI87sT1O0MotBUS0ghh0DS4kBNr/SQp6Gk7mAIV1chhRwASRchJnQymMgmkjVTkFBIIadDdsyiXXFOQ0n0/PL6Qgp5ACQxuKrNIKGmGGhoGNDlZ4UUciAkCRyli3fEfldspCKHBLqQQg6FrEQ4NZ86YoKEnirhXv0ThBRyKiRpnpNA3wkupJunQY1ymCukkAMhnzTEaRhExXUypbqGl5BCTodMIXoyqNl98BMB0tnMUvEIKeQASGr2puA8KRYpcESumRoKIYU8AZI84GloiBrOnXBwGv5udSFCCjkAMhWeZGDtPPy7QiBtfJmSFFLIAZApGETDE3RziOjYFRjYQRdSyJdDdh7KZEhETOAdqFR4Wm6dkEK+HJLcNA1JdAzgTvGhQWIhhTwdshreVAOjtDEkEJga8rLxF1LIQyHTwKVjCJPAQ7U5HfNNSCEnQ9IPEyGexDQJByejLBU2IYWcDNkZzBDRQBvd7lC2AyikkFMhTz6EFFJIIYUUcvP4D3Kqg7/V31s7AAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">一个Aria2新的更好用的Web前端：AriaNg安装教程</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-10-23</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=一个Aria2新的更好用的Web前端：AriaNg安装教程&url=http://yoursite.com/2019/10/23/e4-b8-80-e4-b8-aaaria2-e6-96-b0-e7-9a-84-e6-9b-b4-e5-a5-bd-e7-94-a8-e7-9a-84web-e5-89-8d-e7-ab-af-ef-bc-9aariang-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=一个Aria2新的更好用的Web前端：AriaNg安装教程&url=http://yoursite.com/2019/10/23/e4-b8-80-e4-b8-aaaria2-e6-96-b0-e7-9a-84-e6-9b-b4-e5-a5-bd-e7-94-a8-e7-9a-84web-e5-89-8d-e7-ab-af-ef-bc-9aariang-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/23/e4-b8-80-e4-b8-aaaria2-e6-96-b0-e7-9a-84-e6-9b-b4-e5-a5-bd-e7-94-a8-e7-9a-84web-e5-89-8d-e7-ab-af-ef-bc-9aariang-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/10/23/e4-b8-80-e4-b8-aaaria2-e6-96-b0-e7-9a-84-e6-9b-b4-e5-a5-bd-e7-94-a8-e7-9a-84web-e5-89-8d-e7-ab-af-ef-bc-9aariang-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/10/23/e4-b8-80-e4-b8-aaaria2-e6-96-b0-e7-9a-84-e6-9b-b4-e5-a5-bd-e7-94-a8-e7-9a-84web-e5-89-8d-e7-ab-af-ef-bc-9aariang-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/10/23/e4-b8-80-e4-b8-aaaria2-e6-96-b0-e7-9a-84-e6-9b-b4-e5-a5-bd-e7-94-a8-e7-9a-84web-e5-89-8d-e7-ab-af-ef-bc-9aariang-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/10/23/e4-b8-80-e4-b8-aaaria2-e6-96-b0-e7-9a-84-e6-9b-b4-e5-a5-bd-e7-94-a8-e7-9a-84web-e5-89-8d-e7-ab-af-ef-bc-9aariang-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAELElEQVR42u2aQXLjMAwE/f9P715TiohpUD4ITOvixJEpNVOGBoP5/PsDx0dIIYUUUkghH0J+iuPXh368fz3n5/vX1+vP12us1rxbr3PfQgo5FfL2S3sBSEC3F4GbVn32el7rvoUUcjAkLQbV4qs10gZWRYacu7qmkEKeCrkqBneAKzgiNhJIKnpCCvmXINODmghnKtBXYnwl3IUU8kTIVQFIRYQWiNX1yM2S3x91IUIK+TJIWhTe9vo1t05IIV8EGYcmoRiQv1ODmlw/nb811RJSyBdBpmFMEgRJYH9joJQMrOV6Qgo5FLIycCvoSjTvmNC0aU7FTEghJ0NWxYEaWqsi8kQYEEM5bqiQQg6EJAOYKnBETWAiwEkBq9b7da6QQg6FTGbvqiARYzoFkaoNJWb3VoBQSCEHQHaCENWDOf2dXq8TmFg2GEIKORSyKirpi05MJSL6aXEizbeQQp4ASUMQyfglgpoY17R5xgMfIYUcAkm+0KnRJU00MYeToE9FT0ghT4YkgpkIAjIsImKfCHQcVhJSyGGQKfhQGUykOHQDFZ0ihQuPkEK+GLLTvKYwPQkxdA00MjQqjSwhhRwEmRrl1FB3BfqTEFPH/BZSyFMgyZCHNtAd8UBCD0lEtCbNQgr5UsjUMBNzmQiEHQHw1ZSkkEIOgkzNZ/qyV8XpaTCJbCIa+Agp5BDIHZN4NxTRGeh0C+JtMRNSyIGQqUiQxrjTzHbN6+6gV0ghp0PS0G1VNDoFgQQMiRhHgQshhRwISYJEKcjQGdbsms0pZCykkCdBpgJSCeSnZjMJLH2ah5BCToekRhYJBpKAxLfNsGURFFLIgZDE4KWvyehKooKuS4NMQgo5EbISy12jqQPYCUuRoCLuQoQUcghkGnzSBpbeDBkmkTXK4imkkEMhSaCvMqxI87sT1O0MotBUS0ghh0DS4kBNr/SQp6Gk7mAIV1chhRwASRchJnQymMgmkjVTkFBIIadDdsyiXXFOQ0n0/PL6Qgp5ACQxuKrNIKGmGGhoGNDlZ4UUciAkCRyli3fEfldspCKHBLqQQg6FrEQ4NZ86YoKEnirhXv0ThBRyKiRpnpNA3wkupJunQY1ymCukkAMhnzTEaRhExXUypbqGl5BCTodMIXoyqNl98BMB0tnMUvEIKeQASGr2puA8KRYpcESumRoKIYU8AZI84GloiBrOnXBwGv5udSFCCjkAMhWeZGDtPPy7QiBtfJmSFFLIAZApGETDE3RziOjYFRjYQRdSyJdDdh7KZEhETOAdqFR4Wm6dkEK+HJLcNA1JdAzgTvGhQWIhhTwdshreVAOjtDEkEJga8rLxF1LIQyHTwKVjCJPAQ7U5HfNNSCEnQ9IPEyGexDQJByejLBU2IYWcDNkZzBDRQBvd7lC2AyikkFMhTz6EFFJIIYUUcvP4D3Kqg7/V31s7AAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#相关说明"><span class="post-toc-number">1.</span> <span class="post-toc-text">相关说明</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">2.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong><code>AriaNg</code>是一个很实用的<code>Aria2</code>前端，比起<code>Aria2 WebUI</code>来说，好用多了，关于<code>Aria2</code>服务端搭建方法可参考：BT种子/磁力链接下载工具：Aria2一键安装管理脚本，这里说下前端<code>AriaNg</code>搭建方法。</p>
+<p>自己也搭建了个<code>AriaNg</code>，可以参考：<a href="https://www.moerats.com/Aria2/" target="_blank" rel="noopener">https://www.moerats.com/Aria2/</a></p>
+<h2 id="相关说明"><a href="#相关说明" class="headerlink" title="相关说明"></a>相关说明</h2><p><code>AriaNg</code>功能覆盖了<code>Aria2 WebUI</code>和<code>YAAW</code>的功能。与之前的前端相比，主要优势在于：<br>1、完全响应式布局，电脑和手机等设备全部支持。<br>2、更友好的用户界面，使用起来更像常用的下载工具。<br>下载任务列表支持排序（文件名、大小、进度、剩余时间、下载速度等）和搜索，正在等待的任务列表支持拖拽安排下载顺序；任务详情页面支持健康度等参数的显示，文件和<code>BT</code>节点列表支持排序，文件列表支持按文件类型筛选选择，<code>BT</code>节点列表支持显示每个节点的任务完成状态等信息；新建任务页面支持直接手动下载等；提供完整的<code>aria2</code>设置支持，支持<code>aria2</code>所有设置的说明、修改等，设置界面全部中文。<br>3、支持下载完成通知（仅支持<code>Webscoket</code>协议及<code>Chrome</code>等现代浏览器）。<br>4、支持自定义使用的协议，<code>Http(s)</code>或<code>Websocket</code>可任选。（<code>Http(s)</code>协议支持压缩，减少带宽）<br>5、数据增量更新，减少带宽使用。<br>6、其他功能大家可以自行体验，之后还会增加更多的功能。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/AriaNg.png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github项目地址：</strong><a href="https://github.com/mayswind/AriaNg" target="_blank" rel="noopener">https://github.com/mayswind/AriaNg</a></p>
+<p><strong>1、安装宝塔</strong></p>
+<pre><code>#Centos系统
+yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh
+#Ubuntu系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; sudo bash install.sh
+#Debian系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; bash install.sh</code></pre><p>安装完成后，进入面板，点击左侧软件管理，然后安装<code>Nginx</code>即可。</p>
+<p><strong>2、上传AriaNg程序</strong><br>搭建好环境后，添加域名(没域名的直接添加<code>IP</code>)，再下载<code>AriaNg</code>程序压缩包(点击下载)，并上传解压到网站根目录。最后直接访问<code>IP</code>或者域名即可。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-10-22T22:39:49.000Z" itemprop="datePublished">2019-10-23</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.644Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/10/23/e4-b8-80-e6-ac-be-e8-b7-a8-e5-b9-b3-e5-8f-b0-e7-9a-84-e5-bf-ab-e9-80-9f-ef-bc-8c-e7-ae-80-e5-8d-95-ef-bc-8c-e5-b9-b2-e5-87-80-e7-9a-84-e8-a7-86-e9-a2-91-e4-b8-8b-e8-bd-bd-e5-99-a8-ef-bc-9aannie/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一款跨平台的快速，简单，干净的视频下载器：Annie，支持Bilibili/Youtube等多个网站</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/10/22/wordpress-e5-8d-9a-e5-ae-a2-e7-bd-91-e7-ab-99-e5-b8-b8-e7-94-a8robots-txt-e8-a7-84-e5-88-99/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">WordPress博客网站常用Robots.txt规则</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

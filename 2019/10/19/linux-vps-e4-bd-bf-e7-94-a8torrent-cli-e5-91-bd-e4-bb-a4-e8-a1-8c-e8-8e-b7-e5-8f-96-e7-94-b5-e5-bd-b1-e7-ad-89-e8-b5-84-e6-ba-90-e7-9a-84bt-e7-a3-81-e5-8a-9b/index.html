@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Linux VPS使用torrent-cli命令行获取电影等资源的BT磁力 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Linux VPS使用torrent-cli命令行获取电影等资源的BT磁力 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/10/19/linux-vps-e4-bd-bf-e7-94-a8torrent-cli-e5-91-bd-e4-bb-a4-e8-a1-8c-e8-8e-b7-e5-8f-96-e7-94-b5-e5-bd-b1-e7-ad-89-e8-b5-84-e6-ba-90-e7-9a-84bt-e7-a3-81-e5-8a-9b/"><meta property="og:locale" content="en"><meta name="description" content="说明：我们很多人找小电影的都习惯百度，但这个方法似乎没什么逼格，对于手上有很多VPS的来说，找资源这种事，可以不用像普通老百姓一样打开百度盲目查找了！这里分享个磁力爬虫工具，可以帮你完成查找磁力的工作。 安装Github地址：https:&#x2F;&#x2F;github.com&#x2F;chenjiandongx&#x2F;torrent-cli系统要求：Windows、Linux、MacOs，这里就说下Linux VPS安装，建 - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/torrent-cli(1).png"><meta property="article:published_time" content="2019-10-19T00:34:25.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.644Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.644Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/10/19/linux-vps-e4-bd-bf-e7-94-a8torrent-cli-e5-91-bd-e4-bb-a4-e8-a1-8c-e8-8e-b7-e5-8f-96-e7-94-b5-e5-bd-b1-e7-ad-89-e8-b5-84-e6-ba-90-e7-9a-84bt-e7-a3-81-e5-8a-9b/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/10/19/linux-vps-e4-bd-bf-e7-94-a8torrent-cli-e5-91-bd-e4-bb-a4-e8-a1-8c-e8-8e-b7-e5-8f-96-e7-94-b5-e5-bd-b1-e7-ad-89-e8-b5-84-e6-ba-90-e7-9a-84bt-e7-a3-81-e5-8a-9b/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/10/19/linux-vps-e4-bd-bf-e7-94-a8torrent-cli-e5-91-bd-e4-bb-a4-e8-a1-8c-e8-8e-b7-e5-8f-96-e7-94-b5-e5-bd-b1-e7-ad-89-e8-b5-84-e6-ba-90-e7-9a-84bt-e7-a3-81-e5-8a-9b/"
+    },
+    "headline": "Linux VPS使用torrent-cli命令行获取电影等资源的BT磁力 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-10-19T00:34:25.000Z",
+    "dateModified": "2020-04-12T04:09:09.644Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：我们很多人找小电影的都习惯百度，但这个方法似乎没什么逼格，对于手上有很多VPS的来说，找资源这种事，可以不用像普通老百姓一样打开百度盲目查找了！这里分享个磁力爬虫工具，可以帮你完成查找磁力的工作。 安装Github地址：https://github.com/chenjiandongx/torrent-cli系统要求：Windows、Linux、MacOs，这里就说下Linux VPS安装，建 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Linux VPS使用torrent-cli命令行获取电影等资源的BT磁力" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Linux VPS使用torrent-cli命令行获取电影等资源的BT磁力&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=Linux VPS使用torrent-cli命令行获取电影等资源的BT磁力" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEpUlEQVR42u2d23LTUBAE/f8/HV4D6Oz0yKQKa9svQJAt9aFq2bkEXl8LXy+hhRZaaKGF/jDo1/D6fs1vb/72+1fX/vn7f37OdK/jA1/c83TfI4fQQi+BPt1kApkO6OpAru6THnR67+lAx2uEFnoR9HRDMujo9c0hp0GZhqTQQgs9D5Hp59OScVpuyIIxfb7QQgt9H7oVGHShmUDS14UWWuhecCQz4TSYTstGEhtEtKSh9rbKElroD4duhPz//OM/c0OFFvqDoRuT/TRETgOKiIV0wGn5+ZHUUmihPxiaGvitkUCWERLU0WWEfL7QQm+AJqKgHVYncU8MgGQOTM8RBZPQQi+Bxm8CNyahehuy04OPByG00AugqQHXiAy6bDQluGROomKP0EIvgp4Cc7pg0KHWBAynQyXL0V+fI7TQS6CJsEihPBH7tCxLgzwiTmLCIbTQD4Mmg6Ex4lOpLhmL7VKTij3YGBRa6AdBNyV0ErYRU/50cMm8J0JFaKG3Q5OlnZruxGQkomO6nhT7Lt8ntNALoInwb5YXMiBTgJ8OgwQVlcoSWugHQVNTj4r5d8zEVJZPS0tceIQWegl0WuS/wIsIELL80AJNMiKFFno7NDUKp+GWSnRJcJDCe7OQRJUltNAPhE7mXHsgdFkgYqT57FQCFFroLdDJaKOllyQo6MBqD5iUBYQWehs0KbGRgIwaE3eAm6UGF22EFvrh0OmB6JJATPmmTEtDv3iIQgu9ALotsyZxQst0dwROMifisiS00Aug01KRjPd3XjTwnw6X3kNooTdBpxA8mXFJWBAzgpiG9NdCC70dmgr85nBoEQeHb0XZ9mhCCC30Imgq9lvRn0KDpsBHn/e4BAkt9CLoanGHhh0RMFPARwcXKdIKLfRW6HeNhST6m/AtLUHjItIIDqGFfhg0Me5o4N4Ik8a8J+FgfG6hhV4ETYU6hU2GQmMcEPEyLS5CC70Vmj4QMQBoYE/Cg/QHQApDQgu9EToJCCIM6NfIskIKtdSYEFroLdDNX/TUuCNBAA0byHUkFBBa6C3QKVRrwoBkAKTFIhn/dwL9mFoKLfTDoBuQVlRMiw8p4KVSwDGoe4FvXBFa6AdD04GAFoCi4EbD/9bUiKG80EI/HJqWXX6q1IZMvVf3DepjgCe00IugySCiCwVdctoiXbqmEhxCC/1A6GkwUBGRTPhJSNABRgo5qDwntNALoKclhJh1JCBIAUNaPNoDEVrordDUtEPm242yTQobiEiZnl1ooTdBU/FPA/xGTDSHQIK8KJKEFnoBdBIPdMDRYULMfmoeNkuO0EJvgr4boiWTsCmzpsFYGYB3ijZCC/0Q6Ea8N6ZBGlg0+GuXlroQK7TQS6CTkE9Djw6/RpSQotxY6hVa6AXQqRCbzH1SYG+L7jQkpEaG0EJvg04DjN4wGQMEjhj+rfgRWuiN0KQQc2fRoMKAlGynpSUNUKGFFjr/B3+00EpKO0TwNIWAS3EitNBCo3/MqQnpiSihZiM5NKGF3gpNDLe0rNCAP5nzTbhHC0NCC70Jelrc6UJPjPgkJqhZSMoAl9cLLfQC6E0voYUWWmihhf6Q1y9ZN1TP9bfj1QAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Linux VPS使用torrent-cli命令行获取电影等资源的BT磁力</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-10-19</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux VPS使用torrent-cli命令行获取电影等资源的BT磁力&url=http://yoursite.com/2019/10/19/linux-vps-e4-bd-bf-e7-94-a8torrent-cli-e5-91-bd-e4-bb-a4-e8-a1-8c-e8-8e-b7-e5-8f-96-e7-94-b5-e5-bd-b1-e7-ad-89-e8-b5-84-e6-ba-90-e7-9a-84bt-e7-a3-81-e5-8a-9b/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Linux VPS使用torrent-cli命令行获取电影等资源的BT磁力&url=http://yoursite.com/2019/10/19/linux-vps-e4-bd-bf-e7-94-a8torrent-cli-e5-91-bd-e4-bb-a4-e8-a1-8c-e8-8e-b7-e5-8f-96-e7-94-b5-e5-bd-b1-e7-ad-89-e8-b5-84-e6-ba-90-e7-9a-84bt-e7-a3-81-e5-8a-9b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/19/linux-vps-e4-bd-bf-e7-94-a8torrent-cli-e5-91-bd-e4-bb-a4-e8-a1-8c-e8-8e-b7-e5-8f-96-e7-94-b5-e5-bd-b1-e7-ad-89-e8-b5-84-e6-ba-90-e7-9a-84bt-e7-a3-81-e5-8a-9b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/10/19/linux-vps-e4-bd-bf-e7-94-a8torrent-cli-e5-91-bd-e4-bb-a4-e8-a1-8c-e8-8e-b7-e5-8f-96-e7-94-b5-e5-bd-b1-e7-ad-89-e8-b5-84-e6-ba-90-e7-9a-84bt-e7-a3-81-e5-8a-9b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/10/19/linux-vps-e4-bd-bf-e7-94-a8torrent-cli-e5-91-bd-e4-bb-a4-e8-a1-8c-e8-8e-b7-e5-8f-96-e7-94-b5-e5-bd-b1-e7-ad-89-e8-b5-84-e6-ba-90-e7-9a-84bt-e7-a3-81-e5-8a-9b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/10/19/linux-vps-e4-bd-bf-e7-94-a8torrent-cli-e5-91-bd-e4-bb-a4-e8-a1-8c-e8-8e-b7-e5-8f-96-e7-94-b5-e5-bd-b1-e7-ad-89-e8-b5-84-e6-ba-90-e7-9a-84bt-e7-a3-81-e5-8a-9b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/10/19/linux-vps-e4-bd-bf-e7-94-a8torrent-cli-e5-91-bd-e4-bb-a4-e8-a1-8c-e8-8e-b7-e5-8f-96-e7-94-b5-e5-bd-b1-e7-ad-89-e8-b5-84-e6-ba-90-e7-9a-84bt-e7-a3-81-e5-8a-9b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEpUlEQVR42u2d23LTUBAE/f8/HV4D6Oz0yKQKa9svQJAt9aFq2bkEXl8LXy+hhRZaaKGF/jDo1/D6fs1vb/72+1fX/vn7f37OdK/jA1/c83TfI4fQQi+BPt1kApkO6OpAru6THnR67+lAx2uEFnoR9HRDMujo9c0hp0GZhqTQQgs9D5Hp59OScVpuyIIxfb7QQgt9H7oVGHShmUDS14UWWuhecCQz4TSYTstGEhtEtKSh9rbKElroD4duhPz//OM/c0OFFvqDoRuT/TRETgOKiIV0wGn5+ZHUUmihPxiaGvitkUCWERLU0WWEfL7QQm+AJqKgHVYncU8MgGQOTM8RBZPQQi+Bxm8CNyahehuy04OPByG00AugqQHXiAy6bDQluGROomKP0EIvgp4Cc7pg0KHWBAynQyXL0V+fI7TQS6CJsEihPBH7tCxLgzwiTmLCIbTQD4Mmg6Ex4lOpLhmL7VKTij3YGBRa6AdBNyV0ErYRU/50cMm8J0JFaKG3Q5OlnZruxGQkomO6nhT7Lt8ntNALoInwb5YXMiBTgJ8OgwQVlcoSWugHQVNTj4r5d8zEVJZPS0tceIQWegl0WuS/wIsIELL80AJNMiKFFno7NDUKp+GWSnRJcJDCe7OQRJUltNAPhE7mXHsgdFkgYqT57FQCFFroLdDJaKOllyQo6MBqD5iUBYQWehs0KbGRgIwaE3eAm6UGF22EFvrh0OmB6JJATPmmTEtDv3iIQgu9ALotsyZxQst0dwROMifisiS00Aug01KRjPd3XjTwnw6X3kNooTdBpxA8mXFJWBAzgpiG9NdCC70dmgr85nBoEQeHb0XZ9mhCCC30Imgq9lvRn0KDpsBHn/e4BAkt9CLoanGHhh0RMFPARwcXKdIKLfRW6HeNhST6m/AtLUHjItIIDqGFfhg0Me5o4N4Ik8a8J+FgfG6hhV4ETYU6hU2GQmMcEPEyLS5CC70Vmj4QMQBoYE/Cg/QHQApDQgu9EToJCCIM6NfIskIKtdSYEFroLdDNX/TUuCNBAA0byHUkFBBa6C3QKVRrwoBkAKTFIhn/dwL9mFoKLfTDoBuQVlRMiw8p4KVSwDGoe4FvXBFa6AdD04GAFoCi4EbD/9bUiKG80EI/HJqWXX6q1IZMvVf3DepjgCe00IugySCiCwVdctoiXbqmEhxCC/1A6GkwUBGRTPhJSNABRgo5qDwntNALoKclhJh1JCBIAUNaPNoDEVrordDUtEPm242yTQobiEiZnl1ooTdBU/FPA/xGTDSHQIK8KJKEFnoBdBIPdMDRYULMfmoeNkuO0EJvgr4boiWTsCmzpsFYGYB3ijZCC/0Q6Ea8N6ZBGlg0+GuXlroQK7TQS6CTkE9Djw6/RpSQotxY6hVa6AXQqRCbzH1SYG+L7jQkpEaG0EJvg04DjN4wGQMEjhj+rfgRWuiN0KQQc2fRoMKAlGynpSUNUKGFFjr/B3+00EpKO0TwNIWAS3EitNBCo3/MqQnpiSihZiM5NKGF3gpNDLe0rNCAP5nzTbhHC0NCC70Jelrc6UJPjPgkJqhZSMoAl9cLLfQC6E0voYUWWmihhf6Q1y9ZN1TP9bfj1QAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>我们很多人找小电影的都习惯百度，但这个方法似乎没什么逼格，对于手上有很多<code>VPS</code>的来说，找资源这种事，可以不用像普通老百姓一样打开百度盲目查找了！这里分享个磁力爬虫工具，可以帮你完成查找磁力的工作。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/chenjiandongx/torrent-cli" target="_blank" rel="noopener">https://github.com/chenjiandongx/torrent-cli</a><br><strong>系统要求：</strong><code>Windows</code>、<code>Linux</code>、<code>MacOs</code>，这里就说下<code>Linux VPS</code>安装，建议使用<code>CentOS</code>系统。</p>
+<p><strong>1、安装Python3</strong><br>一般大多数<code>Ubuntu</code>自带<code>Python3</code>，而<code>Centos</code>、<code>Debian</code>就需要我们安装了。</p>
+<pre><code>#查看是否有Python3
+python3 -V
+
+#安装Python3
+#CentOS系统
+wget https://www.moerats.com/usr/shell/Python3/CentOS_Python3.6.sh &amp;&amp; sh CentOS_Python3.6.sh
+#Debian系统
+wget https://www.moerats.com/usr/shell/Python3/Debian_Python3.6.sh &amp;&amp; sh Debian_Python3.6.sh</code></pre><p>然后再输入<code>python3 -V</code>看是否安装成功。</p>
+<p><strong>2、安装torrent-cli</strong><br>这里安装方法有<code>2</code>种。<br><code>pip</code>安装：</p>
+<pre><code>pip3 install torrent-cli</code></pre><p>源码安装：</p>
+<pre><code>#可以修改torrent.py文件来增加所爬的磁力站
+git clone https://github.com/chenjiandongx/torrent-cli.git
+cd torrent-cli
+pip3 install -r requirements.txt
+python3 setup.py install</code></pre><p>提示<code>-bash: git: command not found</code>的使用命令：</p>
+<pre><code>#Debian/Ubuntu系统
+apt-get install git -y
+#CentOS系统
+yum install git -y</code></pre><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><strong>1、使用命令：</strong></p>
+<pre><code>usage: torrent-cli [-h] [-k KEYWORD] [-n NUM] [-s SORT_BY] [-o OUTPUT] [-p]
+                   [-v]
+
+Magnets-Getter CLI Tools.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -k KEYWORD, --keyword KEYWORD
+                        magnet keyword.
+  -n NUM, --num NUM     magnet number.(default 10)
+  -s SORT_BY, --sort-by SORT_BY
+                        0: Sort by date，1: Sort by size. 2. Sort by hot-
+                        rank.(default 0)
+  -o OUTPUT, --output OUTPUT
+                        output file path, supports csv and json format.
+  -p, --pretty-oneline  show magnets info with one line.
+  -v, --version         version information.</code></pre><p><strong>2、简单示范</strong></p>
+<pre><code>#搜索资源磁力
+torrent-cli -k 逃学威龙</code></pre><p><img src="https://www.moerats.com/usr/picture/torrent-cli(1).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<pre><code>#单行显示并按大小排序（也可以指定排序顺序为2，按热度排序）
+torrent-cli -k 逃学威龙 -p -s 1
+
+#保存为csv或者json文件（建议保存为csv文件，json数据会被序列化，转为utf编码）
+torrent-cli -k 逃学威龙 -o mv.csv</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-10-19T00:34:25.000Z" itemprop="datePublished">2019-10-19</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.644Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/10/19/e4-b8-80-e6-ac-be-e7-b2-be-e7-be-8e-e5-b0-8f-e5-b7-a7-e7-9a-84-e5-bc-80-e6-ba-90-e7-a4-be-e5-8c-ba-e8-ae-ba-e5-9d-9b-e7-b3-bb-e7-bb-9f-ef-bc-9ahomeland-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一款精美小巧的开源社区论坛系统：Homeland安装教程</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/10/19/e4-bd-bf-e7-94-a8unix-sockets-e7-9a-84redis-e4-bd-9c-e4-b8-ba-e5-af-b9-e8-b1-a1-e7-bc-93-e5-ad-98-e6-9d-a5-e5-8a-a0-e9-80-9fwordpress-e7-ab-99-e7-82-b9/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">使用Unix Sockets的Redis作为对象缓存来加速wordpress站点</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>CuteOne：一款基于Python3的OneDrive多网盘挂载程序，带会员/同步等功能 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="CuteOne：一款基于Python3的OneDrive多网盘挂载程序，带会员&#x2F;同步等功能 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/12/09/cuteone-ef-bc-9a-e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8epython3-e7-9a-84onedrive-e5-a4-9a-e7-bd-91-e7-9b-98-e6-8c-82-e8-bd-bd-e7-a8-8b-e5-ba-8f-ef-bc-8c-e5-b8-a6-e4-bc-9a-e5-91-98-e5-90-8c-e6-ad-a5/"><meta property="og:locale" content="en"><meta name="description" content="说明：现在OneDrive挂载目录程序越来越多了，之前水了很多了，包括PyOne、OneIndex、OLAINDEX和OneList，近期又出现了个CuteOne，一个基于Python3的OneDrive多网盘挂载程序，功能的话，看起来还是挺不错的，支持多盘负载、在线查看、在线上传、下载、多网盘同步、主从同步、在线分享、文件夹权限管理、会员功能、等级制度、付费查看、密码查看、支付模块、主题切换、极 - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/CuteOne(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/CuteOne(2).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/CuteOne(3).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/CuteOne(4).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/CuteOne(5).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/CuteOne(6).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/CuteOne(7).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/CuteOne(8).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/CuteOne(9).png"><meta property="article:published_time" content="2019-12-09T02:36:05.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.650Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.650Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/12/09/cuteone-ef-bc-9a-e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8epython3-e7-9a-84onedrive-e5-a4-9a-e7-bd-91-e7-9b-98-e6-8c-82-e8-bd-bd-e7-a8-8b-e5-ba-8f-ef-bc-8c-e5-b8-a6-e4-bc-9a-e5-91-98-e5-90-8c-e6-ad-a5/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/12/09/cuteone-ef-bc-9a-e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8epython3-e7-9a-84onedrive-e5-a4-9a-e7-bd-91-e7-9b-98-e6-8c-82-e8-bd-bd-e7-a8-8b-e5-ba-8f-ef-bc-8c-e5-b8-a6-e4-bc-9a-e5-91-98-e5-90-8c-e6-ad-a5/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/12/09/cuteone-ef-bc-9a-e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8epython3-e7-9a-84onedrive-e5-a4-9a-e7-bd-91-e7-9b-98-e6-8c-82-e8-bd-bd-e7-a8-8b-e5-ba-8f-ef-bc-8c-e5-b8-a6-e4-bc-9a-e5-91-98-e5-90-8c-e6-ad-a5/"
+    },
+    "headline": "CuteOne：一款基于Python3的OneDrive多网盘挂载程序，带会员/同步等功能 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-09T02:36:05.000Z",
+    "dateModified": "2020-04-12T04:09:09.650Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：现在OneDrive挂载目录程序越来越多了，之前水了很多了，包括PyOne、OneIndex、OLAINDEX和OneList，近期又出现了个CuteOne，一个基于Python3的OneDrive多网盘挂载程序，功能的话，看起来还是挺不错的，支持多盘负载、在线查看、在线上传、下载、多网盘同步、主从同步、在线分享、文件夹权限管理、会员功能、等级制度、付费查看、密码查看、支付模块、主题切换、极 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=CuteOne：一款基于Python3的OneDrive多网盘挂载程序，带会员/同步等功能" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=CuteOne：一款基于Python3的OneDrive多网盘挂载程序，带会员/同步等功能&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=CuteOne：一款基于Python3的OneDrive多网盘挂载程序，带会员/同步等功能" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFZElEQVR42u2dQW4bQRAD9f9PK6cAibFDFsfOIVDpYmG9q50pAe1ukrJebx/vlwiEIAQhCEEIQogQXuHx9Zyn838f+/q7P6/968aH69L5T/f4+ryt83FtQhCCEB4hPBaNw4sviz4tMi2+HTuBTMeP+xKCEIRwhHBT7FoRooX1tJlUhJ82R9YvBCEI4WcgnICQoncqTK2Bok1R+ykEIQjh30FIDQ0pjq3gpeNpzal4C0EIQtghnAYNKlTEmx0WehqUjsJoeGNIARaCEITAINCC9b/9/DG1WQhC+CAIpBiRRmQRVZOgSwyedN0/caWFIIQPgrAOI+sG1iFqEWLJ8ygECUEIQngsjPVkGNKgBY4IqKT4taFt+usgBCEIIZqZJxhLOCOJtulNuDWAqRksBCEIoUNo4csGihYsaqqSokrexCTkCkEIQjiLKqSJIeYsGlzGQEXcCCzoj8aPEIQghCq0tkXTItQK2lLgloL4rcIoBCEIYTIwieBJfr82PCQ4SkIZU3pNCEL4UAgpFLUUSyLA3AxqpOClNcdBTwhCEEIMbtGGqIkxxLhtML4zQJE9CUEIQsgQiCjRBJfUrKQm6mTIntZADdm6LyEIQQhRVGkiSCtCq+FCAleksSLHqiErBCEI4U0KFW2A0vXEEFlDnS3whc4TghCEgEIaLXyVjBsqvLYGCBmq4R4InhCEIISj+UKGIXqTBSQNcbTmqQ1cMaQhBCEIoQoZbTO02WliCR3YWiO2mjJCEIIQ3lVUIYsjIggRaFqIKxU4KqrWZk0IQhACMmQnYQICIGYKhUYGKBQkEYIQhFCFVmrGLAupJgiERt4QYu4KQQhC6BBuRIwmfi4GLhFJFsEEXScEIQjhKLTSgrSIMKR5qcXrB4KdtTAKQQhCQP8UhhS3JsBQw5c0UWlwe4EHcqWFIAQhoA+BLTcgJgkJhJEhjwbMkKgiBCEIAf+zhzbk3Ji0S8CLFMQGvZovQhCCEKo4uQxQJNxF4LXCTAxkVDSFIAQhRAgtsEUXfxMGI6Gr9HrLECUEIQjhDIEWuBbQIAX1JpR1K+aQN0YIQhDCGcIccBiaofScBLWJuXLV1AlBCEI4iiprMKJtdCmaVPQlBi5ppoQgBCFsX3zTwhWLWNIKW4NDBrU2QB33KAQhCCEWRrpoCosOUCQs2u5DRNtqyApBCEJ4k2aFBKoWQeTmHuR5E1hmZUkIQvhQCESYaJttQ04TS8lAlhq7ZagSghCE0CEQ4bMFtJYBiA5EJDCyDGVCEIIQ7iA0sSUVKGrCkk20QWsxZ2uzJAQhCKEukAS8iDlCwFEBB4moBI4QhCCEGNKg4WsaxmiNVgty3gS1FsNHCEIQQv8i3aXQkPPawlazhgRJiFEjBCEIgX3o49svDIyaZPaQwayJMFeutBCEIARkyC5hqbYZYvyS9VBBZwpzCkEIQkBmZjNj6MC0DmXL8ESNYSEIQQgMwhKUXoDdwm2LT2skQq4QhCCEHUITKelAcyu2rkLwGi4TghCEkPWEpchQAeVm6EpFdimA6XohCEEI+3fDEZGFNFG00VqbqhYIaWaxEIQghA6BBrXW5qoNZq2okZDn+tpCEIIQmPlCzY9k3lKBlhQ6AnUZ6pAhKwQhfDAEMji1sBUtpNQ4pQMUDWzM5osQhPDhEGiIIhWvBI0WMhrqaEGztA4hCEEI2+cdyFB0Y55SE3U1fpaCHA1ZIQhBCBgCLVTtGBm2iHhKACDRVQhCEMI1hLaxm8DmbWM1D0rEfBGCEITwLVNzMVBIGONmszQ8ggujEIQghPcy0CwDVTQ9SuNEDBsq+ly50kIQwgdD+OSHEIQgBCEIQQhCeHz8Ap1Yh2HLFDyGAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">CuteOne：一款基于Python3的OneDrive多网盘挂载程序，带会员/同步等功能</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-09</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=CuteOne：一款基于Python3的OneDrive多网盘挂载程序，带会员/同步等功能&url=http://yoursite.com/2019/12/09/cuteone-ef-bc-9a-e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8epython3-e7-9a-84onedrive-e5-a4-9a-e7-bd-91-e7-9b-98-e6-8c-82-e8-bd-bd-e7-a8-8b-e5-ba-8f-ef-bc-8c-e5-b8-a6-e4-bc-9a-e5-91-98-e5-90-8c-e6-ad-a5/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=CuteOne：一款基于Python3的OneDrive多网盘挂载程序，带会员/同步等功能&url=http://yoursite.com/2019/12/09/cuteone-ef-bc-9a-e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8epython3-e7-9a-84onedrive-e5-a4-9a-e7-bd-91-e7-9b-98-e6-8c-82-e8-bd-bd-e7-a8-8b-e5-ba-8f-ef-bc-8c-e5-b8-a6-e4-bc-9a-e5-91-98-e5-90-8c-e6-ad-a5/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/09/cuteone-ef-bc-9a-e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8epython3-e7-9a-84onedrive-e5-a4-9a-e7-bd-91-e7-9b-98-e6-8c-82-e8-bd-bd-e7-a8-8b-e5-ba-8f-ef-bc-8c-e5-b8-a6-e4-bc-9a-e5-91-98-e5-90-8c-e6-ad-a5/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/12/09/cuteone-ef-bc-9a-e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8epython3-e7-9a-84onedrive-e5-a4-9a-e7-bd-91-e7-9b-98-e6-8c-82-e8-bd-bd-e7-a8-8b-e5-ba-8f-ef-bc-8c-e5-b8-a6-e4-bc-9a-e5-91-98-e5-90-8c-e6-ad-a5/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/12/09/cuteone-ef-bc-9a-e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8epython3-e7-9a-84onedrive-e5-a4-9a-e7-bd-91-e7-9b-98-e6-8c-82-e8-bd-bd-e7-a8-8b-e5-ba-8f-ef-bc-8c-e5-b8-a6-e4-bc-9a-e5-91-98-e5-90-8c-e6-ad-a5/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/12/09/cuteone-ef-bc-9a-e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8epython3-e7-9a-84onedrive-e5-a4-9a-e7-bd-91-e7-9b-98-e6-8c-82-e8-bd-bd-e7-a8-8b-e5-ba-8f-ef-bc-8c-e5-b8-a6-e4-bc-9a-e5-91-98-e5-90-8c-e6-ad-a5/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/12/09/cuteone-ef-bc-9a-e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8epython3-e7-9a-84onedrive-e5-a4-9a-e7-bd-91-e7-9b-98-e6-8c-82-e8-bd-bd-e7-a8-8b-e5-ba-8f-ef-bc-8c-e5-b8-a6-e4-bc-9a-e5-91-98-e5-90-8c-e6-ad-a5/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFZElEQVR42u2dQW4bQRAD9f9PK6cAibFDFsfOIVDpYmG9q50pAe1ukrJebx/vlwiEIAQhCEEIQogQXuHx9Zyn838f+/q7P6/968aH69L5T/f4+ryt83FtQhCCEB4hPBaNw4sviz4tMi2+HTuBTMeP+xKCEIRwhHBT7FoRooX1tJlUhJ82R9YvBCEI4WcgnICQoncqTK2Bok1R+ykEIQjh30FIDQ0pjq3gpeNpzal4C0EIQtghnAYNKlTEmx0WehqUjsJoeGNIARaCEITAINCC9b/9/DG1WQhC+CAIpBiRRmQRVZOgSwyedN0/caWFIIQPgrAOI+sG1iFqEWLJ8ygECUEIQngsjPVkGNKgBY4IqKT4taFt+usgBCEIIZqZJxhLOCOJtulNuDWAqRksBCEIoUNo4csGihYsaqqSokrexCTkCkEIQjiLKqSJIeYsGlzGQEXcCCzoj8aPEIQghCq0tkXTItQK2lLgloL4rcIoBCEIYTIwieBJfr82PCQ4SkIZU3pNCEL4UAgpFLUUSyLA3AxqpOClNcdBTwhCEEIMbtGGqIkxxLhtML4zQJE9CUEIQsgQiCjRBJfUrKQm6mTIntZADdm6LyEIQQhRVGkiSCtCq+FCAleksSLHqiErBCEI4U0KFW2A0vXEEFlDnS3whc4TghCEgEIaLXyVjBsqvLYGCBmq4R4InhCEIISj+UKGIXqTBSQNcbTmqQ1cMaQhBCEIoQoZbTO02WliCR3YWiO2mjJCEIIQ3lVUIYsjIggRaFqIKxU4KqrWZk0IQhACMmQnYQICIGYKhUYGKBQkEYIQhFCFVmrGLAupJgiERt4QYu4KQQhC6BBuRIwmfi4GLhFJFsEEXScEIQjhKLTSgrSIMKR5qcXrB4KdtTAKQQhCQP8UhhS3JsBQw5c0UWlwe4EHcqWFIAQhoA+BLTcgJgkJhJEhjwbMkKgiBCEIAf+zhzbk3Ji0S8CLFMQGvZovQhCCEKo4uQxQJNxF4LXCTAxkVDSFIAQhRAgtsEUXfxMGI6Gr9HrLECUEIQjhDIEWuBbQIAX1JpR1K+aQN0YIQhDCGcIccBiaofScBLWJuXLV1AlBCEI4iiprMKJtdCmaVPQlBi5ppoQgBCFsX3zTwhWLWNIKW4NDBrU2QB33KAQhCCEWRrpoCosOUCQs2u5DRNtqyApBCEJ4k2aFBKoWQeTmHuR5E1hmZUkIQvhQCESYaJttQ04TS8lAlhq7ZagSghCE0CEQ4bMFtJYBiA5EJDCyDGVCEIIQ7iA0sSUVKGrCkk20QWsxZ2uzJAQhCKEukAS8iDlCwFEBB4moBI4QhCCEGNKg4WsaxmiNVgty3gS1FsNHCEIQQv8i3aXQkPPawlazhgRJiFEjBCEIgX3o49svDIyaZPaQwayJMFeutBCEIARkyC5hqbYZYvyS9VBBZwpzCkEIQkBmZjNj6MC0DmXL8ESNYSEIQQgMwhKUXoDdwm2LT2skQq4QhCCEHUITKelAcyu2rkLwGi4TghCEkPWEpchQAeVm6EpFdimA6XohCEEI+3fDEZGFNFG00VqbqhYIaWaxEIQghA6BBrXW5qoNZq2okZDn+tpCEIIQmPlCzY9k3lKBlhQ6AnUZ6pAhKwQhfDAEMji1sBUtpNQ4pQMUDWzM5osQhPDhEGiIIhWvBI0WMhrqaEGztA4hCEEI2+cdyFB0Y55SE3U1fpaCHA1ZIQhBCBgCLVTtGBm2iHhKACDRVQhCEMI1hLaxm8DmbWM1D0rEfBGCEITwLVNzMVBIGONmszQ8ggujEIQghPcy0CwDVTQ9SuNEDBsq+ly50kIQwgdD+OSHEIQgBCEIQQhCeHz8Ap1Yh2HLFDyGAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#功能简述"><span class="post-toc-number">2.</span> <span class="post-toc-text">功能简述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>现在<code>OneDrive</code>挂载目录程序越来越多了，之前水了很多了，包括PyOne、OneIndex、OLAINDEX和OneList，近期又出现了个<code>CuteOne</code>，一个基于<code>Python3</code>的<code>OneDrive</code>多网盘挂载程序，功能的话，看起来还是挺不错的，支持多盘负载、在线查看、在线上传、下载、多网盘同步、主从同步、在线分享、文件夹权限管理、会员功能、等级制度、付费查看、密码查看、支付模块、主题切换、极速缓存。至于体验的话，可能暂时会差点，毕竟才出来不到一个月的项目，不过看得出来作者也是有理想的人，所以会长期维护更新，让其越来越好，这里就大概介绍下。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/CuteOne(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/CuteOne(2).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/CuteOne(3).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/CuteOne(4).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/CuteOne(5).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="功能简述"><a href="#功能简述" class="headerlink" title="功能简述"></a>功能简述</h2><pre><code>#驱动列表
+其实驱动列表你们把他当成一个分类即可，可是为啥里面可以添加很多网盘呢？
+那么重点来了，因为有负载切换的功能，当你一个网盘很多人在看这个网盘的同一个视频
+可能会变慢，我猜的； 所以可以切换到另外一个网盘里面的相同资源看，实现切换线路；
+然后这么设计是也是为了资源备份用的，意思就是这个驱动列表下的所有网盘内容需要保持一致；
+如果不一致，那么就没办法切换负载。
+
+#主从备份
+主从备份的功能就是给驱动下的所有网盘进行同步，但是前提是驱动下只能有一个主盘，别的都是从盘；
+因为主从备份是拉取主盘的内容，备份到从盘里的； 所以你们可以在主盘里面看到上传按钮，而从盘没有；
+这个功能是预防你们网盘被封，然后有备份盘当做备用；这也是一个卖资源盘的办法。
+
+#权限管理
+权限管理其实就是给文件夹设置密码啦；
+然后你们可以看到还有群组管理，这个是干啥的呢？嗯，就是设置VIP的意思，就是这个群组可以免密查看你加密的文件路径。
+
+#会员管理
+会员管理顾名思义啦，他还有一个功能是和权限管理的群组是挂钩的，意思就是会员你可以给他分配群组，
+也就是所谓的VIP制度，让会员可以免密查看一些加密的文件夹。
+
+#文件管理
+因为有了会员，所以想给会员也能上传文件，然后分享，所以出了这个会员的文件管理，这里可以单独给会员设置存储盘，会员上传的文件就会在这个里面。
+
+#任务管理
+这个就是你在驱动列表的网盘里面上传了文件，这里可以看到那个文件当前的同步状态而已。
+
+#开始同步和更新缓存
+开始同步只有你点击管理了之后 进入驱动下的网盘列表，你才看到这个按钮，因为他是用来主从备份的，你不需要主从备份，你就别按他；
+
+更新缓存，如果你不更新缓存，你会发现你前端没有文件，这个其实就是拉取一下最新的数据而已。
+
+#文件地址的缓存周期
+OneDrive的文件地址是有时效性的，大概五分钟这样吧，所以我这边使用里类推模式来更新地址缓存，什么是类推，就是当这个文件五分钟内有人访问一次，
+数据库就会是最新文件的地址，以此类推，如果文件热度很高，地址是一直是最新的，如果热度低，只要有一个人访问，地址就会缓存到最新的到数据库。</code></pre><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/Hackxiaoya/CuteOne" target="_blank" rel="noopener">https://github.com/Hackxiaoya/CuteOne</a></p>
+<p><strong>环境需求：</strong><code>Python3</code>、<code>Mysql &gt;= 5.5</code>、<code>MongoDB</code>、<code>Nginx</code>/<code>Apache</code>。</p>
+<p><strong>1、安装宝塔</strong></p>
+<pre><code>#CentOS系统
+wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh
+#Ubuntu系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh
+#Debian系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh</code></pre><p>安装完成后，进入面板，点击左侧软件管理，然后安装<code>Mysql</code>、<code>Mongodb</code>、<code>Nginx</code>。且<code>Debian</code>安装<code>MongoDb</code>之前还需要使用命令<code>apt install sudo</code>，不然可能存在<code>MongoDb</code>启动不了的情况。</p>
+<p>安装完成后再点击左侧数据库-添加数据库，设置好<code>Mysql</code>数据库信息。</p>
+<p><strong>2、安装Python3</strong></p>
+<pre><code>#CentOS系统
+wget https://www.moerats.com/usr/shell/Python3/CentOS_Python3.6.sh &amp;&amp; sh CentOS_Python3.6.sh
+#Debian系统
+wget https://www.moerats.com/usr/shell/Python3/Debian_Python3.6.sh &amp;&amp; sh Debian_Python3.6.sh
+#Ubuntu系统
+apt update
+apt install python3-pip python3-setuptools python3-dev python3-wheel build-essential -y</code></pre><p><strong>3、安装依赖</strong></p>
+<pre><code>wget https://github.com/Hackxiaoya/CuteOne/archive/dev.zip  
+unzip dev.zip
+mv CuteOne-dev CuteOne
+cd CuteOne
+pip3 install -r requirements.txt</code></pre><p><strong>4、运行程序</strong><br>这里没用作者提供的<code>uwsgi</code>方式运行，换成了<code>gunicorn</code>，使用命令：</p>
+<pre><code>pip3 install gunicorn
+gunicorn app:app -b 0.0.0.0:8000</code></pre><p>然后再访问<code>http://ip:8000/install</code>进行安装。如果打不开该地址的，点击宝塔面板左侧安全-放行<code>8000</code>端口。<br><img src="https://www.moerats.com/usr/picture/CuteOne(6).png" alt="请输入图片描述" title="请输入图片描述"><br>记得安装的时候<code>MongoDB</code>默认没有设置用户名密码，所以填写<code>Mongodb</code>的时候，直接留空下一步。</p>
+<p>安装完成后，使用<code>Ctrl+C</code>断开运行，再使用命令后台运行：</p>
+<pre><code>gunicorn app:app -b 127.0.0.1:8000 -D</code></pre><p>接下来我们需要使用域名反代并添加<code>SSL</code>，不然访问会有点问题。</p>
+<p><strong>5、域名反代</strong><br>点击左侧网站，添加站点，然后再点击添加好了的域名名称，这时候就进入了站点配置，点击反向代理，目标<code>URL</code>填入<code>http://127.0.0.1:8000</code>，再启用反向代理，然后点击<code>SSL</code>，申请免费的<code>Let&#39;s Encrypt</code>证书，并强制<code>HTTPS</code>。</p>
+<p>接下来再点击配置文件，进行如下修改：</p>
+<pre><code>#加上中间三句
+location / 
+    {
+        ...
+
+        proxy_buffering off;
+        proxy_cache off;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        ...
+    }</code></pre><p>此时就可以直接通过域名访问了，首先前台是访问不了的，需要先访问<code>https://domain.com/admin</code>，然后添加驱动，添加的时候设置成默认主页，不然首页打开会有问题。<br><img src="https://www.moerats.com/usr/picture/CuteOne(7).png" alt="请输入图片描述" title="请输入图片描述"><br>再点击驱动管理-添加网盘。<br><img src="https://www.moerats.com/usr/picture/CuteOne(8).png" alt="请输入图片描述" title="请输入图片描述"><br>填入相关信息绑定网盘，注意<code>code</code>那里填<code>code=</code>和<code>&amp;</code>之间的代码。<br><img src="https://www.moerats.com/usr/picture/CuteOne(9).png" alt="请输入图片描述" title="请输入图片描述"><br>再点击驱动管理的更新缓存即可，然后就可以访问首页了。</p>
+<p>这里要注意的是，一般用户注册的时候，上传文件是会有问题的，管理员需要在<code>CuteOne</code>后台，编辑用户，将用户的<code>用户文件盘</code>改成添加网盘的<code>ID</code>即可，这样用户上传文件后，会保存在相应的<code>OneDrive</code>网盘，并且保存的文件夹以用户<code>ID</code>命名。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-09T02:36:05.000Z" itemprop="datePublished">2019-12-09</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.650Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/09/centos-e5-ae-89-e8-a3-85aria2yaaw-e5-ae-9e-e7-8e-b0-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">CentOS安装aria2+yaaw实现离线下载</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/09/e7-bb-99wordpress-e7-bd-91-e7-ab-99-e8-af-84-e8-ae-ba-e6-a1-86-e9-85-8d-e7-bd-ae-e7-82-ab-e9-85-b7-e7-9a-84-e6-89-93-e5-ad-97-e6-95-88-e6-9e-9c/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">给WordPress网站评论框配置炫酷的打字效果</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

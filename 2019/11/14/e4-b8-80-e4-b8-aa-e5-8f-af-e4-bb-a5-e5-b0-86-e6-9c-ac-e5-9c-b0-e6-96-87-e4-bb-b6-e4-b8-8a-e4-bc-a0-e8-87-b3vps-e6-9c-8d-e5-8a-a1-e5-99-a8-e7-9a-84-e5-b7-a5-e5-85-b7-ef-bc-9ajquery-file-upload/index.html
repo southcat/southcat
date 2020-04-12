@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>一个可以将本地文件上传至VPS服务器的工具：jQuery-File-Upload精简美化版 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="一个可以将本地文件上传至VPS服务器的工具：jQuery-File-Upload精简美化版 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/11/14/e4-b8-80-e4-b8-aa-e5-8f-af-e4-bb-a5-e5-b0-86-e6-9c-ac-e5-9c-b0-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e8-87-b3vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e5-b7-a5-e5-85-b7-ef-bc-9ajquery-file-upload/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前老有人问博主除了FTP还有啥方法能把本地文件上传到VPS服务器，这里就分享个工具jQuery-File-Upload，一个文件上传工具，该工具可以上传任何文件，支持在线预览视频，上传后也可以在线删除等等，很方便，而且个人觉得上传比FTP要稳。由于原文件样式很不好看，所以博主就找前端大佬Zero博主帮忙进行精简和美化了下，也小小的适配了手机端。 截图 下载文件下载：jQuery-File- - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/jQuery-File-Upload.png"><meta property="article:published_time" content="2019-11-13T21:34:19.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.650Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.650Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/11/14/e4-b8-80-e4-b8-aa-e5-8f-af-e4-bb-a5-e5-b0-86-e6-9c-ac-e5-9c-b0-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e8-87-b3vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e5-b7-a5-e5-85-b7-ef-bc-9ajquery-file-upload/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/11/14/e4-b8-80-e4-b8-aa-e5-8f-af-e4-bb-a5-e5-b0-86-e6-9c-ac-e5-9c-b0-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e8-87-b3vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e5-b7-a5-e5-85-b7-ef-bc-9ajquery-file-upload/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/11/14/e4-b8-80-e4-b8-aa-e5-8f-af-e4-bb-a5-e5-b0-86-e6-9c-ac-e5-9c-b0-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e8-87-b3vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e5-b7-a5-e5-85-b7-ef-bc-9ajquery-file-upload/"
+    },
+    "headline": "一个可以将本地文件上传至VPS服务器的工具：jQuery-File-Upload精简美化版 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-11-13T21:34:19.000Z",
+    "dateModified": "2020-04-12T04:09:09.650Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：之前老有人问博主除了FTP还有啥方法能把本地文件上传到VPS服务器，这里就分享个工具jQuery-File-Upload，一个文件上传工具，该工具可以上传任何文件，支持在线预览视频，上传后也可以在线删除等等，很方便，而且个人觉得上传比FTP要稳。由于原文件样式很不好看，所以博主就找前端大佬Zero博主帮忙进行精简和美化了下，也小小的适配了手机端。 截图 下载文件下载：jQuery-File- - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=一个可以将本地文件上传至VPS服务器的工具：jQuery-File-Upload精简美化版" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=一个可以将本地文件上传至VPS服务器的工具：jQuery-File-Upload精简美化版&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=一个可以将本地文件上传至VPS服务器的工具：jQuery-File-Upload精简美化版" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFVElEQVR42u2dQXLbQBAD+f9P29ck3h00ltTBYeuSKsmmuK0qZAaA7evLx9clAiEIQQhCEIIQRgjX8PjrGxbPpdem5/78ntVzq+vvvn53zXQuIQhBCGsIu4OlG1+BStf59yC790j3tbrOdP3l/QhBCELYQpjEZxLDSdym6/0QqSBw03u24ikEIQjhPgQqiicDVzM4NYcXghCE8BkIzWBClxgqZCciLQQhCOE+hLSopK+Zvv6OWUOGqWkhe2SLFIIQXgaBCtZv+/cxt1kIQngRhBhabgYiskjtzBNy/TZo+WgqLQQhvAjCJCQkfD2BsBWq8FoanNrzCEEIQlgLYzrYZG5O5gddrJpl6iRw2X5gQhCCELYQiHnZBrjEYE2h6058SakjgRCCEISQjVYSfJCSJhFMWuIihyUGrRCEIAQO4cS0SOEruaGm2JXClGZQEoIQhLCHMB3gdGEhRS8yGBGxpIK6XaCEIAQhXGQ4IkEJNVOT8KYPIAHERsqUSgtBCEJAP5hJlxpy2GkQo+YILZLEYU0IQhBCDF9akaJLDb3Z6QBpKCKiKQQhCIFBoAFLs1CR4euJAam9byEIQQjMY2xNjDQwpcJVMlyTEUNKIKN5KwQhCGEpjCRIJSFLE97QkhYpZ6YSBypuCUEIQoglSSqcRCDTIdN7kaGouYYQhCCELIzTmzTFzGYwahcoag6jIEYIQhACMlXIIRIMUgClg9r03jREGgNZIQhBCMclqkYkk8nRlD+m4IYMYDiQFYIQhBB/4LIpWqSBpS2BkXsgy15coIQgBCGMb5qEhQYhBFq7QBHQpFQiBCEIYTZaiXGRxIksOmQJahe2BGIsbglBCEK4/UdnTspetPhxYq6SYoYQhCCEDGESOlLIaAaVkzCHBq9H1xWCEIRQFbeoOBFQ1Ey9u0A1AZAQhCAEDoEuSk3Ri1y/NXJOQxohCEEI+RfQpZtv3pguSycQkvFChVcIQhDC/Itl6ALSGKVN+eqJ0ubxFikEIQihDkxTEJvC3LQUkQWKCB8JZoQgBCF0EMYhA4S4pOTRGLttMSQ9LwQhCOEaTRVSdmrD0SbwncSNGjnRWBWCEISAhJGGqm05qi1nJMOEmMNERIUgBCFkP4GIWypM0YORMgc1b2igi91mIQhBCNGUbIeWFKA25gwxbOhr8X8HIQhBCEc/TEULEalAlQ7RwCH3MJY0hCAEISCBo6YmGWjIYtQEsrTktYUnBCEIoVqgmuXkRKSo4KZCRiOotakiBCG8DAIJPCaBowZqY4im4YqUO8gAKAQhCIH9Mawp0CQmagpfJkP2iQUK36cQhCCEGMgSgUw3moYgUrJ44ppxABOCEIQQFyg6hDShy7QANSFrKomns+AtUghCeDGENNQ0QShduMjrTThDPjy0QAlBCEJAg0tabJpDUMO0XYaoIApBCELg/YT0JneWFTrknMCYPpzRoBGCEIQQhyVSuCQPMojRwIcOQG2ZXAhCEMIaAilrNSFKU+pOIps+LFroiBOjEIQghFthSzMEJbg0XCHmaTO0CUEIQpghkKIkKVM1BisNg0nwQpcpIQhBCLOfkASKBCyk3EWKoMRYoSFv/ECEIAQhRGEkItkcjggqDWBoMITDZSEIQQixuEXMV1qaSN/XDllJDKcPa3lPQhCCEMZANhWt75QrSJhDxC8FwynYEYIQhHAfAjVE6JCSFiKyqJEA+ai4JQQhCAFBICYoGXyaYYiYOSkcHothQhCCEOoFCi0iYeCZQJKAJQ1nRIiFIAQhcAh08UjC2S5SJ2YOKYVgM0YIQhBCHcj+zw8hCEEIQhCCEISwfHwD2AinQQPYbscAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">一个可以将本地文件上传至VPS服务器的工具：jQuery-File-Upload精简美化版</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-11-14</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=一个可以将本地文件上传至VPS服务器的工具：jQuery-File-Upload精简美化版&url=http://yoursite.com/2019/11/14/e4-b8-80-e4-b8-aa-e5-8f-af-e4-bb-a5-e5-b0-86-e6-9c-ac-e5-9c-b0-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e8-87-b3vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e5-b7-a5-e5-85-b7-ef-bc-9ajquery-file-upload/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=一个可以将本地文件上传至VPS服务器的工具：jQuery-File-Upload精简美化版&url=http://yoursite.com/2019/11/14/e4-b8-80-e4-b8-aa-e5-8f-af-e4-bb-a5-e5-b0-86-e6-9c-ac-e5-9c-b0-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e8-87-b3vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e5-b7-a5-e5-85-b7-ef-bc-9ajquery-file-upload/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/14/e4-b8-80-e4-b8-aa-e5-8f-af-e4-bb-a5-e5-b0-86-e6-9c-ac-e5-9c-b0-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e8-87-b3vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e5-b7-a5-e5-85-b7-ef-bc-9ajquery-file-upload/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/11/14/e4-b8-80-e4-b8-aa-e5-8f-af-e4-bb-a5-e5-b0-86-e6-9c-ac-e5-9c-b0-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e8-87-b3vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e5-b7-a5-e5-85-b7-ef-bc-9ajquery-file-upload/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/11/14/e4-b8-80-e4-b8-aa-e5-8f-af-e4-bb-a5-e5-b0-86-e6-9c-ac-e5-9c-b0-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e8-87-b3vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e5-b7-a5-e5-85-b7-ef-bc-9ajquery-file-upload/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/11/14/e4-b8-80-e4-b8-aa-e5-8f-af-e4-bb-a5-e5-b0-86-e6-9c-ac-e5-9c-b0-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e8-87-b3vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e5-b7-a5-e5-85-b7-ef-bc-9ajquery-file-upload/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/11/14/e4-b8-80-e4-b8-aa-e5-8f-af-e4-bb-a5-e5-b0-86-e6-9c-ac-e5-9c-b0-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e8-87-b3vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84-e5-b7-a5-e5-85-b7-ef-bc-9ajquery-file-upload/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFVElEQVR42u2dQXLbQBAD+f9P29ck3h00ltTBYeuSKsmmuK0qZAaA7evLx9clAiEIQQhCEIIQRgjX8PjrGxbPpdem5/78ntVzq+vvvn53zXQuIQhBCGsIu4OlG1+BStf59yC790j3tbrOdP3l/QhBCELYQpjEZxLDSdym6/0QqSBw03u24ikEIQjhPgQqiicDVzM4NYcXghCE8BkIzWBClxgqZCciLQQhCOE+hLSopK+Zvv6OWUOGqWkhe2SLFIIQXgaBCtZv+/cxt1kIQngRhBhabgYiskjtzBNy/TZo+WgqLQQhvAjCJCQkfD2BsBWq8FoanNrzCEEIQlgLYzrYZG5O5gddrJpl6iRw2X5gQhCCELYQiHnZBrjEYE2h6058SakjgRCCEISQjVYSfJCSJhFMWuIihyUGrRCEIAQO4cS0SOEruaGm2JXClGZQEoIQhLCHMB3gdGEhRS8yGBGxpIK6XaCEIAQhXGQ4IkEJNVOT8KYPIAHERsqUSgtBCEJAP5hJlxpy2GkQo+YILZLEYU0IQhBCDF9akaJLDb3Z6QBpKCKiKQQhCIFBoAFLs1CR4euJAam9byEIQQjMY2xNjDQwpcJVMlyTEUNKIKN5KwQhCGEpjCRIJSFLE97QkhYpZ6YSBypuCUEIQoglSSqcRCDTIdN7kaGouYYQhCCELIzTmzTFzGYwahcoag6jIEYIQhACMlXIIRIMUgClg9r03jREGgNZIQhBCMclqkYkk8nRlD+m4IYMYDiQFYIQhBB/4LIpWqSBpS2BkXsgy15coIQgBCGMb5qEhQYhBFq7QBHQpFQiBCEIYTZaiXGRxIksOmQJahe2BGIsbglBCEK4/UdnTspetPhxYq6SYoYQhCCEDGESOlLIaAaVkzCHBq9H1xWCEIRQFbeoOBFQ1Ey9u0A1AZAQhCAEDoEuSk3Ri1y/NXJOQxohCEEI+RfQpZtv3pguSycQkvFChVcIQhDC/Itl6ALSGKVN+eqJ0ubxFikEIQihDkxTEJvC3LQUkQWKCB8JZoQgBCF0EMYhA4S4pOTRGLttMSQ9LwQhCOEaTRVSdmrD0SbwncSNGjnRWBWCEISAhJGGqm05qi1nJMOEmMNERIUgBCFkP4GIWypM0YORMgc1b2igi91mIQhBCNGUbIeWFKA25gwxbOhr8X8HIQhBCEc/TEULEalAlQ7RwCH3MJY0hCAEISCBo6YmGWjIYtQEsrTktYUnBCEIoVqgmuXkRKSo4KZCRiOotakiBCG8DAIJPCaBowZqY4im4YqUO8gAKAQhCIH9Mawp0CQmagpfJkP2iQUK36cQhCCEGMgSgUw3moYgUrJ44ppxABOCEIQQFyg6hDShy7QANSFrKomns+AtUghCeDGENNQ0QShduMjrTThDPjy0QAlBCEJAg0tabJpDUMO0XYaoIApBCELg/YT0JneWFTrknMCYPpzRoBGCEIQQhyVSuCQPMojRwIcOQG2ZXAhCEMIaAilrNSFKU+pOIps+LFroiBOjEIQghFthSzMEJbg0XCHmaTO0CUEIQpghkKIkKVM1BisNg0nwQpcpIQhBCLOfkASKBCyk3EWKoMRYoSFv/ECEIAQhRGEkItkcjggqDWBoMITDZSEIQQixuEXMV1qaSN/XDllJDKcPa3lPQhCCEMZANhWt75QrSJhDxC8FwynYEYIQhHAfAjVE6JCSFiKyqJEA+ai4JQQhCAFBICYoGXyaYYiYOSkcHothQhCCEOoFCi0iYeCZQJKAJQ1nRIiFIAQhcAh08UjC2S5SJ2YOKYVgM0YIQhBCHcj+zw8hCEEIQhCCEISwfHwD2AinQQPYbscAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载"><span class="post-toc-number">2.</span> <span class="post-toc-text">下载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>之前老有人问博主除了<code>FTP</code>还有啥方法能把本地文件上传到<code>VPS</code>服务器，这里就分享个工具<code>jQuery-File-Upload</code>，一个文件上传工具，该工具可以上传任何文件，支持在线预览视频，上传后也可以在线删除等等，很方便，而且个人觉得上传比<code>FTP</code>要稳。由于原文件样式很不好看，所以博主就找前端大佬Zero博主帮忙进行精简和美化了下，也小小的适配了手机端。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/jQuery-File-Upload.png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><strong>文件下载：</strong>jQuery-File-Upload.zip</p>
+<p>为了考虑国内服务器的加载速度，该源码所有资源都本地化了，所以体积比简化前还大。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><strong>环境要求：</strong><code>Nginx/Apache</code>、<code>PHP</code></p>
+<p><strong>1、直接使用</strong><br>如果你自己有建站环境，直接将源码丢进网站根目录，再给予<code>server/php/files</code>目录可写入权限即可。上传后的文件保存在<code>server/php/files</code>文件夹，相关上传配置可在<code>server/php/UploadHandler.php</code>里修改。</p>
+<p><strong>2、Docker安装</strong><br>如果你只是单纯的想上传文件，这里博主就制作了个<code>Docker</code>镜像，很快就装好了。</p>
+<p>安装<code>Docker</code>：</p>
+<pre><code>#CentOS 6
+rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum update -y
+yum -y install docker-io
+service docker start
+chkconfig docker on
+
+#CentOS 7、Debian、Ubuntu
+curl -sSL https://get.docker.com/ | sh
+systemctl start docker
+systemctl enable docker</code></pre><p>安装<code>jQuery-File-Upload</code>：</p>
+<pre><code>docker run --name upload -d -p 6800:80 -v /home:/var/www/server/php/files moerats/jquery-file-upload:latest
+
+#参数说明
+-p 6800:80 前面的6800为容器映射到外部的端口，等于你访问ip:6800就等于访问程序，可自行修改
+-v /home:/var/www/server/php/files 将程序里上传的文件映射到服务器的/home文件夹，可自行修改</code></pre><p>完成后我们可以通过<code>ip:6800</code>访问程序，并上传文件至<code>/home</code>文件夹。</p>
+<p>注意我们需要给映射的文件夹<code>777</code>权限，不然会上传失败。</p>
+<pre><code>chmod 777 /home</code></pre><p>部分<code>CentOS</code>系统可能需要开启防火墙端口，不然会打不开。</p>
+<pre><code>#CentOS 6
+iptables -I INPUT -p tcp --dport 6800 -j ACCEPT
+service iptables save
+service iptables restart
+
+#CentOS 7
+firewall-cmd --zone=public --add-port=6800/tcp --permanent
+firewall-cmd --reload</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>该程序配合无上传功能的<code>H5ai</code>、<code>DirectoryLister</code>目录索引一起使用挺不错的。特别是<code>Docker</code>可以直接将上传目录映射到具体的文件夹，有兴趣的可以玩玩。</p>
+<p>如果你服务器空间很大，需要分批上传多个文件夹，可以多开几个<code>Docker</code>容器，比如分批传到<code>/home</code>和<code>/rats</code>文件夹，可分别运行命令</p>
+<pre><code>#记得--name参数和-p端口映射得不一样
+docker run --name Linux -d -p 6800:80 -v /home:/var/www/server/php/files moerats/jquery-file-upload:latest
+docker run --name Win -d -p 6877:80 -v /rats:/var/www/server/php/files moerats/jquery-file-upload:latest</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-11-13T21:34:19.000Z" itemprop="datePublished">2019-11-14</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.650Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/11/14/centos-e4-b8-8bmysql-5-6-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b-e5-8f-8a-e5-88-9b-e5-bb-ba-e6-95-b0-e6-8d-ae-e5-ba-93/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">CentOS下Mysql 5.6安装教程及创建数据库</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/11/13/e5-88-86-e4-ba-ab-e4-b8-80-e4-ba-9b1t-onedrive-e8-b4-a6-e5-8f-b7-ef-bc-8c-e5-8f-8a-e5-85-8d-e8-b4-b9-e8-8e-b7-e5-8f-96-e4-b8-80-e5-b9-b4office-365-e4-bc-81-e4-b8-9a-e7-89-88e3/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">分享一些1T OneDrive账号，及免费获取一年Office 365企业版E3</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

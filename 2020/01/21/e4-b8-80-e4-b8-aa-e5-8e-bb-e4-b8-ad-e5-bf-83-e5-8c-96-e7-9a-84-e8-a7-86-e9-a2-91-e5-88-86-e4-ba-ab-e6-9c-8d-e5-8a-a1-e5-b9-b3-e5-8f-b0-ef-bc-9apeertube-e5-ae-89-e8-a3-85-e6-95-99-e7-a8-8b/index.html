@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>一个去中心化的视频分享服务平台：PeerTube安装教程 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="一个去中心化的视频分享服务平台：PeerTube安装教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/01/21/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e8-a7-86-e9-a2-91-e5-88-86-e4-ba-ab-e6-9c-8d-e5-8a-a1-e5-b9-b3-e5-8f-b0-ef-bc-9apeertube-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="简介PeerTube是一个视频上传、分享服务平台，这个项目是建立在webtorrent这个项目和ActivityPub协议；架构很灵活，可以支持自建服务器，web版本的bittorrent分发视频，简而言之，就是建立了一个去中心化的，在线版的快播。  每个peertube节点称之为一个Instance。 一个Instance可以提供类似youtube的服务，可以开放用户注册，上传视频。 多个Ins - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/PeerTube(3).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/PeerTube(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/PeerTube(2).png"><meta property="article:published_time" content="2020-01-21T12:40:28.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.654Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.654Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/01/21/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e8-a7-86-e9-a2-91-e5-88-86-e4-ba-ab-e6-9c-8d-e5-8a-a1-e5-b9-b3-e5-8f-b0-ef-bc-9apeertube-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/01/21/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e8-a7-86-e9-a2-91-e5-88-86-e4-ba-ab-e6-9c-8d-e5-8a-a1-e5-b9-b3-e5-8f-b0-ef-bc-9apeertube-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/01/21/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e8-a7-86-e9-a2-91-e5-88-86-e4-ba-ab-e6-9c-8d-e5-8a-a1-e5-b9-b3-e5-8f-b0-ef-bc-9apeertube-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/"
+    },
+    "headline": "一个去中心化的视频分享服务平台：PeerTube安装教程 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-01-21T12:40:28.000Z",
+    "dateModified": "2020-04-12T04:09:09.654Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "简介PeerTube是一个视频上传、分享服务平台，这个项目是建立在webtorrent这个项目和ActivityPub协议；架构很灵活，可以支持自建服务器，web版本的bittorrent分发视频，简而言之，就是建立了一个去中心化的，在线版的快播。  每个peertube节点称之为一个Instance。 一个Instance可以提供类似youtube的服务，可以开放用户注册，上传视频。 多个Ins - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=一个去中心化的视频分享服务平台：PeerTube安装教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=一个去中心化的视频分享服务平台：PeerTube安装教程&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=一个去中心化的视频分享服务平台：PeerTube安装教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFaklEQVR42u2dQY7jQAwD/f9PZy97GARusahkDrsuX4IJ7Li7DAgSyUyul8frEoEQhCAEIQhBCCOEazhuL/z7/s9zfp77fv3750zXn649renu/LtrTvsSghCEcA9h2uzd33cfSiAScOQhnM6d4N/uQwhCEMIRwlSU0g1OBev0Oe/nECip6NKiKgQhCOFzCNOmaEN093cqtMfBB0IWghCE8HuFMd38tBky2KRma3tPIQhBCHsIk3hyEjbSRtJCp2KZHgBp2L42RQpBCA+DkISKf/X1a2qzEITwIAjRtAwGSNMoNWYM3Wwatr7iSgtBCA+CQM2TtHgiiBKT5RtDGDaDhCAEIdwWRjIkpeFkMkWISEOHqWmAI0aMEIQghBkCLUKNeHHBg8JIhm9TZOMUKQQhPBxCEldTc5IKFAlokKEtBcJoYReCEIRw4RwjXch0XWqIpiK6CmSGRmks4EIQghAihDZctQ1b0WaMCrLTOUdgQhCCEEZRhRSrdLMJCg1tEYGFPgA8QAlBCEJAZmwaWKgwk4JYtChvzjs+TCEIQQgRQmNuTsFqKtpQ4YWEt8l7QhCCEHKYs10QEUhI4GvTIE1DES2IQhCCEObMUjJKmtfGqN00TpvgCG6WhCAEIVRfvGwXlQyaBIKYvrRBq9VmIQjh4RCIsdEssmmu2vc+CYwIQQhCeKHZIYkktLlpgppJEKGBsXYvQhCCEPqQBglUfcMwJYZsWlsjAOEBSghCeDAEanZOTVETwkxBcGLqNkEwJKoIQQhCQINNa7xMzUq7cdrEpUB57UoLQQgPhpAamzQYEXM0Fc6tIUvWPT44IQhBCLeFkYgojaFCg9yNgEMeFhnOUMpdCEJ4MITUGJFhiYildPhp7p2at3qKFIIQhPBKQmYSWMiwRAonEXETbHoPIQhBCBcyZKfhhoa5UqAiFb9NOGw0XYUgBCFUENIQ0xY7GtjYmCl0MCNGjxCEIAT2TyRIYZmaqNPiUuFtIFAxeDVACUEIQqjE0k3gioimGyElmUIfDVBCEMKDIVABhRiiaciZTNNk8H46gEVDVghCEEL8Mkez4FTQmgLWiKjTOeMehCAEIYzN0iR4NAMQWXD6HBoISc3UuEYhCEEIRwi0OFFjtmm+2uAWgYHAC0EIQkAQ4uARDJC0MXpPItoQ0wc3S0IQghDwD9tsDBDSLKVhaxrSSBM3mrNCEIIQ0ADVDkgk+NVsYDPUEbF1DGkIQQhCqEXUJjj5SRNGQqUTAFLghSAEIbziADUWkbKpSQWPQtwEszB0IQhBCDG4RRsnMnw1QY22gZoKXgqMCEEIQmC/75AKWhpOyNBDCtdkuDRrxIasEIQgBLwAcsMmJEECHAl4MmOo2CIEIQjhdSyMqdBtDJTTxqcBLQmx5PPqAUoIQhBCNisv9gPakxhCBhxqymzC3NGoFYIQhBAhJPOELJoIIlMhpMMQFYMqUUUIQhDCRYMPtFGioQtyXxr+oMExIQhBCDMEIqImk3TaHDFcUgi8KZ6paYuutBCEIIS4MCqGNo3XNwQaIhaPwRMhCEEIx2YpNShk6KEbI8YuEkWu3Q/xCUEIQuBfBKPiRCqqU2Mz3ZOYM6lRSocQhCCErCeQDTchzqnBomJqEmGI8To+FCEIQQixMOLhowhbEBOFBC6akHhtyApBCEJYDyFUPKWFrGm02qZqvE4IQhDCGNIghSUNLqnxaoYoEsSgBuztgxOCEISwhtAGNlOxo+9txeB1mFMIQhDCGgIxZ9rN00JL7zVCE4IQhFAPUAkIGcCowZIE3dRM1Y2WEIQghFpopYHraVAiwStSOFsjJhZ2IQhBCLUh+z8fQhCCEIQgBCEI4fb4A1F0ZZ+enVsaAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">一个去中心化的视频分享服务平台：PeerTube安装教程</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-01-21</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=一个去中心化的视频分享服务平台：PeerTube安装教程&url=http://yoursite.com/2020/01/21/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e8-a7-86-e9-a2-91-e5-88-86-e4-ba-ab-e6-9c-8d-e5-8a-a1-e5-b9-b3-e5-8f-b0-ef-bc-9apeertube-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=一个去中心化的视频分享服务平台：PeerTube安装教程&url=http://yoursite.com/2020/01/21/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e8-a7-86-e9-a2-91-e5-88-86-e4-ba-ab-e6-9c-8d-e5-8a-a1-e5-b9-b3-e5-8f-b0-ef-bc-9apeertube-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/01/21/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e8-a7-86-e9-a2-91-e5-88-86-e4-ba-ab-e6-9c-8d-e5-8a-a1-e5-b9-b3-e5-8f-b0-ef-bc-9apeertube-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/01/21/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e8-a7-86-e9-a2-91-e5-88-86-e4-ba-ab-e6-9c-8d-e5-8a-a1-e5-b9-b3-e5-8f-b0-ef-bc-9apeertube-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/01/21/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e8-a7-86-e9-a2-91-e5-88-86-e4-ba-ab-e6-9c-8d-e5-8a-a1-e5-b9-b3-e5-8f-b0-ef-bc-9apeertube-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/01/21/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e8-a7-86-e9-a2-91-e5-88-86-e4-ba-ab-e6-9c-8d-e5-8a-a1-e5-b9-b3-e5-8f-b0-ef-bc-9apeertube-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/01/21/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e8-a7-86-e9-a2-91-e5-88-86-e4-ba-ab-e6-9c-8d-e5-8a-a1-e5-b9-b3-e5-8f-b0-ef-bc-9apeertube-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFaklEQVR42u2dQY7jQAwD/f9PZy97GARusahkDrsuX4IJ7Li7DAgSyUyul8frEoEQhCAEIQhBCCOEazhuL/z7/s9zfp77fv3750zXn649renu/LtrTvsSghCEcA9h2uzd33cfSiAScOQhnM6d4N/uQwhCEMIRwlSU0g1OBev0Oe/nECip6NKiKgQhCOFzCNOmaEN093cqtMfBB0IWghCE8HuFMd38tBky2KRma3tPIQhBCHsIk3hyEjbSRtJCp2KZHgBp2L42RQpBCA+DkISKf/X1a2qzEITwIAjRtAwGSNMoNWYM3Wwatr7iSgtBCA+CQM2TtHgiiBKT5RtDGDaDhCAEIdwWRjIkpeFkMkWISEOHqWmAI0aMEIQghBkCLUKNeHHBg8JIhm9TZOMUKQQhPBxCEldTc5IKFAlokKEtBcJoYReCEIRw4RwjXch0XWqIpiK6CmSGRmks4EIQghAihDZctQ1b0WaMCrLTOUdgQhCCEEZRhRSrdLMJCg1tEYGFPgA8QAlBCEJAZmwaWKgwk4JYtChvzjs+TCEIQQgRQmNuTsFqKtpQ4YWEt8l7QhCCEHKYs10QEUhI4GvTIE1DES2IQhCCEObMUjJKmtfGqN00TpvgCG6WhCAEIVRfvGwXlQyaBIKYvrRBq9VmIQjh4RCIsdEssmmu2vc+CYwIQQhCeKHZIYkktLlpgppJEKGBsXYvQhCCEPqQBglUfcMwJYZsWlsjAOEBSghCeDAEanZOTVETwkxBcGLqNkEwJKoIQQhCQINNa7xMzUq7cdrEpUB57UoLQQgPhpAamzQYEXM0Fc6tIUvWPT44IQhBCLeFkYgojaFCg9yNgEMeFhnOUMpdCEJ4MITUGJFhiYildPhp7p2at3qKFIIQhPBKQmYSWMiwRAonEXETbHoPIQhBCBcyZKfhhoa5UqAiFb9NOGw0XYUgBCFUENIQ0xY7GtjYmCl0MCNGjxCEIAT2TyRIYZmaqNPiUuFtIFAxeDVACUEIQqjE0k3gioimGyElmUIfDVBCEMKDIVABhRiiaciZTNNk8H46gEVDVghCEEL8Mkez4FTQmgLWiKjTOeMehCAEIYzN0iR4NAMQWXD6HBoISc3UuEYhCEEIRwi0OFFjtmm+2uAWgYHAC0EIQkAQ4uARDJC0MXpPItoQ0wc3S0IQghDwD9tsDBDSLKVhaxrSSBM3mrNCEIIQ0ADVDkgk+NVsYDPUEbF1DGkIQQhCqEXUJjj5SRNGQqUTAFLghSAEIbziADUWkbKpSQWPQtwEszB0IQhBCDG4RRsnMnw1QY22gZoKXgqMCEEIQmC/75AKWhpOyNBDCtdkuDRrxIasEIQgBLwAcsMmJEECHAl4MmOo2CIEIQjhdSyMqdBtDJTTxqcBLQmx5PPqAUoIQhBCNisv9gPakxhCBhxqymzC3NGoFYIQhBAhJPOELJoIIlMhpMMQFYMqUUUIQhDCRYMPtFGioQtyXxr+oMExIQhBCDMEIqImk3TaHDFcUgi8KZ6paYuutBCEIIS4MCqGNo3XNwQaIhaPwRMhCEEIx2YpNShk6KEbI8YuEkWu3Q/xCUEIQuBfBKPiRCqqU2Mz3ZOYM6lRSocQhCCErCeQDTchzqnBomJqEmGI8To+FCEIQQixMOLhowhbEBOFBC6akHhtyApBCEJYDyFUPKWFrGm02qZqvE4IQhDCGNIghSUNLqnxaoYoEsSgBuztgxOCEISwhtAGNlOxo+9txeB1mFMIQhDCGgIxZ9rN00JL7zVCE4IQhFAPUAkIGcCowZIE3dRM1Y2WEIQghFpopYHraVAiwStSOFsjJhZ2IQhBCLUh+z8fQhCCEIQgBCEI4fb4A1F0ZZ+enVsaAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">2.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><code>PeerTube</code>是一个视频上传、分享服务平台，这个项目是建立在<code>webtorrent</code>这个项目和<code>ActivityPub</code>协议；架构很灵活，可以支持自建服务器，<code>web</code>版本的<code>bittorrent</code>分发视频，简而言之，就是建立了一个去中心化的，在线版的快播。</p>
+<ul>
+<li>每个<code>peertube</code>节点称之为一个<code>Instance</code>。</li>
+<li>一个<code>Instance</code>可以提供类似<code>youtube</code>的服务，可以开放用户注册，上传视频。</li>
+<li>多个<code>Instance</code>之间通过<code>bittorent</code>共享服务。</li>
+<li>用户访问<code>Instance</code>时，多个用户通过<code>webtorrent</code>来交换数据，变身<code>seeds</code>，从而减轻服务器压力，提高车速。</li>
+<li>如果只有一个用户观看，<code>Instance</code>自动变成<code>seeds</code>。</li>
+<li>支持<code>ActivityPub</code>协议，后续可以搭建去中心化的评论平台之类的。</li>
+<li><code>Github</code>项目地址：<a href="https://github.com/Chocobozzz/PeerTube" target="_blank" rel="noopener">https://github.com/Chocobozzz/PeerTube</a></li>
+</ul>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/PeerTube(3).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/PeerTube(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/PeerTube(2).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>本教程适用于<code>CentOS</code>、<code>Debian</code>、<code>Ubuntu</code>系统，内存至少为<code>1G</code>，并在<code>Debian 8 X64</code>下完美通过。</p>
+<p><strong>1、安装Docker和Docker Compose</strong></p>
+<pre><code>#安装Docker
+curl -sSL https://get.docker.com/ | sh
+service docker start
+#安装Docker Compose
+curl -L https://github.com/docker/compose/releases/download/1.17.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose</code></pre><p><strong>2、添加虚拟内存</strong><br>如果你的内存足够的大，这步可以跳过。</p>
+<pre><code>cd /var/
+#获取文件块，count后面参数建议为内存的2倍
+dd if=/dev/zero of=swapfile bs=1M count=2048
+#创建swap文件
+/sbin/mkswap swapfile
+#激活swap文件
+/sbin/swapon swapfile
+#修改权限
+chmod 0644 /var/swapfile
+#开机自启
+echo &quot;/var/swapfile swap swap defaults 0 0&quot; &gt;&gt;/etc/fstab</code></pre><p><strong>3、下载PeerTube并配置</strong></p>
+<pre><code>git clone https://github.com/Chocobozzz/PeerTube.git</code></pre><p>如果提示<code>git</code>不存在的，运行：</p>
+<pre><code>#Debian/Ubuntu系统
+apt-get -y install git
+
+#CentOS/RHEL系统
+yum -y install git</code></pre><p>修改<code>docker-compose.yml</code>文件，并将内部端口<code>9000</code>暴露出来，使其映射到其它外部端口。</p>
+<pre><code>cd /root/PeerTube/support/docker/production/
+nano docker-compose.yml</code></pre><p>编辑文件，将<code>PEERTUBE_HOSTNAME</code>参数后面写成你的域名，并在文件里添加<code>ports</code>代码：</p>
+<pre><code>#前面的端口随便填
+ports:
+  - &quot;8000:9000&quot;
+
+#示例
+version: &quot;3.3&quot;
+services:
+  peertube:
+    ports:
+      - &quot;8000:9000&quot;
+    build:</code></pre><p><strong>4、运行容器</strong></p>
+<pre><code>docker-compose up</code></pre><p>如果遇到错误<code>Error: EACCES: permission denied, mkdir &#39;/data/logs&#39;</code>，使用<code>Ctrl+c</code>关闭，并运行：</p>
+<pre><code>chown -R 991:991 data/</code></pre><p>然后后台启动</p>
+<pre><code>docker-compose up -d</code></pre><p>然后可以进入<code>http://IP:8000</code>查看界面了。</p>
+<p><strong>5、配置https访问</strong><br>为了方便，这里使用<code>Caddy</code>反代，并自动添加<code>ssl</code>证书。</p>
+<p>安装<code>Caddy</code></p>
+<pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh
+#备用地址
+wget -N --no-check-certificate https://www.moerats.com/usr/shell/Caddy/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh</code></pre><p>编辑配置文件</p>
+<pre><code>#以下全部内容是一个整体，修改域名、IP、邮箱后一起复制到SSH运行！
+echo &quot;https://xx.com {
+ tls admin@moerats.com
+ proxy / 127.0.0.1:8000 {
+    header_upstream Connection {&gt;Connection}
+    header_upstream Upgrade {&gt;Upgrade}
+    header_upstream Host {host}
+    header_upstream X-Real-IP {remote}
+    header_upstream X-Forwarded-For {remote}
+    header_upstream X-Forwarded-Port {server_port}
+    header_upstream X-Forwarded-Proto {scheme}
+  }
+ log /var/log/caddy.log
+ gzip
+}&quot; &gt; /usr/local/caddy/Caddyfile</code></pre><p>启动<code>Caddy</code></p>
+<pre><code>/etc/init.d/caddy restart</code></pre><p>最后就可以通过域名<code>https</code>访问了。</p>
+<pre><code>#查看日志
+cat /root/PeerTube/support/docker/production/docker-volume/data/logs/peertube.log
+#会输出一些信息，找到如下信息，密码就是xxxxxx
+{&quot;message&quot;:&quot;Username: root&quot;,&quot;level&quot;:&quot;info&quot;,&quot;timestamp&quot;:&quot;}
+{&quot;message&quot;:&quot;User password: xxxxxxxxxx&quot;,&quot;level&quot;:&quot;info&quot;,&quot;timestamp&quot;:&quot;}</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-01-21T12:40:28.000Z" itemprop="datePublished">2020-01-21</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.654Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/01/22/myssl-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-be-88-e8-af-a6-e7-bb-86-e7-9a-84ssl-e6-b5-8b-e8-af-95-e5-b7-a5-e5-85-b7-e7-bd-91-e7-ab-99/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">MySSL：一个很详细的SSL测试工具网站</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/01/21/e5-b9-b4-e5-89-8d-e8-a2-ab-e9-aa-97-e5-b1-9e-e5-ae-9esm/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">年前被骗属实sm</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

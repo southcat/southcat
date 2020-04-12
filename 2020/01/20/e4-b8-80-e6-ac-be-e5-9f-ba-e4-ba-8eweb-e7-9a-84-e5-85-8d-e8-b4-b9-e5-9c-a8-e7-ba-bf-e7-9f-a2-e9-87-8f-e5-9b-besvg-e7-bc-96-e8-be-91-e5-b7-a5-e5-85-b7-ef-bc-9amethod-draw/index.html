@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>一款基于Web的免费在线矢量图(SVG)编辑工具：Method-Draw | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="一款基于Web的免费在线矢量图(SVG)编辑工具：Method-Draw | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/01/20/e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8eweb-e7-9a-84-e5-85-8d-e8-b4-b9-e5-9c-a8-e7-ba-bf-e7-9f-a2-e9-87-8f-e5-9b-besvg-e7-bc-96-e8-be-91-e5-b7-a5-e5-85-b7-ef-bc-9amethod-draw/"><meta property="og:locale" content="en"><meta name="description" content="说明：Method Draw是一款基于Web的在线SVG编辑器，是SVG Edit的一个分支。其目的是改进SVG Edit的可用性，并减少其一些功能来提供更好的操作和体验，使用方法也是很多的，本地打开或者部署在服务器端都可以，这里就分享下。 截图 使用Github地址：https:&#x2F;&#x2F;github.com&#x2F;methodofaction&#x2F;Method-Draw 1、本地使用先下载Method-Dra - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/Method-Draw.png"><meta property="article:published_time" content="2020-01-19T18:10:22.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.654Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.654Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/01/20/e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8eweb-e7-9a-84-e5-85-8d-e8-b4-b9-e5-9c-a8-e7-ba-bf-e7-9f-a2-e9-87-8f-e5-9b-besvg-e7-bc-96-e8-be-91-e5-b7-a5-e5-85-b7-ef-bc-9amethod-draw/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/01/20/e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8eweb-e7-9a-84-e5-85-8d-e8-b4-b9-e5-9c-a8-e7-ba-bf-e7-9f-a2-e9-87-8f-e5-9b-besvg-e7-bc-96-e8-be-91-e5-b7-a5-e5-85-b7-ef-bc-9amethod-draw/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/01/20/e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8eweb-e7-9a-84-e5-85-8d-e8-b4-b9-e5-9c-a8-e7-ba-bf-e7-9f-a2-e9-87-8f-e5-9b-besvg-e7-bc-96-e8-be-91-e5-b7-a5-e5-85-b7-ef-bc-9amethod-draw/"
+    },
+    "headline": "一款基于Web的免费在线矢量图(SVG)编辑工具：Method-Draw | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-01-19T18:10:22.000Z",
+    "dateModified": "2020-04-12T04:09:09.654Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：Method Draw是一款基于Web的在线SVG编辑器，是SVG Edit的一个分支。其目的是改进SVG Edit的可用性，并减少其一些功能来提供更好的操作和体验，使用方法也是很多的，本地打开或者部署在服务器端都可以，这里就分享下。 截图 使用Github地址：https://github.com/methodofaction/Method-Draw 1、本地使用先下载Method-Dra - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=一款基于Web的免费在线矢量图(SVG)编辑工具：Method-Draw" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=一款基于Web的免费在线矢量图(SVG)编辑工具：Method-Draw&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=一款基于Web的免费在线矢量图(SVG)编辑工具：Method-Draw" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEoUlEQVR42u2dQW7jQAwE/f9PZ69BVmJXj32xWLps1pE0U2OAYHcTyOtn4fUSWmihhRZa6C+Dfg3X5YO/Pr+67+/zf++/W/Pq2av3pv9PHEILvQU6wd3dNy4wwN89n8DTFxDvEVroRdB3m/z7+6tCkjaZ4O8KZDrMVCSFFlroa+i7gnN3GFfvnt5JgKYvRGihhe4LGREEU+FKh5cKIllTaKGFzs0CaVqaTRDRf9f4TM3QR1WW0EJ/OXRa9Fv+/ZgbKrTQXwzdmG93hSkZe1Phmcw9InSIgSi00JugkyBIDUbaHDX7iInYHNClQBFa6GXQ1MQngfidWJk2lg61MTVwgCe00A+GpkM0yWQgJl0yBcnATxM4Ci30Vmhqqk/CnRYmahrSA4zvFVroRdBTgUgFjTQnxKgnwubE8BBa6E3QqWmYXkI2RQbu2kYnDfnEUF5ooR8M3QzETZ83JmMjOKaiRcNHoYXeBN0sQBoIKlBao6A1CUfBIbTQD4Ympj2FpYNtKdRPocNHJwaFFvph0CkMb4R9EhNkvUm4kCHcsRkSWugF0FScNyZfCg6oqXjS6Ixmh9BCL4KmhaF9jjQhqSCeDN9GwSG00A+GpmKDNgyN0U/DBGryj0JHaKGXQKfQOxWZyWSnRjw1HQg8mkQQWugHQ5NArQnq6HBc27S0ImkUHEIL/VDo1pij5l8bGpDBnlQso0gSWuhF0M3QTDLxqPgnpmETOEQzUWihF0CnjUaz7cUHz1Oho43IifEgtNBboCex3xSjpmk4ESlkAC8ekNBCL4Am5toPuCazPzUWxAhMh/qx1FJooR8C3YiHJjRLpmL6mZiEpJAKLfQW6KbgkIA8beqdQ0vBfyx8Qgu9APpVXlTYvytkmqYFGxJCC70AuhUVNLij5iIRI81wz7g3oYVeDE0WShs8aWqSMZAaoNEQEVroJdDTEMsYiMEiMzUsU8hHBAc1G4QWegt0EgeTmXcSzDdCZzIK02AemkQQWuiHQqdCQIwCWhhPgrxmkG/ck9BCL4MmQVvTKFAh0IiL1LSMexNa6AXQNBwjxY6IkhOTMBn5+P1CC70AmjTuNGwn908GBHk/HQTAqaXQQj8UmgqC6YAI3BQAJJOBhAtjURRa6CXQySAkBgF9hgC2IiQZCkILvQ2aFAtqrFPTPh12G+CRL01ooTdAJ/GeCk0b5JOQ/rRYYrNfaKEfDE0XJ2YcNeHbRiiZCvRghBZ6EzQR4cTEOxEVKeiLQ3GgCRJa6C3QNAhvTAUyvDMN0tD107v/K3ZCC70AmgRxKQyomwRgVtAvgB6w0EJvgqbmHw30piJFhvPawZ3j1FJooR8InYw1EobTIVhSrIjImUzL8SCEFnoxdBIFaagtGQvvDNq1IYXQQm+CTmH63SZoQWkK4qm5j81JoYVeAk2aE2S8hQHVNpibDIhUyHBqKbTQD4UmIj81K81nabPJgDgqwEILLTT6415ts0GGY9/Zw614Elpooas/PNCadjQ0TEMA9Hmhhd4EPZlzJHQnZmEzOEMKYzPgJ7TQm6BTs09EfyP8SbhADI02DBRa6A3Qmy6hhRZaaKGF/pLrH7bPFgAkLkjSAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">一款基于Web的免费在线矢量图(SVG)编辑工具：Method-Draw</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-01-20</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=一款基于Web的免费在线矢量图(SVG)编辑工具：Method-Draw&url=http://yoursite.com/2020/01/20/e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8eweb-e7-9a-84-e5-85-8d-e8-b4-b9-e5-9c-a8-e7-ba-bf-e7-9f-a2-e9-87-8f-e5-9b-besvg-e7-bc-96-e8-be-91-e5-b7-a5-e5-85-b7-ef-bc-9amethod-draw/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=一款基于Web的免费在线矢量图(SVG)编辑工具：Method-Draw&url=http://yoursite.com/2020/01/20/e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8eweb-e7-9a-84-e5-85-8d-e8-b4-b9-e5-9c-a8-e7-ba-bf-e7-9f-a2-e9-87-8f-e5-9b-besvg-e7-bc-96-e8-be-91-e5-b7-a5-e5-85-b7-ef-bc-9amethod-draw/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/01/20/e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8eweb-e7-9a-84-e5-85-8d-e8-b4-b9-e5-9c-a8-e7-ba-bf-e7-9f-a2-e9-87-8f-e5-9b-besvg-e7-bc-96-e8-be-91-e5-b7-a5-e5-85-b7-ef-bc-9amethod-draw/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/01/20/e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8eweb-e7-9a-84-e5-85-8d-e8-b4-b9-e5-9c-a8-e7-ba-bf-e7-9f-a2-e9-87-8f-e5-9b-besvg-e7-bc-96-e8-be-91-e5-b7-a5-e5-85-b7-ef-bc-9amethod-draw/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/01/20/e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8eweb-e7-9a-84-e5-85-8d-e8-b4-b9-e5-9c-a8-e7-ba-bf-e7-9f-a2-e9-87-8f-e5-9b-besvg-e7-bc-96-e8-be-91-e5-b7-a5-e5-85-b7-ef-bc-9amethod-draw/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/01/20/e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8eweb-e7-9a-84-e5-85-8d-e8-b4-b9-e5-9c-a8-e7-ba-bf-e7-9f-a2-e9-87-8f-e5-9b-besvg-e7-bc-96-e8-be-91-e5-b7-a5-e5-85-b7-ef-bc-9amethod-draw/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/01/20/e4-b8-80-e6-ac-be-e5-9f-ba-e4-ba-8eweb-e7-9a-84-e5-85-8d-e8-b4-b9-e5-9c-a8-e7-ba-bf-e7-9f-a2-e9-87-8f-e5-9b-besvg-e7-bc-96-e8-be-91-e5-b7-a5-e5-85-b7-ef-bc-9amethod-draw/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEoUlEQVR42u2dQW7jQAwE/f9PZ69BVmJXj32xWLps1pE0U2OAYHcTyOtn4fUSWmihhRZa6C+Dfg3X5YO/Pr+67+/zf++/W/Pq2av3pv9PHEILvQU6wd3dNy4wwN89n8DTFxDvEVroRdB3m/z7+6tCkjaZ4O8KZDrMVCSFFlroa+i7gnN3GFfvnt5JgKYvRGihhe4LGREEU+FKh5cKIllTaKGFzs0CaVqaTRDRf9f4TM3QR1WW0EJ/OXRa9Fv+/ZgbKrTQXwzdmG93hSkZe1Phmcw9InSIgSi00JugkyBIDUbaHDX7iInYHNClQBFa6GXQ1MQngfidWJk2lg61MTVwgCe00A+GpkM0yWQgJl0yBcnATxM4Ci30Vmhqqk/CnRYmahrSA4zvFVroRdBTgUgFjTQnxKgnwubE8BBa6E3QqWmYXkI2RQbu2kYnDfnEUF5ooR8M3QzETZ83JmMjOKaiRcNHoYXeBN0sQBoIKlBao6A1CUfBIbTQD4Ympj2FpYNtKdRPocNHJwaFFvph0CkMb4R9EhNkvUm4kCHcsRkSWugF0FScNyZfCg6oqXjS6Ixmh9BCL4KmhaF9jjQhqSCeDN9GwSG00A+GpmKDNgyN0U/DBGryj0JHaKGXQKfQOxWZyWSnRjw1HQg8mkQQWugHQ5NArQnq6HBc27S0ImkUHEIL/VDo1pij5l8bGpDBnlQso0gSWuhF0M3QTDLxqPgnpmETOEQzUWihF0CnjUaz7cUHz1Oho43IifEgtNBboCex3xSjpmk4ESlkAC8ekNBCL4Am5toPuCazPzUWxAhMh/qx1FJooR8C3YiHJjRLpmL6mZiEpJAKLfQW6KbgkIA8beqdQ0vBfyx8Qgu9APpVXlTYvytkmqYFGxJCC70AuhUVNLij5iIRI81wz7g3oYVeDE0WShs8aWqSMZAaoNEQEVroJdDTEMsYiMEiMzUsU8hHBAc1G4QWegt0EgeTmXcSzDdCZzIK02AemkQQWuiHQqdCQIwCWhhPgrxmkG/ck9BCL4MmQVvTKFAh0IiL1LSMexNa6AXQNBwjxY6IkhOTMBn5+P1CC70AmjTuNGwn908GBHk/HQTAqaXQQj8UmgqC6YAI3BQAJJOBhAtjURRa6CXQySAkBgF9hgC2IiQZCkILvQ2aFAtqrFPTPh12G+CRL01ooTdAJ/GeCk0b5JOQ/rRYYrNfaKEfDE0XJ2YcNeHbRiiZCvRghBZ6EzQR4cTEOxEVKeiLQ3GgCRJa6C3QNAhvTAUyvDMN0tD107v/K3ZCC70AmgRxKQyomwRgVtAvgB6w0EJvgqbmHw30piJFhvPawZ3j1FJooR8InYw1EobTIVhSrIjImUzL8SCEFnoxdBIFaagtGQvvDNq1IYXQQm+CTmH63SZoQWkK4qm5j81JoYVeAk2aE2S8hQHVNpibDIhUyHBqKbTQD4UmIj81K81nabPJgDgqwEILLTT6415ts0GGY9/Zw614Elpooas/PNCadjQ0TEMA9Hmhhd4EPZlzJHQnZmEzOEMKYzPgJ7TQm6BTs09EfyP8SbhADI02DBRa6A3Qmy6hhRZaaKGF/pLrH7bPFgAkLkjSAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong><code>Method Draw</code>是一款基于<code>Web</code>的在线<code>SVG</code>编辑器，是SVG Edit的一个分支。其目的是改进<code>SVG Edit</code>的可用性，并减少其一些功能来提供更好的操作和体验，使用方法也是很多的，本地打开或者部署在服务器端都可以，这里就分享下。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/Method-Draw.png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><strong>Github地址：</strong><a href="https://github.com/methodofaction/Method-Draw" target="_blank" rel="noopener">https://github.com/methodofaction/Method-Draw</a></p>
+<p><strong>1、本地使用</strong><br>先下载<code>Method-Draw</code>压缩包，点击下载→传送门，然后解压出来，直接进入<code>method-draw</code>文件夹，打开<code>index</code>文件即可。</p>
+<p><strong>2、服务器部署</strong><br>先下载<code>Method-Draw</code>压缩包，点击下载→传送门，然后解压出来，将<code>method-draw</code>文件夹丢进<code>Web</code>服务器网站根目录，再直接访问域名/<code>ip</code>即可。</p>
+<p>没<code>Web</code>服务器的，这里提供个快速运行搭建方法，使用命令：</p>
+<pre><code>git clone https://github.com/methodofaction/Method-Draw.git
+cd Method-Draw/method-draw
+#启动，运行端口自行修改
+python -m SimpleHTTPServer 80 &amp;</code></pre><p>然后直接访问<code>ip</code>地址即可。</p>
+<pre><code>#Debian/Ubuntu系统
+apt -y install git
+
+#CentOS系统
+yum -y install git</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-01-19T18:10:22.000Z" itemprop="datePublished">2020-01-20</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.654Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/01/20/phpstudy-ef-bc-9alnmplamp-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e5-8c-85/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">phpStudy：lnmp+lamp一键安装包</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/01/19/wordpress-e4-bd-bf-e7-94-a8ajax-e5-ae-9e-e7-8e-b0-e9-a1-b5-e9-9d-a2-e6-97-a0-e5-88-b7-e6-96-b0-e6-8f-90-e4-ba-a4-e8-af-84-e8-ae-ba/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">WordPress使用Ajax实现页面无刷新提交评论</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

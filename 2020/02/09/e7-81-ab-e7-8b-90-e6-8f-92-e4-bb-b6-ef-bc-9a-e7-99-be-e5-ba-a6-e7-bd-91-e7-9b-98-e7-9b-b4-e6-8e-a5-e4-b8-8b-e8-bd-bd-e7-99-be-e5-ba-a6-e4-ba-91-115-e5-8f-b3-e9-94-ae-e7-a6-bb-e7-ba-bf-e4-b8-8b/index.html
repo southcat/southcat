@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>火狐插件：百度网盘直接下载+百度云/115右键离线下载 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="火狐插件：百度网盘直接下载+百度云&#x2F;115右键离线下载 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/02/09/e7-81-ab-e7-8b-90-e6-8f-92-e4-bb-b6-ef-bc-9a-e7-99-be-e5-ba-a6-e7-bd-91-e7-9b-98-e7-9b-b4-e6-8e-a5-e4-b8-8b-e8-bd-bd-e7-99-be-e5-ba-a6-e4-ba-91-115-e5-8f-b3-e9-94-ae-e7-a6-bb-e7-ba-bf-e4-b8-8b/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前发过一个获取百度直链的方法，参考：百度网盘直接下载助手 Tampermonkey（油猴）脚本，挺好用的，这里再分享2个关于网盘的插件，不过只适用于Firefox浏览器。 1、哔度娘网盘这个插件作用就是屏蔽掉度娘网盘网页端下载文件夹或大文件时强制弹出的启动客户端弹窗，直接启动浏览器下载，这个时候等于获取了直链，就可以用其它下载工具下载了。插件地址：点击进入 2、网盘离线下载这个插件由火狐吧 - John Doe - 南猫"><meta property="article:published_time" content="2020-02-09T14:18:29.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.655Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.655Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/02/09/e7-81-ab-e7-8b-90-e6-8f-92-e4-bb-b6-ef-bc-9a-e7-99-be-e5-ba-a6-e7-bd-91-e7-9b-98-e7-9b-b4-e6-8e-a5-e4-b8-8b-e8-bd-bd-e7-99-be-e5-ba-a6-e4-ba-91-115-e5-8f-b3-e9-94-ae-e7-a6-bb-e7-ba-bf-e4-b8-8b/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/02/09/e7-81-ab-e7-8b-90-e6-8f-92-e4-bb-b6-ef-bc-9a-e7-99-be-e5-ba-a6-e7-bd-91-e7-9b-98-e7-9b-b4-e6-8e-a5-e4-b8-8b-e8-bd-bd-e7-99-be-e5-ba-a6-e4-ba-91-115-e5-8f-b3-e9-94-ae-e7-a6-bb-e7-ba-bf-e4-b8-8b/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/02/09/e7-81-ab-e7-8b-90-e6-8f-92-e4-bb-b6-ef-bc-9a-e7-99-be-e5-ba-a6-e7-bd-91-e7-9b-98-e7-9b-b4-e6-8e-a5-e4-b8-8b-e8-bd-bd-e7-99-be-e5-ba-a6-e4-ba-91-115-e5-8f-b3-e9-94-ae-e7-a6-bb-e7-ba-bf-e4-b8-8b/"
+    },
+    "headline": "火狐插件：百度网盘直接下载+百度云/115右键离线下载 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-02-09T14:18:29.000Z",
+    "dateModified": "2020-04-12T04:09:09.655Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：之前发过一个获取百度直链的方法，参考：百度网盘直接下载助手 Tampermonkey（油猴）脚本，挺好用的，这里再分享2个关于网盘的插件，不过只适用于Firefox浏览器。 1、哔度娘网盘这个插件作用就是屏蔽掉度娘网盘网页端下载文件夹或大文件时强制弹出的启动客户端弹窗，直接启动浏览器下载，这个时候等于获取了直链，就可以用其它下载工具下载了。插件地址：点击进入 2、网盘离线下载这个插件由火狐吧 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=火狐插件：百度网盘直接下载+百度云/115右键离线下载" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=火狐插件：百度网盘直接下载+百度云/115右键离线下载&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=火狐插件：百度网盘直接下载+百度云/115右键离线下载" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFaUlEQVR42u2d0YrcWhAD/f8/7bxuiLtVOg6B4JqXu+x6ZnzKILolkXvdvu5LBEIQghCEIAQhrBCu5fXbG8J1P6//+bt0zfQd09+ePn+6Jp1LCEIQwjOER9F4gLDdzPT+dM14g8tBn9473dt2LiEIQQgzhEnETg+9gUyfvwnidG26/8f7E4IQhHAEYfr7Jj5U5KbDJOibOApBCEL4txDSzTVDzgZz+7x22BKCEITQQdiGn81IScMVMWuSMG5DExnMXm+RQhDCxyAQA/V//O9fc5uFIIQPQaBDyiZ4yVwlRssmgtshSajzOpUWghA+BGETkia0vcKLDE/kb+3Pa8grBCEI4VEYJwOiDWy391LzdRPoFPyk0OaPexaCEIQwQqBGJQ1B08BFTBxqvBDTZzVVhCAEIaABhZoVKbBNIWkCQh4GXcaEIAQh7BDo4kFFkJorZOhKQkuHtvG7hSAEIYxGKylcpICmMVubgmYSy1QWHQcnIQhBCNFoTYFLI2gnotuURUkAgxcoIQhBCHdafOqAEw5YTYBCSlvNgxOCEITAIJwchhQrpsC1+dwUrBDTGLXXhCAEIaCSVBo6SHhKg9pmgdqWJiSmQhCCEMYFKhUlU2BCFibyO1rKSGYsMVaEIAQhXFVxKw0qW1BLTNFt4GkC2XaYEoIQhLBDoGEJGXJa0aPlDloqo0UOIQhBCF2ZcxQTEMRS0UsLVLtMbQL+eI0QhCAEZLSSL0LDyIGg0UI5WbhSEUQIQhAC6zYTgUk33BapKJCTBW+8PyEIQQjIVKFGBxFIFIweGKebEYxLZUIQghCwqZKGFGK+VINLMQg1xbD1wQpBCEIYA9ntoDRsTYWOZvlpixfbe2P4IgQhCAH/wzLkQxvBqopVB+YqKY0IQQhCuNHusL3oEjTdDB28SEk0Bb/kHEIQghDOFqimXPG3BjAasG6DFzGEhSAEIfS5AzU4GtMzhTHpZ1r2ig9VCEIQwiiMm/hQo4QIVlPmTj8j8WsWKCEIQQj1ckOELRUzmpumRZF2ERSCEISQs0hSyEjXt8NLKl1tB6aBUCxuCUEIQkAHboqZ1OykAkbKWQT2eg9CEIIQRlOlCWOTWDYDUVPcIgtXWtaEIAQhZAjECKUDT/rMN8WMuoRxskUKQQgfh7AZJ/RQyQAlRU1y2GSqEIEXghCEwCHQIIPcfBKxNqBNYjfBX4cnIQhBCLHMSUIZYnKSw1ADJx2IFkljSUMIQhBCPCwJQ4jhQgObJpAl4cu6EApBCEI4WqCS6LTlDWriNsJNzNpXpooQhPAhCJtBcRJunBS1SIGLCngycoUgBCF0ELbCVBvKpM87EVw6oG0PVghCEMK17g40yNxugoQtbwJZUtpIIi4EIQghQyCGZ1O8ooNNMm7SkrUteigMEoIQhBBNlTfmJQlbyaDTLmZNGIOMViEI4eMQaEGqMTzT0EUXLwo8CWtsqghBCEK40wJEDZQUcpBlJokaGYzIQxhTaSEIQQh3I17NgrMJW1qsKMD2HtECJQQhCOGmMGjJgg48sUARhiu69KFAVghCEEL1P6tJh6ciR0ob1EwlIi0EIQjhHYQjsxIOJmihKQvepCR2tEAJQQgfhkAGoWa4SaWpprS5PSQavK7iKwQhCAGZKrQo1YhUMlupyduEtnEYFIIQhBAD2fawZBAiwkUKocQMTsIoBCEIgUFIpQgarlLxIoWw7XebkYMfiBCEIIRjCGSomW6+LW2Rw6YQ56jMKQQhCKGGQMxOIl7NNc13JdBCEIIQ3i1QjUlKF6VNQJPAkQULn0sIQhBCbbSmwJQUOVLwmg5CxDWFw1UqLQQhfBjCl19CEIIQhCAEIQjh8fULZC/mEHnxe80AAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">火狐插件：百度网盘直接下载+百度云/115右键离线下载</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-02-09</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=火狐插件：百度网盘直接下载+百度云/115右键离线下载&url=http://yoursite.com/2020/02/09/e7-81-ab-e7-8b-90-e6-8f-92-e4-bb-b6-ef-bc-9a-e7-99-be-e5-ba-a6-e7-bd-91-e7-9b-98-e7-9b-b4-e6-8e-a5-e4-b8-8b-e8-bd-bd-e7-99-be-e5-ba-a6-e4-ba-91-115-e5-8f-b3-e9-94-ae-e7-a6-bb-e7-ba-bf-e4-b8-8b/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=火狐插件：百度网盘直接下载+百度云/115右键离线下载&url=http://yoursite.com/2020/02/09/e7-81-ab-e7-8b-90-e6-8f-92-e4-bb-b6-ef-bc-9a-e7-99-be-e5-ba-a6-e7-bd-91-e7-9b-98-e7-9b-b4-e6-8e-a5-e4-b8-8b-e8-bd-bd-e7-99-be-e5-ba-a6-e4-ba-91-115-e5-8f-b3-e9-94-ae-e7-a6-bb-e7-ba-bf-e4-b8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/02/09/e7-81-ab-e7-8b-90-e6-8f-92-e4-bb-b6-ef-bc-9a-e7-99-be-e5-ba-a6-e7-bd-91-e7-9b-98-e7-9b-b4-e6-8e-a5-e4-b8-8b-e8-bd-bd-e7-99-be-e5-ba-a6-e4-ba-91-115-e5-8f-b3-e9-94-ae-e7-a6-bb-e7-ba-bf-e4-b8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/02/09/e7-81-ab-e7-8b-90-e6-8f-92-e4-bb-b6-ef-bc-9a-e7-99-be-e5-ba-a6-e7-bd-91-e7-9b-98-e7-9b-b4-e6-8e-a5-e4-b8-8b-e8-bd-bd-e7-99-be-e5-ba-a6-e4-ba-91-115-e5-8f-b3-e9-94-ae-e7-a6-bb-e7-ba-bf-e4-b8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/02/09/e7-81-ab-e7-8b-90-e6-8f-92-e4-bb-b6-ef-bc-9a-e7-99-be-e5-ba-a6-e7-bd-91-e7-9b-98-e7-9b-b4-e6-8e-a5-e4-b8-8b-e8-bd-bd-e7-99-be-e5-ba-a6-e4-ba-91-115-e5-8f-b3-e9-94-ae-e7-a6-bb-e7-ba-bf-e4-b8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/02/09/e7-81-ab-e7-8b-90-e6-8f-92-e4-bb-b6-ef-bc-9a-e7-99-be-e5-ba-a6-e7-bd-91-e7-9b-98-e7-9b-b4-e6-8e-a5-e4-b8-8b-e8-bd-bd-e7-99-be-e5-ba-a6-e4-ba-91-115-e5-8f-b3-e9-94-ae-e7-a6-bb-e7-ba-bf-e4-b8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/02/09/e7-81-ab-e7-8b-90-e6-8f-92-e4-bb-b6-ef-bc-9a-e7-99-be-e5-ba-a6-e7-bd-91-e7-9b-98-e7-9b-b4-e6-8e-a5-e4-b8-8b-e8-bd-bd-e7-99-be-e5-ba-a6-e4-ba-91-115-e5-8f-b3-e9-94-ae-e7-a6-bb-e7-ba-bf-e4-b8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFaUlEQVR42u2d0YrcWhAD/f8/7bxuiLtVOg6B4JqXu+x6ZnzKILolkXvdvu5LBEIQghCEIAQhrBCu5fXbG8J1P6//+bt0zfQd09+ePn+6Jp1LCEIQwjOER9F4gLDdzPT+dM14g8tBn9473dt2LiEIQQgzhEnETg+9gUyfvwnidG26/8f7E4IQhHAEYfr7Jj5U5KbDJOibOApBCEL4txDSzTVDzgZz+7x22BKCEITQQdiGn81IScMVMWuSMG5DExnMXm+RQhDCxyAQA/V//O9fc5uFIIQPQaBDyiZ4yVwlRssmgtshSajzOpUWghA+BGETkia0vcKLDE/kb+3Pa8grBCEI4VEYJwOiDWy391LzdRPoFPyk0OaPexaCEIQwQqBGJQ1B08BFTBxqvBDTZzVVhCAEIaABhZoVKbBNIWkCQh4GXcaEIAQh7BDo4kFFkJorZOhKQkuHtvG7hSAEIYxGKylcpICmMVubgmYSy1QWHQcnIQhBCNFoTYFLI2gnotuURUkAgxcoIQhBCHdafOqAEw5YTYBCSlvNgxOCEITAIJwchhQrpsC1+dwUrBDTGLXXhCAEIaCSVBo6SHhKg9pmgdqWJiSmQhCCEMYFKhUlU2BCFibyO1rKSGYsMVaEIAQhXFVxKw0qW1BLTNFt4GkC2XaYEoIQhLBDoGEJGXJa0aPlDloqo0UOIQhBCF2ZcxQTEMRS0UsLVLtMbQL+eI0QhCAEZLSSL0LDyIGg0UI5WbhSEUQIQhAC6zYTgUk33BapKJCTBW+8PyEIQQjIVKFGBxFIFIweGKebEYxLZUIQghCwqZKGFGK+VINLMQg1xbD1wQpBCEIYA9ntoDRsTYWOZvlpixfbe2P4IgQhCAH/wzLkQxvBqopVB+YqKY0IQQhCuNHusL3oEjTdDB28SEk0Bb/kHEIQghDOFqimXPG3BjAasG6DFzGEhSAEIfS5AzU4GtMzhTHpZ1r2ig9VCEIQwiiMm/hQo4QIVlPmTj8j8WsWKCEIQQj1ckOELRUzmpumRZF2ERSCEISQs0hSyEjXt8NLKl1tB6aBUCxuCUEIQkAHboqZ1OykAkbKWQT2eg9CEIIQRlOlCWOTWDYDUVPcIgtXWtaEIAQhZAjECKUDT/rMN8WMuoRxskUKQQgfh7AZJ/RQyQAlRU1y2GSqEIEXghCEwCHQIIPcfBKxNqBNYjfBX4cnIQhBCLHMSUIZYnKSw1ADJx2IFkljSUMIQhBCPCwJQ4jhQgObJpAl4cu6EApBCEI4WqCS6LTlDWriNsJNzNpXpooQhPAhCJtBcRJunBS1SIGLCngycoUgBCF0ELbCVBvKpM87EVw6oG0PVghCEMK17g40yNxugoQtbwJZUtpIIi4EIQghQyCGZ1O8ooNNMm7SkrUteigMEoIQhBBNlTfmJQlbyaDTLmZNGIOMViEI4eMQaEGqMTzT0EUXLwo8CWtsqghBCEK40wJEDZQUcpBlJokaGYzIQxhTaSEIQQh3I17NgrMJW1qsKMD2HtECJQQhCOGmMGjJgg48sUARhiu69KFAVghCEEL1P6tJh6ciR0ob1EwlIi0EIQjhHYQjsxIOJmihKQvepCR2tEAJQQgfhkAGoWa4SaWpprS5PSQavK7iKwQhCAGZKrQo1YhUMlupyduEtnEYFIIQhBAD2fawZBAiwkUKocQMTsIoBCEIgUFIpQgarlLxIoWw7XebkYMfiBCEIIRjCGSomW6+LW2Rw6YQ56jMKQQhCKGGQMxOIl7NNc13JdBCEIIQ3i1QjUlKF6VNQJPAkQULn0sIQhBCbbSmwJQUOVLwmg5CxDWFw1UqLQQhfBjCl19CEIIQhCAEIQjh8fULZC/mEHnxe80AAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>之前发过一个获取百度直链的方法，参考：百度网盘直接下载助手 Tampermonkey（油猴）脚本，挺好用的，这里再分享<code>2</code>个关于网盘的插件，不过只适用于<code>Firefox</code>浏览器。</p>
+<p><strong>1、哔度娘网盘</strong><br>这个插件作用就是屏蔽掉度娘网盘网页端下载文件夹或大文件时强制弹出的启动客户端弹窗，直接启动浏览器下载，这个时候等于获取了直链，就可以用其它下载工具下载了。<br><strong>插件地址：</strong>点击进入</p>
+<p><strong>2、网盘离线下载</strong><br>这个插件由火狐吧出品，百度云、<code>115</code>网盘右键离线下载<code>http</code>、<code>ftp</code>、<code>ed2k</code>、磁力链接，方便快捷。<code>PS</code>：已支持高亮选中后下载。<br><strong>插件地址：</strong>点击进入</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-02-09T14:18:29.000Z" itemprop="datePublished">2020-02-09</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.655Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/02/10/e5-be-88-e5-a5-bd-e7-94-a8-e7-9a-84dht-e7-a3-81-e5-8a-9b-e9-93-be-e6-8e-a5-e6-90-9c-e7-b4-a2-e5-bc-95-e6-93-8e-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85-e6-96-b9-e6-b3-95/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">很好用的DHT磁力链接搜索引擎快速安装方法</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/02/09/linux-vps-e6-90-ad-e5-bb-batelegram-rss-e4-b8-ad-e6-96-87-e8-ae-a2-e9-98-85-e6-9c-ba-e5-99-a8-e4-ba-ba-e6-95-99-e7-a8-8b/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux VPS搭建Telegram RSS中文订阅机器人教程</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

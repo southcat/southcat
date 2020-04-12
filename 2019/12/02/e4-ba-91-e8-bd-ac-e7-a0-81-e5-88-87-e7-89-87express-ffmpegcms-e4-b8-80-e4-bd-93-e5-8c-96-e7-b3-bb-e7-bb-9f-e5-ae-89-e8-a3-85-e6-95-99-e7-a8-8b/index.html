@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>云转码切片express-ffmpeg+CMS一体化系统安装教程 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="云转码切片express-ffmpeg+CMS一体化系统安装教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/12/02/e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87express-ffmpegcms-e4-b8-80-e4-bd-93-e5-8c-96-e7-b3-bb-e7-bb-9f-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="说明：云转码系统估计很多人知道，博主体验过七彩云、FFMpeg WebUI等云转码，感觉都不是很适合自己，而且好像都不更新了，特别是FFMpeg WebUI，貌似很久前就一直停留在0.9.6版本，恰好最近看到了个基于nodejs制作的开源免费的云转码切片系统，功能上基本可以满足个人日常需求了，而且博主感觉nodejs的转码切片速度比现有的很多php转码程序都快些，不知道是姿势问题还是啥，这里就分享 - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/express-ffmpeg(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/express-ffmpeg(2).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/express-ffmpeg(3).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/express-ffmpeg(4).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/express-ffmpeg(5).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/express-ffmpeg(6).png"><meta property="article:published_time" content="2019-12-02T03:27:14.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.650Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.650Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/12/02/e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87express-ffmpegcms-e4-b8-80-e4-bd-93-e5-8c-96-e7-b3-bb-e7-bb-9f-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/12/02/e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87express-ffmpegcms-e4-b8-80-e4-bd-93-e5-8c-96-e7-b3-bb-e7-bb-9f-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/12/02/e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87express-ffmpegcms-e4-b8-80-e4-bd-93-e5-8c-96-e7-b3-bb-e7-bb-9f-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/"
+    },
+    "headline": "云转码切片express-ffmpeg+CMS一体化系统安装教程 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-02T03:27:14.000Z",
+    "dateModified": "2020-04-12T04:09:09.650Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：云转码系统估计很多人知道，博主体验过七彩云、FFMpeg WebUI等云转码，感觉都不是很适合自己，而且好像都不更新了，特别是FFMpeg WebUI，貌似很久前就一直停留在0.9.6版本，恰好最近看到了个基于nodejs制作的开源免费的云转码切片系统，功能上基本可以满足个人日常需求了，而且博主感觉nodejs的转码切片速度比现有的很多php转码程序都快些，不知道是姿势问题还是啥，这里就分享 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=云转码切片express-ffmpeg+CMS一体化系统安装教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=云转码切片express-ffmpeg+CMS一体化系统安装教程&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=云转码切片express-ffmpeg+CMS一体化系统安装教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEIElEQVR42u2aQZLbQAwD9/+fTq6Ja4doyD6IcvuyjiNL01NlDkjg588XvH6EFFJIIYUU8k3In+H13xcO/3f67N+/r9f+9v71s9M1zbqFFHIr5K8/2l8WnW5+utfpOa9w5JnVuoUUcjHk642mz0+fpWIxbeDpe+n9ad1CCvmtkNMBng7vtuCd/gop5DdDngpNuyn0WaeNE1LIp0NO4pks5HQ/+u/pugnyI12IkELeDJIWhbv9/di0TkghbwQZTRM4dJ6+N10/NcpTc/5RV0tIIW8EOf2Q0+GcxHk7jKbPpk24kEJuhUxGCzFt2kJFixIxe1DTLKSQSyDpzVuTtdmQ6f1UbGIDLaSQD4JMiyFma2OikiASaSaEFHI7JA01pOa2XTAR/E0TjqZ1Qgq5AJIUjtHoBA0yNY6mQjY9Hwt0IYVcBJkO+BSynRZFjd24aBhkElLIzZA0iNQsummeUxNMNqIS6EIKeXNI0qSSECERB3Qg1g68sUAXUshlkHRAlB7eFKvpfROyqA0fIYW8KSQJOaQQLxHXjUAn5g5qKoQUciEkDStMC07DZWq8pmtoQRRSyM2QZPjbHNxNQaHDNDJYjmJASCEXQaaDngb7krBORYcOq+lwS0ghN0NOIrsJJTXGDRUAqShWXYiQQi6AbIZFJPBAA4QkREEGYZVAF1LIBZDk4dT4bIwkYuikAdYlxSOkkDeGbH/oNJRLBsyk0LSmj5BCbockYjiJ8avmzmQEN2L9UiJLSCFvCkkKz5VgYAOfilMqZMdiJaSQCyEbgX5leNUELFqxEZsHIYVcCJkOXhpWSkFgsrhkzNIhm5BCboZsAhA0OJQWQxtoEsCoxICQQi6EvDJojgWgDCc2xWtsvIUUcikkFedXhTwpVFPxa4bKQgr5BMg0wE0BoySsG8OneUb8rpBCLoUkxgoR0jQsQYfIJKiEXS0hhVwKOTXPSTiTBpfeg4rzcUOFFHIhJB1G0ZAgNWbpZqShMxLoQgq5CLIxVKaGNw2oaCCCNM50LUIKuRmyGS41gaMUnGjumQQMSn8IKeTNIVPIjxikaYFJLJAmgISfhBTyCZD0x00OdGLGpmsbcyc2AkIKuRSSDIfIj74xbuigOm36aBQLKeRiyDTATYZMWiAJOdGh87RxqAsRUsgbQzYimTTVJLzQBiuaDRJSyCdAplDf1RAfDSPSQ58WRyGFfApkAm+a4anYNMPnCSKKBSGFXAiZDt10wJNQEgkcNo07brSFFHIpJBXXdBhMgkfvBAgvFR4hhVwGSQzX6fpp4WRDmnAhLZZCCvlUyGisFAKiCSO9IxaEFPIbIEnAj4Qm3glfpOG3kEI+BZKEf9pwIBLRYLCFDZ6rAUIhhbwZJDU708C3LVqtKUsNYiGF3Az55JeQQgoppJBCXnz9BfVhhaG059jrAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">云转码切片express-ffmpeg+CMS一体化系统安装教程</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-02</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=云转码切片express-ffmpeg+CMS一体化系统安装教程&url=http://yoursite.com/2019/12/02/e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87express-ffmpegcms-e4-b8-80-e4-bd-93-e5-8c-96-e7-b3-bb-e7-bb-9f-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=云转码切片express-ffmpeg+CMS一体化系统安装教程&url=http://yoursite.com/2019/12/02/e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87express-ffmpegcms-e4-b8-80-e4-bd-93-e5-8c-96-e7-b3-bb-e7-bb-9f-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/02/e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87express-ffmpegcms-e4-b8-80-e4-bd-93-e5-8c-96-e7-b3-bb-e7-bb-9f-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/12/02/e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87express-ffmpegcms-e4-b8-80-e4-bd-93-e5-8c-96-e7-b3-bb-e7-bb-9f-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/12/02/e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87express-ffmpegcms-e4-b8-80-e4-bd-93-e5-8c-96-e7-b3-bb-e7-bb-9f-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/12/02/e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87express-ffmpegcms-e4-b8-80-e4-bd-93-e5-8c-96-e7-b3-bb-e7-bb-9f-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/12/02/e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87express-ffmpegcms-e4-b8-80-e4-bd-93-e5-8c-96-e7-b3-bb-e7-bb-9f-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEIElEQVR42u2aQZLbQAwD9/+fTq6Ja4doyD6IcvuyjiNL01NlDkjg588XvH6EFFJIIYUU8k3In+H13xcO/3f67N+/r9f+9v71s9M1zbqFFHIr5K8/2l8WnW5+utfpOa9w5JnVuoUUcjHk642mz0+fpWIxbeDpe+n9ad1CCvmtkNMBng7vtuCd/gop5DdDngpNuyn0WaeNE1LIp0NO4pks5HQ/+u/pugnyI12IkELeDJIWhbv9/di0TkghbwQZTRM4dJ6+N10/NcpTc/5RV0tIIW8EOf2Q0+GcxHk7jKbPpk24kEJuhUxGCzFt2kJFixIxe1DTLKSQSyDpzVuTtdmQ6f1UbGIDLaSQD4JMiyFma2OikiASaSaEFHI7JA01pOa2XTAR/E0TjqZ1Qgq5AJIUjtHoBA0yNY6mQjY9Hwt0IYVcBJkO+BSynRZFjd24aBhkElLIzZA0iNQsummeUxNMNqIS6EIKeXNI0qSSECERB3Qg1g68sUAXUshlkHRAlB7eFKvpfROyqA0fIYW8KSQJOaQQLxHXjUAn5g5qKoQUciEkDStMC07DZWq8pmtoQRRSyM2QZPjbHNxNQaHDNDJYjmJASCEXQaaDngb7krBORYcOq+lwS0ghN0NOIrsJJTXGDRUAqShWXYiQQi6AbIZFJPBAA4QkREEGYZVAF1LIBZDk4dT4bIwkYuikAdYlxSOkkDeGbH/oNJRLBsyk0LSmj5BCbockYjiJ8avmzmQEN2L9UiJLSCFvCkkKz5VgYAOfilMqZMdiJaSQCyEbgX5leNUELFqxEZsHIYVcCJkOXhpWSkFgsrhkzNIhm5BCboZsAhA0OJQWQxtoEsCoxICQQi6EvDJojgWgDCc2xWtsvIUUcikkFedXhTwpVFPxa4bKQgr5BMg0wE0BoySsG8OneUb8rpBCLoUkxgoR0jQsQYfIJKiEXS0hhVwKOTXPSTiTBpfeg4rzcUOFFHIhJB1G0ZAgNWbpZqShMxLoQgq5CLIxVKaGNw2oaCCCNM50LUIKuRmyGS41gaMUnGjumQQMSn8IKeTNIVPIjxikaYFJLJAmgISfhBTyCZD0x00OdGLGpmsbcyc2AkIKuRSSDIfIj74xbuigOm36aBQLKeRiyDTATYZMWiAJOdGh87RxqAsRUsgbQzYimTTVJLzQBiuaDRJSyCdAplDf1RAfDSPSQ58WRyGFfApkAm+a4anYNMPnCSKKBSGFXAiZDt10wJNQEgkcNo07brSFFHIpJBXXdBhMgkfvBAgvFR4hhVwGSQzX6fpp4WRDmnAhLZZCCvlUyGisFAKiCSO9IxaEFPIbIEnAj4Qm3glfpOG3kEI+BZKEf9pwIBLRYLCFDZ6rAUIhhbwZJDU708C3LVqtKUsNYiGF3Az55JeQQgoppJBCXnz9BfVhhaG059jrAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#项目介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">项目介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#特别提示"><span class="post-toc-number">2.</span> <span class="post-toc-text">特别提示</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">3.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更新"><span class="post-toc-number">4.</span> <span class="post-toc-text">更新</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#为什么要使用云转码"><span class="post-toc-number">5.</span> <span class="post-toc-text">为什么要使用云转码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#具体功能"><span class="post-toc-number">6.</span> <span class="post-toc-text">具体功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#新增功能"><span class="post-toc-number">7.</span> <span class="post-toc-text">新增功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">8.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#云转码高级版"><span class="post-toc-number">9.</span> <span class="post-toc-text">云转码高级版</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#云转码纯净版"><span class="post-toc-number">10.</span> <span class="post-toc-text">云转码纯净版</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>云转码系统估计很多人知道，博主体验过七彩云、<code>FFMpeg WebUI</code>等云转码，感觉都不是很适合自己，而且好像都不更新了，特别是<code>FFMpeg WebUI</code>，貌似很久前就一直停留在<code>0.9.6</code>版本，恰好最近看到了个基于<code>nodejs</code>制作的开源免费的云转码切片系统，功能上基本可以满足个人日常需求了，而且博主感觉<code>nodejs</code>的转码切片速度比现有的很多<code>php</code>转码程序都快些，不知道是姿势问题还是啥，这里就分享下，给有需求的人用。</p>
+<pre><code>提示：本文主要介绍的是开源免费版的功能及其源码的安装方法，仅供学习交流使用。且不能用于非法用途，否则后果自负！</code></pre><h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h2><p>该云转码不再是简单的云转码系统，而是<code>CMS</code>系统+云转码系统一体化，自带整个完备的并且对移动端友好的，而且非常利于<code>SEO</code>优化的自适应<code>CMS</code>系统，根据后台的分类系统和门户<code>CMS</code>管理系统，直接在首页达成完备的在线视频播放系统，适用于在线教育、企业内部培训视频、在线视频自媒体门户等多种运用方向。</p>
+<p>如果你不想使用<code>CMS</code>，也可以单独当它是一个可以在线视频转码的工具，对视频进行在线格式转换，很适合用来做一个视频转码的网站。</p>
+<ul>
+<li>实现大文件分块上传，批量上传。</li>
+<li>实现服务器端自动动态码率转码并且切片，完成后会自动删除原视频文件。</li>
+<li>实现批量添加水印和字幕，和同时处理。</li>
+<li>实现截图，默认自动生成四张截图。</li>
+<li>一键获取分享链接，设置防盗链，<code>token</code>防盗链或者仅允许指定域名<code>iframe</code>调用。</li>
+<li><code>ts</code>切片文件域名分发，负载均衡，支持无限多服务器同步分发。</li>
+</ul>
+<p><strong>官方网站：</strong><a href="https://www.moemv.com/" target="_blank" rel="noopener">https://www.moemv.com/</a><br><strong>开源版官网：</strong><a href="https://ffmpeg.moejj.com/" target="_blank" rel="noopener">https://ffmpeg.moejj.com/</a><br><strong>开源版演示：</strong><a href="https://www.moejj.com" target="_blank" rel="noopener">https://www.moejj.com</a></p>
+<h2 id="特别提示"><a href="#特别提示" class="headerlink" title="特别提示"></a>特别提示</h2><p>目前高级版和纯净版云转码程序都已开发，包括即将开发完成的在线视频<code>APP</code>安卓/<code>IOS APP</code>软件，真正的做到<code>CMS</code>+转码切片+<code>APP</code>全方位一体化，上手更简单，并且转码和切片上比开源版强很多，切片质量也是非常的好，不管是在切片加载情况，播放切片时的流畅度及系统负载等方面，都有不错的表现，用过的人都知道，且高级版结合了最新的<code>CPU+GPU</code>混合转码，在转码速度大幅度提高下，质量和压缩率都十分完美，同时纯净版和高级版都会长期频繁更新。</p>
+<pre><code>注意：对高级版或者纯净版有兴趣的看文章后面的介绍，有购买需求的可以加微信rats54。</code></pre><p>这里感谢下购买过并支持该程序的人，有您的支持，以后该程序会越来越强大，更新会更频繁，功能越来越多，同时保证永远不会加后门，可放心使用。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/express-ffmpeg(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/express-ffmpeg(2).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/express-ffmpeg(3).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/express-ffmpeg(4).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/express-ffmpeg(5).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/express-ffmpeg(6).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><pre><code>【2019.1.17】
+更新部分安装步骤，使出错率更小。</code></pre><h2 id="为什么要使用云转码"><a href="#为什么要使用云转码" class="headerlink" title="为什么要使用云转码"></a>为什么要使用云转码</h2><p>传统视频如果没有正确的压缩，一般来说尺寸非常大，动则<code>3Gb</code>、<code>4Gb</code>的大小，再者因为视频需要在网站中进行播放，传统中如果放置常规的<code>flv</code>或者<code>mp4</code>格式，那么浏览器会一直进行缓存，并且在缓存在一定播放长度之后才会进行播放，这样会消耗更多的带宽和让用户等待更长的时间，所以转码之后再进行切片是非常必须的，一来无损的压缩视频文件使其占用磁盘尺寸更小，并且基于<code>hls</code>格式，也是<code>M3u8</code>格式中储存了所有<code>ts</code>切片列表，这种模式加载，只需要加载第一个<code>ts</code>切片视频就可以开始播放，这样就使用户等待的时间更少，减少服务器带宽使用，并且画质的损失很小。这也就是为什么现在大部分视频网站都是使用<code>hls</code>格式来播放的。</p>
+<h2 id="具体功能"><a href="#具体功能" class="headerlink" title="具体功能"></a>具体功能</h2><ul>
+<li>后台云转码加切片，运用最精简的代码，做成最快的转码+切片功能。</li>
+<li>秒切功能，切片速度领先所有市面收费云转码系统。</li>
+<li>视频分类、视频筛选、视频搜索，后台一应俱全。</li>
+<li>防盗链、<code>token</code>防盗链，多重防盗链，避免流量损失，可以设置指定域名只能<code>iframe</code>调用。</li>
+<li>字幕烧录，水印烧录，超级简单的操作，即可将字幕烧录进视频或者添加水印到视频中。</li>
+<li>支持<code>vtt</code>字幕，后台可以根据不同的视频上传不同的<code>vtt</code>字幕，前台播放自动加载字幕。</li>
+<li>视频截图，后台配置截图数，云转码切片的时候自动截图。</li>
+<li><code>ts</code>分发，多服务器同步内容，<code>ts</code>文件自动循环加域名前缀，负载均衡。</li>
+<li><code>cms</code>系统配置，站点名称设置、<code>seo</code>标题设置、<code>seokeywords</code>设置，<code>seodescription</code>设置，前台显示截图设置，前台自动生成<code>cms</code>系统，自适应布局，针对移动端优化，<code>seo</code>效果极佳。</li>
+</ul>
+<h2 id="新增功能"><a href="#新增功能" class="headerlink" title="新增功能"></a>新增功能</h2><pre><code>#增加会员系统
+增加会员系统，可以不开启CMS，独立开启会员系统，双向验证，安全可靠，后台可以配合卡劵生成，前台用户使用卡劵进行升级。
+
+#真正意义上的权限系统
+路由层面的权限系统，非网上的播放器假权限，根据权限不同，相同的M3U8播放文件返回不同的内容，比如普通会员只能播放3分钟，就只会返回3分钟的切片内容，升级之后才会返回完整的切片内容。
+
+#卡劵系统
+后台设定卡劵生成，可以设置开通会员时间，用户前台使用即可升级到对应的会员，到期之后权限失效，需要重新开通，如果连续使用则是累加会员时间。</code></pre><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>如果你觉得安装很困难，想很快安装好，可以使用博主写的<code>Docker</code>镜像，安装教程：点击访问。</p>
+<p>安装教程官网其实有，不过仅有<code>Ubuntu</code>的手动教程，其它系统都没有，博主发现该程序所需的大部分环境宝塔面板均可以直接安装，鉴于为小白着想，这里就用宝塔面板安装该程序，支持的系统也多。</p>
+<p><strong>所需环境：</strong><code>nodejs</code>、<code>expressjs</code>、<code>mongoDb</code>、<code>ffmpeg</code>、<code>Redis</code>等</p>
+<p><strong>1、安装宝塔</strong></p>
+<pre><code>#Centos系统
+yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh
+#Ubuntu系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; sudo bash install.sh
+#Debian系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; bash install.sh</code></pre><p>安装完成后，进入面板，点击左侧软件管理，然后安装<code>MongoDb</code>、<code>Redis</code>、<code>Nginx</code>(使用域名访问才需要安装，反之不用)。注意<code>Debian</code>安装<code>MongoDb</code>之前还需要使用命令<code>apt install sudo</code>，不然可能存在<code>MongoDb</code>启动不了的情况。</p>
+<p><strong>2、安装ffmpeg</strong></p>
+<pre><code>wget https://www.moerats.com/usr/down/ffmpeg/ffmpeg-git-$(getconf LONG_BIT)bit-static.tar.xz
+tar xvf ffmpeg-git-*-static.tar.xz
+mv ffmpeg-git-*/ffmpeg  ffmpeg-git-*/ffprobe /usr/bin/
+rm -rf ffmpeg-git-*</code></pre><p><strong>3、安装Nodejs</strong></p>
+<pre><code>#Debian/Ubuntu系统
+curl -sL https://deb.nodesource.com/setup_8.x | bash -
+apt install -y nodejs git
+
+#Centos系统
+curl -sL https://rpm.nodesource.com/setup_8.x | bash -
+yum install nodejs git -y</code></pre><p>安装<code>PM2</code>和<code>express</code>：</p>
+<pre><code>npm install -g pm2 express</code></pre><p><strong>4、创建数据库</strong><br>创建之前建议去面板软件管理那里找到<code>MongoDb</code>数据库重启一下。</p>
+<pre><code>#这里数据库名，用户和密码都是ffmpeg
+mongo
+use ffmpeg
+db.createUser({user:&quot;ffmpeg&quot;,pwd:&quot;ffmpeg&quot;,roles:[{role:&quot;readWrite&quot;,db:&quot;ffmpeg&quot;}]})
+db.auth(&quot;ffmpeg&quot;,&quot;ffmpeg&quot;)</code></pre><p>如果显示<code>1</code>则增加用户正确，再使用<code>Ctrl+D</code>退出。这里如果有<code>No such file or directory</code>报错，请检查下数据库运行状态。</p>
+<p><strong>5、配置云转码</strong></p>
+<pre><code>git clone https://gitee.com/quazero/express-ffmpeg.git
+cd express-ffmpeg
+#创建config文件夹
+mkdir config
+cd config</code></pre><p>创建并编辑<code>auth.js</code>配置文件：</p>
+<pre><code>nano auth.js</code></pre><p>将以下代码复制进去：</p>
+<pre><code>#该配置比很早的版本多了三个设置项，很多人出错就在这里，secret是session需要的秘钥，login是后台登陆地址，loginmsg 是后台未登录显示的内容，默认是404。
+module.exports = {
+    user: &quot;admin&quot;,
+    password: &quot;admin&quot;,
+    db: &quot;ffmpeg&quot;,
+    dbuser: &quot;ffmpeg&quot;,
+    dbpassword: &quot;ffmpeg&quot;,
+    secret: &quot;yoursecret&quot;,
+    login: &quot;/adminlogin&quot;,
+    loginmsg: &quot;404 Not Found&quot;
+};</code></pre><p>再使用<code>Ctrl+X</code>，<code>Y</code>确认退出编辑模式，参数从上往下依次是登陆云转码平台的账号，密码，数据库，数据库用户名，数据库密码。本教程安装的<code>mongodb</code>数据库为<code>ffmpeg</code>，用户名和密码都是<code>ffmpeg</code>，可以自行进行修改。</p>
+<p><strong>6、安装并运行云转码</strong></p>
+<pre><code>cd /root/express-ffmpeg
+npm install
+#如果服务器重启，则必须在express-ffmpeg源码文件里重新运行命令启动
+pm2 start bin/www -i 0</code></pre><p><strong>7、反向代理</strong><br>点击左侧网站，添加站点，然后再点击添加好了的域名名称，这时候就进入了站点配置，点击反向代理，目标<code>URL</code>填入<code>http://127.0.0.1:3000</code>，再启用反向代理即可。</p>
+<p><strong>8、站点配置</strong><br>最后打开<code>xx.com/adminlogin</code>，输入设定的账号密码，本教程设置的是<code>admin</code>，<code>admin</code>，进入之后点击设置，转码设置需要绑定域名，截图数需大于<code>0</code>，然后域名分发可以不设置，但需要提交下、<code>CMS</code>设置也需要绑定域名，播放器设置需要关闭强制<code>QQ</code>浏览器播放，当然其它设置需要自行修改，不然视频很可能因为某个设置的问题放不了。</p>
+<p>最后这里要说下的就是，如果你使用后，心理有个疑问，为什么转码速度这么慢，或者很慢？那么就意味着你需要换一个强一点的<code>CPU</code>独立服务器，切勿用<code>VPS</code>，<code>VPS</code>的<code>CPU</code>限制很多，如果你拿来转码，很有可能你的<code>VPS</code>会被暂停，<code>CPU</code>选择可参考跑分榜→传送门。</p>
+<p>当然你要是只用秒切功能的话，对<code>CPU</code>要求就不是那么大了，不是很耗资源。</p>
+<h2 id="云转码高级版"><a href="#云转码高级版" class="headerlink" title="云转码高级版"></a>云转码高级版</h2><p><strong>高级版官网：</strong><a href="https://express-ffmpeg-vip.moejj.com" target="_blank" rel="noopener">https://express-ffmpeg-vip.moejj.com</a><br><strong>演示站：</strong><a href="https://www.leimulamu.com/" target="_blank" rel="noopener">https://www.leimulamu.com/</a></p>
+<p>主要功能：</p>
+<pre><code>1、支持多码率，同时转码到多个分辨率视频，且所有码率可自行设置，可保持原视频码率，并自定义视频同时转码数量，充分利用CPU效能。
+2、支持CPU转码和GPU+CPU混合转码2种模式，且GPU混合转码拥有超级快的速度，画面无损失，压缩率与纯CPU转码一致。
+3、默认生成自适应M3U8，根据转码的多分辨率，自动生成一个自适应M3U8地址，根据用户的带宽情况自动播放其中一个合适的分辨率。
+4、自定义跑马灯文字广告、多码率自动适应，字体自定义，颜色自定义，间隔自定义，速度自定义，描边自定义，背景自定义。
+5、跑马灯模板功能，可提前设置好多种不同的跑马灯，转码的时候批量设置指定的跑马灯模板，到时候自行烧录。
+6、自定义水印、可设置4个不同的水印到4个位置，且会根据视频分辨率自行调整其大小。
+7、支持转码切片、秒切，史上最快的秒切速度，且切片时长可自行设置，可做到720P、800码率情况下，单个切片体积仅100KB。
+8、支持去除水印、去除跑马灯功能，可对多位置、多时间段进行去除设置，可对同类视频进行批量设置，最大程度的还原视频原画面。
+9、智能动态码率转码，根据视频自身的情况，智能分配每一帧的码率，相同码率下，压缩率更高，画面更清晰。
+10、默认使用最佳转码参数，最大程度保证了切片兼容性，IOS、Android、PC、APP等均可以完美播放，可以在任何平台调用。
+11、完全自定义切片储存路径，所有用户都可以根据自己的需要自定义自己的储存目录，详见：自定义目录说明。
+12、完全自定义切片后缀，默认切片后缀ts，你可以设置成jpg、png、gif等，其中不管你设置的是什么后缀，m3u8均可以完美播放。
+13、可替换型片头广告系统，多片头随机播放，多片头随时替换，且设置立即生效，所有视频自动加片头或片中广告，同时任何地方调用的m3u8也生效。
+14、支持切片后，可自行保留原片和转码后的mp4文件，且可保留多个分辨率mp4文件，并生成对应的转码后的mp4链接，方便外部调用。
+15、支持自动生成截图和gif动态图，gif宽度，截取时长和截图数量均可自定义相关参数，系统默认会智能截取视频中间最精彩位置进行截取。
+16、自动生成预览视频，系统会抽取视频中数个片段并且转码合成一个预览视频，去除音频，效果非常好，经测试350*180分辨率的5秒钟预览视频，只有170KB大小，比GIF动态图更小，配合前端插件做鼠标移动到图片上自动播放预览视频功能，可大幅提高用户点击率和留存率，极大提高用户体验。前端使用预览视频案例：预览视频
+17、支持海报上传，支持单视频两个海报，第二个海报不会处理尺寸大小，保持上传时尺寸，并生成对应的海报链接地址。
+18、可根据时长自行剪切片头，并同时保存后转码，批量剪切片头功能可作为视频剪切工具使用。
+19、一键可自动入库所有的视频、封面等，且入库后视频自动分类，自动创建分类，srt、ass字幕自动烧录进视频。
+20、分发设置，可多服务器或cdn同时提供m3u8播放服务，负载均衡，可改善单个服务器的负载、带宽不足的情况，提高用户播放体验。
+21、云储存同步全家桶，目前对接了亚马逊S3，minio，七牛云，阿里oss，又拍云，任你选择，转码之后自动同步，并且通过分发设置，可直接对接到云储存使用云储存中的切片。
+22、防下载合并功能，禁止浏览器插件或者软件下载m3u8合并成mp4，智能托管ts文件。
+23、m3u8/mp4下载功能，输入m3u8地址或者mp4直链，直接批量下载，再配合去水印、跑马灯功能，世间一切资源由你掌控。
+24、自带全自动发布系统，支持发布苹果cms等，只需填入数据库，即可快速将视频相关描述信息、m3u8、截图等入库到指定的cms。
+25、自带火车头采集页面，简单配置，即可使用火车头将m3u8、截图等链接地址入库到所有第三方cms或程序方便调用。
+26、拥有最全的api，包括上传、转码、即时返回相关m3u8等链接信息，可自行开发第三方调用相关api，并完美适用任何APP等程序。</code></pre><p>更多功能，继续开发中，每月更新。</p>
+<p>其他更多功能可以看更新日志：</p>
+<pre><code>【2019年3月3日】
+新增了多服务器多域名分发配置。
+新增了大量对接网盘系统的API配置。
+根据所填写分发配置，m3u8中的ts会随机的添加分发域名。
+通过多服务器同步切片或者直接反代，就可以实现多服务器负载均衡的效果。或者直接分发CDN域名，也可以解决带宽和负载问题。
+
+【2019年3月12日】
+增加一个新的分辨率640P的选项。
+增加保留mp4的新选项640P。
+修复一些BUG，比如点击推荐然后删除出错的问题。
+增加自定义每个分辨率的码率功能，可以设置自己需要的码率。
+
+【2019年3月20日】
+增加单独图片水印单独位置的水印烧录功能，这个算是一个比较大的重构功能。
+删除原有的配置中的水印配置，并且重新了设计了水印功能，可以设置每一个位置设置不同的图片水印。
+很智能的自动匹配视频的大小，也就是所有视频转码之后，图片水印的大小都是自适应的，都是一样的大小。
+后台水印管理中，可以添加四个位置四个图片水印，可以完全不同，也可以相同，不添加则不会添加图片水印。
+后台预留了文字水印的位置，估计以后会再加上文字水印功能。
+
+【2019年4月5日】
+m3u8地址整体优化，更利于切片的管理和储存。
+电视剧模块增加生成海报功能，因为m3u8地址的改变，所以如果升级新版本需要在电视剧模块中点击一下生成海报的按钮。
+增加对ass字幕烧录的支持，很多视频的字幕就是ass特效字幕，原来srt字幕，现在增加了对ass字幕的支持，在movies文件夹中与视频同名的ass字幕会优先烧录进视频中，也就是如果同时存在srt字幕和ass字幕，则会直接烧录ass字幕。
+增加了视频定制化转码的配置。在现在这个每一个视频都不一样的变化的时代，当然要对视频有定制化转码的选项，所以现在可以选择部分或者仅仅一部视频，进行定制化转码的配置。
+增加了跑马灯广告中文本颜色，描边颜色，描边大小的设置。非常的炫酷。再配合字体文件，可以完美自定义跑马灯的样式。
+
+【2019年4月24日】
+增加多码率的试看功能，重写了全部的获取m3u8和处理m3u8的逻辑，使其完美支持了分发设置下的试看功能。
+真正意义上的试看功能，并非播放器上边的模拟试看，相同的m3u8根据用户的状态返回完全不同的内容。
+完美支持了高级版多码率版本的试看功能，如果在后台开启试看功能，则未登录的用户所有分辨率只能试看一分钟，注册之后用户组对应的分辨率可以观看全片，但是对应分辨率如果用户组权限不够还是只能试看一分钟。
+有一个很有趣的场景：开始开放m3u8给第三方采集，突然有一天后台一键开启试看功能，所有外面引用的m3u8就全部变成了一分钟试看，是不是非常有趣。
+试看功能完美支持分发设置，也就是说使用cdn的用户也可以使用试看功能，试看功能的原理是捕获用户的m3u8静态文件请求，将请求完全交给源代码处理，不走静态静态目录，所以相同的m3u8根据用户的状态直接返回完全不同的内容。
+试看功能一旦开启，就拥有了类似优酷、爱奇艺相同级别的防盗链功能，但是仅限于使用本源码配套的cms，试看功能意味着永久的杜绝防盗链。
+对接了支付宝的官方接口，可以直接使用支付宝充值积分。往后可能会陆续增加大量的支付接口，方便用户选用。
+增加了订单管理功能，通过支付宝充值的订单将在订单管理中进行管理。
+更新了前端的提示功能，在移动端上非常友好，增加了试看的提醒等。
+修复了电影和电视剧上传海报的问题。
+修复了少数bug。
+
+【2019年5月29日】
+增加了大量的对接APP的API接口。
+增加了一键生成视频海报的功能。
+修复和优化了大量已知问题，前端重写了很多逻辑。
+获取m3u8增加详尽，增加动态图，截图，mp4地址。
+增加了多视频转码功能，后台可设置同时转码多少个视频，全方位利用CPU效能。
+APP对接完成，演示APP地址：https://www.iqi360.com/topic/5ce4277cac599a7c35b49eb8
+
+【2019年6月8日】
+超现代的响应式模板。
+绝佳设计，绝佳的用户体验。
+最新的BOOTSTARP4框架新模板。
+更新了超大量的代码和优化了大量的程序代码，首页完全内存缓存
+
+【2019年6月22日】
+增加了高级版CMS的评论功能，后台审核功能。
+增加了用户编辑功能，可以编辑用户名，邮箱，重设密码，vip用户组，VIP到期日期。
+完全改进了发布流程，视频转码完成之后，有一个中间状态，点击正式发布，视频才会发布到前端。
+改进了网页上传机制等。
+
+【2019年6月30日】
+新增用户上传功能，用户可以在自己的专用上传页面，上传视频，后台CMS管理中可以设置用户上传视频审核通过之后可以增加的积分。用户上传之后获得积分，可以使用积分升级用户组，包月或者包年，解锁观看权限。
+增加了所有视频状态的捕获和展示机制，分别有四种状态：审核中，剧集，电影，转码中或者等待发布。
+美化了用户上传视频页面，和已经上传视频列表。
+
+【2019年8月03日】
+增加了云储存功能，向云更近一步，用户可自建minio集群对象储存或者使用亚马逊s3，可将源片，转码后各分辨率mp4，m3u8和切片文件，截图，动态图等全部自动转存至云储存，用户可直接调用云储存的资源进行播放。
+增加了自适应m3u8功能，根据视频转码出来的多个分辨率，根据用户自身的带宽情况自动加载其中一个分辨率的m3u8，非常智能。以后只需要放出一个自适应m3u8就够了。
+新增导出表格功能，用户需要分工功能怎么办，一个人管理视频转码，一个人管理CMS运营，这个时候导出表格功能就有用了，一键导出所选视频的所有m3u8信息成表格。
+新增了保留源片的选项，新增了保留源片的选项，建议配合云储存使用。
+
+【2019年8月6日】
+新增了GPU转码的支持，在翻阅了国内外大量的文档之后，重新规划设计的GPU转码功能，完全遵守最新的NVIDIA规范，使用CPU+GPU混合转码模式，同时利用CPU和GPU的效能，保证无论低码率还是高码率的质量和速度，同时做到了和CPU转码同样的压缩率和画质，堪称最完美的GPU转码功能。
+##转码测试
+测试文件：1.81G，时长2个小时10分钟。
+转码设置：同时转码480P，720P，1080P，码率设置为500，1000，2000，并且同时添加图片水印和跑马灯。使用GPU转码。
+结果：用时7分钟，整个多码率全部完成转码，如果不要1080P，则最多需要3分钟即可完成转码，纯CPU转码i9需要25分钟左右。保持了和纯CPU同样的压缩率，同样画面效果也和CPU转码一致。
+GPU性价比之选：配合德国机器94欧元，也就是744人民币即可搭建出GPU转码服务器。
+
+【2019年8月11日】
+由于牵扯到商用代码，所以部分核心代码加密，增加授权机制，增加了可替换型TS广告系统，可随意多个视频广告，可选择片头还是片中，多个视频广告同时存在的情况下，随意选择其中之一进行插入，片中广告会根据视频的时长，智能在其中间位置插入视频广告。不会做视频广告？没关系，新增智能一键生成视频广告的功能，简单几步操作，智能生成自带BMG背景音乐的视频广告。
+新增TS可替换型广告，可自行上传任意多个视频广告，可选择片头片尾插入。随意替换，即时生效。
+新增视频广告生成系统，可自行在后台自动生成视频广告，任意时长，任意广告内容，任意图片，十分智能。
+新增停止队列功能，停止队列之后可操作剪切片头等操作。
+
+【2019年8月28日】
+新增CMS管理中，是否开启积分购买点播功能，增加了默认视频积分价格，必须同时开启试看功能。
+试看功能和VIP用户组、积分点播三个功能共同配合，完善了这个积分点播功能：
+1、用户未登录时，提醒只能观看一分钟试看，登录之后才能观看完整视频。
+2、用户登录时，如果用户组权限不够或者是VIP用户组权限不够，就会提示：您用户组权限不够，只能观看一分钟试看，请升级用户组或者积分购买此视频完整版。
+3、如果此视频用户使用积分购买过，那么会直接返回完整视频。
+4、如果用户的用户组权限够了，也会直接返回完整视频内容。
+5、无论用户如何盗链M3U8，所有非本站CMS都会只显示1分钟试看内容。
+6、可自定义每一部视频的单独的积分价格，如果未设置，则会直接使用CMS管理中设置的默认积分价格，免去重复设置之苦。
+后台增加视频简易编辑功能，简易编辑可以设置视频的简单的标题和简介，还有此视频的积分价格，简单的分类标签，除了标题，其他都是选项填，再也不用去编辑中详细编辑视频信息。
+
+【2019年9月9日】
+更新了一个超级功能，就是批量多位置、多时间段，智能去除跑马灯和水印的功能，详见：https://express-ffmpeg-vip.moejj.com/blog/5d76121b9773bd51d721a00e
+新增了视频库中，转码前的全格式视频实时预览功能，可以应用在用户上传中，转码前就可预览视频内容，更方便审核视频。
+新增了前端CMS签到功能，用户每天登陆可签到一次，后台可设置签到所获得的积分数。
+新增了前端VTT外挂字幕加载和后台VTT字幕上传功能。
+新增了前端时间轴实时预览和后台可选生成时间轴预览图功能。鼠标移动到时间轴即可预览时间轴上的视频内容。
+
+【2019年9月13日】
+在高级版源码中内置了推流服务器和相关的直播功能。用户可根据需求按需开启或者关闭推流服务器功能。
+新增推流服务器设置，用户可选择性开启推流服务器，开启之后无需任何其他操作，直接一键开启推流服务器。
+开启推流服务器之后，可在后台为指定用户开启直播权限，开启之后，用户可在自己的个人页面看见直播链接和直播秘钥。
+用户通过OBS软件或者其他方式将直播推流到推流服务器，则前台会自动展示直播间。
+网站用户可通过前台直播板块中的直播间进入观看直播。
+CMS设置中新增前台相关直播参数，例如是否开启直播板块等。
+案例视频可见：https://express-ffmpeg-vip.moejj.com/blog/5d7a597b9773bd51d721a010
+
+【2019年9月18日】
+新增了多人实时聊天室功能，在直播室中使用更佳，详情可见：https://express-ffmpeg-vip.moejj.com/blog/5d8209ac9773bd51d721a011
+
+【2019年9月24日】
+新增了额外系统全自动发布系统，可自动将高级智能云转码中的视频发布至上千个CMS，转码完成的瞬间即发布出去。
+介绍：https://express-ffmpeg-vip.moejj.com/blog/5d8af6d49773bd51d721a013
+
+【19年10月5日】
+自动发布平台新增了对msvod，也就是魅思系统的自动发布适配，全自动发布视频到msvod系统，转码完成一瞬间即自动发布，无延时全自动。
+修复了大量的历史遗留问题，修复了大量bug，新增了前端标签删除等功能。
+
+【2019年10月14日】
+新增入库时自动分类入库、封面入库。
+修复部分已知问题，新增更多app接口，方便开发app。
+
+【2019年11月20日】
+完全重写后台UI，现在的UI大概是商用软件中最漂亮的后台了。
+新增秒切功能，也许是史上最快的秒切。
+优化了大量的操作流程，比如视频编辑，剧集编辑等。
+修复了一些BUG，比如导出excel的问题
+
+【2019年12月5日】
+新增并已完美对接跨世代CMS，使用最新技术开发，使用Apollo server和Apollo client，利用keystonejs、mongoose、graphql、vuejs加nuxtjs服务端渲染驱动，全面使用graphql前后端通信，无刷新服务端渲染技术，做到低延迟情况下所有页面秒开，超越静态页面的速度。
+高级版自动发布电影和电视剧到CMS中，电影电视剧信息编辑，添加分集等皆自动发布或更新至CMS中，新增了最完备的云转码分工协作架构体系。把电影信息或者电视剧信息编辑好可以一键发布到CMS上，可以无数台高级版对应一个跨世代CMS。
+新增了设置选项，自定义海报宽高，自动生成的海报会根据设置项智能裁剪取画面中间位置裁剪，上传的电影海报和电视剧海报都会进行智能裁剪。
+新增电视剧分类功能。
+完美修复了手机浏览器试看问题，目前积分点播，VIP用户组和试看功能兼容了所有手机浏览器。
+优化了最新的mongodb连接，更快更稳定。
+转码逻辑大量优化和重写，修复了转码重复的问题。
+云转码分工协作架构体系详情查看：https://express-ffmpeg-vip.moejj.com/blog/5decc9ac9773bd51d721a019
+
+【2019年12月25日】
+新增m3u8/mp4下载功能，输入m3u8地址或者mp4直链，直接批量下载，同时并发10个进程同时下载，完全自动化，下载完成自动出现在视频库中，再配合去水印、跑马灯功能，世间一切资源由你掌控。
+新增跑马灯模板功能，由于很多视频需要个性自定义跑马灯内容，所以我精心开发了跑马灯模板功能，设置好跑马灯之后，可在视频库中批量选择视频之后选择对应的跑马灯模板，之后烧录跑马灯的时候就会自动处理了。
+新增了高级版的智能切片功能，并且优化了试看功能，智能切片配合切片时长功能，可做到720P 800帧率下单个TS 100KB。
+新增了云储存同步的全家桶，经过我的重新设计，做了队列同步功能，非常稳定，目前对接了亚马逊S3，minio，七牛云，阿里oss，又拍云，任你选择，转码之后自动同步，同步之后可删除本地切片，并且通过分发设置，可直接对接到云储存使用云储存中的切片。
+新增了防下载合并功能，全面使用源码托管TS文件，抛弃nginx对ts文件的托管，全面控制浏览器插件或者软件下载m3u8合并。
+再次优化了转码逻辑。
+
+【2020年01月08日】
+支持用户注册账号，在前端自主上传视频，并且管理员可在视频转码前就实时预览视频内容，来判断是否审核通过，避免资源浪费。
+支持了多功能联合筛选管理视频，状态筛选，数量筛选，分类筛选。
+新增了海报上传第二个接口，支持单视频两个海报，第二个海报不会处理尺寸大小，保持上传时尺寸。
+修复和优化了队列转码和停止队列的功能，方便阶段性编辑转码参数或者去水印等参数。
+修复少许已知BUG。
+
+【2020年01月10日】
+新增了自动生成预览视频的高级功能，可在后台设置中设置生成预览视频的秒数，系统会自动处理，抽取视频中数个片段并且转码合成一个预览视频，去除音频，效果非常好，经测试350*180分辨率的5秒钟预览视频，只有170KB大小，比GIF动态图更小，配合前端插件做鼠标移动到图片上自动播放预览视频功能，可大幅提高用户点击率和留存率，极大提高用户体验。
+新增了切片文件任意自定义后缀功能，默认为TS，可设置为jpg，png，gif或者任意后缀。
+
+【2020年2月06日】
+新增了支持数十个视频网站的视频离线下载功能，无缝对接到转码系统中，采用开源项目youtube-dl开发。
+新增了下载中心API，可利用API直接创建下载任务，可自行创建前端使用离线视频下载功能。
+支持视频列表：
+https://ytdl-org.github.io/youtube-dl/supportedsites.html
+
+【2020年2月28日】
+音乐库中心，音乐库用户可上传音频，并且编辑音乐的标题，艺术家，专辑，音乐封面等信息。
+cms中增加了音乐节目功能，在音乐节目中可创建歌单、音频课程等节目，再导入音乐库编辑好的音频，形成列表，cms前端自动展示音乐频道，使用最先进的音乐播放器，给人完全不同的体验。
+资讯新增背景图上传功能，可选，上传之后前端会展示背景图，未上传则展示默认背景图。
+修复一些已知bug，优化部分代码，尽可能提高程序稳定性。</code></pre><p>目前高级版<code>1488</code>，包一年更新，并永久使用，程序完美兼容<code>Linux</code>和<code>Windows</code>系统，并提供各种新手教程/一键安装脚本，安装不再困难，一个命令即可装好，有需求的可以加微信<code>rats54</code>。</p>
+<h2 id="云转码纯净版"><a href="#云转码纯净版" class="headerlink" title="云转码纯净版"></a>云转码纯净版</h2><p>该系统利用阿里巴巴开源的最强大的<code>nodejs</code>框架<code>egg.js</code>将整个转码切片系统抽离出来，最后制作完成了这款最好用、也最容易上手、安装也最简单的视频转码系统，称之为<code>theone ffmpeg</code>转码切片系统，也是用企业级标准制作的一款高性能极致视频转码切片系统。</p>
+<p><strong>定位：</strong>极致的方便，极致的使用体验，极致的用户自定义，极致的转码切片效率，为极致转码切片而生，企业级设计和编码。</p>
+<p>主要功能如下：</p>
+<pre><code>1、支持转码到240P、360P、480P、720P、1080P，且所有码率可自行设置，并自定义视频同时转码数量，充分利用CPU效能。
+2、可自定义跑马灯文字广告、跑马灯广告间隔，速度，跑马灯文字。
+3、可自定义水印、水印同时多位置的固定水印和动态的移动水印，且会根据视频分辨率自行调整其大小。
+4、支持转码切片、秒切，史上最快的秒切速度，且切片时长可自行设置，可做到720P、800码率情况下，单个切片体积仅100KB。
+5、智能动态码率转码，根据视频自身的情况，智能分配每一帧的码率，相同码率下，压缩率更高，画面更清晰。
+6、默认使用最佳转码参数，最大程度保证了切片兼容性，IOS、Android、PC、APP等均可以完美播放，可以在任何平台调用。
+7、支持切片后，可自行保留转码后的mp4文件，并生成对应的mp4链接，方便外部调用。
+8、支持截图gif动态图，宽度，截取时长，系统会智能截取视频中间最精彩位置进行截取。
+9、支持自定义截图数量，默认生成第一帧截图，且截图速度超快，生成10个截图只需要1秒钟。
+10、支持去除水印、去除跑马灯功能，可对同类视频进行批量设置，最大程度的还原视频原画面。
+11、可替换型片头广告系统，多片头随机播放，多片头随时替换，且设置立即生效，所有视频自动加片头广告，同时任何地方调用的m3u8也生效。
+12、自定义储存视频和入库路径，一键可自动入库所有的视频、封面等，且入库自动分类，自动创建分类，srt、ass字幕自动烧录进视频。
+13、分发设置，可多服务器或cdn同时提供m3u8播放服务，负载均衡，可改善单个服务器的负载、带宽不足的情况，提高用户播放体验。
+14、一键批量获取m3u8，一键获取视频所有截图，mp4和m3u8等全部信息，且按照第三方cms格式一键复制视频m3u8，非常方便。
+15、可根据时长自行剪切片头，并同时保存后转码，批量剪切片头功能可作为视频剪切工具使用。
+16、跨域放行防护配置项，如果开启则域名调用会有跨域判断，如果不开启，则可以将m3u8给所有网站调用。
+17、支持m3u8、mp4下载功能，输入m3u8地址或者mp4直链，直接批量下载，再配合去水印、跑马灯功能，世间一切资源由你掌控。
+18、支持切片自动缓存进内存，用户播放直接从内存读取，突破硬盘io，默认缓存1000个ts切片，可自行根据服务器内存进行调整。
+19、自带火车头采集页面，简单配置，即可使用火车头将m3u8、截图等链接地址入库到所有第三方cms或程序方便调用。</code></pre><p>更多新增功能可以查看更新日志：</p>
+<pre><code>【2019年3月24日】
+增加是否前台展示采集页面配置项。
+增加前台专用采集页面，简单配置火车头可以发布到任何CMS中去
+
+【2019年4月27日】
+增加了分发设置，重写了某些逻辑。
+后台增加分发设置页面，可以自行设置。
+必须将public文件夹整个同步到储存服务器，比如移动到/website，目录结构就是/website/public，然后绑定域名到/website，之后将域名填写到分发设置中即可，可以无限添加分发域名。
+
+【2019年5月19日】
+增加了ts加密的功能。
+修复了使用秒切，无法截图的问题。
+优化了大量转码切片逻辑，更加稳定持久，出现错误会自动跳过。
+增加后台分类管理功能。
+前台采集页面增加了分类筛选的功能。
+增加了视频选择分类的功能。
+
+【2019年5月27日】
+增加了前台采集页面的分类筛选功能。
+后台增加了状态展示，全部视频，正在转码，转码完成等数量。
+后台增加了编辑片名和上传海报的功能。
+前台和后台都优化了获取m3u8的展示效果。
+增加了同时转码视频数量设置，可以设置同时转码多个视频，充分利用cpu效能。
+
+【2019年7月8日】
+增加了批量剪切片头的功能，可以选择一批正在等待的视频，设置剪切时间轴，然后一键批量剪切视频片头。
+增加了停止转码队列的功能，点击停止转码队列，会停止自动下一个转码进程，之后方便使用批量剪切片头功能剪切片头。
+增加了智能切片功能，在保持最大兼容性的情况下，根据用户自己设置的切片时长进行智能切片，可以做到720P在800码率的情况下，单个TS切片文件100KB左右，加载速度极快。
+比如设置切片时长为1秒，则在智能切片情况下，ts的时长大部分为1秒钟，少部分为0.5秒到2秒之间，保证了动态码率和视觉上，甚至播放器上的超高兼容性。
+增加了授权机制，保证本人和用户双方权益。
+
+【2019年7月12日】
+增加了片头广告的开关，设置开启片头广告，则所有转码完成的视频广告会添加到所有的视频片头中去。
+新增了可替换片头广告管理中心，在这里可以上传片头视频广告，进行片头视频广告的转码切片处理，最后强行植入到所有视频的片头中。
+实现了片头广告的超强兼容，片头广告超快加载，片头广告可替换、可更改、可任意多个片头广告的功能。
+片头广告的原理：利用源码智能更改m3u8文件，每次请求的时候，将片头广告智能嵌入至原来的m3u8文件中，形成新的m3u8文件直接返回到用户播放器中。而且本源码针对所有视频广告全部做了兼容性的转码切片工作，使其变成多个很小的TS切片，用户加载极快，并且可以多个片头广告随机加载其中一个，在用户进行下载合并分发中，就可以做到同一个视频，但是多个片头广告。
+片头广告还可以用作将一个特定视频添加到所有的视频开头，来做到一些原来意想不到的作用，比如如果将纯净版商用提供服务，则可以在每一个视频开头都加上自己的企业的宣传视频，例如爱剪辑。
+
+【2019年8月3日】
+完善了批量剪切片头的功能。增加了多个选项，可选择保存剪切的前端或者后端，现在剪切片头广告可直接作为视频剪切的工具使用。
+增加了格式化的批量复制功能，格式满足大部分第三方CMS编辑的格式。
+增加了对ASS字幕的烧录支持。
+
+【2019年8月25日】
+新增了截图的时候默认截一张视频的第一帧的截图，方便很多CMS调用的时候封面使用，真正的第一帧截图，点击播放直接从第一帧开始播放，效果和抖音、微视、快手效果一样。
+新增了后台地址自定义的功能，而且在修改了大量源码，如果未登录则后台管理统一返回404，只用通过真正的后台地址登陆之后，后台URL才能正常进入。
+原来如果未登录会直接返回登录页面，现在重写了源码，后台所有路径如果未登录则全部直接返回404，而且通过自定义后台登录路径，只有通过登录路径正确登录之后才能正常进入后台管理界面。
+修改了一键安装脚本，自动随机后台路径和账号密码，安全性大增。
+
+【2019年9月5日】
+新增了去除跑马灯，去除水印的功能，想要在网页上实现此功能还比较困难，用户可以批量多选很多部视频同时设置同一个去水印的配置，然后就交给程序自动处理了。
+去除水印和跑马灯的功能介绍：用户自己框选视频区域，则此区域会使用差值去水印的功能去掉水印，不同于马赛克，画面损失很小，不影响用户体验。
+修复了前端采集页面的视频未转码完成也出现在采集页面的BUG。
+
+【2019年9月19日】
+上次更新了去水印和跑马灯的功能，所以用户担心自己添加的水印被我的程序去掉，这次我直接做了动态移动图片水印功能，矛与盾的战争，但是是我自己跟我自己两个大战。
+后台设置中一键开启动态水印功能，开启之后就默认在视频左下方移动到右下方，并且在移动到右下方最右边的会停住，每隔100秒都会重新又从左边移动到右边。
+
+【2019年12月27日】
+新增入库自动分类，入库自动添加封面的功能，一级文件夹自动创建分类，同名图片自动添加为封面。
+新增m3u8下载中心，通过m3u8或者mp4直链下载，并发下载，自动入库，配合去跑马灯、去水印功能有奇效。
+修复已知BUG。
+
+【2020年01月08日】
+修复和优化了队列转码和停止队列的功能，方便阶段性编辑转码参数或者去水印等参数。
+修复少许已知BUG。</code></pre><p>目前纯净版<code>488</code>元，包一年更新，并永久使用，程序完美兼容<code>Linux</code>和<code>Windows</code>系统，并提供各种新手教程/一键安装脚本，安装不再困难，一个命令即可装好，有需求的可根据自身经济条件进行选择，欢迎加微信<code>rats54</code>前来咨询。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-02T03:27:14.000Z" itemprop="datePublished">2019-12-02</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.650Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/02/kvmla-ef-bc-9a1g-e5-86-85-e5-ad-98-40g-e7-a1-ac-e7-9b-98-600g-e6-b5-81-e9-87-8f-e6-97-a5-e6-9c-ac-e9-a6-99-e6-b8-af-e6-96-b0-e5-8a-a0-e5-9d-a1kvm-e6-9c-88-e4-bb-98-ef-bf-a580/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Kvmla：1G内存/40G硬盘/600G流量/日本&amp;香港&amp;新加坡KVM/月付￥80</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/02/e8-bd-bb-e9-87-8f-e7-ba-a7-e8-ae-ba-e5-9d-9bcarbon-forum-e6-90-ad-e5-bb-ba-e6-95-99-e7-a8-8b/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">轻量级论坛Carbon Forum搭建教程</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

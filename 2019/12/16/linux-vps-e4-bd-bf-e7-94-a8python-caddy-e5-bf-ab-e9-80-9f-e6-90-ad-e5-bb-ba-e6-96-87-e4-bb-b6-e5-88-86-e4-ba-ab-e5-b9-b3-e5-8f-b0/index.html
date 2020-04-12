@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Linux VPS使用Python/Caddy快速搭建文件分享平台 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Linux VPS使用Python&#x2F;Caddy快速搭建文件分享平台 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/12/16/linux-vps-e4-bd-bf-e7-94-a8python-caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-ba-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0/"><meta property="og:locale" content="en"><meta name="description" content="说明：刚刚提到过Linux VPS快速分享文件方法，查看：Transfer.sh：Linux VPS使用命令行快速的分享文件，除了这个方法，我们还可以自建文件分享平台，由于Python内置了一个简单的HTTP服务器，而Caddy也是一个简单的HTTP服务器，所以这里可以分别使用Python和Caddy搭建文件分享平台。 Python使用Python搭建是超级快的，就是界面有点不好看。 使用命令：  - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/VPS_GG(2).png"><meta property="article:published_time" content="2019-12-16T02:15:26.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.651Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.651Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/12/16/linux-vps-e4-bd-bf-e7-94-a8python-caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-ba-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/12/16/linux-vps-e4-bd-bf-e7-94-a8python-caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-ba-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/12/16/linux-vps-e4-bd-bf-e7-94-a8python-caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-ba-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0/"
+    },
+    "headline": "Linux VPS使用Python/Caddy快速搭建文件分享平台 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-16T02:15:26.000Z",
+    "dateModified": "2020-04-12T04:09:09.651Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：刚刚提到过Linux VPS快速分享文件方法，查看：Transfer.sh：Linux VPS使用命令行快速的分享文件，除了这个方法，我们还可以自建文件分享平台，由于Python内置了一个简单的HTTP服务器，而Caddy也是一个简单的HTTP服务器，所以这里可以分别使用Python和Caddy搭建文件分享平台。 Python使用Python搭建是超级快的，就是界面有点不好看。 使用命令：  - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Linux VPS使用Python/Caddy快速搭建文件分享平台" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Linux VPS使用Python/Caddy快速搭建文件分享平台&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=Linux VPS使用Python/Caddy快速搭建文件分享平台" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEIklEQVR42u2aQY7jMAwE8/9P716DwGIXZR9MTeUyGCexVQJCNZv9+fcHXh8hhRRSSCGFvAn5KV7fn/n+7Ora9/Wr/1fP+L3X7z1W943rFlLIoZCXP9rF9d9FXS2OwKwWu9rYtJmXmyqkkIMhd4vB1YKrwrPaqGqz0vev1i2kkKdDJrCdg5xuxKrYCSnkX4asDvX0nSSmqahYCRIhhTwRMonwUggvCk5qomnBSyLjdhcipJAvg6RF4W1/H3PrhBTyRZBxaBJMKLKQHYOs2vDHp1pCCvkiyHRjcmh3BzPkOtnY2KwLKeRAyCTI6bCmGtheCflKiHfMqtV9hRRyMiQdchJTqbNRqTGgImPZQAsp5GBIMjitzObOIU2LFilK5eYKKeRASCLEd5vXKmiU4Kvil0w4IYWcDLk7nKFhCVqsdkIXMdwkpJADIZNBTIrKjoCnoYlOGCKKASGFHAbZ+WETcZBENglC3Bn+CCnkVEgqxsuDF4aedoNJ1CQTUsgTIOlBngxnahoTMV4106mRFlLIyZDUJCLG806oqbt5pAkXUsjJkOSgJaKBBJS6gpsUsC2BLqSQL4YkQN3hKTHIqCH9iEAXUshhkAmQDFxIU5wa7tQs3w4QCinkAMgkyqnhS8O9NBCRNoEIBCGFnArZDSZQYDp8pZtZmc/tgY+QQr4UkoTyqCAmIUISDiSiAN1PSCGHQlIRvisYOgMkAodFhJBCDoUkw5kd05mE/FIYMTXHlfgXUsiJkLuFgogCan6V4YbUGHecASGFHARJDKpk9BLDiWwKbbajmSakkAMh0483CegUQiJDWFLcyPBISCFPgaSHf+dh3U3smFVEnAsp5GmQBB6F+DYERGrAqSEmpJATIVMhIAWn0/TS4RARHrHhF1LIgZDEuCUmcRoKVcWtI75JOFFIIU+CrMyoalFJ2NNGuzKmycCpFYwQUsiXQtKhTXcwS4O6pJglIRC7ECGFHAj51EKjwQSKCi1C2MgSUshBkKlpJaZSEudVOJ6E6Cuxj4awQgo5DJIsOoWbkmlF3n/0c0IKORCSLLoqCjTgR8O8uKgQs1pIIQdCElG8G8DtivqOeYUGvEIKORSyWmAl0LuBefIcCpZEjJBCToVMBQANO4EoIE0xEd902COkkFMhiUlEAg2dokAb7yootSXQhRRyCCQ1fEmAniz4zsAn3Q856EIKOQSSmklpQFrBEIHeMb3KBkFIIQdC0kaYXiPCO4WiSOgi3U9IISdD0kM5mcmdARAuHqCJxkNYIYUcBFkZWAQghYyoUO+8lwS/kEKeCkmNper9aqNIYJcElMqBj5BCHgaZFt0R2mTx6XurZwkp5CmQnXBQdWiTZpaGA8mmls2EkEIOhSQHejfEl+5DDTBafFD6Q0ghB0Ce/BJSSCGFFFLIzdd/I8CFoToSZKQAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Linux VPS使用Python/Caddy快速搭建文件分享平台</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-16</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux VPS使用Python/Caddy快速搭建文件分享平台&url=http://yoursite.com/2019/12/16/linux-vps-e4-bd-bf-e7-94-a8python-caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-ba-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Linux VPS使用Python/Caddy快速搭建文件分享平台&url=http://yoursite.com/2019/12/16/linux-vps-e4-bd-bf-e7-94-a8python-caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-ba-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/16/linux-vps-e4-bd-bf-e7-94-a8python-caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-ba-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/12/16/linux-vps-e4-bd-bf-e7-94-a8python-caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-ba-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/12/16/linux-vps-e4-bd-bf-e7-94-a8python-caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-ba-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/12/16/linux-vps-e4-bd-bf-e7-94-a8python-caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-ba-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/12/16/linux-vps-e4-bd-bf-e7-94-a8python-caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-ba-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEIklEQVR42u2aQY7jMAwE8/9P716DwGIXZR9MTeUyGCexVQJCNZv9+fcHXh8hhRRSSCGFvAn5KV7fn/n+7Ora9/Wr/1fP+L3X7z1W943rFlLIoZCXP9rF9d9FXS2OwKwWu9rYtJmXmyqkkIMhd4vB1YKrwrPaqGqz0vev1i2kkKdDJrCdg5xuxKrYCSnkX4asDvX0nSSmqahYCRIhhTwRMonwUggvCk5qomnBSyLjdhcipJAvg6RF4W1/H3PrhBTyRZBxaBJMKLKQHYOs2vDHp1pCCvkiyHRjcmh3BzPkOtnY2KwLKeRAyCTI6bCmGtheCflKiHfMqtV9hRRyMiQdchJTqbNRqTGgImPZQAsp5GBIMjitzObOIU2LFilK5eYKKeRASCLEd5vXKmiU4Kvil0w4IYWcDLk7nKFhCVqsdkIXMdwkpJADIZNBTIrKjoCnoYlOGCKKASGFHAbZ+WETcZBENglC3Bn+CCnkVEgqxsuDF4aedoNJ1CQTUsgTIOlBngxnahoTMV4106mRFlLIyZDUJCLG806oqbt5pAkXUsjJkOSgJaKBBJS6gpsUsC2BLqSQL4YkQN3hKTHIqCH9iEAXUshhkAmQDFxIU5wa7tQs3w4QCinkAMgkyqnhS8O9NBCRNoEIBCGFnArZDSZQYDp8pZtZmc/tgY+QQr4UkoTyqCAmIUISDiSiAN1PSCGHQlIRvisYOgMkAodFhJBCDoUkw5kd05mE/FIYMTXHlfgXUsiJkLuFgogCan6V4YbUGHecASGFHARJDKpk9BLDiWwKbbajmSakkAMh0483CegUQiJDWFLcyPBISCFPgaSHf+dh3U3smFVEnAsp5GmQBB6F+DYERGrAqSEmpJATIVMhIAWn0/TS4RARHrHhF1LIgZDEuCUmcRoKVcWtI75JOFFIIU+CrMyoalFJ2NNGuzKmycCpFYwQUsiXQtKhTXcwS4O6pJglIRC7ECGFHAj51EKjwQSKCi1C2MgSUshBkKlpJaZSEudVOJ6E6Cuxj4awQgo5DJIsOoWbkmlF3n/0c0IKORCSLLoqCjTgR8O8uKgQs1pIIQdCElG8G8DtivqOeYUGvEIKORSyWmAl0LuBefIcCpZEjJBCToVMBQANO4EoIE0xEd902COkkFMhiUlEAg2dokAb7yootSXQhRRyCCQ1fEmAniz4zsAn3Q856EIKOQSSmklpQFrBEIHeMb3KBkFIIQdC0kaYXiPCO4WiSOgi3U9IISdD0kM5mcmdARAuHqCJxkNYIYUcBFkZWAQghYyoUO+8lwS/kEKeCkmNper9aqNIYJcElMqBj5BCHgaZFt0R2mTx6XurZwkp5CmQnXBQdWiTZpaGA8mmls2EkEIOhSQHejfEl+5DDTBafFD6Q0ghB0Ce/BJSSCGFFFLIzdd/I8CFoToSZKQAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Python"><span class="post-toc-number">1.</span> <span class="post-toc-text">Python</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Caddy"><span class="post-toc-number">2.</span> <span class="post-toc-text">Caddy</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>刚刚提到过<code>Linux VPS</code>快速分享文件方法，查看：Transfer.sh：Linux VPS使用命令行快速的分享文件，除了这个方法，我们还可以自建文件分享平台，由于<code>Python</code>内置了一个简单的<code>HTTP</code>服务器，而<code>Caddy</code>也是一个简单的<code>HTTP</code>服务器，所以这里可以分别使用<code>Python</code>和<code>Caddy</code>搭建文件分享平台。</p>
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><p>使用<code>Python</code>搭建是超级快的，就是界面有点不好看。</p>
+<p>使用命令：</p>
+<pre><code>#进入要分享的文件目录
+cd /moerats
+#后面的端口随便填，注意防火墙设置
+python -m SimpleHTTPServer 8080</code></pre><p>建议配合<code>screen</code>一起使用，参考：使用screen来实现多任务不断线操作命令。</p>
+<p>然后我们可以打开<code>http://IP:端口</code>进入界面了。<br><img src="https://www.moerats.com/usr/picture/VPS_GG(2).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="Caddy"><a href="#Caddy" class="headerlink" title="Caddy"></a>Caddy</h2><p>觉得<code>Python</code>搭建的界面不好看的，可以使用<code>Caddy</code>搭建，这里用的是逗比的脚本。</p>
+<p>使用命令：</p>
+<pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh
+#备用地址
+wget -N --no-check-certificate https://www.moerats.com/usr/shell/Caddy/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh</code></pre><p>创建<code>IP</code>访问，使用命令：</p>
+<pre><code>#以下一整条命令，直接复制即可，80为端口，可以随便修改，且/MOERATS为要分享的文件目录
+echo &quot;:80 {
+ root /MOERATS
+ gzip
+ browse
+}&quot; &gt; /usr/local/caddy/Caddyfile
+
+/etc/init.d/caddy start</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-16T02:15:26.000Z" itemprop="datePublished">2019-12-16</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.651Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/16/cc-attack-protector-ef-bc-9alinux-vps-e9-98-b2cc-e6-94-bb-e5-87-bb-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-b8-a6-e5-be-ae-e4-bf-a1-e6-8f-90-e9-86-92/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">CC-Attack-Protector：Linux VPS防CC攻击一键脚本，带微信提醒</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/16/e5-88-86-e4-ba-ab2-e6-ac-be-e7-bd-91-e7-ab-99-e7-a8-8b-e5-ba-8f-e6-ba-90-e7-a0-81-e4-b8-bb-e9-a2-98-e7-ad-89-e5-90-8e-e9-97-a8-e6-a3-80-e6-b5-8b-e5-b7-a5-e5-85-b7/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">分享2款网站程序源码/主题等后门检测工具</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

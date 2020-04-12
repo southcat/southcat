@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>使用静态ffmpeg二进制文件秒安装ffmpeg | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="使用静态ffmpeg二进制文件秒安装ffmpeg | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/11/18/e4-bd-bf-e7-94-a8-e9-9d-99-e6-80-81ffmpeg-e4-ba-8c-e8-bf-9b-e5-88-b6-e6-96-87-e4-bb-b6-e7-a7-92-e5-ae-89-e8-a3-85ffmpeg/"><meta property="og:locale" content="en"><meta name="description" content="说明：我们安装很多视频程序的时候都需要用到ffmpeg，差不多都喜欢用编译安装，过程很慢，而且有的系统会因为一些依赖出现很多问题，导致安装失败。有时候就算ffmpeg编译安装成功了，也会因为一些因素导致某些视频程序自动转码失败，比如博主之前发的AVS和PlayTube，不过还好的是被这个静态ffmpeg给拯救了，这里就说下ffmpeg最简单安装方法，就是直接使用编译好的静态ffmpeg二进制文件， - John Doe - 南猫"><meta property="article:published_time" content="2019-11-18T04:15:32.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.650Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.650Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/11/18/e4-bd-bf-e7-94-a8-e9-9d-99-e6-80-81ffmpeg-e4-ba-8c-e8-bf-9b-e5-88-b6-e6-96-87-e4-bb-b6-e7-a7-92-e5-ae-89-e8-a3-85ffmpeg/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/11/18/e4-bd-bf-e7-94-a8-e9-9d-99-e6-80-81ffmpeg-e4-ba-8c-e8-bf-9b-e5-88-b6-e6-96-87-e4-bb-b6-e7-a7-92-e5-ae-89-e8-a3-85ffmpeg/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/11/18/e4-bd-bf-e7-94-a8-e9-9d-99-e6-80-81ffmpeg-e4-ba-8c-e8-bf-9b-e5-88-b6-e6-96-87-e4-bb-b6-e7-a7-92-e5-ae-89-e8-a3-85ffmpeg/"
+    },
+    "headline": "使用静态ffmpeg二进制文件秒安装ffmpeg | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-11-18T04:15:32.000Z",
+    "dateModified": "2020-04-12T04:09:09.650Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：我们安装很多视频程序的时候都需要用到ffmpeg，差不多都喜欢用编译安装，过程很慢，而且有的系统会因为一些依赖出现很多问题，导致安装失败。有时候就算ffmpeg编译安装成功了，也会因为一些因素导致某些视频程序自动转码失败，比如博主之前发的AVS和PlayTube，不过还好的是被这个静态ffmpeg给拯救了，这里就说下ffmpeg最简单安装方法，就是直接使用编译好的静态ffmpeg二进制文件， - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=使用静态ffmpeg二进制文件秒安装ffmpeg" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用静态ffmpeg二进制文件秒安装ffmpeg&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=使用静态ffmpeg二进制文件秒安装ffmpeg" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADpklEQVR42u3dwW7qQAxG4bz/S7erLooY/8cDJCY62fQqJZAvEmOPbfUePzc8DlGiRIkSdTvUURz/Lng49+w1j+fTa9Jn/J2j9ylK1BTU0y9dcX51s6vXPULJa6rrVvcpStQk1OpNqi/7ClktAOknuW75kESJ+kJU599loCwWhtWiIkrUXVApAB/wIMlrd2ESJWoqirwJCcyrh/HsmpTQ0gRblKhpqOqLPenn26pJokR9EBWL7kXwpEGRJrlkYXhL10OUqA+i6IeRhJQktyTQ7z4MUaKmoGiRZfX7VMSv3q9T5IkPR5SoQai0UUtBdavx3NwUrjaaokRNRFWLAS3ekwdQfVaVUJNEV5SoCaid4mUKuqsFh2z8qvtIgViUqAmoNJyYYDQI00BKN59PP1OUqCGobsFkt7jSbY6TAivuzosSdRKqW5hMySYtnHQWElL8ESVqEqpKSmkSmhrPJCBXDwoVZkSJGoKqLtgZFKkWoFTATAsN7s6LEnUhigx9JGDCVoXQbiNh2cQQJWoIigy5d77onU0gHRohi4coURNRaaEgCfArjetO8XRZzBQl6kIULfynRYEuMrRYSTahZXdelKhBKDoMkhLNtGCka1NB9aWuhyhRH0LRoiEtUnYTYboZbSe0okRdjEqFfrp5o4lx2kx2HqooUZNQnWb1ToGmm6SmQeCyUCNK1BBUKp6Q4iUpxKQgu9M4KLN0UaIuRlUFkc6QIklWO4vOSwuFKFEno1IBhpzbbeClhJrehyhRk1CksNHZAHYWg04Ci4YpRYkagKIDGbSAudOEo4lvKr6IEjUNRZLZtDGkzYSqcEkfOK7QihJ1IooM7NKNXxrkIAAy6BUXClGihqBoI65zw7QhTRtuOEsXJeoiVKehTX9PAi9pJJAgjbJ0UaJORJEBQ9KIrgL17qaym/SKEjUFlYqHnUZBup42xdMC0m4QiBJ1EipuvI7efyZCA28KxHQhWSa0okRdjOoUL2nj7QccJHDjAC9K1CBUGuhIRc1u44wEe5oUixI1CUU/LAXbDpZuCskDEyVqGmonOKJBjYP/0dC0eSQLlyhRU1Bk8IMWVjqbyHcPeIkSNQnVGW7qBtBOszotPtUgiihR01DdBJYO0afNIw305D1EifpWVEKS5ngnod3a+YoSNRhFm9XVl78zfEIXljgcIkrUhahVQkuSWBKMO41qUoCJDQJRoi5EkQGnCpQ2duSmSQJQBXBRoqag7nSIEiVKlKjbHL/FH3H+KLu2IwAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">使用静态ffmpeg二进制文件秒安装ffmpeg</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-11-18</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用静态ffmpeg二进制文件秒安装ffmpeg&url=http://yoursite.com/2019/11/18/e4-bd-bf-e7-94-a8-e9-9d-99-e6-80-81ffmpeg-e4-ba-8c-e8-bf-9b-e5-88-b6-e6-96-87-e4-bb-b6-e7-a7-92-e5-ae-89-e8-a3-85ffmpeg/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=使用静态ffmpeg二进制文件秒安装ffmpeg&url=http://yoursite.com/2019/11/18/e4-bd-bf-e7-94-a8-e9-9d-99-e6-80-81ffmpeg-e4-ba-8c-e8-bf-9b-e5-88-b6-e6-96-87-e4-bb-b6-e7-a7-92-e5-ae-89-e8-a3-85ffmpeg/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/18/e4-bd-bf-e7-94-a8-e9-9d-99-e6-80-81ffmpeg-e4-ba-8c-e8-bf-9b-e5-88-b6-e6-96-87-e4-bb-b6-e7-a7-92-e5-ae-89-e8-a3-85ffmpeg/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/11/18/e4-bd-bf-e7-94-a8-e9-9d-99-e6-80-81ffmpeg-e4-ba-8c-e8-bf-9b-e5-88-b6-e6-96-87-e4-bb-b6-e7-a7-92-e5-ae-89-e8-a3-85ffmpeg/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/11/18/e4-bd-bf-e7-94-a8-e9-9d-99-e6-80-81ffmpeg-e4-ba-8c-e8-bf-9b-e5-88-b6-e6-96-87-e4-bb-b6-e7-a7-92-e5-ae-89-e8-a3-85ffmpeg/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/11/18/e4-bd-bf-e7-94-a8-e9-9d-99-e6-80-81ffmpeg-e4-ba-8c-e8-bf-9b-e5-88-b6-e6-96-87-e4-bb-b6-e7-a7-92-e5-ae-89-e8-a3-85ffmpeg/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/11/18/e4-bd-bf-e7-94-a8-e9-9d-99-e6-80-81ffmpeg-e4-ba-8c-e8-bf-9b-e5-88-b6-e6-96-87-e4-bb-b6-e7-a7-92-e5-ae-89-e8-a3-85ffmpeg/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADpklEQVR42u3dwW7qQAxG4bz/S7erLooY/8cDJCY62fQqJZAvEmOPbfUePzc8DlGiRIkSdTvUURz/Lng49+w1j+fTa9Jn/J2j9ylK1BTU0y9dcX51s6vXPULJa6rrVvcpStQk1OpNqi/7ClktAOknuW75kESJ+kJU599loCwWhtWiIkrUXVApAB/wIMlrd2ESJWoqirwJCcyrh/HsmpTQ0gRblKhpqOqLPenn26pJokR9EBWL7kXwpEGRJrlkYXhL10OUqA+i6IeRhJQktyTQ7z4MUaKmoGiRZfX7VMSv3q9T5IkPR5SoQai0UUtBdavx3NwUrjaaokRNRFWLAS3ekwdQfVaVUJNEV5SoCaid4mUKuqsFh2z8qvtIgViUqAmoNJyYYDQI00BKN59PP1OUqCGobsFkt7jSbY6TAivuzosSdRKqW5hMySYtnHQWElL8ESVqEqpKSmkSmhrPJCBXDwoVZkSJGoKqLtgZFKkWoFTATAsN7s6LEnUhigx9JGDCVoXQbiNh2cQQJWoIigy5d77onU0gHRohi4coURNRaaEgCfArjetO8XRZzBQl6kIULfynRYEuMrRYSTahZXdelKhBKDoMkhLNtGCka1NB9aWuhyhRH0LRoiEtUnYTYboZbSe0okRdjEqFfrp5o4lx2kx2HqooUZNQnWb1ToGmm6SmQeCyUCNK1BBUKp6Q4iUpxKQgu9M4KLN0UaIuRlUFkc6QIklWO4vOSwuFKFEno1IBhpzbbeClhJrehyhRk1CksNHZAHYWg04Ci4YpRYkagKIDGbSAudOEo4lvKr6IEjUNRZLZtDGkzYSqcEkfOK7QihJ1IooM7NKNXxrkIAAy6BUXClGihqBoI65zw7QhTRtuOEsXJeoiVKehTX9PAi9pJJAgjbJ0UaJORJEBQ9KIrgL17qaym/SKEjUFlYqHnUZBup42xdMC0m4QiBJ1EipuvI7efyZCA28KxHQhWSa0okRdjOoUL2nj7QccJHDjAC9K1CBUGuhIRc1u44wEe5oUixI1CUU/LAXbDpZuCskDEyVqGmonOKJBjYP/0dC0eSQLlyhRU1Bk8IMWVjqbyHcPeIkSNQnVGW7qBtBOszotPtUgiihR01DdBJYO0afNIw305D1EifpWVEKS5ngnod3a+YoSNRhFm9XVl78zfEIXljgcIkrUhahVQkuSWBKMO41qUoCJDQJRoi5EkQGnCpQ2duSmSQJQBXBRoqag7nSIEiVKlKjbHL/FH3H+KLu2IwAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#相关程序"><span class="post-toc-number">2.</span> <span class="post-toc-text">相关程序</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>我们安装很多视频程序的时候都需要用到<code>ffmpeg</code>，差不多都喜欢用编译安装，过程很慢，而且有的系统会因为一些依赖出现很多问题，导致安装失败。有时候就算<code>ffmpeg</code>编译安装成功了，也会因为一些因素导致某些视频程序自动转码失败，比如博主之前发的<code>AVS</code>和<code>PlayTube</code>，不过还好的是被这个静态<code>ffmpeg</code>给拯救了，这里就说下<code>ffmpeg</code>最简单安装方法，就是直接使用编译好的静态<code>ffmpeg</code>二进制文件，无需安装即可使用，间接的可以说是秒安装了。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>安装文档：</strong><a href="https://www.johnvansickle.com/ffmpeg/faq" target="_blank" rel="noopener">https://www.johnvansickle.com/ffmpeg/faq</a></p>
+<p><strong>系统要求：</strong><code>CentOS</code>、<code>Debian</code>、<code>Ubuntu</code>等内核至少为<code>2.6.32</code>的<code>Linux</code>系统(内核查看命令<code>uname -r</code>)。</p>
+<p>首先我们找到适合自己<code>VPS</code>服务器架构的<code>ffmpeg</code>二进制文件，文件地址：点击查看，建议优先使用<code>git</code>版本，毕竟更新快，如果<code>git</code>没有对应的版本就使用<code>release</code>版本。</p>
+<p>安装命令：</p>
+<pre><code>#x86下载二进制文件
+wget https://www.moerats.com/usr/down/ffmpeg/ffmpeg-git-32bit-static.tar.xz
+#x86_64下载二进制文件
+wget https://www.moerats.com/usr/down/ffmpeg/ffmpeg-git-64bit-static.tar.xz
+
+#解压文件
+tar xvf ffmpeg-git-*-static.tar.xz &amp;&amp; rm -rf ffmpeg-git-*-static.tar.xz
+
+#将ffmpeg和ffprobe可执行文件移至/usr/bin方便系统直接调用
+mv ffmpeg-git-*/ffmpeg  ffmpeg-git-*/ffprobe /usr/bin/
+
+#查看版本
+ffmpeg
+ffprobe</code></pre><p>最后基本上算安装完成了。</p>
+<h2 id="相关程序"><a href="#相关程序" class="headerlink" title="相关程序"></a>相关程序</h2><ul>
+<li>使用AVS搭建我们的视频/照片/游戏分享平台</li>
+<li>使用PlayTube搭建私人的视频网站</li>
+<li>免费开源的云转码切片系统express-ffmpeg安装教程</li>
+</ul>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-11-18T04:15:32.000Z" itemprop="datePublished">2019-11-18</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.650Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/11/18/x-prober-e9-9b-85-e9-bb-91-php-e6-8e-a2-e9-92-88-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-for-debian-ubuntu/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">X-Prober/雅黑 PHP探针一键安装脚本 for Debian/Ubuntu</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/11/18/centos-e5-ae-89-e8-a3-85fikker-e8-87-aa-e5-bb-bacdn-e7-b3-bb-e7-bb-9f-ef-bc-8c-e6-94-af-e6-8c-81https-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-e9-98-b2cc-e6-94-bb-e5-87-bb/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">CentOS安装Fikker自建CDN系统，支持Https/反向代理/防CC攻击</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

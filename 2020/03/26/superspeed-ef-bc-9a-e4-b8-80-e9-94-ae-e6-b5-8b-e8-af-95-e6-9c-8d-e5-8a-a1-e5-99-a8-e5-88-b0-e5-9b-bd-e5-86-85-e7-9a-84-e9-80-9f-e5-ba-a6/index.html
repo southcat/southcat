@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Superspeed：一键测试服务器到国内的速度 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Superspeed：一键测试服务器到国内的速度 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/03/26/superspeed-ef-bc-9a-e4-b8-80-e9-94-ae-e6-b5-8b-e8-af-95-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-88-b0-e5-9b-bd-e5-86-85-e7-9a-84-e9-80-9f-e5-ba-a6/"><meta property="og:locale" content="en"><meta name="description" content="简介 利用Speedtest测试你的国外主机到国内不同省市的速度。 集成了Speedtest提供的电信，联通，移动线路。 一键选择，一键测试。 全面测速，添加一键全面测速功能，测试服务器到全国北方南方，电信，联通，移动的速度。  截图1、全面测速2、地区测速 使用方法执行下列命令即可： wget https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;oooldking&#x2F;script&#x2F; - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/Superspeed(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Superspeed(2).jpg"><meta property="og:image" content="https://www.moerats.com/usr/picture/Superspeed(3).png"><meta property="article:published_time" content="2020-03-25T16:06:51.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.659Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.659Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/03/26/superspeed-ef-bc-9a-e4-b8-80-e9-94-ae-e6-b5-8b-e8-af-95-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-88-b0-e5-9b-bd-e5-86-85-e7-9a-84-e9-80-9f-e5-ba-a6/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/03/26/superspeed-ef-bc-9a-e4-b8-80-e9-94-ae-e6-b5-8b-e8-af-95-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-88-b0-e5-9b-bd-e5-86-85-e7-9a-84-e9-80-9f-e5-ba-a6/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/03/26/superspeed-ef-bc-9a-e4-b8-80-e9-94-ae-e6-b5-8b-e8-af-95-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-88-b0-e5-9b-bd-e5-86-85-e7-9a-84-e9-80-9f-e5-ba-a6/"
+    },
+    "headline": "Superspeed：一键测试服务器到国内的速度 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-03-25T16:06:51.000Z",
+    "dateModified": "2020-04-12T04:09:09.659Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "简介 利用Speedtest测试你的国外主机到国内不同省市的速度。 集成了Speedtest提供的电信，联通，移动线路。 一键选择，一键测试。 全面测速，添加一键全面测速功能，测试服务器到全国北方南方，电信，联通，移动的速度。  截图1、全面测速2、地区测速 使用方法执行下列命令即可： wget https://raw.githubusercontent.com/oooldking/script/ - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Superspeed：一键测试服务器到国内的速度" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Superspeed：一键测试服务器到国内的速度&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=Superspeed：一键测试服务器到国内的速度" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEJklEQVR42u3bS3LbQAxFUe5/087UTrHxLiAPCPpqkpRDkX3kUjd+ub7+wOsSKVKkSJEiP0Rexet0zfef/bjpzTX/X3u61909765prVukyKXI2y/tAXn3b3fX3N2PLJQ8H69bpMjFyGozqBacNiLyIZ3eR/5e3lukyBcjTwf63X2OAXMj2KhQIkX+dWS1UVTXdRKAtGGNNjWRIhcjT4HuJOCu3k+fRxL0X8tCRIp8GLLaGJ78569V60SKfBAyNk2aX3qSEKeidLWZVQnAuKslUuSDkNUXmTZYyCLJtSSgoOsVKXIrshMkd4pRnWuqTalKyHGALlLkUmTVdKUDEZ1keTKMQYMOkSLfhCQBcnVQp4ZqF0OKarcfrEiRC5EdBDnUO4f/tGidniFS5NuQVcOTDjB1D+5pgF42iEWKXIikh3y1ANq8PS0oBehk6CkG6CJFLkKSQlYaEuo0h+hGlDauGFiIFLkQ2R1+T+gUIHwaDJyKbDFAFylyCTIdsHRolySxtLFKA/QYxIgUuRA5GdqtDvjp8CEN0NMvogwGRIpcgOw0Q1OgPhkWpEVpskGhyoBIkQ9H0mB3ctCnwb8UjNDC9bHhJFLkUiRZUEpaSeJMByZI4tzuaokUuRiZElVy4JOhC1JEpgOE7eKySJEPRXYLSN1Bv+6wU6fhNMpCRIpcgiQP7wxTVPdLKFIoQ8m3SJGLkSkRrgLilOTS4QvyodKgRaTIrch0oKcGzqS4RRpJpPmbggKRIjciOxvFNBmmTVQ6nEQKzyJFbkVe4JUO5+7G1Cl+0TXe3lOkyKXITpGXHtxpgyHvmRbaRIrcjKwKRrHJCQeWSAGMJgjVesoAXaTIJci0qGmyTAcaaCGMDFW1ggGRIh+M7A43pA0nFZnowBNp/JTFMJEiFyNpcyYVolMTiRabacMXN3xEilyETMMMdNCo2mhSc4d8cClIbxeyRIp8ILIcwAMFXzLQ0G2mntA0YBApcjOSBrytQ/i6Rv8xfJpExwFCkSKXITvDBylQ/3TIiH7YaS0iRb4FmYrFpNFSNYpIk5c+o5WFiBS5BNl5pWA6ocgwbwosyC9BpMjNyFSsog3ZTpDe2XxoMHG7VpEiFyLJxtIdVuouEhWlQMELDRCKFPlwJB10qDYhslmRAYyUiKdnxixEpMgFSFLonRaYyWBFt+FDGsQiRW5H0gSVYMnCPm3a0vuJFLkdWRVvyaZBi1dVgE42I9KMEilyK5J8kbtN1k+ar2VTFQwYjrtaIkU+CEkLR+lg7gwepaGKKrCgDWGRIjcjuwc8LU5NAnTStG0F6CJFvhCZBhcm15PC2HSjEinyzchJMTg1cFNTqBqsqDYqkSLfgiSbBU10uwWqToBOGlIiRW5HpkOXDht1GjfV+2iDKd5LpMiFyDe/RIoUKVKkyOHrH3GDxHAaMwLzAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Superspeed：一键测试服务器到国内的速度</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-03-26</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Superspeed：一键测试服务器到国内的速度&url=http://yoursite.com/2020/03/26/superspeed-ef-bc-9a-e4-b8-80-e9-94-ae-e6-b5-8b-e8-af-95-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-88-b0-e5-9b-bd-e5-86-85-e7-9a-84-e9-80-9f-e5-ba-a6/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Superspeed：一键测试服务器到国内的速度&url=http://yoursite.com/2020/03/26/superspeed-ef-bc-9a-e4-b8-80-e9-94-ae-e6-b5-8b-e8-af-95-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-88-b0-e5-9b-bd-e5-86-85-e7-9a-84-e9-80-9f-e5-ba-a6/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/26/superspeed-ef-bc-9a-e4-b8-80-e9-94-ae-e6-b5-8b-e8-af-95-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-88-b0-e5-9b-bd-e5-86-85-e7-9a-84-e9-80-9f-e5-ba-a6/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/03/26/superspeed-ef-bc-9a-e4-b8-80-e9-94-ae-e6-b5-8b-e8-af-95-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-88-b0-e5-9b-bd-e5-86-85-e7-9a-84-e9-80-9f-e5-ba-a6/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/03/26/superspeed-ef-bc-9a-e4-b8-80-e9-94-ae-e6-b5-8b-e8-af-95-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-88-b0-e5-9b-bd-e5-86-85-e7-9a-84-e9-80-9f-e5-ba-a6/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/03/26/superspeed-ef-bc-9a-e4-b8-80-e9-94-ae-e6-b5-8b-e8-af-95-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-88-b0-e5-9b-bd-e5-86-85-e7-9a-84-e9-80-9f-e5-ba-a6/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/03/26/superspeed-ef-bc-9a-e4-b8-80-e9-94-ae-e6-b5-8b-e8-af-95-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-88-b0-e5-9b-bd-e5-86-85-e7-9a-84-e9-80-9f-e5-ba-a6/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEJklEQVR42u3bS3LbQAxFUe5/087UTrHxLiAPCPpqkpRDkX3kUjd+ub7+wOsSKVKkSJEiP0Rexet0zfef/bjpzTX/X3u61909765prVukyKXI2y/tAXn3b3fX3N2PLJQ8H69bpMjFyGozqBacNiLyIZ3eR/5e3lukyBcjTwf63X2OAXMj2KhQIkX+dWS1UVTXdRKAtGGNNjWRIhcjT4HuJOCu3k+fRxL0X8tCRIp8GLLaGJ78569V60SKfBAyNk2aX3qSEKeidLWZVQnAuKslUuSDkNUXmTZYyCLJtSSgoOsVKXIrshMkd4pRnWuqTalKyHGALlLkUmTVdKUDEZ1keTKMQYMOkSLfhCQBcnVQp4ZqF0OKarcfrEiRC5EdBDnUO4f/tGidniFS5NuQVcOTDjB1D+5pgF42iEWKXIikh3y1ANq8PS0oBehk6CkG6CJFLkKSQlYaEuo0h+hGlDauGFiIFLkQ2R1+T+gUIHwaDJyKbDFAFylyCTIdsHRolySxtLFKA/QYxIgUuRA5GdqtDvjp8CEN0NMvogwGRIpcgOw0Q1OgPhkWpEVpskGhyoBIkQ9H0mB3ctCnwb8UjNDC9bHhJFLkUiRZUEpaSeJMByZI4tzuaokUuRiZElVy4JOhC1JEpgOE7eKySJEPRXYLSN1Bv+6wU6fhNMpCRIpcgiQP7wxTVPdLKFIoQ8m3SJGLkSkRrgLilOTS4QvyodKgRaTIrch0oKcGzqS4RRpJpPmbggKRIjciOxvFNBmmTVQ6nEQKzyJFbkVe4JUO5+7G1Cl+0TXe3lOkyKXITpGXHtxpgyHvmRbaRIrcjKwKRrHJCQeWSAGMJgjVesoAXaTIJci0qGmyTAcaaCGMDFW1ggGRIh+M7A43pA0nFZnowBNp/JTFMJEiFyNpcyYVolMTiRabacMXN3xEilyETMMMdNCo2mhSc4d8cClIbxeyRIp8ILIcwAMFXzLQ0G2mntA0YBApcjOSBrytQ/i6Rv8xfJpExwFCkSKXITvDBylQ/3TIiH7YaS0iRb4FmYrFpNFSNYpIk5c+o5WFiBS5BNl5pWA6ocgwbwosyC9BpMjNyFSsog3ZTpDe2XxoMHG7VpEiFyLJxtIdVuouEhWlQMELDRCKFPlwJB10qDYhslmRAYyUiKdnxixEpMgFSFLonRaYyWBFt+FDGsQiRW5H0gSVYMnCPm3a0vuJFLkdWRVvyaZBi1dVgE42I9KMEilyK5J8kbtN1k+ar2VTFQwYjrtaIkU+CEkLR+lg7gwepaGKKrCgDWGRIjcjuwc8LU5NAnTStG0F6CJFvhCZBhcm15PC2HSjEinyzchJMTg1cFNTqBqsqDYqkSLfgiSbBU10uwWqToBOGlIiRW5HpkOXDht1GjfV+2iDKd5LpMiFyDe/RIoUKVKkyOHrH3GDxHAaMwLzAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">2.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用方法"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用方法</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>利用<code>Speedtest</code>测试你的国外主机到国内不同省市的速度。</li>
+<li>集成了<code>Speedtest</code>提供的电信，联通，移动线路。</li>
+<li>一键选择，一键测试。</li>
+<li>全面测速，添加一键全面测速功能，测试服务器到全国北方南方，电信，联通，移动的速度。</li>
+</ul>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><strong>1、全面测速</strong><br><img src="https://www.moerats.com/usr/picture/Superspeed(1).png" alt="请输入图片描述" title="请输入图片描述"><br><strong>2、地区测速</strong><br><img src="https://www.moerats.com/usr/picture/Superspeed(2).jpg" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/Superspeed(3).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>执行下列命令即可：</p>
+<pre><code>wget https://raw.githubusercontent.com/oooldking/script/master/superspeed.sh
+chmod +x superspeed.sh
+./superspeed.sh</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-03-25T16:06:51.000Z" itemprop="datePublished">2020-03-26</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.659Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/03/26/e4-b8-80-e4-b8-aa-e6-94-af-e6-8c-81-e5-be-ae-e4-bf-a1-tg-e9-a2-91-e9-81-93-e6-8e-a8-e9-80-81-e7-9a-84vps-e5-9c-a8-e7-ba-bf-e7-9b-91-e6-8e-a7-e7-b3-bb-e7-bb-9f-ef-bc-9avps-inventory-monitoring/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一个支持微信/TG频道推送的VPS在线监控系统：vps-inventory-monitoring</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/03/25/projectsecurity-ef-bc-9a-e4-b8-80-e6-ac-be-e5-a4-9a-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84-e7-bd-91-e7-ab-99-e5-ae-89-e5-85-a8-e7-a8-8b-e5-ba-8f/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">ProjectSECURITY：一款多功能强大的网站安全程序</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>一个去中心化的图片分享平台：ipfs.pics搭建教程 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="一个去中心化的图片分享平台：ipfs.pics搭建教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/02/03/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e5-9b-be-e7-89-87-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9aipfs-pics-e6-90-ad-e5-bb-ba-e6-95-99-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="说明：N月前博主就分享过一个基于IPFS的去中心视频分享平台，查看：ipfstube安装教程，今天再分享个图片分享平台ipfspics，大概原理这里再说下，就是是你上传图片后，并不会存储到自己的服务器，而是会上传到IPFS，再转化成一个哈希值，你可以根据这个哈希进行下载，任何人都无法删除，包括你自己，就算你上传的那个平台倒闭，该图片也会存在。对这个有兴趣的也可以拿来做个图床什么的。 截图 安装Gi - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/ipfspics(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/ipfspics(2).png"><meta property="article:published_time" content="2020-02-02T18:23:33.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.655Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.655Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/02/03/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e5-9b-be-e7-89-87-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9aipfs-pics-e6-90-ad-e5-bb-ba-e6-95-99-e7-a8-8b/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/02/03/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e5-9b-be-e7-89-87-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9aipfs-pics-e6-90-ad-e5-bb-ba-e6-95-99-e7-a8-8b/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/02/03/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e5-9b-be-e7-89-87-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9aipfs-pics-e6-90-ad-e5-bb-ba-e6-95-99-e7-a8-8b/"
+    },
+    "headline": "一个去中心化的图片分享平台：ipfs.pics搭建教程 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-02-02T18:23:33.000Z",
+    "dateModified": "2020-04-12T04:09:09.655Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：N月前博主就分享过一个基于IPFS的去中心视频分享平台，查看：ipfstube安装教程，今天再分享个图片分享平台ipfspics，大概原理这里再说下，就是是你上传图片后，并不会存储到自己的服务器，而是会上传到IPFS，再转化成一个哈希值，你可以根据这个哈希进行下载，任何人都无法删除，包括你自己，就算你上传的那个平台倒闭，该图片也会存在。对这个有兴趣的也可以拿来做个图床什么的。 截图 安装Gi - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=一个去中心化的图片分享平台：ipfs.pics搭建教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=一个去中心化的图片分享平台：ipfs.pics搭建教程&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=一个去中心化的图片分享平台：ipfs.pics搭建教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEpElEQVR42u2cy3LjQAwD/f8/vTntJfEQDdkXia2LX5I1Pa5iSACV17+Fx0tooYUWWmihbwb9Go63F/767P/z03u/v+90/un1aU2n1xOH0EJvgT7BnRZ3WhQ577SBp8We1nfa6PEcoYVeBD0VHFQkDoukEGQDUmFL9xNaaKFZozHBvnue7ps2fCpkQgstNDi5aEpOhY0UxNOgM70vtNBCdwNHFNuAODANG+QgA8ZXpyyhhb45dCoud3n8mhoqtNA3hiaF6tQ8TAN+ai7a5oYMPV9zLYUW+sbQVOynw30aGpJJ2DQj6cf4c43QQi+GThuRRPtUcFKxazcZbajQQi+DpoGYFIIhCyVhm8aER2sSWugF0JNQThoG0qQkw542MqQZGoM9Qgu9ADoFbFpTgIoMpMgRwz4NGUILvQ2aFhQ6cNACSc33sTC1wqLQQi+BTgIAFfebBU5Q5P5EOBg7MqGFfij0VGSaBiJtwjeMwaoRScKg0EI/FLoR6RN0AiUGw9VmqArPCS30g6HJMJCEt9SUkOJ02tS0mSScI7TQ26CnInJVTCBNS2s20CHk+GMKLfQC6GR2pz/8dYAtGADk/fa7hBZ6EzQ1tdvwGhHy24GjEfaRaym00A+FJo0GHf5pMaPDCwnn4TUKLfQS6LSItlAlIy01GdQoaAwDoYXeBE0afzKYpAGGBt6TwJDWGEPuQgv9YGhqztFAS2vE0yJKBqIoMggt9ALopumnwvwkwKf7fhLMxYFYoYVeBD0djWhABMS0UXQDiDEgtNBboJMgTxaUCldqaGijRIw6bMoLLfTDoU9DfSpKREigAv8nAiNpdoQWegt0KxA0nzUAVzaDGntCC70JmgwcqZika9tzSECHrFVoobdCT0Uh3Yg2D2QQaUR9ImAiEUFooR8InYw1apSRQtUMGUnUb84TWuht0ERcT+BpKJk2gRoApGF5e3+hhV4AnQCaIAwN5jSGIQ0LEFFEaKE3QCeRLw0hafBIggC5vmmExqIstNALoadBozHQiIlOA3GTiNCIFEILvQV6MuTbQA7ZDFJ02iGDDEBCC70FOhWWVIxweA0ICLSgppBP5XAILfTDoKcvIIYbXSDZUDrkUDEzVm+hhX44dAq/UPEvmfmkCNEALg7/CS30EuiTmEcLyBVDnpiF1LjH5r/QQi+BfsGDXkMDPKnZIYE8YioKLfQ26CSw0WI1GfrUIExNRzL6xh9AaKEXQKcLaVFKwn0rSFCzjgqOQgu9CXpq5tsGn5iCpJmYxMEUlj1uuNBCL4EmIbdPQzSt8HDFrI+DitBCL4FONyIFK5nrVLBIBnsTnD2KCEIL/WBoGlaZCkcaMkjxIQZ+akpSEEhooTdDJ/i0MTSEQwTKRrRAIoLQQj8Yui4Gr/xPxJNZcOWRbEw0BoUWegn09KWk8Sc3TYMKaXKa0N4YiBVa6AXQRGSjRjwVAJNQ0YTtklAotNBCd4J+E9hJgTwy+JAihxwOoYVeCo0MskK8p+ICNedJ4FZooTdBpxDbFFBrBnwyZCQzgBr3H4kIQgt9Y2haEOjAcVVMpAIENe7HgUNooR8KvekQWmihhRZa6JscPw4FFvE6LXUoAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">一个去中心化的图片分享平台：ipfs.pics搭建教程</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-02-03</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=一个去中心化的图片分享平台：ipfs.pics搭建教程&url=http://yoursite.com/2020/02/03/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e5-9b-be-e7-89-87-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9aipfs-pics-e6-90-ad-e5-bb-ba-e6-95-99-e7-a8-8b/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=一个去中心化的图片分享平台：ipfs.pics搭建教程&url=http://yoursite.com/2020/02/03/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e5-9b-be-e7-89-87-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9aipfs-pics-e6-90-ad-e5-bb-ba-e6-95-99-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/02/03/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e5-9b-be-e7-89-87-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9aipfs-pics-e6-90-ad-e5-bb-ba-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/02/03/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e5-9b-be-e7-89-87-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9aipfs-pics-e6-90-ad-e5-bb-ba-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/02/03/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e5-9b-be-e7-89-87-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9aipfs-pics-e6-90-ad-e5-bb-ba-e6-95-99-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/02/03/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e5-9b-be-e7-89-87-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9aipfs-pics-e6-90-ad-e5-bb-ba-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/02/03/e4-b8-80-e4-b8-aa-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e7-9a-84-e5-9b-be-e7-89-87-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9aipfs-pics-e6-90-ad-e5-bb-ba-e6-95-99-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEpElEQVR42u2cy3LjQAwD/f8/vTntJfEQDdkXia2LX5I1Pa5iSACV17+Fx0tooYUWWmihbwb9Go63F/767P/z03u/v+90/un1aU2n1xOH0EJvgT7BnRZ3WhQ577SBp8We1nfa6PEcoYVeBD0VHFQkDoukEGQDUmFL9xNaaKFZozHBvnue7ps2fCpkQgstNDi5aEpOhY0UxNOgM70vtNBCdwNHFNuAODANG+QgA8ZXpyyhhb45dCoud3n8mhoqtNA3hiaF6tQ8TAN+ai7a5oYMPV9zLYUW+sbQVOynw30aGpJJ2DQj6cf4c43QQi+GThuRRPtUcFKxazcZbajQQi+DpoGYFIIhCyVhm8aER2sSWugF0JNQThoG0qQkw542MqQZGoM9Qgu9ADoFbFpTgIoMpMgRwz4NGUILvQ2aFhQ6cNACSc33sTC1wqLQQi+BTgIAFfebBU5Q5P5EOBg7MqGFfij0VGSaBiJtwjeMwaoRScKg0EI/FLoR6RN0AiUGw9VmqArPCS30g6HJMJCEt9SUkOJ02tS0mSScI7TQ26CnInJVTCBNS2s20CHk+GMKLfQC6GR2pz/8dYAtGADk/fa7hBZ6EzQ1tdvwGhHy24GjEfaRaym00A+FJo0GHf5pMaPDCwnn4TUKLfQS6LSItlAlIy01GdQoaAwDoYXeBE0afzKYpAGGBt6TwJDWGEPuQgv9YGhqztFAS2vE0yJKBqIoMggt9ALopumnwvwkwKf7fhLMxYFYoYVeBD0djWhABMS0UXQDiDEgtNBboJMgTxaUCldqaGijRIw6bMoLLfTDoU9DfSpKREigAv8nAiNpdoQWegt0KxA0nzUAVzaDGntCC70JmgwcqZika9tzSECHrFVoobdCT0Uh3Yg2D2QQaUR9ImAiEUFooR8InYw1apSRQtUMGUnUb84TWuht0ERcT+BpKJk2gRoApGF5e3+hhV4AnQCaIAwN5jSGIQ0LEFFEaKE3QCeRLw0hafBIggC5vmmExqIstNALoadBozHQiIlOA3GTiNCIFEILvQV6MuTbQA7ZDFJ02iGDDEBCC70FOhWWVIxweA0ICLSgppBP5XAILfTDoKcvIIYbXSDZUDrkUDEzVm+hhX44dAq/UPEvmfmkCNEALg7/CS30EuiTmEcLyBVDnpiF1LjH5r/QQi+BfsGDXkMDPKnZIYE8YioKLfQ26CSw0WI1GfrUIExNRzL6xh9AaKEXQKcLaVFKwn0rSFCzjgqOQgu9CXpq5tsGn5iCpJmYxMEUlj1uuNBCL4EmIbdPQzSt8HDFrI+DitBCL4FONyIFK5nrVLBIBnsTnD2KCEIL/WBoGlaZCkcaMkjxIQZ+akpSEEhooTdDJ/i0MTSEQwTKRrRAIoLQQj8Yui4Gr/xPxJNZcOWRbEw0BoUWegn09KWk8Sc3TYMKaXKa0N4YiBVa6AXQRGSjRjwVAJNQ0YTtklAotNBCd4J+E9hJgTwy+JAihxwOoYVeCo0MskK8p+ICNedJ4FZooTdBpxDbFFBrBnwyZCQzgBr3H4kIQgt9Y2haEOjAcVVMpAIENe7HgUNooR8KvekQWmihhRZa6JscPw4FFvE6LXUoAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#域名访问"><span class="post-toc-number">3.</span> <span class="post-toc-text">域名访问</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p>说明：<code>N</code>月前博主就分享过一个基于<code>IPFS</code>的去中心视频分享平台，查看：ipfstube安装教程，今天再分享个图片分享平台<code>ipfspics</code>，大概原理这里再说下，就是是你上传图片后，并不会存储到自己的服务器，而是会上传到<code>IPFS</code>，再转化成一个哈希值，你可以根据这个哈希进行下载，任何人都无法删除，包括你自己，就算你上传的那个平台倒闭，该图片也会存在。对这个有兴趣的也可以拿来做个图床什么的。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/ipfspics(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/ipfspics(2).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/ipfspics/ipfspics-server" target="_blank" rel="noopener">https://github.com/ipfspics/ipfspics-server</a></p>
+<p><strong>1、安装Docker</strong></p>
+<pre><code>#CentOS 6
+rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum update -y
+yum -y install docker-io
+service docker start
+chkconfig docker on
+
+#CentOS 7、Debian、Ubuntu
+curl -sSL https://get.docker.com/ | sh
+systemctl start docker
+systemctl enable docker</code></pre><p><strong>2、安装Docker Compose</strong></p>
+<pre><code>curl -L https://github.com/docker/compose/releases/download/1.17.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+#验证是否安装成功
+docker-compose --version
+#返回以下类似信息即安装成功
+docker-compose version 1.x</code></pre><p><strong>3、下载源码</strong></p>
+<pre><code>git clone https://github.com/ipfspics/ipfspics-server.git
+cd ipfspics-server
+#安装镜像
+docker-compose up -d</code></pre><p>然后就可以通过<code>ip:5000</code>访问。</p>
+<p><code>CentOS</code>系统可能还需要开齐心ia端口，使用命令：</p>
+<pre><code>#CentOS 6
+iptables -I INPUT -p tcp --dport 5000 -j ACCEPT
+service iptables save
+service iptables restart
+
+#CentOS 7
+firewall-cmd --zone=public --add-port=5000/tcp --permanent
+firewall-cmd --reload</code></pre><h2 id="域名访问"><a href="#域名访问" class="headerlink" title="域名访问"></a>域名访问</h2><p>反代可以用<code>Nginx</code>、<code>Caddy</code>，这里只说宝塔和<code>Caddy</code>。如果你网站有宝塔，就可以使用宝塔进行反代，如果没有，建议使用第<code>2</code>种的<code>Caddy</code>反代，配置很快。</p>
+<p><strong>1、宝塔反代</strong><br>先进入宝塔面板，然后点击左侧网站，添加站点，然后再点击添加好了的域名名称，这时候就进入了站点配置，点击反向代理，目标<code>URL</code>填入<code>http://127.0.0.1:5000</code>，再启用反向代理即可。至于启用<code>SSL</code>就不说了，直接在站点配置就可以启用。</p>
+<p><strong>2、Caddy反代</strong><br>安装<code>Caddy</code>：</p>
+<pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh
+#备用地址
+wget -N --no-check-certificate https://www.moerats.com/usr/shell/Caddy/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh</code></pre><p>配置<code>Caddy</code>：</p>
+<pre><code>#以下全部内容是一个整体，请修改域名后一起复制到SSH运行！
+
+#http访问，该配置不会自动签发SSL
+echo &quot;xx.com {
+ gzip
+ proxy / 127.0.0.1:5000
+}&quot; &gt; /usr/local/caddy/Caddyfile
+
+#https访问，该配置会自动签发SSL，请提前解析域名到VPS服务器
+echo &quot;xx.com {
+ gzip
+ tls admin@moerats.com
+ proxy / 127.0.0.1:5000
+}&quot; &gt; /usr/local/caddy/Caddyfile</code></pre><p><code>tls</code>参数会自动帮你签发<code>ssl</code>证书，如果你要使用自己的<code>ssl</code>，改为<code>tls /root/xx.crt /root/xx.key</code>即可。后面为<code>ssl</code>证书路径。</p>
+<p>启动<code>Caddy</code>：</p>
+<pre><code>/etc/init.d/caddy start</code></pre><p>就可以打开域名进行访问了。</p>
+<p><strong>3、Nginx配置</strong><br>如果你使用其它的，这里就大概发个<code>Nginx</code>反代配置，直接添加到配置文件即可。</p>
+<pre><code>#在配置文件里添加
+location / {
+     proxy_pass http://127.0.0.1:5000;
+     proxy_redirect off;
+     proxy_set_header X-Real-IP $remote_addr;
+     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>博主发现这里有点坑的是，目录分类里，除了上传是正常的，其它貌似会报<code>500</code>错误，不过这个系统也只有上传有用，还可以拿来将就。而且上传完成后展示的地址来源直接是官方的，这对很多人来说估计很不适应，其实我们自己搭建的地址也可以做来源。</p>
+<p>不过博主看了下源码，其实都可以解决掉，但需要我们修改下界面源码，这里就大概的说下修改方法。</p>
+<pre><code>#该源码根目录在/root/ipfspics-server/app，如果我们修改主界面布局，或者想要去掉无效的分类，编辑index.php即可。
+#上传后的界面显示源码在/root/ipfspics-server/app/pages，如果修改上半部分的显示，编辑preview.php文件；下半部分编辑browse.php文件。</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-02-02T18:23:33.000Z" itemprop="datePublished">2020-02-03</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.655Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/02/03/oneindex-ef-bc-9a-e4-b8-80-e4-b8-aaonedrive-e7-bd-91-e7-9b-98-e7-9a-84-e7-9b-ae-e5-bd-95-e5-88-97-e8-a1-a8-e7-a8-8b-e5-ba-8f-ef-bc-8c-e5-8f-af-e7-9b-b4-e6-8e-a5-e4-b8-8b-e8-bd-bd-e6-9f-a5-e7-9c-8b/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">OneIndex：一个OneDrive网盘的目录列表程序，可直接下载/查看</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/02/02/proxyee-down-ef-bc-9ahttp-e4-b8-8b-e8-bd-bd-e7-a5-9e-e5-99-a8-ef-bc-8c-e6-94-af-e6-8c-81-e7-99-be-e5-ba-a6-e4-ba-91-e4-b8-8b-e8-bd-bd-e5-85-a8-e7-bd-91-e5-97-85-e6-8e-a2-b-e7-ab-99-e8-a7-86-e9-a2-91/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Proxyee-down：HTTP下载神器，支持百度云下载/全网嗅探/B站视频下载</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

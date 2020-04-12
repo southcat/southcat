@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Music-dl：一个音乐平台聚合搜索工具，支持下载QQ音乐、网易云、酷狗音乐等 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Music-dl：一个音乐平台聚合搜索工具，支持下载QQ音乐、网易云、酷狗音乐等 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/12/12/music-dl-ef-bc-9a-e4-b8-80-e4-b8-aa-e9-9f-b3-e4-b9-90-e5-b9-b3-e5-8f-b0-e8-81-9a-e5-90-88-e6-90-9c-e7-b4-a2-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81-e4-b8-8b-e8-bd-bdqq-e9-9f-b3-e4-b9-90-e3-80-81/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前发过一个视频下载工具Annie→传送门，这里又找到了个音乐下载工具Music-dl，一个基于Python3的命令行工具，可以从多个网站搜索和下载音乐，方便寻找音乐，解决不知道哪个网站有版权的问题。目前支持QQ音乐、网易云音乐、虾米音乐、酷狗音乐和百度音乐，不过不能获取付费歌曲，总体使用还算不错。 截图 功能 部分歌曲支持无损音乐 优先搜索高品质音乐(flac-&amp;gt;320K-&amp;gt;1 - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/Music-dl.png"><meta property="article:published_time" content="2019-12-11T22:53:51.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.650Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.650Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/12/12/music-dl-ef-bc-9a-e4-b8-80-e4-b8-aa-e9-9f-b3-e4-b9-90-e5-b9-b3-e5-8f-b0-e8-81-9a-e5-90-88-e6-90-9c-e7-b4-a2-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81-e4-b8-8b-e8-bd-bdqq-e9-9f-b3-e4-b9-90-e3-80-81/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/12/12/music-dl-ef-bc-9a-e4-b8-80-e4-b8-aa-e9-9f-b3-e4-b9-90-e5-b9-b3-e5-8f-b0-e8-81-9a-e5-90-88-e6-90-9c-e7-b4-a2-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81-e4-b8-8b-e8-bd-bdqq-e9-9f-b3-e4-b9-90-e3-80-81/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/12/12/music-dl-ef-bc-9a-e4-b8-80-e4-b8-aa-e9-9f-b3-e4-b9-90-e5-b9-b3-e5-8f-b0-e8-81-9a-e5-90-88-e6-90-9c-e7-b4-a2-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81-e4-b8-8b-e8-bd-bdqq-e9-9f-b3-e4-b9-90-e3-80-81/"
+    },
+    "headline": "Music-dl：一个音乐平台聚合搜索工具，支持下载QQ音乐、网易云、酷狗音乐等 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-11T22:53:51.000Z",
+    "dateModified": "2020-04-12T04:09:09.650Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：之前发过一个视频下载工具Annie→传送门，这里又找到了个音乐下载工具Music-dl，一个基于Python3的命令行工具，可以从多个网站搜索和下载音乐，方便寻找音乐，解决不知道哪个网站有版权的问题。目前支持QQ音乐、网易云音乐、虾米音乐、酷狗音乐和百度音乐，不过不能获取付费歌曲，总体使用还算不错。 截图 功能 部分歌曲支持无损音乐 优先搜索高品质音乐(flac-&amp;amp;gt;320K-&amp;amp;gt;1 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Music-dl：一个音乐平台聚合搜索工具，支持下载QQ音乐、网易云、酷狗音乐等" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Music-dl：一个音乐平台聚合搜索工具，支持下载QQ音乐、网易云、酷狗音乐等&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=Music-dl：一个音乐平台聚合搜索工具，支持下载QQ音乐、网易云、酷狗音乐等" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFW0lEQVR42u2cQXLbQBAD+f9PM9fExR00dnlx2Lo4lmRp2aqCBxg41+3tvkQgBCEIQQhCEMII4Rpu//zAw/1/f//z8afXePqZn19Xj9P7nx5bXZcQhCCEZwiPojFcwARieo303AnqdJYVhHRdQhCCENYQTsRnJYREBJ+em4R3+jCoqApBCELYh/AoKoOQnQ5QSWCfHmsHMCEIQQhnEKYLOBG2NNwkkZ2EUghCEMI+hEZwiLmhP0MPT4ATMRWCEISQIRDB+o1fX0ubhSCED0GIS8sBziSQp8ELvdjVfa9upYUghA9BIGYkBaxT4ELD0gQ3vQ59jhCEIIQOAjElU+C6NCtg4UoWsGlBTAokQhCCENYQSDCZBJP8mx54Clro+UgwIwQhCOFGecJuoDKJ6CSop8EIMVdLsRWCEIQwBq3JwKQhhL4OLXGQkIQKcFzICkEIQrhPlqaT4KUFKS2EkhCWLIWXZxKCEITwOCzRsGJnuKFLX1r8nJ6fjNxooIQgBCHcacgggkUMFTU2KUxNBdAUqowlDSEIQQiV2NEhKYWzdAFDBiEyyI0fshCEIAQkjFMR6mTpQRenxHQR05QGLyEIQQi8zElMVROw0jCFLFNTcSwNT0IQghCygWpD0nZJQwtX5ELu4jYGLEIQghCWBooUKprDkIvcLYm1g9pSaIUgBCGMBooYETqgUCPVLlxSYYwEx0IQghAYBCJQtBjRDDJp6KIBbiqM4KBVCEL4MIRJZFqRSgELMWg0fN0tfwlBCEJgEIhZImUuaqJoISOFMES4l8ZQCEIQAjJQU0jZhK5N8HpioGihs3KRQhDCRyHQ8iRZhu6UqKbQY2coSgXRrd8OQhDChyGkQYiWJUkBY6fUQUueRwZKCEL4OIS06EzL1SRGxCRRA9SEw/G9hCAEIYzFrZ3hKZkuarBOQ5jp/MsPTwhCEAKGQJYcO6WtKRihi5XW1C3NlBCEIIQYtNLFBVnOkmJWs2BtyqaVgRKCEIRQ/VHH6YGpgWoWwU2Qu2WghCCEj0LYFUVqpHYKFqQ4QpYzMYQVghCEsISwuxxtl7FJKNtiFzFO0UAJQQhCQAWnqRi1U6pIF0jhxrDkyv85jRCEIIR1nkAC1jTgTOErDWpTIYwuZfHyVwhCEMIYqpDhhBYiWkCt4CYI03JICEIQwo3yhCQ6zVDULlxPQt00yC2vQQhCEMIYtJLCBTksLXSdLoDo0nf5PkIQghCWBooMJE3ZohE+egZy5iaAFYIQhJAh0FJFY57oLYUireGbXlsIQhACC1onoYvBZXE/EdI0cJHyFlrICkEIQtguYKeSRBxQrv4PyChQsjQWghCE0EEggWYTeJJghZimHQOVxFwIQhAC7yy1ZaxkuoigpQEohbv0AxCCEITQ/dFHGoJOAla6cE3DFjFzrw5LQhDCRyDsHpgOQcQckUGICDgRRyEIQQgcAvmeBKaoSBlE8DTsSY8JQQhCuHBJoy12ksClOXQryu3iRghCEAILVd4sYxNTlS4+lUbI8mYc7IQgBCEsQ5XGzNByFimGkqFqd7mb3kMIQhDCDGEyUavQMhkvKsDENL2xjI3CKAQhfBxCG34QESPLmUlwyZKGfAgxeBWCEIQQhTEVplOBgohfE6ySgsi08Km20kIQghCwCSGHb5a7JCh9q+C9PKsQhCCEJYRVuDIFIvVwEgS2GYoaE7UMZYQgBCEcQaBLlRTgTu9FBG+3JC4EIQjhHQiNmWoWp6SI1QS2NTQhCEEItYEiRQ16oFY8aegzhSevhCpCEMLHIDQFy52SVbqfgiCvQ8ybEIQghP1+wv98E4IQhCAEIQhBCI+3P+xSZ4EHALnQAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Music-dl：一个音乐平台聚合搜索工具，支持下载QQ音乐、网易云、酷狗音乐等</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-12</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Music-dl：一个音乐平台聚合搜索工具，支持下载QQ音乐、网易云、酷狗音乐等&url=http://yoursite.com/2019/12/12/music-dl-ef-bc-9a-e4-b8-80-e4-b8-aa-e9-9f-b3-e4-b9-90-e5-b9-b3-e5-8f-b0-e8-81-9a-e5-90-88-e6-90-9c-e7-b4-a2-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81-e4-b8-8b-e8-bd-bdqq-e9-9f-b3-e4-b9-90-e3-80-81/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Music-dl：一个音乐平台聚合搜索工具，支持下载QQ音乐、网易云、酷狗音乐等&url=http://yoursite.com/2019/12/12/music-dl-ef-bc-9a-e4-b8-80-e4-b8-aa-e9-9f-b3-e4-b9-90-e5-b9-b3-e5-8f-b0-e8-81-9a-e5-90-88-e6-90-9c-e7-b4-a2-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81-e4-b8-8b-e8-bd-bdqq-e9-9f-b3-e4-b9-90-e3-80-81/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/12/music-dl-ef-bc-9a-e4-b8-80-e4-b8-aa-e9-9f-b3-e4-b9-90-e5-b9-b3-e5-8f-b0-e8-81-9a-e5-90-88-e6-90-9c-e7-b4-a2-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81-e4-b8-8b-e8-bd-bdqq-e9-9f-b3-e4-b9-90-e3-80-81/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/12/12/music-dl-ef-bc-9a-e4-b8-80-e4-b8-aa-e9-9f-b3-e4-b9-90-e5-b9-b3-e5-8f-b0-e8-81-9a-e5-90-88-e6-90-9c-e7-b4-a2-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81-e4-b8-8b-e8-bd-bdqq-e9-9f-b3-e4-b9-90-e3-80-81/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/12/12/music-dl-ef-bc-9a-e4-b8-80-e4-b8-aa-e9-9f-b3-e4-b9-90-e5-b9-b3-e5-8f-b0-e8-81-9a-e5-90-88-e6-90-9c-e7-b4-a2-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81-e4-b8-8b-e8-bd-bdqq-e9-9f-b3-e4-b9-90-e3-80-81/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/12/12/music-dl-ef-bc-9a-e4-b8-80-e4-b8-aa-e9-9f-b3-e4-b9-90-e5-b9-b3-e5-8f-b0-e8-81-9a-e5-90-88-e6-90-9c-e7-b4-a2-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81-e4-b8-8b-e8-bd-bdqq-e9-9f-b3-e4-b9-90-e3-80-81/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/12/12/music-dl-ef-bc-9a-e4-b8-80-e4-b8-aa-e9-9f-b3-e4-b9-90-e5-b9-b3-e5-8f-b0-e8-81-9a-e5-90-88-e6-90-9c-e7-b4-a2-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81-e4-b8-8b-e8-bd-bdqq-e9-9f-b3-e4-b9-90-e3-80-81/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFW0lEQVR42u2cQXLbQBAD+f9PM9fExR00dnlx2Lo4lmRp2aqCBxg41+3tvkQgBCEIQQhCEMII4Rpu//zAw/1/f//z8afXePqZn19Xj9P7nx5bXZcQhCCEZwiPojFcwARieo303AnqdJYVhHRdQhCCENYQTsRnJYREBJ+em4R3+jCoqApBCELYh/AoKoOQnQ5QSWCfHmsHMCEIQQhnEKYLOBG2NNwkkZ2EUghCEMI+hEZwiLmhP0MPT4ATMRWCEISQIRDB+o1fX0ubhSCED0GIS8sBziSQp8ELvdjVfa9upYUghA9BIGYkBaxT4ELD0gQ3vQ59jhCEIIQOAjElU+C6NCtg4UoWsGlBTAokQhCCENYQSDCZBJP8mx54Clro+UgwIwQhCOFGecJuoDKJ6CSop8EIMVdLsRWCEIQwBq3JwKQhhL4OLXGQkIQKcFzICkEIQrhPlqaT4KUFKS2EkhCWLIWXZxKCEITwOCzRsGJnuKFLX1r8nJ6fjNxooIQgBCHcacgggkUMFTU2KUxNBdAUqowlDSEIQQiV2NEhKYWzdAFDBiEyyI0fshCEIAQkjFMR6mTpQRenxHQR05QGLyEIQQi8zElMVROw0jCFLFNTcSwNT0IQghCygWpD0nZJQwtX5ELu4jYGLEIQghCWBooUKprDkIvcLYm1g9pSaIUgBCGMBooYETqgUCPVLlxSYYwEx0IQghAYBCJQtBjRDDJp6KIBbiqM4KBVCEL4MIRJZFqRSgELMWg0fN0tfwlBCEJgEIhZImUuaqJoISOFMES4l8ZQCEIQAjJQU0jZhK5N8HpioGihs3KRQhDCRyHQ8iRZhu6UqKbQY2coSgXRrd8OQhDChyGkQYiWJUkBY6fUQUueRwZKCEL4OIS06EzL1SRGxCRRA9SEw/G9hCAEIYzFrZ3hKZkuarBOQ5jp/MsPTwhCEAKGQJYcO6WtKRihi5XW1C3NlBCEIIQYtNLFBVnOkmJWs2BtyqaVgRKCEIRQ/VHH6YGpgWoWwU2Qu2WghCCEj0LYFUVqpHYKFqQ4QpYzMYQVghCEsISwuxxtl7FJKNtiFzFO0UAJQQhCQAWnqRi1U6pIF0jhxrDkyv85jRCEIIR1nkAC1jTgTOErDWpTIYwuZfHyVwhCEMIYqpDhhBYiWkCt4CYI03JICEIQwo3yhCQ6zVDULlxPQt00yC2vQQhCEMIYtJLCBTksLXSdLoDo0nf5PkIQghCWBooMJE3ZohE+egZy5iaAFYIQhJAh0FJFY57oLYUireGbXlsIQhACC1onoYvBZXE/EdI0cJHyFlrICkEIQtguYKeSRBxQrv4PyChQsjQWghCE0EEggWYTeJJghZimHQOVxFwIQhAC7yy1ZaxkuoigpQEohbv0AxCCEITQ/dFHGoJOAla6cE3DFjFzrw5LQhDCRyDsHpgOQcQckUGICDgRRyEIQQgcAvmeBKaoSBlE8DTsSY8JQQhCuHBJoy12ksClOXQryu3iRghCEAILVd4sYxNTlS4+lUbI8mYc7IQgBCEsQ5XGzNByFimGkqFqd7mb3kMIQhDCDGEyUavQMhkvKsDENL2xjI3CKAQhfBxCG34QESPLmUlwyZKGfAgxeBWCEIQQhTEVplOBgohfE6ySgsi08Km20kIQghCwCSGHb5a7JCh9q+C9PKsQhCCEJYRVuDIFIvVwEgS2GYoaE7UMZYQgBCEcQaBLlRTgTu9FBG+3JC4EIQjhHQiNmWoWp6SI1QS2NTQhCEEItYEiRQ16oFY8aegzhSevhCpCEMLHIDQFy52SVbqfgiCvQ8ybEIQghP1+wv98E4IQhCAEIQhBCI+3P+xSZ4EHALnQAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#功能"><span class="post-toc-number">2.</span> <span class="post-toc-text">功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Python3"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Python3</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Music-dl"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装Music-dl</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">5.</span> <span class="post-toc-text">使用</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>之前发过一个视频下载工具<code>Annie</code>→传送门，这里又找到了个音乐下载工具<code>Music-dl</code>，一个基于<code>Python3</code>的命令行工具，可以从多个网站搜索和下载音乐，方便寻找音乐，解决不知道哪个网站有版权的问题。目前支持<code>QQ</code>音乐、网易云音乐、虾米音乐、酷狗音乐和百度音乐，不过不能获取付费歌曲，总体使用还算不错。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/Music-dl.png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
+<li>部分歌曲支持无损音乐</li>
+<li>优先搜索高品质音乐(<code>flac</code>-&gt;<code>320K</code>-&gt;<code>128K</code>)</li>
+<li>支持<code>HTTP</code>和<code>SOCKS</code>代理</li>
+<li>支持多线程搜索</li>
+<li>支持搜索结果去重和排序</li>
+<li>支持搜索关键字高亮</li>
+<li>支持下载歌词和封面(部分)</li>
+</ul>
+<h2 id="安装Python3"><a href="#安装Python3" class="headerlink" title="安装Python3"></a>安装Python3</h2><p><strong>1、Linux安装</strong><br><code>CenOS 6</code>系统：</p>
+<pre><code>#安装EPEL
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+#安装Python3
+yum install python34 -y
+#安装pip3
+wget https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py</code></pre><p><code>CenOS 7</code>系统：</p>
+<pre><code>#安装EPEL
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+#安装Python3
+yum install python36 -y
+#安装pip3
+wget https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py</code></pre><p><code>Debian</code>/<code>Ubuntu</code>系统：</p>
+<pre><code>apt update
+apt install python3-pip python3-setuptools python3-dev build-essential -y</code></pre><p><strong>2、Windows安装</strong><br>这里为了方便操作就不使用<code>CMD</code>了，直接使用<code>PowerShell</code>，需要的条件<code>PowerShell 5+</code>和<code>.NET Framework 4.5+</code>。</p>
+<p>先在电脑左下角程序搜索框输入<code>PowerShell</code>，然后双击<code>Windows PowerShell</code>工具，再输入以下命令查看版本：</p>
+<pre><code>$PSVersionTable.PSVersion</code></pre><p><code>Major</code>为版本号，一般目前常用电脑<code>Windows 10</code>符合条件，<code>Windiows 7</code>还需要升级，大致步骤如下：</p>
+<pre><code>1、安装.Net 4.5.2全量包
+下载地址：https://www.moerats.com/usr/down/powershell/NDP452-KB2901907-x86-x64-AllOS-ENU.exe
+
+2、升级PowerShell的补丁包
+32位下载地址：https://www.moerats.com/usr/down/powershell/Win7-KB3191566-x86.zip
+64位下载地址：https://www.moerats.com/usr/down/powershell/Win7-KB3191566-x64.zip</code></pre><p>接下来安装一个命令行安装工具<code>Scoop</code>，使用命令：</p>
+<pre><code>iex (new-object net.webclient).downloadstring(&apos;https://get.scoop.sh&apos;)</code></pre><p>再安装<code>Python3</code>：</p>
+<pre><code>scoop install python</code></pre><p>该命令会默认给你安装<code>python 3</code>最新版本。</p>
+<h2 id="安装Music-dl"><a href="#安装Music-dl" class="headerlink" title="安装Music-dl"></a>安装Music-dl</h2><p>以下方式选择一种即可，使用命令：</p>
+<pre><code>#使用pip安装
+pip3 install pymusic-dl
+
+#从最新源码安装
+git clone https://github.com/0xHJK/music-dl.git
+cd music-dl
+python3 setup.py install</code></pre><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>使用命令：</p>
+<pre><code>music-dl [OPTIONS]
+#可用参数
+Options:
+  --version            Show the version and exit.
+  -k, --keyword TEXT   Keyword
+  -s, --source TEXT    Supported music source: qq netease kugou baidu xiami
+                       flac
+  -c, --count INTEGER  Number of search results
+  -o, --outdir TEXT    Output directory
+  -x, --proxy TEXT     Proxy (e.g. http://127.0.0.1:1087)
+  -m, --merge          对搜索结果去重和排序（默认去重）
+  -v, --verbose        Verbose mode
+  -l, --lyrics         同时下载歌词
+  -p, --picture        同时下载封面
+  --help               Show this message and exit.</code></pre><p>说明：</p>
+<pre><code>默认搜索qq netease kugou baidu xiami flac，每个数量限制为5，保存目录为当前目录。
+指定序号时可以使用1-5 7 10的形式。
+默认对搜索结果排序和去重，排序顺序按照歌手和歌名排序，当两者都相同时保留最大的文件。
+无损音乐歌曲数量较少，如果没有无损会显示320K或128K。
+支持http和socks代理，格式形如-x http://127.0.0.1:1087或-x socks5://127.0.0.1:1086</code></pre><p>比如搜索许嵩关键词，使用命令：</p>
+<pre><code>music-dl -k 许嵩</code></pre><p>下载歌词，目前只支持百度音乐：</p>
+<pre><code>music-dl -l -k 许嵩</code></pre><p>其它命令参数可以参考上面。</p>
+<pre><code>echo &apos;export LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8&apos; &gt;&gt; /etc/profile
+source /etc/profile</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-11T22:53:51.000Z" itemprop="datePublished">2019-12-12</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.650Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">使用crt和ca-bundle文件给网站配置ssl证书教程</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/12/linux-vps-e4-b8-80-e9-94-ae-e6-9b-b4-e6-94-b9-e8-af-ad-e8-a8-80-e7-8e-af-e5-a2-83-e4-b8-ba-e7-ae-80-e4-bd-93-e4-b8-ad-e6-96-87/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux VPS一键更改语言环境为简体中文</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

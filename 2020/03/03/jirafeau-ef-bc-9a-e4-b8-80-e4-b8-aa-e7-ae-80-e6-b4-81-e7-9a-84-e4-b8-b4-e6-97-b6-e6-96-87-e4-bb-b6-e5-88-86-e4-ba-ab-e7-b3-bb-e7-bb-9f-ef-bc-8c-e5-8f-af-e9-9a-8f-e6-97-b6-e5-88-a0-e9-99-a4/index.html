@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Jirafeau：一个简洁的临时文件分享系统，可随时删除 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Jirafeau：一个简洁的临时文件分享系统，可随时删除 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/03/03/jirafeau-ef-bc-9a-e4-b8-80-e4-b8-aa-e7-ae-80-e6-b4-81-e7-9a-84-e4-b8-b4-e6-97-b6-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8f-af-e9-9a-8f-e6-97-b6-e5-88-a0-e9-99-a4/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前介绍过一个临时文件系统Plik→点击查看，功能比较强大，不过对于不会美化界面的人来说，使用起来可能会觉得不好看。这里再介绍个Jirafeau，可以设置保存时间，密码，生成分享链接的同时也会给你一个删除链接，你可以随时进行删除，功能虽然没前者强大，但够用了，界面也简洁。 截图 安装要求：PHP &amp;gt;&#x3D; 5.6，Nginx&#x2F;Apache等，无需数据库 Gitlab地址：https:&#x2F;&#x2F;g - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/Jirafeau(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Jirafeau(2).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Jirafeau(3).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Jirafeau(4).png"><meta property="article:published_time" content="2020-03-03T08:48:39.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.658Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.658Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/03/03/jirafeau-ef-bc-9a-e4-b8-80-e4-b8-aa-e7-ae-80-e6-b4-81-e7-9a-84-e4-b8-b4-e6-97-b6-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8f-af-e9-9a-8f-e6-97-b6-e5-88-a0-e9-99-a4/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/03/03/jirafeau-ef-bc-9a-e4-b8-80-e4-b8-aa-e7-ae-80-e6-b4-81-e7-9a-84-e4-b8-b4-e6-97-b6-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8f-af-e9-9a-8f-e6-97-b6-e5-88-a0-e9-99-a4/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/03/03/jirafeau-ef-bc-9a-e4-b8-80-e4-b8-aa-e7-ae-80-e6-b4-81-e7-9a-84-e4-b8-b4-e6-97-b6-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8f-af-e9-9a-8f-e6-97-b6-e5-88-a0-e9-99-a4/"
+    },
+    "headline": "Jirafeau：一个简洁的临时文件分享系统，可随时删除 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-03-03T08:48:39.000Z",
+    "dateModified": "2020-04-12T04:09:09.658Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：之前介绍过一个临时文件系统Plik→点击查看，功能比较强大，不过对于不会美化界面的人来说，使用起来可能会觉得不好看。这里再介绍个Jirafeau，可以设置保存时间，密码，生成分享链接的同时也会给你一个删除链接，你可以随时进行删除，功能虽然没前者强大，但够用了，界面也简洁。 截图 安装要求：PHP &amp;amp;gt;= 5.6，Nginx/Apache等，无需数据库 Gitlab地址：https://g - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Jirafeau：一个简洁的临时文件分享系统，可随时删除" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Jirafeau：一个简洁的临时文件分享系统，可随时删除&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=Jirafeau：一个简洁的临时文件分享系统，可随时删除" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFYElEQVR42u3cy47iQBAFUf//TzOrkVrIlTduQi9mHGz6ZcB1kFL5Ul8vH69LAhFEEEEEEUQYEa7hcXfNz5//fv/zuru/v1979/qn97m7/v2+7n5G5xJBBBFuEW6DxtvvT9edbohce7rpu5/ThzZ9OKdziCCCCGeEKSjdfZ2ec3oeCaKnmz4dOt3L+BwRRBBhhTAFvRQQT4Hr9NwmWSIflggiiPB7gTElUFOQu8LjNpmBhdj0OiKIIMIOgQScKZlJMFNBRN+bYDWFoQgiiNA3Wv/lr1/rNosgwoMQaFOUDFg2Q5R0HW3u/OpUWgQRHoRAixGSsEyQTSCe7mG6V3KNCCKIwBDaIDkFrymgpiZt09AdDxjuTwQRRLhiskSLqfGFQ7MzBT0CSBa00BBXBBFEuEVIA5O2aXGC2SyEbF+fDIxFEEGEXECRYQdpkEy4JCBOyx102JM+aBFEECHnCeSGaTGUkMlhUxM2NXnGD1IEEUQYEZqFLXojJKkiQXYq9GgzGAVGEUQQASdAdECCFilhoEwgTQGFljREEOHhCOkmSeOSHLpprmwaLFPxdywKRRBBhLGpQhsWCY82RaaBKl3qSu89vr8IIohwDIwpqJEhCV3Wmv6emiK0UFolSyKIIEJctkoBc7UcEZoqadGDLJhVTRURRBAB/TM3svCQCii6cEmTsYScCqhxmVMEEUSISw90sSsFoSnQbQfCBHds0IogggirRisFaxa56KJYW0DRRRERRBDhGpc0yMLElAiRoQxthtLmSdtkFUEEETqE1CwhwaYd8k5IJGlLAXb8vQgiiICaKnSZIg1ZyaB2kwjRgquuIkUQQYTxAPRAaWizGb6m9yID2ZigiSCCCHFxiwxo6XD000DbNFfbZTMRRBDhivsJ5KCkkdIkU2RgQwLsBR8xYxRBBBFeqSFBCpw0SCWHpgNZknih1xRBBBFwstQsTpAGRipq6OCGXE8SNBFEEIEtaaTAlZIVMhzZDFQ2Q52qihRBBBFQc5UkIlPwapulm6XN1PiJBZQIIohQ/fOoZhhDm61NQkUWMKbAiQayIoggwoskPmnIOgWxhNscjjR5U8O2WuYUQYSHIqRlSBJsSBOkaZqSwEuLtHUVKYIID0VoFjoJBA2uqShqm72bpRIRRBBhnkXSJa60vEUKnzT0JUMe0tDByZIIIogwNjXScIMORKfDbgfBpGAiTR8RRBAh9xjJYlVTZE1DVPo+pJja4Ikgggg5WSLFSBNEp8KHorUFVBoKiyCCCDPCZtDaNGM2EDRwbwK8CCKIkBGaJgZZ0JqAaYOEHpYeOgZGEUQQYZ2IpEFpWs6gN0yGQGQZZFzcEkEEEb76zxqaxc5PFrZI05YGZxFEEGFGSA2OZnGqTWiapStakKGALIIIIozJ0gUfqThKy1wJkxZXDTAuoEQQ4eEIzUAzJTpts/PTBi5d4Di+vwgiiBAXt0jTlOCk65oG7gSYmj24gBJBBBFWTUp6ODqYaZo1TRMG3bcIIohwDIypYNouWzXLoClpS39rgrgIIoiQ9xjT0lSzKEGWPNOAJzZFyoUwEUQQoUNoD0ETnYT3SeLWNIljxiiCCCLEBzlMgmsLILKMkRIqFCRFEEGEGBhTgUOapqRhSpqtZDGrHdKgZEkEER6O0BYh24EKKdCmg5KijzRbRBBBBP7PpuiwJAUvssCR3pMMYEgRdXxtEUQQYYXQ3GgqetpFsRQ4NwWbCCKI8H2EKdEhyxrfKpRSgTd+L4IIItQFFF2kJIVSGuqQhu5mUfTjpooIIjwMgRQetMBpEh7SYCEBNzV+jsFTBBFEqAey//NDBBFEEEEEEUS4ffwBQC9mkImGezwAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Jirafeau：一个简洁的临时文件分享系统，可随时删除</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-03-03</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Jirafeau：一个简洁的临时文件分享系统，可随时删除&url=http://yoursite.com/2020/03/03/jirafeau-ef-bc-9a-e4-b8-80-e4-b8-aa-e7-ae-80-e6-b4-81-e7-9a-84-e4-b8-b4-e6-97-b6-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8f-af-e9-9a-8f-e6-97-b6-e5-88-a0-e9-99-a4/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Jirafeau：一个简洁的临时文件分享系统，可随时删除&url=http://yoursite.com/2020/03/03/jirafeau-ef-bc-9a-e4-b8-80-e4-b8-aa-e7-ae-80-e6-b4-81-e7-9a-84-e4-b8-b4-e6-97-b6-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8f-af-e9-9a-8f-e6-97-b6-e5-88-a0-e9-99-a4/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/03/jirafeau-ef-bc-9a-e4-b8-80-e4-b8-aa-e7-ae-80-e6-b4-81-e7-9a-84-e4-b8-b4-e6-97-b6-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8f-af-e9-9a-8f-e6-97-b6-e5-88-a0-e9-99-a4/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/03/03/jirafeau-ef-bc-9a-e4-b8-80-e4-b8-aa-e7-ae-80-e6-b4-81-e7-9a-84-e4-b8-b4-e6-97-b6-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8f-af-e9-9a-8f-e6-97-b6-e5-88-a0-e9-99-a4/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/03/03/jirafeau-ef-bc-9a-e4-b8-80-e4-b8-aa-e7-ae-80-e6-b4-81-e7-9a-84-e4-b8-b4-e6-97-b6-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8f-af-e9-9a-8f-e6-97-b6-e5-88-a0-e9-99-a4/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/03/03/jirafeau-ef-bc-9a-e4-b8-80-e4-b8-aa-e7-ae-80-e6-b4-81-e7-9a-84-e4-b8-b4-e6-97-b6-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8f-af-e9-9a-8f-e6-97-b6-e5-88-a0-e9-99-a4/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/03/03/jirafeau-ef-bc-9a-e4-b8-80-e4-b8-aa-e7-ae-80-e6-b4-81-e7-9a-84-e4-b8-b4-e6-97-b6-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8f-af-e9-9a-8f-e6-97-b6-e5-88-a0-e9-99-a4/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFYElEQVR42u3cy47iQBAFUf//TzOrkVrIlTduQi9mHGz6ZcB1kFL5Ul8vH69LAhFEEEEEEUQYEa7hcXfNz5//fv/zuru/v1979/qn97m7/v2+7n5G5xJBBBFuEW6DxtvvT9edbohce7rpu5/ThzZ9OKdziCCCCGeEKSjdfZ2ec3oeCaKnmz4dOt3L+BwRRBBhhTAFvRQQT4Hr9NwmWSIflggiiPB7gTElUFOQu8LjNpmBhdj0OiKIIMIOgQScKZlJMFNBRN+bYDWFoQgiiNA3Wv/lr1/rNosgwoMQaFOUDFg2Q5R0HW3u/OpUWgQRHoRAixGSsEyQTSCe7mG6V3KNCCKIwBDaIDkFrymgpiZt09AdDxjuTwQRRLhiskSLqfGFQ7MzBT0CSBa00BBXBBFEuEVIA5O2aXGC2SyEbF+fDIxFEEGEXECRYQdpkEy4JCBOyx102JM+aBFEECHnCeSGaTGUkMlhUxM2NXnGD1IEEUQYEZqFLXojJKkiQXYq9GgzGAVGEUQQASdAdECCFilhoEwgTQGFljREEOHhCOkmSeOSHLpprmwaLFPxdywKRRBBhLGpQhsWCY82RaaBKl3qSu89vr8IIohwDIwpqJEhCV3Wmv6emiK0UFolSyKIIEJctkoBc7UcEZoqadGDLJhVTRURRBAB/TM3svCQCii6cEmTsYScCqhxmVMEEUSISw90sSsFoSnQbQfCBHds0IogggirRisFaxa56KJYW0DRRRERRBDhGpc0yMLElAiRoQxthtLmSdtkFUEEETqE1CwhwaYd8k5IJGlLAXb8vQgiiICaKnSZIg1ZyaB2kwjRgquuIkUQQYTxAPRAaWizGb6m9yID2ZigiSCCCHFxiwxo6XD000DbNFfbZTMRRBDhivsJ5KCkkdIkU2RgQwLsBR8xYxRBBBFeqSFBCpw0SCWHpgNZknih1xRBBBFwstQsTpAGRipq6OCGXE8SNBFEEIEtaaTAlZIVMhzZDFQ2Q52qihRBBBFQc5UkIlPwapulm6XN1PiJBZQIIohQ/fOoZhhDm61NQkUWMKbAiQayIoggwoskPmnIOgWxhNscjjR5U8O2WuYUQYSHIqRlSBJsSBOkaZqSwEuLtHUVKYIID0VoFjoJBA2uqShqm72bpRIRRBBhnkXSJa60vEUKnzT0JUMe0tDByZIIIogwNjXScIMORKfDbgfBpGAiTR8RRBAh9xjJYlVTZE1DVPo+pJja4Ikgggg5WSLFSBNEp8KHorUFVBoKiyCCCDPCZtDaNGM2EDRwbwK8CCKIkBGaJgZZ0JqAaYOEHpYeOgZGEUQQYZ2IpEFpWs6gN0yGQGQZZFzcEkEEEb76zxqaxc5PFrZI05YGZxFEEGFGSA2OZnGqTWiapStakKGALIIIIozJ0gUfqThKy1wJkxZXDTAuoEQQ4eEIzUAzJTpts/PTBi5d4Di+vwgiiBAXt0jTlOCk65oG7gSYmj24gBJBBBFWTUp6ODqYaZo1TRMG3bcIIohwDIypYNouWzXLoClpS39rgrgIIoiQ9xjT0lSzKEGWPNOAJzZFyoUwEUQQoUNoD0ETnYT3SeLWNIljxiiCCCLEBzlMgmsLILKMkRIqFCRFEEGEGBhTgUOapqRhSpqtZDGrHdKgZEkEER6O0BYh24EKKdCmg5KijzRbRBBBBP7PpuiwJAUvssCR3pMMYEgRdXxtEUQQYYXQ3GgqetpFsRQ4NwWbCCKI8H2EKdEhyxrfKpRSgTd+L4IIItQFFF2kJIVSGuqQhu5mUfTjpooIIjwMgRQetMBpEh7SYCEBNzV+jsFTBBFEqAey//NDBBFEEEEEEUS4ffwBQC9mkImGezwAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Docker安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">Docker安装</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>之前介绍过一个临时文件系统<code>Plik</code>→点击查看，功能比较强大，不过对于不会美化界面的人来说，使用起来可能会觉得不好看。这里再介绍个<code>Jirafeau</code>，可以设置保存时间，密码，生成分享链接的同时也会给你一个删除链接，你可以随时进行删除，功能虽然没前者强大，但够用了，界面也简洁。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/Jirafeau(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/Jirafeau(2).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/Jirafeau(3).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>要求：</strong><code>PHP &gt;= 5.6</code>，<code>Nginx</code>/<code>Apache</code>等，无需数据库</p>
+<p><strong>Gitlab地址：</strong><a href="https://gitlab.com/mojo42/Jirafeau" target="_blank" rel="noopener">https://gitlab.com/mojo42/Jirafeau</a></p>
+<p><strong>提示：</strong>如果你过于小白，还不会搭建环境，可以参考该建站教程→传送门；或许看本文后面的<code>Docker</code>安装。</p>
+<p>先搭建好环境，然后下载源码(点击下载)，并上传解压到网站根目录。</p>
+<p>再新建配置文件<code>lib/config.local.php</code>，将<code>lib/config.original.php</code>里的代码全部复制进去，并给予写入权限，此后你可以修改该配置文件进行一些功能修改。</p>
+<p>最后就可以打开地址进行安装了。<br><img src="https://www.moerats.com/usr/picture/Jirafeau(4).png" alt="请输入图片描述" title="请输入图片描述"><br>后台地址：<code>http://xx.com/admin.php</code>，一般上传者删除链接后，只是不能下载了，但文件暂时还在，可以通过后台进行清空。</p>
+<pre><code>#除了后台清空外还可以用命令清空，建议设置为定时任务，命令如下：
+php /www/wwwroot/xx.com/admin.php clean_expired
+php /www/wwwroot/xx.com/admin.php clean_async</code></pre><h2 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h2><p><strong>1、安装Docker</strong></p>
+<pre><code>#CentOS 6
+rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum update -y
+yum -y install docker-io
+service docker start
+chkconfig docker on
+
+#CentOS 7、Debian、Ubuntu
+curl -sSL https://get.docker.com/ | sh
+systemctl start docker
+systemctl enable docker</code></pre><p><strong>2、构建镜像</strong></p>
+<pre><code>git clone https://gitlab.com/mojo42/Jirafeau.git
+cd Jirafeau
+docker build -t mojo42/jirafeau .</code></pre><p><strong>3、启动镜像</strong></p>
+<pre><code>#8000端口可自行修改
+docker run -d -p 8000:80 -v $(pwd):/www mojo42/jirafeau</code></pre><p><strong>4、配置修改</strong></p>
+<pre><code>#进入lib文件夹
+cd /root/Jirafeau
+#新建配置文件config.local.php，可修改该文件调整一些功能
+cp lib/config.original.php lib/config.local.php
+#授权
+chmod 777 lib/config.local.php</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-03-03T08:48:39.000Z" itemprop="datePublished">2020-03-03</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.658Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/03/03/e4-b8-a4-e6-9e-9ajetbrain-e8-b4-a6-e5-8f-b7-e5-b7-b2-e7-bb-8f-e6-bf-80-e6-b4-bb-e4-b8-80-e5-b9-b4-e5-ad-a6-e7-94-9f-e5-a5-97-e9-a4-90/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">两枚jetbrain账号  已经激活一年学生套餐</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/03/03/lnmp-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e5-8c-85v1-5-e6-b5-8b-e8-af-95-e7-89-88-e5-b7-b2-e5-8f-91-e5-b8-83/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">LNMP一键安装包V1.5测试版已发布</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

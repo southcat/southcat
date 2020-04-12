@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Lstu：一款简单、美观的轻量级网址缩短程序 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Lstu：一款简单、美观的轻量级网址缩短程序 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/01/29/lstu-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-bd-91-e5-9d-80-e7-bc-a9-e7-9f-ad-e7-a8-8b-e5-ba-8f/"><meta property="og:locale" content="en"><meta name="description" content="说明：Lstu是一个使用Perl编写的轻量级短网址程序，还提供api、二维码生成、统计面板、网址导入和导出等功能，界面挺简洁的，用起来还行，这里就发个手动和Docker安装。 截图 手动安装Github地址：https:&#x2F;&#x2F;github.com&#x2F;ldidry&#x2F;lstu 教程只适用于Debian、Ubuntu系统，建议使用Debian 9。 #安装依赖 apt update apt install  - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/Lstu(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Lstu(2).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Lstu(3).png"><meta property="article:published_time" content="2020-01-28T22:15:10.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.655Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.655Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/01/29/lstu-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-bd-91-e5-9d-80-e7-bc-a9-e7-9f-ad-e7-a8-8b-e5-ba-8f/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/01/29/lstu-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-bd-91-e5-9d-80-e7-bc-a9-e7-9f-ad-e7-a8-8b-e5-ba-8f/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/01/29/lstu-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-bd-91-e5-9d-80-e7-bc-a9-e7-9f-ad-e7-a8-8b-e5-ba-8f/"
+    },
+    "headline": "Lstu：一款简单、美观的轻量级网址缩短程序 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-01-28T22:15:10.000Z",
+    "dateModified": "2020-04-12T04:09:09.655Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：Lstu是一个使用Perl编写的轻量级短网址程序，还提供api、二维码生成、统计面板、网址导入和导出等功能，界面挺简洁的，用起来还行，这里就发个手动和Docker安装。 截图 手动安装Github地址：https://github.com/ldidry/lstu 教程只适用于Debian、Ubuntu系统，建议使用Debian 9。 #安装依赖 apt update apt install  - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Lstu：一款简单、美观的轻量级网址缩短程序" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Lstu：一款简单、美观的轻量级网址缩短程序&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=Lstu：一款简单、美观的轻量级网址缩短程序" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEn0lEQVR42u2bQY7bQAwE/f9PJ6cAQeBhV098WIulS7Bea6RiAILs7n39Wni9hBZaaKGFFvrLoF/D9fbGfz7/8/Pf96RzTs8i33/3M+UQWugt0Anu3ctMkBP86dx3ECf40ztGDqGFXgR9ermpWUwvdGp6tFk2hSQcQgst9HkQODWVdw8iTWsaRNI7CC200J9rZKmxnc5PBW4KKbTQQncLB130pxe9HVxO/wHkvP/asoQW+suh2wf+1H8/poYKLfQXQ0fTqxDzp8WEfJ6elZrZx1xLoYX+Yugk2NNlZAKk50/DDTESo3EotNBLoCcjjIhxraCX4AhkEhqiiCC00A+Gbgd59IAwtJDmRoM9VOwQWugN0MRYJ+G2aWFoQzxTSIcY9kILvR2aBt6aZT7dm8QD8vm12C+00A+HngaLZmGnhtttsLUtuNBCb4QmQRhqApBCNYJE07iSESG00Fug08NJk0sh2kl8SKLEJF6kZ8aJTGihHwidzDgykNCAHWlOJOSamt+RSWihl0Enw40OBpO4d7NAkKZHhEmhhd4A3d44vVAaUtLQQwYjaiheLRxCC/0A6CTskTBrgprOI2G6xjzASQShhX4oNA3VtIH2ZBikpkiHlspkEFroRdBk0E8PaIYM0gDJslGFeoQWegn01MSoudcKEE3glpoAUXgUWugl0ClonoYRYqSlwtAm2hQDBWKFFvph0HRASMWhzaoVD+gAhUIGQgu9ALod/NPg0QbjiZlPDbw0LAkt9AboFIglf0xCTPoXuG6NBBrmFVroDdDR9IKNqgm8TsJiOjs113G4ElroBdBEvCeDAB1i2uaXxAN6rtBCb4EmACmAOhUJvcwr/2EMMRLSAiO00Fugk1lHX46cdRtmJYbj1cIhtNAPg26HemJ+tyJDI/ATYeJ4r9BCL4FOJhwRCcmgkAT99iwidCCxX2ihHwRNBfppcKAiHzHxyaCUBIVjQYUWegE0WS5o85iKRBslGUxSAZApL7TQD4amIn0aNFIDSwVrhIx2UBJa6O3QjaF+8zti5NOLiIJCC70JOi0UxHBvlpET9O1AQkK4Qgu9BZoKCakAZDAhwdfU5JpCR+VEaKEfCt0Ib62ZnpoMNfCSSYdECKGFXgKdlgICSox9KuiRUE9TOKGF3gg9BcZbwy4N/rSxEYOOmAxCC70NGi/hoJklkZEuD+n5V2KH0EIvgCZDexOCq4YFYB7SoD1afoQWegF0E6RpxPubhYOEcaL4NxVcaKGXQBPRnAwsJExLhP5kuBMj4G0RhRZ6AXQjBJACUNGOiH00WJNghRZ6GzQKnoXvEdGBLjCkkGPDoluW0EI/EJoIa6QRJREwDRlkgSHfnwRJoYXeDN0sGkncS8PIVERSTCyGCC30AujUZIjJR5aLJCwms54GB0bhUWihl0CTEF1a/skAQsV/YtLTAM8oDAot9IOhqQB/8/22UaZBhZoBSA0VWuil0KQ5JSGCCnxNIJaGbIQWWug+UJceSpeKuDiUg5DQQm+EJmJ/Y6BRo78x7lrDUWiht0K3yz8V88liPxVnEiVvzAehhd4AvekSWmihhRZa6C+5fgNNHBMtFY9VbQAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Lstu：一款简单、美观的轻量级网址缩短程序</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-01-29</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Lstu：一款简单、美观的轻量级网址缩短程序&url=http://yoursite.com/2020/01/29/lstu-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-bd-91-e5-9d-80-e7-bc-a9-e7-9f-ad-e7-a8-8b-e5-ba-8f/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Lstu：一款简单、美观的轻量级网址缩短程序&url=http://yoursite.com/2020/01/29/lstu-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-bd-91-e5-9d-80-e7-bc-a9-e7-9f-ad-e7-a8-8b-e5-ba-8f/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/01/29/lstu-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-bd-91-e5-9d-80-e7-bc-a9-e7-9f-ad-e7-a8-8b-e5-ba-8f/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/01/29/lstu-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-bd-91-e5-9d-80-e7-bc-a9-e7-9f-ad-e7-a8-8b-e5-ba-8f/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/01/29/lstu-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-bd-91-e5-9d-80-e7-bc-a9-e7-9f-ad-e7-a8-8b-e5-ba-8f/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/01/29/lstu-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-bd-91-e5-9d-80-e7-bc-a9-e7-9f-ad-e7-a8-8b-e5-ba-8f/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/01/29/lstu-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-bd-91-e5-9d-80-e7-bc-a9-e7-9f-ad-e7-a8-8b-e5-ba-8f/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEn0lEQVR42u2bQY7bQAwE/f9PJ6cAQeBhV098WIulS7Bea6RiAILs7n39Wni9hBZaaKGFFvrLoF/D9fbGfz7/8/Pf96RzTs8i33/3M+UQWugt0Anu3ctMkBP86dx3ECf40ztGDqGFXgR9ermpWUwvdGp6tFk2hSQcQgst9HkQODWVdw8iTWsaRNI7CC200J9rZKmxnc5PBW4KKbTQQncLB130pxe9HVxO/wHkvP/asoQW+suh2wf+1H8/poYKLfQXQ0fTqxDzp8WEfJ6elZrZx1xLoYX+Yugk2NNlZAKk50/DDTESo3EotNBLoCcjjIhxraCX4AhkEhqiiCC00A+Gbgd59IAwtJDmRoM9VOwQWugN0MRYJ+G2aWFoQzxTSIcY9kILvR2aBt6aZT7dm8QD8vm12C+00A+HngaLZmGnhtttsLUtuNBCb4QmQRhqApBCNYJE07iSESG00Fug08NJk0sh2kl8SKLEJF6kZ8aJTGihHwidzDgykNCAHWlOJOSamt+RSWihl0Enw40OBpO4d7NAkKZHhEmhhd4A3d44vVAaUtLQQwYjaiheLRxCC/0A6CTskTBrgprOI2G6xjzASQShhX4oNA3VtIH2ZBikpkiHlspkEFroRdBk0E8PaIYM0gDJslGFeoQWegn01MSoudcKEE3glpoAUXgUWugl0ClonoYRYqSlwtAm2hQDBWKFFvph0HRASMWhzaoVD+gAhUIGQgu9ALod/NPg0QbjiZlPDbw0LAkt9AboFIglf0xCTPoXuG6NBBrmFVroDdDR9IKNqgm8TsJiOjs113G4ElroBdBEvCeDAB1i2uaXxAN6rtBCb4EmACmAOhUJvcwr/2EMMRLSAiO00Fugk1lHX46cdRtmJYbj1cIhtNAPg26HemJ+tyJDI/ATYeJ4r9BCL4FOJhwRCcmgkAT99iwidCCxX2ihHwRNBfppcKAiHzHxyaCUBIVjQYUWegE0WS5o85iKRBslGUxSAZApL7TQD4amIn0aNFIDSwVrhIx2UBJa6O3QjaF+8zti5NOLiIJCC70JOi0UxHBvlpET9O1AQkK4Qgu9BZoKCakAZDAhwdfU5JpCR+VEaKEfCt0Ib62ZnpoMNfCSSYdECKGFXgKdlgICSox9KuiRUE9TOKGF3gg9BcZbwy4N/rSxEYOOmAxCC70NGi/hoJklkZEuD+n5V2KH0EIvgCZDexOCq4YFYB7SoD1afoQWegF0E6RpxPubhYOEcaL4NxVcaKGXQBPRnAwsJExLhP5kuBMj4G0RhRZ6AXQjBJACUNGOiH00WJNghRZ6GzQKnoXvEdGBLjCkkGPDoluW0EI/EJoIa6QRJREwDRlkgSHfnwRJoYXeDN0sGkncS8PIVERSTCyGCC30AujUZIjJR5aLJCwms54GB0bhUWihl0CTEF1a/skAQsV/YtLTAM8oDAot9IOhqQB/8/22UaZBhZoBSA0VWuil0KQ5JSGCCnxNIJaGbIQWWug+UJceSpeKuDiUg5DQQm+EJmJ/Y6BRo78x7lrDUWiht0K3yz8V88liPxVnEiVvzAehhd4AvekSWmihhRZa6C+5fgNNHBMtFY9VbQAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#手动安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">手动安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Docker安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">Docker安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#域名反代"><span class="post-toc-number">4.</span> <span class="post-toc-text">域名反代</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong><code>Lstu</code>是一个使用<code>Perl</code>编写的轻量级短网址程序，还提供<code>api</code>、二维码生成、统计面板、网址导入和导出等功能，界面挺简洁的，用起来还行，这里就发个手动和<code>Docker</code>安装。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/Lstu(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/Lstu(2).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/Lstu(3).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h2><p><strong>Github地址：</strong><a href="https://github.com/ldidry/lstu" target="_blank" rel="noopener">https://github.com/ldidry/lstu</a></p>
+<p>教程只适用于<code>Debian</code>、<code>Ubuntu</code>系统，建议使用<code>Debian 9</code>。</p>
+<pre><code>#安装依赖
+apt update
+apt install build-essential libssl-dev zlib1g-dev libpng-dev memcached sqlite git -y
+#安装cpanm
+curl -L http://cpanmin.us | perl - App::cpanminus
+#安装carton
+cpanm Carton
+#拉取源码
+git clone https://github.com/ldidry/lstu.git
+cd lstu
+#安装lstu，这里默认使用sqlite数据库
+carton install --deployment --without=test --without=postgresql --without=mysql
+#复制并编辑配置文件
+cp lstu.conf.template lstu.conf
+nano lstu.conf</code></pre><p>这里只说下部分参数：</p>
+<pre><code>#端口监听，端口自行修改，如果想使用ip访问，就把127.0.0.1改为0.0.0.0
+listen =&gt; [&apos;http://127.0.0.1:8080&apos;],
+#联系邮箱(必开启)
+contact       =&gt; &apos;admin[at]moerats.com&apos;,
+#主题修改，默认的不太好看，建议修改为如下主题
+theme         =&gt; &apos;milligram&apos;,
+#给统计管理加密码，下面2个参数只需要开启一个
+adminpwd      =&gt; &apos;moerats&apos;,  //明文密码，直接填字母就行
+hashed_adminpwd =&gt; &apos;6a3123b&apos;,  //hash密码，在ssh客户端使用echo -n moerats | sha256sum即可生成
+
+#其它参数就自己看着修改，比如api限制，黑名单，白名单之类的。</code></pre><p>修改好了后，使用<code>ctrl+x</code>、<code>y</code>保存退出。</p>
+<p>接下来，继续操作，使用命令：</p>
+<pre><code>#修改Systemd配置文件，修改lstu路径为自己的，这里默认/root/lstu/，记得后面加/
+sed -i -e &quot;s#/var/www/lstu/#/root/lstu/#g&quot; -e &quot;s/www-data/root/g&quot; utilities/lstu.service
+#移动配置文件
+cp utilities/lstu.service /etc/systemd/system/
+#启动
+systemctl start lstu
+#开机自启
+systemctl enable lstu</code></pre><p>然后就可以打开<code>ip:8080</code>开始访问了，如果想用域名访问，可以参考后面。</p>
+<h2 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h2><p><strong>1、安装Docker</strong></p>
+<pre><code>#CentOS 6
+rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum update -y
+yum -y install docker-io
+service docker start
+chkconfig docker on
+
+#CentOS 7、Debian、Ubuntu
+curl -sSL https://get.docker.com/ | sh
+systemctl start docker
+systemctl enable docker</code></pre><p><strong>2、构建镜像</strong></p>
+<pre><code>#拉取源码
+git clone https://github.com/ldidry/lstu.git
+cd lstu
+#复制并编辑配置文件，参数修改方法看上面的手动教程，记得将监听地址127.0.0.1改为0.0.0.0，端口不变，并且新增一个dbtype =&gt; &apos;sqlite&apos;。
+cp lstu.conf.template lstu.conf
+nano lstu.conf
+#构建镜像，如果中途出现kill中断字眼，可能说明你内存太小了，建议添加SWAP，教程：https://www.moerats.com/archives/722/
+docker build -t lstu .
+#启动镜像
+docker run --restart=always --name lstu -d -p 8080:8080 -v &quot;$(pwd)/lstu.conf:/home/lstu/lstu.conf&quot; -v &quot;$(pwd)/lstu.db:/home/lstu/lstu.db&quot; lstu</code></pre><p>然后就可以打开<code>ip:8080</code>开始访问了，如果想用域名访问，可以参考后面。</p>
+<h2 id="域名反代"><a href="#域名反代" class="headerlink" title="域名反代"></a>域名反代</h2><p>安装<code>Caddy</code>：</p>
+<pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh
+#备用地址
+wget -N --no-check-certificate https://www.moerats.com/usr/shell/Caddy/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh</code></pre><p>配置<code>Caddy</code>：</p>
+<pre><code>#以下全部内容是一个整体，请修改域名、端口后一起复制到SSH运行！
+echo &quot;www.moerats.com {
+ gzip
+ tls admin@moerats.com
+ proxy / 127.0.0.1:8080 {
+    header_upstream Host {host}
+    header_upstream X-Real-IP {remote}
+    header_upstream X-Forwarded-For {remote}
+    header_upstream X-Forwarded-Port {server_port}
+    header_upstream X-Forwarded-Proto {scheme}
+  }
+}&quot; &gt; /usr/local/caddy/Caddyfile</code></pre><p><code>tls</code>参数会自动帮你签发<code>ssl</code>证书，如果你要使用自己的<code>ssl</code>，改为<code>tls /root/xx.crt /root/xx.key</code>即可。后面为<code>ssl</code>证书路径。</p>
+<p>启动<code>Caddy</code>：</p>
+<pre><code>/etc/init.d/caddy start</code></pre><p>就可以打开域名进行访问了。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-01-28T22:15:10.000Z" itemprop="datePublished">2020-01-29</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.655Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/01/29/e6-8e-a8-e8-8d-90-e4-b8-80-e4-b8-aa-e9-ab-98-e7-b2-be-e5-ba-a6ip-e5-9c-b0-e5-9d-80-e4-bd-8d-e7-bd-ae-e5-9c-a8-e7-ba-bf-e6-9f-a5-e8-af-a2-e7-9a-84-e7-bd-91-e7-ab-99/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">推荐一个高精度ip地址位置在线查询的网站</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/01/29/rsshub-ef-bc-9a-e4-b8-80-e4-b8-aa-e8-bd-bb-e9-87-8f-e3-80-81-e6-98-93-e4-ba-8e-e6-89-a9-e5-b1-95-e7-9a-84rss-e7-94-9f-e6-88-90-e5-99-a8-ef-bc-8c-e6-94-af-e6-8c-81b-e7-ab-99-e5-be-ae-e5-8d-9a/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">RSSHub：一个轻量、易于扩展的RSS生成器，支持B站/微博/网易云音乐等</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

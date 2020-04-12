@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>MCSManager小白开服攻略 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="MCSManager小白开服攻略 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/09/04/mcsmanager-e5-b0-8f-e7-99-bd-e5-bc-80-e6-9c-8d-e6-94-bb-e7-95-a5/"><meta property="og:locale" content="en"><meta name="description" content="MCSManager面板搭建请看上一个文章 https:&#x2F;&#x2F;southcat.net&#x2F;640&#x2F; 首先通过访问IP：23333进入你的管理面板首页，输入账号密码登陆（默认账号#mstaer密码123456） 进入之后可以看到如下界面，  后台首页会显示你当前服务器当前的负载状态等。 然后我们点击左侧的服务端管理，选择引导创建服务器开始创建你的第一个服务器  然后开始填写服务器信息  从上个文章过来的 - John Doe - 南猫"><meta property="og:image" content="https://southcat.net/wp-content/uploads/2019/09/%E4%B8%8B%E8%BD%BD-1-1024x419.png"><meta property="og:image" content="https://southcat.net/wp-content/uploads/2019/09/image-3-1024x174.png"><meta property="og:image" content="https://southcat.net/wp-content/uploads/2019/09/image-4-1024x650.png"><meta property="og:image" content="https://southcat.net/wp-content/uploads/2019/09/QQ%E6%88%AA%E5%9B%BE20190904110158-1024x88.png"><meta property="og:image" content="https://southcat.net/wp-content/uploads/2019/09/QQ%E6%88%AA%E5%9B%BE20190904110758.png"><meta property="og:image" content="https://southcat.net/wp-content/uploads/2019/09/image-5-1024x297.png"><meta property="og:image" content="https://southcat.net/wp-content/uploads/2019/09/image-6.png"><meta property="og:image" content="https://southcat.net/wp-content/uploads/2019/09/image-7.png"><meta property="og:image" content="https://southcat.net/wp-content/uploads/2019/09/image-8.png"><meta property="og:image" content="https://southcat.net/wp-content/uploads/2019/09/image-9.png"><meta property="article:published_time" content="2019-09-04T03:30:03.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.643Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.643Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/09/04/mcsmanager-e5-b0-8f-e7-99-bd-e5-bc-80-e6-9c-8d-e6-94-bb-e7-95-a5/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/09/04/mcsmanager-e5-b0-8f-e7-99-bd-e5-bc-80-e6-9c-8d-e6-94-bb-e7-95-a5/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/09/04/mcsmanager-e5-b0-8f-e7-99-bd-e5-bc-80-e6-9c-8d-e6-94-bb-e7-95-a5/"
+    },
+    "headline": "MCSManager小白开服攻略 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-09-04T03:30:03.000Z",
+    "dateModified": "2020-04-12T04:09:09.643Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "MCSManager面板搭建请看上一个文章 https://southcat.net/640/ 首先通过访问IP：23333进入你的管理面板首页，输入账号密码登陆（默认账号#mstaer密码123456） 进入之后可以看到如下界面，  后台首页会显示你当前服务器当前的负载状态等。 然后我们点击左侧的服务端管理，选择引导创建服务器开始创建你的第一个服务器  然后开始填写服务器信息  从上个文章过来的 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=MCSManager小白开服攻略" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=MCSManager小白开服攻略&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=MCSManager小白开服攻略" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAAAAAAYplnuAAACt0lEQVR42u3a0W7CQAxEUf7/p9tXVMWeOxtaqcrNCyUkcBZ1Wdvr19c/PF6iRYsW/UD0azl+XvP+/P1xuub93Ptr6frRIVo0RF/+04fzBLXdu52b3ke06AY9IX6+Pk00MlgykO3LEC36U+jp77TQbAvVNFjRov8CvU2w7ZppEbkakGjRn0anwCi9tiUEV9hfjfJEPx69JZR/+fixbFz0o9Gx6DdMsBQMTQE/TRpuVU1FPxqdAhlafKHJQHOtaNEn6BTEk8GkBSlNbPoeokVTNAFsC8ydCTtNusvPFi0aoLebxpthMnpScF8HIVp0gU5FlJSInuBJsoCycdGiLxYXsslJEtkUNE33oERBtOibey7bB5wuOu0g1mxctOgP1D2mTU2SRDQbSLFqKlo0LKqTxiu0+R4Wqy04wiuiaNGgSWX7cLpZSYP85gsRLZqitzeihcS24SpN/HGxEy0aoKcizRa8Nxv727mmSClaNEVviG3CkYUoBf5b0BYXF9GiQV/eFuA0xUM68UiwJVr0CbpNXmmgvwVkaRBVhUm0aJAEpODlpHhOk2bcWSNadOj3SMkr2bBMjVptoV206BbdNESlBYAW2+nAUcAkWjQImLaC90lja2rwSsmzaNENmjZk04IiLpCDZquj3S3Rj0efTBi6kKTGlXRP1aQiWjTcKKJJarv5Q5u6xl8P0aLh4oIb+0DhkRbfUzFHtOgTNElwSfGcbujThHmdiKJFl7/TtLmbNsmeNCTWvx6iH49OR5qEJNgihXayeSRaNEE3Gz5ko3IL5lNjQByQaNEQvSWnpOmPbjq194sWfQedgvTpmiYxbu6LXQiiRd9Ap8FsC0xKJtIjTmxFiz6ciG0iQBJYWvgULbpB0wCnaWohBXcyUUWLbtFtQTEFVG0zCmkMEC2aov/TIVq0aNEPQn8D6HN6iHgZaM8AAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">MCSManager小白开服攻略</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-09-04</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=MCSManager小白开服攻略&url=http://yoursite.com/2019/09/04/mcsmanager-e5-b0-8f-e7-99-bd-e5-bc-80-e6-9c-8d-e6-94-bb-e7-95-a5/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=MCSManager小白开服攻略&url=http://yoursite.com/2019/09/04/mcsmanager-e5-b0-8f-e7-99-bd-e5-bc-80-e6-9c-8d-e6-94-bb-e7-95-a5/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/09/04/mcsmanager-e5-b0-8f-e7-99-bd-e5-bc-80-e6-9c-8d-e6-94-bb-e7-95-a5/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/09/04/mcsmanager-e5-b0-8f-e7-99-bd-e5-bc-80-e6-9c-8d-e6-94-bb-e7-95-a5/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/09/04/mcsmanager-e5-b0-8f-e7-99-bd-e5-bc-80-e6-9c-8d-e6-94-bb-e7-95-a5/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/09/04/mcsmanager-e5-b0-8f-e7-99-bd-e5-bc-80-e6-9c-8d-e6-94-bb-e7-95-a5/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/09/04/mcsmanager-e5-b0-8f-e7-99-bd-e5-bc-80-e6-9c-8d-e6-94-bb-e7-95-a5/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAAAAAAYplnuAAACt0lEQVR42u3a0W7CQAxEUf7/p9tXVMWeOxtaqcrNCyUkcBZ1Wdvr19c/PF6iRYsW/UD0azl+XvP+/P1xuub93Ptr6frRIVo0RF/+04fzBLXdu52b3ke06AY9IX6+Pk00MlgykO3LEC36U+jp77TQbAvVNFjRov8CvU2w7ZppEbkakGjRn0anwCi9tiUEV9hfjfJEPx69JZR/+fixbFz0o9Gx6DdMsBQMTQE/TRpuVU1FPxqdAhlafKHJQHOtaNEn6BTEk8GkBSlNbPoeokVTNAFsC8ydCTtNusvPFi0aoLebxpthMnpScF8HIVp0gU5FlJSInuBJsoCycdGiLxYXsslJEtkUNE33oERBtOibey7bB5wuOu0g1mxctOgP1D2mTU2SRDQbSLFqKlo0LKqTxiu0+R4Wqy04wiuiaNGgSWX7cLpZSYP85gsRLZqitzeihcS24SpN/HGxEy0aoKcizRa8Nxv727mmSClaNEVviG3CkYUoBf5b0BYXF9GiQV/eFuA0xUM68UiwJVr0CbpNXmmgvwVkaRBVhUm0aJAEpODlpHhOk2bcWSNadOj3SMkr2bBMjVptoV206BbdNESlBYAW2+nAUcAkWjQImLaC90lja2rwSsmzaNENmjZk04IiLpCDZquj3S3Rj0efTBi6kKTGlXRP1aQiWjTcKKJJarv5Q5u6xl8P0aLh4oIb+0DhkRbfUzFHtOgTNElwSfGcbujThHmdiKJFl7/TtLmbNsmeNCTWvx6iH49OR5qEJNgihXayeSRaNEE3Gz5ko3IL5lNjQByQaNEQvSWnpOmPbjq194sWfQedgvTpmiYxbu6LXQiiRd9Ap8FsC0xKJtIjTmxFiz6ciG0iQBJYWvgULbpB0wCnaWohBXcyUUWLbtFtQTEFVG0zCmkMEC2aov/TIVq0aNEPQn8D6HN6iHgZaM8AAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                    
+                    <article id="post-content">
+                        <p>MCSManager面板搭建请看上一个文章 <a href="https://southcat.net/640/" target="_blank" rel="noopener">https://southcat.net/640/</a></p>
+<p>首先通过访问IP：23333进入你的管理面板首页，输入账号密码登陆（默认账号#mstaer密码123456）</p>
+<p>进入之后可以看到如下界面，</p>
+<p><img src="https://southcat.net/wp-content/uploads/2019/09/%E4%B8%8B%E8%BD%BD-1-1024x419.png" alt=""></p>
+<p>后台首页会显示你当前服务器当前的负载状态等。</p>
+<p>然后我们点击左侧的服务端管理，选择引导创建服务器开始创建你的第一个服务器</p>
+<p><img src="https://southcat.net/wp-content/uploads/2019/09/image-3-1024x174.png" alt=""></p>
+<p>然后开始填写服务器信息</p>
+<p><img src="https://southcat.net/wp-content/uploads/2019/09/image-4-1024x650.png" alt=""></p>
+<p>从上个文章过来的第一个Java环境路径可以忽略，一般只要正确的安装了java环境并且配置了环境变量的第一个都可以不管</p>
+<p>第二个是名字，这个就不多说了</p>
+<p>启动附加参数一般是不填的，内存大小如果是给别人开服的话建议填写下限制，自用一般不用限制</p>
+<p>第四步的目录我们可以自行创建或是由面板自动进行生成，第五步同上，小白建议直接创建服务器就好，只修改下名称即可。</p>
+<p><img src="https://southcat.net/wp-content/uploads/2019/09/QQ%E6%88%AA%E5%9B%BE20190904110158-1024x88.png" alt=""></p>
+<p>第六步属于整个开服最重要的过程，你需要填写你的开服核心的名称。不同版本的服务器对应不同的开服核心，可以直接从百度搜索下载，如果你要开1.12.2的服务器个人建议使用 <a href="https://github.com/PFCraft/Mohist" target="_blank" rel="noopener">Mohist</a> 核心。 这一步建议在创建完成之后再进行操作。</p>
+<p>然后底部创建服务器即可。</p>
+<p>我们创建完成之后会自动跳转到服务端管理页面，如果没有配置开服核心就会像下面图示的一样。</p>
+<p><img src="https://southcat.net/wp-content/uploads/2019/09/QQ%E6%88%AA%E5%9B%BE20190904110758.png" alt=""></p>
+<p>现在我们使用winscp或是FinaShell连接到你的服务器，当然你想用Xshell这种我也拦不住你，建议使用一个带有文件管理的SSH客户端，强烈建议使用FinaShell。</p>
+<p><img src="https://southcat.net/wp-content/uploads/2019/09/image-5-1024x297.png" alt=""></p>
+<p>然后我们来到MC服务器的目录下会发现一片空白。 如果你是使用的一键脚本请到/home/MCSManager目录找到服务器文件夹 进行操作。</p>
+<p>然后我们将下载好的核心拉到服务器上，或是你使用wget指令下载</p>
+<p>下载完成后复制核心文件名称，回到MCSManager面板服务端管理页面，然后点击参数进行设置，将核心名称填写到服务端文件名，比如我的是Mohist-6113d52-server.jar</p>
+<p><img src="https://southcat.net/wp-content/uploads/2019/09/image-6.png" alt=""></p>
+<p>开服核心一定要放在端根目录里面，然后点击保存回到服务端管理页面。</p>
+<p>我们点击终端可以然后可以看到如下界面</p>
+<p><img src="https://southcat.net/wp-content/uploads/2019/09/image-7.png" alt=""></p>
+<p>这里就是一个类似SSH的界面了OP等相关设置都可以在页面底部输入相关指令进行设置。然后点击右上角开启来开启服务器。</p>
+<p><img src="https://southcat.net/wp-content/uploads/2019/09/image-8.png" alt=""></p>
+<p>第一次开启会提示需要你同意MC服务器目录下的eula.txt文件里的内容，windows用户使用部分核心时这里会温馨的提示你中文。</p>
+<p>我们打开eula.txt文件将文件里的eula=false改为eula=true即可然后返回网页端再点击一次开启即可。</p>
+<p><img src="https://southcat.net/wp-content/uploads/2019/09/image-9.png" alt=""></p>
+<p>一切就绪之后，就可以看到底部已经提示运行端口是25565这里你就可以在MC里面链接你的服务器了，如果你不是正版的话这个服务器你是链接不上的。</p>
+<p>如果你不是正版入户你需要修改服务端目录下的server.properties文件 将online-mode=true改为online-mode=flase 即可关闭正版验证。</p>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-09-04T03:30:03.000Z" itemprop="datePublished">2019-09-04</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.643Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/%E6%95%99%E7%A8%8B/'>教程</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/09/30/bose-e8-80-b3-e6-9c-ba-e9-99-8d-e7-ba-a7-e6-95-99-e7-a8-8b-e9-80-82-e7-94-a8qc30-qc35-qc35-e2-85-a1-noise-cancelling-headphones-700-e7-ad-89-e5-a4-9a-e4-b8-aa-e5-9e-8b-e5-8f-b7/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">BOSE耳机降级教程  适用QC30 QC35 QC35Ⅱ  Noise Cancelling Headphones 700等多个型号（原方法有反馈可以使用 具体没测试 可以自行测试一下）</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/09/03/mcsmanager-ef-bc-9a-e8-bd-bb-e9-87-8f-e7-ba-a7-e6-88-91-e7-9a-84-e4-b8-96-e7-95-8c-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-ae-a1-e7-90-86-e7-b3-bb-e7-bb-9f-e5-ae-89-e8-a3-85-e9-99-84-ef-bc-9a-e4-b8-80/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">MCSManager：轻量级我的世界服务器管理系统安装    附：一键脚本</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

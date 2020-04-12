@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Linux VPS利用iptables string模块屏蔽指定的网站、文件等 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Linux VPS利用iptables string模块屏蔽指定的网站、文件等 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/01/15/linux-vps-e5-88-a9-e7-94-a8iptables-string-e6-a8-a1-e5-9d-97-e5-b1-8f-e8-94-bd-e6-8c-87-e5-ae-9a-e7-9a-84-e7-bd-91-e7-ab-99-e3-80-81-e6-96-87-e4-bb-b6-e7-ad-89/"><meta property="og:locale" content="en"><meta name="description" content="说明：在逗比那里看到的一个方法，可以阻止服务器访问某个网站，或文件等，对于爬梯子的，如果有共享行为，可以屏蔽下油管，这个大流量的很容易被Q。 原理：一般iptables自带的都有string模块，这个模块的作用就是匹配字符串，匹配到泛域名的URL，然后就把数据包丢弃，就实现了屏蔽泛域名的功能。 方法以下规则是屏蔽以xx.com为主的所有一级、二级、三级等域名。 #添加屏蔽规则 iptables - - John Doe - 南猫"><meta property="article:published_time" content="2020-01-15T10:19:27.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.653Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.653Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/01/15/linux-vps-e5-88-a9-e7-94-a8iptables-string-e6-a8-a1-e5-9d-97-e5-b1-8f-e8-94-bd-e6-8c-87-e5-ae-9a-e7-9a-84-e7-bd-91-e7-ab-99-e3-80-81-e6-96-87-e4-bb-b6-e7-ad-89/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/01/15/linux-vps-e5-88-a9-e7-94-a8iptables-string-e6-a8-a1-e5-9d-97-e5-b1-8f-e8-94-bd-e6-8c-87-e5-ae-9a-e7-9a-84-e7-bd-91-e7-ab-99-e3-80-81-e6-96-87-e4-bb-b6-e7-ad-89/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/01/15/linux-vps-e5-88-a9-e7-94-a8iptables-string-e6-a8-a1-e5-9d-97-e5-b1-8f-e8-94-bd-e6-8c-87-e5-ae-9a-e7-9a-84-e7-bd-91-e7-ab-99-e3-80-81-e6-96-87-e4-bb-b6-e7-ad-89/"
+    },
+    "headline": "Linux VPS利用iptables string模块屏蔽指定的网站、文件等 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-01-15T10:19:27.000Z",
+    "dateModified": "2020-04-12T04:09:09.653Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：在逗比那里看到的一个方法，可以阻止服务器访问某个网站，或文件等，对于爬梯子的，如果有共享行为，可以屏蔽下油管，这个大流量的很容易被Q。 原理：一般iptables自带的都有string模块，这个模块的作用就是匹配字符串，匹配到泛域名的URL，然后就把数据包丢弃，就实现了屏蔽泛域名的功能。 方法以下规则是屏蔽以xx.com为主的所有一级、二级、三级等域名。 #添加屏蔽规则 iptables - - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Linux VPS利用iptables string模块屏蔽指定的网站、文件等" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Linux VPS利用iptables string模块屏蔽指定的网站、文件等&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=Linux VPS利用iptables string模块屏蔽指定的网站、文件等" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEmklEQVR42u3ay5JTSRAE0f7/n4YNC8B0MzxK2qjStRmjR7qqU20k+fr5tfD1I1q0aNGiRX8Z+md4/f2efz7858+v3j89Z/rOv38+fdf/z6gcokUvQb/8Sz88cHoPwb36DHnPq4uoHKJFL0K/CiokaD199vRypqBEfgFPZxQtWnROGB4T+/D+6eAp8KVAJlq0aIaeghVBnTznCfgUIEWLFp0T9RRsSIJBLiYVHqnA+GiVJVr0l6NTgv8t//1YN1S06C9Gx6EXTCpI4U8SmKfvJ0XHx6aWokV/MbodvKUDtckISYroUDGeX7ToBWjadJ+a9ulwZKBOGgZkuDcVJqJFb0KT5CMFmum9ZDCQmhXpFzIlQ6JFb0GnIJOab3RRLiUU0/INHdrFwaNo0YvQKUDQhRtymOnwU9JEhnfT80SL3oAmA7A2sE2Ho8N40hwkhUgsOESLvhBNk4bUAHg3+SCYZpFnDGSiRV+KHofYYEmWLNSkZiIZPKQmJFnYES16A/qdJj9ZeEnA0yECeZ5o0VvR04NJYZEa721TkJ6hbVaKFr0VTZL5dBl0OSb9P7pQk4Z3okVvQZMGXWr2t8+iSzUkIaGXJVr0NjQpGNISzElDkCzV0KFDTKJEi16CHpP0cEBa6JOg906DUrRo0awpkAZjtBnfNCLJYh89F160ES36EnRKCmhxkBKQdohAkhoy+BMteiu6HbpPC2/tUh29QFKwoAGeaNEXo0kgSQsuqbCng7ommSELAqjgEC36MnSbxJPlmmYISBOkphh6vDzRoheg2wYeDSi0QZCKj5TUTMUR7pyIFn0RmhYWLfYpSWiQpHlAzila9CZ0E8iaBZpmKacB0kUb3EQQLfpSNEno6QLbSYGQmhYpyB0VHKJFX4omDfwGlQIjKWjIc5vlPdGiN6FpU58O7klgSo2/9ucp4IoWvRHdQujwjyznkeBEioyp0BEtegOaBq5m+YVcXmoMpkSJLvqIFr0NTRtvtFnXJjbpsshFT4UJSk5Ei74ITRL/Twawk2KGFh8xwIkWvQRN/qEng7xUIMSF1bBYR4LqeGbRohehU7AhyzPkIGmwR4b8pKmAtoBFi74QTRr+9CApcKXhHUk2yHIeHuCJFn0hmgy2SRGfhnO0oGiCFQ3GokVvQqckgwYmuhhDB3UnA8Q4VBAtegmaLtKQ5GRKFOjB0+U0xRBetBEt+kJ0M6gjTbxmAX1KVFDTD3yPaNFb0PTDaSBOG43NIlwqZJqCRrToTehm0aZpErwzECDBlD5btOgt6JMiohkOpMOmYiIt56UGxLhdJFr0pegxSX8zgKTLS43HKekhQ3/RorehTxP4qUlHGwynA7xU+DxehGjRi9EpUSGNv2Z5jiRCaQk3DgdFi16AJg15krScBCfS4J8KCprYiBa9DZ2SkxQ4SCOPFB6kcGieK1r0ZjRZammbeM1wvglaTeCLzX7RokWjJVm68EaC3EkDcRzKixa9HH06jCeLb7T5d/oz0aK3oqfgQhr+JCilZbt3G/9xCU+06CVoMgQjA7R0kehgMICmX9I4wBMt+mL0ppdo0aJFixb9Ja/fiuT2EX0y2VQAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Linux VPS利用iptables string模块屏蔽指定的网站、文件等</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-01-15</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux VPS利用iptables string模块屏蔽指定的网站、文件等&url=http://yoursite.com/2020/01/15/linux-vps-e5-88-a9-e7-94-a8iptables-string-e6-a8-a1-e5-9d-97-e5-b1-8f-e8-94-bd-e6-8c-87-e5-ae-9a-e7-9a-84-e7-bd-91-e7-ab-99-e3-80-81-e6-96-87-e4-bb-b6-e7-ad-89/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Linux VPS利用iptables string模块屏蔽指定的网站、文件等&url=http://yoursite.com/2020/01/15/linux-vps-e5-88-a9-e7-94-a8iptables-string-e6-a8-a1-e5-9d-97-e5-b1-8f-e8-94-bd-e6-8c-87-e5-ae-9a-e7-9a-84-e7-bd-91-e7-ab-99-e3-80-81-e6-96-87-e4-bb-b6-e7-ad-89/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/01/15/linux-vps-e5-88-a9-e7-94-a8iptables-string-e6-a8-a1-e5-9d-97-e5-b1-8f-e8-94-bd-e6-8c-87-e5-ae-9a-e7-9a-84-e7-bd-91-e7-ab-99-e3-80-81-e6-96-87-e4-bb-b6-e7-ad-89/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/01/15/linux-vps-e5-88-a9-e7-94-a8iptables-string-e6-a8-a1-e5-9d-97-e5-b1-8f-e8-94-bd-e6-8c-87-e5-ae-9a-e7-9a-84-e7-bd-91-e7-ab-99-e3-80-81-e6-96-87-e4-bb-b6-e7-ad-89/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/01/15/linux-vps-e5-88-a9-e7-94-a8iptables-string-e6-a8-a1-e5-9d-97-e5-b1-8f-e8-94-bd-e6-8c-87-e5-ae-9a-e7-9a-84-e7-bd-91-e7-ab-99-e3-80-81-e6-96-87-e4-bb-b6-e7-ad-89/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/01/15/linux-vps-e5-88-a9-e7-94-a8iptables-string-e6-a8-a1-e5-9d-97-e5-b1-8f-e8-94-bd-e6-8c-87-e5-ae-9a-e7-9a-84-e7-bd-91-e7-ab-99-e3-80-81-e6-96-87-e4-bb-b6-e7-ad-89/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/01/15/linux-vps-e5-88-a9-e7-94-a8iptables-string-e6-a8-a1-e5-9d-97-e5-b1-8f-e8-94-bd-e6-8c-87-e5-ae-9a-e7-9a-84-e7-bd-91-e7-ab-99-e3-80-81-e6-96-87-e4-bb-b6-e7-ad-89/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEmklEQVR42u3ay5JTSRAE0f7/n4YNC8B0MzxK2qjStRmjR7qqU20k+fr5tfD1I1q0aNGiRX8Z+md4/f2efz7858+v3j89Z/rOv38+fdf/z6gcokUvQb/8Sz88cHoPwb36DHnPq4uoHKJFL0K/CiokaD199vRypqBEfgFPZxQtWnROGB4T+/D+6eAp8KVAJlq0aIaeghVBnTznCfgUIEWLFp0T9RRsSIJBLiYVHqnA+GiVJVr0l6NTgv8t//1YN1S06C9Gx6EXTCpI4U8SmKfvJ0XHx6aWokV/MbodvKUDtckISYroUDGeX7ToBWjadJ+a9ulwZKBOGgZkuDcVJqJFb0KT5CMFmum9ZDCQmhXpFzIlQ6JFb0GnIJOab3RRLiUU0/INHdrFwaNo0YvQKUDQhRtymOnwU9JEhnfT80SL3oAmA7A2sE2Ho8N40hwkhUgsOESLvhBNk4bUAHg3+SCYZpFnDGSiRV+KHofYYEmWLNSkZiIZPKQmJFnYES16A/qdJj9ZeEnA0yECeZ5o0VvR04NJYZEa721TkJ6hbVaKFr0VTZL5dBl0OSb9P7pQk4Z3okVvQZMGXWr2t8+iSzUkIaGXJVr0NjQpGNISzElDkCzV0KFDTKJEi16CHpP0cEBa6JOg906DUrRo0awpkAZjtBnfNCLJYh89F160ES36EnRKCmhxkBKQdohAkhoy+BMteiu6HbpPC2/tUh29QFKwoAGeaNEXo0kgSQsuqbCng7ommSELAqjgEC36MnSbxJPlmmYISBOkphh6vDzRoheg2wYeDSi0QZCKj5TUTMUR7pyIFn0RmhYWLfYpSWiQpHlAzila9CZ0E8iaBZpmKacB0kUb3EQQLfpSNEno6QLbSYGQmhYpyB0VHKJFX4omDfwGlQIjKWjIc5vlPdGiN6FpU58O7klgSo2/9ucp4IoWvRHdQujwjyznkeBEioyp0BEtegOaBq5m+YVcXmoMpkSJLvqIFr0NTRtvtFnXJjbpsshFT4UJSk5Ei74ITRL/Twawk2KGFh8xwIkWvQRN/qEng7xUIMSF1bBYR4LqeGbRohehU7AhyzPkIGmwR4b8pKmAtoBFi74QTRr+9CApcKXhHUk2yHIeHuCJFn0hmgy2SRGfhnO0oGiCFQ3GokVvQqckgwYmuhhDB3UnA8Q4VBAtegmaLtKQ5GRKFOjB0+U0xRBetBEt+kJ0M6gjTbxmAX1KVFDTD3yPaNFb0PTDaSBOG43NIlwqZJqCRrToTehm0aZpErwzECDBlD5btOgt6JMiohkOpMOmYiIt56UGxLhdJFr0pegxSX8zgKTLS43HKekhQ3/RorehTxP4qUlHGwynA7xU+DxehGjRi9EpUSGNv2Z5jiRCaQk3DgdFi16AJg15krScBCfS4J8KCprYiBa9DZ2SkxQ4SCOPFB6kcGieK1r0ZjRZammbeM1wvglaTeCLzX7RokWjJVm68EaC3EkDcRzKixa9HH06jCeLb7T5d/oz0aK3oqfgQhr+JCilZbt3G/9xCU+06CVoMgQjA7R0kehgMICmX9I4wBMt+mL0ppdo0aJFixb9Ja/fiuT2EX0y2VQAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>在逗比那里看到的一个方法，可以阻止服务器访问某个网站，或文件等，对于爬梯子的，如果有共享行为，可以屏蔽下油管，这个大流量的很容易被<code>Q</code>。</p>
+<p><strong>原理：</strong>一般<code>iptables</code>自带的都有<code>string</code>模块，这个模块的作用就是匹配字符串，匹配到泛域名的<code>URL</code>，然后就把数据包丢弃，就实现了屏蔽泛域名的功能。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>以下规则是屏蔽以<code>xx.com</code>为主的所有一级、二级、三级等域名。</p>
+<pre><code>#添加屏蔽规则
+iptables -A OUTPUT -m string --string &quot;xx.com&quot; --algo bm --to 65535 -j DROP
+
+#删除屏蔽规则，上面添加的代码是什么样，那么删除的代码就是把-I改成-D 
+iptables -D OUTPUT -m string --string &quot;xx.com&quot; --algo bm --to 65535 -j DROP</code></pre><p>命令详解：</p>
+<pre><code>-A
+#添加iptables规则；
+-D
+#删除iptables规则（把添加防火墙规则时代码中的-A改成-D即可删除添加的规则）；
+-m string
+#指定模块；
+--string &quot;xx.com&quot;
+#指定要匹配的字符串(域名、关键词等)；
+--algo bm
+#指定匹配字符串模式/算法（还有一种更复杂的算法：kmp）；
+--to 65535
+#指定端口，这里代表所有端口（1-65535）；
+-j DROP
+#指匹配到数据包后处理方式，这里是丢弃数据包。</code></pre><p>这个模块的作用就是匹配字符串，这个字符串可以是<code>URL</code>、普通文本、文件后缀（后两者时，如果目标网站启用了<code>GZIP</code>类压缩算法，就会无法过滤匹配，毕竟都压缩了）。</p>
+<p>比如：<code>.zip</code>，就会把包含<code>.zip</code>的数据库丢弃，这样就会无法下载<code>.zip</code>类型的文件了！</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-01-15T10:19:27.000Z" itemprop="datePublished">2020-01-15</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.653Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/01/16/merger-ef-bc-9a-e4-b8-80-e4-b8-aa-e7-be-8e-e8-a7-82-e7-9a-84-e5-be-ae-e4-bf-a1-e6-94-af-e4-bb-98-e5-ae-9d-paypal-e7-ad-89-e4-bb-98-e6-ac-be-e4-ba-8c-e7-bb-b4-e7-a0-81-e5-90-88-e5-b9-b6-e7-a8-8b/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Merger：一个美观的微信/支付宝/PayPal等付款二维码合并程序</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/01/15/e5-88-86-e4-ba-ab-e4-b8-80-e6-ac-be-e5-a4-9a-e4-b8-aa-e9-9f-b3-e4-b9-90-e7-bd-91-e7-ab-99-e5-90-88-e4-b8-80-e7-9a-84-e9-9f-b3-e4-b9-90-e6-90-9c-e7-b4-a2-e6-92-ad-e6-94-be-e5-99-a8/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">分享一款多个音乐网站合一的音乐搜索播放器</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

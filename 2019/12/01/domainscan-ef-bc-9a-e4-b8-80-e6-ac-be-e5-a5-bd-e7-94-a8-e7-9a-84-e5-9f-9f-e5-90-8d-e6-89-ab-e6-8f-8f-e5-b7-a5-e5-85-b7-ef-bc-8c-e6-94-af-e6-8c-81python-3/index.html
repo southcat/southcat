@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>DomainScan：一款好用的域名扫描工具，支持Python 3 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="DomainScan：一款好用的域名扫描工具，支持Python 3 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/12/01/domainscan-ef-bc-9a-e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e7-9a-84-e5-9f-9f-e5-90-8d-e6-89-ab-e6-8f-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81python-3/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前发过一个香菇肥肉写的域名扫描工具，查看：DomainMegaBot：Linux上最好用的批量扫描域名的工具，然后经过一些大佬改造了下，工具更强大了，支持字典更多了，并且添加了Python 3版本。 简介DomainScan是一款支持超过200个顶级域名的域名扫描工具。此工具是用C语言写成，可以运行在任何Linux系统上（可能会因为指令集而出现差异），但无法在Windows中运行。 首次使 - John Doe - 南猫"><meta property="article:published_time" content="2019-12-01T15:12:59.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.649Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.649Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/12/01/domainscan-ef-bc-9a-e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e7-9a-84-e5-9f-9f-e5-90-8d-e6-89-ab-e6-8f-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81python-3/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/12/01/domainscan-ef-bc-9a-e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e7-9a-84-e5-9f-9f-e5-90-8d-e6-89-ab-e6-8f-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81python-3/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/12/01/domainscan-ef-bc-9a-e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e7-9a-84-e5-9f-9f-e5-90-8d-e6-89-ab-e6-8f-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81python-3/"
+    },
+    "headline": "DomainScan：一款好用的域名扫描工具，支持Python 3 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-01T15:12:59.000Z",
+    "dateModified": "2020-04-12T04:09:09.649Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：之前发过一个香菇肥肉写的域名扫描工具，查看：DomainMegaBot：Linux上最好用的批量扫描域名的工具，然后经过一些大佬改造了下，工具更强大了，支持字典更多了，并且添加了Python 3版本。 简介DomainScan是一款支持超过200个顶级域名的域名扫描工具。此工具是用C语言写成，可以运行在任何Linux系统上（可能会因为指令集而出现差异），但无法在Windows中运行。 首次使 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=DomainScan：一款好用的域名扫描工具，支持Python 3" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=DomainScan：一款好用的域名扫描工具，支持Python 3&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=DomainScan：一款好用的域名扫描工具，支持Python 3" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEoUlEQVR42u2cQW7jQAwE/f9PZy97yAYWu3riPUgsX4LIlmZqDDBkdyOvr4Wvl9BCCy200ELfDPo1vP654e/v369//9zP+35e//msd2u9+yxZi3IILfQW6KtFrq5dHUg6FHJo7z6bDpZyCC30JuimEF29Px3Gu2KTPnfyjPFghBZa6LERuLqvhb963rSHq0ImtNBCZ2jaTNDGYrp3GiLGxkNooYVGjToVFZpCmIZ+smYqlr+asoQW+ubQqVm4y8+PqaFCC31j6Gh6hQH/RHRPIkRz/39xLYUW+sbQaSBIIn4jEqY1kuHXChNCC70RmgwFxGAjA30S9K8OjIqDeOAQWugHQydDvTXXyGGkgngiTKLiJ7TQS6Bp2CaJ+o0gnwR+Yg7W4qHQQi+AbooMLRxUIEjhPNp44KCP0EIvgJ6KxSicF4H29p5pb6kQjg2X0EIvgCZhtkYgTEMLCdmQASI1MLE5EVroB0MnoW4S65ohZSqOCWhqashwIrTQW6Cp0EY3TQeJJOgn8YB8aVHsF1roB0M3Yj4FISZ9uvapAUdooTdBk+JDAjUk+J4C78QYOC52Qgu9CJqY8Ek4pEJ/Ev+pIUDETKGF3gZNTTE6UFBzngZsiJlHGyChhd4A3QbcSBPSCAatSEEMgMvDFlroRdCpySCmGzLGC1MvmYIpNFAPHEIL/RBoKv4Ro44EWEmROg0LjF+S0EIvgk5DOTHAG0GQPDMNLe2QIrTQm6BpEC291wZokkBADD+yN6GF3g5NGvnGZEvPpAeSDnoUEIUWegH09EefhtKSEJAGhCT8pXXT4CO00Jugp0Fj+oM/FRgaim32QEOwuHoLLfQyaDIkfELEJwNMCt5RU09ooTdAU3H9pKBMRbAy06F5H4ut0EIvgCZB1Ciiv7p/1EBNg5OmRmihhZ5Db6n5j2LcC4TP4cDRDCtvfxda6EXQJw1/agpogC6JBfQwkukntNAboJPh3QTkSLFJgkRjCiYTfxQRhBb6odBp+Kchl+YAJmEvGQu0eXr7XKGFXgCdxDiySHMYFPjr4FUFbYQW+sHQTVhl2nAa5Btzj5r99EsTWugt0FQAaEJrNORGgrCpMWmESqGF3gJNClEy1hqhcBLnU+ORwjmViCC00A+Ebky2JDY04mEyAkjYhn4xQgu9DbodGBqxnmy8GXB+E8QVWugN0E3Q/KQpSYWRrtGKijg8J7TQD4WmTXszhBBzgBp5tKCN5oLQQi+CTqZ4CrGS5oUUSWrAU4MCpYCFFvpB0KRxbwSENuxKChB5djLyhBZ6CzQdIFCQBQbZmmAtNf/QukILvQSaiOXEtD8xCFLgptlD3I/QQi+AJqbYaRCGmvWpSUomHw3dCC30Zmi6WDLamqGADBz0WuVaCi30g6DbIkNF/BPTPoV+yHPG/Qst9BJoIggkQX4aMtrPkSGofa7QQm+DJmJbMspTMaLDwSQ+EqPxcvARWmih68KRhokmfNOE6ZIIIbTQQrNQCzX0Tw286f0kVAgt9GboSRBMZhwV7+hGE+i03sQltNBboFPTfhqEaZsLYt4Rw+ByX0ILvQB600tooYUWWmihb/L6A/4iVM8o9D1/AAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">DomainScan：一款好用的域名扫描工具，支持Python 3</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-01</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=DomainScan：一款好用的域名扫描工具，支持Python 3&url=http://yoursite.com/2019/12/01/domainscan-ef-bc-9a-e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e7-9a-84-e5-9f-9f-e5-90-8d-e6-89-ab-e6-8f-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81python-3/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=DomainScan：一款好用的域名扫描工具，支持Python 3&url=http://yoursite.com/2019/12/01/domainscan-ef-bc-9a-e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e7-9a-84-e5-9f-9f-e5-90-8d-e6-89-ab-e6-8f-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81python-3/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/01/domainscan-ef-bc-9a-e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e7-9a-84-e5-9f-9f-e5-90-8d-e6-89-ab-e6-8f-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81python-3/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/12/01/domainscan-ef-bc-9a-e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e7-9a-84-e5-9f-9f-e5-90-8d-e6-89-ab-e6-8f-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81python-3/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/12/01/domainscan-ef-bc-9a-e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e7-9a-84-e5-9f-9f-e5-90-8d-e6-89-ab-e6-8f-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81python-3/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/12/01/domainscan-ef-bc-9a-e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e7-9a-84-e5-9f-9f-e5-90-8d-e6-89-ab-e6-8f-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81python-3/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/12/01/domainscan-ef-bc-9a-e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e7-9a-84-e5-9f-9f-e5-90-8d-e6-89-ab-e6-8f-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-94-af-e6-8c-81python-3/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEoUlEQVR42u2cQW7jQAwE/f9PZy97yAYWu3riPUgsX4LIlmZqDDBkdyOvr4Wvl9BCCy200ELfDPo1vP654e/v369//9zP+35e//msd2u9+yxZi3IILfQW6KtFrq5dHUg6FHJo7z6bDpZyCC30JuimEF29Px3Gu2KTPnfyjPFghBZa6LERuLqvhb963rSHq0ImtNBCZ2jaTNDGYrp3GiLGxkNooYVGjToVFZpCmIZ+smYqlr+asoQW+ubQqVm4y8+PqaFCC31j6Gh6hQH/RHRPIkRz/39xLYUW+sbQaSBIIn4jEqY1kuHXChNCC70RmgwFxGAjA30S9K8OjIqDeOAQWugHQydDvTXXyGGkgngiTKLiJ7TQS6Bp2CaJ+o0gnwR+Yg7W4qHQQi+AbooMLRxUIEjhPNp44KCP0EIvgJ6KxSicF4H29p5pb6kQjg2X0EIvgCZhtkYgTEMLCdmQASI1MLE5EVroB0MnoW4S65ohZSqOCWhqashwIrTQW6Cp0EY3TQeJJOgn8YB8aVHsF1roB0M3Yj4FISZ9uvapAUdooTdBk+JDAjUk+J4C78QYOC52Qgu9CJqY8Ek4pEJ/Ev+pIUDETKGF3gZNTTE6UFBzngZsiJlHGyChhd4A3QbcSBPSCAatSEEMgMvDFlroRdCpySCmGzLGC1MvmYIpNFAPHEIL/RBoKv4Ro44EWEmROg0LjF+S0EIvgk5DOTHAG0GQPDMNLe2QIrTQm6BpEC291wZokkBADD+yN6GF3g5NGvnGZEvPpAeSDnoUEIUWegH09EefhtKSEJAGhCT8pXXT4CO00Jugp0Fj+oM/FRgaim32QEOwuHoLLfQyaDIkfELEJwNMCt5RU09ooTdAU3H9pKBMRbAy06F5H4ut0EIvgCZB1Ciiv7p/1EBNg5OmRmihhZ5Db6n5j2LcC4TP4cDRDCtvfxda6EXQJw1/agpogC6JBfQwkukntNAboJPh3QTkSLFJgkRjCiYTfxQRhBb6odBp+Kchl+YAJmEvGQu0eXr7XKGFXgCdxDiySHMYFPjr4FUFbYQW+sHQTVhl2nAa5Btzj5r99EsTWugt0FQAaEJrNORGgrCpMWmESqGF3gJNClEy1hqhcBLnU+ORwjmViCC00A+Ebky2JDY04mEyAkjYhn4xQgu9DbodGBqxnmy8GXB+E8QVWugN0E3Q/KQpSYWRrtGKijg8J7TQD4WmTXszhBBzgBp5tKCN5oLQQi+CTqZ4CrGS5oUUSWrAU4MCpYCFFvpB0KRxbwSENuxKChB5djLyhBZ6CzQdIFCQBQbZmmAtNf/QukILvQSaiOXEtD8xCFLgptlD3I/QQi+AJqbYaRCGmvWpSUomHw3dCC30Zmi6WDLamqGADBz0WuVaCi30g6DbIkNF/BPTPoV+yHPG/Qst9BJoIggkQX4aMtrPkSGofa7QQm+DJmJbMspTMaLDwSQ+EqPxcvARWmih68KRhokmfNOE6ZIIIbTQQrNQCzX0Tw286f0kVAgt9GboSRBMZhwV7+hGE+i03sQltNBboFPTfhqEaZsLYt4Rw+ByX0ILvQB600tooYUWWmihb/L6A/4iVM8o9D1/AAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#说明"><span class="post-toc-number">3.</span> <span class="post-toc-text">说明</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>之前发过一个香菇肥肉写的域名扫描工具，查看：DomainMegaBot：Linux上最好用的批量扫描域名的工具，然后经过一些大佬改造了下，工具更强大了，支持字典更多了，并且添加了<code>Python 3</code>版本。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><code>DomainScan</code>是一款支持超过<code>200</code>个顶级域名的域名扫描工具。此工具是用<code>C</code>语言写成，可以运行在任何<code>Linux</code>系统上（可能会因为指令集而出现差异），但无法在<code>Windows</code>中运行。 首次使用时，需要编译程序，运行中需要指定域名和字典。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><strong>Github地址：</strong><a href="https://github.com/luodaoyi/DomainScan" target="_blank" rel="noopener">https://github.com/luodaoyi/DomainScan</a></p>
+<p>本使用方法有<code>2</code>种，建议使用后面的<code>Python</code>运行。</p>
+<p><strong>一、运行方法1</strong><br>运行命令：</p>
+<pre><code>#Debian和Ubuntu系统
+apt-get -y install git gcc
+#CentOS系统
+yum -y install git gcc
+#安装工具
+git clone https://github.com/luodaoyi/DomainScan.git
+cd DomainScan/
+gcc -o DomainScan DomainScan.c
+#扫描域名
+./DomainScan</code></pre><p>然后会出现如下选项</p>
+<pre><code>Please specify TLD: com  #输入域名后缀
+Please specify dictionary file: 2letter  #选择查询字典</code></pre><p><strong>二、运行方法2</strong><br><code>Python</code>版本，只适用<code>Python 3.6 +</code>。一般大多数<code>Ubuntu</code>自带<code>Python3</code>，而<code>Centos</code>、<code>Debian</code>就需要我们安装了。</p>
+<p>1、安装<code>Python3</code></p>
+<pre><code>#查看是否有Python3
+python3 -V
+
+#安装Python3
+#CentOS系统
+wget https://www.moerats.com/usr/shell/Python3/CentOS_Python3.6.sh &amp;&amp; sh CentOS_Python3.6.sh
+#Debian系统
+wget https://www.moerats.com/usr/shell/Python3/Debian_Python3.6.sh &amp;&amp; sh Debian_Python3.6.sh</code></pre><p>然后再输入<code>python3 -V</code>看是否安装成功。</p>
+<p>2、下载工具</p>
+<pre><code>#Debian和Ubuntu系统
+apt-get -y install git
+#CentOS系统
+yum -y install git
+
+#下载工具
+git clone https://github.com/luodaoyi/DomainScan.git</code></pre><p>3、开始扫描</p>
+<pre><code>#进入文件夹
+cd DomainScan/
+#查询xx前缀的所有域名是否可用
+python3 domain_scan.py xx 
+# 查询2letter文件中所有.com后缀的可以注册的域名
+python3 domain_scan.py com 2letter</code></pre><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p><code>1000w</code>代表<code>1000</code>个常用单词/字母，<code>2letter</code>代表所有的<code>2</code>字母组合， <code>3en</code>代表一些常见的<code>3</code>字母组合，<code>3x</code>代表所有的3字母组合以及<code>2</code>字母和<code>1</code>个数字的组合。</p>
+<p>域名数据表为<code>TLD_DATA</code>，此数据表必须和<code>DomainScan</code>处于相同的文件夹。字典每行只能有一个带测的“域名”，具体实现可以直接浏览源代码查看。 所有的输入都只支持英文，严禁输入任何标点符号。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-01T15:12:59.000Z" itemprop="datePublished">2019-12-01</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.649Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/02/e4-bd-bf-e7-94-a8github-gist-api-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-8a-a8-e6-80-81-e7-9a-84-e4-b8-aa-e6-80-a7-e5-8c-96-e5-8d-9a-e5-ae-a2/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">使用github gist api搭建一个动态的个性化博客</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/01/e5-be-ae-e8-bd-afonedrive-e7-bd-91-e7-9b-98-e5-85-8d-e8-b4-b9-e5-8d-87-e7-ba-a7-e5-88-b025t-e5-ae-b9-e9-87-8f-e6-95-99-e7-a8-8b/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">微软OneDrive网盘免费升级到25T容量教程</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

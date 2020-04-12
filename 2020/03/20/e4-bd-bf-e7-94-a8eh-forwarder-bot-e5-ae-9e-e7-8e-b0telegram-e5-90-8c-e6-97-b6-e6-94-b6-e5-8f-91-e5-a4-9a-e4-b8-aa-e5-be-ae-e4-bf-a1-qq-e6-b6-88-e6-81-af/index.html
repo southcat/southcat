@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="使用EH Forwarder Bot实现Telegram同时收发多个微信&#x2F;QQ消息 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/"><meta property="og:locale" content="en"><meta name="description" content="说明：EH Forwarder Bot是一个可扩展的聊天隧道框架，允许用户一次发送和接收来自多个IM平台的消息，并最终远程管理他们的帐户，目前可以实现的Telegram收发QQ、微信、Facebook Messenger等消息，你也可以同时一起收发N个微信、N个QQ等，这里就说下Telegram收发微信&#x2F;QQ消息的手动安装及Docker安装。 收发微信提示：使用该功能前，请先确认所使用的微信能成功 - John Doe - 南猫"><meta property="article:published_time" content="2020-03-20T15:22:49.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.659Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.659Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/"
+    },
+    "headline": "使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-03-20T15:22:49.000Z",
+    "dateModified": "2020-04-12T04:09:09.659Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：EH Forwarder Bot是一个可扩展的聊天隧道框架，允许用户一次发送和接收来自多个IM平台的消息，并最终远程管理他们的帐户，目前可以实现的Telegram收发QQ、微信、Facebook Messenger等消息，你也可以同时一起收发N个微信、N个QQ等，这里就说下Telegram收发微信/QQ消息的手动安装及Docker安装。 收发微信提示：使用该功能前，请先确认所使用的微信能成功 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEn0lEQVR42u2c225jMQwD8/8/3X0tFjni0C2wG2vy0jYXx+ODqhLJ9PW18PYSWmihhRZa6A+Dfg23d49/v+/7Gk9f363z/TnvHvt73bQW4RBa6E3Qb3/pw2bfbXLaAHm/uOlwcBOH0EJvg05wU9F4OqypqMVGIuxlKqaPByO00EJ/pYJBilzT/NDHnvYltNBC80L2rgClwpcAUiGc7hdaaKH7gYM0I+1wkBqU6eCmgvprU5bQQn84dGoQPuXrr6qhQgv9odC/Zo4NjQIZVEjzM12Uf+JaCi30fwhNh/1mw6SJSYJF+9w0eAgt9Ebop8IwNf6nm02mfgoB0OYkFjKhhb4MetoI3XxzCKnYtKIgDf0ILfQm6JNQDQnVpQGkDQGQIjc2SEILvQB6ApqKCDH4iAFwIkhOkGOoT2ihF0BTg/1EoJuajvawaYhnbHqEFnoRNF2IiAo0QEsKUtoHESmEFnordDLDaDiGNho/KXrkNbVyIrTQF0CTYpCCaY2gn8Q+Enht1oxTltBCXwpNG4VUOJoGh35PiuM0xAgt9CZoslFS5CggKV5TgSIhvBi0EVroi6FJaJU0JyT40h5Ya7wnY09oobdCExGfioFUGGyGnukQatdSaKEvhCZvkAYKUpQmcPq6NngrtNAboWOj/ur/0VIThiNBgGl9fAGFFnoBdDLvyGMp5JqExNRUEIEjNUtCC70JOsHQEE0j7J2YAyncEw9aaKEXQRMTngwCaYggQgRZkxoBODwntNCXQZ8Y8SeiID0IbMqBiyC00JugaciN/kxEfDKMnBTHGOgTWugl0OlF1Jxv4IlgeGLwVQ6H0EJfCk0K2dQQtANJewi0ufn16i200B8MfRJ6a8S71mQnxiERM4QWeiv0JM5PQ0ULSIN5SfBP91cigtBCXwadvk+DfWPuTUY/KZo0HPD2eUILvQz6JBzTbroZHNIQksSHWjkRWugLoEkxaENxdJNJBJwapNSQINdSaKEvhKYmODa+QViGhOam0AARFoUWejN0IwISoYE2GgkiFcYmpCO00Jug05D+k4GACvq0cBKR8pFBaKGXQlNDrDmYaX0yYBABIYmPQgu9ATo9mYp/pIlIIiQVEUYwMnAILfTF0Ck8g/7oFzDtQdCDTYcgtNBboJuQCza/X/xD3yQY2wwjKBArtNCLoCf4tPCJ2T4NFtOFebpvFCmEFnohNAnWkABqWqtZtzEKhBZa6J99EJQ2JqT4kNe1xoTQQm+DTo1+Et2aIFxqdMjPtHnCwqDQQl8MPTUWrahHho4jca8QCGPQRmihL4U+Cbcl4306PGLC0VBNU8yEFnoDdN20Q6GBBOPIsJEEggQblROhhV4CnYx0avSlRoYIiymEd5wuElroC6GJuZ3EQTokEOGRiBm0eao6MqGFvgiaGvRkKKGF5clgaAxBGsgRWuiN0CREQ5sMOhwQo/AkBPRoPAgttNBfpCEhRvpUyOKgAMQEEr4TWmihswBPhUEUbiuM+EZIFFrojdBJ7G/DcGSNNoyXhI90kYQWegt0atqbECoN4JEAzRTYmYT/xwMUWugF0JtuQgsttNBCC/0htz/Q6hjTl4BIKQAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-03-20</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息&url=http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息&url=http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEn0lEQVR42u2c225jMQwD8/8/3X0tFjni0C2wG2vy0jYXx+ODqhLJ9PW18PYSWmihhRZa6A+Dfg23d49/v+/7Gk9f363z/TnvHvt73bQW4RBa6E3Qb3/pw2bfbXLaAHm/uOlwcBOH0EJvg05wU9F4OqypqMVGIuxlKqaPByO00EJ/pYJBilzT/NDHnvYltNBC80L2rgClwpcAUiGc7hdaaKH7gYM0I+1wkBqU6eCmgvprU5bQQn84dGoQPuXrr6qhQgv9odC/Zo4NjQIZVEjzM12Uf+JaCi30fwhNh/1mw6SJSYJF+9w0eAgt9Ebop8IwNf6nm02mfgoB0OYkFjKhhb4MetoI3XxzCKnYtKIgDf0ILfQm6JNQDQnVpQGkDQGQIjc2SEILvQB6ApqKCDH4iAFwIkhOkGOoT2ihF0BTg/1EoJuajvawaYhnbHqEFnoRNF2IiAo0QEsKUtoHESmEFnordDLDaDiGNho/KXrkNbVyIrTQF0CTYpCCaY2gn8Q+Enht1oxTltBCXwpNG4VUOJoGh35PiuM0xAgt9CZoslFS5CggKV5TgSIhvBi0EVroi6FJaJU0JyT40h5Ya7wnY09oobdCExGfioFUGGyGnukQatdSaKEvhCZvkAYKUpQmcPq6NngrtNAboWOj/ur/0VIThiNBgGl9fAGFFnoBdDLvyGMp5JqExNRUEIEjNUtCC70JOsHQEE0j7J2YAyncEw9aaKEXQRMTngwCaYggQgRZkxoBODwntNCXQZ8Y8SeiID0IbMqBiyC00JugaciN/kxEfDKMnBTHGOgTWugl0OlF1Jxv4IlgeGLwVQ6H0EJfCk0K2dQQtANJewi0ufn16i200B8MfRJ6a8S71mQnxiERM4QWeiv0JM5PQ0ULSIN5SfBP91cigtBCXwadvk+DfWPuTUY/KZo0HPD2eUILvQz6JBzTbroZHNIQksSHWjkRWugLoEkxaENxdJNJBJwapNSQINdSaKEvhKYmODa+QViGhOam0AARFoUWejN0IwISoYE2GgkiFcYmpCO00Jug05D+k4GACvq0cBKR8pFBaKGXQlNDrDmYaX0yYBABIYmPQgu9ATo9mYp/pIlIIiQVEUYwMnAILfTF0Ck8g/7oFzDtQdCDTYcgtNBboJuQCza/X/xD3yQY2wwjKBArtNCLoCf4tPCJ2T4NFtOFebpvFCmEFnohNAnWkABqWqtZtzEKhBZa6J99EJQ2JqT4kNe1xoTQQm+DTo1+Et2aIFxqdMjPtHnCwqDQQl8MPTUWrahHho4jca8QCGPQRmihL4U+Cbcl4306PGLC0VBNU8yEFnoDdN20Q6GBBOPIsJEEggQblROhhV4CnYx0avSlRoYIiymEd5wuElroC6GJuZ3EQTokEOGRiBm0eao6MqGFvgiaGvRkKKGF5clgaAxBGsgRWuiN0CREQ5sMOhwQo/AkBPRoPAgttNBfpCEhRvpUyOKgAMQEEr4TWmihswBPhUEUbiuM+EZIFFrojdBJ7G/DcGSNNoyXhI90kYQWegt0atqbECoN4JEAzRTYmYT/xwMUWugF0JtuQgsttNBCC/0htz/Q6hjTl4BIKQAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#收发微信"><span class="post-toc-number">1.</span> <span class="post-toc-text">收发微信</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#收发QQ消息"><span class="post-toc-number">2.</span> <span class="post-toc-text">收发QQ消息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Docker安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">Docker安装</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong><code>EH Forwarder Bot</code>是一个可扩展的聊天隧道框架，允许用户一次发送和接收来自多个<code>IM</code>平台的消息，并最终远程管理他们的帐户，目前可以实现的<code>Telegram</code>收发<code>QQ</code>、微信、<code>Facebook Messenger</code>等消息，你也可以同时一起收发<code>N</code>个微信、<code>N</code>个<code>QQ</code>等，这里就说下<code>Telegram</code>收发微信/<code>QQ</code>消息的手动安装及<code>Docker</code>安装。</p>
+<h2 id="收发微信"><a href="#收发微信" class="headerlink" title="收发微信"></a>收发微信</h2><pre><code>提示：使用该功能前，请先确认所使用的微信能成功登录WEB端，不然后面会报错。</code></pre><p><strong>项目地址：</strong><a href="https://github.com/blueset/ehForwarderBot" target="_blank" rel="noopener">https://github.com/blueset/ehForwarderBot</a></p>
+<p>所使用的模块地址：</p>
+<pre><code>#Telegram模块
+https://github.com/blueset/efb-telegram-master
+#微信模块
+https://github.com/blueset/efb-wechat-slave</code></pre><p>其他模块地址→传送门，包括<code>Facebook Messenger</code>等模块，有兴趣的可以看下。</p>
+<p><strong>环境要求：</strong><code>Python 3.6+</code>、<code>EH Forwarder Bot 2.0+</code>、<code>ffmpeg</code>、<code>libmagic</code>、<code>libwebp</code></p>
+<p>手动教程适用于<code>Debian</code>、<code>CentOS</code>、<code>Ubuntu</code>，如果你想用<code>Ubuntu</code>的话，最好使用<code>18.04+</code>版本。</p>
+<p><strong>1、安装依赖</strong></p>
+<pre><code>#CentOS系统
+yum install file-devel libwebp-tools git screen -y
+
+#Debian/Ubuntu系统
+apt install libwebp-dev libmagic-dev git screen -y</code></pre><p><strong>2、安装Python3.6</strong></p>
+<pre><code>#CentOS系统
+wget https://www.moerats.com/usr/shell/Python3/CentOS_Python3.6.sh &amp;&amp; sh CentOS_Python3.6.sh
+#Debian系统
+wget https://www.moerats.com/usr/shell/Python3/Debian_Python3.6.sh &amp;&amp; sh Debian_Python3.6.sh
+#Ubuntu系统
+apt update
+apt install python3-pip python3-setuptools python3-dev -y</code></pre><p><strong>3、安装ffmpeg</strong></p>
+<pre><code>#下载ffmpeg二进制
+wget https://www.moerats.com/usr/down/ffmpeg/ffmpeg-git-$(getconf LONG_BIT)bit-static.tar.xz
+#解压文件
+tar xvf ffmpeg-git-*-static.tar.xz
+#移动ffmpeg可执行文件
+mv ffmpeg-git-*/ffmpeg  ffmpeg-git-*/ffprobe /usr/bin/
+#删除文件
+rm -rf ffmpeg-git-*</code></pre><p><strong>4、安装框架</strong></p>
+<pre><code>#安装稳定版
+pip3 install ehforwarderbot
+
+#安装开发版，建议安装开发版，bug修复快些，功能也新
+pip3 install git+https://github.com/blueset/ehforwarderbot.git</code></pre><p><strong>5、安装TG和微信模块</strong></p>
+<pre><code>pip3 install efb-telegram-master efb-wechat-slave</code></pre><p><strong>6、启用模块</strong><br>先新建配置文件夹和配置文件<code>config.yaml</code>，使用命令：</p>
+<pre><code>#default为配置文件默认的文件夹，你也可以命名为其它的，不会玩的就默认
+mkdir -p ~/.ehforwarderbot/profiles/default
+nano ~/.ehforwarderbot/profiles/default/config.yaml</code></pre><p>参考代码为：</p>
+<pre><code>#请根据实际情况修改
+master_channel: foo.demo_master
+slave_channels:
+- foo.demo_slave
+- bar.dummy
+middlewares:
+- foo.null</code></pre><p>以上对应的均为模块名称，模块参考→传送门，比如这里博主只用了<code>Telegram</code>和<code>WeChat</code>模块，所以大致配置为：</p>
+<pre><code>master_channel: blueset.telegram
+slave_channels:
+- blueset.wechat</code></pre><p>然后使用<code>Ctrl+x</code>、<code>y</code>保存退出。</p>
+<p>这只是登录一个微信号，如果你要同时登录多个微信号，那么配置文件就需要改为：</p>
+<pre><code>#比如我要同时登录并收发3个微信号
+master_channel: blueset.telegram
+slave_channels:
+- blueset.wechat
+- blueset.wechat#moe123
+- blueset.wechat#rats321</code></pre><p>只需要在后面使用<code>#</code>指定一个<code>ID</code>号，该<code>ID</code>号只能有字母，数字和下划线，即正则表达式<code>[a-zA-Z0-9_]+</code>，想登录几个账户就加几个。如果你使用<code>QQ</code>、<code>Facebook Messenger</code>模块的话，设置方法也一样。</p>
+<p><strong>7、建立TG配置文件</strong><br>建立配置文件前需要先获取<code>Telegram</code>的<code>Token</code>和<code>Userid</code>，获取方法如下：</p>
+<pre><code>#Telegram的Token获取
+1、在Telegram关注@BotFather
+2、再到对话框依次输入：/start=&gt;/newbot，然后会要你给机器人命名(如：MoeratsBot)，命名完成会给你一个Token。
+
+#Telegram群Userid获取
+1、先和你的机器人聊天，随便发一句话。
+2、在浏览器输入https://api.telegram.org/botxx:xx/getUpdates(其中xx:xx为Token)，然后chat后面的id即为你的userid。</code></pre><p>再新建一个<code>Telegram</code>模块配置文件夹和配置文件<code>config.yaml</code>，使用命令：</p>
+<pre><code>#同样的也建在default文件夹，如果你上面更改了default文件夹，那这里也要更改
+mkdir ~/.ehforwarderbot/profiles/default/blueset.telegram
+nano ~/.ehforwarderbot/profiles/default/blueset.telegram/config.yaml</code></pre><p>填入以下代码：</p>
+<pre><code>token: &quot;12345:moerats&quot; 
+admins:
+- 765432 </code></pre><p>然后使用<code>Ctrl+x</code>、<code>y</code>保存退出。上面所对应的参数分别为<code>Token</code>和<code>Userid</code>。关于<code>Telegram</code>模块的更多玩法可以参考→传送门。</p>
+<p><strong>8、启动</strong></p>
+<pre><code>#该命令会默认从default文件夹读取信息，如果你之前建的是moerats文件夹，那命令应该为ehforwarderbot -p moerats
+ehforwarderbot</code></pre><p>这时候会给一个微信二维码或者二维码链接你，放到浏览器打开扫描登录即可，如果你设置了同时登录多个账户，那设置几个就需要登录几个。</p>
+<p>然后使用<code>Ctrl+C</code>断开运行，再使用命令后台运行：</p>
+<pre><code>screen -dmS EHF ehforwarderbot</code></pre><p>最后你的微信消息会通过机器人发送给你，你也可以通过机器人将消息发送给指定好友。</p>
+<h2 id="收发QQ消息"><a href="#收发QQ消息" class="headerlink" title="收发QQ消息"></a>收发QQ消息</h2><pre><code>提示：这里随便提了下，了解下就行了，建议使用下面Docker方式安装。</code></pre><p>所使用的模块地址：</p>
+<pre><code>#Telegram模块
+https://github.com/blueset/efb-telegram-master
+#QQ模块
+https://github.com/milkice233/efb-qq-slave</code></pre><p>由于方法写的很大概，所以需要你把收发微信的方法看懂，这里<code>EH Forwarder Bot</code>只支持<code>酷Q</code>客户端，一般采用<code>Docker</code>的方法在<code>Linux</code>上安装酷<code>Q</code>，方法很久以前就说过了，参考→传送门，不过启动命令变了下，也就是安装<code>wine-coolq</code>的命令。</p>
+<p>安装<code>TG</code>和<code>QQ</code>模块：</p>
+<pre><code>pip3 install efb-telegram-master efb-qq-slave</code></pre><p>安装<code>wine-coolq</code>：</p>
+<pre><code>mkdir coolq  #包含CoolQ程序文件
+docker run -ti --rm --name cqhttp-test --net=&quot;host&quot; \
+     -v $(pwd)/coolq:/home/user/coolq     `#mount coolq folder` \
+     -p 9000:9000                         `#网页noVNC端口` \
+     -p 5700:5700                         `#酷Q对外提供的API接口的端口` \
+     -e VNC_PASSWD=MAX8char               `#请修改VNC密码！！！！` \
+     -e COOLQ_PORT=5700                   `#酷Q对外提供的API接口的端口` \
+     -e COOLQ_ACCOUNT=123456              `#在此输入要登录的QQ号，虽然可选但是建议填入` \
+     -e CQHTTP_POST_URL=http://127.0.0.1:8000   `#efb-qq-slave监听的端口/地址用于接受传入的消息` \
+     -e CQHTTP_SERVE_DATA_FILES=yes       `#允许以HTTP方式访问酷Q数据文件` \
+     -e CQHTTP_ACCESS_TOKEN=ac0f790e1fb74ebcaf45da77a6f9de47  `#Access Token` \
+     -e CQHTTP_POST_MESSAGE_FORMAT=array  `# 回传消息时使用数组(必选)` \
+     richardchien/cqhttp:latest</code></pre><p>然后使用<code>ip:9000</code>访问<code>noVNC</code>登录<code>酷Q</code>即可。</p>
+<p>新建<code>QQ</code>模块配置文件：</p>
+<pre><code>mkdir ~/.ehforwarderbot/profiles/default/milkice.qq
+nano ~/.ehforwarderbot/profiles/default/milkice.qq/config.yaml</code></pre><p>填入的代码大致如下:</p>
+<pre><code>Client: CoolQ                         #指定要使用的QQ客户端（此处为CoolQ）
+CoolQ:
+    type: HTTP                        #指定efb-qq-slave与酷Q通信的方式 现阶段仅支持HTTP
+    access_token: ac0f790e1fb74ebcaf45da77a6f9de47
+    api_root: http://127.0.0.1:5700/  # 酷Q API接口地址/端口
+    host: 127.0.0.1                   # efb-qq-slave所监听的地址用于接收消息
+    port: 8000                        # 同上
+    is_pro: false                      # 若为酷Q Pro则为true，反之为false
+    air_option:                       # 包含于air_option的配置选项仅当is_pro为false时才有效
+        upload_to_smms: true          # 将来自EFB主端(通常是Telegram) 的图片上传到sm.ms服务器并以链接的形式发送到QQ端</code></pre><p>最后使用<code>ehforwarderbot</code>命令启动即可。</p>
+<h2 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h2><p>这里选择<code>2</code>个最新的<code>Docker</code>镜像，也是官方推荐的，项目地址：</p>
+<pre><code>#Telegram收发QQ消息
+https://github.com/Earth-Online/efb-qq-coolq-docker
+#Telegram收发微信消息
+https://www.github.com/Mikubill/efb-wechat-docker</code></pre><p><strong>1、安装Docker</strong></p>
+<pre><code>#CentOS 6
+rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum update -y
+yum -y install docker-io
+service docker start
+chkconfig docker on
+
+#CentOS 7、Debian、Ubuntu
+curl -sSL https://get.docker.com/ | sh
+systemctl start docker
+systemctl enable docker</code></pre><p><strong>2、Telegram收发QQ消息</strong><br>安装<code>docker-compose</code>：</p>
+<pre><code>curl -L https://github.com/docker/compose/releases/download/1.25.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+#验证是否安装成功
+docker-compose --version
+#返回以下信息即安装成功
+docker-compose version 1.25.0, build 1110ad01</code></pre><p>拉取<code>Docker</code>源码：</p>
+<pre><code>git clone https://github.com/Earth-Online/efb-qq-coolq-docker.git
+cd efb-qq-coolq-docker
+#编辑config.yaml配置文件
+nano ehforward_config/profiles/default/blueset.telegram/config.yaml</code></pre><p>修改如下：</p>
+<pre><code>#token和userid参数获取方法查看上面的手动安装教程
+token: &quot;你的TG机器人Token&quot;
+admins:
+- 你的Userid</code></pre><p>然后再编辑<code>docker-compose.yml</code>文件：</p>
+<pre><code>nano docker-compose.yml</code></pre><p>修改如下：</p>
+<pre><code>- VNC_PASSWD=你的密码
+- COOLQ_ACCOUNT=你的qq账号</code></pre><p>后台启动：</p>
+<pre><code>#第一次启动会构建镜像，所以会慢点
+docker-compose up -d</code></pre><p>然后打开<code>ip:9801</code>登陆<code>novnc</code>后完成<code>coolq</code>登陆操作。如果该地址打不开，请检查下防火墙。</p>
+<p><strong>3、Telegram收发微信消息</strong></p>
+<pre><code>#拉取源码
+git clone https://github.com/mikubill/efb-wechat-docker.git
+#构建镜像
+cd efb-wechat-docker &amp;&amp; docker build -t mikubill/efbwechat .
+#启动镜像，TOKEN为TG机器人Token、ADMIN为你的Userid，获取方法查看上面的手动安装教程
+docker run -d -t --name &quot;efbwechat&quot; -e TOKEN=xxxx -e ADMIN=xxxx mikubill/efbwechat</code></pre><p>最后获取微信登录验证码，使用命令：</p>
+<pre><code>docker logs -f efbwechat </code></pre><p>扫描登录即可。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-03-20T15:22:49.000Z" itemprop="datePublished">2020-03-20</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.659Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/03/21/linux-vps-e4-bd-bf-e7-94-a8wondershaper-e9-99-90-e5-88-b6-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-b8-8a-e4-bc-a0-e4-b8-8b-e8-bd-bd-e5-b8-a6-e5-ae-bd/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux VPS使用WonderShaper限制服务器上传/下载带宽</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/03/20/directory-lister-ef-bc-9a-e5-8f-88-e4-b8-80-e6-ac-be-e4-b8-8d-e9-94-99-e7-9a-84php-e7-9b-ae-e5-bd-95-e7-b4-a2-e5-bc-95-e5-b7-a5-e5-85-b7/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Directory Lister：又一款不错的PHP目录索引工具</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

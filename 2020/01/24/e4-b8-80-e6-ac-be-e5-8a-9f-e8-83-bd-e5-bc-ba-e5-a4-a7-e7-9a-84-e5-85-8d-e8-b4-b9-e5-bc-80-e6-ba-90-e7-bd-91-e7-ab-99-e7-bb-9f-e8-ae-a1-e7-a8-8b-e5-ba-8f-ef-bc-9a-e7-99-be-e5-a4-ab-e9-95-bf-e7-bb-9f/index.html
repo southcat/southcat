@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>一款功能强大的免费开源网站统计程序：百夫长统计 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="一款功能强大的免费开源网站统计程序：百夫长统计 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/01/24/e4-b8-80-e6-ac-be-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-ab-99-e7-bb-9f-e8-ae-a1-e7-a8-8b-e5-ba-8f-ef-bc-9a-e7-99-be-e5-a4-ab-e9-95-bf-e7-bb-9f/"><meta property="og:locale" content="en"><meta name="description" content="简介百夫长统计(Centcount Analytics)是一款功能强大的免费开源网站统计程序。采用PHP+MySQL+Redis开发而成，可以方便地部署在自己的服务器上，100%独享数据。数据精准是该统计系统的最大特点，我们尽最大可能收集用户浏览轨迹，从而为网站管理者提供极为精确的统计数据，发掘潜在价值。 截图 功能 性能：百夫长统计处理速度飞快！配置较低的VPS即可轻松处理每天100万PV。 项 - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/Analytics(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Analytics(2).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Analytics(3).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Analytics(4).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Analytics(5).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Analytics(6).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Analytics(7).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Analytics(8).png"><meta property="article:published_time" content="2020-01-24T01:17:33.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.654Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.654Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/01/24/e4-b8-80-e6-ac-be-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-ab-99-e7-bb-9f-e8-ae-a1-e7-a8-8b-e5-ba-8f-ef-bc-9a-e7-99-be-e5-a4-ab-e9-95-bf-e7-bb-9f/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/01/24/e4-b8-80-e6-ac-be-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-ab-99-e7-bb-9f-e8-ae-a1-e7-a8-8b-e5-ba-8f-ef-bc-9a-e7-99-be-e5-a4-ab-e9-95-bf-e7-bb-9f/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/01/24/e4-b8-80-e6-ac-be-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-ab-99-e7-bb-9f-e8-ae-a1-e7-a8-8b-e5-ba-8f-ef-bc-9a-e7-99-be-e5-a4-ab-e9-95-bf-e7-bb-9f/"
+    },
+    "headline": "一款功能强大的免费开源网站统计程序：百夫长统计 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-01-24T01:17:33.000Z",
+    "dateModified": "2020-04-12T04:09:09.654Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "简介百夫长统计(Centcount Analytics)是一款功能强大的免费开源网站统计程序。采用PHP+MySQL+Redis开发而成，可以方便地部署在自己的服务器上，100%独享数据。数据精准是该统计系统的最大特点，我们尽最大可能收集用户浏览轨迹，从而为网站管理者提供极为精确的统计数据，发掘潜在价值。 截图 功能 性能：百夫长统计处理速度飞快！配置较低的VPS即可轻松处理每天100万PV。 项 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=一款功能强大的免费开源网站统计程序：百夫长统计" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=一款功能强大的免费开源网站统计程序：百夫长统计&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=一款功能强大的免费开源网站统计程序：百夫长统计" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFVklEQVR42u2dwW7jShAD/f8/rZz2EEPTLM4IC+yqfNmHxJE0ZYDoJgm/z+Xr+ohACEIQghCEIIQRwmd4rd7z52e/Lvj1/rv3fP/u7hrf91g9z901pr+9vY4QhCCEWwi3orF4wHTQu5utHjJBJhBXf0POJQQhCGENYSV8kyBO4khEc3Wt9BwT4Or5hSAEIWxBSAI4CSYVOyqMaXgTghCE8PchrP6GDFurhWYljOk+q98LQQhCOINAzA+6/JBlJy1maWlLH8SjW6QQhPAyCESw/sV/H3ObhSCEF0GIoWVhmBKzJYlnEmNi7jyeSgtBCC+CMAlJOkQafNIylELZJmyl7xGCEIQwQ6A3JoZnMlkngSXmKhViHM4KQQhCWA5L9ACpODGZI63oEQGmJitaoIQgBCHgA9AFiQgUCVOooUpKYVVxSwhCeDkEuvgQKI0AJkCpIEKC33gWIQhBCNUC1Q4odECaClo7YklC5FtgQhCCEFAg25im1GQhUE7LnO1gJwQhCIH1E1LxIZUiVoJEFjNa1GoWqKWQCkEIQliaKkSgaEhLYTThL3nWJJBCEIIQGAQSmtIFiAjSBIwWu6iQIlNFCEIQwihEdMFJ5YlWzNJ1abmMhMxCEIIQ2AJFRY4EIlN4kkphTSBLwxkhCEEIGcKuGUqXFHJIUsYmQ9zxFikEIQgBfaFbOji5DhG7tpjVmq5xgRKCEISAv/wxPQgpXBGRI4FN8/4x3BGCEIQQIaSLkyA2FShSkYKEw+RDqwJZIQhBCBcRkGRi0GAlHa6BRZY88ixCEIIQrtFoTQ8xDR7EdKWHO12g6KAmBCEIYe0nJNFJpY3JMHlqCWoD2XpiFIIQhHCl4JQYsmQAIkbNqRiSwU8IQhACK26RwIWWtolQkQCYLG4kUI4LlBCEIIRaWBpDdqfY0YgkCW2IQSQEIQhhLYzTcEJ/n2CSEIf891TuIOGQEIQghDWEZimiBgsNRHchJLNle4sUghCEUC80xJCdTJp2eGpD3+0tUghCEAIubpHBhww4qeCRQp3pWdL7UCArBCEIIZqWNKSdQprmgM1wRkLfyZgRghCEwBaotjiRliky/FBzlpo9ZAkUghCE0BmtdGgii00aoqgJS4tZW6m0EIQghOpLWehSMw1NbVCTjB4a6MYtUghCEEIsP+CyQxA5GqBOZQtS3CJLnRCEIIRc3EoCRwpbzXWaA+4sUFSEhSAEIZx9scxpIJLEtw1km6UptteEIAQhXGmYIAvVTtGzfdGSBv1ghCAEIfD/h2wjTsnI3Fmw2mulpW57YhSCEF4KgSxEBAIVyJ0C1ukChQJZIQhBCKgMlQaR5oDkoFO42gayKQQSghCEkL+jNYUgTUGKljIacUsmMLmXEIQghBkCMSieEL1p+UqHSotbEwIJQQhC4BDSwybxm/4lS9c0MO2YuKPIC0EIQkCmSlpudsNTUtpowh7yYYwCKgQhCGEpjOQG6ec0JCFGKhFuUuSsFighCEEIeChKoUsyNloTl4YokzF7tEUKQQgvhZAGIhKIpKCDFKuISLeDVRrkhCAEIeRAlhiv5AFTYELvSZewRnyFIAQhdH5CE67shLTEXEkhzQQBB8hCEIIQquIWGUqScNJgJg1i5Ofkg6nba0IQwgshNGZrMjBTaNMULhpThhS+xolRCEIQQjRGk2DR8JQWrmigmwoe6SUEIQjhDEIqWJCF5qTg0S5Q6b5CEIIQnoFADIwUrjRBbrvIEUNFCEIQAoPQDCQpACUByQkUJHrkXEIQghBqo5UWLcgyREtdUzmECi0Jf4QgBCH0/YT/+SUEIQhBCEIQghBuXz+3FaZQdKNKawAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">一款功能强大的免费开源网站统计程序：百夫长统计</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-01-24</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=一款功能强大的免费开源网站统计程序：百夫长统计&url=http://yoursite.com/2020/01/24/e4-b8-80-e6-ac-be-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-ab-99-e7-bb-9f-e8-ae-a1-e7-a8-8b-e5-ba-8f-ef-bc-9a-e7-99-be-e5-a4-ab-e9-95-bf-e7-bb-9f/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=一款功能强大的免费开源网站统计程序：百夫长统计&url=http://yoursite.com/2020/01/24/e4-b8-80-e6-ac-be-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-ab-99-e7-bb-9f-e8-ae-a1-e7-a8-8b-e5-ba-8f-ef-bc-9a-e7-99-be-e5-a4-ab-e9-95-bf-e7-bb-9f/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/01/24/e4-b8-80-e6-ac-be-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-ab-99-e7-bb-9f-e8-ae-a1-e7-a8-8b-e5-ba-8f-ef-bc-9a-e7-99-be-e5-a4-ab-e9-95-bf-e7-bb-9f/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/01/24/e4-b8-80-e6-ac-be-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-ab-99-e7-bb-9f-e8-ae-a1-e7-a8-8b-e5-ba-8f-ef-bc-9a-e7-99-be-e5-a4-ab-e9-95-bf-e7-bb-9f/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/01/24/e4-b8-80-e6-ac-be-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-ab-99-e7-bb-9f-e8-ae-a1-e7-a8-8b-e5-ba-8f-ef-bc-9a-e7-99-be-e5-a4-ab-e9-95-bf-e7-bb-9f/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/01/24/e4-b8-80-e6-ac-be-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-ab-99-e7-bb-9f-e8-ae-a1-e7-a8-8b-e5-ba-8f-ef-bc-9a-e7-99-be-e5-a4-ab-e9-95-bf-e7-bb-9f/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/01/24/e4-b8-80-e6-ac-be-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-ab-99-e7-bb-9f-e8-ae-a1-e7-a8-8b-e5-ba-8f-ef-bc-9a-e7-99-be-e5-a4-ab-e9-95-bf-e7-bb-9f/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFVklEQVR42u2dwW7jShAD/f8/rZz2EEPTLM4IC+yqfNmHxJE0ZYDoJgm/z+Xr+ohACEIQghCEIIQRwmd4rd7z52e/Lvj1/rv3fP/u7hrf91g9z901pr+9vY4QhCCEWwi3orF4wHTQu5utHjJBJhBXf0POJQQhCGENYSV8kyBO4khEc3Wt9BwT4Or5hSAEIWxBSAI4CSYVOyqMaXgTghCE8PchrP6GDFurhWYljOk+q98LQQhCOINAzA+6/JBlJy1maWlLH8SjW6QQhPAyCESw/sV/H3ObhSCEF0GIoWVhmBKzJYlnEmNi7jyeSgtBCC+CMAlJOkQafNIylELZJmyl7xGCEIQwQ6A3JoZnMlkngSXmKhViHM4KQQhCWA5L9ACpODGZI63oEQGmJitaoIQgBCHgA9AFiQgUCVOooUpKYVVxSwhCeDkEuvgQKI0AJkCpIEKC33gWIQhBCNUC1Q4odECaClo7YklC5FtgQhCCEFAg25im1GQhUE7LnO1gJwQhCIH1E1LxIZUiVoJEFjNa1GoWqKWQCkEIQliaKkSgaEhLYTThL3nWJJBCEIIQGAQSmtIFiAjSBIwWu6iQIlNFCEIQwihEdMFJ5YlWzNJ1abmMhMxCEIIQ2AJFRY4EIlN4kkphTSBLwxkhCEEIGcKuGUqXFHJIUsYmQ9zxFikEIQgBfaFbOji5DhG7tpjVmq5xgRKCEISAv/wxPQgpXBGRI4FN8/4x3BGCEIQQIaSLkyA2FShSkYKEw+RDqwJZIQhBCBcRkGRi0GAlHa6BRZY88ixCEIIQrtFoTQ8xDR7EdKWHO12g6KAmBCEIYe0nJNFJpY3JMHlqCWoD2XpiFIIQhHCl4JQYsmQAIkbNqRiSwU8IQhACK26RwIWWtolQkQCYLG4kUI4LlBCEIIRaWBpDdqfY0YgkCW2IQSQEIQhhLYzTcEJ/n2CSEIf891TuIOGQEIQghDWEZimiBgsNRHchJLNle4sUghCEUC80xJCdTJp2eGpD3+0tUghCEAIubpHBhww4qeCRQp3pWdL7UCArBCEIIZqWNKSdQprmgM1wRkLfyZgRghCEwBaotjiRliky/FBzlpo9ZAkUghCE0BmtdGgii00aoqgJS4tZW6m0EIQghOpLWehSMw1NbVCTjB4a6MYtUghCEEIsP+CyQxA5GqBOZQtS3CJLnRCEIIRc3EoCRwpbzXWaA+4sUFSEhSAEIZx9scxpIJLEtw1km6UptteEIAQhXGmYIAvVTtGzfdGSBv1ghCAEIfD/h2wjTsnI3Fmw2mulpW57YhSCEF4KgSxEBAIVyJ0C1ukChQJZIQhBCKgMlQaR5oDkoFO42gayKQQSghCEkL+jNYUgTUGKljIacUsmMLmXEIQghBkCMSieEL1p+UqHSotbEwIJQQhC4BDSwybxm/4lS9c0MO2YuKPIC0EIQkCmSlpudsNTUtpowh7yYYwCKgQhCGEpjOQG6ec0JCFGKhFuUuSsFighCEEIeChKoUsyNloTl4YokzF7tEUKQQgvhZAGIhKIpKCDFKuISLeDVRrkhCAEIeRAlhiv5AFTYELvSZewRnyFIAQhdH5CE67shLTEXEkhzQQBB8hCEIIQquIWGUqScNJgJg1i5Ofkg6nba0IQwgshNGZrMjBTaNMULhpThhS+xolRCEIQQjRGk2DR8JQWrmigmwoe6SUEIQjhDEIqWJCF5qTg0S5Q6b5CEIIQnoFADIwUrjRBbrvIEUNFCEIQAoPQDCQpACUByQkUJHrkXEIQghBqo5UWLcgyREtdUzmECi0Jf4QgBCH0/YT/+SUEIQhBCEIQghBuXz+3FaZQdKNKawAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">2.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#功能"><span class="post-toc-number">3.</span> <span class="post-toc-text">功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>百夫长统计(<code>Centcount Analytics</code>)是一款功能强大的免费开源网站统计程序。采用<code>PHP</code>+<code>MySQL</code>+<code>Redis</code>开发而成，可以方便地部署在自己的服务器上，<code>100%</code>独享数据。数据精准是该统计系统的最大特点，我们尽最大可能收集用户浏览轨迹，从而为网站管理者提供极为精确的统计数据，发掘潜在价值。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/Analytics(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/Analytics(2).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/Analytics(3).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/Analytics(4).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
+<li>性能：百夫长统计处理速度飞快！配置较低的<code>VPS</code>即可轻松处理每天<code>100</code>万<code>PV</code>。</li>
+<li>项目：开放源码、自我部署、数据安全和隐私，<code>100%</code>独享数据。</li>
+<li>报告：丰富的统计报告，百夫长统计提供多达<code>37</code>个固定的统计报告。</li>
+<li>热力图：提供一种全新的，直接的方式展示访问者在您的网页上的浏览行为！</li>
+<li>自定义报告：随心所欲的玩转数据。多维度、多条件、多指标，按分组和顺序查询并返回你想要的数据。</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>系统要求：</strong><code>CentOS 7</code>、<code>Debian 8 +</code>、<code>Ubuntu 16.04 +</code>，且为<code>64</code>位系统，内存建议<code>2G</code>以上。<br><strong>环境要求：</strong><code>Nginx</code>、<code>PHP</code>&gt; = <code>7.0</code>、<code>MySQL</code>&gt; = <code>5.7</code>、<code>Redis</code>&gt; = <code>3.0</code>。</p>
+<p>这里说下宝塔面板和军哥<code>LNMP</code>两种安装方法，并且写到一起了，请注意区分开来。新手建议使用宝塔，喜欢折腾的用军哥的<code>LNMP</code>一键包。</p>
+<p><strong>1、安装Web环境</strong></p>
+<pre><code>#安装宝塔面板
+#Centos系统
+yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh
+#Ubuntu系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; sudo bash install.sh
+#Debian系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; bash install.sh
+
+#LNMP一键包
+wget -c http://soft.vpser.net/lnmp/lnmp1.5beta.tar.gz &amp;&amp; tar zxf lnmp1.5beta.tar.gz &amp;&amp; cd lnmp1.5 &amp;&amp; ./install.sh lnmp</code></pre><p>宝塔面板安装成功后，登录面板，安装<code>Nginx</code>、<code>PHP</code>、<code>MySQL</code>，然后再添加域名。如果是<code>LNMP</code>，安装成功后，使用<code>lnmp vhost add</code>添加域名，并且自动签发<code>ssl</code>证书。</p>
+<p><strong>2、安装Redis并配置PHP</strong></p>
+<pre><code>#宝塔面板
+找到左侧软件管理-PHP7.x-设置-安装拓展-安装Redis。然后在设置里找到禁用函数，删除popen函数。
+
+#LNMP一键包
+#安装Redis
+cd /root/lnmp1.5 &amp;&amp; ./addons.sh install redis
+#编辑PHP配置文件
+编辑/usr/local/php/etc/php.ini文件，大概在314行，找到disable_functions，删除后面的popen,</code></pre><p><strong>3、编辑mysql配置文件</strong></p>
+<pre><code>#宝塔面板
+找到左侧软件管理-MySQL 5.x-设置-配置修改
+
+#LNMP一键包
+编辑/etc/my.cnf文件</code></pre><p>然后将以下参数添加到[<code>client</code>]区块和[<code>mysqld</code>]区块。</p>
+<pre><code>[client]
+default-character-set  = utf8
+
+[mysqld]
+default-storage-engine = INNODB
+character-set-server   = utf8
+collation-server       = utf8_general_ci
+sql-mode = &quot;NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&quot;</code></pre><p>添加后记得重启<code>Mysql</code>数据库。宝塔直接在面板里重启，<code>LNMP</code>使用<code>lnmp mysql restart</code>命令重启。</p>
+<p><strong>4、下载程序文件</strong></p>
+<pre><code>#安装必要命令
+#Debian/Ubuntu系统
+apt-get -y install git unzip
+#CentOS系统
+yum -y install git unzip
+
+#进入网站根目录
+cd /www/wwwroot/domain.com  #宝塔面板，将domain.com修改成你的域名
+cd /home/wwwroot/domain.com  #LNMP一键包
+#下载文件
+git clone https://github.com/WMJonssen/Centcount-Analytics.git CA
+mv CA/.git .
+rm -rf CA
+git reset --hard</code></pre><p><strong>5、解压IP地址库压缩包</strong></p>
+<pre><code>cd /www/wwwroot/domain.com/ipdb  #宝塔面板，将domain.com替换成你的域名
+cd /home/wwwroot/domain.com/ipdb  #LNMP一键包
+unzip ipdb.zip</code></pre><p>百夫长统计打包了<code>2</code>个免费的<code>IP</code>地址库（IP2Location和GeoIP），并提供<code>API</code>来访问它。您可以直接将免费版更换为提供<code>ISP</code>信息的，更精准的商业版。而且您不必更改任何代码。</p>
+<p><strong>6、修改安全配置文件</strong></p>
+<pre><code>#编辑网站根目录config/config_security.php文件
+/************* 安全配置开始 *************/
+//force ssl
+define(&apos;FORCE_SSL&apos;, true);//如果你没有SSL证书，请将此常量设置为&quot;false&quot;。
+//check ssl
+define(&apos;IS_HTTPS&apos;, isset($_SERVER[&apos;HTTPS&apos;]) &amp;&amp; ($_SERVER[&apos;HTTPS&apos;] === 1 || $_SERVER[&apos;HTTPS&apos;] === &apos;on&apos;) ? true : false);
+//define security transfer protocol
+define(&apos;PROTOCOL&apos;, IS_HTTPS ? &apos;https://&apos; : &apos;http://&apos;);
+//define API transfer protocol
+define(&apos;CURL_PROTOCOL&apos;, &apos;https://&apos;);//如果你没有SSL证书，请将此常量设置为&quot;http://&quot;。
+/************** 安全配置结束 **************/</code></pre><p>建议使用<code>ssl</code>证书。</p>
+<p><strong>7、修改通用配置文件</strong></p>
+<pre><code>#编辑网站根目录config/config_common.php文件
+/*************** CA CONFIG START **************/
+//encode factor
+define(&apos;ENCODE_FACTOR&apos;, 123456789);//重设你的私有加密因子，这非常重要。
+//mysql local root name
+define(&apos;ROOT_USER_LOCAL&apos;, &apos;root&apos;);//设置你的mysql登录用户名（该用户必须有创建数据库权限）
+//mysql local root password
+define(&apos;ROOT_PASSWORD_LOCAL&apos;, &apos;password&apos;);//设置你的mysql登录密码
+//administrator&apos;s timezone: PRC
+define(&apos;ADMIN_TIMEZONE&apos;, &apos;PRC&apos;);//设置管理员时区
+//default timezone: PRC
+define(&apos;DEFAULT_TIME_ZONE&apos;, &apos;PRC&apos;);//设置默认时区
+//error log host
+define(&apos;ERROR_LOG_HOST&apos;, &apos;www.yourdomainname.com&apos;);//设置错误日志主机（此处替换为你的域名）
+/**************** CA CONFIG END ***************/</code></pre><p><strong>8、修改邮件配置文件</strong><br>使用邮件<code>VPS</code>服务器必须开通<code>25</code>端口，这个主机商默认不给，发工单就行了，且需要安装<code>Postfix</code>，不过<code>LNMP</code>一键包和宝塔都自带，所以不用安装。如果不想使用邮件功能的可以跳过该步骤。</p>
+<pre><code>#编辑网站根目录config/config_mail.php文件
+/************* Config Mail Start ***********/
+//administrator mail
+defined(&apos;ADMIN_MAIL&apos;) || define(&apos;ADMIN_MAIL&apos;, &apos;admin@centcount.com&apos;);//设置管理员接收通知邮箱（请将下面三个通知邮箱放入管理员邮箱白名单列表）
+//auto response mail
+defined(&apos;AUTORESPONSE_MAIL&apos;) || define(&apos;AUTORESPONSE_MAIL&apos;, &apos;autoresponse@centcount.com&apos;);//设置自动回复邮件发送邮箱
+//notification mail
+defined(&apos;NOTIFICATION_MAIL&apos;) || define(&apos;NOTIFICATION_MAIL&apos;, &apos;notification@centcount.com&apos;);//设置通知邮件发送邮箱
+//fatal error mail
+defined(&apos;FATALERROR_MAIL&apos;) || define(&apos;FATALERROR_MAIL&apos;, &apos;fatalerror@centcount.com&apos;);//设置错误信息邮件发送邮箱
+/************** Config Mail End ************/</code></pre><p><strong>9、安装百夫长统计</strong><br>以上完成后直接进入<code>https:/domain.com/install.php</code>进行安装。由于<code>LNMP</code>一键包安装<code>Redis</code>的时候，没安装命令行，导致检测会出现<code>Redis: Missed</code>这个无视就行。<br><img src="https://www.moerats.com/usr/picture/Analytics(5).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>依次填入数据库用户名，密码，邮箱，登录密码。<br><img src="https://www.moerats.com/usr/picture/Analytics(6).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>添加自己站点网站。<br><img src="https://www.moerats.com/usr/picture/Analytics(7).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>获取统计代码。<br><img src="https://www.moerats.com/usr/picture/Analytics(8).png" alt="请输入图片描述" title="请输入图片描述"><br>最后放到网站里就可以了。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-01-24T01:17:33.000Z" itemprop="datePublished">2020-01-24</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.654Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/01/25/torrent2magnet-ef-bc-9a-e4-b8-80-e4-b8-aabt-e7-a7-8d-e5-ad-90-e8-bd-ac-e7-a3-81-e5-8a-9b-e9-93-be-e7-9a-84-e5-b0-8f-e5-b7-a5-e5-85-b7/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">torrent2magnet：一个BT种子转磁力链的小工具</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/01/24/e5-ae-9d-e5-a1-94-e9-9d-a2-e6-9d-bf-e9-81-87-e5-88-b0no-space-left-on-device-e9-94-99-e8-af-af-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9-e6-b3-95/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">宝塔面板遇到No space left on device错误的解决方法</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

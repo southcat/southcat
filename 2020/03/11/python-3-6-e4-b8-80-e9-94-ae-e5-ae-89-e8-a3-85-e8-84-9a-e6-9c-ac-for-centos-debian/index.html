@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Python 3.6一键安装脚本 for CentOS/Debian | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Python 3.6一键安装脚本 for CentOS&#x2F;Debian | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/03/11/python-3-6-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-for-centos-debian/"><meta property="og:locale" content="en"><meta name="description" content="说明：最近一直在玩爬虫，需要使用到python3和pip3，手动安装又有点麻烦，就搞了个一键脚本，Python版本为3.6.4，脚本安装了很多依赖包，不会因为缺少依赖而出问题，这里就分享下。 安装1、检查下系统是否有Python3 python3 -V2、安装Python3 #CentOS系统 wget https:&#x2F;&#x2F;www.moerats.com&#x2F;usr&#x2F;shell&#x2F;Python3&#x2F;CentO - John Doe - 南猫"><meta property="article:published_time" content="2020-03-10T18:27:30.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.658Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.658Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/03/11/python-3-6-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-for-centos-debian/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/03/11/python-3-6-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-for-centos-debian/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/03/11/python-3-6-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-for-centos-debian/"
+    },
+    "headline": "Python 3.6一键安装脚本 for CentOS/Debian | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-03-10T18:27:30.000Z",
+    "dateModified": "2020-04-12T04:09:09.658Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：最近一直在玩爬虫，需要使用到python3和pip3，手动安装又有点麻烦，就搞了个一键脚本，Python版本为3.6.4，脚本安装了很多依赖包，不会因为缺少依赖而出问题，这里就分享下。 安装1、检查下系统是否有Python3 python3 -V2、安装Python3 #CentOS系统 wget https://www.moerats.com/usr/shell/Python3/CentO - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Python 3.6一键安装脚本 for CentOS/Debian" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Python 3.6一键安装脚本 for CentOS/Debian&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=Python 3.6一键安装脚本 for CentOS/Debian" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMQAAADECAAAAADlzdG3AAADKklEQVR42u3b0VLjMAxG4b7/S8MNVyHWf2SsFJiTG5Zuu/GXGVWy5H19/IPrJUKECBEixhGv4vr2oa/Xrj/v3nP3+t2/f73X9fVqXSJETCFWNyUL3XlfekhkXSJETCPuAu4alJ3Aq74E0ALJukSI+AWIFISrJHa3+Lvfq4clQsRvQHSClwY8fU2EiHciukVetZBqM5QWNlLFihDRROwUck/8PNbtECGigUCNW1AcroK0WlQqGI92xUWIaMwn6Ma+WiAOxmLx3YaaCBFTiHSj1TBkp6nQaWJXaxMhYgpB3rxKft3BIi36SMIVIeIJBEloJGBX7+00C8iDFSFiAkEGjNUmp7ppt8HcGdyLEDGJqIq57oAwoTqHwCJWhIgBRLdR1t3kkEKSJDwRIp5C7DSudv68M5iMmzMRIgYQaSBC3tNpmKVhS2rgiRAxjeg2zaoFpc0TTZZ4IyZCxBCiwtABYpUk6ZCdDOpFiJhGkA17GjymRjN5WKQxUBaAIkQcQpDD6mSB5HAK2Sylwy3xhLIIET9EpGF45z90VJ/HG53G7yJEPIlIRRg5oEgSHwWjAyoiRBxAxEMgRRONFIWrRjEtKlFgixAxgCBFHElSpIAjCRM1nUWIGECk4E1DctJ8TsFcJbuygSdCxACCBl5ncFI1hqumXLtxIELEACI1g3cO3pJNTydpouaZCBEHETtNsBS85AuDNhKWyVGEiAEEKeJWCay7maEHwUiSFSFiCpGKtioBbQ0LG38X1yVCxBCCFnKdZNct8KovETx4FCHiAII2rEiSSkN93BSjCViEiAcRqQjrfG6nyExJUISIKQQJ1hSoqVFMm2dtkAgRQ4id4fnOULF6OJ3EKULEJKIahu8cVknN6TSkaTUdRIgYQKSLBFnaDJENEjq4KELEA4gUwKTYI4dSUhCngy9lQ1mEiMMIsoHv3jx9MVRFZBXosQAUIeIQgg4V6aLpgURSPOIDKiJEPIDoNpNJEZeKTdK0EyHiXYju8JE+kKrhRppqIkRMI2gBmAo30oAjzbq0JhEiJhGpcUyG79VBr52DwGiII0LEAOIvXyJEiBAhYuz6BHApX0zuZGLaAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Python 3.6一键安装脚本 for CentOS/Debian</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-03-11</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Python 3.6一键安装脚本 for CentOS/Debian&url=http://yoursite.com/2020/03/11/python-3-6-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-for-centos-debian/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Python 3.6一键安装脚本 for CentOS/Debian&url=http://yoursite.com/2020/03/11/python-3-6-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-for-centos-debian/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/03/11/python-3-6-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-for-centos-debian/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/03/11/python-3-6-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-for-centos-debian/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/03/11/python-3-6-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-for-centos-debian/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/03/11/python-3-6-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-for-centos-debian/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/03/11/python-3-6-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-for-centos-debian/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMQAAADECAAAAADlzdG3AAADKklEQVR42u3b0VLjMAxG4b7/S8MNVyHWf2SsFJiTG5Zuu/GXGVWy5H19/IPrJUKECBEixhGv4vr2oa/Xrj/v3nP3+t2/f73X9fVqXSJETCFWNyUL3XlfekhkXSJETCPuAu4alJ3Aq74E0ALJukSI+AWIFISrJHa3+Lvfq4clQsRvQHSClwY8fU2EiHciukVetZBqM5QWNlLFihDRROwUck/8PNbtECGigUCNW1AcroK0WlQqGI92xUWIaMwn6Ma+WiAOxmLx3YaaCBFTiHSj1TBkp6nQaWJXaxMhYgpB3rxKft3BIi36SMIVIeIJBEloJGBX7+00C8iDFSFiAkEGjNUmp7ppt8HcGdyLEDGJqIq57oAwoTqHwCJWhIgBRLdR1t3kkEKSJDwRIp5C7DSudv68M5iMmzMRIgYQaSBC3tNpmKVhS2rgiRAxjeg2zaoFpc0TTZZ4IyZCxBCiwtABYpUk6ZCdDOpFiJhGkA17GjymRjN5WKQxUBaAIkQcQpDD6mSB5HAK2Sylwy3xhLIIET9EpGF45z90VJ/HG53G7yJEPIlIRRg5oEgSHwWjAyoiRBxAxEMgRRONFIWrRjEtKlFgixAxgCBFHElSpIAjCRM1nUWIGECk4E1DctJ8TsFcJbuygSdCxACCBl5ncFI1hqumXLtxIELEACI1g3cO3pJNTydpouaZCBEHETtNsBS85AuDNhKWyVGEiAEEKeJWCay7maEHwUiSFSFiCpGKtioBbQ0LG38X1yVCxBCCFnKdZNct8KovETx4FCHiAII2rEiSSkN93BSjCViEiAcRqQjrfG6nyExJUISIKQQJ1hSoqVFMm2dtkAgRQ4id4fnOULF6OJ3EKULEJKIahu8cVknN6TSkaTUdRIgYQKSLBFnaDJENEjq4KELEA4gUwKTYI4dSUhCngy9lQ1mEiMMIsoHv3jx9MVRFZBXosQAUIeIQgg4V6aLpgURSPOIDKiJEPIDoNpNJEZeKTdK0EyHiXYju8JE+kKrhRppqIkRMI2gBmAo30oAjzbq0JhEiJhGpcUyG79VBr52DwGiII0LEAOIvXyJEiBAhYuz6BHApX0zuZGLaAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#提示"><span class="post-toc-number">2.</span> <span class="post-toc-text">提示</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>最近一直在玩爬虫，需要使用到<code>python3</code>和<code>pip3</code>，手动安装又有点麻烦，就搞了个一键脚本，<code>Python</code>版本为<code>3.6.4</code>，脚本安装了很多依赖包，不会因为缺少依赖而出问题，这里就分享下。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>1、检查下系统是否有Python3</strong></p>
+<pre><code>python3 -V</code></pre><p><strong>2、安装Python3</strong></p>
+<pre><code>#CentOS系统
+wget https://www.moerats.com/usr/shell/Python3/CentOS_Python3.6.sh &amp;&amp; sh CentOS_Python3.6.sh
+#Debian系统
+wget https://www.moerats.com/usr/shell/Python3/Debian_Python3.6.sh &amp;&amp; sh Debian_Python3.6.sh</code></pre><p>然后再输入<code>python3 -V</code>看是否安装成功。一般安装成功就可以使用<code>python3</code>、<code>pip3</code>了。</p>
+<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p>如果想修改系统默认的<code>Python</code>版本的话，还需要创建软链接，可使用命令：</p>
+<pre><code>cd /usr/bin
+mv python python.backup
+ln -s /usr/local/bin/python3 /usr/bin/python</code></pre><p>然后重启运行<code>python -V</code>查看即可。</p>
+<pre><code>vi /usr/bin/yum
+将文件首行
+#!usr/bin/python
+修改为python之前的版本，如：
+#!/usr/bin/python2.7</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-03-10T18:27:30.000Z" itemprop="datePublished">2020-03-11</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.658Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/03/11/nofile-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-85-8d-e8-b4-b9-e8-b6-85-e5-a4-a7-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e5-92-8c-e5-88-86-e4-ba-ab-e7-9a-84-e6-9c-8d-e5-8a-a1-e5-9e-8b-e7-bd-91-e7-ab-99/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">NoFile：一个免费超大文件上传和分享的服务型网站</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/03/10/e9-87-87-e9-9b-86-e5-90-84-e7-a7-8d-e7-be-8e-e5-a5-b3-e5-9b-be-e7-89-87-e7-ab-99-e5-b9-b6-e4-b8-8b-e8-bd-bd-e5-9b-be-e7-89-87-e3-80-81-e8-87-aa-e5-8a-a8-e6-90-ad-e5-bb-ba-e5-b1-9e-e4-ba-8e-e8-87-aa/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">采集各种美女图片站并下载图片、自动搭建属于自己的图片站</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

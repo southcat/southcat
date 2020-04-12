@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Linux VPS的Windows DD包详细的制作教程 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Linux VPS的Windows DD包详细的制作教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/10/20/linux-vps-e7-9a-84windows-dd-e5-8c-85-e8-af-a6-e7-bb-86-e7-9a-84-e5-88-b6-e4-bd-9c-e6-95-99-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前Vicer大佬制作出了VPS全自动DD安装Windows脚本，让我们很多喜欢在VPS安装Windows的人方便了许多，不过dd前必须得有一个dd包，这里就说下Windows dd包的制作过程，虽然网上很多这样的dd包，但对于一些来历不明的，也会有点不放心，所以我们有时间的话可以自己定制一个。 相关教程：Linux VPS无限制一键全自动DD安装Windows脚本 通过本教程自制的一个Wi - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/Win_dd_z(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Win_dd_z(2).png"><meta property="article:published_time" content="2019-10-20T11:51:35.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.644Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.644Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/10/20/linux-vps-e7-9a-84windows-dd-e5-8c-85-e8-af-a6-e7-bb-86-e7-9a-84-e5-88-b6-e4-bd-9c-e6-95-99-e7-a8-8b/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/10/20/linux-vps-e7-9a-84windows-dd-e5-8c-85-e8-af-a6-e7-bb-86-e7-9a-84-e5-88-b6-e4-bd-9c-e6-95-99-e7-a8-8b/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/10/20/linux-vps-e7-9a-84windows-dd-e5-8c-85-e8-af-a6-e7-bb-86-e7-9a-84-e5-88-b6-e4-bd-9c-e6-95-99-e7-a8-8b/"
+    },
+    "headline": "Linux VPS的Windows DD包详细的制作教程 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-10-20T11:51:35.000Z",
+    "dateModified": "2020-04-12T04:09:09.644Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：之前Vicer大佬制作出了VPS全自动DD安装Windows脚本，让我们很多喜欢在VPS安装Windows的人方便了许多，不过dd前必须得有一个dd包，这里就说下Windows dd包的制作过程，虽然网上很多这样的dd包，但对于一些来历不明的，也会有点不放心，所以我们有时间的话可以自己定制一个。 相关教程：Linux VPS无限制一键全自动DD安装Windows脚本 通过本教程自制的一个Wi - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Linux VPS的Windows DD包详细的制作教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Linux VPS的Windows DD包详细的制作教程&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=Linux VPS的Windows DD包详细的制作教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADrUlEQVR42u3ay3LrQAhFUf//T+eOMkiuxNm0k4BdW5M8bMtaqmpBA4+PNzweokSJEiXq7VCP4vh8/csHv71O/vf9fFfnv3pv9frle0WJWoK6XHQXKHrhd++9+xy5eek6RYnahqoWcGeBp/dXN+3umsh1iBL1KqjOQq/+f4epgngKwqJEvSKqWrTV4u4cV0GXnF+UqM2oKlFMizYlsNWDIQXdznWKErUFRQovG37+eDVJlKhfQKHC+00w7AbVtPEjG8gf63qIEvVLqFScTA8PUnjpJrOdwB8zClGiBlB3G7OUSKZNXuf30+AbG9miRA2hUpGSFkVI46wTiGkAFyVqC4o0pKuLJMMiJNBSIAq+okQNojqLu9q00YcM+Zt8z+XmUpSoZah0MpLQJkzVXDst3IgStRXV2TjSYagyWJ5sBE+efqJEDaI6AfIqiaXnfKYpftsYFyVqCSo2iMMAYxXEE5BuUkniK0rUJhQubjzyQC9pMFQXTRvmZSNblKhBFB0kTJu7zrAiGWakSFGiNqJoATEVL2kBhz6gWoNaokQtQqVgSIIrKfp3izqkoCpK1EZUlajSIalq4DANopwOPJYJrShRA6gU+GjhsirOpBvQKfTgiRdRooZQpPDRaWyTjR9JXknSG7seokQNoGhxsdMoS8PAtHhJA7goUdtQnWJItZlLzWw6XEUGtWJCK0rUMIps0BLsJKklRZyjLF2UqCFUCq60yEgS3E4ATnjUyBYlaghFio2k0Zwg6calB0wK8qJEbUGRBnYHdzI4RRLceENEiVqAoglolczSBkDVwD4d6IpdD1GihlEpoTwJsGmxp4cDPqcoUUtQVWGfBFo6gJgS1c5wyVGDQJSoP0SloanOwk/Y1FyjwyK3hRdRooZRtIBysskjhZdUvCyLLWSKTJSoP0aRoEi/lDa8afO7cyNEidqAokGODIPQgiY5H2m+xU6iKFEDqGrIiQ4mJggduOoM3KOEVpSoIdTJgiaBmXyuKtqQZnasJokSNYQiiSwZYKQDIamIQ4aCRYnaiKILsfpJG92nN6UdfEWJGkTFjRfEkWZCQtKNpyhRm1Gk8E+KmVXzmTbv0kMDD1yJEjWMIhu3TrKaHhS00Uea56JEbUWRBDM1BmjzOyWutCH433tFiXohVEo0O8MdnQGsu8+XwyGiRC1GnTQCnmmsPbURFSVqEYou+vTlVbOu07DrBGVRorahSOGFYFLAJoWX9H3lplGUqAWodzpEiRIlStTbHP8AQF80IDNEozAAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Linux VPS的Windows DD包详细的制作教程</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-10-20</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux VPS的Windows DD包详细的制作教程&url=http://yoursite.com/2019/10/20/linux-vps-e7-9a-84windows-dd-e5-8c-85-e8-af-a6-e7-bb-86-e7-9a-84-e5-88-b6-e4-bd-9c-e6-95-99-e7-a8-8b/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Linux VPS的Windows DD包详细的制作教程&url=http://yoursite.com/2019/10/20/linux-vps-e7-9a-84windows-dd-e5-8c-85-e8-af-a6-e7-bb-86-e7-9a-84-e5-88-b6-e4-bd-9c-e6-95-99-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/20/linux-vps-e7-9a-84windows-dd-e5-8c-85-e8-af-a6-e7-bb-86-e7-9a-84-e5-88-b6-e4-bd-9c-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/10/20/linux-vps-e7-9a-84windows-dd-e5-8c-85-e8-af-a6-e7-bb-86-e7-9a-84-e5-88-b6-e4-bd-9c-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/10/20/linux-vps-e7-9a-84windows-dd-e5-8c-85-e8-af-a6-e7-bb-86-e7-9a-84-e5-88-b6-e4-bd-9c-e6-95-99-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/10/20/linux-vps-e7-9a-84windows-dd-e5-8c-85-e8-af-a6-e7-bb-86-e7-9a-84-e5-88-b6-e4-bd-9c-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/10/20/linux-vps-e7-9a-84windows-dd-e5-8c-85-e8-af-a6-e7-bb-86-e7-9a-84-e5-88-b6-e4-bd-9c-e6-95-99-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADrUlEQVR42u3ay3LrQAhFUf//T+eOMkiuxNm0k4BdW5M8bMtaqmpBA4+PNzweokSJEiXq7VCP4vh8/csHv71O/vf9fFfnv3pv9frle0WJWoK6XHQXKHrhd++9+xy5eek6RYnahqoWcGeBp/dXN+3umsh1iBL1KqjOQq/+f4epgngKwqJEvSKqWrTV4u4cV0GXnF+UqM2oKlFMizYlsNWDIQXdznWKErUFRQovG37+eDVJlKhfQKHC+00w7AbVtPEjG8gf63qIEvVLqFScTA8PUnjpJrOdwB8zClGiBlB3G7OUSKZNXuf30+AbG9miRA2hUpGSFkVI46wTiGkAFyVqC4o0pKuLJMMiJNBSIAq+okQNojqLu9q00YcM+Zt8z+XmUpSoZah0MpLQJkzVXDst3IgStRXV2TjSYagyWJ5sBE+efqJEDaI6AfIqiaXnfKYpftsYFyVqCSo2iMMAYxXEE5BuUkniK0rUJhQubjzyQC9pMFQXTRvmZSNblKhBFB0kTJu7zrAiGWakSFGiNqJoATEVL2kBhz6gWoNaokQtQqVgSIIrKfp3izqkoCpK1EZUlajSIalq4DANopwOPJYJrShRA6gU+GjhsirOpBvQKfTgiRdRooZQpPDRaWyTjR9JXknSG7seokQNoGhxsdMoS8PAtHhJA7goUdtQnWJItZlLzWw6XEUGtWJCK0rUMIps0BLsJKklRZyjLF2UqCFUCq60yEgS3E4ATnjUyBYlaghFio2k0Zwg6calB0wK8qJEbUGRBnYHdzI4RRLceENEiVqAoglolczSBkDVwD4d6IpdD1GihlEpoTwJsGmxp4cDPqcoUUtQVWGfBFo6gJgS1c5wyVGDQJSoP0SloanOwk/Y1FyjwyK3hRdRooZRtIBysskjhZdUvCyLLWSKTJSoP0aRoEi/lDa8afO7cyNEidqAokGODIPQgiY5H2m+xU6iKFEDqGrIiQ4mJggduOoM3KOEVpSoIdTJgiaBmXyuKtqQZnasJokSNYQiiSwZYKQDIamIQ4aCRYnaiKILsfpJG92nN6UdfEWJGkTFjRfEkWZCQtKNpyhRm1Gk8E+KmVXzmTbv0kMDD1yJEjWMIhu3TrKaHhS00Uea56JEbUWRBDM1BmjzOyWutCH433tFiXohVEo0O8MdnQGsu8+XwyGiRC1GnTQCnmmsPbURFSVqEYou+vTlVbOu07DrBGVRorahSOGFYFLAJoWX9H3lplGUqAWodzpEiRIlStTbHP8AQF80IDNEozAAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number">1.</span> <span class="post-toc-text">准备工作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开始制作"><span class="post-toc-number">2.</span> <span class="post-toc-text">开始制作</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>之前<code>Vicer</code>大佬制作出了<code>VPS</code>全自动<code>DD</code>安装<code>Windows</code>脚本，让我们很多喜欢在<code>VPS</code>安装<code>Windows</code>的人方便了许多，不过<code>dd</code>前必须得有一个<code>dd</code>包，这里就说下<code>Windows dd</code>包的制作过程，虽然网上很多这样的<code>dd</code>包，但对于一些来历不明的，也会有点不放心，所以我们有时间的话可以自己定制一个。</p>
+<p><strong>相关教程：</strong>Linux VPS无限制一键全自动DD安装Windows脚本</p>
+<p>通过本教程自制的一个<code>Windows server 2008 R2 dd</code>包：</p>
+<pre><code># Windows server 2008 R2 Standard 中文版
+# 2.9G（解压后8G） KVM 未激活 全新安装 已经过测试可用
+http://nico-ni.co/dd/Win2008R2Standard-x64.gz
+# 备用地址
+https://down.moerats.com/Windows/Win2008R2Standard-x64.gz
+# Username: Administrator
+# Password: lolico.moe123</code></pre><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li><code>Windows</code>原版镜像，可以在MSDN下载。</li>
+<li>DISM++，用于<code>DIY</code>以及优化<code>wim</code>镜像。</li>
+<li>虚拟化驱动：VirtIO（<code>KVM</code>驱动），Xen驱动。</li>
+<li>下载gunzip for windows，备用下载点。或者你也可以直接去安装<code>Cmder</code>（官网），其自带有<br><code>gzip</code>（顺便安利一下这个可以在<code>Win</code>下执行大多数<code>Linux</code>命令的超好用的命令行程序）。</li>
+<li>在计算机上安装<code>Hyper-V</code>（Win8/10开启Hyper-V教程），准备用于对制作好的<code>vhd</code>映像进行测试。</li>
+</ol>
+<h2 id="开始制作"><a href="#开始制作" class="headerlink" title="开始制作"></a>开始制作</h2><p><strong>1、制作可用的镜像文件</strong><br>提取准备好的<code>Windows</code>原版镜像中的<code>\sources\install.wim</code>文件，解压或直接挂载虚拟光驱都行，提取该文件到<code>E:\install.wim</code>。</p>
+<p>创建一个<code>vhd</code>虚拟磁盘，示例：盘符为<code>V</code>，路径为<code>D:\win.vhd</code>，大小为<code>5120M</code>。</p>
+<p>首先以管理员身份运行命令提示符或者<code>PowerShell</code>，然后执行以下命令：</p>
+<pre><code>diskpart
+# 以下命令实际上可以复制粘贴一次性执行，无需分条
+CREATE VDISK FILE=&quot;D:\win.vhd&quot; TYPE=FIXED MAXIMUM=5120
+SELECT VDISK FILE=&quot;D:\win.vhd&quot;
+ATTACH VDISK
+CLEAN
+CREATE PARTITION PRIMARY
+FORMAT FS=NTFS QUICK
+ASSIGN LETTER=V</code></pre><p>在<code>D</code>盘创建一个文件夹<code>D:\MOUNT</code>，打开<code>DISM++</code>，点击：文件–&gt;挂载映像–&gt;点第一个浏览，找到<code>E:\install.wim</code>–&gt;点第二个浏览，找到<code>D:\MOUNT</code>–&gt;不选中只读模式–&gt;确定。</p>
+<p>在<code>DISM++</code>里进行系统设置优化（建议关闭<code>UAC</code>）、安装语言包、添加先前下载好的虚拟化驱动等。</p>
+<p>完成后，点文件–&gt;另存为映像–&gt;保存在<code>D:\install.wim</code>，等待任务完成。</p>
+<p>点击：文件–&gt;释放映像–&gt;点第一个浏览，找到<code>D:\install.wim</code>–&gt;点第二个浏览，找到<code>V:</code>–&gt;只选中添加引导和格式化–&gt;确定–&gt;在弹出的“引导修复-<code>BIOS</code>”对话框中点击“更多”–&gt;找到盘符为<code>V</code>的磁盘分区–&gt;确定。</p>
+<p>最后等待完成！</p>
+<p><strong>2、设置系统的注册表</strong></p>
+<p>在自己的电脑上打开注册表编辑器<code>regedit</code>，选中<code>HKEY_LOCAL_MACHINE</code>分支，点击：文件-&gt;加载配置单元。</p>
+<p>在文件浏览器中选择<code>V:\Windows\System32\config\SYSTEM</code>，项名称填一个好找又不和目前项相同的，例如<code>A_SYSTEM</code>,然后更改如下键值以开启远程桌面服务。<br><img src="https://www.moerats.com/usr/picture/Win_dd_z(1).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>继续按照先前步骤加载配置单元<code>V:\Windows\System32\config\SOFTWARE</code>，项为<code>A_SOFTWARE</code>，然后更改如下键值以关闭 <code>Ctrl+Alt+Del</code>登陆。<br><img src="https://www.moerats.com/usr/picture/Win_dd_z(2).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>选中我们加载的配置单元，点击：文件-&gt;卸载配置单元，将<code>A_SYSTEM</code>和<code>A_SOFTWARE</code>卸载。</p>
+<p><strong>3、制作预应答文件</strong><br>下载Microsoft Windows AIK，建议安装在剩余空间较大的磁盘分区，因为创建编录文件的时候会自动挂载镜像。</p>
+<p>貌似仅适用于制作<code>Windows 7</code>以及<code>Server 2008 R2</code>的，如果是其他系统不知能不能制作，也可以尝试直接照搬我提供的预应答文件。</p>
+<p>安装完成后，打开“<code>Windows</code>系统映像管理器”，点击：文件-&gt;选择<code>Windows</code>映像，然后选择我们已经在前面的步骤中优化好的 <code>wim</code>文件，然后会提示你需要创建编录文件，选是即可。</p>
+<p>等待加载完成，然后仿照【这个预应答文件】进行制作（文件内容见附录），这个预应答文件将会设置用户名<code>Administrator</code>的密码为<code>lolico.moe123</code>。软件的具体使用方法可以百度一下有很多范例，讲起来比较复杂，理解能力强的人看一看就会用，因此此处不再赘述。如果你要制作的是<code>Win7</code>或者<code>Server2008R2</code>的<code>64</code>位系统，也可以使用此软件打开，然后在这个文件的基础上进行修改。</p>
+<p>制作完成之后保存预应答文件为<code>unattend.xml</code>，然后放在<code>V:\Windows\Panther</code>目录下（如果没有目录就自行新建）。</p>
+<p>在我的电脑中右击<code>V</code>盘，弹出。</p>
+<p><strong>3、对制作好的 dd 包进行测试</strong><br>先将你制作好的<code>vhd</code>复制一份，用复制的这份来测试，这样的话如果出现了错误就不用再重新制作，可以继续修改。</p>
+<p>打开<code>Hyper-V</code>，点击：操作-&gt;新建-&gt;虚拟机。</p>
+<p>名称和位置随便选，指定代数选择“第一代”，内存分配你觉得足以启动系统即可，配置网络不用管；连接虚拟硬盘选择“使用现有虚拟磁盘”，接着指定我们刚才制作的<code>vhd</code>虚拟磁盘，之后的设置都维持默认即可。</p>
+<p>启动虚拟机，观察是否有进行自动安装等操作，成功的话就可以关掉虚拟机并删掉使用过的<code>vhd</code>了。</p>
+<p><strong>4、将dd包部署在服务器上</strong><br>使用<code>gunzip</code>工具压缩打包压缩<code>D:\win.vhd</code>，这里提供两种方法：</p>
+<pre><code>#使用gunzip for windows
+将 gunzip 程序目录中的bin目录里的所有文件复制到%WINDIR%/SYSTEM32，接着在命令提示符内进入vhd所在目录，执行gzip.exe -k9 win.vhd。
+
+#使用cmder自带gunzip
+在cmder中进入vhd所在目录，执行gzip -k9 win.vhd。</code></pre><p>然后耐心等待压缩完成，之后我们就得到了一个可以用来脚本一键<code>dd</code>的包了。然后将这个压缩包传到可用<code>HTTP</code>直接下载的地方，最好不要包含跳转，然后就可以拿来使用了。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-10-20T11:51:35.000Z" itemprop="datePublished">2019-10-20</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.644Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/10/20/onedrivecmd-ef-bc-9aonedrive-e7-9a-84-e5-91-bd-e4-bb-a4-e8-a1-8c-e5-ae-a2-e6-88-b7-e7-ab-af-ef-bc-8c-e5-8f-af-e7-9b-b4-e6-8e-a5-e4-b8-8a-e4-bc-a0-e4-b8-8b-e8-bd-bd-e6-96-87-e4-bb-b6-e7-ad-89/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Onedrivecmd：OneDrive的命令行客户端，可直接上传/下载文件等</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/10/20/e4-bd-bf-e7-94-a8lnmp-e5-b8-b8-e8-a7-81-e9-97-ae-e9-a2-98-e8-a7-a3-e7-ad-94/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">使用LNMP常见问题解答</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="website"><meta property="og:url" content="http://yoursite.com/page/39/"><meta property="og:locale" content="en"><meta name="description" content="John Doe - 南猫">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/page/39/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Blog",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    "url": "http://yoursite.com",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "John Doe - 南猫"
+}
+</script>
+
+
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABkklEQVR42u3aQQ7CMAxE0d7/0rBCQijxjCkk0+p3A1RteAsrtpMcj4DrAAECxCUQR3F9PvP5/fV7dl+OCyIWMQyat8Fn90e42Xuj/wORjVCDfPOceh7EdRHdCQ3EvRGdgARxL0SZaCYDjgK3NS6IWEQ1EZ35/Fm1DWIpwmpcJwPP7v2lKwexDKECbJScVJOsJj0Q+QjVyDqFrZvM5IwJYjvCmYRkgJlBWSYwEDGIbmNbJbaqQLYmKxAxCLdwqRpht1iWXTmI7YjZQOpPVJFbbdqAyEao4sRJSN2CB0Q2wgkiVex0F1hA5CO6RUoFUxOYXDgDEYFwGmLn0IZahLeyKIjtCLXxXjXN3eRmV9sgtiLUhOQ2vE5gt7IoiG0IdYCvWhhzGuLyXRCRCHcTrlpQcRqmU5uzIJYivi5SzQU2O4uCiEKogHQbH+e9csYEEYVQi+KyaG0smoC4NsIJRndSsysrENEItZHvLK795LQyiOUI95CWW/hYhz9AxCLcDVi5OCoOkJ86rQxiGWLnBQIEiGjEE/xlCik16eJ7AAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            <div class="container">
+    <div class="main-container">
+        <main>
+            <div class="post-stream-container">
+                <!-- # Post List # -->
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/12/29/transfer-sh-ef-bc-9alinux-vps-e4-bd-bf-e7-94-a8-e5-91-bd-e4-bb-a4-e8-a1-8c-e5-bf-ab-e9-80-9f-e7-9a-84-e5-88-86-e4-ba-ab-e6-96-87-e4-bb-b6/" rel="bookmark">Transfer.sh：Linux VPS使用命令行快速的分享文件</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：Transfer.sh是一个可以让我们将Windows/Linux系统里的文件快速分享出去的平台，特别是
+    <a href="/2019/12/29/transfer-sh-ef-bc-9alinux-vps-e4-bd-bf-e7-94-a8-e5-91-bd-e4-bb-a4-e8-a1-8c-e5-bf-ab-e9-80-9f-e7-9a-84-e5-88-86-e4-ba-ab-e6-96-87-e4-bb-b6/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-12-29</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/12/29/smart-resize-ef-bc-9a-e5-9f-ba-e4-ba-8ehtml5-e7-9a-84-e5-9c-a8-e7-ba-bf-e6-89-b9-e9-87-8f-e8-a3-81-e5-89-aa-e5-9b-be-e7-89-87-e5-b7-a5-e5-85-b7/" rel="bookmark">Smart Resize：基于HTML5的在线批量裁剪图片工具</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        简介Smart Resize——也许是世界上最快且最智能的在线批量裁剪图...
+    <a href="/2019/12/29/smart-resize-ef-bc-9a-e5-9f-ba-e4-ba-8ehtml5-e7-9a-84-e5-9c-a8-e7-ba-bf-e6-89-b9-e9-87-8f-e8-a3-81-e5-89-aa-e5-9b-be-e7-89-87-e5-b7-a5-e5-85-b7/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-12-29</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/12/29/e4-b8-80-e4-b8-aa-e5-9f-ba-e4-ba-8elaravel5-e4-b8-94-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84-e4-b8-aa-e4-ba-ba-e5-8d-9a-e5-ae-a2-e7-b3-bb-e7-bb-9f-ef-bc-9alablog-e6-90-ad-e5-bb-ba-e6-95-99/" rel="bookmark">一个基于Laravel5且功能强大的个人博客系统：Lablog搭建教程</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：之前有同学投稿想要个Lablog宝塔教程，拖到现在才想起来，这里就发个搭建教程，Lablog博客基于最新PHP...
+    <a href="/2019/12/29/e4-b8-80-e4-b8-aa-e5-9f-ba-e4-ba-8elaravel5-e4-b8-94-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84-e4-b8-aa-e4-ba-ba-e5-8d-9a-e5-ae-a2-e7-b3-bb-e7-bb-9f-ef-bc-9alablog-e6-90-ad-e5-bb-ba-e6-95-99/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-12-29</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/12/29/e4-b8-80-e6-ac-be-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e8-bd-bb-e9-87-8f-e7-ba-a7-e3-80-81-e9-ab-98-e6-80-a7-e8-83-bd-e5-86-85-e7-bd-91-e7-a9-bf-e9-80-8f-e5-b7-a5-e5-85-b7-ef-bc-9anps-e4-bd-bf/" rel="bookmark">一款带Web面板的轻量级、高性能内网穿透工具：nps使用教程</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：内网穿透工具之前已经介绍了不少了，比如Frp、lanproxy、Holer等，现在再介绍个带Web...
+    <a href="/2019/12/29/e4-b8-80-e6-ac-be-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e8-bd-bb-e9-87-8f-e7-ba-a7-e3-80-81-e9-ab-98-e6-80-a7-e8-83-bd-e5-86-85-e7-bd-91-e7-a9-bf-e9-80-8f-e5-b7-a5-e5-85-b7-ef-bc-9anps-e4-bd-bf/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-12-29</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/" rel="bookmark">使用Docker搭建DPlayer视频弹幕接口API后端</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：之前有同学要求博主出个DPlayer弹幕后端搭建教程，刚好本博客的Handsome主题更新并完美适配了Dplayer
+    <a href="/2019/12/28/e4-bd-bf-e7-94-a8docker-e6-90-ad-e5-bb-badplayer-e8-a7-86-e9-a2-91-e5-bc-b9-e5-b9-95-e6-8e-a5-e5-8f-a3api-e5-90-8e-e7-ab-af/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-12-28</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/" rel="bookmark">Linux安装rinetd实现TCP端口转发，可加速网站</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：网站服务器在国外的如果延迟很高，网络爆炸，会造成国内访问放慢，可以使用CDN加速，自建教程查看：使用Nginx反向代理，自建CDN加速节点，不过设置方法对于新手很...
+    <a href="/2019/12/28/linux-e5-ae-89-e8-a3-85rinetd-e5-ae-9e-e7-8e-b0tcp-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-ef-bc-8c-e5-8f-af-e5-8a-a0-e9-80-9f-e7-bd-91-e7-ab-99/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-12-28</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/12/28/vultr-e6-96-b0-e7-94-a8-e6-88-b7-e5-85-855-e9-80-81100-e5-85-85-e5-a4-9a-e5-b0-91-e9-80-81-e5-a4-9a-e5-b0-91-e6-b4-bb-e5-8a-a8-ef-bc-8c-e9-99-84-e5-b8-a6-e5-85-8d-e8-b4-b9-e9-a2-86-e5-8f-963/" rel="bookmark">Vultr新用户充$5送$100/充多少送多少活动，附带免费领取$3的方法</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：Vultr一年一次的送钱活动开始了，这次是充5美元送100美元和充多少送多少活动，有效期分别是2
+    <a href="/2019/12/28/vultr-e6-96-b0-e7-94-a8-e6-88-b7-e5-85-855-e9-80-81100-e5-85-85-e5-a4-9a-e5-b0-91-e9-80-81-e5-a4-9a-e5-b0-91-e6-b4-bb-e5-8a-a8-ef-bc-8c-e9-99-84-e5-b8-a6-e5-85-8d-e8-b4-b9-e9-a2-86-e5-8f-963/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-12-28</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/12/28/google-bbr-e5-85-b3-e9-97-ad-e5-8d-b8-e8-bd-bd-e6-96-b9-e6-b3-95/" rel="bookmark">Google BBR关闭/卸载方法</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：网上的Google BBR教程都只提到了安装/开启方法，并没有说关闭/卸载方法，相信有人会想关闭它！这里就说个简单的关闭BBR的方法。
+    <a href="/2019/12/28/google-bbr-e5-85-b3-e9-97-ad-e5-8d-b8-e8-bd-bd-e6-96-b9-e6-b3-95/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-12-28</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/12/27/centos-6-centos-7-debian-e5-8d-95-e7-bd-91-e5-8d-a1-e7-bb-91-e5-ae-9a-e5-a4-9a-e4-b8-aaip-e7-9a-84-e6-96-b9-e6-b3-95/" rel="bookmark">Centos 6/Centos 7/Debian单网卡绑定多个IP的方法</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        一、Centos 6单网卡添加多个IP1、查看网卡信息
+ip addr看IPv4绑定的是哪个网卡，...
+    <a href="/2019/12/27/centos-6-centos-7-debian-e5-8d-95-e7-bd-91-e5-8d-a1-e7-bb-91-e5-ae-9a-e5-a4-9a-e4-b8-aaip-e7-9a-84-e6-96-b9-e6-b3-95/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-12-27</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2019/12/27/openvz-e5-b9-b3-e5-8f-b0google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/" rel="bookmark">OpenVZ平台Google BBR一键安装脚本</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：此前用的一直是91yun大神制作的openvz的BBR一键包，今天看到扩软博主也制作了个openvz的
+    <a href="/2019/12/27/openvz-e5-b9-b3-e5-8f-b0google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2019-12-27</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+            </div>
+        </main>
+        
+<nav>
+<ul class="pagination">
+    
+        <li class="page-item page-prev">
+            <a href="/page/38/" rel="prev">
+                <span class="page-item-subtitle"><i class="icon icon-back" aria-hidden="true"></i></span>
+                <span class="page-item-title">Previous</span>
+            </a>
+        </li>
+    
+    
+        <li class="page-item page-next">
+            <a href="/page/40/" rel="next">
+                <span class="page-item-title">Next</span>
+                <span class="page-item-subtitle"><i class="icon icon-forward" aria-hidden="true"></i></span>
+            </a>
+        </li>
+    
+</ul>
+</nav>
+
+
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

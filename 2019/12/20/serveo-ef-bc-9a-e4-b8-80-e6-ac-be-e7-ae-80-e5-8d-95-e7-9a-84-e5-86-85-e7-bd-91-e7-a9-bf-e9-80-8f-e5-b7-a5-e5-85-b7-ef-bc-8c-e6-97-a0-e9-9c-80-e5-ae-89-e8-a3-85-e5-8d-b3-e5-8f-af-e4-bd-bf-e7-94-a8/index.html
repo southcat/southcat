@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Serveo：一款简单的内网穿透工具，无需安装即可使用 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Serveo：一款简单的内网穿透工具，无需安装即可使用 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/12/20/serveo-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e7-9a-84-e5-86-85-e7-bd-91-e7-a9-bf-e9-80-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-97-a0-e9-9c-80-e5-ae-89-e8-a3-85-e5-8d-b3-e5-8f-af-e4-bd-bf-e7-94-a8/"><meta property="og:locale" content="en"><meta name="description" content="说明：Serveo是一个SSH服务器，仅用于远程端口转发，可以快速将本地端口暴露在外网。官方声称其为Ngrok的绝佳替代品，对其优点是使用现有的SSH客户端，无需安装客户端即可完成端口转发。当用户连接到Serveo时，他们会获得一个公共URL，任何人都可以使用它来连接到他们的localhost服务器。 使用官方地址：http:&#x2F;&#x2F;serveo.net 使用要求：可以使用SSH，并且能连接到互联网， - John Doe - 南猫"><meta property="article:published_time" content="2019-12-20T04:51:41.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.652Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.652Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/12/20/serveo-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e7-9a-84-e5-86-85-e7-bd-91-e7-a9-bf-e9-80-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-97-a0-e9-9c-80-e5-ae-89-e8-a3-85-e5-8d-b3-e5-8f-af-e4-bd-bf-e7-94-a8/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/12/20/serveo-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e7-9a-84-e5-86-85-e7-bd-91-e7-a9-bf-e9-80-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-97-a0-e9-9c-80-e5-ae-89-e8-a3-85-e5-8d-b3-e5-8f-af-e4-bd-bf-e7-94-a8/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/12/20/serveo-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e7-9a-84-e5-86-85-e7-bd-91-e7-a9-bf-e9-80-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-97-a0-e9-9c-80-e5-ae-89-e8-a3-85-e5-8d-b3-e5-8f-af-e4-bd-bf-e7-94-a8/"
+    },
+    "headline": "Serveo：一款简单的内网穿透工具，无需安装即可使用 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-20T04:51:41.000Z",
+    "dateModified": "2020-04-12T04:09:09.652Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：Serveo是一个SSH服务器，仅用于远程端口转发，可以快速将本地端口暴露在外网。官方声称其为Ngrok的绝佳替代品，对其优点是使用现有的SSH客户端，无需安装客户端即可完成端口转发。当用户连接到Serveo时，他们会获得一个公共URL，任何人都可以使用它来连接到他们的localhost服务器。 使用官方地址：http://serveo.net 使用要求：可以使用SSH，并且能连接到互联网， - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Serveo：一款简单的内网穿透工具，无需安装即可使用" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Serveo：一款简单的内网穿透工具，无需安装即可使用&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=Serveo：一款简单的内网穿透工具，无需安装即可使用" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFXUlEQVR42u3czXIaSRREYd7/pZmtPe7KPFngxYwOG4URaqo/Iq7vn/R6+3i/JBBBBBFEEEGEiPAKj3+/5rcLlNc8Xefp/dI1T9f69evpDOi+RBBBhEeEx6BRnn86VPo+QSbXTq85/dzpvkQQQYQzAgk+L/ggAfTp+RSs20228z+iiiCCCNcIS9BZki7yHjc/J4IIIvx9hJviKP2bPL+8X0raRBBBhA1hCXItCDWQUzJ1Cn7LTS+FoQgiiLA3Wv/LX7/WbRZBhB+EUIeWAeQ2cWoDl7k5EgLkV6bSIojwgxBIAXNqmLbCiyQ7tGl704hN9yOCCCLknaVl6EqGtEvztTVUWwBthdexOBNBBBFqspSCDA1w6ZAk8K7BLuHF4C6CCCLEpgpZkEwXJ40NEpAbILlR9GGKIIIIcfjSEhvSZGnPk+WrpVmyLnbFKlIEEUTAhQtNcNYAS6/RkqeU9KECSgQRRKjLEC1wkmB2s4RFlzeWBVNURYoggghoiHmbkJACKQ1ylobrRwWUCCKIUH+BogW1ZXjbEplWoJEEiwbpmiyJIIIIdWCRAl8raG5vqA1Y14WzaSArggg/GOGmQFqaMCmw0mUOury9LpGIIIIIfSDbhibtgGQYQxoibSHj9kM4BkYRRBABLWG1RYl2SLJUmZIzOhwig9s/ri+CCCIcEdaiiSxOpGTn9ibWQXK8pggiiFAHsinQpWSpLXakRYoVZlkAid8XQQQR6vClBbB14ToFRhpgyWspkAgiiMAQ1jddmzAtoSLLG6SJ2pZGRRBBhB1hHZjQ4NeWKcgCOW3YkkAqgggivGuytDZZyU20YEWC5QKGG7kiiCDCI0JdcAKDGXKjc+AaEyfSIDoGRhFEEKEWIZ8UQe3GyNJHunG6zBUbRSKIIAJKlkgRQ5ooBJM2btPZaINnKqBEEOGHI9DGxQ3azbJ2K9RuAmwNjCKIIAJqjLTARBe20vVJE6UVT/MSmggiiBARaOPkpmhqyVNLfOjQd1pWF0EEER4R2g21pippuJDFiaUZsxRMtYASQQQRpj/SQhKppdAhA9tWtC0fDCqgRBBBhBoYabODLF2l4Wz7udowBYmaCCKIwBCWQ77gg14rFVrtuZuC71hAiSCCCPiXrxNGama2BGodwtKgOi12iiCCCMdkaV2Mum2GtgCXAmJDbuf641oiiCACXtK4Xa5ah7W3CREJkPWMIoggwrGAws1JuNxFF79ulkHWYuv4PRFEEKEGxqV4um2m0OKKLnO1we3xgxBBBBFiYCQHIgddmh6kUbssbJEhjggiiNAHsm1RcylmyHJHOzRZwEqFV1s4E0EEETrCNxeqlqbLsiRGGzGomSuCCCI8IpCCqTVQPh3e0JshA5f2YYggggh5SYM2RmjDojVul0Fqa6Ys2HV7TQQRRLj+44508EmKpxaYl8YNfS8RRBDhHYcvZPBCCyaUqJSFMTLwbY2euhwigggiHJsqLXFZb2S5ATrYoUOdlEgd/3cQQQQR8KCTBKzWiG2HvAnM6SyoeSOCCCLU4UtrRLSFCNqAIcF0aawsSZYIIojAd5ZwQwIEzBZIabFDlriWokoEEURgf8udFCek+bkMSdN1aTAlQx5UQIkgggjvKZCA4SlpxKRB6joQpkEVF1AiiCDC1S9w0GEqCYwtkfoGzuOHKIIIIhwRSIM1JSFkcEMC8CcFFCmiRBBBhO8htITmk8XKhrm8viGLIIIInyGQwQg9+DJgTQlXGgC1Qk8EEUToCK0gQk2KAZQOgpdmC1n0EkEEEToCPRxZ1iLLU6TAojeUGjetqSOCCCK85oHs//khgggiiCCCCCI8Pv4Bd45GsKqwUFIAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Serveo：一款简单的内网穿透工具，无需安装即可使用</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-20</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Serveo：一款简单的内网穿透工具，无需安装即可使用&url=http://yoursite.com/2019/12/20/serveo-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e7-9a-84-e5-86-85-e7-bd-91-e7-a9-bf-e9-80-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-97-a0-e9-9c-80-e5-ae-89-e8-a3-85-e5-8d-b3-e5-8f-af-e4-bd-bf-e7-94-a8/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Serveo：一款简单的内网穿透工具，无需安装即可使用&url=http://yoursite.com/2019/12/20/serveo-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e7-9a-84-e5-86-85-e7-bd-91-e7-a9-bf-e9-80-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-97-a0-e9-9c-80-e5-ae-89-e8-a3-85-e5-8d-b3-e5-8f-af-e4-bd-bf-e7-94-a8/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/20/serveo-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e7-9a-84-e5-86-85-e7-bd-91-e7-a9-bf-e9-80-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-97-a0-e9-9c-80-e5-ae-89-e8-a3-85-e5-8d-b3-e5-8f-af-e4-bd-bf-e7-94-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/12/20/serveo-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e7-9a-84-e5-86-85-e7-bd-91-e7-a9-bf-e9-80-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-97-a0-e9-9c-80-e5-ae-89-e8-a3-85-e5-8d-b3-e5-8f-af-e4-bd-bf-e7-94-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/12/20/serveo-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e7-9a-84-e5-86-85-e7-bd-91-e7-a9-bf-e9-80-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-97-a0-e9-9c-80-e5-ae-89-e8-a3-85-e5-8d-b3-e5-8f-af-e4-bd-bf-e7-94-a8/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/12/20/serveo-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e7-9a-84-e5-86-85-e7-bd-91-e7-a9-bf-e9-80-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-97-a0-e9-9c-80-e5-ae-89-e8-a3-85-e5-8d-b3-e5-8f-af-e4-bd-bf-e7-94-a8/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/12/20/serveo-ef-bc-9a-e4-b8-80-e6-ac-be-e7-ae-80-e5-8d-95-e7-9a-84-e5-86-85-e7-bd-91-e7-a9-bf-e9-80-8f-e5-b7-a5-e5-85-b7-ef-bc-8c-e6-97-a0-e9-9c-80-e5-ae-89-e8-a3-85-e5-8d-b3-e5-8f-af-e4-bd-bf-e7-94-a8/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFXUlEQVR42u3czXIaSRREYd7/pZmtPe7KPFngxYwOG4URaqo/Iq7vn/R6+3i/JBBBBBFEEEGEiPAKj3+/5rcLlNc8Xefp/dI1T9f69evpDOi+RBBBhEeEx6BRnn86VPo+QSbXTq85/dzpvkQQQYQzAgk+L/ggAfTp+RSs20228z+iiiCCCNcIS9BZki7yHjc/J4IIIvx9hJviKP2bPL+8X0raRBBBhA1hCXItCDWQUzJ1Cn7LTS+FoQgiiLA3Wv/LX7/WbRZBhB+EUIeWAeQ2cWoDl7k5EgLkV6bSIojwgxBIAXNqmLbCiyQ7tGl704hN9yOCCCLknaVl6EqGtEvztTVUWwBthdexOBNBBBFqspSCDA1w6ZAk8K7BLuHF4C6CCCLEpgpZkEwXJ40NEpAbILlR9GGKIIIIcfjSEhvSZGnPk+WrpVmyLnbFKlIEEUTAhQtNcNYAS6/RkqeU9KECSgQRRKjLEC1wkmB2s4RFlzeWBVNURYoggghoiHmbkJACKQ1ylobrRwWUCCKIUH+BogW1ZXjbEplWoJEEiwbpmiyJIIIIdWCRAl8raG5vqA1Y14WzaSArggg/GOGmQFqaMCmw0mUOury9LpGIIIIIfSDbhibtgGQYQxoibSHj9kM4BkYRRBABLWG1RYl2SLJUmZIzOhwig9s/ri+CCCIcEdaiiSxOpGTn9ibWQXK8pggiiFAHsinQpWSpLXakRYoVZlkAid8XQQQR6vClBbB14ToFRhpgyWspkAgiiMAQ1jddmzAtoSLLG6SJ2pZGRRBBhB1hHZjQ4NeWKcgCOW3YkkAqgggivGuytDZZyU20YEWC5QKGG7kiiCDCI0JdcAKDGXKjc+AaEyfSIDoGRhFEEKEWIZ8UQe3GyNJHunG6zBUbRSKIIAJKlkgRQ5ooBJM2btPZaINnKqBEEOGHI9DGxQ3azbJ2K9RuAmwNjCKIIAJqjLTARBe20vVJE6UVT/MSmggiiBARaOPkpmhqyVNLfOjQd1pWF0EEER4R2g21pippuJDFiaUZsxRMtYASQQQRpj/SQhKppdAhA9tWtC0fDCqgRBBBhBoYabODLF2l4Wz7udowBYmaCCKIwBCWQ77gg14rFVrtuZuC71hAiSCCCPiXrxNGama2BGodwtKgOi12iiCCCMdkaV2Mum2GtgCXAmJDbuf641oiiCACXtK4Xa5ah7W3CREJkPWMIoggwrGAws1JuNxFF79ulkHWYuv4PRFEEKEGxqV4um2m0OKKLnO1we3xgxBBBBFiYCQHIgddmh6kUbssbJEhjggiiNAHsm1RcylmyHJHOzRZwEqFV1s4E0EEETrCNxeqlqbLsiRGGzGomSuCCCI8IpCCqTVQPh3e0JshA5f2YYggggh5SYM2RmjDojVul0Fqa6Ys2HV7TQQRRLj+44508EmKpxaYl8YNfS8RRBDhHYcvZPBCCyaUqJSFMTLwbY2euhwigggiHJsqLXFZb2S5ATrYoUOdlEgd/3cQQQQR8KCTBKzWiG2HvAnM6SyoeSOCCCLU4UtrRLSFCNqAIcF0aawsSZYIIojAd5ZwQwIEzBZIabFDlriWokoEEURgf8udFCek+bkMSdN1aTAlQx5UQIkgggjvKZCA4SlpxKRB6joQpkEVF1AiiCDC1S9w0GEqCYwtkfoGzuOHKIIIIhwRSIM1JSFkcEMC8CcFFCmiRBBBhO8htITmk8XKhrm8viGLIIIInyGQwQg9+DJgTQlXGgC1Qk8EEUToCK0gQk2KAZQOgpdmC1n0EkEEEToCPRxZ1iLLU6TAojeUGjetqSOCCCK85oHs//khgggiiCCCCCI8Pv4Bd45GsKqwUFIAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程守护"><span class="post-toc-number">2.</span> <span class="post-toc-text">进程守护</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong><code>Serveo</code>是一个<code>SSH</code>服务器，仅用于远程端口转发，可以快速将本地端口暴露在外网。官方声称其为<code>Ngrok</code>的绝佳替代品，对其优点是使用现有的<code>SSH</code>客户端，无需安装客户端即可完成端口转发。当用户连接到<code>Serveo</code>时，他们会获得一个公共<code>URL</code>，任何人都可以使用它来连接到他们的<code>localhost</code>服务器。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><strong>官方地址：</strong><a href="http://serveo.net" target="_blank" rel="noopener">http://serveo.net</a></p>
+<p><strong>使用要求：</strong>可以使用<code>SSH</code>，并且能连接到互联网，<code>Linux</code>、<code>Windows</code>等系统都行。</p>
+<p><strong>1、转发HTTP</strong><br>将本地<code>3000</code>端口穿透到公网中，使用命令：</p>
+<pre><code>#要转发其它端口的自行替换
+ssh -R 80:localhost:3000 serveo.net</code></pre><p>第一次如果有提示，选择<code>yes</code>即可，之后会为你随机生成一个<code>serveo.net</code>二级域名，然后就可以使用浏览器间接访问本地的<code>localhost:3000</code>了。</p>
+<p>如果要指定二级域名，可以使用命令：</p>
+<pre><code>#这里默认为moerats.serveo.net，自行替换即可
+ssh -R moerats:80:localhost:3000 serveo.net</code></pre><p>此时你就可以在外网使用<code>moerats.serveo.net</code>访问你本地的<code>localhost:3000</code>了。</p>
+<p><strong>2、转发SSH</strong><br>将本地<code>22</code>端口穿透到公网中，使用命令：</p>
+<pre><code>#可以自行设置名称，这里默认rats
+ssh -R rats:22:localhost:22 serveo.net</code></pre><p>接下来就可以登录该内网服务器了，使用命令：</p>
+<pre><code>ssh -J serveo.net root@rats</code></pre><p><strong>3、转发TCP</strong><br>将本地<code>1492</code>端口穿透到公网中，使用命令：</p>
+<pre><code>#可以自行设置公网端口，这里默认1492
+ssh -R 1492:localhost:1492 serveo.net</code></pre><h2 id="进程守护"><a href="#进程守护" class="headerlink" title="进程守护"></a>进程守护</h2><p>这里官方推荐使用<code>AutoSSH</code>，作用是一旦<code>SSH</code>连接超时或停止传递流量，则根据需要重新启动它。</p>
+<p><strong>1、安装AutoSSH</strong></p>
+<pre><code>#Debian/Ubuntu系统
+apt install autossh -y
+
+#CentOS系统
+yum install autossh -y</code></pre><p><strong>2、使用Systemd</strong></p>
+<p>只适用于<code>CentOS 7</code>、<code>Debian 8+</code>、<code>Ubuntu 16+</code>等。</p>
+<pre><code>#输入你的转发命令，去掉开头的ssh即可
+serveo=&quot;-R 80:localhost:3000 serveo.net&quot;
+#将以下代码一起复制到SSH运行
+cat &gt; /etc/systemd/system/autossh.service &lt;&lt;EOF
+[Unit]
+Description=autossh
+After=network.target
+
+[Service]
+Type=simple
+Environment=&quot;AUTOSSH_GATETIME=0&quot;
+ExecStart=$(command -v autossh) -M 0 -o &quot;ServerAliveInterval 30&quot; -o &quot;ServerAliveCountMax 3&quot; $serveo
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+EOF</code></pre><p>开始启动并设置开机自启：</p>
+<pre><code>systemctl start autossh
+systemctl enable autossh</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-20T04:51:41.000Z" itemprop="datePublished">2019-12-20</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.652Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/21/linux-e7-b3-bb-e7-bb-9fcrontab-e7-9a-84-e5-ae-89-e8-a3-85-e5-8f-8a-e5-ae-9a-e6-97-b6-e4-bb-bb-e5-8a-a1-e7-9a-84-e5-91-bd-e4-bb-a4-e8-af-a6-e8-a7-a3/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux系统Crontab的安装及定时任务的命令详解</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/20/e4-b8-80-e4-b8-aa-e5-9f-ba-e4-ba-8e-e6-96-b0-e6-b5-aa-e7-9a-84-e5-9b-be-e5-ba-8a-ef-bc-9aatc-e5-9b-be-e5-ba-8a-e7-a8-8b-e5-ba-8f-ef-bc-8c-e6-94-af-e6-8c-81qq-e6-88-aa-e5-9b-be-e5-90-8e-e7-9b-b4/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一个基于新浪的图床：Atc图床程序，支持QQ截图后直接粘贴上传</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

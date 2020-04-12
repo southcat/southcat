@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>lnmp1.4安装及部署typecho或其它博客教程 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="lnmp1.4安装及部署typecho或其它博客教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/04/04/lnmp1-4-e5-ae-89-e8-a3-85-e5-8f-8a-e9-83-a8-e7-bd-b2typecho-e6-88-96-e5-85-b6-e5-ae-83-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="提示：使用Xshell等软件操作vps或服务器的时候，如果输入有错误需要删除时，可以按住Ctrl再按Backspace键进行删除。 lnmp1.4安装1、使用Xshell或类似的SSH工具登陆VPS或服务器 登陆后运行： screen -S lnmp如果提示screen: command not found 命令不存在可以执行：yum install screen 或 apt-get instal - John Doe - 南猫"><meta property="article:published_time" content="2020-04-03T19:48:37.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.660Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.660Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/04/04/lnmp1-4-e5-ae-89-e8-a3-85-e5-8f-8a-e9-83-a8-e7-bd-b2typecho-e6-88-96-e5-85-b6-e5-ae-83-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/04/04/lnmp1-4-e5-ae-89-e8-a3-85-e5-8f-8a-e9-83-a8-e7-bd-b2typecho-e6-88-96-e5-85-b6-e5-ae-83-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/04/04/lnmp1-4-e5-ae-89-e8-a3-85-e5-8f-8a-e9-83-a8-e7-bd-b2typecho-e6-88-96-e5-85-b6-e5-ae-83-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/"
+    },
+    "headline": "lnmp1.4安装及部署typecho或其它博客教程 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-04-03T19:48:37.000Z",
+    "dateModified": "2020-04-12T04:09:09.660Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "提示：使用Xshell等软件操作vps或服务器的时候，如果输入有错误需要删除时，可以按住Ctrl再按Backspace键进行删除。 lnmp1.4安装1、使用Xshell或类似的SSH工具登陆VPS或服务器 登陆后运行： screen -S lnmp如果提示screen: command not found 命令不存在可以执行：yum install screen 或 apt-get instal - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=lnmp1.4安装及部署typecho或其它博客教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=lnmp1.4安装及部署typecho或其它博客教程&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=lnmp1.4安装及部署typecho或其它博客教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAELElEQVR42u3cwXrUMAxF4bz/S8O2gKN75GQRmZNNCw0Z/+YbW5Y0vX79B9clUqRIkSJFPkRexfXznp/3/vGgxb9ZfV3dc3ffP4MFr7sct0iRQ5HLN+1fyBX87uGr51aTliZpBUXjFilyMLJ6obsBrwZz96xqUNW96fu7cYsUeTKyenPfwXfuo4uVSJEi1wF19XO64SccWfxEijwRmRaIdOilC1cKCjoBx2unEJEiP4asEkJf/vpatk6kyA8hY9EEHH6rgy1JRlcLS3Xgfq2qJVLkh5ApkCaTkDb1tEB0DuSd8YoUORGZijokmdVJYpGCLg3e754rUuR05N1iUR1Od6Ek4KiChlZBVqTIgcg0uCcB8u6iRUExKS1S5EDkbmB9hatqfNiZANKEERNZIkUOQHaa8miAkALtVMTZwS//LFLkUGS1YJDk0hsBQXfTR82JIkUORb5ZdOk2AXaboB4VfESKHICsCinVZr7zoTNSTCJJ6SowR8llkSIHIEnyt3t47iahu8nkVrOSSJFDkNVmTD9wlgKH6tCdktqdD6GVGXSRIgchSRIrTQhJLNHkFT3EVx/QESlyKpIuDvTgTAs+aTGrJg4npEWKHIqki0HatGkDIvmATXUAr56DTyEiRX4USQqvdCFJiauUeO4WX2PTvkiRA5HkwEsApOCzM4GpiapV8BEpcgCSJonJz2hSulwsQjBPxilS5GlIUmzZGWBKPhF8p3FJpMiTkCSBSwN1GnA8OWjjgo9IkR9HdhoASYBMksG0ESM1GcbFSqTIQ5DkUEwaIy547Wz4JOgXKXIiMr3JSXGn29xHGn9pIRYH6CJFDkGm4gxdJFKAnZqZUjGI/CfEDLpIkQOQ3SRVChRSgQc1GcGAIzUsihR5AjI1+e42NdDgn04UCe5FipyOTAHzkwMyndAOMhWsRIqcjKSbPQkadg/SZCKrAKZV1RIp8qNIUlQhwQG5yKG7s7DFCRcpciCSNjd0E8sk0Ng5GJDgX6TIyci0qdIiUGdhSc8hSa1bmEiRw5Ek2N1ZJEihtBokeZ04kSJFDkamhoQq8RsTShf7xXrkIN4pOIkUORVJAnTSHEQ3cVLg7SazWg2EIkV+GEkD9c5iQw/UpMGJTCZqIBQpcgiySlh1BkwOsqk5lwTmpMlYpMjJSLJhk8ZeUrQlyWbSlE9eU6TIyUiafCLNtN0GJvL6NJhHAbpIkYOQpPmoWnhIY1M3MU2LPnjhESny48gnCwMqhF78F5yUzYCNg4NIkdORNDlMgoC0oSdsp5CUDtkiRU5Gdost1SLQDdA7RaRO0C9S5OlI0tC028BULWwkSFn+vUiRhyO7TYXk+yqhvNNAiDqyRIocgNxJNHcDb3LQJUkqOhkiRU5FVptuShLTZDQNFqpiTgryy2BApMghyJMvkSJFihQpcvP6DVcz4IzQ/BzdAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">lnmp1.4安装及部署typecho或其它博客教程</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-04-04</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=lnmp1.4安装及部署typecho或其它博客教程&url=http://yoursite.com/2020/04/04/lnmp1-4-e5-ae-89-e8-a3-85-e5-8f-8a-e9-83-a8-e7-bd-b2typecho-e6-88-96-e5-85-b6-e5-ae-83-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=lnmp1.4安装及部署typecho或其它博客教程&url=http://yoursite.com/2020/04/04/lnmp1-4-e5-ae-89-e8-a3-85-e5-8f-8a-e9-83-a8-e7-bd-b2typecho-e6-88-96-e5-85-b6-e5-ae-83-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/04/04/lnmp1-4-e5-ae-89-e8-a3-85-e5-8f-8a-e9-83-a8-e7-bd-b2typecho-e6-88-96-e5-85-b6-e5-ae-83-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/04/04/lnmp1-4-e5-ae-89-e8-a3-85-e5-8f-8a-e9-83-a8-e7-bd-b2typecho-e6-88-96-e5-85-b6-e5-ae-83-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/04/04/lnmp1-4-e5-ae-89-e8-a3-85-e5-8f-8a-e9-83-a8-e7-bd-b2typecho-e6-88-96-e5-85-b6-e5-ae-83-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/04/04/lnmp1-4-e5-ae-89-e8-a3-85-e5-8f-8a-e9-83-a8-e7-bd-b2typecho-e6-88-96-e5-85-b6-e5-ae-83-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/04/04/lnmp1-4-e5-ae-89-e8-a3-85-e5-8f-8a-e9-83-a8-e7-bd-b2typecho-e6-88-96-e5-85-b6-e5-ae-83-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAELElEQVR42u3cwXrUMAxF4bz/S8O2gKN75GQRmZNNCw0Z/+YbW5Y0vX79B9clUqRIkSJFPkRexfXznp/3/vGgxb9ZfV3dc3ffP4MFr7sct0iRQ5HLN+1fyBX87uGr51aTliZpBUXjFilyMLJ6obsBrwZz96xqUNW96fu7cYsUeTKyenPfwXfuo4uVSJEi1wF19XO64SccWfxEijwRmRaIdOilC1cKCjoBx2unEJEiP4asEkJf/vpatk6kyA8hY9EEHH6rgy1JRlcLS3Xgfq2qJVLkh5ApkCaTkDb1tEB0DuSd8YoUORGZijokmdVJYpGCLg3e754rUuR05N1iUR1Od6Ek4KiChlZBVqTIgcg0uCcB8u6iRUExKS1S5EDkbmB9hatqfNiZANKEERNZIkUOQHaa8miAkALtVMTZwS//LFLkUGS1YJDk0hsBQXfTR82JIkUORb5ZdOk2AXaboB4VfESKHICsCinVZr7zoTNSTCJJ6SowR8llkSIHIEnyt3t47iahu8nkVrOSSJFDkNVmTD9wlgKH6tCdktqdD6GVGXSRIgchSRIrTQhJLNHkFT3EVx/QESlyKpIuDvTgTAs+aTGrJg4npEWKHIqki0HatGkDIvmATXUAr56DTyEiRX4USQqvdCFJiauUeO4WX2PTvkiRA5HkwEsApOCzM4GpiapV8BEpcgCSJonJz2hSulwsQjBPxilS5GlIUmzZGWBKPhF8p3FJpMiTkCSBSwN1GnA8OWjjgo9IkR9HdhoASYBMksG0ESM1GcbFSqTIQ5DkUEwaIy547Wz4JOgXKXIiMr3JSXGn29xHGn9pIRYH6CJFDkGm4gxdJFKAnZqZUjGI/CfEDLpIkQOQ3SRVChRSgQc1GcGAIzUsihR5AjI1+e42NdDgn04UCe5FipyOTAHzkwMyndAOMhWsRIqcjKSbPQkadg/SZCKrAKZV1RIp8qNIUlQhwQG5yKG7s7DFCRcpciCSNjd0E8sk0Ng5GJDgX6TIyci0qdIiUGdhSc8hSa1bmEiRw5Ek2N1ZJEihtBokeZ04kSJFDkamhoQq8RsTShf7xXrkIN4pOIkUORVJAnTSHEQ3cVLg7SazWg2EIkV+GEkD9c5iQw/UpMGJTCZqIBQpcgiySlh1BkwOsqk5lwTmpMlYpMjJSLJhk8ZeUrQlyWbSlE9eU6TIyUiafCLNtN0GJvL6NJhHAbpIkYOQpPmoWnhIY1M3MU2LPnjhESny48gnCwMqhF78F5yUzYCNg4NIkdORNDlMgoC0oSdsp5CUDtkiRU5Gdost1SLQDdA7RaRO0C9S5OlI0tC028BULWwkSFn+vUiRhyO7TYXk+yqhvNNAiDqyRIocgNxJNHcDb3LQJUkqOhkiRU5FVptuShLTZDQNFqpiTgryy2BApMghyJMvkSJFihQpcvP6DVcz4IzQ/BzdAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#lnmp1-4安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">lnmp1.4安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#网站部署"><span class="post-toc-number">2.</span> <span class="post-toc-text">网站部署</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#部署typecho"><span class="post-toc-number">3.</span> <span class="post-toc-text">部署typecho</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>提示：</strong>使用Xshell等软件操作vps或服务器的时候，如果输入有错误需要删除时，可以按住Ctrl再按Backspace键进行删除。</p>
+<h2 id="lnmp1-4安装"><a href="#lnmp1-4安装" class="headerlink" title="lnmp1.4安装"></a>lnmp1.4安装</h2><p><strong>1、使用Xshell或类似的SSH工具登陆VPS或服务器</strong></p>
+<p>登陆后运行：</p>
+<pre><code>screen -S lnmp</code></pre><p>如果提示<code>screen: command not found</code> 命令不存在可以执行：<code>yum install screen</code> 或 <code>apt-get install screen</code>安装</p>
+<p><strong>2、下载并安装LNMP一键安装包</strong><br>lnmp一键包安装地址：<a href="https://lnmp.org/install.html" target="_blank" rel="noopener">https://lnmp.org/install.html</a></p>
+<pre><code>wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz &amp;&amp; tar zxf lnmp1.4.tar.gz &amp;&amp; cd lnmp1.4 &amp;&amp; ./install.sh lnmp</code></pre><p><strong>3、精简lnmp文件夹</strong><br>安装完成后，对于硬盘比较小的可以瘦下身多出点空间，当然硬盘大的可以无视该步骤，删掉<code>/root</code>文件夹的<code>lnmp1.4</code>安装包及<code>root/lnmp1.4/</code>中的 <code>src</code>文件夹即可，这时候应该可以多出3G左右的空间，xshell登录vps运行</p>
+<pre><code>rm -rf /root/lnmp1.4.tar.gz
+rm -rf /root/lnmp1.4/src</code></pre><p>或者用WinSCP软件进入VPS手动删除</p>
+<p><strong>4、修改PhpMyAdmin名称</strong><br>通常为了安全，很多人会通过修改<code>PhpMyAdmin</code>名称而改变数据库进入地址，可以用WinSCP登录vps修改，途径<code>/home/wwwroot/default</code>，将<code>PhpMyAdmin</code>文件夹修改成你喜欢的名称xx，此时登录PhpMyAdmin数据库的地址会变成<code>服务器ip/xx</code></p>
+<h2 id="网站部署"><a href="#网站部署" class="headerlink" title="网站部署"></a>网站部署</h2><p><strong>1、添加网站</strong></p>
+<pre><code>lnmp vhost add </code></pre><p>按步骤填对，具体可参考：<a href="https://lnmp.org/faq/lnmp-vhost-add-howto.html" target="_blank" rel="noopener">https://lnmp.org/faq/lnmp-vhost-add-howto.html</a></p>
+<p><strong>2、域名解析</strong><br>记得去域名注册商或者接管商将网站解析到服务器ip</p>
+<p><strong>3、添加ssl</strong></p>
+<pre><code>lnmp ssl add</code></pre><p>申请过ssl证书的请将ssl文件上传到服务器，然后选择部署自己的证书，如果没有ssl的可以选择自动签发ssl证书。</p>
+<h2 id="部署typecho"><a href="#部署typecho" class="headerlink" title="部署typecho"></a>部署typecho</h2><p><strong>1、上传typecho到网站目录</strong><br>由于typecho安装包很小，这时候为了方便可以直接用WinSCP来操作，这时候从官网（<a href="http://typecho.org/download）下载安装包，在电脑解压，通过WinSCP把解压的文件上传到`/home/wwwroot/www.xxx.com`及你的网站目录。" target="_blank" rel="noopener">http://typecho.org/download）下载安装包，在电脑解压，通过WinSCP把解压的文件上传到`/home/wwwroot/www.xxx.com`及你的网站目录。</a></p>
+<p><strong>2、添加数据库</strong><br>访问<code>服务器ip/xx</code>（xx为PhpMyAdmin文件夹修改后的名称），登录用户 <code>root</code>，密码 <code>xx</code>（安装lnmp时候输入的密码），进入后新建typecho博客的数据库，如<code>typecho</code>，当然也可以是其它，到时候安装typecho的时候自己看着填对</p>
+<p><strong>3、安装typecho</strong><br>直接访问网站进行安装typecho即可，此时可能因为伪静态的问题，访问不了后台，可参考lnmp环境 typecho 伪静态及后台404配置来解决问题</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-04-03T19:48:37.000Z" itemprop="datePublished">2020-04-04</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.660Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/04/04/e4-bd-bf-e7-94-a8plik-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e4-b8-b4-e6-97-b6-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e7-b3-bb-e7-bb-9f-ef-bc-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e6-97-b6-e9-95-bf-e4-b8-8b/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">使用Plik搭建一个临时文件上传系统，自定义时长/下载即摧毁</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/04/04/h5ai-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-88-e5-9f-ba-e4-ba-8enginxphp-7-ef-bc-89-ef-bc-8c-e8-87-aa-e5-8a-a8-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">H5ai一键安装脚本（基于Nginx+PHP 7），自动配置SSL证书</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

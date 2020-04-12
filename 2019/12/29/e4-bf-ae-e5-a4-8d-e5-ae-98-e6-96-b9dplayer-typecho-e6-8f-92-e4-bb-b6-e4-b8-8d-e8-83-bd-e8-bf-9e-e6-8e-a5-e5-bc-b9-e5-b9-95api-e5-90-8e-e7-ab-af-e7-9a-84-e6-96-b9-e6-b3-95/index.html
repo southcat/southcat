@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>修复官方Dplayer-Typecho插件不能连接弹幕API后端的方法 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="修复官方Dplayer-Typecho插件不能连接弹幕API后端的方法 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/12/29/e4-bf-ae-e5-a4-8d-e5-ae-98-e6-96-b9dplayer-typecho-e6-8f-92-e4-bb-b6-e4-b8-8d-e8-83-bd-e8-bf-9e-e6-8e-a5-e5-bc-b9-e5-b9-95api-e5-90-8e-e7-ab-af-e7-9a-84-e6-96-b9-e6-b3-95/"><meta property="og:locale" content="en"><meta name="description" content="说明：博主之前发过DPlayer弹幕后端搭建教程→传送门，也说了下HTML代码的使用方法，不过对于Typecho博客来说，插件不能用会很麻烦，加上看见很多使用Typecho的同学对这个还是有点兴趣的，所以就咨询了下某大佬插件修复方法，貌似是播放器版本没更新到最新，然后在这里就说下，有需求的可以用下。 方法官方插件地址：https:&#x2F;&#x2F;github.com&#x2F;MoePlayer&#x2F;DPlayer-Typ - John Doe - 南猫"><meta property="article:published_time" content="2019-12-29T12:33:44.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.652Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.652Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/12/29/e4-bf-ae-e5-a4-8d-e5-ae-98-e6-96-b9dplayer-typecho-e6-8f-92-e4-bb-b6-e4-b8-8d-e8-83-bd-e8-bf-9e-e6-8e-a5-e5-bc-b9-e5-b9-95api-e5-90-8e-e7-ab-af-e7-9a-84-e6-96-b9-e6-b3-95/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/12/29/e4-bf-ae-e5-a4-8d-e5-ae-98-e6-96-b9dplayer-typecho-e6-8f-92-e4-bb-b6-e4-b8-8d-e8-83-bd-e8-bf-9e-e6-8e-a5-e5-bc-b9-e5-b9-95api-e5-90-8e-e7-ab-af-e7-9a-84-e6-96-b9-e6-b3-95/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/12/29/e4-bf-ae-e5-a4-8d-e5-ae-98-e6-96-b9dplayer-typecho-e6-8f-92-e4-bb-b6-e4-b8-8d-e8-83-bd-e8-bf-9e-e6-8e-a5-e5-bc-b9-e5-b9-95api-e5-90-8e-e7-ab-af-e7-9a-84-e6-96-b9-e6-b3-95/"
+    },
+    "headline": "修复官方Dplayer-Typecho插件不能连接弹幕API后端的方法 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-29T12:33:44.000Z",
+    "dateModified": "2020-04-12T04:09:09.652Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：博主之前发过DPlayer弹幕后端搭建教程→传送门，也说了下HTML代码的使用方法，不过对于Typecho博客来说，插件不能用会很麻烦，加上看见很多使用Typecho的同学对这个还是有点兴趣的，所以就咨询了下某大佬插件修复方法，貌似是播放器版本没更新到最新，然后在这里就说下，有需求的可以用下。 方法官方插件地址：https://github.com/MoePlayer/DPlayer-Typ - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=修复官方Dplayer-Typecho插件不能连接弹幕API后端的方法" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=修复官方Dplayer-Typecho插件不能连接弹幕API后端的方法&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=修复官方Dplayer-Typecho插件不能连接弹幕API后端的方法" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEnElEQVR42u2aQZLbMAwE/f9PJ5ccNlUmpofei4XWZZO1TLGpygSYwevPwusltNBCCy200F8G/Rqu/77w7+8/P/t5z+n7p7VOz3q35vSshkNoobdAv/1HD6Cn772Df3dvApj2dfrz8X6hhV4Efdok2ewkfo1IUqGbBHA6bKGFFnouOkgRMUHdClt6ltBCC82gySaawyOilg5JaKGF7hqOqUiZDmUSpuaQp3XTYQkt9FboSWC+6eevuaFCC/3F0DH0umzYiZCdmpXTZ9Tk+Di1FFroL4ZOZgE5iKZpmBqYNlQgAaLQQm+DTmFdErOp0T8JERWl08EQg2FsOIQWegn0VAhMxlxjKE5mfQrqmgDg7UsQWugl0GRohggLCftOAkcEkAQLY5MjtNALoEkTQMz+FMin9W8bmSb8F1roDdBJgMjmaKFCChtyuNcFjdBCL4Y+baYtCJpmP4X5L3CN5ojQQi+BbgbVUsiWmopkLKQA8NZUEFroLdCpYSBGe9OcJHB6UL8yPCe00A+FTsV6a+C3QQEpYGjIN748oYVeAh3/Uw8CRAO3JiQga7SNj9BCb4FORQQpGlrjjhxoEsVkNET1Flroh0JP4MRwT80LMQYbU58Myr39XGihF0CnhqJ9cBIyajKSsL4d0hVa6C3QqegnhQwN2KhBkQSRFC6jkAkt9EOhSSFAhm8aM58Ecq25gF6a0EIvgb5t2G+bgdsAj4R0owgKLfQCaALeDr8muNa8mJ5FmxShhd4EPRUQaZBmEpGm+Wif1w7HCi30FmjStDeGfHM4pOBJ+0mHLrTQ26DTkAwJ7EiRQde9KUJI0yK00FugG2GgokU2TODaQZ7r6SKhhX4QNDXMSUHfNBqfAKXGAw3aCC30AmhquE9GPDEDGoPwFDpM5gJqOIQW+sHQ1HRP4Xi6jwhZChVuhvWEFnoTNBEAUoQks+AT8+/GSBiLE6GFfjD0J5ulRj4dipsaChoUjC9EaKEXQKchtaYYaYK7aOJdNDdRDIUWegk0FaN2SLUN8WhxNIZ0056EFnop9GiYw8IgNTSfBHLNkM+YWgot9EOhqalPRWoyGMjQ66didzxUoYVeAj2aaReGPDEHkrnYFkfTvUILvRV6MgJIQTAVOdSsp+YgDQ6EFnordGveN4NxZIAnNRd0YG8UXaGFXgLdbmASEFosJANhKoBa81BooTdB04adBGRpwK4xCanJ0RyM0EJvgG6CcFrIJIG5DffpIN6xiRJa6CXQjZFwE87/hllABDIdkNBCb4GmJh4Fo81KGthrhm3IYIHQQm+B/qQ5TwLXbJgO0CQDsBq0EVroh0GTxmASmcb0IwdMBnvIYNDbfQgt9GLoFLLT4oYMvybxa36PTAShhX4wNBEZuvmmKUhGQmoi6Lq44RBa6AdBN6Y8LVqaddomJAkZmkQQWuiHQ1NhSeZhalyS6UjCASrCQgstNA/HiHlPBmFSgNiIW3oJQgstNAvY4nA5CANpo0ENf5xaCi30Q6EnQzANupAwjxYtdKimNTuEFnoTNCnaU2hGhl5SwEaKj/QixhcntNALoDddQgsttNBCC/0l11/ql9YxX10KzAAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">修复官方Dplayer-Typecho插件不能连接弹幕API后端的方法</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-29</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=修复官方Dplayer-Typecho插件不能连接弹幕API后端的方法&url=http://yoursite.com/2019/12/29/e4-bf-ae-e5-a4-8d-e5-ae-98-e6-96-b9dplayer-typecho-e6-8f-92-e4-bb-b6-e4-b8-8d-e8-83-bd-e8-bf-9e-e6-8e-a5-e5-bc-b9-e5-b9-95api-e5-90-8e-e7-ab-af-e7-9a-84-e6-96-b9-e6-b3-95/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=修复官方Dplayer-Typecho插件不能连接弹幕API后端的方法&url=http://yoursite.com/2019/12/29/e4-bf-ae-e5-a4-8d-e5-ae-98-e6-96-b9dplayer-typecho-e6-8f-92-e4-bb-b6-e4-b8-8d-e8-83-bd-e8-bf-9e-e6-8e-a5-e5-bc-b9-e5-b9-95api-e5-90-8e-e7-ab-af-e7-9a-84-e6-96-b9-e6-b3-95/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/29/e4-bf-ae-e5-a4-8d-e5-ae-98-e6-96-b9dplayer-typecho-e6-8f-92-e4-bb-b6-e4-b8-8d-e8-83-bd-e8-bf-9e-e6-8e-a5-e5-bc-b9-e5-b9-95api-e5-90-8e-e7-ab-af-e7-9a-84-e6-96-b9-e6-b3-95/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/12/29/e4-bf-ae-e5-a4-8d-e5-ae-98-e6-96-b9dplayer-typecho-e6-8f-92-e4-bb-b6-e4-b8-8d-e8-83-bd-e8-bf-9e-e6-8e-a5-e5-bc-b9-e5-b9-95api-e5-90-8e-e7-ab-af-e7-9a-84-e6-96-b9-e6-b3-95/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/12/29/e4-bf-ae-e5-a4-8d-e5-ae-98-e6-96-b9dplayer-typecho-e6-8f-92-e4-bb-b6-e4-b8-8d-e8-83-bd-e8-bf-9e-e6-8e-a5-e5-bc-b9-e5-b9-95api-e5-90-8e-e7-ab-af-e7-9a-84-e6-96-b9-e6-b3-95/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/12/29/e4-bf-ae-e5-a4-8d-e5-ae-98-e6-96-b9dplayer-typecho-e6-8f-92-e4-bb-b6-e4-b8-8d-e8-83-bd-e8-bf-9e-e6-8e-a5-e5-bc-b9-e5-b9-95api-e5-90-8e-e7-ab-af-e7-9a-84-e6-96-b9-e6-b3-95/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/12/29/e4-bf-ae-e5-a4-8d-e5-ae-98-e6-96-b9dplayer-typecho-e6-8f-92-e4-bb-b6-e4-b8-8d-e8-83-bd-e8-bf-9e-e6-8e-a5-e5-bc-b9-e5-b9-95api-e5-90-8e-e7-ab-af-e7-9a-84-e6-96-b9-e6-b3-95/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEnElEQVR42u2aQZLbMAwE/f9PJ5ccNlUmpofei4XWZZO1TLGpygSYwevPwusltNBCCy200F8G/Rqu/77w7+8/P/t5z+n7p7VOz3q35vSshkNoobdAv/1HD6Cn772Df3dvApj2dfrz8X6hhV4Efdok2ewkfo1IUqGbBHA6bKGFFnouOkgRMUHdClt6ltBCC82gySaawyOilg5JaKGF7hqOqUiZDmUSpuaQp3XTYQkt9FboSWC+6eevuaFCC/3F0DH0umzYiZCdmpXTZ9Tk+Di1FFroL4ZOZgE5iKZpmBqYNlQgAaLQQm+DTmFdErOp0T8JERWl08EQg2FsOIQWegn0VAhMxlxjKE5mfQrqmgDg7UsQWugl0GRohggLCftOAkcEkAQLY5MjtNALoEkTQMz+FMin9W8bmSb8F1roDdBJgMjmaKFCChtyuNcFjdBCL4Y+baYtCJpmP4X5L3CN5ojQQi+BbgbVUsiWmopkLKQA8NZUEFroLdCpYSBGe9OcJHB6UL8yPCe00A+FTsV6a+C3QQEpYGjIN748oYVeAh3/Uw8CRAO3JiQga7SNj9BCb4FORQQpGlrjjhxoEsVkNET1Flroh0JP4MRwT80LMQYbU58Myr39XGihF0CnhqJ9cBIyajKSsL4d0hVa6C3QqegnhQwN2KhBkQSRFC6jkAkt9EOhSSFAhm8aM58Ecq25gF6a0EIvgb5t2G+bgdsAj4R0owgKLfQCaALeDr8muNa8mJ5FmxShhd4EPRUQaZBmEpGm+Wif1w7HCi30FmjStDeGfHM4pOBJ+0mHLrTQ26DTkAwJ7EiRQde9KUJI0yK00FugG2GgokU2TODaQZ7r6SKhhX4QNDXMSUHfNBqfAKXGAw3aCC30AmhquE9GPDEDGoPwFDpM5gJqOIQW+sHQ1HRP4Xi6jwhZChVuhvWEFnoTNBEAUoQks+AT8+/GSBiLE6GFfjD0J5ulRj4dipsaChoUjC9EaKEXQKchtaYYaYK7aOJdNDdRDIUWegk0FaN2SLUN8WhxNIZ0056EFnop9GiYw8IgNTSfBHLNkM+YWgot9EOhqalPRWoyGMjQ66didzxUoYVeAj2aaReGPDEHkrnYFkfTvUILvRV6MgJIQTAVOdSsp+YgDQ6EFnordGveN4NxZIAnNRd0YG8UXaGFXgLdbmASEFosJANhKoBa81BooTdB04adBGRpwK4xCanJ0RyM0EJvgG6CcFrIJIG5DffpIN6xiRJa6CXQjZFwE87/hllABDIdkNBCb4GmJh4Fo81KGthrhm3IYIHQQm+B/qQ5TwLXbJgO0CQDsBq0EVroh0GTxmASmcb0IwdMBnvIYNDbfQgt9GLoFLLT4oYMvybxa36PTAShhX4wNBEZuvmmKUhGQmoi6Lq44RBa6AdBN6Y8LVqaddomJAkZmkQQWuiHQ1NhSeZhalyS6UjCASrCQgstNA/HiHlPBmFSgNiIW3oJQgstNAvY4nA5CANpo0ENf5xaCi30Q6EnQzANupAwjxYtdKimNTuEFnoTNCnaU2hGhl5SwEaKj/QixhcntNALoDddQgsttNBCC/0l11/ql9YxX10KzAAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#演示"><span class="post-toc-number">3.</span> <span class="post-toc-text">演示</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>博主之前发过<code>DPlayer</code>弹幕后端搭建教程→传送门，也说了下<code>HTML</code>代码的使用方法，不过对于<code>Typecho</code>博客来说，插件不能用会很麻烦，加上看见很多使用<code>Typecho</code>的同学对这个还是有点兴趣的，所以就咨询了下某大佬插件修复方法，貌似是播放器版本没更新到最新，然后在这里就说下，有需求的可以用下。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><pre><code>官方插件地址：https://github.com/MoePlayer/DPlayer-Typecho
+修复后的地址：https://github.com/menhood/DPlayer-Typecho</code></pre><p><strong>1、直接使用</strong><br>去提供修复后的<code>Github</code>地址下载插件，然后将文件夹名改为<code>DPlayer</code>上传到<code>usr/plugins</code>目录启用即可。</p>
+<p><strong>2、自行修复</strong><br>如果你不放心使用修复后的插件，那么你可以自行替换文件修复，修复方法如下：</p>
+<pre><code>1)下载官方提供的旧版本插件，插件地址见上面！
+2)然后下载该地址的4个文件：https://github.com/MoePlayer/DPlayer/tree/master/dist
+3)将下载的文件复制并替换旧插件dplayer/dist目录的4个文件即可。</code></pre><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>由于插件地址使用的弹幕服务器地址默认为官方的，貌似服务器出了问题不能用，这里可以使用博主搭建的<code>API</code>服务器，地址为：<code>https://dplayer.moerats.com/</code>，当然你也可以使用博主提供的方法自行搭建<code>API</code>，教程查看→传送门。</p>
+<pre><code>提示：由于特殊原因，博主将下面所有例子最开始的[换成了(，到时候使用的时候，将开头的(换成[，即被[]包住即可。</code></pre><p>使用方法如下，直接贴近文章里即可!</p>
+<pre><code>#默认不自动播放，弹幕开启
+(dplayer url=&quot;http://xxx.com/xxx.mp4&quot; pic=&quot;http://xxx.com/xxx.jpg&quot;/]
+
+#关闭弹幕
+(dplayer url=&quot;http://xxx.com/xxx.mp4&quot; pic=&quot;http://xxx.com/xxx.jpg&quot; danmu=&quot;false&quot;/]
+
+#开启自动播放
+(dplayer url=&quot;http://xxx.com/xxx.mp4&quot; pic=&quot;http://xxx.com/xxx.jpg&quot; autoplay=&quot;true&quot;/]
+
+#添加额外弹幕源(例：bilibili弹幕)，这里和作者的文档有点区别，就是需要在api后面加v3。
+(dplayer url=&quot;http://xxx.com/xxx.mp4&quot; pic=&quot;http://xxx.com/xxx.jpg&quot; autoplay=&quot;true&quot; addition=&quot;https://api.prprpr.me/dplayer/v3/bilibili?aid=7286894&quot;/]</code></pre><p>当然，如果你想假装很多人看的样子，那可以添加额外的<code>bilibili</code>弹幕，这时候不管你放什么视频，<code>B</code>站弹幕都会在上面密密麻麻的滚动。</p>
+<p>要是有时候不生效，可以对斜杠<code>/</code>转义一下，比如：</p>
+<pre><code>(dplayer url=&quot;http:\/\/xxx.com\/xxx.mp4&quot; pic=&quot;http:\/\/xxx.com\/xxx.jpg&quot;/]</code></pre><h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><pre><code>#这里直接用的B站一个视频，顺便把弹幕也给拉过来了，假装看的人很多吧。</code></pre><p>dPlayerOptions.push({“id”:”a89363227cf7f1f6a7be6ab3ecb3d5f4”,”autoplay”:false,”theme”:”#FADFA3”,”video”:{“url”:”https:\/\/<a href="http://www.moerats.com\\/usr\\/dplayer\\/yyy.flv&quot;,&quot;pic&quot;:&quot;https:\\/\\/www.moerats.com\\/usr\\/dplayer\\/yyy.png&quot;},&quot;danmaku&quot;:{&quot;id&quot;:&quot;d8a5b5d2522dd8279d2c22585ac47619&quot;,&quot;token&quot;:&quot;299b6a5543616b5508c1ce8616ed530b&quot;,&quot;api&quot;:&quot;https:\\/\\/dplayer.moerats.com\\/&quot;,&quot;addition&quot;:\[&quot;https:\\/\\/dplayer.moerats.com\\/v3\\/bilibili?aid=7100521&quot;\]}}" target="_blank" rel="noopener">www.moerats.com\\/usr\\/dplayer\\/yyy.flv&quot;,&quot;pic&quot;:&quot;https:\\/\\/www.moerats.com\\/usr\\/dplayer\\/yyy.png&quot;},&quot;danmaku&quot;:{&quot;id&quot;:&quot;d8a5b5d2522dd8279d2c22585ac47619&quot;,&quot;token&quot;:&quot;299b6a5543616b5508c1ce8616ed530b&quot;,&quot;api&quot;:&quot;https:\\/\\/dplayer.moerats.com\\/&quot;,&quot;addition&quot;:\[&quot;https:\\/\\/dplayer.moerats.com\\/v3\\/bilibili?aid=7100521&quot;\]}}</a>);<br>如果该视频播放器不显示的话，刷新一下就行了。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-29T12:33:44.000Z" itemprop="datePublished">2019-12-29</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.652Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/30/e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e5-85-8d-e8-b4-b9-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e8-81-8a-e5-a4-a9-e5-ae-a4-ef-bc-9ariot-im-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一款开源免费的多功能聊天室：Riot.im安装教程</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/29/transfer-sh-ef-bc-9alinux-vps-e4-bd-bf-e7-94-a8-e5-91-bd-e4-bb-a4-e8-a1-8c-e5-bf-ab-e9-80-9f-e7-9a-84-e5-88-86-e4-ba-ab-e6-96-87-e4-bb-b6/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Transfer.sh：Linux VPS使用命令行快速的分享文件</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

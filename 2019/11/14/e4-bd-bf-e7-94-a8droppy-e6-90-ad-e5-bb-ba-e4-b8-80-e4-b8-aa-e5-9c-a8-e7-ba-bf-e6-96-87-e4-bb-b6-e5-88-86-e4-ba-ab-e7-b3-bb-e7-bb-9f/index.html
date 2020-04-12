@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>使用Droppy搭建一个在线文件分享系统 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="使用Droppy搭建一个在线文件分享系统 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/11/14/e4-bd-bf-e7-94-a8droppy-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9c-a8-e7-ba-bf-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f/"><meta property="og:locale" content="en"><meta name="description" content="简介Droppy是一款在线文件分享系统，主要功能有拖拽上传、多文件同时上传、邮件分享和链接分享、支持密码设置、举报、文件管理等，界面非常简洁，使用起来也很方便，很适合做文件分享存储站。 截图 安装系统环境：PHP 5.5+、Mysql、Nginx、MOD rewrite、Cron Jobs。说明：由于Droppy为收费系统，所以这里使用的为最新破解版，源码来自于顶点网。 1、安装宝塔 #Cento - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/Droppy(6).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Droppy(4).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Droppy(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Droppy(2).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Droppy(3).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Droppy(5).png"><meta property="article:published_time" content="2019-11-14T11:03:02.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.650Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.650Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/11/14/e4-bd-bf-e7-94-a8droppy-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9c-a8-e7-ba-bf-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/11/14/e4-bd-bf-e7-94-a8droppy-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9c-a8-e7-ba-bf-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/11/14/e4-bd-bf-e7-94-a8droppy-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9c-a8-e7-ba-bf-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f/"
+    },
+    "headline": "使用Droppy搭建一个在线文件分享系统 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-11-14T11:03:02.000Z",
+    "dateModified": "2020-04-12T04:09:09.650Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "简介Droppy是一款在线文件分享系统，主要功能有拖拽上传、多文件同时上传、邮件分享和链接分享、支持密码设置、举报、文件管理等，界面非常简洁，使用起来也很方便，很适合做文件分享存储站。 截图 安装系统环境：PHP 5.5+、Mysql、Nginx、MOD rewrite、Cron Jobs。说明：由于Droppy为收费系统，所以这里使用的为最新破解版，源码来自于顶点网。 1、安装宝塔 #Cento - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=使用Droppy搭建一个在线文件分享系统" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用Droppy搭建一个在线文件分享系统&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=使用Droppy搭建一个在线文件分享系统" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEHklEQVR42u2aQW7jQAwE8/9PZ0972IXMrp44gCiXLnEMWZoaQBTZ3V/fH3B8CSmkkEIKKeQPIb+G458fXHz/93P63f/XuPr+6h50Pa/OE1LIrZCXD+3FIq4Wm65xtUByHvk/rltIIRdDXj30V8Xi6uLTAtJimvvRYiWkkE+HTC/1qUBMv02Fo9kUIYX8VMhX508N+1UDPW1Gaj6EFPITINODnobaprmfht9UaH5lChFSyJtBpgJx179vU+uEFPJGkNE0AcP0NESfFIxWCPuxqyWkkDeCnB7kNOiSF3hq0EmTPolc00YIKeRGSFJcXkGTTUnfv9q8xmCKQ7OQQi6CJMYLXTgdlMlmJcELmUpCCrkQshWUyEBLzJ1JFKbnxfsLKeRCyGSu0oc8Nd2pMaemDzV+hBTyaZCpIKXQAvl8GnrCppGQQi6EbAbXFpAOuU1hmsStKGQJKeQCyHcUjSZMmJrstqgdKwNCCnljyFYIPtmEtEg6gFfhYyGFXAhJQJMJOw3aKfjb3IsYx0IKuR2SLp4IXaTAkEH9pTBVGrpCCrkZkpqdbVCibQySQJVMqRiMEFLIm0OmgtKYnulFTUyhyWwlxWdU64QUchFkKjb082SMku+TwZuugwwfIYW8MSRtxkk4gQrOzXlva9CFFHIJJDVcUxPemK/JQE3NeDJohRTyCZDTQQIMpPGmwadGQJuuKaSQGyHjidCIIUP3JE6RQBINDAsp5GZI2qjTYAK53lRwiNhMGnghhdwKSZrq6YXcBgibIOKJgSSkkE+EJI30ZNa+o0FPQja5npBCboVsgaaikgQrEoogojYRuYQUcitk0zDjoFAIM7WC8lHYSUghF0KeBBimENGpaEybgirYJKSQCyFpMKFZDDFum0b/eEAXUsilkJNA2wYmJkM2bSBpNIhBK6SQ2yGbwZWaqWSxZPHNoIyqq5BCLoAcxSC4CCKENZtEB/dKrRNSyCWQNAhBFkk3jDbiSLAiAUIhhVwC+ZOXNxWaqAl0UnzqAKGQQi6BpGYrEaJOzFlq8lbDuZBCLoVshl8i6ibh6kSUToUtFh4hhVwEmW7c3vQkREGu3whcQgq5FZIUFtKQE+GKNN0kNEXCS0IKuRlyErGahoE26CTwUAlWr84XUsiFkETsjY1wOSxTGCJ2I8NHSCGXQRKBuWm2U4CwNY9IcaymECGFXALZCMb0NykE9c5GoDZ8hBTyhpCkMBDBqQ05pWaEmMLRgBJSyKWQrUmTBuIUCvwujsbkQWqdkEIugaSmDQ0a0YaaBA5pw49SkkIK+RDIFCBMBYiEoWhxwcEqIYV8OOT0Qp8acmLuJKO1uZaQQj4BMgnNVPQlL3Uahkhg02chhdwMOTW7xJghi0xNf9uQoHUIKeRCyCcfQgoppJBCCnl4/AFtzcVhNScEyQAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">使用Droppy搭建一个在线文件分享系统</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-11-14</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用Droppy搭建一个在线文件分享系统&url=http://yoursite.com/2019/11/14/e4-bd-bf-e7-94-a8droppy-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9c-a8-e7-ba-bf-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=使用Droppy搭建一个在线文件分享系统&url=http://yoursite.com/2019/11/14/e4-bd-bf-e7-94-a8droppy-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9c-a8-e7-ba-bf-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/14/e4-bd-bf-e7-94-a8droppy-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9c-a8-e7-ba-bf-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/11/14/e4-bd-bf-e7-94-a8droppy-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9c-a8-e7-ba-bf-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/11/14/e4-bd-bf-e7-94-a8droppy-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9c-a8-e7-ba-bf-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/11/14/e4-bd-bf-e7-94-a8droppy-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9c-a8-e7-ba-bf-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/11/14/e4-bd-bf-e7-94-a8droppy-e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9c-a8-e7-ba-bf-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e7-b3-bb-e7-bb-9f/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEHklEQVR42u2aQW7jQAwE8/9PZ0972IXMrp44gCiXLnEMWZoaQBTZ3V/fH3B8CSmkkEIKKeQPIb+G458fXHz/93P63f/XuPr+6h50Pa/OE1LIrZCXD+3FIq4Wm65xtUByHvk/rltIIRdDXj30V8Xi6uLTAtJimvvRYiWkkE+HTC/1qUBMv02Fo9kUIYX8VMhX508N+1UDPW1Gaj6EFPITINODnobaprmfht9UaH5lChFSyJtBpgJx179vU+uEFPJGkNE0AcP0NESfFIxWCPuxqyWkkDeCnB7kNOiSF3hq0EmTPolc00YIKeRGSFJcXkGTTUnfv9q8xmCKQ7OQQi6CJMYLXTgdlMlmJcELmUpCCrkQshWUyEBLzJ1JFKbnxfsLKeRCyGSu0oc8Nd2pMaemDzV+hBTyaZCpIKXQAvl8GnrCppGQQi6EbAbXFpAOuU1hmsStKGQJKeQCyHcUjSZMmJrstqgdKwNCCnljyFYIPtmEtEg6gFfhYyGFXAhJQJMJOw3aKfjb3IsYx0IKuR2SLp4IXaTAkEH9pTBVGrpCCrkZkpqdbVCibQySQJVMqRiMEFLIm0OmgtKYnulFTUyhyWwlxWdU64QUchFkKjb082SMku+TwZuugwwfIYW8MSRtxkk4gQrOzXlva9CFFHIJJDVcUxPemK/JQE3NeDJohRTyCZDTQQIMpPGmwadGQJuuKaSQGyHjidCIIUP3JE6RQBINDAsp5GZI2qjTYAK53lRwiNhMGnghhdwKSZrq6YXcBgibIOKJgSSkkE+EJI30ZNa+o0FPQja5npBCboVsgaaikgQrEoogojYRuYQUcitk0zDjoFAIM7WC8lHYSUghF0KeBBimENGpaEybgirYJKSQCyFpMKFZDDFum0b/eEAXUsilkJNA2wYmJkM2bSBpNIhBK6SQ2yGbwZWaqWSxZPHNoIyqq5BCLoAcxSC4CCKENZtEB/dKrRNSyCWQNAhBFkk3jDbiSLAiAUIhhVwC+ZOXNxWaqAl0UnzqAKGQQi6BpGYrEaJOzFlq8lbDuZBCLoVshl8i6ibh6kSUToUtFh4hhVwEmW7c3vQkREGu3whcQgq5FZIUFtKQE+GKNN0kNEXCS0IKuRlyErGahoE26CTwUAlWr84XUsiFkETsjY1wOSxTGCJ2I8NHSCGXQRKBuWm2U4CwNY9IcaymECGFXALZCMb0NykE9c5GoDZ8hBTyhpCkMBDBqQ05pWaEmMLRgBJSyKWQrUmTBuIUCvwujsbkQWqdkEIugaSmDQ0a0YaaBA5pw49SkkIK+RDIFCBMBYiEoWhxwcEqIYV8OOT0Qp8acmLuJKO1uZaQQj4BMgnNVPQlL3Uahkhg02chhdwMOTW7xJghi0xNf9uQoHUIKeRCyCcfQgoppJBCCnl4/AFtzcVhNScEyQAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">2.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#插件安装"><span class="post-toc-number">4.</span> <span class="post-toc-text">插件安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#汉化前端"><span class="post-toc-number">5.</span> <span class="post-toc-text">汉化前端</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#相关教程"><span class="post-toc-number">6.</span> <span class="post-toc-text">相关教程</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><code>Droppy</code>是一款在线文件分享系统，主要功能有拖拽上传、多文件同时上传、邮件分享和链接分享、支持密码设置、举报、文件管理等，界面非常简洁，使用起来也很方便，很适合做文件分享存储站。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/Droppy(6).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/Droppy(4).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>系统环境：</strong><code>PHP 5.5+</code>、<code>Mysql</code>、<code>Nginx</code>、<code>MOD rewrite</code>、<code>Cron Jobs</code>。<br><strong>说明：</strong>由于<code>Droppy</code>为收费系统，所以这里使用的为最新破解版，源码来自于顶点网。</p>
+<p><strong>1、安装宝塔</strong></p>
+<pre><code>#Centos系统
+yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh
+#Ubuntu系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; sudo bash install.sh
+#Debian系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; bash install.sh</code></pre><p>安装完成后，进入面板安装<code>PHP</code>、<code>Mysql</code>、<code>Nginx</code>、<code>phpmyadmin</code>。</p>
+<p><strong>2、上传程序</strong><br>添加域名，然后下载程序：Droppy-v1.4.5破解版，将程序上传到网站根目录解压。</p>
+<p><strong>3、添加伪静态</strong><br>点击域名，找到伪静态，添加以下代码：</p>
+<pre><code>location / {
+try_files $uri $uri/ /index.php?$query_string;
+if (!-f $request_filename){
+set $rule_0 1$rule_0;
+}
+if (!-d $request_filename){
+set $rule_0 2$rule_0;
+}
+if ($rule_0 = &quot;21&quot;){
+rewrite ^/([^/]+)$ /index.php?download=$1 last;
+}
+}</code></pre><p><strong>4、新建数据库</strong><br>点击面板左侧数据库，登录<code>phpmyadmin</code>添加数据库，注意<code>Droppy</code>所使用的数据库用户名需为<code>root</code>。</p>
+<p><strong>5、安装程序</strong><br>先将以下目录权限更改为<code>777</code>：</p>
+<pre><code>uploads、uploads/tmp/、admin/updates/</code></pre><p>然后打开域名<code>http://xx.com/install.php</code>进行安装配置，授权码：<code>JUST-A-PRANK-BRO</code>。<br><img src="https://www.moerats.com/usr/picture/Droppy(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/Droppy(2).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/Droppy(3).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>安装完成后，记得删除根目录下<code>install.php</code>文件。</p>
+<h2 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h2><p><strong>插件下载：</strong>点击下载，分别为<code>PAYPAL支付</code>、<code>亚马逊S3存储</code>、<code>FTP/SFTP上传</code>。</p>
+<p>下载后，点击左侧插件，选择插件压缩包进行安装，然后点击设置进行设置。<br><img src="https://www.moerats.com/usr/picture/Droppy(5).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="汉化前端"><a href="#汉化前端" class="headerlink" title="汉化前端"></a>汉化前端</h2><p>由于后台默认中文，前端没有，所以我们需要汉化下，将根目录的<code>简体中文.php</code>文件移到<code>config/language</code>目录中，并给予<code>775</code>的权限。</p>
+<h2 id="相关教程"><a href="#相关教程" class="headerlink" title="相关教程"></a>相关教程</h2><ul>
+<li>一款支持对接多家云存储的多功能网盘系统：Cloudreve搭建教程</li>
+<li>一个简洁的去中心化视频分享平台：ipfstube安装教程</li>
+</ul>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-11-14T11:03:02.000Z" itemprop="datePublished">2019-11-14</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.650Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/11/14/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85aria2ariangfilerun-nextcloud-ef-bc-8c-e5-9c-a8-e7-ba-bf-e4-b8-8b-e8-bd-bdbt-e7-a3-81-e9-93-be-e5-9c-a8-e7-ba-bf-e8-a7-82-e7-9c-8b/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">使用Docker快速安装Aria2+AriaNg+Filerun/Nextcloud，在线下载BT磁链/在线观看/全功能文件管理/云盘应用</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/11/14/e5-9c-a8debian-ubuntu-e4-b8-8a-e4-bd-bf-e7-94-a8rclone-e6-8c-82-e8-bd-bdgoogle-drive-e7-bd-91-e7-9b-98/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">在Debian/Ubuntu上使用rclone挂载Google Drive网盘</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

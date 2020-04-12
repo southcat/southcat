@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Jiacrontab：一个带Web面板的定时任务&amp;常驻后台管理工具 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Jiacrontab：一个带Web面板的定时任务&amp;常驻后台管理工具 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/01/27/jiacrontab-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-ae-9a-e6-97-b6-e4-bb-bb-e5-8a-a1-e5-b8-b8-e9-a9-bb-e5-90-8e-e5-8f-b0-e7-ae-a1-e7-90-86-e5-b7-a5-e5-85-b7/"><meta property="og:locale" content="en"><meta name="description" content="说明：我们一般使用程序的时候，很多都需要使用定时任务来按时重启&#x2F;执行应用，还有的也需要让程序一直常驻后台，对这类要求使用的基本上是crontab和Systemctl&#x2F;Supervisor，不过对于很多人来说配置挺麻烦的，这里就分享一个带Web面板的定时任务&amp;amp;常驻后台工具，可以很方便设置定时任务和常驻后台操作，也可以同时管理多台服务器，很强大，使用起来很方便。 截图 功能 允许设置每个脚本的 - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/jiacrontab(2).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/jiacrontab(1).png"><meta property="article:published_time" content="2020-01-26T20:15:46.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.654Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.654Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/01/27/jiacrontab-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-ae-9a-e6-97-b6-e4-bb-bb-e5-8a-a1-e5-b8-b8-e9-a9-bb-e5-90-8e-e5-8f-b0-e7-ae-a1-e7-90-86-e5-b7-a5-e5-85-b7/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/01/27/jiacrontab-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-ae-9a-e6-97-b6-e4-bb-bb-e5-8a-a1-e5-b8-b8-e9-a9-bb-e5-90-8e-e5-8f-b0-e7-ae-a1-e7-90-86-e5-b7-a5-e5-85-b7/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/01/27/jiacrontab-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-ae-9a-e6-97-b6-e4-bb-bb-e5-8a-a1-e5-b8-b8-e9-a9-bb-e5-90-8e-e5-8f-b0-e7-ae-a1-e7-90-86-e5-b7-a5-e5-85-b7/"
+    },
+    "headline": "Jiacrontab：一个带Web面板的定时任务&amp;常驻后台管理工具 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-01-26T20:15:46.000Z",
+    "dateModified": "2020-04-12T04:09:09.654Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：我们一般使用程序的时候，很多都需要使用定时任务来按时重启/执行应用，还有的也需要让程序一直常驻后台，对这类要求使用的基本上是crontab和Systemctl/Supervisor，不过对于很多人来说配置挺麻烦的，这里就分享一个带Web面板的定时任务&amp;amp;amp;常驻后台工具，可以很方便设置定时任务和常驻后台操作，也可以同时管理多台服务器，很强大，使用起来很方便。 截图 功能 允许设置每个脚本的 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Jiacrontab：一个带Web面板的定时任务&amp;常驻后台管理工具" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Jiacrontab：一个带Web面板的定时任务&amp;常驻后台管理工具&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=Jiacrontab：一个带Web面板的定时任务&amp;常驻后台管理工具" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFZklEQVR42u2dwW7bUAwE9f8/7Z4KFK7InX12Dq3GlwSOJT9OAILcXSfXy8frEoEQhCAEIQhBCCuEa3m8v+b3939+/evGb89P177ff3t+uk96TaxLCEIQwi0EWsxdcXcFTAebrr875N1103ulM0x1CEEIQpgh3B0iFTQVSBrkVmzTVLdfyva8EIQghM8gbFC24WdtTEPzo4WTcwpBCEL4OQjbADMVSYYjNNgsA1X6RQhBCELoIZCGkwaeJMZQiGlZ287ZLIZCEIIQeqH1X/76NbVZCEJ4EIRoWi6DSNMUTxphs8j9qCstBCE8CAJZRpIISgzRrVmRwSgNYcSQFYIQhJAhJCEjPbcFLFqRhixgxKAhYpAQhCCEGQJdnLaDbwduCknXJ+CkqQpBCELgmSXypk3IqymcGCfJGKaNUwhCEMJVDUukOaWliCxhW4M+CXdVYRIhCEEICEIyObfGSYNTSQihSxJZoGq1WQhCeDgE0tSIIUKGoRS0SkMWOS9p6EIQghBeOJ+Qhg9ycHo4AikFtjYhZRV7hCAEIYyNMTUeYsImgeXU7CEhbrqACUEIQsifd6AmaVqomgPR0HbbJCszVwhCEEId3GrFUrLwkLDWSZMkgg4yZIUgBCFUSw0VPalIQ5saCW7SZi4EIQihyyxRc+Qk6EkaKL2eBMnGIUsIQhDC2hipoEoPsV2bgqEkgEEDW6MgJAQhCCEOS3TRoYIIHaSa4AcZ7DZhWAhCEMIL+Q7E7EwDSAxGXOwD4LQ50tevwS0hCEEIqKlsC0kKZyVzZ3u0wa3GNI6utBCEIIQqLJFEkzZQkYRWasSQe4wLlBCEIIT4YU4qqLYAvjGAERGlWqCEIAQh1IYsWWC2pSjBI6Gs1uSNQ5cQhCCEcVjaFhxqwpDmlgIfWBC5uj9MixYoIQhBCC/SzDazhcLZhBnUxOD7E1NGCEIQQhZVSMOhRgoNXZDG1og49ExCEIIQsqiSGtcmXNJwVgp+UAGnan6b+CoEIQihFlqTiEGLpQsagZsgE8NXCEIQwnXsO6TARSqcFJSuIQsYCZAcq81CEMJDILTGCwlakeAWKa45QzOYCUEIQmB/gC4tH0lMoUIpDYeSnyWRFy9QQhCCEOLNiXB6YtJsr6OGbIK7LU5CEIIQzhYo+vOTEFcSRVKxxJSJZxWCEISAhNapyZyImWQp+0pBhXEsBCEIIf+DvGaIoUYJFVFag7U1aWJIQwhCEEL1j3RbYzYZIElUocMSbaCjoSMEIQhhHZbSoEGEWAriNNxBTFcsyAhBCEJYDdkUwEiDCwFADk7F3MZ8xa60EIQgBBzMaMJWNGBBw1f0umQcC0EIQrhwY2yGo22R2QROKpg04Y3UNMf3E4IQhICGpSb8lIAko4UsUOSezRInBCEI4fzzDtugQoKUZMlKjTRdixvhacpdCEJ4GIRWFCGhita0SWYOCYJFA1YIQhBCBSEJKZvwSkSTNgRGg1pE7I0LlBCEIITY7NrGSQegBDItUMnQxU1TCEIQQhRVUlMkA0sbwEzLUbNMVaEOIQhBCGNjTA2sMU5PfkYWINLIyZAnBCEIgUHYBJRNbCVhTLpoJWPlZKmKhqwQhCCE6oNTVKxIRZ003hODBTdmIQhBCLExpoKpMdOaNicLVBJYotEsBCEI4RbCtrgQIOkQnwREaSCENkYhCEEIDAIxUelgkgJW3wpx0SUKbZFCEIIQjiHQQtpwFhFwiXBLziMEIQjhMwgpwEWFWmoCU0OWGDDj90IQghDqBWo6FG4+V//hr9SU01lpXUIQghB6oTUtTydBUDIg0VAmEXXHQUoIQhBCbcj+zw8hCEEIQhCCEIRw+/gFUm0EHUx8LiIAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Jiacrontab：一个带Web面板的定时任务&常驻后台管理工具</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-01-27</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Jiacrontab：一个带Web面板的定时任务&amp;常驻后台管理工具&url=http://yoursite.com/2020/01/27/jiacrontab-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-ae-9a-e6-97-b6-e4-bb-bb-e5-8a-a1-e5-b8-b8-e9-a9-bb-e5-90-8e-e5-8f-b0-e7-ae-a1-e7-90-86-e5-b7-a5-e5-85-b7/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Jiacrontab：一个带Web面板的定时任务&amp;常驻后台管理工具&url=http://yoursite.com/2020/01/27/jiacrontab-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-ae-9a-e6-97-b6-e4-bb-bb-e5-8a-a1-e5-b8-b8-e9-a9-bb-e5-90-8e-e5-8f-b0-e7-ae-a1-e7-90-86-e5-b7-a5-e5-85-b7/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/01/27/jiacrontab-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-ae-9a-e6-97-b6-e4-bb-bb-e5-8a-a1-e5-b8-b8-e9-a9-bb-e5-90-8e-e5-8f-b0-e7-ae-a1-e7-90-86-e5-b7-a5-e5-85-b7/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/01/27/jiacrontab-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-ae-9a-e6-97-b6-e4-bb-bb-e5-8a-a1-e5-b8-b8-e9-a9-bb-e5-90-8e-e5-8f-b0-e7-ae-a1-e7-90-86-e5-b7-a5-e5-85-b7/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/01/27/jiacrontab-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-ae-9a-e6-97-b6-e4-bb-bb-e5-8a-a1-e5-b8-b8-e9-a9-bb-e5-90-8e-e5-8f-b0-e7-ae-a1-e7-90-86-e5-b7-a5-e5-85-b7/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/01/27/jiacrontab-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-ae-9a-e6-97-b6-e4-bb-bb-e5-8a-a1-e5-b8-b8-e9-a9-bb-e5-90-8e-e5-8f-b0-e7-ae-a1-e7-90-86-e5-b7-a5-e5-85-b7/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/01/27/jiacrontab-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-ae-9a-e6-97-b6-e4-bb-bb-e5-8a-a1-e5-b8-b8-e9-a9-bb-e5-90-8e-e5-8f-b0-e7-ae-a1-e7-90-86-e5-b7-a5-e5-85-b7/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFZklEQVR42u2dwW7bUAwE9f8/7Z4KFK7InX12Dq3GlwSOJT9OAILcXSfXy8frEoEQhCAEIQhBCCuEa3m8v+b3939+/evGb89P177ff3t+uk96TaxLCEIQwi0EWsxdcXcFTAebrr875N1103ulM0x1CEEIQpgh3B0iFTQVSBrkVmzTVLdfyva8EIQghM8gbFC24WdtTEPzo4WTcwpBCEL4OQjbADMVSYYjNNgsA1X6RQhBCELoIZCGkwaeJMZQiGlZ287ZLIZCEIIQeqH1X/76NbVZCEJ4EIRoWi6DSNMUTxphs8j9qCstBCE8CAJZRpIISgzRrVmRwSgNYcSQFYIQhJAhJCEjPbcFLFqRhixgxKAhYpAQhCCEGQJdnLaDbwduCknXJ+CkqQpBCELgmSXypk3IqymcGCfJGKaNUwhCEMJVDUukOaWliCxhW4M+CXdVYRIhCEEICEIyObfGSYNTSQihSxJZoGq1WQhCeDgE0tSIIUKGoRS0SkMWOS9p6EIQghBeOJ+Qhg9ycHo4AikFtjYhZRV7hCAEIYyNMTUeYsImgeXU7CEhbrqACUEIQsifd6AmaVqomgPR0HbbJCszVwhCEEId3GrFUrLwkLDWSZMkgg4yZIUgBCFUSw0VPalIQ5saCW7SZi4EIQihyyxRc+Qk6EkaKL2eBMnGIUsIQhDC2hipoEoPsV2bgqEkgEEDW6MgJAQhCCEOS3TRoYIIHaSa4AcZ7DZhWAhCEMIL+Q7E7EwDSAxGXOwD4LQ50tevwS0hCEEIqKlsC0kKZyVzZ3u0wa3GNI6utBCEIIQqLJFEkzZQkYRWasSQe4wLlBCEIIT4YU4qqLYAvjGAERGlWqCEIAQh1IYsWWC2pSjBI6Gs1uSNQ5cQhCCEcVjaFhxqwpDmlgIfWBC5uj9MixYoIQhBCC/SzDazhcLZhBnUxOD7E1NGCEIQQhZVSMOhRgoNXZDG1og49ExCEIIQsqiSGtcmXNJwVgp+UAGnan6b+CoEIQihFlqTiEGLpQsagZsgE8NXCEIQwnXsO6TARSqcFJSuIQsYCZAcq81CEMJDILTGCwlakeAWKa45QzOYCUEIQmB/gC4tH0lMoUIpDYeSnyWRFy9QQhCCEOLNiXB6YtJsr6OGbIK7LU5CEIIQzhYo+vOTEFcSRVKxxJSJZxWCEISAhNapyZyImWQp+0pBhXEsBCEIIf+DvGaIoUYJFVFag7U1aWJIQwhCEEL1j3RbYzYZIElUocMSbaCjoSMEIQhhHZbSoEGEWAriNNxBTFcsyAhBCEJYDdkUwEiDCwFADk7F3MZ8xa60EIQgBBzMaMJWNGBBw1f0umQcC0EIQrhwY2yGo22R2QROKpg04Y3UNMf3E4IQhICGpSb8lIAko4UsUOSezRInBCEI4fzzDtugQoKUZMlKjTRdixvhacpdCEJ4GIRWFCGhita0SWYOCYJFA1YIQhBCBSEJKZvwSkSTNgRGg1pE7I0LlBCEIITY7NrGSQegBDItUMnQxU1TCEIQQhRVUlMkA0sbwEzLUbNMVaEOIQhBCGNjTA2sMU5PfkYWINLIyZAnBCEIgUHYBJRNbCVhTLpoJWPlZKmKhqwQhCCE6oNTVKxIRZ003hODBTdmIQhBCLExpoKpMdOaNicLVBJYotEsBCEI4RbCtrgQIOkQnwREaSCENkYhCEEIDAIxUelgkgJW3wpx0SUKbZFCEIIQjiHQQtpwFhFwiXBLziMEIQjhMwgpwEWFWmoCU0OWGDDj90IQghDqBWo6FG4+V//hr9SU01lpXUIQghB6oTUtTydBUDIg0VAmEXXHQUoIQhBCbcj+zw8hCEEIQhCCEIRw+/gFUm0EHUx8LiIAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#功能"><span class="post-toc-number">2.</span> <span class="post-toc-text">功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原理"><span class="post-toc-number">3.</span> <span class="post-toc-text">原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置文件"><span class="post-toc-number">5.</span> <span class="post-toc-text">配置文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用说明"><span class="post-toc-number">6.</span> <span class="post-toc-text">使用说明</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>我们一般使用程序的时候，很多都需要使用定时任务来按时重启/执行应用，还有的也需要让程序一直常驻后台，对这类要求使用的基本上是<code>crontab</code>和<code>Systemctl</code>/<code>Supervisor</code>，不过对于很多人来说配置挺麻烦的，这里就分享一个带<code>Web</code>面板的定时任务&amp;常驻后台工具，可以很方便设置定时任务和常驻后台操作，也可以同时管理多台服务器，很强大，使用起来很方便。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/jiacrontab(2).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/jiacrontab(1).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
+<li>允许设置每个脚本的超时时间，超时操作可选择邮件通知管理者，或强杀脚本进程。</li>
+<li>允许设置脚本的最大并发数。</li>
+<li>一台<code>server</code>管理多个<code>client</code>。</li>
+<li>每个脚本都可在<code>server</code>端灵活配置，如测试脚本运行，查看日志，强杀进程，停止定时等。</li>
+<li>允许添加脚本依赖（支持跨服务器），依赖脚本提供同步和异步的执行模式。</li>
+<li>友好的<code>web</code>界面，方便用户操作。</li>
+<li>脚本出错时可选择邮箱通知多人。</li>
+<li>支持常驻任务，任务失败后可配置自动重启。</li>
+<li>支持管道操作。</li>
+</ul>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><pre><code>jiacrontab由server，client两部分构成，两者完全独立通过rpc通信。
+server：向用户提供可视化界面，调度多个client。
+client：实现定时逻辑，隔离用户脚本，将client布置于多台服务器上可由server统一管理。 每个脚本的定时格式完全兼容linux本身的crontab脚本配置格式。</code></pre><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/iwannay/jiacrontab" target="_blank" rel="noopener">https://github.com/iwannay/jiacrontab</a></p>
+<p><strong>1、安装依赖</strong></p>
+<pre><code>#CentOS系统
+yum -y install unzip
+
+#Debian/Ubuntu系统
+apt install unzip -y</code></pre><p><strong>2、运行Jiacrontab</strong><br>先访问该地址→传送门，根据操作系统获取最新版本的<code>Jiacrontab</code>下载地址，然后使用命令：</p>
+<pre><code>#下载jiacrontab
+wget https://jiacrontab.iwannay.cn/download/jiacrontab-v1.4.5-linux-amd64.zip
+#解压
+unzip jiacrontab-v1.4.5-linux-amd64.zip
+#进入服务端文件夹并运行服务端
+cd jiacrontab/server
+nohup ./jiaserver &amp;&gt; jiaserver.log &amp;
+#进入客户端文件夹并运行客户端
+cd .. &amp;&amp; cd client
+nohup ./jiaclient &amp;&gt; jiaclient.log &amp;</code></pre><p>然后还需要开放<code>20000-20003</code>端口，使用命令：</p>
+<pre><code>#CentOS 7
+firewall-cmd --zone=public --add-port=20000-20003/tcp --permanent
+firewall-cmd --reload
+
+#CentOS 6(一般情况下，Debian和Ubuntu不需要开启，如果访问不了Web就需要开启了)
+iptables -A INPUT -p tcp -dport 20000:20003 -j ACCEPT
+iptables save
+service iptables restart</code></pre><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><pre><code>服务端配置文件：server/server.ini，可以在里面修改用户名、密码，邮箱，允许使用的命令等信息。
+客户端配置文件：client/client.ini ，可以修改报警邮箱，开启日志及连接服务端地址。</code></pre><h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><pre><code>#基本使用
+1、定时任务
+超时设置和超时操作
+超时后会进行设置的超时操作 默认值为0 不判断超时
+
+2、最大并发数
+最大并发数 控制 同时有几个脚本进程
+默认最大并发数为1，若不设置超时时间，当定时任务第二次执行时，若上一次执行还未完成
+则会kill上一个脚本，进行本次执行。
+防止脚本无法正常退出而导致系统资源耗尽
+
+3、添加依赖
+依赖就是用户脚本执行前，需要先执行依赖脚本，只有依赖脚本执行完毕才会执行当前脚本。
+并发执行：并发执行依赖脚本，任意一个脚本出错或超时不会影响其他依赖脚本，但是会中断用户脚本
+同步执行：同步执行依赖脚本，执行顺序为添加顺序，如果有一个依赖脚本出错或超时，则会中断后继依赖，以及用户脚本
+
+脚本异常退出通知 如果脚本退出码不为0，则认为是异常退出
+
+#常驻任务
+常驻任务检查脚本进程是否退出，如果退出再次重启，保证脚本不停运行
+其他同 定时任务</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-01-26T20:15:46.000Z" itemprop="datePublished">2020-01-27</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.654Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/01/27/e4-b8-80-e4-b8-aa-e7-ae-80-e6-b4-81-e7-9a-84-e5-8e-bb-e4-b8-ad-e5-bf-83-e5-8c-96-e8-a7-86-e9-a2-91-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9aipfstube-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一个简洁的去中心化视频分享平台：ipfstube安装教程</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/01/27/aria2c-e5-ba-a6-e7-9b-98-e4-b8-8b-e8-bd-bd-e5-99-a8-ef-bc-9a-e5-8f-af-e9-ab-98-e9-80-9f-e4-b8-8b-e8-bd-bd-e7-99-be-e5-ba-a6-e4-ba-91-e6-96-87-e4-bb-b6/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Aria2c度盘下载器：可高速下载百度云文件</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

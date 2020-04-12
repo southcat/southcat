@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>一款跨平台的快速，简单，干净的视频下载器：Annie，支持Bilibili/Youtube等多个网站 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="一款跨平台的快速，简单，干净的视频下载器：Annie，支持Bilibili&#x2F;Youtube等多个网站 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/10/23/e4-b8-80-e6-ac-be-e8-b7-a8-e5-b9-b3-e5-8f-b0-e7-9a-84-e5-bf-ab-e9-80-9f-ef-bc-8c-e7-ae-80-e5-8d-95-ef-bc-8c-e5-b9-b2-e5-87-80-e7-9a-84-e8-a7-86-e9-a2-91-e4-b8-8b-e8-bd-bd-e5-99-a8-ef-bc-9aannie/"><meta property="og:locale" content="en"><meta name="description" content="说明：最近发现了个很强的下载神器Annie，一款用Go构建的快速，简单，干净的视频下载器，支持的平台很多，包括MacOS、Windows、Linux等，安装和使用是非常简单的，很适合新手，支持的网站也多，目前支持以下网站： 抖音、哔哩哔哩、半次元、pixivision、优酷、YouTube、爱奇艺、芒果TV、Tumblr、Vimeo、Facebook、斗鱼视频、秒拍、新浪微博、Instagram、 - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/Annie(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Annie(2).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Annie(3).png"><meta property="article:published_time" content="2019-10-23T12:42:05.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.644Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.644Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/10/23/e4-b8-80-e6-ac-be-e8-b7-a8-e5-b9-b3-e5-8f-b0-e7-9a-84-e5-bf-ab-e9-80-9f-ef-bc-8c-e7-ae-80-e5-8d-95-ef-bc-8c-e5-b9-b2-e5-87-80-e7-9a-84-e8-a7-86-e9-a2-91-e4-b8-8b-e8-bd-bd-e5-99-a8-ef-bc-9aannie/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/10/23/e4-b8-80-e6-ac-be-e8-b7-a8-e5-b9-b3-e5-8f-b0-e7-9a-84-e5-bf-ab-e9-80-9f-ef-bc-8c-e7-ae-80-e5-8d-95-ef-bc-8c-e5-b9-b2-e5-87-80-e7-9a-84-e8-a7-86-e9-a2-91-e4-b8-8b-e8-bd-bd-e5-99-a8-ef-bc-9aannie/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/10/23/e4-b8-80-e6-ac-be-e8-b7-a8-e5-b9-b3-e5-8f-b0-e7-9a-84-e5-bf-ab-e9-80-9f-ef-bc-8c-e7-ae-80-e5-8d-95-ef-bc-8c-e5-b9-b2-e5-87-80-e7-9a-84-e8-a7-86-e9-a2-91-e4-b8-8b-e8-bd-bd-e5-99-a8-ef-bc-9aannie/"
+    },
+    "headline": "一款跨平台的快速，简单，干净的视频下载器：Annie，支持Bilibili/Youtube等多个网站 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-10-23T12:42:05.000Z",
+    "dateModified": "2020-04-12T04:09:09.644Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：最近发现了个很强的下载神器Annie，一款用Go构建的快速，简单，干净的视频下载器，支持的平台很多，包括MacOS、Windows、Linux等，安装和使用是非常简单的，很适合新手，支持的网站也多，目前支持以下网站： 抖音、哔哩哔哩、半次元、pixivision、优酷、YouTube、爱奇艺、芒果TV、Tumblr、Vimeo、Facebook、斗鱼视频、秒拍、新浪微博、Instagram、 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=一款跨平台的快速，简单，干净的视频下载器：Annie，支持Bilibili/Youtube等多个网站" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=一款跨平台的快速，简单，干净的视频下载器：Annie，支持Bilibili/Youtube等多个网站&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=一款跨平台的快速，简单，干净的视频下载器：Annie，支持Bilibili/Youtube等多个网站" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFVklEQVR42u2cQW7jQBAD9f9PK9eNMdMsjpzDQuVLgliOR2Wgl00ye90+7ksEQhCCEIQgBCGMEK7hsbrm82er3/H5/K83XjyfXvPvNdP105mW9yAEIQhhCYG86e7A042ufv75e9KHkQDswKP7EoIQhLCFsHvjdJjpJslNEOhpwJHzL88iBCEI4QjC6uvugOSGdvAmiM3rhCAEIfwtBHKw1aAiYiiBIz/bLXhCEIIQziEQ82MyWdLQSiIniSZiyNAlTghCEMIMgQys//Hr19xmIQjhRRBiaBkE0jTU6JAlhgw1e/4klRaCEF4EYRokk4mZRNDp69IZ2u/H8wlBCEIYFyhiTiTDggSu0xJGFp/0HC6MCEEIQtguULSkRYXRyQBtjBZaFhnFnhCEIITlAkUMU2JqNs+T4mZj1jalUyEIQQh5MNJSBi1zJaGSDk3CnbQ0pQ9aCEIQQjZa20InvYEp3Dk1a4n4GoskQhCCELYQqLlCDY8LPnbw6EAlQGJJQwhCEEJlpCajoilckQE8lbtSgfR4gRKCEIQQhyIxMFOpejJFqTA7DX0jICEIQQhbCEmAkEFIA11aDGsWOxoUbxcoIQhBCHdrXtCAlQqkVqiRodxAFoIQhDCXNMgv3i1QFAQJZKkxQ0yecbETghCEECGcmB60KNVc34SxySTeDmohCEEIuKTRljJIcWsSYd9YoFJQXDdVhCCEF0KgIoMMzgSDDsin5g0peQlBCEK4jnRCW4RIRkwanCdDjpTJhCAEIfRGa1OwIgbJqRFLAp9kBhMTRwhCEMJdG61kEWkGZRJXZIF6AlkIQhDCDGEySNriFAlK2iWIiK9mcRq3SCEIQQh3IzZoyNoWNp+KoWkg4i1SCEIQQlWKIEOUBKpkSUtGSVq28H0IQQhCGI1WOhTJ4kQEThpcdIEiITHaIoUgBCHgshZdcprSFRVQ09BLg3kcuEIQghDG8CUNtyRKCExistLvJ7F2HMgKQQhCwKEsWaRS+eJEnBGTlxq/KHwRghBeDIFcTMNTetA28G0HHw6OhSAEIYyDkYifJFqI4ZGWIlLAIgtTvA8hCEEI0VR5YoCQxYsO3AQ6fUjp3EIQghBYP2E6FC1V0pCVFjCp4CIDF6XSQhCCELDB0i5dtPBFS5hEIN3wIQQhCGFvqrQm6CRsqPFJg18KgIonIQhBCF1nKS0jaZil4lUyaZPBQ8olpFwmBCEIYf6jj3QIInRocPKNQLZZmlB7TQhCEEL1ny+Q8PN0mXkSyLbXCUEIQpghJBOkKXQ2BasJNH0NXfawYhSCEF4OgYoUEpDSZYcEP7QwkpazcZAKQQhCGMVSOjgNTInhQgxUVMgsA1khCEEIDMI0SFJg2pY2U2mMlr6aYBZtkUIQghCqgUPehAgsGuY25gm56agYhSAEIURRRBcWEqJMAzIVNWnwSwauEIQgBPb3Dk8NjZOglg69RrBhg0YIQhBCNFWSsJlMkBSqkCIFHWrEEEoGrxCEIIQ7hi/kkK05QgphjTHSlDWOAlkhCOHFEE6CE3KTjWhpTVRqnKTXCEEIQuDdZlrgbMrbdEEjxkkbwC6BCEEIQsDhCxkyzSBqDFnyYdDgdTy3EIQghDgYmwWJvHEqeCZDhRZKibjC/zoIQQgvh5AG4onp0QBrlqv2QxqNXCEIQQhbCDTIaN68MXNpUJvOTExiIQhBCM8gTGKHFrqackcz3Ijxi8WSEIQghKpUMYmiVuwQY6W5rgmJhSAEIZz7CWk4EcFDxA0xaOn1XzdVhCCEl0GgBctWSKVQlkAjAil9oGiBEoIQhPD6hxCEIAQhCEEIQlg+fgDegibQxEd2bwAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">一款跨平台的快速，简单，干净的视频下载器：Annie，支持Bilibili/Youtube等多个网站</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-10-23</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=一款跨平台的快速，简单，干净的视频下载器：Annie，支持Bilibili/Youtube等多个网站&url=http://yoursite.com/2019/10/23/e4-b8-80-e6-ac-be-e8-b7-a8-e5-b9-b3-e5-8f-b0-e7-9a-84-e5-bf-ab-e9-80-9f-ef-bc-8c-e7-ae-80-e5-8d-95-ef-bc-8c-e5-b9-b2-e5-87-80-e7-9a-84-e8-a7-86-e9-a2-91-e4-b8-8b-e8-bd-bd-e5-99-a8-ef-bc-9aannie/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=一款跨平台的快速，简单，干净的视频下载器：Annie，支持Bilibili/Youtube等多个网站&url=http://yoursite.com/2019/10/23/e4-b8-80-e6-ac-be-e8-b7-a8-e5-b9-b3-e5-8f-b0-e7-9a-84-e5-bf-ab-e9-80-9f-ef-bc-8c-e7-ae-80-e5-8d-95-ef-bc-8c-e5-b9-b2-e5-87-80-e7-9a-84-e8-a7-86-e9-a2-91-e4-b8-8b-e8-bd-bd-e5-99-a8-ef-bc-9aannie/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/23/e4-b8-80-e6-ac-be-e8-b7-a8-e5-b9-b3-e5-8f-b0-e7-9a-84-e5-bf-ab-e9-80-9f-ef-bc-8c-e7-ae-80-e5-8d-95-ef-bc-8c-e5-b9-b2-e5-87-80-e7-9a-84-e8-a7-86-e9-a2-91-e4-b8-8b-e8-bd-bd-e5-99-a8-ef-bc-9aannie/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/10/23/e4-b8-80-e6-ac-be-e8-b7-a8-e5-b9-b3-e5-8f-b0-e7-9a-84-e5-bf-ab-e9-80-9f-ef-bc-8c-e7-ae-80-e5-8d-95-ef-bc-8c-e5-b9-b2-e5-87-80-e7-9a-84-e8-a7-86-e9-a2-91-e4-b8-8b-e8-bd-bd-e5-99-a8-ef-bc-9aannie/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/10/23/e4-b8-80-e6-ac-be-e8-b7-a8-e5-b9-b3-e5-8f-b0-e7-9a-84-e5-bf-ab-e9-80-9f-ef-bc-8c-e7-ae-80-e5-8d-95-ef-bc-8c-e5-b9-b2-e5-87-80-e7-9a-84-e8-a7-86-e9-a2-91-e4-b8-8b-e8-bd-bd-e5-99-a8-ef-bc-9aannie/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/10/23/e4-b8-80-e6-ac-be-e8-b7-a8-e5-b9-b3-e5-8f-b0-e7-9a-84-e5-bf-ab-e9-80-9f-ef-bc-8c-e7-ae-80-e5-8d-95-ef-bc-8c-e5-b9-b2-e5-87-80-e7-9a-84-e8-a7-86-e9-a2-91-e4-b8-8b-e8-bd-bd-e5-99-a8-ef-bc-9aannie/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/10/23/e4-b8-80-e6-ac-be-e8-b7-a8-e5-b9-b3-e5-8f-b0-e7-9a-84-e5-bf-ab-e9-80-9f-ef-bc-8c-e7-ae-80-e5-8d-95-ef-bc-8c-e5-b9-b2-e5-87-80-e7-9a-84-e8-a7-86-e9-a2-91-e4-b8-8b-e8-bd-bd-e5-99-a8-ef-bc-9aannie/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFVklEQVR42u2cQW7jQBAD9f9PK9eNMdMsjpzDQuVLgliOR2Wgl00ye90+7ksEQhCCEIQgBCGMEK7hsbrm82er3/H5/K83XjyfXvPvNdP105mW9yAEIQhhCYG86e7A042ufv75e9KHkQDswKP7EoIQhLCFsHvjdJjpJslNEOhpwJHzL88iBCEI4QjC6uvugOSGdvAmiM3rhCAEIfwtBHKw1aAiYiiBIz/bLXhCEIIQziEQ82MyWdLQSiIniSZiyNAlTghCEMIMgQys//Hr19xmIQjhRRBiaBkE0jTU6JAlhgw1e/4klRaCEF4EYRokk4mZRNDp69IZ2u/H8wlBCEIYFyhiTiTDggSu0xJGFp/0HC6MCEEIQtguULSkRYXRyQBtjBZaFhnFnhCEIITlAkUMU2JqNs+T4mZj1jalUyEIQQh5MNJSBi1zJaGSDk3CnbQ0pQ9aCEIQQjZa20InvYEp3Dk1a4n4GoskQhCCELYQqLlCDY8LPnbw6EAlQGJJQwhCEEJlpCajoilckQE8lbtSgfR4gRKCEIQQhyIxMFOpejJFqTA7DX0jICEIQQhbCEmAkEFIA11aDGsWOxoUbxcoIQhBCHdrXtCAlQqkVqiRodxAFoIQhDCXNMgv3i1QFAQJZKkxQ0yecbETghCEECGcmB60KNVc34SxySTeDmohCEEIuKTRljJIcWsSYd9YoFJQXDdVhCCEF0KgIoMMzgSDDsin5g0peQlBCEK4jnRCW4RIRkwanCdDjpTJhCAEIfRGa1OwIgbJqRFLAp9kBhMTRwhCEMJdG61kEWkGZRJXZIF6AlkIQhDCDGEySNriFAlK2iWIiK9mcRq3SCEIQQh3IzZoyNoWNp+KoWkg4i1SCEIQQlWKIEOUBKpkSUtGSVq28H0IQQhCGI1WOhTJ4kQEThpcdIEiITHaIoUgBCHgshZdcprSFRVQ09BLg3kcuEIQghDG8CUNtyRKCExistLvJ7F2HMgKQQhCwKEsWaRS+eJEnBGTlxq/KHwRghBeDIFcTMNTetA28G0HHw6OhSAEIYyDkYifJFqI4ZGWIlLAIgtTvA8hCEEI0VR5YoCQxYsO3AQ6fUjp3EIQghBYP2E6FC1V0pCVFjCp4CIDF6XSQhCCELDB0i5dtPBFS5hEIN3wIQQhCGFvqrQm6CRsqPFJg18KgIonIQhBCF1nKS0jaZil4lUyaZPBQ8olpFwmBCEIYf6jj3QIInRocPKNQLZZmlB7TQhCEEL1ny+Q8PN0mXkSyLbXCUEIQpghJBOkKXQ2BasJNH0NXfawYhSCEF4OgYoUEpDSZYcEP7QwkpazcZAKQQhCGMVSOjgNTInhQgxUVMgsA1khCEEIDMI0SFJg2pY2U2mMlr6aYBZtkUIQghCqgUPehAgsGuY25gm56agYhSAEIURRRBcWEqJMAzIVNWnwSwauEIQgBPb3Dk8NjZOglg69RrBhg0YIQhBCNFWSsJlMkBSqkCIFHWrEEEoGrxCEIIQ7hi/kkK05QgphjTHSlDWOAlkhCOHFEE6CE3KTjWhpTVRqnKTXCEEIQuDdZlrgbMrbdEEjxkkbwC6BCEEIQsDhCxkyzSBqDFnyYdDgdTy3EIQghDgYmwWJvHEqeCZDhRZKibjC/zoIQQgvh5AG4onp0QBrlqv2QxqNXCEIQQhbCDTIaN68MXNpUJvOTExiIQhBCM8gTGKHFrqackcz3Ijxi8WSEIQghKpUMYmiVuwQY6W5rgmJhSAEIZz7CWk4EcFDxA0xaOn1XzdVhCCEl0GgBctWSKVQlkAjAil9oGiBEoIQhPD6hxCEIAQhCEEIQlg+fgDegibQxEd2bwAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>最近发现了个很强的下载神器<code>Annie</code>，一款用<code>Go</code>构建的快速，简单，干净的视频下载器，支持的平台很多，包括<code>MacOS</code>、<code>Windows</code>、<code>Linux</code>等，安装和使用是非常简单的，很适合新手，支持的网站也多，目前支持以下网站：</p>
+<pre><code>抖音、哔哩哔哩、半次元、pixivision、优酷、YouTube、爱奇艺、芒果TV、Tumblr、Vimeo、Facebook、斗鱼视频、秒拍、新浪微博、Instagram、Twitter、腾讯视频、网易云音乐、音悦台</code></pre><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/iawia002/annie" target="_blank" rel="noopener">https://github.com/iawia002/annie</a></p>
+<p>这里就只说下<code>Windows</code>和<code>Linux</code>大致用法，其它的直接看<code>Github</code>地址，说的很详细了。</p>
+<p><strong>1、Linux安装</strong><br>首先下载作者提供的编译好的二进制文件→传送门，根据自己的系统架构下载对应的最新版压缩包，目前最新版本为<code>0.9.3</code>。</p>
+<p>使用命令：</p>
+<pre><code>wget https://github.com/iawia002/annie/releases/download/0.9.3/annie_0.9.3_Linux_$(getconf LONG_BIT)-bit.tar.gz
+tar zxvf annie_*.tar.gz
+mv annie /usr/local/bin/
+rm -rf annie_*.tar.gz</code></pre><p>再安装<code>ffmpeg</code>，使用命令：</p>
+<pre><code>#下载ffmpeg二进制
+wget https://www.moerats.com/usr/down/ffmpeg/ffmpeg-git-$(getconf LONG_BIT)bit-static.tar.xz
+#解压文件
+tar xvf ffmpeg-git-*-static.tar.xz
+#移动ffmpeg可执行文件
+mv ffmpeg-git-*/ffmpeg  ffmpeg-git-*/ffprobe /usr/local/bin/
+#删除文件
+rm -rf ffmpeg-git-*</code></pre><p>不过你要是只下载视频的话，可以不用安装<code>ffmpeg</code>。</p>
+<p><strong>2、Windows安装</strong><br>这里为了方便操作就不使用<code>CMD</code>了，直接使用<code>PowerShell</code>，需要的条件<code>PowerShell 5+</code>和<code>.NET Framework 4.5+</code>。</p>
+<p>先在电脑左下角程序搜索框输入<code>PowerShell</code>，然后双击<code>Windows PowerShell</code>工具，再输入以下命令查看版本：</p>
+<pre><code>$PSVersionTable.PSVersion</code></pre><p><code>Major</code>为版本号，一般目前常用电脑<code>Windows 10</code>符合条件，<code>Windiows 7</code>还需要升级，大致步骤如下：</p>
+<pre><code>1、安装.Net 4.5.2全量包
+下载地址：https://www.moerats.com/usr/down/powershell/NDP452-KB2901907-x86-x64-AllOS-ENU.exe
+
+2、升级PowerShell的补丁包
+32位下载地址：https://www.moerats.com/usr/down/powershell/Win7-KB3191566-x86.zip
+64位下载地址：https://www.moerats.com/usr/down/powershell/Win7-KB3191566-x64.zip</code></pre><p>接下来安装一个命令行安装工具<code>Scoop</code>，使用命令：</p>
+<pre><code>iex (new-object net.webclient).downloadstring(&apos;https://get.scoop.sh&apos;)</code></pre><p>再安装<code>annie</code>：</p>
+<pre><code>scoop install annie</code></pre><p>该命令会给你把<code>ffmpeg</code>也一起安装好。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>使用命令：</p>
+<pre><code>annie [OPTIONS] URL [URL...]    
+#可选参数如下
+Options
+  -i    Information only
+  -F string
+        URLs file path
+  -d    Debug mode
+  -j    Print extracted data
+  -v    Show version
+
+Download:
+  -f string
+        Select specific stream to download
+  -p    Download playlist
+  -n int
+        The number of download thread (only works for multiple-parts video) (default 10)
+  -c string
+        Cookie
+  -r string
+        Use specified Referrer
+  -cs int
+        HTTP chunk size for downloading (in MB) (default 0)
+
+Network:
+  -s string
+        SOCKS5 proxy
+  -x string
+        HTTP proxy
+  -retry int
+        How many times to retry when the download failed (default 10)
+
+Playlist:
+  -start int
+        Playlist video to start at (default 1)
+  -end int
+        Playlist video to end at
+  -items string
+        Playlist video items to download. Separated by commas like: 1,5,6
+
+Filesystem:
+  -o string
+        Specify the output path
+  -O string
+        Specify the output file name
+
+Subtitle:
+  -C    Download captions
+
+Youku:
+  -ccode string
+        Youku ccode (default &quot;0590&quot;)
+  -ckey string
+        Youku ckey (default &quot;7B19C0AB12633B22E7FE81271162026020570708D6CC189E4924503C49D243A0DE6CD84A766832C2C99898FC5ED31F3709BB3CDD82C96492E721BDD381735026&quot;)
+  -password string
+        Youku password
+
+YouTube
+  -ytb-stream2
+        Use data in url_encoded_fmt_stream_map
+
+Aria2:
+  -aria2
+        Use Aria2 RPC to download
+  -aria2addr string
+        Aria2 Address (default &quot;localhost:6800&quot;)
+  -aria2method string
+        Aria2 Method (default &quot;http&quot;)
+  -aria2token string
+        Aria2 RPC Token</code></pre><p>这里拿<code>bilibili</code>视频为例，基本上用法都一样，不过下载<code>B</code>站的时候，后面可以不用链接，直接使用<code>av</code>或<code>ep</code>号也行。</p>
+<p>直接下载一个视频：</p>
+<pre><code>#如果你想下载多个链接视频，那么就在后面加上多个链接
+annie https://www.bilibili.com/video/av45654043</code></pre><p><img src="https://www.moerats.com/usr/picture/Annie(1).png" alt="请输入图片描述" title="请输入图片描述"><br>列举视频所有清晰度，但不下载：</p>
+<pre><code>annie -i https://www.bilibili.com/video/av45654043</code></pre><p><img src="https://www.moerats.com/usr/picture/Annie(2).png" alt="请输入图片描述" title="请输入图片描述"><br>根据列举出来的清晰度，下载指定清晰度的视频：</p>
+<pre><code>#比如列表显示的1080P视频
+annie -f 80 https://www.bilibili.com/video/av45654043</code></pre><p><img src="https://www.moerats.com/usr/picture/Annie(3).png" alt="请输入图片描述" title="请输入图片描述"><br>一般视频都默认下载到当前目录，如果你想下载到其它目录，需要在下载时候，加一个<code>-o</code>参数，后面带上文件夹路径即可。</p>
+<pre><code>#比如下载到桌面C:\Users\Rats\Desktop文件夹，Linux路径写法为/root/Rats
+annie -o C:\Users\Rats\Desktop -f 80 https://www.bilibili.com/video/av45654043</code></pre><p>如果是下载<code>bilibili</code>电视剧，可以在后面加一个<code>-p</code>参数，然后可以将所有集数一起下载。</p>
+<pre><code>#列出该集数的电视剧所有集数清晰度等信息
+annie -i -p https://www.bilibili.com/bangumi/play/ep133269
+#下载1到20集1080P视频
+annie -f 80 -p -start 1 -end 20 https://www.bilibili.com/bangumi/play/ep133269</code></pre><p>目前播放列表暂时只支持<code>B</code>站和<code>youtube</code>。</p>
+<p>你也可以将你需要下载的链接存放到<code>bz.txt</code>文件里，然后使用命令一起下载：</p>
+<pre><code>#列出所有链接信息
+annie -F /root/bz.txt -i
+#下载1080p视频
+annie -f 80 -F /root/bz.txt</code></pre><p>如果你下载的视频，比如需要会员啥的，就需要<code>Cookies</code>了，这里补充下优酷会员下载视频方法。</p>
+<p>首先登录优酷账号，然后获取<code>Cookies</code>，只需要<code>P_pck_rm</code>参数即可，再新建一个文本<code>cookie.txt</code>，格式如下：</p>
+<pre><code>#后面为该值参数
+P_pck_rm=moerats</code></pre><p>接下来在命令中加上<code>-c cookie.txt</code>参数解析地址并下载视频：</p>
+<pre><code>#获取视频格式列表
+annie -i -c cookie.txt https://v.youku.com/v_show/id_*.html
+#根据自己需求下载指定清晰度视频
+annie -f mp4hd3v2-guoyu -c cookie.txt https://v.youku.com/v_show/id_*.html</code></pre><p>如果你不会看<code>Cookie</code>，可以直接使用浏览器插件<code>editthiscookie</code>，具体使用方法如下：</p>
+<pre><code>首先百度下载安装该浏览器插件，再打开EditThisCookie插件选项，导出格式改成Semicolon separated name=value pairs，接下来登录B站或其它账号，再点击浏览器右上角插件选项并将Cookie导出剪贴板。复制粘贴到cookie.txt里，只要最后一行有用的代码参数，//几行开头的不要。</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-10-23T12:42:05.000Z" itemprop="datePublished">2019-10-23</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.644Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/10/24/e4-b8-80-e4-b8-aa-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e5-9b-a2-e9-98-9f-e8-81-8a-e5-a4-a9-e5-ae-a4-ef-bc-9arocket-chat-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一个强大的多功能团队聊天室：Rocket.Chat安装教程</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/10/23/e4-b8-80-e4-b8-aaaria2-e6-96-b0-e7-9a-84-e6-9b-b4-e5-a5-bd-e7-94-a8-e7-9a-84web-e5-89-8d-e7-ab-af-ef-bc-9aariang-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一个Aria2新的更好用的Web前端：AriaNg安装教程</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

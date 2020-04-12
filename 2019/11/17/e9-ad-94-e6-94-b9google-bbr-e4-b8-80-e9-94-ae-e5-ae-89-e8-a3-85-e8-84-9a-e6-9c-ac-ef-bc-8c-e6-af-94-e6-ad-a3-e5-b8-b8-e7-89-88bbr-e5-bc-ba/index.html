@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>魔改Google BBR一键安装脚本，比正常版BBR强 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="魔改Google BBR一键安装脚本，比正常版BBR强 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/11/17/e9-ad-94-e6-94-b9google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e6-af-94-e6-ad-a3-e5-b8-b8-e7-89-88bbr-e5-bc-ba/"><meta property="og:locale" content="en"><meta name="description" content="说明：本方法出自于hostloc论坛大佬Yankee发布的BBR魔改，并由Vicer博主制作的一键包。魔改基本就是修改BBR源码，调整参数，使其更强劲。 更新：[2017.07.25]修复一个由检测gcc版本引起的不可预料的错误。[2017.07.15]自动检测gcc版本，如果gcc版本大于4.9的将不会再安装gcc。[2017.07.12]支持用户自行指定内核版本(需要与-f命令同时使用)。 提 - John Doe - 南猫"><meta property="article:published_time" content="2019-11-16T20:15:48.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.646Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.646Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/11/17/e9-ad-94-e6-94-b9google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e6-af-94-e6-ad-a3-e5-b8-b8-e7-89-88bbr-e5-bc-ba/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/11/17/e9-ad-94-e6-94-b9google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e6-af-94-e6-ad-a3-e5-b8-b8-e7-89-88bbr-e5-bc-ba/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/11/17/e9-ad-94-e6-94-b9google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e6-af-94-e6-ad-a3-e5-b8-b8-e7-89-88bbr-e5-bc-ba/"
+    },
+    "headline": "魔改Google BBR一键安装脚本，比正常版BBR强 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-11-16T20:15:48.000Z",
+    "dateModified": "2020-04-12T04:09:09.646Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：本方法出自于hostloc论坛大佬Yankee发布的BBR魔改，并由Vicer博主制作的一键包。魔改基本就是修改BBR源码，调整参数，使其更强劲。 更新：[2017.07.25]修复一个由检测gcc版本引起的不可预料的错误。[2017.07.15]自动检测gcc版本，如果gcc版本大于4.9的将不会再安装gcc。[2017.07.12]支持用户自行指定内核版本(需要与-f命令同时使用)。 提 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=魔改Google BBR一键安装脚本，比正常版BBR强" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=魔改Google BBR一键安装脚本，比正常版BBR强&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=魔改Google BBR一键安装脚本，比正常版BBR强" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEIUlEQVR42u3cwVIjMQxF0fz/T8MeuvXuc1hEzc0GpiZ0fDyFLMmqeX39g9dLpEiRIkWKfBP5Gl6/fmh438/vf36l70/vadYtUuRW5OUv7c1D7957t7irn0+4q2dc/TmtW6TIzcirhU4Pu33wxfdNkLr6ufbZIkU+Hdn8HdmYFMQSSqTI/45Mi7w6tFMCPSUMd8+72gyRIp+KvAsANHmeFp42iBTV6blvVSEiRX4YMgWIT/36Z906kSI/CEkL4imppgGqbXqdJP9Ht1oiRX4QcvpFTof63SY0CTu9TGrXK1LkVmRTtN4V0LRZNTXDUoFMLmRvE3SRIhchSfOIXsqQApwukjS140aLFLkU2Sa/KQmnTejmoJ+C323CIlLkYiQpdk+DEglsqThvkn+RIp+CbAMIXezpUG9KOlJTTKTIjciTi9Vm+Igk5s1ABgmOIkVuR6YmUUoKpgO8ScppEU02QaTIrcg0eJACRLsRZKEkQKGhKpEiFyJJIZyGbEnwSA1icuETA41IkQ9A0qHeFGSazUqBqS2g8fSHSJELkKSwJQfzyc+TIpkEw9tiXaTIhch3kmkyANEMNzRDFsdViEiRS5BT84kUrE2QokGlGSyMA4QiRS5DTgkyaR6TzUlQMlAxrQ01l0WKXICkw0JpGJAEsraBlhL+MXEQKXIhMiXnUwCgzV5yYUSbzlXjS6TIxcj0i46auS/2n88mDGlco4REpMiFyNQkPh0aaprCNJCQC+Ix4xEpcgny9EBPH3J64TNhSUNMpMjNyJOEenp4amiRAps01VCjTaTIxcgmOScHeGqQTRez6XNJgBIpciuSDjM0xfM0OEEbWGmogqxBpMiNSFLopsZSe4GbBg9Jco4aYSJFLkSS5i8pcm8P5ObSFDSQUyIgUuTTkCdNKBKUyDBFGspoknqRIjcjp8M2DRCRBJ2ASCCZNhTfaokUuQDZHtBNsUwHdKeEJBXxaDBCpMhlyPTLPzWaSKAhQYcOJJEmmUiRT0KmZm5qDpPhI7JBdFiqqkJEilyCJBc/5MKWPrdZeHNphG+1RIr8YOR0wLZDhqkQJxc3TbN7TBBEilyKJA1iMig4fU0FdLtR5B9EpMiNyHigFhg6VEQwp0FLpMjtyPaipUmkydADLY6bzRIpcjOySZJTMCILTxB6oZOazSJFbkamyx9SvE6LbS6P6OeggSiRIpcj3wk65ENTwGgSkRSkRIrciiSBgQQn2lBuLnL+LBkQKXIZkly0kAFf2mhKQ08psNHiQqTIzcg0qDQdzmn4liTo6VKIPA9Nf4gU+RDk9MGnST59ZhrqRQm6SJEPQk5De+QyhjawacKREguRIp+ATMVxOribIEUHh9vNjsmASJFLkOQChQaNFDhS8jAuumxoiRS5Efnkl0iRIkWKFHn4+gaqI+RQVvtATgAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">魔改Google BBR一键安装脚本，比正常版BBR强</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-11-17</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=魔改Google BBR一键安装脚本，比正常版BBR强&url=http://yoursite.com/2019/11/17/e9-ad-94-e6-94-b9google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e6-af-94-e6-ad-a3-e5-b8-b8-e7-89-88bbr-e5-bc-ba/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=魔改Google BBR一键安装脚本，比正常版BBR强&url=http://yoursite.com/2019/11/17/e9-ad-94-e6-94-b9google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e6-af-94-e6-ad-a3-e5-b8-b8-e7-89-88bbr-e5-bc-ba/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/17/e9-ad-94-e6-94-b9google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e6-af-94-e6-ad-a3-e5-b8-b8-e7-89-88bbr-e5-bc-ba/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/11/17/e9-ad-94-e6-94-b9google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e6-af-94-e6-ad-a3-e5-b8-b8-e7-89-88bbr-e5-bc-ba/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/11/17/e9-ad-94-e6-94-b9google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e6-af-94-e6-ad-a3-e5-b8-b8-e7-89-88bbr-e5-bc-ba/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/11/17/e9-ad-94-e6-94-b9google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e6-af-94-e6-ad-a3-e5-b8-b8-e7-89-88bbr-e5-bc-ba/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/11/17/e9-ad-94-e6-94-b9google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e6-af-94-e6-ad-a3-e5-b8-b8-e7-89-88bbr-e5-bc-ba/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEIUlEQVR42u3cwVIjMQxF0fz/T8MeuvXuc1hEzc0GpiZ0fDyFLMmqeX39g9dLpEiRIkWKfBP5Gl6/fmh438/vf36l70/vadYtUuRW5OUv7c1D7957t7irn0+4q2dc/TmtW6TIzcirhU4Pu33wxfdNkLr6ufbZIkU+Hdn8HdmYFMQSSqTI/45Mi7w6tFMCPSUMd8+72gyRIp+KvAsANHmeFp42iBTV6blvVSEiRX4YMgWIT/36Z906kSI/CEkL4imppgGqbXqdJP9Ht1oiRX4QcvpFTof63SY0CTu9TGrXK1LkVmRTtN4V0LRZNTXDUoFMLmRvE3SRIhchSfOIXsqQApwukjS140aLFLkU2Sa/KQmnTejmoJ+C323CIlLkYiQpdk+DEglsqThvkn+RIp+CbAMIXezpUG9KOlJTTKTIjciTi9Vm+Igk5s1ABgmOIkVuR6YmUUoKpgO8ScppEU02QaTIrcg0eJACRLsRZKEkQKGhKpEiFyJJIZyGbEnwSA1icuETA41IkQ9A0qHeFGSazUqBqS2g8fSHSJELkKSwJQfzyc+TIpkEw9tiXaTIhch3kmkyANEMNzRDFsdViEiRS5BT84kUrE2QokGlGSyMA4QiRS5DTgkyaR6TzUlQMlAxrQ01l0WKXICkw0JpGJAEsraBlhL+MXEQKXIhMiXnUwCgzV5yYUSbzlXjS6TIxcj0i46auS/2n88mDGlco4REpMiFyNQkPh0aaprCNJCQC+Ix4xEpcgny9EBPH3J64TNhSUNMpMjNyJOEenp4amiRAps01VCjTaTIxcgmOScHeGqQTRez6XNJgBIpciuSDjM0xfM0OEEbWGmogqxBpMiNSFLopsZSe4GbBg9Jco4aYSJFLkSS5i8pcm8P5ObSFDSQUyIgUuTTkCdNKBKUyDBFGspoknqRIjcjp8M2DRCRBJ2ASCCZNhTfaokUuQDZHtBNsUwHdKeEJBXxaDBCpMhlyPTLPzWaSKAhQYcOJJEmmUiRT0KmZm5qDpPhI7JBdFiqqkJEilyCJBc/5MKWPrdZeHNphG+1RIr8YOR0wLZDhqkQJxc3TbN7TBBEilyKJA1iMig4fU0FdLtR5B9EpMiNyHigFhg6VEQwp0FLpMjtyPaipUmkydADLY6bzRIpcjOySZJTMCILTxB6oZOazSJFbkamyx9SvE6LbS6P6OeggSiRIpcj3wk65ENTwGgSkRSkRIrciiSBgQQn2lBuLnL+LBkQKXIZkly0kAFf2mhKQ08psNHiQqTIzcg0qDQdzmn4liTo6VKIPA9Nf4gU+RDk9MGnST59ZhrqRQm6SJEPQk5De+QyhjawacKREguRIp+ATMVxOribIEUHh9vNjsmASJFLkOQChQaNFDhS8jAuumxoiRS5Efnkl0iRIkWKFHn4+gaqI+RQVvtATgAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#提示"><span class="post-toc-number">1.</span> <span class="post-toc-text">提示</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">方法</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>本方法出自于<code>hostloc</code>论坛大佬<code>Yankee</code>发布的<code>BBR</code>魔改，并由<code>Vicer</code>博主制作的一键包。魔改基本就是修改<code>BBR</code>源码，调整参数，使其更强劲。</p>
+<p><strong>更新：</strong><br>[2017.07.25]<br>修复一个由检测<code>gcc</code>版本引起的不可预料的错误。<br>[2017.07.15]<br>自动检测<code>gcc</code>版本，如果<code>gcc</code>版本大于4.9的将不会再安装<code>gcc</code>。<br>[2017.07.12]<br>支持用户自行指定内核版本(需要与<code>-f</code>命令同时使用)。</p>
+<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p>1、执行过程中会重新编译模块。<br>2、模块默认为开机自动加载。<br>3、模块名称:<code>tcp_bbr_powered</code>。<br>4、可用<code>modprobe tcp_bbr_powered</code>命令进行加载模块。<br>5、可执行<code>lsmod |grep &#39;bbr_powered&#39;</code>，结果不为空,则加载模块成功。<br>6、可执行<code>sysctl -w net.ipv4.tcp_congestion_control=bbr_powered</code>使用此模块。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>本方法已在<code>debian</code>及<code>ubuntu</code>上测试通过。</p>
+<p><strong>提示：</strong>关于<code>CentOS</code>系统魔改请参考：BBR+BBR魔改+Lotsever(锐速)一键脚本 for Centos/Debian/Ubuntu。</p>
+<p><strong>1、安装BBR并开启</strong><br>使用命令：</p>
+<pre><code>wget --no-check-certificate -qO &apos;BBR.sh&apos; &apos;https://moeclub.org/attachment/LinuxShell/BBR.sh&apos; &amp;&amp; chmod a+x BBR.sh &amp;&amp; bash BBR.sh -f
+# 备用地址
+wget --no-check-certificate -qO &apos;BBR.sh&apos; &apos;https://www.moerats.com/usr/down/BBR.sh&apos; &amp;&amp; chmod a+x BBR.sh &amp;&amp; bash BBR.sh -f</code></pre><p><strong>2、魔改BBR</strong><br>一键地址默认是选择官方提供的最新版本的内核，如想要指定内核则运行指定内核版本一键包即可！</p>
+<p>（1）一键地址</p>
+<pre><code>wget --no-check-certificate -qO &apos;BBR_POWERED.sh&apos; &apos;https://moeclub.org/attachment/LinuxShell/BBR_POWERED.sh&apos; &amp;&amp; chmod a+x BBR_POWERED.sh &amp;&amp; bash BBR_POWERED.sh
+# 备用地址
+wget --no-check-certificate -qO &apos;BBR_POWERED.sh&apos; &apos;https://www.moerats.com/usr/down/BBR_POWERED.sh&apos; &amp;&amp; chmod a+x BBR_POWERED.sh &amp;&amp; bash BBR_POWERED.sh</code></pre><p>（2）指定内核版本(以<code>v4.12.9</code>内核版本为例)</p>
+<pre><code>wget --no-check-certificate -qO &apos;BBR_POWERED.sh&apos; &apos;https://moeclub.org/attachment/LinuxShell/BBR_POWERED.sh&apos; &amp;&amp; chmod a+x BBR_POWERED.sh &amp;&amp; bash BBR_POWERED.sh -f v4.12.9
+# 备用地址
+wget --no-check-certificate -qO &apos;BBR_POWERED.sh&apos; &apos;https://www.moerats.com/usr/down/BBR_POWERED.sh&apos; &amp;&amp; chmod a+x BBR_POWERED.sh &amp;&amp; bash BBR_POWERED.sh -f v4.12.9</code></pre><p>安装完成即可！</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-11-16T20:15:48.000Z" itemprop="datePublished">2019-11-17</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.646Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/11/17/debian-ubuntu-e4-bd-bf-e7-94-a8update-rc-d-e5-91-bd-e4-bb-a4-e6-b7-bb-e5-8a-a0-e7-a6-81-e6-ad-a2-e5-bc-80-e6-9c-ba-e5-90-af-e5-8a-a8-e9-a1-b9/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Debian/Ubuntu使用update-rc.d命令添加/禁止开机启动项</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/11/17/linux-vps-e4-bd-bf-e7-94-a8skicka-e5-b0-86-e6-96-87-e4-bb-b6-e4-b8-8a-e4-bc-a0-e8-87-b3google-drive-e7-bd-91-e7-9b-98-ef-bc-8c-e6-94-af-e6-8c-81-e7-bc-96-e8-be-91-e4-b8-8b-e8-bd-bd-e7-ad-89/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux VPS使用skicka将文件上传至Google Drive网盘，支持编辑/下载等</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="website"><meta property="og:url" content="http://yoursite.com/page/26/"><meta property="og:locale" content="en"><meta name="description" content="John Doe - 南猫">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/page/26/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Blog",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    "url": "http://yoursite.com",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "John Doe - 南猫"
+}
+</script>
+
+
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABjElEQVR42u3a0Y4CIRBE0fn/n9ZXnUBV4ZixMHdeXNddOCYd6G44HgXPAQIEiC0Qh3hePz//PPrftwnMuCC6EcOgeZl49PvzZOfP3Lgg+hGjgBwN7N6n44LYF5EE6mxyEP+JUIuR3JxAbI9QG43bvJK/vbSLgrgd4RLdT1+/mm2DuA0RFa5BYTR6/9WqHMRtiHRTmk2skGojA9GLsImHQSSNkikeRCUiSUrcJjVb3GySBKISkQ7giqCkIJomuiAqEWoRmhXGSUIcFT8gqhCuYZYku8lhy/CLgqhGqIVHHagkuKhxBqIGoRro6lDFHbwlixiIXoRaWFYaapc6NSBqEKrwUcGWXPKwBTOIWoRqeKVFsyuilw5dQFQh3EWOVYA8rANRjUgCNWmGHOYB0Y9YOYRTgZhe/AHRj7h6YK8OWUDsi1BNz/SQzSW6l24XgfgJIg3IZNNzyQyI/RErQZo0z0DsjZAN8vAS4DSgQVQjVi5xuEQ4voAOohaRJLorgZg22kF0In75gAABohrxBICzyWnIPO7GAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            <div class="container">
+    <div class="main-container">
+        <main>
+            <div class="post-stream-container">
+                <!-- # Post List # -->
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2020/02/02/proxyee-down-ef-bc-9ahttp-e4-b8-8b-e8-bd-bd-e7-a5-9e-e5-99-a8-ef-bc-8c-e6-94-af-e6-8c-81-e7-99-be-e5-ba-a6-e4-ba-91-e4-b8-8b-e8-bd-bd-e5-85-a8-e7-bd-91-e5-97-85-e6-8e-a2-b-e7-ab-99-e8-a7-86-e9-a2-91/" rel="bookmark">Proxyee-down：HTTP下载神器，支持百度云下载/全网嗅探/B站视频下载</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：之前介绍了很多下载神器，比如IDM，EagleGet等，今天再介绍个下载神器Proxyee-down，速度非常...
+    <a href="/2020/02/02/proxyee-down-ef-bc-9ahttp-e4-b8-8b-e8-bd-bd-e7-a5-9e-e5-99-a8-ef-bc-8c-e6-94-af-e6-8c-81-e7-99-be-e5-ba-a6-e4-ba-91-e4-b8-8b-e8-bd-bd-e5-85-a8-e7-bd-91-e5-97-85-e6-8e-a2-b-e7-ab-99-e8-a7-86-e9-a2-91/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2020-02-02</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2020/02/02/e8-a7-86-e9-a2-91-e5-88-87-e7-89-87-e5-90-8e-e8-87-aa-e5-8a-a8-e4-b8-8a-e4-bc-a0-e8-87-b3-e5-9b-bd-e5-86-85-e5-85-8d-e8-b4-b9cdn-ef-bc-8c-e6-97-a0-e6-88-90-e6-9c-ac-e5-8a-a0-e9-80-9f-e8-a7-86/" rel="bookmark">视频切片后自动上传至国内免费CDN，无成本加速视频播放</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：一般我们观看自己下载的电影时候，通常会因为网络或者带宽原因很卡，所以就得处理下，这里萌咖大佬闭关半个月，写出了一个视频转码切片后自动上传至国内cdn的脚本，脚本默...
+    <a href="/2020/02/02/e8-a7-86-e9-a2-91-e5-88-87-e7-89-87-e5-90-8e-e8-87-aa-e5-8a-a8-e4-b8-8a-e4-bc-a0-e8-87-b3-e5-9b-bd-e5-86-85-e5-85-8d-e8-b4-b9cdn-ef-bc-8c-e6-97-a0-e6-88-90-e6-9c-ac-e5-8a-a0-e9-80-9f-e8-a7-86/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2020-02-02</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2020/02/02/mkonlinemusicplayer-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e7-9a-84-e5-9f-ba-e4-ba-8emeting-e7-9a-84-e5-9c-a8-e7-ba-bf-e9-9f-b3-e4-b9-90-e6-92-ad-e6-94-be-e5-99-a8/" rel="bookmark">MKOnlineMusicPlayer：一款开源的基于Meting的在线音乐播放器</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：今天一直在找一款绚丽，且功能强大的音乐播放器源码来替代博客的音乐WEB界面，最终找到了MKOnlineMusicPlayer，是一款基于...
+    <a href="/2020/02/02/mkonlinemusicplayer-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e7-9a-84-e5-9f-ba-e4-ba-8emeting-e7-9a-84-e5-9c-a8-e7-ba-bf-e9-9f-b3-e4-b9-90-e6-92-ad-e6-94-be-e5-99-a8/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2020-02-02</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2020/02/01/e4-bd-bf-e7-94-a8linux-vps-e8-87-aa-e5-8a-a8-e5-88-a0-e9-99-a4-e5-9c-a8-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e7-9a-84-e4-b8-80-e5-88-87-e5-9b-9e-e5-a4-8d-e9-bb-91-e5-8e-86-e5-8f-b2/" rel="bookmark">使用Linux VPS自动删除在百度贴吧的一切回复(黑历史)</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：我们很多人小时候不懂事，到处发自己的个人信息，家人信息等，导致这些信息在网上就会随时被搜索到，很可能会被一些别有用心的人利用，特别是和自己闹过矛盾的网友，严重的会影响自己的生活，最近一个朋...
+    <a href="/2020/02/01/e4-bd-bf-e7-94-a8linux-vps-e8-87-aa-e5-8a-a8-e5-88-a0-e9-99-a4-e5-9c-a8-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e7-9a-84-e4-b8-80-e5-88-87-e5-9b-9e-e5-a4-8d-e9-bb-91-e5-8e-86-e5-8f-b2/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2020-02-01</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2020/02/01/502-bad-gateway-e8-87-aa-e5-8a-a8-e9-87-8d-e5-90-af-e8-84-9a-e6-9c-ac/" rel="bookmark">502 Bad Gateway自动重启脚本</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        一个简单的脚本，用来监控502的，如果遇到502，自动重启PHP进程。适用于LNMP环境。
+新建php.sh文件，存放于/root或其它目录：
+...
+    <a href="/2020/02/01/502-bad-gateway-e8-87-aa-e5-8a-a8-e9-87-8d-e5-90-af-e8-84-9a-e6-9c-ac/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2020-02-01</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2020/02/01/markdown-temp-ef-bc-9a-e4-b8-80-e6-ac-be-e4-b8-8d-e9-94-99-e7-9a-84-e5-9c-a8-e7-ba-bfmarkdown-e7-bc-96-e8-be-91-e5-99-a8/" rel="bookmark">Markdown-Temp：一款不错的在线Markdown编辑器</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        简介Markdown-Temp是一款在线Markdown
+    <a href="/2020/02/01/markdown-temp-ef-bc-9a-e4-b8-80-e6-ac-be-e4-b8-8d-e9-94-99-e7-9a-84-e5-9c-a8-e7-ba-bfmarkdown-e7-bc-96-e8-be-91-e5-99-a8/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2020-02-01</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2020/01/31/typexport-typecho-e6-95-b0-e6-8d-ae-e5-af-bc-e5-87-ba-e5-b7-a5-e5-85-b7-e5-8f-af-e6-90-ac-e5-ae-b6-e8-bd-ac-e6-8d-a2-e5-88-b0wordpress-e5-8d-9a-e5-ae-a2/" rel="bookmark">TypExport-Typecho数据导出工具,可搬家转换到wordpress博客</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：对于很多typecho博客想搬到wordpress博客的人来说，这插件是再好不过了，利用此插件可导出一份xml...
+    <a href="/2020/01/31/typexport-typecho-e6-95-b0-e6-8d-ae-e5-af-bc-e5-87-ba-e5-b7-a5-e5-85-b7-e5-8f-af-e6-90-ac-e5-ae-b6-e8-bd-ac-e6-8d-a2-e5-88-b0wordpress-e5-8d-9a-e5-ae-a2/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2020-01-31</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2020/01/31/lowendscript-ef-bc-9a-e9-80-82-e7-94-a8-e4-ba-8e64mb-e5-86-85-e5-ad-98-e7-9a-84lnmp-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e5-8c-85/" rel="bookmark">lowendscript：适用于64MB内存的LNMP一键安装包</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        简介lowendscript lnmp一键安装脚本是由外国兄弟David Pennington制作...
+    <a href="/2020/01/31/lowendscript-ef-bc-9a-e9-80-82-e7-94-a8-e4-ba-8e64mb-e5-86-85-e5-ad-98-e7-9a-84lnmp-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e5-8c-85/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2020-01-31</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2020/01/31/e4-bd-bf-e7-94-a8aria2aria2ngoneindexonedrive-e5-bb-ba-e7-ab-8b-e4-b8-8d-e9-99-90-e6-b5-81-e9-87-8f-e7-a6-bb-e7-ba-bfbt-e4-b8-8b-e8-bd-bd-e5-9c-a8-e7-ba-bf-e8-a7-82-e7-9c-8b-e7-bd-91-e7-9b-98/" rel="bookmark">使用Aria2+Aria2Ng+OneIndex+OneDrive建立不限流量/离线BT下载/在线观看网盘</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：这个教程之前发过一个脚本：Aria2+Aria2Ng+OneIndex一键安装脚本，下载后自动上传至OneDrive，不过由于系统支持较少，加上很多人想手动安装，这里就单独拿来水一篇文章。...
+    <a href="/2020/01/31/e4-bd-bf-e7-94-a8aria2aria2ngoneindexonedrive-e5-bb-ba-e7-ab-8b-e4-b8-8d-e9-99-90-e6-b5-81-e9-87-8f-e7-a6-bb-e7-ba-bfbt-e4-b8-8b-e8-bd-bd-e5-9c-a8-e7-ba-bf-e8-a7-82-e7-9c-8b-e7-bd-91-e7-9b-98/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2020-01-31</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+                    
+                        <article class="post-entry container px-0 card">
+        <div class="columns col-gapless">
+            
+                <div class="column col-12">
+                    
+    <h2 class="h5 mb-0 card-header"><a class="card-title" href="/2020/01/30/e7-bb-99-e5-8d-9a-e5-ae-a2-e7-bd-91-e7-ab-99-e6-b7-bb-e5-8a-a0hitokoto-e4-b8-80-e8-a8-80-e7-bb-8f-e5-85-b8-e8-af-ad-e5-8f-a5-e5-8a-9f-e8-83-bd/" rel="bookmark">给博客网站添加Hitokoto - 一言经典语句功能</a></h2>
+
+
+<p class="mb-0 card-body">
+    
+        说明：相信很多人都听说过一言，也有很多博主想给自己的博客网站添加这个功能，可是都不知道咋弄，这里说个很简单的方法，手动添加一言功能，还可以diy句子的内容。
+
+    <a href="/2020/01/30/e7-bb-99-e5-8d-9a-e5-ae-a2-e7-bd-91-e7-ab-99-e6-b7-bb-e5-8a-a0hitokoto-e4-b8-80-e8-a8-80-e7-bb-8f-e5-85-b8-e8-af-ad-e5-8f-a5-e5-8a-9f-e8-83-bd/">Read more</a>
+</p>
+
+
+
+
+    <!-- Date & Category -->
+    <div class="card-footer post-entry-info text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <time>2020-01-30</time>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+    </div>
+
+                </div>
+            
+        </div>
+</article>
+
+                    
+                
+            </div>
+        </main>
+        
+<nav>
+<ul class="pagination">
+    
+        <li class="page-item page-prev">
+            <a href="/page/25/" rel="prev">
+                <span class="page-item-subtitle"><i class="icon icon-back" aria-hidden="true"></i></span>
+                <span class="page-item-title">Previous</span>
+            </a>
+        </li>
+    
+    
+        <li class="page-item page-next">
+            <a href="/page/27/" rel="next">
+                <span class="page-item-title">Next</span>
+                <span class="page-item-subtitle"><i class="icon icon-forward" aria-hidden="true"></i></span>
+            </a>
+        </li>
+    
+</ul>
+</nav>
+
+
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

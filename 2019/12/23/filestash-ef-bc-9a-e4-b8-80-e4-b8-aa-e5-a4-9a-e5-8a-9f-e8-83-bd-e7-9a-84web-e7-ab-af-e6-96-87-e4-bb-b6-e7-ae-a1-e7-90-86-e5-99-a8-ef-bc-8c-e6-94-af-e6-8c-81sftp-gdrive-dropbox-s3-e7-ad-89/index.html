@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Filestash：一个多功能的Web端文件管理器，支持SFTP/GDrive/Dropbox/S3等 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Filestash：一个多功能的Web端文件管理器，支持SFTP&#x2F;GDrive&#x2F;Dropbox&#x2F;S3等 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/12/23/filestash-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84web-e7-ab-af-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-8c-e6-94-af-e6-8c-81sftp-gdrive-dropbox-s3-e7-ad-89/"><meta property="og:locale" content="en"><meta name="description" content="说明：Filestash是一个类似Dropbox的文件管理器，通过浏览器即可使用，可让您在任何位置管理数据。包括上传文件和文件夹，编辑文件，音频播放器，视频播放器，图像查看器。目前支持FTP、SFTP、WebDAV、Git、S3、Minio Dropbox、Google Drive，貌似以后还会增加OneDrive，而且登录访问速度很快，可以拿来修改VPS或网盘文件，或者看看里面的小电影也行，安装 - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/filestash(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/filestash(2).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/filestash(3).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/filestash(4).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/filestash(5).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/filestash(6).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/filestash(7).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/filestash(8).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/filestash(9).png"><meta property="article:published_time" content="2019-12-23T08:52:56.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.652Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.652Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/12/23/filestash-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84web-e7-ab-af-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-8c-e6-94-af-e6-8c-81sftp-gdrive-dropbox-s3-e7-ad-89/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/12/23/filestash-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84web-e7-ab-af-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-8c-e6-94-af-e6-8c-81sftp-gdrive-dropbox-s3-e7-ad-89/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/12/23/filestash-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84web-e7-ab-af-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-8c-e6-94-af-e6-8c-81sftp-gdrive-dropbox-s3-e7-ad-89/"
+    },
+    "headline": "Filestash：一个多功能的Web端文件管理器，支持SFTP/GDrive/Dropbox/S3等 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-23T08:52:56.000Z",
+    "dateModified": "2020-04-12T04:09:09.652Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：Filestash是一个类似Dropbox的文件管理器，通过浏览器即可使用，可让您在任何位置管理数据。包括上传文件和文件夹，编辑文件，音频播放器，视频播放器，图像查看器。目前支持FTP、SFTP、WebDAV、Git、S3、Minio Dropbox、Google Drive，貌似以后还会增加OneDrive，而且登录访问速度很快，可以拿来修改VPS或网盘文件，或者看看里面的小电影也行，安装 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Filestash：一个多功能的Web端文件管理器，支持SFTP/GDrive/Dropbox/S3等" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Filestash：一个多功能的Web端文件管理器，支持SFTP/GDrive/Dropbox/S3等&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=Filestash：一个多功能的Web端文件管理器，支持SFTP/GDrive/Dropbox/S3等" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFbUlEQVR42u2dy24bQRAD9f8/rVxySIIdsji2D4FKlwT2PmZKANHN5npfbz/vlwiEIAQhCEEIQogQXuGTjlnO/+vGv3/+5zH//uzpXHL80//j2oUgBCE8QkiLfbpgOu+02QboCe5pYw0K3pcQhCCEI4TTJk9iQ4WIAG3HnO7xBJGIpxCEIISvQ6ALpyJ32gAV3iSOQhCCEH4WwqmgocUOgUpg33xBQhCCEO4gpAaoQTn9jghjE0PaiD1d99u6SCEI4cMgkObnf/z329xmIQjhgyDQJoUar6m4OgljM2iIQP/oVFoIQvggCKQZScVIKn4a1AY4FVWpCSP7EYIQhMAyS6mR+cqApQ12VtOGhDrq+UIQghCOEJKZ0hY2BSOKyUqCGel4AkMIQhACyyw1IzVtnpoabZi7NFXN1K33EYIQhBCHL1SsWgiLFjJr+IoENVqhF7tIIQhBCCho0Qa2ZBjahrWtoboJjdRjhCAEIVSj9StGaitimrlKG7NWiFHhFIIQhNDzCXSBNGBFiqJlcLMKMGqghCAEIaAHs1pD1USUiu/tsasRO02ghCCED4VATc9miiQjJBmtZLGnZooYKfEYIQhBCNVobYtuBdIiYgksCY2QwmnqIoUgBCG86cKXwQYNfy8D2Xa/my9SCEIQQm6g0sajwIBgR9tUG7jcDGyqcApBCEI4NlA0LE3Cn0thRAxZ2rQR4EIQghAYBDIEIeLUBqTtes2AaXAmERWCEIQQB7I3wpQEiIawFhOGXLvdVwhCEAIzVUgYqgWvlmHKsvFWcN0MaYQgBCHswnhqsmjzQh/cWIupVYirqSIEIQihbvRmYSRERYc2ZJhDhrbHhkoIQhBChEA3SRsrYtC0QPcisMSgqcIoBCF8OIQWyqAPbjQRpE0aGQAv145CLAQhCKE2UEtIkohZffDixR8AJ2sh6xeCEISQi6WvDDmqmQmvfyOwqfFrAREhCEEI2x+lbEYLDWHQomcxeOkgpg5rhSAEIUQIr/JZBqpNJMm9GvQmkNX8EYIQhIAgEGFLgUtizBIjdBVoEuiMDZQQhCCEN1k4MTboMHYRMiqsqVGKX4IQhCAENHxJm6NDmkVkb8JaNPAViyshCEEIRwjL0IWYmWuoqhVfxFBdhsRCEIIQ+NxhCWRSMW3Bz5vgFhn2IGEUghCEcPUiOyKmq4nazBJSoC2GD0qqCEEIQrgKczdQ62AkGSI3g6D6RQtBCEKowkiHoUuRQ01bAoYOhpAxJAQhCOE4fDktmDYpdNDaBrBLM0XEPYqkEIQghGqqJLOFBChWo7aZtaSgWwMkQhCCEHYIi5g1YaRNUNvQIo5k7UIQghDOENogs5kdxNxogU9a8JCwFwqNC0EIQpgGsotApmEJbbpaodaGQ7NoCkEIQniEQBZCi5g2OK1NzWiYkAbsuEchCEEIqFhqDQkZjtwIGjF21oB4WqcQhCCE/A5ZUjS1oAQNTJDQ12K6LgEwIQhBCP19kad/V/MkXeNGiNfmbTJ5hCAEITxCWDa8BivT5lPjRIze5YuLA1khCEEI9Y9SLqJJhJEWWzeBi1Yg4ZCGEIQgBDx8PQnZUlCRZmcZztIwyPF8IQhBCMdiiYa2lsHqWlwtQxqylslUEYIQhPBuYkJMjbbIJKipsSJhrCaSrbgTghCE0N8XuRimqWBpv6NFV4NJ4CBTRQhCEMJ72SQpqMiGFwFewt7t+tNUWghCEML8UqzULJHzaUPUzGDaQE3BLSEIQQhXL8ojAxsa3l4FuQkxGfwKQQhC2BsoIo5NsFq4Yg1aNHEkJpAQhCAE9tDHjWHZGpoWnrgZstCgyLe4zUIQwgdB+OSPEIQgBCEIQQhCePz8ApOZo33/ok6bAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Filestash：一个多功能的Web端文件管理器，支持SFTP/GDrive/Dropbox/S3等</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-23</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Filestash：一个多功能的Web端文件管理器，支持SFTP/GDrive/Dropbox/S3等&url=http://yoursite.com/2019/12/23/filestash-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84web-e7-ab-af-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-8c-e6-94-af-e6-8c-81sftp-gdrive-dropbox-s3-e7-ad-89/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Filestash：一个多功能的Web端文件管理器，支持SFTP/GDrive/Dropbox/S3等&url=http://yoursite.com/2019/12/23/filestash-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84web-e7-ab-af-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-8c-e6-94-af-e6-8c-81sftp-gdrive-dropbox-s3-e7-ad-89/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/23/filestash-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84web-e7-ab-af-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-8c-e6-94-af-e6-8c-81sftp-gdrive-dropbox-s3-e7-ad-89/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/12/23/filestash-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84web-e7-ab-af-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-8c-e6-94-af-e6-8c-81sftp-gdrive-dropbox-s3-e7-ad-89/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/12/23/filestash-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84web-e7-ab-af-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-8c-e6-94-af-e6-8c-81sftp-gdrive-dropbox-s3-e7-ad-89/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/12/23/filestash-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84web-e7-ab-af-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-8c-e6-94-af-e6-8c-81sftp-gdrive-dropbox-s3-e7-ad-89/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/12/23/filestash-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84web-e7-ab-af-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-8c-e6-94-af-e6-8c-81sftp-gdrive-dropbox-s3-e7-ad-89/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFbUlEQVR42u2dy24bQRAD9f8/rVxySIIdsji2D4FKlwT2PmZKANHN5npfbz/vlwiEIAQhCEEIQogQXuGTjlnO/+vGv3/+5zH//uzpXHL80//j2oUgBCE8QkiLfbpgOu+02QboCe5pYw0K3pcQhCCEI4TTJk9iQ4WIAG3HnO7xBJGIpxCEIISvQ6ALpyJ32gAV3iSOQhCCEH4WwqmgocUOgUpg33xBQhCCEO4gpAaoQTn9jghjE0PaiD1d99u6SCEI4cMgkObnf/z329xmIQjhgyDQJoUar6m4OgljM2iIQP/oVFoIQvggCKQZScVIKn4a1AY4FVWpCSP7EYIQhMAyS6mR+cqApQ12VtOGhDrq+UIQghCOEJKZ0hY2BSOKyUqCGel4AkMIQhACyyw1IzVtnpoabZi7NFXN1K33EYIQhBCHL1SsWgiLFjJr+IoENVqhF7tIIQhBCCho0Qa2ZBjahrWtoboJjdRjhCAEIVSj9StGaitimrlKG7NWiFHhFIIQhNDzCXSBNGBFiqJlcLMKMGqghCAEIaAHs1pD1USUiu/tsasRO02ghCCED4VATc9miiQjJBmtZLGnZooYKfEYIQhBCNVobYtuBdIiYgksCY2QwmnqIoUgBCG86cKXwQYNfy8D2Xa/my9SCEIQQm6g0sajwIBgR9tUG7jcDGyqcApBCEI4NlA0LE3Cn0thRAxZ2rQR4EIQghAYBDIEIeLUBqTtes2AaXAmERWCEIQQB7I3wpQEiIawFhOGXLvdVwhCEAIzVUgYqgWvlmHKsvFWcN0MaYQgBCHswnhqsmjzQh/cWIupVYirqSIEIQihbvRmYSRERYc2ZJhDhrbHhkoIQhBChEA3SRsrYtC0QPcisMSgqcIoBCF8OIQWyqAPbjQRpE0aGQAv145CLAQhCKE2UEtIkohZffDixR8AJ2sh6xeCEISQi6WvDDmqmQmvfyOwqfFrAREhCEEI2x+lbEYLDWHQomcxeOkgpg5rhSAEIUQIr/JZBqpNJMm9GvQmkNX8EYIQhIAgEGFLgUtizBIjdBVoEuiMDZQQhCCEN1k4MTboMHYRMiqsqVGKX4IQhCAENHxJm6NDmkVkb8JaNPAViyshCEEIRwjL0IWYmWuoqhVfxFBdhsRCEIIQ+NxhCWRSMW3Bz5vgFhn2IGEUghCEcPUiOyKmq4nazBJSoC2GD0qqCEEIQrgKczdQ62AkGSI3g6D6RQtBCEKowkiHoUuRQ01bAoYOhpAxJAQhCOE4fDktmDYpdNDaBrBLM0XEPYqkEIQghGqqJLOFBChWo7aZtaSgWwMkQhCCEHYIi5g1YaRNUNvQIo5k7UIQghDOENogs5kdxNxogU9a8JCwFwqNC0EIQpgGsotApmEJbbpaodaGQ7NoCkEIQniEQBZCi5g2OK1NzWiYkAbsuEchCEEIqFhqDQkZjtwIGjF21oB4WqcQhCCE/A5ZUjS1oAQNTJDQ12K6LgEwIQhBCP19kad/V/MkXeNGiNfmbTJ5hCAEITxCWDa8BivT5lPjRIze5YuLA1khCEEI9Y9SLqJJhJEWWzeBi1Yg4ZCGEIQgBDx8PQnZUlCRZmcZztIwyPF8IQhBCMdiiYa2lsHqWlwtQxqylslUEYIQhPBuYkJMjbbIJKipsSJhrCaSrbgTghCE0N8XuRimqWBpv6NFV4NJ4CBTRQhCEMJ72SQpqMiGFwFewt7t+tNUWghCEML8UqzULJHzaUPUzGDaQE3BLSEIQQhXL8ojAxsa3l4FuQkxGfwKQQhC2BsoIo5NsFq4Yg1aNHEkJpAQhCAE9tDHjWHZGpoWnrgZstCgyLe4zUIQwgdB+OSPEIQgBCEIQQhCePz8ApOZo33/ok6bAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取GDrive客户端信息"><span class="post-toc-number">3.</span> <span class="post-toc-text">获取GDrive客户端信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取Dropbox客户端信息"><span class="post-toc-number">4.</span> <span class="post-toc-text">获取Dropbox客户端信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#域名反代"><span class="post-toc-number">5.</span> <span class="post-toc-text">域名反代</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong><code>Filestash</code>是一个类似<code>Dropbox</code>的文件管理器，通过浏览器即可使用，可让您在任何位置管理数据。包括上传文件和文件夹，编辑文件，音频播放器，视频播放器，图像查看器。目前支持<code>FTP</code>、<code>SFTP</code>、<code>WebDAV</code>、<code>Git</code>、<code>S3</code>、<code>Minio Dropbox</code>、<code>Google Drive</code>，貌似以后还会增加<code>OneDrive</code>，而且登录访问速度很快，可以拿来修改<code>VPS</code>或网盘文件，或者看看里面的小电影也行，安装方法也挺简单的，就一个<code>Docker</code>，这里说一下。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/filestash(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/filestash(2).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/filestash(3).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.moerats.com/usr/picture/filestash(4).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>官方文档：</strong><a href="https://www.filestash.app/docs" target="_blank" rel="noopener">https://www.filestash.app/docs</a></p>
+<p><strong>1、安装Docker</strong></p>
+<pre><code>#CentOS 6
+rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum update -y
+yum -y install docker-io
+service docker start
+chkconfig docker on
+
+#CentOS 7、Debian、Ubuntu
+curl -sSL https://get.docker.com/ | sh
+systemctl start docker
+systemctl enable docker</code></pre><p><strong>2、运行filetash</strong><br>这里官方是用的<code>docker-compose</code>运行的，为了安装更简单，博主就直接改成了<code>docker</code>运行，使用命令：</p>
+<pre><code>#基本命令，建议把文章看完后再运行该命令
+docker run --restart=always --name filetash -d -p 8334:8334 machines/filestash</code></pre><p>安装成功后可以直接通过<code>ip:8334</code>访问，这里<code>8334</code>端口可以自行修改，只需要修改上面的<code>-p</code>参数即可，比如改成<code>666</code>端口，则用<code>-p 666:8334</code>。</p>
+<p>不过要想使用完整的功能，比如<code>GDrive</code>、<code>Dropbox</code>网盘，就需要配置下域名，网盘<code>api</code>客户端密匙等信息(获取方式看后面)。</p>
+<p>以上说的几个信息可以直接在后台配置文件里修改，也可以加进上面的<code>docker</code>命令一起运行，比如：</p>
+<pre><code>#变量参数如下，分别是域名，GDrive客户端ID和密匙，Dropbox客户端ID
+-e APPLICATION_URL=&lt;app_url&gt;
+-e GDRIVE_CLIENT_ID=&lt;gdrive_client&gt;
+-e GDRIVE_CLIENT_SECRET=&lt;gdrive_secret&gt;
+-e DROPBOX_CLIENT_ID=&lt;dropbox_key&gt;
+
+#这里博主只需要用到GDrive，假设域名为file.moerats.com、ID和密匙为aaaa和bbbb，使用命令：
+docker run --restart=always --name filetash -d \
+  -e APPLICATION_URL=file.moerats.com \
+  -e GDRIVE_CLIENT_ID=aaaa \
+  -e GDRIVE_CLIENT_SECRET=bbbb \
+  -p 8334:8334 \
+  machines/filestash</code></pre><h2 id="获取GDrive客户端信息"><a href="#获取GDrive客户端信息" class="headerlink" title="获取GDrive客户端信息"></a>获取GDrive客户端信息</h2><p>首先启用<code>Google Drive API</code>，启用地址：点击进入。<br><img src="https://www.moerats.com/usr/picture/filestash(5).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>再创建一个<code>OAuth</code>客户端<code>ID</code>，创建地址：点击进入。创建的时候可能会有个<code>OAuth同意屏幕</code>选项，这里应用名称什么的随便填，授权的网域填你准备使用的域名主域名即可。<br><img src="https://www.moerats.com/usr/picture/filestash(6).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>然后开始创建客户端<code>ID</code>，注意已获授权的重定向<code>URL</code>格式要正确，比如博主用的<code>https://file.moerats.com</code>，那就在后面加个<code>/login</code>，这里也记得区分下开头。如果你用的<code>https</code>，需要填<code>https</code>，反之<code>http</code>。这里建议直接使用<code>https</code>。<br><img src="https://www.moerats.com/usr/picture/filestash(7).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>然后就可以获取<code>GDRIVE_CLIENT_ID</code>和<code>GDRIVE_CLIENT_SECRET</code>参数了。<br><img src="https://www.moerats.com/usr/picture/filestash(8).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>最后登录的时候，出现该授权窗口就说明配置成功了。<br><img src="https://www.moerats.com/usr/picture/filestash(9).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="获取Dropbox客户端信息"><a href="#获取Dropbox客户端信息" class="headerlink" title="获取Dropbox客户端信息"></a>获取Dropbox客户端信息</h2><p>这个博主用的少，就大概说下思路，有需求的可以尝试下，方法如下。</p>
+<p>先创建第三方应用程序，创建地址：点击进入，接下来大致步骤：</p>
+<pre><code>dropbox api - “Full Dropbox”或“App folder” - 您想要的任何名称 - 将重定向URI设置为https://domain.com/login</code></pre><h2 id="域名反代"><a href="#域名反代" class="headerlink" title="域名反代"></a>域名反代</h2><p>上面配置了域名是不能直接访问的，需要反代下才行，反代可以用<code>Nginx</code>、<code>Caddy</code>，这里只说宝塔和<code>Caddy</code>。如果你网站有宝塔，就可以使用宝塔进行反代，如果没有，建议使用第<code>2</code>种的<code>Caddy</code>反代，配置很快。</p>
+<pre><code>提示：这里以8334端口做示范，如果你运行的时候更换了端口，就请自行修改</code></pre><p><strong>1、宝塔反代</strong><br>先进入宝塔面板，然后点击左侧网站，添加站点，然后再点击添加好了的域名名称，这时候就进入了站点配置，点击反向代理，目标<code>URL</code>填入<code>http://127.0.0.1:8334</code>，再启用反向代理即可。然后需要配置<code>https</code>访问的，直接在站点配置启用<code>ssl</code>即可。</p>
+<p><strong>2、Caddy反代</strong><br>安装<code>Caddy</code>：</p>
+<pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh
+#备用地址
+wget -N --no-check-certificate https://www.moerats.com/usr/shell/Caddy/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh</code></pre><p>配置<code>Caddy</code>：</p>
+<pre><code>#以下全部内容是一个整体，请记得修改下方域名为自己的，再一起复制到SSH运行！
+
+#http访问(这里不建议使用http)，该配置不会自动签发SSL
+echo &quot;file.moerats.com {
+ gzip
+ proxy / 127.0.0.1:8334 {
+    header_upstream Host {host}
+    header_upstream X-Real-IP {remote}
+    header_upstream X-Forwarded-For {remote}
+    header_upstream X-Forwarded-Port {server_port}
+    header_upstream X-Forwarded-Proto {scheme}
+  }
+}&quot; &gt; /usr/local/caddy/Caddyfile
+
+#https访问，该配置会自动签发SSL，请提前解析域名到VPS服务器
+echo &quot;file.moerats.com {
+ gzip
+ tls admin@moerats.com
+ proxy / 127.0.0.1:8334 {
+    header_upstream Host {host}
+    header_upstream X-Real-IP {remote}
+    header_upstream X-Forwarded-For {remote}
+    header_upstream X-Forwarded-Port {server_port}
+    header_upstream X-Forwarded-Proto {scheme}
+  }
+}&quot; &gt; /usr/local/caddy/Caddyfile</code></pre><p><code>tls</code>参数会自动帮你签发<code>ssl</code>证书，如果你要使用自己的<code>ssl</code>，改为<code>tls /root/xx.crt /root/xx.key</code>即可。后面为<code>ssl</code>证书路径。</p>
+<p>启动<code>Caddy</code>：</p>
+<pre><code>/etc/init.d/caddy start</code></pre><p>就可以打开域名进行访问了。</p>
+<p>如果启动失败，可以查看下启动日志，使用命令：</p>
+<pre><code>tail -f /tmp/caddy.log</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-23T08:52:56.000Z" itemprop="datePublished">2019-12-23</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.652Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/23/bitly-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-8f-af-e4-bb-a5-e8-bf-98-e5-8e-9f-e7-9f-ad-e7-bd-91-e5-9d-80-e9-93-be-e6-8e-a5-e7-9a-84-e7-bd-91-e7-ab-99/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Bitly：一个可以还原短网址链接的网站</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/23/linux-vps-e9-80-9a-e8-bf-87-e5-ae-89-e8-a3-85curlftpfs-e6-9d-a5-e6-8c-82-e8-bd-bdftp-ef-bc-8c-e5-8f-af-e7-94-a8-e6-9d-a5-e5-a4-87-e4-bb-bd-e6-96-87-e4-bb-b6/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux VPS通过安装CurlFtpFS来挂载FTP，可用来备份文件</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

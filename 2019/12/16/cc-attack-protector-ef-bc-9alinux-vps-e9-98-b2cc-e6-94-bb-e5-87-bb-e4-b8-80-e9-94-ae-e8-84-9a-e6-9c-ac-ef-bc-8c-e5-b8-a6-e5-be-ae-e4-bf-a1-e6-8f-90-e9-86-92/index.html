@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>CC-Attack-Protector：Linux VPS防CC攻击一键脚本，带微信提醒 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="CC-Attack-Protector：Linux VPS防CC攻击一键脚本，带微信提醒 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2019/12/16/cc-attack-protector-ef-bc-9alinux-vps-e9-98-b2cc-e6-94-bb-e5-87-bb-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-b8-a6-e5-be-ae-e4-bf-a1-e6-8f-90-e9-86-92/"><meta property="og:locale" content="en"><meta name="description" content="说明：博客这几天一直在被CC攻击，然后让朋友帮忙写了个防CC攻击脚本，并添加了微信方糖提醒功能，这里就分享下。 CC Attack Protector每10秒钟检测一次指定网站日志，如果超过预设限制的（在单位时间请求数以及请求大小层面）会在防火墙层面进行阻止，并运用微信Server酱进行通知。 说明1、请记得开启站点的日志记录，而且面板用户要注意检查并取消掉“静态文件的access_log off - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/CC_AT(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/CC_AT(2).png"><meta property="article:published_time" content="2019-12-16T08:51:48.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.651Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.651Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2019/12/16/cc-attack-protector-ef-bc-9alinux-vps-e9-98-b2cc-e6-94-bb-e5-87-bb-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-b8-a6-e5-be-ae-e4-bf-a1-e6-8f-90-e9-86-92/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2019/12/16/cc-attack-protector-ef-bc-9alinux-vps-e9-98-b2cc-e6-94-bb-e5-87-bb-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-b8-a6-e5-be-ae-e4-bf-a1-e6-8f-90-e9-86-92/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2019/12/16/cc-attack-protector-ef-bc-9alinux-vps-e9-98-b2cc-e6-94-bb-e5-87-bb-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-b8-a6-e5-be-ae-e4-bf-a1-e6-8f-90-e9-86-92/"
+    },
+    "headline": "CC-Attack-Protector：Linux VPS防CC攻击一键脚本，带微信提醒 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-16T08:51:48.000Z",
+    "dateModified": "2020-04-12T04:09:09.651Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：博客这几天一直在被CC攻击，然后让朋友帮忙写了个防CC攻击脚本，并添加了微信方糖提醒功能，这里就分享下。 CC Attack Protector每10秒钟检测一次指定网站日志，如果超过预设限制的（在单位时间请求数以及请求大小层面）会在防火墙层面进行阻止，并运用微信Server酱进行通知。 说明1、请记得开启站点的日志记录，而且面板用户要注意检查并取消掉“静态文件的access_log off - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=CC-Attack-Protector：Linux VPS防CC攻击一键脚本，带微信提醒" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=CC-Attack-Protector：Linux VPS防CC攻击一键脚本，带微信提醒&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=CC-Attack-Protector：Linux VPS防CC攻击一键脚本，带微信提醒" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAElklEQVR42u2bQXLDMAwD/f9Pt+dmImLh5hJzfWkncSytOuWQAHL9LLwuoYUWWmihhf4y6Gu4pvdPn/+zyMtzXt9L973uYVovcQgt9Cbot//0hwWne6aNjAUGAJzWpRxCC70N+l0BOz1sKjAt8GnTpJhORe/twQgttNBjYTkBk0OY1iUwqZERWmih86amhmUqOqkYnYplapCEFlrofuA4bWYaME6HkZ5PGo+pcH5syhJa6C+HTsLgt/z8qBoqtNBfCk0HfCLU0UZiEgkaE6ERKYQWegs0McHuNBHNc6ffCSAWHYQWehE0NenosJAMASo0XuAi+xNa6C3QaePN4qQgTc1Ma0DQIii00Jug2w2c7ktFkAqHBIwEALDYL7TQD4MmQz412adh/z/GHzXv4z1CC70AujXHaIAmmXYk0NM2IcnUE1roDdBtE0HuS+I8MQGSKd8IgkILvRGaCINNgUpiYxvKIQccw3ZCC70AmgiBqVAlAy9tsCl40+HHwxZa6AXQzTBANt+IeK3JFwtV63AILfQDoRvBjxhrxLwjB9WKGEg8FFroBdCN0J6aExLUoSYeEvou9gVWoYXeBE0ag9RU3BEO0NAf/hhk0BmnLKGFfjD0JzbQhl2Jgd8E+aKAKbTQC6BpKJY2JUQgIGFacviNsSi00FugaSiNGHVTc0KE/zuBvtPn3w4sQgu9AJqIAUQQnDbYmm5NgHYaaMagjdBCPxy6Dc61Al0y8MjgkYagGBoSWugF0G14lQRPiQBBA3D0QJCAKLTQi6A/VXjSZ4kZR8I91FQ4ighCC/1Q6AR/gYsGYmihagSDJrQjtNCboVOBoQUkFZxpfRIEqJoroYVeAE0+RAT8FHRJZiBdhwwyx+IqtNALoFsjjBYXEmhLIiMRLNPrQgu9DZoaZtQoa4aGtBY1F6aGaUwiCC30Q6GJAEgKFDHRaZCVDDBp70ILvRWamm1UHCBDCAnbpuGENEBCC70NemoiSHiOGOVE8Mcbv+59OVVoobdB00F9eo08owm8EkO+Cs0KLfQS6CTeUzGdbIqY6P8J242Nk9BCL4OeYNqDIELBtGYjPOIwn9BCL4EmA0IKpCYIEnxLYn7ac2yghBZ6ATQRCIgxlwxxchCTCdcIGLcMPKGFfgg0GfLJZkhhTAZcEvgbcfFtcRNa6AXQaRESeEmGeSpMRAwkYbloNggt9CLo2gwrxblPPKcV+XFiUGihHwadBMDpgFJgpw3apaGBDi4xXSS00A+HToJ8EhCIwE/NAhKQa8x/oYXeDN0EaVoj/s79REwg5r/QQm+CpgI9Cck0r5NDmQobDeYJLfQm6Ck41xrm1DQgG20MO9wYCS30YugkzjeDBzXbm0GlDe8ILfQW6KYY3B0G7jQ2TdOSYIUWehs0bU6a8FraTDLdUxNEDn405YUW+uHQzZB+EhqaAYMMD8m4uz1wCC30cug0AEzNAxH46TqNoYBNeaGFXgadGv3JtCemIDm0adBpAnRCC70JmgRVSVN/J7zTChJELBRa6M3QTdM+hVLpIVEhgQgTTYMitNAboDddQgsttNBCC/0l1y/IsJo1gaYA/QAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">CC-Attack-Protector：Linux VPS防CC攻击一键脚本，带微信提醒</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-16</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=CC-Attack-Protector：Linux VPS防CC攻击一键脚本，带微信提醒&url=http://yoursite.com/2019/12/16/cc-attack-protector-ef-bc-9alinux-vps-e9-98-b2cc-e6-94-bb-e5-87-bb-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-b8-a6-e5-be-ae-e4-bf-a1-e6-8f-90-e9-86-92/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=CC-Attack-Protector：Linux VPS防CC攻击一键脚本，带微信提醒&url=http://yoursite.com/2019/12/16/cc-attack-protector-ef-bc-9alinux-vps-e9-98-b2cc-e6-94-bb-e5-87-bb-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-b8-a6-e5-be-ae-e4-bf-a1-e6-8f-90-e9-86-92/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/16/cc-attack-protector-ef-bc-9alinux-vps-e9-98-b2cc-e6-94-bb-e5-87-bb-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-b8-a6-e5-be-ae-e4-bf-a1-e6-8f-90-e9-86-92/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2019/12/16/cc-attack-protector-ef-bc-9alinux-vps-e9-98-b2cc-e6-94-bb-e5-87-bb-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-b8-a6-e5-be-ae-e4-bf-a1-e6-8f-90-e9-86-92/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2019/12/16/cc-attack-protector-ef-bc-9alinux-vps-e9-98-b2cc-e6-94-bb-e5-87-bb-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-b8-a6-e5-be-ae-e4-bf-a1-e6-8f-90-e9-86-92/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2019/12/16/cc-attack-protector-ef-bc-9alinux-vps-e9-98-b2cc-e6-94-bb-e5-87-bb-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-b8-a6-e5-be-ae-e4-bf-a1-e6-8f-90-e9-86-92/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2019/12/16/cc-attack-protector-ef-bc-9alinux-vps-e9-98-b2cc-e6-94-bb-e5-87-bb-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-b8-a6-e5-be-ae-e4-bf-a1-e6-8f-90-e9-86-92/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAElklEQVR42u2bQXLDMAwD/f9Pt+dmImLh5hJzfWkncSytOuWQAHL9LLwuoYUWWmihhf4y6Gu4pvdPn/+zyMtzXt9L973uYVovcQgt9Cbot//0hwWne6aNjAUGAJzWpRxCC70N+l0BOz1sKjAt8GnTpJhORe/twQgttNBjYTkBk0OY1iUwqZERWmih86amhmUqOqkYnYplapCEFlrofuA4bWYaME6HkZ5PGo+pcH5syhJa6C+HTsLgt/z8qBoqtNBfCk0HfCLU0UZiEgkaE6ERKYQWegs0McHuNBHNc6ffCSAWHYQWehE0NenosJAMASo0XuAi+xNa6C3QaePN4qQgTc1Ma0DQIii00Jug2w2c7ktFkAqHBIwEALDYL7TQD4MmQz412adh/z/GHzXv4z1CC70AujXHaIAmmXYk0NM2IcnUE1roDdBtE0HuS+I8MQGSKd8IgkILvRGaCINNgUpiYxvKIQccw3ZCC70AmgiBqVAlAy9tsCl40+HHwxZa6AXQzTBANt+IeK3JFwtV63AILfQDoRvBjxhrxLwjB9WKGEg8FFroBdCN0J6aExLUoSYeEvou9gVWoYXeBE0ag9RU3BEO0NAf/hhk0BmnLKGFfjD0JzbQhl2Jgd8E+aKAKbTQC6BpKJY2JUQgIGFacviNsSi00FugaSiNGHVTc0KE/zuBvtPn3w4sQgu9AJqIAUQQnDbYmm5NgHYaaMagjdBCPxy6Dc61Al0y8MjgkYagGBoSWugF0G14lQRPiQBBA3D0QJCAKLTQi6A/VXjSZ4kZR8I91FQ4ighCC/1Q6AR/gYsGYmihagSDJrQjtNCboVOBoQUkFZxpfRIEqJoroYVeAE0+RAT8FHRJZiBdhwwyx+IqtNALoFsjjBYXEmhLIiMRLNPrQgu9DZoaZtQoa4aGtBY1F6aGaUwiCC30Q6GJAEgKFDHRaZCVDDBp70ILvRWamm1UHCBDCAnbpuGENEBCC70NemoiSHiOGOVE8Mcbv+59OVVoobdB00F9eo08owm8EkO+Cs0KLfQS6CTeUzGdbIqY6P8J242Nk9BCL4OeYNqDIELBtGYjPOIwn9BCL4EmA0IKpCYIEnxLYn7ac2yghBZ6ATQRCIgxlwxxchCTCdcIGLcMPKGFfgg0GfLJZkhhTAZcEvgbcfFtcRNa6AXQaRESeEmGeSpMRAwkYbloNggt9CLo2gwrxblPPKcV+XFiUGihHwadBMDpgFJgpw3apaGBDi4xXSS00A+HToJ8EhCIwE/NAhKQa8x/oYXeDN0EaVoj/s79REwg5r/QQm+CpgI9Cck0r5NDmQobDeYJLfQm6Ck41xrm1DQgG20MO9wYCS30YugkzjeDBzXbm0GlDe8ILfQW6KYY3B0G7jQ2TdOSYIUWehs0bU6a8FraTDLdUxNEDn405YUW+uHQzZB+EhqaAYMMD8m4uz1wCC30cug0AEzNAxH46TqNoYBNeaGFXgadGv3JtCemIDm0adBpAnRCC70JmgRVSVN/J7zTChJELBRa6M3QTdM+hVLpIVEhgQgTTYMitNAboDddQgsttNBCC/0l1y/IsJo1gaYA/QAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CC-Attack-Protector"><span class="post-toc-number">1.</span> <span class="post-toc-text">CC Attack Protector</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#说明"><span class="post-toc-number">2.</span> <span class="post-toc-text">说明</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">3.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">4.</span> <span class="post-toc-text">使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#测试是否正常监控"><span class="post-toc-number">5.</span> <span class="post-toc-text">测试是否正常监控</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>博客这几天一直在被<code>CC</code>攻击，然后让朋友帮忙写了个防<code>CC</code>攻击脚本，并添加了微信方糖提醒功能，这里就分享下。</p>
+<h2 id="CC-Attack-Protector"><a href="#CC-Attack-Protector" class="headerlink" title="CC Attack Protector"></a>CC Attack Protector</h2><p>每<code>10</code>秒钟检测一次指定网站日志，如果超过预设限制的（在单位时间请求数以及请求大小层面）会在防火墙层面进行阻止，并运用微信<code>Server</code>酱进行通知。</p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>1、请记得开启站点的日志记录，而且面板用户要注意检查并取消掉“静态文件的<code>access_log off</code>”，也就是所有访问都要记录日志，以确保最佳的防<code>CC</code>效果。<br>2、日志的开头的格式必须为例如<code>x.x.x.x - - [22/Nov/2017:13:20:02 -0500] &quot;GET /xxxxxx HTTP/1.1&quot; 200 3386</code>，也就是<code>IP</code>在首列，时间格式与此示例相同，请求<code>URL</code>在第七列，请求长度在第十列，一般<code>nginx</code>日志的默认格式应该是这样，如果是其他的服务器软件或者日志格式不同请根据自己的情况魔改<code>ddos.sh</code>里的相关截取日志信息的代码。<br>3、建议定期分割日志，例如使用<code>crontab</code>一天分割一次，以确保脚本检测效率。<br>4、一旦有新<code>IP</code>被封禁，会输出封禁信息（当你回到<code>screen</code>后就可以看到），同时会输出日志到<code>cc.log</code>中。<br>5、如果想解封<code>IP</code>，可以执行<code>bash ban.sh -ua</code>，这样会解封所有<code>IP</code>。<br>6、关于<code>ban.sh</code>这个脚本还能做到的其他事情，请直接<code>bash ban.sh</code>查看。<br>7、如果<code>Centos</code>，那么可能需要在<code>ban.sh</code>中操作防火墙之后重启一下防火墙，因为<code>Centos</code>防火墙修改规则之后不是即时生效的。对于<code>Centos 7</code>需要将防火墙<code>firewall</code>替换成<code>iptables</code>。<br>8、重启<code>VPS</code>后，记得使用<code>screen</code>命令，重新启动脚本。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><strong>1、SSH后台监控</strong><br>触发机制后自动<code>ban</code>掉<code>ip</code>。<br><img src="https://www.moerats.com/usr/picture/CC_AT(1).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p><strong>2、微信提醒</strong><br>触发机制并微信通知。<br><img src="https://www.moerats.com/usr/picture/CC_AT(2).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>本脚本理论上<code>Ubuntu</code>和<code>Debian</code>都可以直接使用，<code>CentOS</code>请看说明，按要求修改。</p>
+<pre><code>git clone https://github.com/Tsuk1ko/CC-attack-protector.git
+cd CC-attack-protector</code></pre><p>然后修改<code>ddos.sh</code>前面的配置内容，根据注释说明修改即可！</p>
+<pre><code>#配置
+LOG_FILES=&quot;/www/wwwlogs/*.log&quot;    #指定日志文件
+SCKEY=&quot;&quot;    #Server酱服务的SCKEY，用于通知CC攻击情况
+LIMIT_REPEAT=20        #重复的请求次数，超过直接封
+LIMIT_TIMES=50        #否则，在10秒内超过这么多连接日志数的会进入检测，并且满足下面这个条件的会被封禁
+LIMIT_FLOW=62914560    #请求大小之和 62914560 = 60MiB</code></pre><p>关于微信通知，不知道方糖<code>Server</code>酱的，去首页<code>https://sc.ftqq.com</code>按要求申请<code>SCKEY</code>然后填入即可！</p>
+<p>其实一般情况下关于<code>CC</code>攻击判断的设置并不用动，如果发现封禁效果与理想有差异再修改！</p>
+<p>建议使用<code>screen</code>来运行</p>
+<pre><code>#没有screen就安装
+apt-get install screen
+screen -S CC
+#运行
+bash run.sh</code></pre><p>然后按下<code>Ctrl+A</code>，再按下<code>D</code>，即可退出<code>screen</code>界面。</p>
+<p>想回去的话就</p>
+<pre><code>#查看会话
+screen -ls
+#回去该会话
+screen -r 会话名称</code></pre><p>如果网站大文件过多，容易造成误判，建议限制<code>IP</code>并发连接数以及下载带宽，然后将<code>CC</code>脚本配置文件里的<code>LIMIT_REPEAT=20</code>可以设置为<code>35</code>或<code>40</code>。线程具体设置如下：</p>
+<pre><code>#先去nginx.conf文件http{}里加上如下代码
+limit_conn_zone $binary_remote_addr zone=perip:10m;
+limit_conn_zone $server_name zone=perserver:10m;
+#再去xx.com.conf文件server{}里添加如下代码，分别为总线程，单个ip线程和单线程最大速度
+limit_conn perserver 300;
+limit_conn perip 25;
+limit_rate 512k;</code></pre><p>不会切割日志的，按时清空网站日志文件就可以了，使用命令<code>echo &quot;&quot; &gt;/home/wwwlogs/www.moerats.com.log</code>即可，后面为网站日志文件路径，配合定时<code>Crontab</code>就可以了，参考：Linux系统Crontab的安装及定时任务的命令详解。</p>
+<h2 id="测试是否正常监控"><a href="#测试是否正常监控" class="headerlink" title="测试是否正常监控"></a>测试是否正常监控</h2><p>当你配置好脚本后，可以使用<code>bash run.sh --test</code>命令来测试脚本是否有正常监控。</p>
+<p>当你使用<code>--test</code>参数运行<code>run.sh</code>脚本后，访问自己的网站，如果脚本有正常监控，那么每间隔<code>10</code>秒会输出一次监控到的访问记录，大概像这个样子。</p>
+<pre><code>Start protecting...
+[Test mode]
+#时间                   访问量   重复访问次数  IP
+[18/Jan/2018:13:36:3x]    1     1    x.x.x.x
+[18/Jan/2018:13:36:4x]    15    1    x.x.x.x
+[18/Jan/2018:13:37:1x]    20    5    x.x.x.x</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-16T08:51:48.000Z" itemprop="datePublished">2019-12-16</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.651Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/17/e5-88-86-e4-ba-ab-e5-87-a0-e6-ac-be-e5-bc-ba-e5-a4-a7-e7-9a-84-e7-b1-bb-e4-bc-bcgoogle-e6-90-9c-e7-b4-a2-e7-9a-84-e6-90-9c-e7-b4-a2-e5-bc-95-e6-93-8e/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">分享几款强大的类似Google搜索的搜索引擎</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/16/linux-vps-e4-bd-bf-e7-94-a8python-caddy-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-ba-e6-96-87-e4-bb-b6-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux VPS使用Python/Caddy快速搭建文件分享平台</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

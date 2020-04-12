@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>使用Linux VPS自动删除在百度贴吧的一切回复(黑历史) | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="使用Linux VPS自动删除在百度贴吧的一切回复(黑历史) | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/02/01/e4-bd-bf-e7-94-a8linux-vps-e8-87-aa-e5-8a-a8-e5-88-a0-e9-99-a4-e5-9c-a8-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e7-9a-84-e4-b8-80-e5-88-87-e5-9b-9e-e5-a4-8d-e9-bb-91-e5-8e-86-e5-8f-b2/"><meta property="og:locale" content="en"><meta name="description" content="说明：我们很多人小时候不懂事，到处发自己的个人信息，家人信息等，导致这些信息在网上就会随时被搜索到，很可能会被一些别有用心的人利用，特别是和自己闹过矛盾的网友，严重的会影响自己的生活，最近一个朋友就遇到了，所以这里博主就提一下，一般以前使用最多社交软件也就是贴吧了，所以建议在贴吧留过自己的信息的人可以都删掉，以防万一。如果回复的帖子太多，每天删除都被限制，可能会导致我们没耐心或没时间天天去删，这里 - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/Delete-teiba(1).png"><meta property="og:image" content="https://www.moerats.com/usr/picture/Delete-teiba(2).png"><meta property="article:published_time" content="2020-02-01T00:07:43.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.655Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.655Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/02/01/e4-bd-bf-e7-94-a8linux-vps-e8-87-aa-e5-8a-a8-e5-88-a0-e9-99-a4-e5-9c-a8-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e7-9a-84-e4-b8-80-e5-88-87-e5-9b-9e-e5-a4-8d-e9-bb-91-e5-8e-86-e5-8f-b2/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/02/01/e4-bd-bf-e7-94-a8linux-vps-e8-87-aa-e5-8a-a8-e5-88-a0-e9-99-a4-e5-9c-a8-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e7-9a-84-e4-b8-80-e5-88-87-e5-9b-9e-e5-a4-8d-e9-bb-91-e5-8e-86-e5-8f-b2/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/02/01/e4-bd-bf-e7-94-a8linux-vps-e8-87-aa-e5-8a-a8-e5-88-a0-e9-99-a4-e5-9c-a8-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e7-9a-84-e4-b8-80-e5-88-87-e5-9b-9e-e5-a4-8d-e9-bb-91-e5-8e-86-e5-8f-b2/"
+    },
+    "headline": "使用Linux VPS自动删除在百度贴吧的一切回复(黑历史) | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-02-01T00:07:43.000Z",
+    "dateModified": "2020-04-12T04:09:09.655Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：我们很多人小时候不懂事，到处发自己的个人信息，家人信息等，导致这些信息在网上就会随时被搜索到，很可能会被一些别有用心的人利用，特别是和自己闹过矛盾的网友，严重的会影响自己的生活，最近一个朋友就遇到了，所以这里博主就提一下，一般以前使用最多社交软件也就是贴吧了，所以建议在贴吧留过自己的信息的人可以都删掉，以防万一。如果回复的帖子太多，每天删除都被限制，可能会导致我们没耐心或没时间天天去删，这里 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=使用Linux VPS自动删除在百度贴吧的一切回复(黑历史)" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用Linux VPS自动删除在百度贴吧的一切回复(黑历史)&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=使用Linux VPS自动删除在百度贴吧的一切回复(黑历史)" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEoUlEQVR42u3bS3LbQBAEUd7/0vZWIQNdWUMuTHRyI4VEAvOgiHb//Pqz8PUSLVq0aNGivwz9Gl4/3/Pzvb8/m77/5+Y39/p9/fSZq7OM7xEtegn67iZX6OkgV+9t8dOhp/Mgh2jRi9Dp8PRB0OBz9fXqLClgUYdo0aKvD5USkvTgru6Vftf8QUSLFp3RqTC4AqTrTPe6exA0gRItWvR9op4O2jYKpuBE7zM95I9UWaJFfzm6LQz+168f64aKFv3F6Dj0goVBGgJMyQtNVsh1PzK1FC36i9G0GZeK/DS4O7l+SkbSAE+06M3oqeHWBAvSwG+KBjrMI58RLXoD+i4AkZtNjYC7YJOKhYShyzpjIBMt+sHotAjT3CAdPBUVKclJSUoMlKJFL0DT5jt5byoEThoQJEEiyzuiRW9F0583w3k6jCPNhfbMokVvQ0/BhGDbAEWvOQVAOnisMjLRoh+KJoX/yZLLFPxooTMt+KDGhGjRi9CkCE/LOWkIj5p35aJsM5QQLXoDOiUVqXlIF2KaBIc86OZhiBa9CU3/4SeNwnffm840JT7oYYgWvQh9WnCQwJOCEQ2SqXE4fRUtehO6TQbSoclgLi3vvLOIc2sSLXoBumkepMQhNfmb+5BmIimU8EKsaNEPRaeiYUJMxUBTLKSgRB5itQUsWvTD0DRokGQiHbpaSg/Lt3T4IFr0JjRdaCHD75MF2rsGBR0KkkApWvQm9HQREqCmG6Yg1Tb+UnMiDQVEi96CfoVXSk5SgCMB76SpT15o0Ua06Aehm8SCNAVTsKJB7iRwxnuKFr0A3SYhU6OQLLS1Q/gmyYkBUbToJWhSqE8HPQ1ATQFBll9jASRa9BJ0s/xKhvEkwWmHBCTIxXOLFr0MTRoCaaiWME3gIgsDZAghWvQmdBqk0eW4lOCkg6agRpZh0/tEi96AnpZYUiAihUFTcKRigw7nb+8pWvQCNEk80s9IsCMQumhLCqKYnIgW/WA0DThk4Y4uytFBA1m+mQb8Y0YmWvSD0bSBlwqVNCholt3I70gxIlr0NvTJUmoTVFKzIUFPEqJxgCda9AI0KcinJL8ZBL7VCCgWdWMTQbToB6JTwU+SiaqQL5Zq6CB/+oxo0RvRZKGFFhZtcGmGDmmJNi7/iRa9AD0lA3ShJiUopFihizpNk1K06I1oeqG0aJN+R5r+6eA0sN0WNaJFL0BPH2yXYqbkog2I5A/SDuxFi96AToPxdEE6mEvJBPmeLuLdJkSiRS9A04RhSkjoAVPxQQeEKQjjKku06Aejm0M3iy6p2ZCWbpul93hW0aKXoEmzPA3RUoOR4o+bfmTgIFr0AnQq3sngjDYVmyDVNA3JEpBo0dvRKUDQwEULfzLUbx/Q2DkRLfqh6LSk1hYO02FSoTG9Ly39oIUB0aKXoE+SE7JknhZkUlNwGvbRAkm06K3oZjDXBqmTZgVZGCCL8KJFi2b/CY0mBVOxT4IZXchJSzaiRYvmw3gS6GizLwVDEvhEixY9NwTpUkwa8pGhfBoWpkKm2kQQLfqh6JQ4pAQjBTfyAEmCkxKS1OAQLXoDetNLtGjRokWL/pLXXyBbdK9DWjsZAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">使用Linux VPS自动删除在百度贴吧的一切回复(黑历史)</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-02-01</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用Linux VPS自动删除在百度贴吧的一切回复(黑历史)&url=http://yoursite.com/2020/02/01/e4-bd-bf-e7-94-a8linux-vps-e8-87-aa-e5-8a-a8-e5-88-a0-e9-99-a4-e5-9c-a8-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e7-9a-84-e4-b8-80-e5-88-87-e5-9b-9e-e5-a4-8d-e9-bb-91-e5-8e-86-e5-8f-b2/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=使用Linux VPS自动删除在百度贴吧的一切回复(黑历史)&url=http://yoursite.com/2020/02/01/e4-bd-bf-e7-94-a8linux-vps-e8-87-aa-e5-8a-a8-e5-88-a0-e9-99-a4-e5-9c-a8-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e7-9a-84-e4-b8-80-e5-88-87-e5-9b-9e-e5-a4-8d-e9-bb-91-e5-8e-86-e5-8f-b2/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/02/01/e4-bd-bf-e7-94-a8linux-vps-e8-87-aa-e5-8a-a8-e5-88-a0-e9-99-a4-e5-9c-a8-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e7-9a-84-e4-b8-80-e5-88-87-e5-9b-9e-e5-a4-8d-e9-bb-91-e5-8e-86-e5-8f-b2/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/02/01/e4-bd-bf-e7-94-a8linux-vps-e8-87-aa-e5-8a-a8-e5-88-a0-e9-99-a4-e5-9c-a8-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e7-9a-84-e4-b8-80-e5-88-87-e5-9b-9e-e5-a4-8d-e9-bb-91-e5-8e-86-e5-8f-b2/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/02/01/e4-bd-bf-e7-94-a8linux-vps-e8-87-aa-e5-8a-a8-e5-88-a0-e9-99-a4-e5-9c-a8-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e7-9a-84-e4-b8-80-e5-88-87-e5-9b-9e-e5-a4-8d-e9-bb-91-e5-8e-86-e5-8f-b2/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/02/01/e4-bd-bf-e7-94-a8linux-vps-e8-87-aa-e5-8a-a8-e5-88-a0-e9-99-a4-e5-9c-a8-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e7-9a-84-e4-b8-80-e5-88-87-e5-9b-9e-e5-a4-8d-e9-bb-91-e5-8e-86-e5-8f-b2/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/02/01/e4-bd-bf-e7-94-a8linux-vps-e8-87-aa-e5-8a-a8-e5-88-a0-e9-99-a4-e5-9c-a8-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e7-9a-84-e4-b8-80-e5-88-87-e5-9b-9e-e5-a4-8d-e9-bb-91-e5-8e-86-e5-8f-b2/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEoUlEQVR42u3bS3LbQBAEUd7/0vZWIQNdWUMuTHRyI4VEAvOgiHb//Pqz8PUSLVq0aNGivwz9Gl4/3/Pzvb8/m77/5+Y39/p9/fSZq7OM7xEtegn67iZX6OkgV+9t8dOhp/Mgh2jRi9Dp8PRB0OBz9fXqLClgUYdo0aKvD5USkvTgru6Vftf8QUSLFp3RqTC4AqTrTPe6exA0gRItWvR9op4O2jYKpuBE7zM95I9UWaJFfzm6LQz+168f64aKFv3F6Dj0goVBGgJMyQtNVsh1PzK1FC36i9G0GZeK/DS4O7l+SkbSAE+06M3oqeHWBAvSwG+KBjrMI58RLXoD+i4AkZtNjYC7YJOKhYShyzpjIBMt+sHotAjT3CAdPBUVKclJSUoMlKJFL0DT5jt5byoEThoQJEEiyzuiRW9F0583w3k6jCPNhfbMokVvQ0/BhGDbAEWvOQVAOnisMjLRoh+KJoX/yZLLFPxooTMt+KDGhGjRi9CkCE/LOWkIj5p35aJsM5QQLXoDOiUVqXlIF2KaBIc86OZhiBa9CU3/4SeNwnffm840JT7oYYgWvQh9WnCQwJOCEQ2SqXE4fRUtehO6TQbSoclgLi3vvLOIc2sSLXoBumkepMQhNfmb+5BmIimU8EKsaNEPRaeiYUJMxUBTLKSgRB5itQUsWvTD0DRokGQiHbpaSg/Lt3T4IFr0JjRdaCHD75MF2rsGBR0KkkApWvQm9HQREqCmG6Yg1Tb+UnMiDQVEi96CfoVXSk5SgCMB76SpT15o0Ua06Aehm8SCNAVTsKJB7iRwxnuKFr0A3SYhU6OQLLS1Q/gmyYkBUbToJWhSqE8HPQ1ATQFBll9jASRa9BJ0s/xKhvEkwWmHBCTIxXOLFr0MTRoCaaiWME3gIgsDZAghWvQmdBqk0eW4lOCkg6agRpZh0/tEi96AnpZYUiAihUFTcKRigw7nb+8pWvQCNEk80s9IsCMQumhLCqKYnIgW/WA0DThk4Y4uytFBA1m+mQb8Y0YmWvSD0bSBlwqVNCholt3I70gxIlr0NvTJUmoTVFKzIUFPEqJxgCda9AI0KcinJL8ZBL7VCCgWdWMTQbToB6JTwU+SiaqQL5Zq6CB/+oxo0RvRZKGFFhZtcGmGDmmJNi7/iRa9AD0lA3ShJiUopFihizpNk1K06I1oeqG0aJN+R5r+6eA0sN0WNaJFL0BPH2yXYqbkog2I5A/SDuxFi96AToPxdEE6mEvJBPmeLuLdJkSiRS9A04RhSkjoAVPxQQeEKQjjKku06Aejm0M3iy6p2ZCWbpul93hW0aKXoEmzPA3RUoOR4o+bfmTgIFr0AnQq3sngjDYVmyDVNA3JEpBo0dvRKUDQwEULfzLUbx/Q2DkRLfqh6LSk1hYO02FSoTG9Ly39oIUB0aKXoE+SE7JknhZkUlNwGvbRAkm06K3oZjDXBqmTZgVZGCCL8KJFi2b/CY0mBVOxT4IZXchJSzaiRYvmw3gS6GizLwVDEvhEixY9NwTpUkwa8pGhfBoWpkKm2kQQLfqh6JQ4pAQjBTfyAEmCkxKS1OAQLXoDetNLtGjRokWL/pLXXyBbdK9DWjsZAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>我们很多人小时候不懂事，到处发自己的个人信息，家人信息等，导致这些信息在网上就会随时被搜索到，很可能会被一些别有用心的人利用，特别是和自己闹过矛盾的网友，严重的会影响自己的生活，最近一个朋友就遇到了，所以这里博主就提一下，一般以前使用最多社交软件也就是贴吧了，所以建议在贴吧留过自己的信息的人可以都删掉，以防万一。如果回复的帖子太多，每天删除都被限制，可能会导致我们没耐心或没时间天天去删，这里就说下使用<code>VPS</code>自动删除贴吧回复的方法。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><strong>Github地址：</strong><a href="https://github.com/rmb122/Delete-my-hisroy-in-tieba" target="_blank" rel="noopener">https://github.com/rmb122/Delete-my-hisroy-in-tieba</a></p>
+<p><strong>1、安装Python3</strong><br>一般大多数<code>Ubuntu</code>自带<code>Python3</code>，而<code>Centos</code>、<code>Debian</code>就需要我们安装了。</p>
+<pre><code>#查看是否有Python3
+python3 -V
+
+#安装Python3
+#CentOS系统
+wget https://www.moerats.com/usr/shell/Python3/CentOS_Python3.6.sh &amp;&amp; sh CentOS_Python3.6.sh
+#Debian系统
+wget https://www.moerats.com/usr/shell/Python3/Debian_Python3.6.sh &amp;&amp; sh Debian_Python3.6.sh</code></pre><p>然后再输入<code>python3 -V</code>看是否安装成功。</p>
+<p><strong>2、下载源码</strong></p>
+<pre><code>#CentOS系统
+yum install git -y
+#Ubuntu和Debian系统
+apt-get install git -y
+
+#下载源码
+git clone https://github.com/rmb122/Delete-my-hisroy-in-tieba.git
+cd Delete-my-hisroy-in-tieba
+#安装依赖
+pip3 install -r requirements.txt</code></pre><p><strong>3、使用</strong><br>先获取贴吧的<code>Cookie</code>，且为<code>JSON</code>格式，这里可以借助浏览器的<code>Edit This Cookie</code>插件，先打开浏览器拓展，搜索该插件安装，然后登录贴吧，点击浏览器上面的<code>EditThisCookie</code>按钮，并导出<code>Cookie</code>。<br><img src="https://www.moerats.com/usr/picture/Delete-teiba(1).png" alt="请输入图片描述" title="请输入图片描述"><br>再编辑<code>cookie.json</code>文件，将<code>Cookie</code>全部替换进去。</p>
+<pre><code>cd /root/Delete-my-hisroy-in-tieba
+nano cookie.json</code></pre><p>替换好了后，使用<code>Ctrl+x</code>，<code>y</code>保存退出。</p>
+<p>再运行工具：</p>
+<pre><code>python3 Delete-reply.py</code></pre><p>会输出以下画面：<br><img src="https://www.moerats.com/usr/picture/Delete-teiba(2).png" alt="请输入图片描述" title="请输入图片描述"><br>如果你的回复很多，一天是删不完的，因为有限制，所以就需要个定时任务，一天运行一次，直到删完为止，查看：Linux系统Crontab的安装及定时任务的命令详解。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-02-01T00:07:43.000Z" itemprop="datePublished">2020-02-01</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.655Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/02/02/mkonlinemusicplayer-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e7-9a-84-e5-9f-ba-e4-ba-8emeting-e7-9a-84-e5-9c-a8-e7-ba-bf-e9-9f-b3-e4-b9-90-e6-92-ad-e6-94-be-e5-99-a8/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">MKOnlineMusicPlayer：一款开源的基于Meting的在线音乐播放器</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/02/01/502-bad-gateway-e8-87-aa-e5-8a-a8-e9-87-8d-e5-90-af-e8-84-9a-e6-9c-ac/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">502 Bad Gateway自动重启脚本</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

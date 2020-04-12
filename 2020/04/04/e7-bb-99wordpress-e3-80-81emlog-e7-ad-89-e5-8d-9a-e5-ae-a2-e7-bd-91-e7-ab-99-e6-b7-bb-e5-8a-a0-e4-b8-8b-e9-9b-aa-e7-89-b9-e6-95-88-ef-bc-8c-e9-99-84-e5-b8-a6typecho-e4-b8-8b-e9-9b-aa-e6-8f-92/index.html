@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>给WordPress、Emlog等博客网站添加下雪特效，附带Typecho下雪插件 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="给WordPress、Emlog等博客网站添加下雪特效，附带Typecho下雪插件 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/04/04/e7-bb-99wordpress-e3-80-81emlog-e7-ad-89-e5-8d-9a-e5-ae-a2-e7-bd-91-e7-ab-99-e6-b7-bb-e5-8a-a0-e4-b8-8b-e9-9b-aa-e7-89-b9-e6-95-88-ef-bc-8c-e9-99-84-e5-b8-a6typecho-e4-b8-8b-e9-9b-aa-e6-8f-92/"><meta property="og:locale" content="en"><meta name="description" content="前言又到了白色相簿的季节，给博客页面加上雪花效果是再好不过的了。 截图 介绍 让页面开始下雪吧 较低的CPU消耗，移动端效果良好 原生JavaScript实现，不依赖其他类库 丰富的自定义项，可自定义多种选项  Typecho插件Github地址：https:&#x2F;&#x2F;github.com&#x2F;journey-ad&#x2F;Snow-Typecho-Plugin&#x2F; 如果你用的是Typecho，那么只需在Github - John Doe - 南猫"><meta property="og:image" content="https://www.moerats.com/usr/picture/snow_xuehua.gif"><meta property="article:published_time" content="2020-04-04T05:17:42.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.660Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.660Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/04/04/e7-bb-99wordpress-e3-80-81emlog-e7-ad-89-e5-8d-9a-e5-ae-a2-e7-bd-91-e7-ab-99-e6-b7-bb-e5-8a-a0-e4-b8-8b-e9-9b-aa-e7-89-b9-e6-95-88-ef-bc-8c-e9-99-84-e5-b8-a6typecho-e4-b8-8b-e9-9b-aa-e6-8f-92/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/04/04/e7-bb-99wordpress-e3-80-81emlog-e7-ad-89-e5-8d-9a-e5-ae-a2-e7-bd-91-e7-ab-99-e6-b7-bb-e5-8a-a0-e4-b8-8b-e9-9b-aa-e7-89-b9-e6-95-88-ef-bc-8c-e9-99-84-e5-b8-a6typecho-e4-b8-8b-e9-9b-aa-e6-8f-92/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/04/04/e7-bb-99wordpress-e3-80-81emlog-e7-ad-89-e5-8d-9a-e5-ae-a2-e7-bd-91-e7-ab-99-e6-b7-bb-e5-8a-a0-e4-b8-8b-e9-9b-aa-e7-89-b9-e6-95-88-ef-bc-8c-e9-99-84-e5-b8-a6typecho-e4-b8-8b-e9-9b-aa-e6-8f-92/"
+    },
+    "headline": "给WordPress、Emlog等博客网站添加下雪特效，附带Typecho下雪插件 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-04-04T05:17:42.000Z",
+    "dateModified": "2020-04-12T04:09:09.660Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "前言又到了白色相簿的季节，给博客页面加上雪花效果是再好不过的了。 截图 介绍 让页面开始下雪吧 较低的CPU消耗，移动端效果良好 原生JavaScript实现，不依赖其他类库 丰富的自定义项，可自定义多种选项  Typecho插件Github地址：https://github.com/journey-ad/Snow-Typecho-Plugin/ 如果你用的是Typecho，那么只需在Github - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=给WordPress、Emlog等博客网站添加下雪特效，附带Typecho下雪插件" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=给WordPress、Emlog等博客网站添加下雪特效，附带Typecho下雪插件&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=给WordPress、Emlog等博客网站添加下雪特效，附带Typecho下雪插件" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFXElEQVR42u2cQXLjMBAD9f9Pay+5xEsOGlRy2FXrEsexJbJVNZkBYF+3x32JQAhCEIIQhCCEEcI1HN/e8PX75/Off9u9b/X76pzT48/Xr879uZZpX0IQghDWEJZFY7PZ1UI+L5AW+ddiALzVOXYbp/sSghCEsIdANzI2HwMYAmIq1jsIE5zpeSEIQQjnEFIz0yxg2kBqvBKw1c0TghCE8HuFkTQoqZjtil6zsdRACUEIQngOgQol0/M7OGlQ2hXeVAzTsPZjU6QQhPAyCKRg/Ys/f0xtFoIQXgThVChJJs10nvR8czNOBSAhCEEI+3xCEjcnCJNBk5qqp0JsM8wt1yoEIQhhWRhpkGIqYm1hJMYsNW3TuoQgBCFwCKnAEQF0KkqNQHNq1tLrRVFFCEIQwp0GDxKYaEJaTRFMIS1yrXGNQhCCECIEGtIk4SkidPxWYAM9LwQhCGE0ZNOQQkISqQgSwbQd3kigZLk3IQhBCNvCSMTL1qAhzVYj4iZzphZqhCAEIWwNWSKinISoWpOGNlz0Ro1AhCAEIYzNUtM0Nc1RKnJPByhaHIUgBCGc6QlpcGnE2BNDtgluPLkRQhCCEGbf4ckCiQhCAxVTcaamLYEhBCEIYf68QxIkTl9PTRoa0KQbTYOYEIQgBJZPIILo0+JFwMZm57CAC0EIQmAQmg01zVFr8tKGqhFicWEUghBeDuEklNWYJk+LIQlhTDdkNIaEIAQhxAEqLY68h4q2VMSlr53MmEpUEYIQXgwhiRMnwuiJGTNdk4bBmuC5EIQghCy0JpElhbiIoZMEUBrAahowJKoIQQhCQOIINVsJOCLUkqaNCCZJ0BGCEITARJVWaCEbp6Equvl0blK4hSAEIdyoWbo2x4kYS/5ONtaILc35hSAEIcwfDj1pVKgQ2xRXOjSRIMgYKBGCEIRwNEAlMTQJGOT8pGjS16fgiRCEIIS7apZo4SJiaGqGSAijbcJw4RWCEISADFlywakBIs0NPX8SZE8OIQhBCNdRYSQhjabAUdOUBDjodcfhTghCEMIWQhqAmuAWHbbSAESHrUl4nZopIQhBCCyfQE0PEtpsDF5S3Ghoi4itQhCCEDqhlTZKyTghRggVZRpzJw5rQhCCEOrgViNsNoEOUuwagSUJrvV/ByEI4aUQToJb1HglpmnzuBFtSaMlBCEIIfcJU6FLxSYJIm3YagLfiqpjSEMIQhAC/kIoEqxoQha0CSNBj1a4FYIQhNB92VRjqLYGaQqF0OGImjvTTRWCEIQwQ2hDDq1AQpsp+jgJOljMFYIQhLAtjFQkaZuVZggi5yGDHhGRhSAEIcyFkYigbeCKhjTSoENEYXrtsVkSghCE0AWdLvaFlY1BQhshCpMGRoQgBCHc2JAlDQ0diJqgBwl7kY3S0JkQhCCE+UMfJPSUClc0PA4NWQJsElCEIAQhnEEggwgJaKaFEtOEhjVS87YtzkIQghBGoZUUFwKNmK5UkGkMWbonIQhBCFlPoIEnOtA0BYwIKdSQJUVSCEIQwvxBsDaQSQXSJuTRGCwkVIaEYyEIQQjRkG0DXY0JSs0YaqZc8Ng2W0IQghCi+UIHlwkCFWgn2I3BQ4siNmSFIIQXQ0gFhTY7pNClQawdoEhTNRo7QhCCELDQ2pipZKhpTJT0urRGagYJQQhC2EOgAutkpp5smC46mTJkqIqFUQhCEEIFgRqv09DTiCdp0EpCUIQsBCEI4QjCtLEEpRFgCZAj4/WCn5AVghCEgAYdYoq2xYs0WUmYTU1Z3JcQhCCEWmglxYkupi22xGShwupyvUIQghBqQ/Z/PoQgBCEIQQhCEMLy+ANS6aVfVuWdTQAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">给WordPress、Emlog等博客网站添加下雪特效，附带Typecho下雪插件</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-04-04</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=给WordPress、Emlog等博客网站添加下雪特效，附带Typecho下雪插件&url=http://yoursite.com/2020/04/04/e7-bb-99wordpress-e3-80-81emlog-e7-ad-89-e5-8d-9a-e5-ae-a2-e7-bd-91-e7-ab-99-e6-b7-bb-e5-8a-a0-e4-b8-8b-e9-9b-aa-e7-89-b9-e6-95-88-ef-bc-8c-e9-99-84-e5-b8-a6typecho-e4-b8-8b-e9-9b-aa-e6-8f-92/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=给WordPress、Emlog等博客网站添加下雪特效，附带Typecho下雪插件&url=http://yoursite.com/2020/04/04/e7-bb-99wordpress-e3-80-81emlog-e7-ad-89-e5-8d-9a-e5-ae-a2-e7-bd-91-e7-ab-99-e6-b7-bb-e5-8a-a0-e4-b8-8b-e9-9b-aa-e7-89-b9-e6-95-88-ef-bc-8c-e9-99-84-e5-b8-a6typecho-e4-b8-8b-e9-9b-aa-e6-8f-92/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/04/04/e7-bb-99wordpress-e3-80-81emlog-e7-ad-89-e5-8d-9a-e5-ae-a2-e7-bd-91-e7-ab-99-e6-b7-bb-e5-8a-a0-e4-b8-8b-e9-9b-aa-e7-89-b9-e6-95-88-ef-bc-8c-e9-99-84-e5-b8-a6typecho-e4-b8-8b-e9-9b-aa-e6-8f-92/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/04/04/e7-bb-99wordpress-e3-80-81emlog-e7-ad-89-e5-8d-9a-e5-ae-a2-e7-bd-91-e7-ab-99-e6-b7-bb-e5-8a-a0-e4-b8-8b-e9-9b-aa-e7-89-b9-e6-95-88-ef-bc-8c-e9-99-84-e5-b8-a6typecho-e4-b8-8b-e9-9b-aa-e6-8f-92/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/04/04/e7-bb-99wordpress-e3-80-81emlog-e7-ad-89-e5-8d-9a-e5-ae-a2-e7-bd-91-e7-ab-99-e6-b7-bb-e5-8a-a0-e4-b8-8b-e9-9b-aa-e7-89-b9-e6-95-88-ef-bc-8c-e9-99-84-e5-b8-a6typecho-e4-b8-8b-e9-9b-aa-e6-8f-92/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/04/04/e7-bb-99wordpress-e3-80-81emlog-e7-ad-89-e5-8d-9a-e5-ae-a2-e7-bd-91-e7-ab-99-e6-b7-bb-e5-8a-a0-e4-b8-8b-e9-9b-aa-e7-89-b9-e6-95-88-ef-bc-8c-e9-99-84-e5-b8-a6typecho-e4-b8-8b-e9-9b-aa-e6-8f-92/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/04/04/e7-bb-99wordpress-e3-80-81emlog-e7-ad-89-e5-8d-9a-e5-ae-a2-e7-bd-91-e7-ab-99-e6-b7-bb-e5-8a-a0-e4-b8-8b-e9-9b-aa-e7-89-b9-e6-95-88-ef-bc-8c-e9-99-84-e5-b8-a6typecho-e4-b8-8b-e9-9b-aa-e6-8f-92/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFXElEQVR42u2cQXLjMBAD9f9Pay+5xEsOGlRy2FXrEsexJbJVNZkBYF+3x32JQAhCEIIQhCCEEcI1HN/e8PX75/Off9u9b/X76pzT48/Xr879uZZpX0IQghDWEJZFY7PZ1UI+L5AW+ddiALzVOXYbp/sSghCEsIdANzI2HwMYAmIq1jsIE5zpeSEIQQjnEFIz0yxg2kBqvBKw1c0TghCE8HuFkTQoqZjtil6zsdRACUEIQngOgQol0/M7OGlQ2hXeVAzTsPZjU6QQhPAyCKRg/Ys/f0xtFoIQXgThVChJJs10nvR8czNOBSAhCEEI+3xCEjcnCJNBk5qqp0JsM8wt1yoEIQhhWRhpkGIqYm1hJMYsNW3TuoQgBCFwCKnAEQF0KkqNQHNq1tLrRVFFCEIQwp0GDxKYaEJaTRFMIS1yrXGNQhCCECIEGtIk4SkidPxWYAM9LwQhCGE0ZNOQQkISqQgSwbQd3kigZLk3IQhBCNvCSMTL1qAhzVYj4iZzphZqhCAEIWwNWSKinISoWpOGNlz0Ro1AhCAEIYzNUtM0Nc1RKnJPByhaHIUgBCGc6QlpcGnE2BNDtgluPLkRQhCCEGbf4ckCiQhCAxVTcaamLYEhBCEIYf68QxIkTl9PTRoa0KQbTYOYEIQgBJZPIILo0+JFwMZm57CAC0EIQmAQmg01zVFr8tKGqhFicWEUghBeDuEklNWYJk+LIQlhTDdkNIaEIAQhxAEqLY68h4q2VMSlr53MmEpUEYIQXgwhiRMnwuiJGTNdk4bBmuC5EIQghCy0JpElhbiIoZMEUBrAahowJKoIQQhCQOIINVsJOCLUkqaNCCZJ0BGCEITARJVWaCEbp6Equvl0blK4hSAEIdyoWbo2x4kYS/5ONtaILc35hSAEIcwfDj1pVKgQ2xRXOjSRIMgYKBGCEIRwNEAlMTQJGOT8pGjS16fgiRCEIIS7apZo4SJiaGqGSAijbcJw4RWCEISADFlywakBIs0NPX8SZE8OIQhBCNdRYSQhjabAUdOUBDjodcfhTghCEMIWQhqAmuAWHbbSAESHrUl4nZopIQhBCCyfQE0PEtpsDF5S3Ghoi4itQhCCEDqhlTZKyTghRggVZRpzJw5rQhCCEOrgViNsNoEOUuwagSUJrvV/ByEI4aUQToJb1HglpmnzuBFtSaMlBCEIIfcJU6FLxSYJIm3YagLfiqpjSEMIQhAC/kIoEqxoQha0CSNBj1a4FYIQhNB92VRjqLYGaQqF0OGImjvTTRWCEIQwQ2hDDq1AQpsp+jgJOljMFYIQhLAtjFQkaZuVZggi5yGDHhGRhSAEIcyFkYigbeCKhjTSoENEYXrtsVkSghCE0AWdLvaFlY1BQhshCpMGRoQgBCHc2JAlDQ0diJqgBwl7kY3S0JkQhCCE+UMfJPSUClc0PA4NWQJsElCEIAQhnEEggwgJaKaFEtOEhjVS87YtzkIQghBGoZUUFwKNmK5UkGkMWbonIQhBCFlPoIEnOtA0BYwIKdSQJUVSCEIQwvxBsDaQSQXSJuTRGCwkVIaEYyEIQQjRkG0DXY0JSs0YaqZc8Ng2W0IQghCi+UIHlwkCFWgn2I3BQ4siNmSFIIQXQ0gFhTY7pNClQawdoEhTNRo7QhCCELDQ2pipZKhpTJT0urRGagYJQQhC2EOgAutkpp5smC46mTJkqIqFUQhCEEIFgRqv09DTiCdp0EpCUIQsBCEI4QjCtLEEpRFgCZAj4/WCn5AVghCEgAYdYoq2xYs0WUmYTU1Z3JcQhCCEWmglxYkupi22xGShwupyvUIQghBqQ/Z/PoQgBCEIQQhCEMLy+ANS6aVfVuWdTQAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">2.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#介绍"><span class="post-toc-number">3.</span> <span class="post-toc-text">介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Typecho插件"><span class="post-toc-number">4.</span> <span class="post-toc-text">Typecho插件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通用教程"><span class="post-toc-number">5.</span> <span class="post-toc-text">通用教程</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>又到了白色相簿的季节，给博客页面加上雪花效果是再好不过的了。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.moerats.com/usr/picture/snow_xuehua.gif" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
+<li>让页面开始下雪吧</li>
+<li>较低的<code>CPU</code>消耗，移动端效果良好</li>
+<li>原生<code>JavaScript</code>实现，不依赖其他类库</li>
+<li>丰富的自定义项，可自定义多种选项</li>
+</ul>
+<h2 id="Typecho插件"><a href="#Typecho插件" class="headerlink" title="Typecho插件"></a>Typecho插件</h2><p><strong>Github地址：</strong><a href="https://github.com/journey-ad/Snow-Typecho-Plugin/" target="_blank" rel="noopener">https://github.com/journey-ad/Snow-Typecho-Plugin/</a></p>
+<p>如果你用的是<code>Typecho</code>，那么只需在Github下载插件并启用即可，<code>Wordpress</code>、<code>Emlog</code>等博客教程请接着往下看！</p>
+<h2 id="通用教程"><a href="#通用教程" class="headerlink" title="通用教程"></a>通用教程</h2><p><strong>1、创建画布</strong><br>在方便的位置加入以下内容</p>
+<pre><code>&lt;canvas id=&quot;Snow&quot;&gt;&lt;/canvas&gt;</code></pre><p><strong>2、引入JS</strong><br>重要的数值已在注释中给出</p>
+<pre><code>(function() {
+    var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame ||
+    function(callback) {
+        window.setTimeout(callback, 1000 / 60);
+    };
+    window.requestAnimationFrame = requestAnimationFrame;
+})();
+
+(function() {
+    var flakes = [],
+        canvas = document.getElementById(&quot;Snow&quot;), //画布ID，与上一步创建的画布对应
+        ctx = canvas.getContext(&quot;2d&quot;),
+        flakeCount = 200,  //雪花数量，数值越大雪花数量越多
+        mX = -100,
+        mY = -100;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    function snow() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (var i = 0; i &lt; flakeCount; i++) {
+            var flake = flakes[i],
+                x = mX,
+                y = mY,
+                minDist = 150,  //雪花距离鼠标指针的最小值，小于这个距离的雪花将受到鼠标的排斥
+                x2 = flake.x,
+                y2 = flake.y;
+
+            var dist = Math.sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y)),
+                dx = x2 - x,
+                dy = y2 - y;
+
+            if (dist &lt; minDist) {
+                var force = minDist / (dist * dist),
+                    xcomp = (x - x2) / dist,
+                    ycomp = (y - y2) / dist,
+                    deltaV = force / 2;
+
+                flake.velX -= deltaV * xcomp;
+                flake.velY -= deltaV * ycomp;
+
+            } else {
+                flake.velX *= .98;
+                if (flake.velY &lt;= flake.speed) {
+                    flake.velY = flake.speed
+                }
+                flake.velX += Math.cos(flake.step += .05) * flake.stepSize;
+            }
+
+            ctx.fillStyle = &quot;rgba(255,255,255,&quot; + flake.opacity + &quot;)&quot;;  //雪花颜色
+            flake.y += flake.velY;
+            flake.x += flake.velX;
+
+            if (flake.y &gt;= canvas.height || flake.y &lt;= 0) {
+                reset(flake);
+            }
+
+            if (flake.x &gt;= canvas.width || flake.x &lt;= 0) {
+                reset(flake);
+            }
+
+            ctx.beginPath();
+            ctx.arc(flake.x, flake.y, flake.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        requestAnimationFrame(snow);
+    };
+
+    function reset(flake) {
+        flake.x = Math.floor(Math.random() * canvas.width);
+        flake.y = 0;
+        flake.size = (Math.random() * 3) + 2;  //加号后面的值，雪花大小，为基准值，数值越大雪花越大
+        flake.speed = (Math.random() * 1) + 0.5;  //加号后面的值，雪花速度，为基准值，数值越大雪花速度越快
+        flake.velY = flake.speed;
+        flake.velX = 0;
+        flake.opacity = (Math.random() * 0.5) + 0.3;  //加号后面的值，为基准值，范围0~1
+    }
+
+    function init() {
+        for (var i = 0; i &lt; flakeCount; i++) {
+            var x = Math.floor(Math.random() * canvas.width),
+                y = Math.floor(Math.random() * canvas.height),
+                size = (Math.random() * 3) + 2,  //加号后面的值，雪花大小，为基准值，数值越大雪花越大
+                speed = (Math.random() * 1) + 0.5,  //加号后面的值，雪花速度，为基准值，数值越大雪花速度越快
+                opacity = (Math.random() * 0.5) + 0.3;  //加号后面的值，为基准值，范围0~1
+
+            flakes.push({
+                speed: speed,
+                velY: speed,
+                velX: 0,
+                x: x,
+                y: y,
+                size: size,
+                stepSize: (Math.random()) / 30 * 1,  //乘号后面的值，雪花横移幅度，为基准值，数值越大雪花横移幅度越大，0为竖直下落
+                step: 0,
+                angle: 180,
+                opacity: opacity
+            });
+        }
+
+        snow();
+    };
+
+    document.addEventListener(&quot;mousemove&quot;, function(e) {
+        mX = e.clientX,
+        mY = e.clientY
+    });
+    window.addEventListener(&quot;resize&quot;, function() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+    init();
+})();</code></pre><p><strong>3、添加样式Style</strong><br>背景颜色可根据自身需要改变</p>
+<pre><code>#Snow{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background: rgba(125,137,95,0.1);
+    pointer-events: none;
+}</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-04-04T05:17:42.000Z" itemprop="datePublished">2020-04-04</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.660Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/04/04/vultr-e6-96-b0-e8-80-81-e7-94-a8-e6-88-b7-e5-85-8d-e8-b4-b9-e9-a2-86-e5-8f-96100-bare-metal-e7-8b-ac-e6-9c-8d-e4-bd-bf-e7-94-a8-e5-88-b8/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Vultr新老用户免费领取$100 Bare Metal独服使用券</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/04/04/e8-a7-a3-e5-86-b3rclone-e6-8c-82-e8-bd-bdgoogle-drive-e6-97-b6-e4-b8-8a-e4-bc-a0-e5-a4-b1-e8-b4-a5-e5-92-8c-e5-86-85-e5-ad-98-e5-8d-a0-e7-94-a8-e9-ab-98-e7-ad-89-e9-97-ae-e9-a2-98/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">解决Rclone挂载Google Drive时上传失败和内存占用高等问题</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

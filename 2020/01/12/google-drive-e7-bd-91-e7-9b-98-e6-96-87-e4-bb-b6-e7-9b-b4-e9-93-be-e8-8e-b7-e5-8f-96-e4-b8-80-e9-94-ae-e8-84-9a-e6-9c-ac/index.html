@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Google Drive网盘文件直链获取一键脚本 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://yoursite.com"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Google Drive网盘文件直链获取一键脚本 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://yoursite.com/2020/01/12/google-drive-e7-bd-91-e7-9b-98-e6-96-87-e4-bb-b6-e7-9b-b4-e9-93-be-e8-8e-b7-e5-8f-96-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/"><meta property="og:locale" content="en"><meta name="description" content="说明：本脚本可以将Google Drive网盘的文件分享链接或者文件ID变成直链，方便我们在很多情况下调用。只支持文件分享，不支持文件夹。文件分享ID为26到48位。 使用1、需求 wget、grep、cat、head  #系统一般都有，Centos 7可能要安装wget2、下载脚本 wget --no-check-certificate -qO &#x2F;usr&#x2F;local&#x2F;bin&#x2F;gdlink &amp;ap - John Doe - 南猫"><meta property="article:published_time" content="2020-01-12T15:25:21.000Z"><meta property="article:modified_time" content="2020-04-12T04:09:09.653Z"><meta property="og:updated_time" content="2020-04-12T04:09:09.653Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://yoursite.com/2020/01/12/google-drive-e7-bd-91-e7-9b-98-e6-96-87-e4-bb-b6-e7-9b-b4-e9-93-be-e8-8e-b7-e5-8f-96-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://yoursite.com/2020/01/12/google-drive-e7-bd-91-e7-9b-98-e6-96-87-e4-bb-b6-e7-9b-b4-e9-93-be-e8-8e-b7-e5-8f-96-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/",
+    "@type": "BlogPosting",
+    "logo": "http://yoursite.com/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com/2020/01/12/google-drive-e7-bd-91-e7-9b-98-e6-96-87-e4-bb-b6-e7-9b-b4-e9-93-be-e8-8e-b7-e5-8f-96-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/"
+    },
+    "headline": "Google Drive网盘文件直链获取一键脚本 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://yoursite.com/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-01-12T15:25:21.000Z",
+    "dateModified": "2020-04-12T04:09:09.653Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://yoursite.com/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://yoursite.com/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：本脚本可以将Google Drive网盘的文件分享链接或者文件ID变成直链，方便我们在很多情况下调用。只支持文件分享，不支持文件夹。文件分享ID为26到48位。 使用1、需求 wget、grep、cat、head  #系统一般都有，Centos 7可能要安装wget2、下载脚本 wget --no-check-certificate -qO /usr/local/bin/gdlink &amp;amp;ap - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://yoursite.com&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://yoursite.com&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=Google Drive网盘文件直链获取一键脚本" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Google Drive网盘文件直链获取一键脚本&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://yoursite.com&text=Google Drive网盘文件直链获取一键脚本" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADm0lEQVR42u3aQW7rMAxF0ex/0/9PiyLiu89Naya4nrRIHNnHgCmJ5OPfBx4PUaJEiRL1cajHcHw95+vf6bffvz/ewJPxT9fA9ylK1BIUuej3QU6fpfOfXScd+D5FiVqESjc4Dda+5M+CzwQm9ylK1Duhnl2ATrxpQj+NfZqURYn6BFSafOmEegoCz353CkKiRL0LahqEnNtsGNME32w4RYnaiCKbsw1/X5ZNEiXqF1Ex6X6YDMnClASeaexfq3qIEvWLqLRwpcnJBzxIYvO0cJ0md1GitqJIUiQlUkggqBOVIMkqStQGVCpKp5czFbpTspJsFMmDESVqE4ouWMlN0QQnCU4oOIgStQxFEh1pkm4aRNpJORUSRInahqLFZhJU0nhNsElJmrigFSXqJtS0oJxuNhWY03dpbPKQUfQTJeoGVFusbjZxZAPaBgxcyBYl6gZUSrzQhS/BX0lyTgWLWEkUJeomFGnYpfg0qdOxyeeiRG1F0aRHasZKxYKrScrUYCJK1GZUM9CVxTBJhKaFdB0oRIlagKIBgTSQoEZ5uGAek0CiRC1BtY0YJFBcmaRTUSFuMEWJWoqaJkvyP20QnjaeZKzY8SJK1M2oJtGSkiNNUoVMyqSQLkrUBtS0kKRBYSpa0w0laS6OBTlRopagmgaM6aUl46TESwoMaEErStSNqGYxSl/YpjiXNpTN4liUqA2o6UWlL37TKEU3jvQBiBK1DUUTHzSp+ZOEZJqIY/FblKgFKDo5ngJB2/Cbkj1N81dcpYsSdTOKLiKvLFpTkZoWEabPRInagEpJ95RspIElbSabJhTUxChK1E0oknSkReZURCOTKWlOPl5HlKgFqOZi7USaimlxMgVjiBK1EdU0idAN2xQ0mk0mTZKKErUF1UyWJLjQ5uAUBEgCc9z5ihJ1I6pNvDSFbjrJXxn/pclMUaJeiEpF5/QAmgBBFrTkmqJEbUXRZqkmwZg+JwUGknCpCgSiRP0xijRj0MUsTcrQxA0tTogStQFFXnTStJsKbk1TFh1jTLyIEnUTiiQkSRIznUeSk+l3MUEjStQCVNtYRTd+NFlJGxynRkpRorah2qYpAkqFb/ogmuuIErUJ1QaD6Xc0+NBEDR5TlKg3QjUJmHTeFCCqwCBK1Jui6Dm0cPfTBq/jgkGUqEWo1IBIFqypuXHa/JHrx/9FiVqCIsl8soGkzR0JM02w45iiRC1AfdIhSpQoUaI+5vgPeUvSj5hLh+AAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Google Drive网盘文件直链获取一键脚本</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-01-12</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Google Drive网盘文件直链获取一键脚本&url=http://yoursite.com/2020/01/12/google-drive-e7-bd-91-e7-9b-98-e6-96-87-e4-bb-b6-e7-9b-b4-e9-93-be-e8-8e-b7-e5-8f-96-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/&pic=http://yoursite.com/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Google Drive网盘文件直链获取一键脚本&url=http://yoursite.com/2020/01/12/google-drive-e7-bd-91-e7-9b-98-e6-96-87-e4-bb-b6-e7-9b-b4-e9-93-be-e8-8e-b7-e5-8f-96-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/01/12/google-drive-e7-bd-91-e7-9b-98-e6-96-87-e4-bb-b6-e7-9b-b4-e9-93-be-e8-8e-b7-e5-8f-96-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://yoursite.com/2020/01/12/google-drive-e7-bd-91-e7-9b-98-e6-96-87-e4-bb-b6-e7-9b-b4-e9-93-be-e8-8e-b7-e5-8f-96-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2020/01/12/google-drive-e7-bd-91-e7-9b-98-e6-96-87-e4-bb-b6-e7-9b-b4-e9-93-be-e8-8e-b7-e5-8f-96-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://yoursite.com/img/suka-favicon.ico&url=http://yoursite.com/2020/01/12/google-drive-e7-bd-91-e7-9b-98-e6-96-87-e4-bb-b6-e7-9b-b4-e9-93-be-e8-8e-b7-e5-8f-96-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://yoursite.com/2020/01/12/google-drive-e7-bd-91-e7-9b-98-e6-96-87-e4-bb-b6-e7-9b-b4-e9-93-be-e8-8e-b7-e5-8f-96-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADm0lEQVR42u3aQW7rMAxF0ex/0/9PiyLiu89Naya4nrRIHNnHgCmJ5OPfBx4PUaJEiRL1cajHcHw95+vf6bffvz/ewJPxT9fA9ylK1BIUuej3QU6fpfOfXScd+D5FiVqESjc4Dda+5M+CzwQm9ylK1Duhnl2ATrxpQj+NfZqURYn6BFSafOmEegoCz353CkKiRL0LahqEnNtsGNME32w4RYnaiCKbsw1/X5ZNEiXqF1Ex6X6YDMnClASeaexfq3qIEvWLqLRwpcnJBzxIYvO0cJ0md1GitqJIUiQlUkggqBOVIMkqStQGVCpKp5czFbpTspJsFMmDESVqE4ouWMlN0QQnCU4oOIgStQxFEh1pkm4aRNpJORUSRInahqLFZhJU0nhNsElJmrigFSXqJtS0oJxuNhWY03dpbPKQUfQTJeoGVFusbjZxZAPaBgxcyBYl6gZUSrzQhS/BX0lyTgWLWEkUJeomFGnYpfg0qdOxyeeiRG1F0aRHasZKxYKrScrUYCJK1GZUM9CVxTBJhKaFdB0oRIlagKIBgTSQoEZ5uGAek0CiRC1BtY0YJFBcmaRTUSFuMEWJWoqaJkvyP20QnjaeZKzY8SJK1M2oJtGSkiNNUoVMyqSQLkrUBtS0kKRBYSpa0w0laS6OBTlRopagmgaM6aUl46TESwoMaEErStSNqGYxSl/YpjiXNpTN4liUqA2o6UWlL37TKEU3jvQBiBK1DUUTHzSp+ZOEZJqIY/FblKgFKDo5ngJB2/Cbkj1N81dcpYsSdTOKLiKvLFpTkZoWEabPRInagEpJ95RspIElbSabJhTUxChK1E0oknSkReZURCOTKWlOPl5HlKgFqOZi7USaimlxMgVjiBK1EdU0idAN2xQ0mk0mTZKKErUF1UyWJLjQ5uAUBEgCc9z5ihJ1I6pNvDSFbjrJXxn/pclMUaJeiEpF5/QAmgBBFrTkmqJEbUXRZqkmwZg+JwUGknCpCgSiRP0xijRj0MUsTcrQxA0tTogStQFFXnTStJsKbk1TFh1jTLyIEnUTiiQkSRIznUeSk+l3MUEjStQCVNtYRTd+NFlJGxynRkpRorah2qYpAkqFb/ogmuuIErUJ1QaD6Xc0+NBEDR5TlKg3QjUJmHTeFCCqwCBK1Jui6Dm0cPfTBq/jgkGUqEWo1IBIFqypuXHa/JHrx/9FiVqCIsl8soGkzR0JM02w45iiRC1AfdIhSpQoUaI+5vgPeUvSj5hLh+AAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>本脚本可以将<code>Google Drive</code>网盘的文件分享链接或者文件<code>ID</code>变成直链，方便我们在很多情况下调用。只支持文件分享，不支持文件夹。文件分享<code>ID</code>为<code>26</code>到<code>48</code>位。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><strong>1、需求</strong></p>
+<pre><code>wget、grep、cat、head  #系统一般都有，Centos 7可能要安装wget</code></pre><p><strong>2、下载脚本</strong></p>
+<pre><code>wget --no-check-certificate -qO /usr/local/bin/gdlink &apos;https://www.moerats.com/usr/shell/gdlink.sh&apos; &amp;&amp; chmod a+x /usr/local/bin/gdlink</code></pre><p><strong>3、使用方法</strong><br>注意: 获取的分享链接权限为”知道链接的任何人“。</p>
+<pre><code>#Work with share link/使用分享链接方式
+gdlink &apos;https://drive.google.com/open?id=0B8SvBXZ3I5QMcUduTMJEanRkMzQ&apos;
+
+#Work with file id/使用文件ID方式
+gdlink &apos;0B8SvBXZ3I5QMcUduTMJEanRkMzQ&apos;
+
+#download with share link/使用分享链接方式直接使用wget下载链接
+##可将其中./download改成自己需要的文件名或文件绝对路径
+gdlink &apos;https://drive.google.com/open?id=0B8SvBXZ3I5QMcUduTMJEanRkMzQ&apos; |xargs -n1 wget -c -O ./download</code></pre><p><strong>4、调用场景</strong><br>比如该<code>DD</code>教程：Linux VPS无限制一键全自动DD安装Windows脚本。</p>
+<p>先获取到谷歌网盘里的<code>DD</code>镜像链接</p>
+<pre><code>https://drive.google.com/open?id=0B8SvBXZ3I5QMcUduTMJEanRkMzQ</code></pre><p>调用该分享链接。(将文件<code>ID</code>替换为自己的即可)</p>
+<pre><code>#Work with share link/使用分享链接方式
+bash DebianNET.sh -dd &quot;$(echo &quot;https://drive.google.com/open?id=0B8SvBXZ3I5QMcUduTMJEanRkMzQ&quot; |xargs -n1 bash &lt;(wget --no-check-certificate -qO- &apos;https://moeclub.org/attachment/LinuxShell/gdlink.sh&apos;))&quot;
+
+#Work with file id/使用文件ID方式
+bash DebianNET.sh -dd &quot;$(echo &quot;0B8SvBXZ3I5QMcUduTMJEanRkMzQ&quot; |xargs -n1 bash &lt;(wget --no-check-certificate -qO- &apos;https://moeclub.org/attachment/LinuxShell/gdlink.sh&apos;))&quot;</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-12");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-01-12T15:25:21.000Z" itemprop="datePublished">2020-01-12</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-12T04:09:09.653Z" itemprop="dateModified">2020-04-12</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/01/13/e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e3-80-81-e8-bd-bb-e5-b7-a7-e4-b8-94-e5-8a-9f-e8-83-bd-e9-bd-90-e5-85-a8-e7-9a-84-e8-b7-a8-e5-b9-b3-e5-8f-b0-e7-bd-91-e7-9b-98-e7-a8-8b-e5-ba-8f-ef-bc-9a-e8-93-9d/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一款开源、轻巧且功能齐全的跨平台网盘程序：蓝眼云盘</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/01/12/linux-vps-e5-bf-ab-e9-80-9f-e4-b8-8b-e8-bd-bdbilibili-e8-a7-86-e9-a2-91-e8-84-9a-e6-9c-ac-ef-bc-8c-e6-94-af-e6-8c-811080p-720p-360p-e7-ad-89-e6-a0-bc-e5-bc-8f/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux VPS快速下载Bilibili视频脚本 ，支持1080P/720P/360P等格式</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://yoursite.com">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>
