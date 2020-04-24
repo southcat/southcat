@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Microsoft Office365 E3 MSDN全局管理员修改自身和用户OneDrive存储大小方法 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Microsoft Office365 E3 MSDN全局管理员修改自身和用户OneDrive存储大小方法 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/02/27/microsoft-office365-e3-msdn-e5-85-a8-e5-b1-80-e7-ae-a1-e7-90-86-e5-91-98-e4-bf-ae-e6-94-b9-e8-87-aa-e8-ba-ab-e5-92-8c-e7-94-a8-e6-88-b7onedrive-e5-ad-98-e5-82-a8-e5-a4-a7-e5-b0-8f-e6-96-b9-e6-b3-95/"><meta property="og:locale" content="en"><meta name="description" content="说明：现在Microsoft Office365 E3 MSDN默认是每用户1T储存空间，包括全局管理员。虽然我们可以直接在面板设置存储为5T或者是其它的大小，但是由于已经存在的用户包括全局管理员都是无法直接修改现有容量，所以该修改仅对新建用户生效。特别是全局管理员自身，如果不会修改会一直是1T，这里就说下全局管理员修改自身和已有用户OneDrive存储大小方法。 方法一该方法只适用修改全局管理员 - John Doe - 南猫"><meta property="article:published_time" content="2020-02-27T06:51:43.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.249Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.249Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/02/27/microsoft-office365-e3-msdn-e5-85-a8-e5-b1-80-e7-ae-a1-e7-90-86-e5-91-98-e4-bf-ae-e6-94-b9-e8-87-aa-e8-ba-ab-e5-92-8c-e7-94-a8-e6-88-b7onedrive-e5-ad-98-e5-82-a8-e5-a4-a7-e5-b0-8f-e6-96-b9-e6-b3-95/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/02/27/microsoft-office365-e3-msdn-e5-85-a8-e5-b1-80-e7-ae-a1-e7-90-86-e5-91-98-e4-bf-ae-e6-94-b9-e8-87-aa-e8-ba-ab-e5-92-8c-e7-94-a8-e6-88-b7onedrive-e5-ad-98-e5-82-a8-e5-a4-a7-e5-b0-8f-e6-96-b9-e6-b3-95/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/02/27/microsoft-office365-e3-msdn-e5-85-a8-e5-b1-80-e7-ae-a1-e7-90-86-e5-91-98-e4-bf-ae-e6-94-b9-e8-87-aa-e8-ba-ab-e5-92-8c-e7-94-a8-e6-88-b7onedrive-e5-ad-98-e5-82-a8-e5-a4-a7-e5-b0-8f-e6-96-b9-e6-b3-95/"
+    },
+    "headline": "Microsoft Office365 E3 MSDN全局管理员修改自身和用户OneDrive存储大小方法 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-02-27T06:51:43.000Z",
+    "dateModified": "2020-04-24T09:34:44.249Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：现在Microsoft Office365 E3 MSDN默认是每用户1T储存空间，包括全局管理员。虽然我们可以直接在面板设置存储为5T或者是其它的大小，但是由于已经存在的用户包括全局管理员都是无法直接修改现有容量，所以该修改仅对新建用户生效。特别是全局管理员自身，如果不会修改会一直是1T，这里就说下全局管理员修改自身和已有用户OneDrive存储大小方法。 方法一该方法只适用修改全局管理员 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=Microsoft Office365 E3 MSDN全局管理员修改自身和用户OneDrive存储大小方法" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Microsoft Office365 E3 MSDN全局管理员修改自身和用户OneDrive存储大小方法&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=Microsoft Office365 E3 MSDN全局管理员修改自身和用户OneDrive存储大小方法" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFd0lEQVR42u2dy5IaSRAE+f+fRte1UVeERzF72MW5aEwwdLVjlpbxQHq9fbxfIhCCEIQgBCEIIUJ4hcc/n3/6+fR3P9+3Xadd/3QOctbTa4UgBCGcITwOjYdDpOfTIRKs04fRzvbzuuQaf51XCEIQwhFCG0g/L5wgPgGjgzDdQIPfzi8EIQjhcwhPgygNqgQgDd0EhJwr/SkEIQjhdwdjEy0NVBpiDdACKS1QQhCCEDYIZAl6OhwZknRwJlMkAU0C71dUpBCE8GUQqNH5X/vzV91mIQjhSyCg4PKwEJ0WGyqk0u8mM6eZwP9KKi0EIXwJBCpuqKHaDksEFBVFJ+FGhJQQhCAEtiyRQUfKEG2A3RiqN6WOJPiEIAQhsB4juXALa6m5srymwSImK1aRQhDCl0O4ESIktCVhSSuAJAhrICwEIQghQ2hGRSpktmG43ChZwojBSoNaIQhBCD2LpINyMTxIcNsMXQqdPicEIQiBhy+LsGmhSQtkqCHbhm8b5HMgKwQhfDGExbBABclgvCxLEDFHaIB7nUAJQQhfCIGaqouYWgZXGtDtd1Ywx/BFCEIQQjUum6lJniOhbzNdaGizFL6EIAQhvNFgJAZGKz4085MaKGRJSkOZGCxCEIIQzhBOF2mDqpkgqzhKwqeFsE2cRaNVCEIQwpveKClz3RSsCIxFyKXfEYIQhLBBIDd9Gm7Lex3FDBRmq6EbF0AhCEEIcTCmgUcOdmPakqVpMWBokUwIQhBCDmQXoULE0BqwkptMv0eXLSEIQQjdY0yFDQJiEVsUbnq/FsKQoqoQhCCEV80d6FCiJispaJDlihg3LcBBgawQhCCENwlF242tBU9aBiHDm9zDMQASghCEUItbLTBBhajX/kWMdgOt+EmWsGiqCEEIQkCFizVQbYdr758GMg1nCWQhCEEIvZ/QLk5fezMA0zBbTB4ipIQgBCHwkkYTRkngLCKJDtS2HFGj9vG1QhCCEOKyREoXS3kiLUOkeEk/mGimhsEpBCEIgX8H6lZELWWKBmktftFrCEEIQshfGG9DcQlrl0CULmNtySJGy+OHJwQhCOEIYT1wKlO00HQ1dylQIsJio1UIQhBCLUOSC66DkJa4Tte5KXpGo1UIQhBCLWktAWwNPoEJQgPam6F5HNRCEIIQYnFrKU7cBKGfmDI0mKUFDSEIQQi5s3QacLT0sA6sdq2bZYkMbiEIQQifCygShNCD35ivyahpQimCFoIQhBBLGkvQ2RYUIrhoaWMxaKeASAhCEAKCQIZKMyyIUUJE2lrwaItZVJFCEIIQ8D8asRS5FkhrqEoKGaR4KgQhCOF9vScswS01V9piQxYlKqCO9yoEIQjhGMiSMmT7uRqb0BhZjRwi8h6vKQQhCKGGL8QopcKJPNdK2rR4QcJcHMgKQQhfDqHd5BJ00GJWEk0NDFnekjErBCEIIQuopRRBilMJJi1stmWqnQuVy4QgBCEcTZU10CAlrhZ+VNOjhK2r8VudJSEIQQjTl61J2ZIsTu1nuoiR68UPQAhCEMLRVGnBKzUxiIF7W9popiwxeY8qUghCEEJdOBZR1AQSLVdRA4eYKLWIIgQhCKEKqFbeuClNnW5oXdTIErWUzYQgBCHk/zSzCaFFPJHFaC1iUAFGjB8hCEEIPHdogSq5EWLOtmF4I8hIsCMEIQihf2H8diAuy1YC2EphpAy2lE2EIAQhvGtJoxkiJERdlqjFgCHGKg1whSAEIXwOoRmdVBCRhesTc5cuUUIQghDuINyUuBokuhQlAUWLH3HQCkEIQpgFFDEtqVAiQ5UKJFr8ioNaCEIQwkdG663hQoNZKqioSVvFnxCEIIQ5kP0/P4QgBCEIQQhCEMLj4w/HpgjS51AzngAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Microsoft Office365 E3 MSDN全局管理员修改自身和用户OneDrive存储大小方法</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-02-27</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Microsoft Office365 E3 MSDN全局管理员修改自身和用户OneDrive存储大小方法&url=http://hexo.southcat.net/2020/02/27/microsoft-office365-e3-msdn-e5-85-a8-e5-b1-80-e7-ae-a1-e7-90-86-e5-91-98-e4-bf-ae-e6-94-b9-e8-87-aa-e8-ba-ab-e5-92-8c-e7-94-a8-e6-88-b7onedrive-e5-ad-98-e5-82-a8-e5-a4-a7-e5-b0-8f-e6-96-b9-e6-b3-95/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Microsoft Office365 E3 MSDN全局管理员修改自身和用户OneDrive存储大小方法&url=http://hexo.southcat.net/2020/02/27/microsoft-office365-e3-msdn-e5-85-a8-e5-b1-80-e7-ae-a1-e7-90-86-e5-91-98-e4-bf-ae-e6-94-b9-e8-87-aa-e8-ba-ab-e5-92-8c-e7-94-a8-e6-88-b7onedrive-e5-ad-98-e5-82-a8-e5-a4-a7-e5-b0-8f-e6-96-b9-e6-b3-95/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/02/27/microsoft-office365-e3-msdn-e5-85-a8-e5-b1-80-e7-ae-a1-e7-90-86-e5-91-98-e4-bf-ae-e6-94-b9-e8-87-aa-e8-ba-ab-e5-92-8c-e7-94-a8-e6-88-b7onedrive-e5-ad-98-e5-82-a8-e5-a4-a7-e5-b0-8f-e6-96-b9-e6-b3-95/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/02/27/microsoft-office365-e3-msdn-e5-85-a8-e5-b1-80-e7-ae-a1-e7-90-86-e5-91-98-e4-bf-ae-e6-94-b9-e8-87-aa-e8-ba-ab-e5-92-8c-e7-94-a8-e6-88-b7onedrive-e5-ad-98-e5-82-a8-e5-a4-a7-e5-b0-8f-e6-96-b9-e6-b3-95/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/02/27/microsoft-office365-e3-msdn-e5-85-a8-e5-b1-80-e7-ae-a1-e7-90-86-e5-91-98-e4-bf-ae-e6-94-b9-e8-87-aa-e8-ba-ab-e5-92-8c-e7-94-a8-e6-88-b7onedrive-e5-ad-98-e5-82-a8-e5-a4-a7-e5-b0-8f-e6-96-b9-e6-b3-95/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/02/27/microsoft-office365-e3-msdn-e5-85-a8-e5-b1-80-e7-ae-a1-e7-90-86-e5-91-98-e4-bf-ae-e6-94-b9-e8-87-aa-e8-ba-ab-e5-92-8c-e7-94-a8-e6-88-b7onedrive-e5-ad-98-e5-82-a8-e5-a4-a7-e5-b0-8f-e6-96-b9-e6-b3-95/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/02/27/microsoft-office365-e3-msdn-e5-85-a8-e5-b1-80-e7-ae-a1-e7-90-86-e5-91-98-e4-bf-ae-e6-94-b9-e8-87-aa-e8-ba-ab-e5-92-8c-e7-94-a8-e6-88-b7onedrive-e5-ad-98-e5-82-a8-e5-a4-a7-e5-b0-8f-e6-96-b9-e6-b3-95/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFd0lEQVR42u2dy5IaSRAE+f+fRte1UVeERzF72MW5aEwwdLVjlpbxQHq9fbxfIhCCEIQgBCEIIUJ4hcc/n3/6+fR3P9+3Xadd/3QOctbTa4UgBCGcITwOjYdDpOfTIRKs04fRzvbzuuQaf51XCEIQwhFCG0g/L5wgPgGjgzDdQIPfzi8EIQjhcwhPgygNqgQgDd0EhJwr/SkEIQjhdwdjEy0NVBpiDdACKS1QQhCCEDYIZAl6OhwZknRwJlMkAU0C71dUpBCE8GUQqNH5X/vzV91mIQjhSyCg4PKwEJ0WGyqk0u8mM6eZwP9KKi0EIXwJBCpuqKHaDksEFBVFJ+FGhJQQhCAEtiyRQUfKEG2A3RiqN6WOJPiEIAQhsB4juXALa6m5srymwSImK1aRQhDCl0O4ESIktCVhSSuAJAhrICwEIQghQ2hGRSpktmG43ChZwojBSoNaIQhBCD2LpINyMTxIcNsMXQqdPicEIQiBhy+LsGmhSQtkqCHbhm8b5HMgKwQhfDGExbBABclgvCxLEDFHaIB7nUAJQQhfCIGaqouYWgZXGtDtd1Ywx/BFCEIQQjUum6lJniOhbzNdaGizFL6EIAQhvNFgJAZGKz4085MaKGRJSkOZGCxCEIIQzhBOF2mDqpkgqzhKwqeFsE2cRaNVCEIQwpveKClz3RSsCIxFyKXfEYIQhLBBIDd9Gm7Lex3FDBRmq6EbF0AhCEEIcTCmgUcOdmPakqVpMWBokUwIQhBCDmQXoULE0BqwkptMv0eXLSEIQQjdY0yFDQJiEVsUbnq/FsKQoqoQhCCEV80d6FCiJispaJDlihg3LcBBgawQhCCENwlF242tBU9aBiHDm9zDMQASghCEUItbLTBBhajX/kWMdgOt+EmWsGiqCEEIQkCFizVQbYdr758GMg1nCWQhCEEIvZ/QLk5fezMA0zBbTB4ipIQgBCHwkkYTRkngLCKJDtS2HFGj9vG1QhCCEOKyREoXS3kiLUOkeEk/mGimhsEpBCEIgX8H6lZELWWKBmktftFrCEEIQshfGG9DcQlrl0CULmNtySJGy+OHJwQhCOEIYT1wKlO00HQ1dylQIsJio1UIQhBCLUOSC66DkJa4Tte5KXpGo1UIQhBCLWktAWwNPoEJQgPam6F5HNRCEIIQYnFrKU7cBKGfmDI0mKUFDSEIQQi5s3QacLT0sA6sdq2bZYkMbiEIQQifCygShNCD35ivyahpQimCFoIQhBBLGkvQ2RYUIrhoaWMxaKeASAhCEAKCQIZKMyyIUUJE2lrwaItZVJFCEIIQ8D8asRS5FkhrqEoKGaR4KgQhCOF9vScswS01V9piQxYlKqCO9yoEIQjhGMiSMmT7uRqb0BhZjRwi8h6vKQQhCKGGL8QopcKJPNdK2rR4QcJcHMgKQQhfDqHd5BJ00GJWEk0NDFnekjErBCEIIQuopRRBilMJJi1stmWqnQuVy4QgBCEcTZU10CAlrhZ+VNOjhK2r8VudJSEIQQjTl61J2ZIsTu1nuoiR68UPQAhCEMLRVGnBKzUxiIF7W9popiwxeY8qUghCEEJdOBZR1AQSLVdRA4eYKLWIIgQhCKEKqFbeuClNnW5oXdTIErWUzYQgBCHk/zSzCaFFPJHFaC1iUAFGjB8hCEEIPHdogSq5EWLOtmF4I8hIsCMEIQihf2H8diAuy1YC2EphpAy2lE2EIAQhvGtJoxkiJERdlqjFgCHGKg1whSAEIXwOoRmdVBCRhesTc5cuUUIQghDuINyUuBokuhQlAUWLH3HQCkEIQpgFFDEtqVAiQ5UKJFr8ioNaCEIQwkdG663hQoNZKqioSVvFnxCEIIQ5kP0/P4QgBCEIQQhCEMLj4w/HpgjS51AzngAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法一"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法一</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法二"><span class="post-toc-number">2.</span> <span class="post-toc-text">方法二</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>现在<code>Microsoft Office365 E3 MSDN</code>默认是每用户<code>1T</code>储存空间，包括全局管理员。虽然我们可以直接在面板设置存储为<code>5T</code>或者是其它的大小，但是由于已经存在的用户包括全局管理员都是无法直接修改现有容量，所以该修改仅对新建用户生效。特别是全局管理员自身，如果不会修改会一直是<code>1T</code>，这里就说下全局管理员修改自身和已有用户<code>OneDrive</code>存储大小方法。</p>
+<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><pre><code>该方法只适用修改全局管理员自身的5T容量，修改现有用户看方法二</code></pre><p>1、管理员先访问修改地址：<a href="https://admin.onedrive.com/#v=StorageSettings，将容量设置为`5120" target="_blank" rel="noopener">https://admin.onedrive.com/#v=StorageSettings，将容量设置为`5120</a> G<code>，然后点保存即可。  
+2、接下来新建的用户都会默认为</code>5T<code>，而旧用户就必须删掉账户重建才会有</code>5T<code>，不过管理员自身是不能删除自己的，所以我们需要重新创新一个新的全局管理员并登陆，然后再删掉旧的管理员用户，这样全局管理员就是</code>5T`空间了。</p>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><pre><code>该方法不需要删除全局管理员就可以更改为5T，也可以直接修改现有用户的容量。</code></pre><p>1、我们先安装最新的<code>SharePoint Online Management Shell</code>→下载地址。<br>2、点击电脑左下角开始按钮，搜索<code>PowerShell</code>，然后单击<code>Windows PowerShell</code>，此时会弹出一个命令框。<br>依次输入命令：</p>
+<pre><code>#adminUPN为管理员邮箱，orgName为你设置的组织名
+$adminUPN=&quot;admin@moerats.onmicrosoft.com&quot;
+$orgName=&quot;moerats&quot;
+#该步会弹出一个窗口，会要求你输入邮箱密码
+$userCredential = Get-Credential -UserName $adminUPN -Message &quot;Type the password.&quot;
+Connect-SPOService -Url https://$orgName-admin.sharepoint.com -Credential $userCredential
+#这里默认修改为5T，如果你要修改为其它的可自行修改，单位为M，最大可修改为5T
+Set-SPOTenant -OneDriveStorageQuota 5242880
+#将后面的地址修改成你的OneDrive网盘地址，地址仿照下面的即可
+Set-SPOSite -Identity https://moerats-my.sharepoint.com/personal/moerats_admin_onmicrosoft_com -StorageQuota 5242880</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-02-27T06:51:43.000Z" itemprop="datePublished">2020-02-27</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.249Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/02/27/e4-bd-bf-e7-94-a8haprxoy-e9-9a-90-e8-97-8fsmtp-e5-8f-91-e4-bf-a1-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-ba-90ip-e5-9c-b0-e5-9d-80-e6-96-b9-e6-b3-95/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">使用haprxoy隐藏SMTP发信服务器源IP地址方法</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/02/27/openvz-e5-ae-89-e8-a3-85bbr-e6-96-b0-e6-96-b9-e6-b3-95-ef-bc-9alkl-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e5-8c-85-ef-bc-88-e6-af-94uml-e7-ae-80-e5-8d-95-ef-bc-89/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">OpenVZ安装BBR新方法：LKL一键安装包（比UML简单）</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

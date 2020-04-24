@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>搭建一个基于有赞开发的要饭网站 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="搭建一个基于有赞开发的要饭网站 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/12/31/e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9f-ba-e4-ba-8e-e6-9c-89-e8-b5-9e-e5-bc-80-e5-8f-91-e7-9a-84-e8-a6-81-e9-a5-ad-e7-bd-91-e7-ab-99/"><meta property="og:locale" content="en"><meta name="description" content="说明：现在的要饭网站越来越多，好像很多都是用的烟雨要饭源码，而本文所使用的系统前端是仿烟雨的，所以界面是差不多的，该系统基于Python开发的，使用的有赞支付接口，这里发下搭建教程，有兴趣的可以搭建一个玩玩，说不定真有土豪打赏。 截图 准备提前注册好有赞(注册链接)，注册好有赞之后，再注册有赞云(注册链接)个人开发者。 再创建可授权店铺: 微商城店铺或者有赞微小店都可以(建议使用有赞微小店)。前者 - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/yaofan(2).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/yaofan(1).png"><meta property="article:published_time" content="2019-12-31T10:53:57.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.241Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.241Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2019/12/31/e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9f-ba-e4-ba-8e-e6-9c-89-e8-b5-9e-e5-bc-80-e5-8f-91-e7-9a-84-e8-a6-81-e9-a5-ad-e7-bd-91-e7-ab-99/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2019/12/31/e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9f-ba-e4-ba-8e-e6-9c-89-e8-b5-9e-e5-bc-80-e5-8f-91-e7-9a-84-e8-a6-81-e9-a5-ad-e7-bd-91-e7-ab-99/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2019/12/31/e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9f-ba-e4-ba-8e-e6-9c-89-e8-b5-9e-e5-bc-80-e5-8f-91-e7-9a-84-e8-a6-81-e9-a5-ad-e7-bd-91-e7-ab-99/"
+    },
+    "headline": "搭建一个基于有赞开发的要饭网站 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-31T10:53:57.000Z",
+    "dateModified": "2020-04-24T09:34:44.241Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：现在的要饭网站越来越多，好像很多都是用的烟雨要饭源码，而本文所使用的系统前端是仿烟雨的，所以界面是差不多的，该系统基于Python开发的，使用的有赞支付接口，这里发下搭建教程，有兴趣的可以搭建一个玩玩，说不定真有土豪打赏。 截图 准备提前注册好有赞(注册链接)，注册好有赞之后，再注册有赞云(注册链接)个人开发者。 再创建可授权店铺: 微商城店铺或者有赞微小店都可以(建议使用有赞微小店)。前者 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=搭建一个基于有赞开发的要饭网站" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=搭建一个基于有赞开发的要饭网站&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=搭建一个基于有赞开发的要饭网站" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEHElEQVR42u3cW27bQBAFUe1/085voIh965IOwKZKP4YtiZwzAYb9Ql4/X/B6iRQpUqRIkReRr+H192feP//+3cMbvb33/t3396b7fvrsuG6RIpcim8VN3/mEeN+UI+jRz6PNJOsWKXIzkixouvnRIj4tJh0u9ACc1i1S5JORFH8ESw/9o4f8UQAiUuS3I+lBQg4R+lkSzIsU+WQkDbQ/Jc0TeDp0UmDRHGaXshCRIm+GJBe/489fq9aJFHkjZGyanHjQ0+CcFKbJPS53tUSKvBGSLJh+Zvob3ZApUKg3WKTIhyCPFk4PgSvNnmmT2maUSJGbkWlwgRR1SXNmgqbDhgxQjAePSJELkOkhTBNW0nAlAxip+VMNc4gUuRQ53aAq5sLGbArQm0T7UiFLpMibIs8cME1DdXr/SoAeB5pEilyIJIPtdIiJBgapiNUMQ4yBvEiRi5HNkN70ACfBdAoyyH0vNXxEirwxMj1Up6ITSWqngIFuVrp3bPiIFLkMSQq+zfB7KlpPTaGjhJlee6wMiBS5BEmarXQAnj7kCSQ1eePnRIpcihybJsXwO02eyWaQ4YoqQBcpcgmSDDqkB3EKyJvBCdLwocUskSI3IlMx91SyGho8JLGmB9DY/BEpcjEyLZQExGSgoh0cvjS0IVLkUmTbVCGHUDrI0tBSCvjJmkWK3I6kxatUUCYDfnTYgjabYoAuUuQSJE1Y6QObXI8iUwE6NqVEilyInJqkpFDVJLXNgdPcH1fQRYpcgiRDB+1Q0RSktw0fsp6PFpEilyLPDEOQ4IA2cEmhrB3aECnyach2aIGi2qbN1BA+FaCLFHlzZBMUtwVn8t4UtKfgIf6DiBS5FNkUdZuGDklu6eGGB3lf4H/qFSnyxkhy8eahTQcZpgIV3bx4TZEilyLbRktKfpuGEB12oNcRKfJpyLQIEjyTQYYzD35S0MbDSiJF3hhJhg/oAZUK0aSZmjYpJcsiRW5GtskvPWR+wCttVhugx8qASJELkKnxmRbdFpSb5Jg2Z6sAXaTIRUgyKDgNLKQCU9qM6XcSvPyzaSJFLkemQm8TeLcFsiaZPpWFiBS5EEmSVdLYIY2g3xqcGO8hUuRi5FRUooVgMkx0ZrHtAIVIkZuRtJD7v4ZyzybLVYAuUuQiZHMhcmicAR4ddleDdJEityLbhJcMLNHkN62BBvMfN1ikyOVIgpkKTqkJRAcimuYTbviIFLkE2R4KNBAgSXITaJCCVsxCRIpcgpwCg7NNH9LIoYMSzTCFSJFPQZ45ANLN24B6KpA1SbRIkd+KTAfRVHBK10gJ9FQUFynyW5BksXTwKTVZU5GrTppFilyGpBdMv9PB3SaQp0H96aRZpMibIdMF20DhzPdIgt4UvUWK3Ip88kukSJEiRYo8+foDZWDkUDB6xtgAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">搭建一个基于有赞开发的要饭网站</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-31</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=搭建一个基于有赞开发的要饭网站&url=http://hexo.southcat.net/2019/12/31/e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9f-ba-e4-ba-8e-e6-9c-89-e8-b5-9e-e5-bc-80-e5-8f-91-e7-9a-84-e8-a6-81-e9-a5-ad-e7-bd-91-e7-ab-99/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=搭建一个基于有赞开发的要饭网站&url=http://hexo.southcat.net/2019/12/31/e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9f-ba-e4-ba-8e-e6-9c-89-e8-b5-9e-e5-bc-80-e5-8f-91-e7-9a-84-e8-a6-81-e9-a5-ad-e7-bd-91-e7-ab-99/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/12/31/e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9f-ba-e4-ba-8e-e6-9c-89-e8-b5-9e-e5-bc-80-e5-8f-91-e7-9a-84-e8-a6-81-e9-a5-ad-e7-bd-91-e7-ab-99/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/12/31/e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9f-ba-e4-ba-8e-e6-9c-89-e8-b5-9e-e5-bc-80-e5-8f-91-e7-9a-84-e8-a6-81-e9-a5-ad-e7-bd-91-e7-ab-99/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/12/31/e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9f-ba-e4-ba-8e-e6-9c-89-e8-b5-9e-e5-bc-80-e5-8f-91-e7-9a-84-e8-a6-81-e9-a5-ad-e7-bd-91-e7-ab-99/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/12/31/e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9f-ba-e4-ba-8e-e6-9c-89-e8-b5-9e-e5-bc-80-e5-8f-91-e7-9a-84-e8-a6-81-e9-a5-ad-e7-bd-91-e7-ab-99/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/12/31/e6-90-ad-e5-bb-ba-e4-b8-80-e4-b8-aa-e5-9f-ba-e4-ba-8e-e6-9c-89-e8-b5-9e-e5-bc-80-e5-8f-91-e7-9a-84-e8-a6-81-e9-a5-ad-e7-bd-91-e7-ab-99/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEHElEQVR42u3cW27bQBAFUe1/085voIh965IOwKZKP4YtiZwzAYb9Ql4/X/B6iRQpUqRIkReRr+H192feP//+3cMbvb33/t3396b7fvrsuG6RIpcim8VN3/mEeN+UI+jRz6PNJOsWKXIzkixouvnRIj4tJh0u9ACc1i1S5JORFH8ESw/9o4f8UQAiUuS3I+lBQg4R+lkSzIsU+WQkDbQ/Jc0TeDp0UmDRHGaXshCRIm+GJBe/489fq9aJFHkjZGyanHjQ0+CcFKbJPS53tUSKvBGSLJh+Zvob3ZApUKg3WKTIhyCPFk4PgSvNnmmT2maUSJGbkWlwgRR1SXNmgqbDhgxQjAePSJELkOkhTBNW0nAlAxip+VMNc4gUuRQ53aAq5sLGbArQm0T7UiFLpMibIs8cME1DdXr/SoAeB5pEilyIJIPtdIiJBgapiNUMQ4yBvEiRi5HNkN70ACfBdAoyyH0vNXxEirwxMj1Up6ITSWqngIFuVrp3bPiIFLkMSQq+zfB7KlpPTaGjhJlee6wMiBS5BEmarXQAnj7kCSQ1eePnRIpcihybJsXwO02eyWaQ4YoqQBcpcgmSDDqkB3EKyJvBCdLwocUskSI3IlMx91SyGho8JLGmB9DY/BEpcjEyLZQExGSgoh0cvjS0IVLkUmTbVCGHUDrI0tBSCvjJmkWK3I6kxatUUCYDfnTYgjabYoAuUuQSJE1Y6QObXI8iUwE6NqVEilyInJqkpFDVJLXNgdPcH1fQRYpcgiRDB+1Q0RSktw0fsp6PFpEilyLPDEOQ4IA2cEmhrB3aECnyach2aIGi2qbN1BA+FaCLFHlzZBMUtwVn8t4UtKfgIf6DiBS5FNkUdZuGDklu6eGGB3lf4H/qFSnyxkhy8eahTQcZpgIV3bx4TZEilyLbRktKfpuGEB12oNcRKfJpyLQIEjyTQYYzD35S0MbDSiJF3hhJhg/oAZUK0aSZmjYpJcsiRW5GtskvPWR+wCttVhugx8qASJELkKnxmRbdFpSb5Jg2Z6sAXaTIRUgyKDgNLKQCU9qM6XcSvPyzaSJFLkemQm8TeLcFsiaZPpWFiBS5EEmSVdLYIY2g3xqcGO8hUuRi5FRUooVgMkx0ZrHtAIVIkZuRtJD7v4ZyzybLVYAuUuQiZHMhcmicAR4ddleDdJEityLbhJcMLNHkN62BBvMfN1ikyOVIgpkKTqkJRAcimuYTbviIFLkE2R4KNBAgSXITaJCCVsxCRIpcgpwCg7NNH9LIoYMSzTCFSJFPQZ45ANLN24B6KpA1SbRIkd+KTAfRVHBK10gJ9FQUFynyW5BksXTwKTVZU5GrTppFilyGpBdMv9PB3SaQp0H96aRZpMibIdMF20DhzPdIgt4UvUWK3Ip88kukSJEiRYo8+foDZWDkUDB6xtgAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#准备"><span class="post-toc-number">2.</span> <span class="post-toc-text">准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>现在的要饭网站越来越多，好像很多都是用的烟雨要饭源码，而本文所使用的系统前端是仿烟雨的，所以界面是差不多的，该系统基于<code>Python</code>开发的，使用的有赞支付接口，这里发下搭建教程，有兴趣的可以搭建一个玩玩，说不定真有土豪打赏。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/yaofan(2).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>提前注册好有赞(注册链接)，注册好有赞之后，再注册有赞云(注册链接)个人开发者。</p>
+<p>再创建可授权店铺: <code>微商城店铺</code>或者<code>有赞微小店</code>都可以(建议使用<code>有赞微小店</code>)。前者面向商家提供功能完善的线上商城，后者面向个人提供分销商品和自营工具可免费使用。</p>
+<p>创建完店铺后，再登录到有赞云控制台创建自用型应用并授权刚创建的店铺。</p>
+<p>授权完成后，进入有赞云后台，点击应用设置，获取<code>client_id</code>、<code>client_secret</code>、<code>店铺id</code>。</p>
+<p>最后需要开启有赞推送消息，开启之后有赞才会在支付成功之后回调信息到你的服务器，先进入开启地址(点击开启)，开启推送服务，推送网址格式为：<code>http://xx.com/order_msg</code>，推送配置勾选：交易消息<code>V3</code>-交易支付<br><img src="https://www.southcat.net/usr/picture/yaofan(1).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/abbeyokgo/youzan_yaofan" target="_blank" rel="noopener">https://github.com/abbeyokgo/youzan_yaofan</a></p>
+<p><strong>1、安装宝塔</strong></p>
+<pre><code>#Centos系统
+yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh
+#Ubuntu系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; sudo bash install.sh
+#Debian系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; bash install.sh</code></pre><p>安装完成后，进入面板，点击左侧软件管理，然后安装<code>Nginx</code>、<code>Mysql</code>、<code>phpmyadmin</code>。</p>
+<p><strong>2、拉取源码</strong><br>使用命令：</p>
+<pre><code>#拉取源码，并命名为yaofan
+git clone https://github.com/abbeyokgo/youzan_yaofan.git yaofan</code></pre><p><strong>3、安装依赖</strong></p>
+<pre><code>cd /root/yaofan
+pip install -r requirement.txt</code></pre><p><strong>4、新建数据库</strong><br>点击面板左侧数据库，点击<code>phpmyadmin</code>进入数据库管理界面，新建<code>yaofan</code>数据库。</p>
+<p><strong>5、编辑源码</strong><br>编辑<code>app/youzan/yz_config.py</code>，填入之前获取到的<code>client_id</code>、<code>client_secret</code>、<code>店铺id</code>。</p>
+<p>修改目录<code>config.py</code>，将<code>sqlite</code>一行用#注释掉，并将<code>mysql</code>前面的#给消除掉，修改如下：</p>
+<pre><code># SQLALCHEMY_DATABASE_URI = &apos;sqlite:///&apos; + os.path.join(basedir, &apos;data.sqlite&apos;)
+SQLALCHEMY_DATABASE_URI = &apos;mysql+pymysql://user:password@localhost/db&apos;</code></pre><p><code>user</code>、<code>password</code>、<code>db</code>依次填你的数据库用户名，密码，数据库名称。</p>
+<p><strong>6、初始化数据库</strong></p>
+<pre><code>python run.py deploy</code></pre><p><strong>7、运行</strong></p>
+<pre><code>gunicorn -w4 -b 0:35000 run:app</code></pre><p>然后就可以访问<code>http://ip:35000</code>，如果访问不了，请在宝塔的安全里开启端口。</p>
+<p>觉得没问题了，那就使用<code>screen</code>在后台运行，教程参考：使用screen来实现多任务不断线操作命令。</p>
+<p><strong>8、绑定域名</strong><br>点击左侧网站，添加站点，然后再点击添加好了的域名名称，这时候就进入了站点配置，点击反向代理，目标<code>URL</code>填入<code>http://127.0.0.1:35000</code>，再启用反向代理即可。</p>
+<p><strong>9、设置开机启动</strong><br>修改源码目录的<code>supervisord.conf</code>，主要修改源码目录和端口号<br>运行：</p>
+<pre><code>echo &apos;supervisord -c 源码目录/supervisord.conf&apos; &gt;&gt; /etc/rc.d/rc.local
+chmod +x /etc/rc.d/rc.local
+
+
+#修改成上海时间
+cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-31T10:53:57.000Z" itemprop="datePublished">2019-12-31</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.241Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/31/e7-bb-88-e4-ba-8e-e6-89-be-e5-88-b0-e4-ba-86-e5-b9-95-e5-90-8e-e9-bb-91-e6-89-8b/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">终于找到了幕后黑手</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/31/cloud-torrent-ef-bc-9a-e6-94-af-e6-8c-81bt-e4-b8-8b-e8-bd-bd-e7-a3-81-e5-8a-9b-e4-b8-8b-e8-bd-bd-e8-be-b9-e4-b8-8b-e8-be-b9-e6-92-ad/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Cloud Torrent：支持BT下载/磁力下载/边下边播</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

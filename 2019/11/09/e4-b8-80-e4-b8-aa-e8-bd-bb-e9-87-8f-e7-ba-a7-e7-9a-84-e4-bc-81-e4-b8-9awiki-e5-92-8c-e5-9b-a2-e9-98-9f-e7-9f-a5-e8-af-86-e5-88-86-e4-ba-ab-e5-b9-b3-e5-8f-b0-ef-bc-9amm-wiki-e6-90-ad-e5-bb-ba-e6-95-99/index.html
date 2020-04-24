@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>一个轻量级的企业Wiki和团队知识分享平台：MM-Wiki搭建教程 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="一个轻量级的企业Wiki和团队知识分享平台：MM-Wiki搭建教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/11/09/e4-b8-80-e4-b8-aa-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-9a-84-e4-bc-81-e4-b8-9awiki-e5-92-8c-e5-9b-a2-e9-98-9f-e7-9f-a5-e8-af-86-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9amm-wiki-e6-90-ad-e5-bb-ba-e6-95-99/"><meta property="og:locale" content="en"><meta name="description" content="说明：很早前有小伙伴问了下有没有团队wiki程序，最近好像看到了个MM-Wiki，感觉还不错，一个轻量级的企业知识分享与团队协同软件，可用于快速构建企业Wiki和团队知识分享平台。部署方便，使用简单，帮助团队构建一个信息共享、文档管理的协作环境，安装也是很简单的，毕竟是基于Golang，这里就介绍下。 截图 特点 部署方便，基于golang编写，只需要下载对于平台下二进制文件执行即可。 快速安装程 - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/MM-Wiki(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/MM-Wiki(2).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/MM-Wiki(3).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/MM-Wiki(4).png"><meta property="article:published_time" content="2019-11-09T08:31:22.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.233Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.233Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2019/11/09/e4-b8-80-e4-b8-aa-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-9a-84-e4-bc-81-e4-b8-9awiki-e5-92-8c-e5-9b-a2-e9-98-9f-e7-9f-a5-e8-af-86-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9amm-wiki-e6-90-ad-e5-bb-ba-e6-95-99/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2019/11/09/e4-b8-80-e4-b8-aa-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-9a-84-e4-bc-81-e4-b8-9awiki-e5-92-8c-e5-9b-a2-e9-98-9f-e7-9f-a5-e8-af-86-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9amm-wiki-e6-90-ad-e5-bb-ba-e6-95-99/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2019/11/09/e4-b8-80-e4-b8-aa-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-9a-84-e4-bc-81-e4-b8-9awiki-e5-92-8c-e5-9b-a2-e9-98-9f-e7-9f-a5-e8-af-86-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9amm-wiki-e6-90-ad-e5-bb-ba-e6-95-99/"
+    },
+    "headline": "一个轻量级的企业Wiki和团队知识分享平台：MM-Wiki搭建教程 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-11-09T08:31:22.000Z",
+    "dateModified": "2020-04-24T09:34:44.233Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：很早前有小伙伴问了下有没有团队wiki程序，最近好像看到了个MM-Wiki，感觉还不错，一个轻量级的企业知识分享与团队协同软件，可用于快速构建企业Wiki和团队知识分享平台。部署方便，使用简单，帮助团队构建一个信息共享、文档管理的协作环境，安装也是很简单的，毕竟是基于Golang，这里就介绍下。 截图 特点 部署方便，基于golang编写，只需要下载对于平台下二进制文件执行即可。 快速安装程 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=一个轻量级的企业Wiki和团队知识分享平台：MM-Wiki搭建教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=一个轻量级的企业Wiki和团队知识分享平台：MM-Wiki搭建教程&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=一个轻量级的企业Wiki和团队知识分享平台：MM-Wiki搭建教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFVklEQVR42u2cQW4bQRAD9f9Py1fHmG4WR7oEW7oYNqTVTi3AdJNEXm9f75cIhCAEIQhBCEJYIbyW1z8f+PW308/f7//79+lz0/u3eyPvp+cSghCEcIZwFI1wcXKT0/Wnz6QHQa+BzyUEIQhhhJBELEHYYG0CmD5Lr5/E8/iAhCAEIVxDSII3vZ/+TgFNQpcemhCEIITvC+MGZBOptNCkw6albvo+IQhBCPcQNsG5Ea0NxGTWkEMTwf36FikEITwMQhKr//Xn19xmIQjhQRBiaAnMzu3L6cCTzNRGyL+eSgtBCA+CkIIUGnRMy8u0bKXvaoKhbaDaghwhCEEIszCmpYUYqmToIksZEeBomJDrCkEIQogQklGZTMymfNUIZjJySEFsNFWEIAQhxIWElrRo4NKEtXQQS0vbJuxCEIIQZmEkh4rLSHENGsZsgtvcIzJahSAEIcRFoylV0gCXhrxN0fN6cBKCEISwGq3kIqnkuRW7qMFKRZMctpoYhSAEIeDFaDo4GaDScEU+f/PebQETghCEkE2VVqiSMCaxIibujQGDwQlBCEJApgopPxGDYwtym0BmC16SWOOShhCEIAS0mKBFZFlmEpxtWUqhUDNEHQEKQQhCqISRLlNEuFrxpaZJut51ICsEITwcAjVLmjIFLXYSEyaFMukax78JQQhCQOFLCmaSAUPLWdRwpctUAlYFskIQghCieFFDgww+SRA32Nv7ifEjBCEIIfsJt8MIMULb5YwuUNRwFYIQhMAhJJO0FT5S7qQF0Jvgt1qqhCAEIRyFMRksKVAhhS0qoHTYIsNbHKaEIAQhoEA2hZ4pQKUmCwF0U9gipo4QhCCEvEDR8gUZlNIAlIacdK2bAUsIQhACg5AORUoV6WaIWdoaOZuJSwqdQhCCEGYIn9xUupmb0gdZ1m5Kp0IQghAyBBKmtCFoWrRa87UZonDQLAQhCGGFkESQfFEyWWkwQochKuLYWRKCEB4O4UYIk/ik4hQ9CAmH6QM5nkcIQhBCtUDRG95CjtYU3a7TFM1S8CIEIQghF7caUaSFjFTEoOFKW8JI4a8QhCCEd8wi6YG2gKUpVZBFhzwMUuo43qsQhCCEcYFK5kcT2jai1SxQJKglxqsQhCCEnDukYgUNWeiQ1ZgzaUlKDwH96yAEIQghGiPJzEjLTGuQ0nLFZqw0D0IIQhDCDCGJ2DdEighfGwCR5Qw7S0IQghBwgJlEjpQ3qSA2ww8Bj7ZIIQhBCDHE+CQEpQdIN0rKXaTshRYoIQhBCPFCrTlKDZdkhLZGLyplpOKWEIQghMqEIOYrKXEl06QxX8jDE4IQhMAhkIJDA2Urf5Ih6nbgSmEOXqCEIISHQ6BGZVu0IlCIcZMO1IQ+MZUWghCE8E4mBjUv0/BEDrENPeT+GoNXCEIQQj8nbMI0Bai0SNEGskRg64VKCEIQwnGB2gaVrVBFFqa2bHXzvW0BTQhCEAL/D+2JudIWuahR0g5PpBiyGsNCEIIQRgjtTdNSFjVsaEhDSmLExBWCEITwimXOFGZQU4OEKOQaZIhqyiZCEIIQOghNUYMegApwA5gsUEQshSAEIbAFajNCGmOVmK3xRssSVzJjhCAEIewQaMBBw1Z6U58UvemyFoNaIQhBCGP40gYlrbjdDkfJXCX3hkwVIQhBCG8qLI2hkYoYN4ULWtKqyx1CEIIQriEQYWqGnm0xSwZOCoCwUApBCEL4CEIKTGnBigasN++ffheCEITQQUjlLQLk1vxIpgwFRK8nBCEIYYeQgkwyvJDhKokwKXQkYSbLmxCEIIRXLHM+8SUEIQhBCEIQghCOrx+2QQbwEdVEFwAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">一个轻量级的企业Wiki和团队知识分享平台：MM-Wiki搭建教程</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-11-09</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=一个轻量级的企业Wiki和团队知识分享平台：MM-Wiki搭建教程&url=http://hexo.southcat.net/2019/11/09/e4-b8-80-e4-b8-aa-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-9a-84-e4-bc-81-e4-b8-9awiki-e5-92-8c-e5-9b-a2-e9-98-9f-e7-9f-a5-e8-af-86-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9amm-wiki-e6-90-ad-e5-bb-ba-e6-95-99/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=一个轻量级的企业Wiki和团队知识分享平台：MM-Wiki搭建教程&url=http://hexo.southcat.net/2019/11/09/e4-b8-80-e4-b8-aa-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-9a-84-e4-bc-81-e4-b8-9awiki-e5-92-8c-e5-9b-a2-e9-98-9f-e7-9f-a5-e8-af-86-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9amm-wiki-e6-90-ad-e5-bb-ba-e6-95-99/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/11/09/e4-b8-80-e4-b8-aa-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-9a-84-e4-bc-81-e4-b8-9awiki-e5-92-8c-e5-9b-a2-e9-98-9f-e7-9f-a5-e8-af-86-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9amm-wiki-e6-90-ad-e5-bb-ba-e6-95-99/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/11/09/e4-b8-80-e4-b8-aa-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-9a-84-e4-bc-81-e4-b8-9awiki-e5-92-8c-e5-9b-a2-e9-98-9f-e7-9f-a5-e8-af-86-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9amm-wiki-e6-90-ad-e5-bb-ba-e6-95-99/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/11/09/e4-b8-80-e4-b8-aa-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-9a-84-e4-bc-81-e4-b8-9awiki-e5-92-8c-e5-9b-a2-e9-98-9f-e7-9f-a5-e8-af-86-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9amm-wiki-e6-90-ad-e5-bb-ba-e6-95-99/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/11/09/e4-b8-80-e4-b8-aa-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-9a-84-e4-bc-81-e4-b8-9awiki-e5-92-8c-e5-9b-a2-e9-98-9f-e7-9f-a5-e8-af-86-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9amm-wiki-e6-90-ad-e5-bb-ba-e6-95-99/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/11/09/e4-b8-80-e4-b8-aa-e8-bd-bb-e9-87-8f-e7-ba-a7-e7-9a-84-e4-bc-81-e4-b8-9awiki-e5-92-8c-e5-9b-a2-e9-98-9f-e7-9f-a5-e8-af-86-e5-88-86-e4-ba-ab-e5-b9-b3-e5-8f-b0-ef-bc-9amm-wiki-e6-90-ad-e5-bb-ba-e6-95-99/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFVklEQVR42u2cQW4bQRAD9f9Py1fHmG4WR7oEW7oYNqTVTi3AdJNEXm9f75cIhCAEIQhBCEJYIbyW1z8f+PW308/f7//79+lz0/u3eyPvp+cSghCEcIZwFI1wcXKT0/Wnz6QHQa+BzyUEIQhhhJBELEHYYG0CmD5Lr5/E8/iAhCAEIVxDSII3vZ/+TgFNQpcemhCEIITvC+MGZBOptNCkw6albvo+IQhBCPcQNsG5Ea0NxGTWkEMTwf36FikEITwMQhKr//Xn19xmIQjhQRBiaAnMzu3L6cCTzNRGyL+eSgtBCA+CkIIUGnRMy8u0bKXvaoKhbaDaghwhCEEIszCmpYUYqmToIksZEeBomJDrCkEIQogQklGZTMymfNUIZjJySEFsNFWEIAQhxIWElrRo4NKEtXQQS0vbJuxCEIIQZmEkh4rLSHENGsZsgtvcIzJahSAEIcRFoylV0gCXhrxN0fN6cBKCEISwGq3kIqnkuRW7qMFKRZMctpoYhSAEIeDFaDo4GaDScEU+f/PebQETghCEkE2VVqiSMCaxIibujQGDwQlBCEJApgopPxGDYwtym0BmC16SWOOShhCEIAS0mKBFZFlmEpxtWUqhUDNEHQEKQQhCqISRLlNEuFrxpaZJut51ICsEITwcAjVLmjIFLXYSEyaFMukax78JQQhCQOFLCmaSAUPLWdRwpctUAlYFskIQghCieFFDgww+SRA32Nv7ifEjBCEIIfsJt8MIMULb5YwuUNRwFYIQhMAhJJO0FT5S7qQF0Jvgt1qqhCAEIRyFMRksKVAhhS0qoHTYIsNbHKaEIAQhoEA2hZ4pQKUmCwF0U9gipo4QhCCEvEDR8gUZlNIAlIacdK2bAUsIQhACg5AORUoV6WaIWdoaOZuJSwqdQhCCEGYIn9xUupmb0gdZ1m5Kp0IQghAyBBKmtCFoWrRa87UZonDQLAQhCGGFkESQfFEyWWkwQochKuLYWRKCEB4O4UYIk/ik4hQ9CAmH6QM5nkcIQhBCtUDRG95CjtYU3a7TFM1S8CIEIQghF7caUaSFjFTEoOFKW8JI4a8QhCCEd8wi6YG2gKUpVZBFhzwMUuo43qsQhCCEcYFK5kcT2jai1SxQJKglxqsQhCCEnDukYgUNWeiQ1ZgzaUlKDwH96yAEIQghGiPJzEjLTGuQ0nLFZqw0D0IIQhDCDCGJ2DdEighfGwCR5Qw7S0IQghBwgJlEjpQ3qSA2ww8Bj7ZIIQhBCDHE+CQEpQdIN0rKXaTshRYoIQhBCPFCrTlKDZdkhLZGLyplpOKWEIQghMqEIOYrKXEl06QxX8jDE4IQhMAhkIJDA2Urf5Ih6nbgSmEOXqCEIISHQ6BGZVu0IlCIcZMO1IQ+MZUWghCE8E4mBjUv0/BEDrENPeT+GoNXCEIQQj8nbMI0Bai0SNEGskRg64VKCEIQwnGB2gaVrVBFFqa2bHXzvW0BTQhCEAL/D+2JudIWuahR0g5PpBiyGsNCEIIQRgjtTdNSFjVsaEhDSmLExBWCEITwimXOFGZQU4OEKOQaZIhqyiZCEIIQOghNUYMegApwA5gsUEQshSAEIbAFajNCGmOVmK3xRssSVzJjhCAEIewQaMBBw1Z6U58UvemyFoNaIQhBCGP40gYlrbjdDkfJXCX3hkwVIQhBCG8qLI2hkYoYN4ULWtKqyx1CEIIQriEQYWqGnm0xSwZOCoCwUApBCEL4CEIKTGnBigasN++ffheCEITQQUjlLQLk1vxIpgwFRK8nBCEIYYeQgkwyvJDhKokwKXQkYSbLmxCEIIRXLHM+8SUEIQhBCEIQghCOrx+2QQbwEdVEFwAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#特点"><span class="post-toc-number">2.</span> <span class="post-toc-text">特点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#域名访问"><span class="post-toc-number">4.</span> <span class="post-toc-text">域名访问</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>很早前有小伙伴问了下有没有团队<code>wiki</code>程序，最近好像看到了个<code>MM-Wiki</code>，感觉还不错，一个轻量级的企业知识分享与团队协同软件，可用于快速构建企业<code>Wiki</code>和团队知识分享平台。部署方便，使用简单，帮助团队构建一个信息共享、文档管理的协作环境，安装也是很简单的，毕竟是基于<code>Golang</code>，这里就介绍下。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/MM-Wiki(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/MM-Wiki(2).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/MM-Wiki(3).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/MM-Wiki(4).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>部署方便，基于<code>golang</code>编写，只需要下载对于平台下二进制文件执行即可。</li>
+<li>快速安装程序, 提供方便的安装界面程序，无需任何手动操作。</li>
+<li>独立的空间，空间是一组文档的集合，一般为公司部门或者团队，空间下的文档相互独立。空间可根据需求设置空间访问级别。</li>
+<li>完善的系统权限管理，系统可以自定义角色，并为不同角色授予不同的权限。</li>
+<li>集成统一登录，本系统支持通过外部系统认证用户, 比如与公司的<code>LDAP</code>登录融合。具体请看登录认证功能。</li>
+<li>邮件通知功能，当开启邮件通知，文档更改会通知所有关注该文档的用户。</li>
+<li>文档具有分享和下载功能，目前只支持下载<code>MarkDown</code>源文件。</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/phachon/mm-wiki" target="_blank" rel="noopener">https://github.com/phachon/mm-wiki</a></p>
+<p><strong>1、安装Mysql</strong><br>你有宝塔的，直接在宝塔上安装<code>Mysql</code>，安装过的可以跳过，直接进行下一步，没有安装的可以手动安装下。</p>
+<pre><code>#CentOS 6系统
+rpm -ivh http://repo.mysql.com/mysql57-community-release-el6.rpm
+yum install mysql-community-server -y
+service mysqld start
+chkconfig mysqld on
+
+#CentOS 7系统
+rpm -ivh http://repo.mysql.com/mysql57-community-release-el7.rpm
+yum install mysql-community-server -y
+systemctl start mysqld
+systemctl enable mysqld
+
+#Debian/Ubuntu系统
+apt update
+apt install mysql-server -y</code></pre><p>如果<code>Debian</code>或<code>Ubuntu</code>在安装期间有弹出窗口要你输入密码就设置一个，没有的话密码就是空格。</p>
+<p>对于<code>CentOS</code>安装<code>MySQL 5.7</code>的时候会生成一个随机密码，使用命令查看：</p>
+<pre><code>grep &quot;password&quot; /var/log/mysqld.log
+#大致信息，******为密码
+[Note] A temporary password is generated for root@localhost: ******</code></pre><p>然后接下来<code>CentOS</code>和安装期间没要求输入密码的<code>Debian</code>或<code>Ubuntu</code>，就需要修改数据库密码：</p>
+<pre><code>#CentOS系统，第一行passwd为你上面看到的密码，第四行moerats为要修改的密码，均自行修改
+mysql -u root -ppasswd
+mysql&gt; set global validate_password_policy=0;
+mysql&gt; set global validate_password_length=4;
+mysql&gt; set password=password(&quot;moerats&quot;);
+mysql&gt; exit;
+
+#Debian、Ubuntu系统，第一行登录数据库的时候直接Enter跳过，第二行moerats为要修改的密码，自行修改
+mysql -u root -p
+mysql&gt; UPDATE mysql.user SET authentication_string=PASSWORD(&apos;moerats&apos;), PLUGIN=&apos;mysql_native_password&apos; WHERE USER=&apos;root&apos;;
+mysql&gt; exit;</code></pre><p>最后修改过密码的还需要重启数据库：</p>
+<pre><code>#CentOS 6
+service mysqld restart
+#CentOS 7
+systemctl restart mysqld
+#Debian和Ubuntu
+systemctl restart mysql</code></pre><p>此时<code>Mysql</code>算是安装完成了。</p>
+<p><strong>2、安装mmwiki</strong><br>先找到最新版本的二进制，地址→传送门，这里使用<code>Linux VPS</code>搭建，所以找到<code>Linux</code>版本即可，<code>32</code>位的为<code>386</code>，<code>64</code>位的为<code>amd64</code>。</p>
+<p>使用命令：</p>
+<pre><code>#创建并进入wiki目录
+mkdir /root/mmwiki
+cd $_
+#下载最新版二进制，这里为64位系统，32位自行替换二进制链接
+wget https://github.com/phachon/mm-wiki/releases/download/v0.1.3/mm-wiki-linux-amd64.tar.gz
+#解压并删除压缩包
+tar -zxvf mm-wiki-linux-amd64.tar.gz &amp;&amp; rm -rf mm-wiki-linux-amd64.tar.gz
+#安装程序，这里运行端口为9999，自行修改
+install/install --port=9999</code></pre><p>接下来访问<code>ip:9999</code>进入安装配置，如果你使用<code>ip</code>访问，监听地址填<code>0.0.0.0</code>，用域名的话，填<code>127.0.0.1</code>即可，监听端口可以继续填<code>9999</code>。</p>
+<p>对于<code>CentOS</code>系统，访问不了安装界面的话，还需要开启<code>9999</code>端口，开启如下：</p>
+<pre><code>#CentOS 6
+iptables -I INPUT -p tcp --dport 9999 -j ACCEPT
+service iptables save
+service iptables restart
+
+#CentOS 7
+firewall-cmd --zone=public --add-port=9999/tcp --permanent
+firewall-cmd --reload</code></pre><p>像阿里云等，还需要额外在安全组开放端口。</p>
+<p>配置好了后，再使用<code>Ctrl+C</code>断开运行，此时程序还没启动，接下来我们还需要启动下。</p>
+<p>先新建<code>Systemd</code>配置文件，只适用于<code>CentOS 7</code>、<code>Debian 8+</code>、<code>Ubuntu 16+</code>等。</p>
+<pre><code>#修改下mmwiki源码路径即可，然后一起复制到SSH运行
+cat &gt; /etc/systemd/system/mmwiki.service &lt;&lt;EOF
+[Unit]
+Description=mmwiki
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+PIDFile=/var/run/mmwiki.pid
+WorkingDirectory=/root/mmwiki
+ExecStart=/root/mmwiki/mm-wiki --conf conf/mm-wiki.conf
+RestartPreventExitStatus=23
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+EOF</code></pre><p>启动并开机自启：</p>
+<pre><code>systemctl start mmwiki
+systemctl enable mmwiki</code></pre><p>其它系统直接使用命令启动：</p>
+<pre><code>nohup /root/mmwiki/mm-wiki --conf conf/mm-wiki.conf &amp;</code></pre><p>此时访问地址就是<code>ip:9999</code>，即你安装的时候，填的监听端口<code>9999</code>或其它。如果你想设置域名，继续往下面看。</p>
+<h2 id="域名访问"><a href="#域名访问" class="headerlink" title="域名访问"></a>域名访问</h2><p>反代可以用<code>Nginx</code>、<code>Apache</code>、<code>Caddy</code>，这里只说宝塔和<code>Caddy</code>。如果你网站有宝塔，就可以使用宝塔进行反代，如果没有，建议使用第<code>2</code>种的<code>Caddy</code>反代，配置很快。</p>
+<p><strong>1、宝塔面板</strong><br>点击左侧网站，添加站点，然后再点击添加好了的域名名称，这时候就进入了站点配置，点击反向代理，目标<code>URL</code>填入<code>http://127.0.0.1:9999</code>，再启用反向代理，然后点击<code>SSL</code>，申请免费的<code>Let&#39;s Encrypt</code>证书，并强制<code>HTTPS</code>。</p>
+<p><strong>2、使用Caddy</strong><br>安装<code>Caddy</code>：</p>
+<pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh
+#备用地址
+wget -N --no-check-certificate https://www.southcat.net/usr/shell/Caddy/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh</code></pre><p>配置<code>Caddy</code>：</p>
+<pre><code>#以下全部内容是一个整体，请修改域名和反代端口后一起复制到SSH运行！
+echo &quot;www.southcat.net {
+ gzip
+ tls admin@southcat.net
+ proxy / 127.0.0.1:9999 {
+    header_upstream Host {host}
+    header_upstream X-Real-IP {remote}
+    header_upstream X-Forwarded-For {remote}
+    header_upstream X-Forwarded-Port {server_port}
+    header_upstream X-Forwarded-Proto {scheme}
+  }
+}&quot; &gt; /usr/local/caddy/Caddyfile</code></pre><p><code>tls</code>参数会自动帮你签发<code>ssl</code>证书，如果你要使用自己的<code>ssl</code>，改为<code>tls /root/xx.crt /root/xx.key</code>即可。后面为<code>ssl</code>证书路径。</p>
+<p>启动Caddy：</p>
+<pre><code>/etc/init.d/caddy start</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-11-09T08:31:22.000Z" itemprop="datePublished">2019-11-09</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.233Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/11/09/linux-e5-87-ba-e7-8e-b0no-targets-specified-and-no-makefile-found-e9-94-99-e8-af-af-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9-e6-b3-95/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux 出现&#34;No targets specified and no makefile found&#34;错误的解决方法</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/11/09/tinyportmapper-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-e4-b8-80-e9-94-ae-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e8-bd-ac-e5-8f-91udp-e5-92-8ctcp-e6-b5-81-e9-87-8f/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">tinyPortMapper端口转发一键脚本，可转发UDP和TCP流量</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

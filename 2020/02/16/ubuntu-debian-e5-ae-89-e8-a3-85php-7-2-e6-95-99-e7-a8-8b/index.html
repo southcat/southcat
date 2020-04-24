@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Ubuntu/Debian安装PHP 7.2教程 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Ubuntu&#x2F;Debian安装PHP 7.2教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/02/16/ubuntu-debian-e5-ae-89-e8-a3-85php-7-2-e6-95-99-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="适用系统：Ubuntu 16.04&#x2F;14.04、Debian 8&#x2F;9 添加软件源Ubuntu #安装软件源拓展工具 apt -y install software-properties-common  #添加PHP PPA源，需要按一次回车 add-apt-repository ppa:ondrej&#x2F;php   #更新软件源缓存 apt updateDebian #添加GPG wget -O &#x2F;e - John Doe - 南猫"><meta property="article:published_time" content="2020-02-16T14:07:24.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.249Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.249Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/02/16/ubuntu-debian-e5-ae-89-e8-a3-85php-7-2-e6-95-99-e7-a8-8b/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/02/16/ubuntu-debian-e5-ae-89-e8-a3-85php-7-2-e6-95-99-e7-a8-8b/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/02/16/ubuntu-debian-e5-ae-89-e8-a3-85php-7-2-e6-95-99-e7-a8-8b/"
+    },
+    "headline": "Ubuntu/Debian安装PHP 7.2教程 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-02-16T14:07:24.000Z",
+    "dateModified": "2020-04-24T09:34:44.249Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "适用系统：Ubuntu 16.04/14.04、Debian 8/9 添加软件源Ubuntu #安装软件源拓展工具 apt -y install software-properties-common  #添加PHP PPA源，需要按一次回车 add-apt-repository ppa:ondrej/php   #更新软件源缓存 apt updateDebian #添加GPG wget -O /e - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=Ubuntu/Debian安装PHP 7.2教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Ubuntu/Debian安装PHP 7.2教程&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=Ubuntu/Debian安装PHP 7.2教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAAAAAAYplnuAAACpUlEQVR42u3cy1akUBBEUf7/p3XkQOVmnLjAoBaHSXdrU2xqmZIvPb4+8DhEixYt+oXoYzh+nfDnYz9/PzsnfY5+/N81RYuG6NMv+hN0Qk7nTjdGHaJFN+gmmEgQT681oac3RLToO9HL4DgJIPIQIg8r0aKfQp+haFCmmxAt+in0KphWL7wsPsMNTefdluWJfj2aJjtP/3lbNS761ejY9BsaKiSJT4E9Bed211T0q9GpMTglOm0TMhUO0/VFi95BrwrT1YVJUzzddNOYFC2aokkTfLohmsynYiAFrGjRDboB0iFpmxDFGxctGqCnC5LmYVMU0KFQbECKFh3QJHjapJ42JpvCV7Roip7g6cXIwCgFOh5QiRYN0KsClQRgCro07CdvgmjRLXpnKE8ClyZYVWNetGiAps0WmuA0wTjdVLWFIFp00YBMCXyzxI0WUabgFy0aoNtgvAIjn0NNddGiQyA2L0IuEAfzZHjfJEyiRQ+FbQqwtqF+ZckFbUCKFj0UtrS4JclU22hEA3/RogGaDG9os5A+UNpkS7ToXXSzVJWWB9v/Vw30RYsu9j0Ickq0pjdhepigZqRo0RtoEjjNQ4Iuv5CHm2jRLZoM98kSSlPsksajaNEtOjUF01CTLlk1Q6ZqW0y06MXws1l+TT/kQJKxtAwTu6aiRRc/REn+TZbFaeGKzhctegNNFlJIQ35nOUC06DvRO01DshB+bBzLbxCiRQN0OkgTZxpw0gIYLcKIFg3QKSDoYJMmV2TAj7d6RYuGuceUyNDhThr8pEYOKmxFi77hl2bTBIoWGSR5Ei36KXQKPNK8wQl/aqqLFn0BTRo25KFBl2Pxgqxo0Rv5NC1Qp8WT1LCkwShaNEWTRgwpXGkTs23SiBbdoD/pEC1atOgXob8BcExaqC4nIFAAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Ubuntu/Debian安装PHP 7.2教程</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-02-16</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Ubuntu/Debian安装PHP 7.2教程&url=http://hexo.southcat.net/2020/02/16/ubuntu-debian-e5-ae-89-e8-a3-85php-7-2-e6-95-99-e7-a8-8b/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Ubuntu/Debian安装PHP 7.2教程&url=http://hexo.southcat.net/2020/02/16/ubuntu-debian-e5-ae-89-e8-a3-85php-7-2-e6-95-99-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/02/16/ubuntu-debian-e5-ae-89-e8-a3-85php-7-2-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/02/16/ubuntu-debian-e5-ae-89-e8-a3-85php-7-2-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/02/16/ubuntu-debian-e5-ae-89-e8-a3-85php-7-2-e6-95-99-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/02/16/ubuntu-debian-e5-ae-89-e8-a3-85php-7-2-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/02/16/ubuntu-debian-e5-ae-89-e8-a3-85php-7-2-e6-95-99-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAAAAAAYplnuAAACpUlEQVR42u3cy1akUBBEUf7/p3XkQOVmnLjAoBaHSXdrU2xqmZIvPb4+8DhEixYt+oXoYzh+nfDnYz9/PzsnfY5+/N81RYuG6NMv+hN0Qk7nTjdGHaJFN+gmmEgQT681oac3RLToO9HL4DgJIPIQIg8r0aKfQp+haFCmmxAt+in0KphWL7wsPsMNTefdluWJfj2aJjtP/3lbNS761ejY9BsaKiSJT4E9Bed211T0q9GpMTglOm0TMhUO0/VFi95BrwrT1YVJUzzddNOYFC2aokkTfLohmsynYiAFrGjRDboB0iFpmxDFGxctGqCnC5LmYVMU0KFQbECKFh3QJHjapJ42JpvCV7Roip7g6cXIwCgFOh5QiRYN0KsClQRgCro07CdvgmjRLXpnKE8ClyZYVWNetGiAps0WmuA0wTjdVLWFIFp00YBMCXyzxI0WUabgFy0aoNtgvAIjn0NNddGiQyA2L0IuEAfzZHjfJEyiRQ+FbQqwtqF+ZckFbUCKFj0UtrS4JclU22hEA3/RogGaDG9os5A+UNpkS7ToXXSzVJWWB9v/Vw30RYsu9j0Ickq0pjdhepigZqRo0RtoEjjNQ4Iuv5CHm2jRLZoM98kSSlPsksajaNEtOjUF01CTLlk1Q6ZqW0y06MXws1l+TT/kQJKxtAwTu6aiRRc/REn+TZbFaeGKzhctegNNFlJIQ35nOUC06DvRO01DshB+bBzLbxCiRQN0OkgTZxpw0gIYLcKIFg3QKSDoYJMmV2TAj7d6RYuGuceUyNDhThr8pEYOKmxFi77hl2bTBIoWGSR5Ei36KXQKPNK8wQl/aqqLFn0BTRo25KFBl2Pxgqxo0Rv5NC1Qp8WT1LCkwShaNEWTRgwpXGkTs23SiBbdoD/pEC1atOgXob8BcExaqC4nIFAAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加软件源"><span class="post-toc-number">1.</span> <span class="post-toc-text">添加软件源</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装PHP-7-2"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装PHP 7.2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置PHP-7-2"><span class="post-toc-number">3.</span> <span class="post-toc-text">设置PHP 7.2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#管理PHP-7-2"><span class="post-toc-number">4.</span> <span class="post-toc-text">管理PHP 7.2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更新PHP-7-2"><span class="post-toc-number">5.</span> <span class="post-toc-text">更新PHP 7.2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装更多组件"><span class="post-toc-number">6.</span> <span class="post-toc-text">安装更多组件</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>适用系统：</strong><code>Ubuntu 16.04</code>/<code>14.04</code>、<code>Debian 8</code>/<code>9</code></p>
+<h2 id="添加软件源"><a href="#添加软件源" class="headerlink" title="添加软件源"></a>添加软件源</h2><p><strong>Ubuntu</strong></p>
+<pre><code>#安装软件源拓展工具
+apt -y install software-properties-common
+
+#添加PHP PPA源，需要按一次回车
+add-apt-repository ppa:ondrej/php 
+
+#更新软件源缓存
+apt update</code></pre><p><strong>Debian</strong></p>
+<pre><code>#添加GPG
+wget -O /etc/apt/trusted.gpg.d/php.gpg https://mirror.xtom.com.hk/sury/php/apt.gpg
+
+#安装apt-transport-https
+apt-get install apt-transport-https
+
+#添加sury软件源
+sh -c &apos;echo &quot;deb https://packages.sury.org/php/ $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/php.list&apos;
+
+#更新软件源缓存
+apt-get update</code></pre><h2 id="安装PHP-7-2"><a href="#安装PHP-7-2" class="headerlink" title="安装PHP 7.2"></a>安装PHP 7.2</h2><p>运行以下命令：</p>
+<pre><code>apt install php7.2-fpm php7.2-mysql php7.2-curl php7.2-gd php7.2-mbstring php7.2-xml php7.2-xmlrpc php7.2-zip php7.2-opcache -y</code></pre><h2 id="设置PHP-7-2"><a href="#设置PHP-7-2" class="headerlink" title="设置PHP 7.2"></a>设置PHP 7.2</h2><p>安装完成后，编辑<code>/etc/php/7.2/fpm/php.ini</code>替换<code>;cgi.fix_pathinfo=1</code>为<code>cgi.fix_pathinfo=0</code>。</p>
+<p>快捷命令：</p>
+<pre><code>sed -i &apos;s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/&apos; /etc/php/7.2/fpm/php.ini </code></pre><h2 id="管理PHP-7-2"><a href="#管理PHP-7-2" class="headerlink" title="管理PHP 7.2"></a>管理PHP 7.2</h2><p>安装好了先重启一下！</p>
+<pre><code>systemctl restart php7.2-fpm</code></pre><p>更多操作：</p>
+<pre><code>systemctl restart php7.2-fpm  #重启
+systemctl start php7.2-fpm  #启动
+systemctl stop php7.2-fpm  #关闭
+systemctl status php7.2-fpm  #检查状态</code></pre><h2 id="更新PHP-7-2"><a href="#更新PHP-7-2" class="headerlink" title="更新PHP 7.2"></a>更新PHP 7.2</h2><p>运行下面的命令系统就会更新所有可以更新的软件包括<code>PHP</code></p>
+<pre><code>apt update
+apt upgrade -y</code></pre><h2 id="安装更多组件"><a href="#安装更多组件" class="headerlink" title="安装更多组件"></a>安装更多组件</h2><p>上面的一条命令安装<code>PHP</code>只是安装了部分<code>PHP</code>拓展，更多的软件可见：</p>
+<pre><code>root@service:~# apt-cache search php7.2
+
+php-radius - radius client library for PHP
+php-http - PECL HTTP module for PHP Extended HTTP Support
+php-uploadprogress - file upload progress tracking extension for PHP
+php-yaml - YAML-1.1 parser and emitter for PHP
+php-mongodb - MongoDB driver for PHP
+php-apcu - APC User Cache for PHP
+php-imagick - Provides a wrapper to the ImageMagick library
+php-ssh2 - Bindings for the libssh2 library
+php-redis - PHP extension for interfacing with Redis
+php-memcached - memcached extension module for PHP, uses libmemcached
+php-apcu-bc - APCu Backwards Compatibility Module
+php-rrd - PHP bindings to rrd tool system
+php-uuid - PHP UUID extension
+php-memcache - memcache extension module for PHP
+php-zmq - ZeroMQ messaging bindings for PHP
+php-igbinary - igbinary PHP serializer
+php-msgpack - PHP extension for interfacing with MessagePack
+php-geoip - GeoIP module for PHP
+php-tideways - Tideways PHP Profiler Extension
+php-yac - YAC (Yet Another Cache) for PHP
+php-mailparse - Email message manipulation for PHP
+php-oauth - OAuth 1.0 consumer and provider extension
+php-gnupg - PHP wrapper around the gpgme library
+php-propro - propro module for PHP
+php-raphf - raphf module for PHP
+php-solr - PHP extension for communicating with Apache Solr server
+php-stomp - Streaming Text Oriented Messaging Protocol (STOMP) client module for PHP
+php-gearman - PHP wrapper to libgearman
+php-phalcon - full-stack PHP framework delivered as a C-extension
+php-ds - PHP extension providing efficient data structures for PHP 7
+php-sass - PHP bindings to libsass - fast, native Sass parsing in PHP
+php-lua - PHP Embedded lua interpreter
+libapache2-mod-php7.2 - server-side, HTML-embedded scripting language (Apache 2 module)
+libphp7.2-embed - HTML-embedded scripting language (Embedded SAPI library)
+php7.2-bcmath - Bcmath module for PHP
+php7.2-bz2 - bzip2 module for PHP
+php7.2-cgi - server-side, HTML-embedded scripting language (CGI binary)
+php7.2-cli - command-line interpreter for the PHP scripting language
+php7.2-common - documentation, examples and common module for PHP
+php7.2-curl - CURL module for PHP
+php7.2-dba - DBA module for PHP
+php7.2-dev - Files for PHP7.2 module development
+php7.2-enchant - Enchant module for PHP
+php7.2-fpm - server-side, HTML-embedded scripting language (FPM-CGI binary)
+php7.2-gd - GD module for PHP
+php7.2-gmp - GMP module for PHP
+php7.2-imap - IMAP module for PHP
+php7.2-interbase - Interbase module for PHP
+php7.2-intl - Internationalisation module for PHP
+php7.2-json - JSON module for PHP
+php7.2-ldap - LDAP module for PHP
+php7.2-mbstring - MBSTRING module for PHP
+php7.2-mysql - MySQL module for PHP
+php7.2-odbc - ODBC module for PHP
+php7.2-opcache - Zend OpCache module for PHP
+php7.2-pgsql - PostgreSQL module for PHP
+php7.2-phpdbg - server-side, HTML-embedded scripting language (PHPDBG binary)
+php7.2-pspell - pspell module for PHP
+php7.2-readline - readline module for PHP
+php7.2-recode - recode module for PHP
+php7.2-snmp - SNMP module for PHP
+php7.2-soap - SOAP module for PHP
+php7.2-sqlite3 - SQLite3 module for PHP
+php7.2-sybase - Sybase module for PHP
+php7.2-tidy - tidy module for PHP
+php7.2-xml - DOM, SimpleXML, WDDX, XML, and XSL module for PHP
+php7.2-xmlrpc - XMLRPC-EPI module for PHP
+php7.2-zip - Zip module for PHP
+php7.2-xsl - XSL module for PHP (dummy)
+php7.2 - server-side, HTML-embedded scripting language (metapackage)
+php7.2-sodium - libsodium module for PHP</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-02-16T14:07:24.000Z" itemprop="datePublished">2020-02-16</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.249Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/02/17/typechoex-typecho-e5-8d-9a-e5-ae-a2-e7-a8-8b-e5-ba-8f-e4-ba-8c-e6-ac-a1-e5-bc-80-e5-8f-91-e5-b9-b3-e6-bb-91-e8-a6-86-e7-9b-96-e5-ae-89-e8-a3-85/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">TypechoEX-Typecho博客程序二次开发/平滑覆盖安装</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/02/16/e5-ae-89-e8-a3-85h5ai-e5-90-8e-ef-bc-8c-e6-96-87-e4-bb-b6-e8-af-bb-e5-8f-96-e4-b8-8d-e5-87-ba-e6-9d-a5-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9-e6-b3-95/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">安装h5ai后，文件读取不出来的解决方法</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

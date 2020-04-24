@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Typecho博客首页和分类页不显示文章全文 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Typecho博客首页和分类页不显示文章全文 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/03/14/typecho-e5-8d-9a-e5-ae-a2-e9-a6-96-e9-a1-b5-e5-92-8c-e5-88-86-e7-b1-bb-e9-a1-b5-e4-b8-8d-e6-98-be-e7-a4-ba-e6-96-87-e7-ab-a0-e5-85-a8-e6-96-87/"><meta property="og:locale" content="en"><meta name="description" content="方法1、登陆博客后台，把鼠标移至“控制台”，在下拉菜单中选择“外观”选项2、在进入的页面中点击“编辑当前外观”3、在index.php和archive.php文件找到代码 &amp;lt;?php $this-&amp;gt;content(&amp;apos;阅读剩余部分...&amp;apos;); ?&amp;gt;将其替换为 &amp;lt;?php $this-&amp;gt;excerpt(); ?&amp;gt;如果要按制摘要的输出字数，可以修改 - John Doe - 南猫"><meta property="article:published_time" content="2020-03-14T08:55:34.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.251Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.251Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/03/14/typecho-e5-8d-9a-e5-ae-a2-e9-a6-96-e9-a1-b5-e5-92-8c-e5-88-86-e7-b1-bb-e9-a1-b5-e4-b8-8d-e6-98-be-e7-a4-ba-e6-96-87-e7-ab-a0-e5-85-a8-e6-96-87/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/03/14/typecho-e5-8d-9a-e5-ae-a2-e9-a6-96-e9-a1-b5-e5-92-8c-e5-88-86-e7-b1-bb-e9-a1-b5-e4-b8-8d-e6-98-be-e7-a4-ba-e6-96-87-e7-ab-a0-e5-85-a8-e6-96-87/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/03/14/typecho-e5-8d-9a-e5-ae-a2-e9-a6-96-e9-a1-b5-e5-92-8c-e5-88-86-e7-b1-bb-e9-a1-b5-e4-b8-8d-e6-98-be-e7-a4-ba-e6-96-87-e7-ab-a0-e5-85-a8-e6-96-87/"
+    },
+    "headline": "Typecho博客首页和分类页不显示文章全文 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-03-14T08:55:34.000Z",
+    "dateModified": "2020-04-24T09:34:44.251Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "方法1、登陆博客后台，把鼠标移至“控制台”，在下拉菜单中选择“外观”选项2、在进入的页面中点击“编辑当前外观”3、在index.php和archive.php文件找到代码 &amp;amp;lt;?php $this-&amp;amp;gt;content(&amp;amp;apos;阅读剩余部分...&amp;amp;apos;); ?&amp;amp;gt;将其替换为 &amp;amp;lt;?php $this-&amp;amp;gt;excerpt(); ?&amp;amp;gt;如果要按制摘要的输出字数，可以修改 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=Typecho博客首页和分类页不显示文章全文" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Typecho博客首页和分类页不显示文章全文&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=Typecho博客首页和分类页不显示文章全文" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEIUlEQVR42u3awW7jMAxF0f7/T89siyDiu8/JwnRvNh0MXEdHQCmK5M+/P/D5ESlSpEiRIj9E/gyf38/EFx5+5/Te1+dfn333/tOzx3WLFLkUeVr0hEgLe4d5/Xl6ftqkZt0iRW5GvgsM5MvTYsnmTRt3gqV1ixT5ZOR0iJ++OAWtaRMmIFmfSJF/BZmCUUrMj4uBa5iSDZEin4acDvVmgaek/F0QIhuSLgBfuYWIFHkzJAkQd/z5tWqdSJE3QpKi8RRkribmKQknwedrXS2RIm+ETI2ZdhPeLbx5b0rQm/WKFLkR2RSGSfM1BZ2UcJANmpL1mAyIFHlzZBpOmC6tnzRImyEH2myK0VWkyAVIcrhPBzUpRNEmbFPYSkVukSK3I680V+mAAykyk2ScFrREityMTMUnklCT56cBCzp0QTZKpMgnIGmDhy4KH9YwiaADSsdkQKTIRUhymZ2KXSSopKbPFERoMevtposUuRxJFkYWmQ7rlOiTASdyeRApciOy+WOegsAnyXgbpFLDVqTI7UjayEl/+FNDliT9Vxo+Y1ASKfIBSFK4bRo7JAClxIAm6LjTLFLkEiQdiEjDg1Ojll7AU+JQJ+giRS5BkgYOQTaHPA1C9FJ+3FiRIpci02DSdEgnSNPwIQu/lKCLFLkQSV7WPE8LYWmx0ybgBF2kyKVIEkRSIEmX7imZQAVjMEghUuRm5NWE/MoCaQMnJfopiREp8gnINrlOi6JBpAkmdXFapMiFyGZIiQ4ckoU2Aaq5FOBqnUiRN0XSpLoZtKUJNd0Aui6RIp+ATMGHNlZpoZn+Li0mj80qkSIXIpvBCPJlqehF3pcawrTQLFLkViS5KDcDhGRxJBEn31FX60SKXIZs/j0FA1qEbv+/KjyLFLkYORWnpiBBBpeawEQbv+h3RIpciKQDQU0TtBl6ahJ0cqkYGz4iRS5AkpeloEQKVjTYpAZtSk5EinwSsgk8NLhMgwukCdwMLYkU+RTk1SGitllKEv8pwKSkITZ8RIpcgkyQ6WCmzRl6YaaJCBqeEilyOfJKg6YdfKANnzRkMQU1kSI3I5tDv0keUqAgDdXmgl4Vl0WKXIBMCTI9iK8mD/FgB5eEcUpSpMglyLSodFingnRzWU5DEl8bIBQp8sZIGmBS0bhpspKmbVPYOq5XpMilyDRwkA7+pgmbCs5NwydeJkSKXI68OvxwdVBiahaR4Yo0JCFS5EYkDQqkuDwNMNCGbSqYkUK1SJHbkRRDBpiaoSZ08Q2FNTzUK1LkMmQq2tLEfNqcFGRI87YJlCJFPhWZ/sivJBLtEDC9KMQpSZEiH4BshgbbwlW6TJPC1jHREClyMZI2WKdhXxoY2kt6ezEXKXI7kjZQyIWaDvfSoaQpyMUAJVLkQuSTPyJFihQpUuTFz38/fsZSSVVvMQAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Typecho博客首页和分类页不显示文章全文</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-03-14</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Typecho博客首页和分类页不显示文章全文&url=http://hexo.southcat.net/2020/03/14/typecho-e5-8d-9a-e5-ae-a2-e9-a6-96-e9-a1-b5-e5-92-8c-e5-88-86-e7-b1-bb-e9-a1-b5-e4-b8-8d-e6-98-be-e7-a4-ba-e6-96-87-e7-ab-a0-e5-85-a8-e6-96-87/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Typecho博客首页和分类页不显示文章全文&url=http://hexo.southcat.net/2020/03/14/typecho-e5-8d-9a-e5-ae-a2-e9-a6-96-e9-a1-b5-e5-92-8c-e5-88-86-e7-b1-bb-e9-a1-b5-e4-b8-8d-e6-98-be-e7-a4-ba-e6-96-87-e7-ab-a0-e5-85-a8-e6-96-87/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/03/14/typecho-e5-8d-9a-e5-ae-a2-e9-a6-96-e9-a1-b5-e5-92-8c-e5-88-86-e7-b1-bb-e9-a1-b5-e4-b8-8d-e6-98-be-e7-a4-ba-e6-96-87-e7-ab-a0-e5-85-a8-e6-96-87/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/03/14/typecho-e5-8d-9a-e5-ae-a2-e9-a6-96-e9-a1-b5-e5-92-8c-e5-88-86-e7-b1-bb-e9-a1-b5-e4-b8-8d-e6-98-be-e7-a4-ba-e6-96-87-e7-ab-a0-e5-85-a8-e6-96-87/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/03/14/typecho-e5-8d-9a-e5-ae-a2-e9-a6-96-e9-a1-b5-e5-92-8c-e5-88-86-e7-b1-bb-e9-a1-b5-e4-b8-8d-e6-98-be-e7-a4-ba-e6-96-87-e7-ab-a0-e5-85-a8-e6-96-87/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/03/14/typecho-e5-8d-9a-e5-ae-a2-e9-a6-96-e9-a1-b5-e5-92-8c-e5-88-86-e7-b1-bb-e9-a1-b5-e4-b8-8d-e6-98-be-e7-a4-ba-e6-96-87-e7-ab-a0-e5-85-a8-e6-96-87/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/03/14/typecho-e5-8d-9a-e5-ae-a2-e9-a6-96-e9-a1-b5-e5-92-8c-e5-88-86-e7-b1-bb-e9-a1-b5-e4-b8-8d-e6-98-be-e7-a4-ba-e6-96-87-e7-ab-a0-e5-85-a8-e6-96-87/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEIUlEQVR42u3awW7jMAxF0f7/T89siyDiu8/JwnRvNh0MXEdHQCmK5M+/P/D5ESlSpEiRIj9E/gyf38/EFx5+5/Te1+dfn333/tOzx3WLFLkUeVr0hEgLe4d5/Xl6ftqkZt0iRW5GvgsM5MvTYsnmTRt3gqV1ixT5ZOR0iJ++OAWtaRMmIFmfSJF/BZmCUUrMj4uBa5iSDZEin4acDvVmgaek/F0QIhuSLgBfuYWIFHkzJAkQd/z5tWqdSJE3QpKi8RRkribmKQknwedrXS2RIm+ETI2ZdhPeLbx5b0rQm/WKFLkR2RSGSfM1BZ2UcJANmpL1mAyIFHlzZBpOmC6tnzRImyEH2myK0VWkyAVIcrhPBzUpRNEmbFPYSkVukSK3I680V+mAAykyk2ScFrREityMTMUnklCT56cBCzp0QTZKpMgnIGmDhy4KH9YwiaADSsdkQKTIRUhymZ2KXSSopKbPFERoMevtposUuRxJFkYWmQ7rlOiTASdyeRApciOy+WOegsAnyXgbpFLDVqTI7UjayEl/+FNDliT9Vxo+Y1ASKfIBSFK4bRo7JAClxIAm6LjTLFLkEiQdiEjDg1Ojll7AU+JQJ+giRS5BkgYOQTaHPA1C9FJ+3FiRIpci02DSdEgnSNPwIQu/lKCLFLkQSV7WPE8LYWmx0ybgBF2kyKVIEkRSIEmX7imZQAVjMEghUuRm5NWE/MoCaQMnJfopiREp8gnINrlOi6JBpAkmdXFapMiFyGZIiQ4ckoU2Aaq5FOBqnUiRN0XSpLoZtKUJNd0Aui6RIp+ATMGHNlZpoZn+Li0mj80qkSIXIpvBCPJlqehF3pcawrTQLFLkViS5KDcDhGRxJBEn31FX60SKXIZs/j0FA1qEbv+/KjyLFLkYORWnpiBBBpeawEQbv+h3RIpciKQDQU0TtBl6ahJ0cqkYGz4iRS5AkpeloEQKVjTYpAZtSk5EinwSsgk8NLhMgwukCdwMLYkU+RTk1SGitllKEv8pwKSkITZ8RIpcgkyQ6WCmzRl6YaaJCBqeEilyOfJKg6YdfKANnzRkMQU1kSI3I5tDv0keUqAgDdXmgl4Vl0WKXIBMCTI9iK8mD/FgB5eEcUpSpMglyLSodFingnRzWU5DEl8bIBQp8sZIGmBS0bhpspKmbVPYOq5XpMilyDRwkA7+pgmbCs5NwydeJkSKXI68OvxwdVBiahaR4Yo0JCFS5EYkDQqkuDwNMNCGbSqYkUK1SJHbkRRDBpiaoSZ08Q2FNTzUK1LkMmQq2tLEfNqcFGRI87YJlCJFPhWZ/sivJBLtEDC9KMQpSZEiH4BshgbbwlW6TJPC1jHREClyMZI2WKdhXxoY2kt6ezEXKXI7kjZQyIWaDvfSoaQpyMUAJVLkQuSTPyJFihQpUuTFz38/fsZSSVVvMQAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>1、登陆博客后台，把鼠标移至“控制台”，在下拉菜单中选择“外观”选项<br>2、在进入的页面中点击“编辑当前外观”<br>3、在<code>index.php</code>和<code>archive.php</code>文件找到代码</p>
+<pre><code>&lt;?php $this-&gt;content(&apos;阅读剩余部分...&apos;); ?&gt;</code></pre><p>将其替换为</p>
+<pre><code>&lt;?php $this-&gt;excerpt(); ?&gt;</code></pre><p>如果要按制摘要的输出字数，可以修改代码为</p>
+<pre><code>&lt;?php $this-&gt;excerpt(200, &apos;...&apos;); ?&gt;</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-03-14T08:55:34.000Z" itemprop="datePublished">2020-03-14</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.251Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/03/14/e8-93-9d-e5-a4-a9-e9-87-87-e9-9b-86-e5-99-a8-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-bc-80-e6-ba-90-e7-9a-84php-e7-88-ac-e8-99-ab-e7-b3-bb-e7-bb-9f-ef-bc-8c-e5-8f-af-e8-a7-86-e5-8c-96-e7-9a-84-e9-87-87/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">蓝天采集器：一个开源的PHP爬虫系统，可视化的采集器</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/03/14/e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e5-85-8d-e8-b4-b9-e7-9a-84-e5-8a-9e-e5-85-ac-e5-a5-97-e4-bb-b6-e7-b3-bb-e7-bb-9f-ef-bc-9adzzoffice-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一款开源免费的办公套件系统：DzzOffice安装教程</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

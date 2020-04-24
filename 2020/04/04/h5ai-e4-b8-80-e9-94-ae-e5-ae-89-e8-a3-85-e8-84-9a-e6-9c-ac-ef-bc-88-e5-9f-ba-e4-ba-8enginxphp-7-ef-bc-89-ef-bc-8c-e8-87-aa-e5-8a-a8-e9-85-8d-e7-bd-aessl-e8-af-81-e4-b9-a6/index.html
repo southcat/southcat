@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>H5ai一键安装脚本（基于Nginx+PHP 7），自动配置SSL证书 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="H5ai一键安装脚本（基于Nginx+PHP 7），自动配置SSL证书 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/04/04/h5ai-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-88-e5-9f-ba-e4-ba-8enginxphp-7-ef-bc-89-ef-bc-8c-e8-87-aa-e5-8a-a8-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前发过一个h5ai一键安装脚本，参考：h5ai一键安装脚本 for Debian，不过不能自动签发SSL证书还是有点不足的，恰好今天在Github上也发现了一个大佬写的h5ai一键安装脚本，而且还支持自动签发免费的Let&amp;#39;s Encrypt SSL证书，很不错。 截图 更新日志【2017-12-15】  添加一键SSL配置功能 添加域名IP验证 部分bug修复 相关依赖完善  【2 - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/h5ai.png"><meta property="article:published_time" content="2020-04-03T18:53:03.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.254Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.254Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/04/04/h5ai-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-88-e5-9f-ba-e4-ba-8enginxphp-7-ef-bc-89-ef-bc-8c-e8-87-aa-e5-8a-a8-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/04/04/h5ai-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-88-e5-9f-ba-e4-ba-8enginxphp-7-ef-bc-89-ef-bc-8c-e8-87-aa-e5-8a-a8-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/04/04/h5ai-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-88-e5-9f-ba-e4-ba-8enginxphp-7-ef-bc-89-ef-bc-8c-e8-87-aa-e5-8a-a8-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6/"
+    },
+    "headline": "H5ai一键安装脚本（基于Nginx+PHP 7），自动配置SSL证书 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-04-03T18:53:03.000Z",
+    "dateModified": "2020-04-24T09:34:44.254Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：之前发过一个h5ai一键安装脚本，参考：h5ai一键安装脚本 for Debian，不过不能自动签发SSL证书还是有点不足的，恰好今天在Github上也发现了一个大佬写的h5ai一键安装脚本，而且还支持自动签发免费的Let&amp;amp;#39;s Encrypt SSL证书，很不错。 截图 更新日志【2017-12-15】  添加一键SSL配置功能 添加域名IP验证 部分bug修复 相关依赖完善  【2 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=H5ai一键安装脚本（基于Nginx+PHP 7），自动配置SSL证书" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=H5ai一键安装脚本（基于Nginx+PHP 7），自动配置SSL证书&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=H5ai一键安装脚本（基于Nginx+PHP 7），自动配置SSL证书" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEoklEQVR42u2awXbbQAwD/f8/nV77UosYyO5By9EljSx7dzavNAng9bPwegkttNBCCy30w6Bfw/X36++e/edDL+5Nn0HXSXtIHEILvQn67X/6X4tN995tYPr3Fejve2mtq+eu/hBCC70JOhUOUoSuNkQOLW4YFLJ4MEILLfTPu82lRa+eJ4ebDjIVMqGFFvr+Zq6Gi2bQSJuf1hRaaKH7gSMtMgkG7YYp0FWh/dqUJbTQD4dOwuBTfn5VDRVa6IdCI+PrYnigRScNMEkoSMPNf3EthRb6odC1CVY2DQTiW6LhNHgILfQm6G+a7JNQSMQJIgqm+5cHJbTQC6CpSdeY9UREmBoZ8lxqTEZhUGihF0LTBoGG28j7yHDSHmhVyIQW+hBoYp4RMf+T95PDaPY4iv1CC30wdNtsUAM+FaUU6EmHMT1/KTwKLfQC6CbcRgS5BEfMdGIURBHwTkcmtNCHQjfiPxEOk4jfNC304OtCJrTQB0G3gNQgb4oREQUaAfHtmkILvQQ6Gd+TAJgExMaIm4oRDcuPBVBooRdAfxJMT783Ij4x9rBY0KSAhRb6MGjSSJBhIhaRGyHWJlyDjEGhhV4ATRqPNGg0BYk2FsngxyFYoYVeBk2Ed/paMuBp45GKVyNA4qCN0EIfBP1JWCY1LGmNFNAjIiIN8Akt9EZo2gDQAkhA0kGSQoiKstBCL4VuDfG2YSAhADIM1aah0EIvg27MOipC0AP7JFxDRUihhd4C3QRtiEjQmOnTZ6QAzQtcQgu9DXpqFtKwTgeJKTxHzPpkKBLTT2ihN0GTn1RASI0JHUZweKZppIQWegF0EtRSwUmDRoIgRj19Phr0Qgu9ADqF0hpzjggLaTBoQBoTX2iht0CTsFwKxDRiISmMTQCPNkFCC70NuhXjqVF/JzCbwgLNnkeHQ2ihD4SmAl5jwLch2qbxSIURKydCC30wNBH5aTEhgRvS3DRNEjEMhBZ6CzQVBe8IAjQk841mJxn9Qgu9BXoyvO+E5dKgQA+taYIm42JsToQW+lBoYpgT43w6sHRwpFiSYN1Y7IQWegH0tMmmuCRDrhEbSOAmBX2EFnorNAm/0UajDdQR4442UKSYCS30BugE0YRiUtiVPENDccQwQMqJ0EIfBk2+/JNgNxWzT4R7KubToUlooTdApzc1X/60uN0NxFKj8dIYFFroJdCpsacNQgyvBcOuHUaawK7QQm+Bbsy5NAhMgiIR6JPI34iDb+8LLfQS6KYApeaBiHdTsDUNMGkwGpsroYVeAk2+4NMmSKCGDApEzCfhOZQuElroQ6GJod4UnCQORKOtECepOCG00FugW8GAFJFmuCdmXArn4oZGaKEXQ6cBgQwaNPj6aRGsw3NCC30wNDHApkVbU70ZGq6EfhruicqJ0EIfCp2aE1KcGnOcCPYEhITsULpIaKEPhCaDwFRYqNjQvH5niBkPWmihhf5pQKemn4bxiEFPxA1s4Akt9DJoItZRMZGadERAQM3I3eZEaKEPgCYBGTq0TwfWFqIkGKTPF1rojdCkaU9FrimKjWBwV2T8WA0VWuiHQm+6hBZaaKGFFvoh1x8g8/cClaKCgwAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">H5ai一键安装脚本（基于Nginx+PHP 7），自动配置SSL证书</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-04-04</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=H5ai一键安装脚本（基于Nginx+PHP 7），自动配置SSL证书&url=http://hexo.southcat.net/2020/04/04/h5ai-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-88-e5-9f-ba-e4-ba-8enginxphp-7-ef-bc-89-ef-bc-8c-e8-87-aa-e5-8a-a8-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=H5ai一键安装脚本（基于Nginx+PHP 7），自动配置SSL证书&url=http://hexo.southcat.net/2020/04/04/h5ai-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-88-e5-9f-ba-e4-ba-8enginxphp-7-ef-bc-89-ef-bc-8c-e8-87-aa-e5-8a-a8-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/04/04/h5ai-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-88-e5-9f-ba-e4-ba-8enginxphp-7-ef-bc-89-ef-bc-8c-e8-87-aa-e5-8a-a8-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/04/04/h5ai-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-88-e5-9f-ba-e4-ba-8enginxphp-7-ef-bc-89-ef-bc-8c-e8-87-aa-e5-8a-a8-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/04/04/h5ai-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-88-e5-9f-ba-e4-ba-8enginxphp-7-ef-bc-89-ef-bc-8c-e8-87-aa-e5-8a-a8-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/04/04/h5ai-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-88-e5-9f-ba-e4-ba-8enginxphp-7-ef-bc-89-ef-bc-8c-e8-87-aa-e5-8a-a8-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/04/04/h5ai-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-88-e5-9f-ba-e4-ba-8enginxphp-7-ef-bc-89-ef-bc-8c-e8-87-aa-e5-8a-a8-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEoklEQVR42u2awXbbQAwD/f8/nV77UosYyO5By9EljSx7dzavNAng9bPwegkttNBCCy30w6Bfw/X36++e/edDL+5Nn0HXSXtIHEILvQn67X/6X4tN995tYPr3Fejve2mtq+eu/hBCC70JOhUOUoSuNkQOLW4YFLJ4MEILLfTPu82lRa+eJ4ebDjIVMqGFFvr+Zq6Gi2bQSJuf1hRaaKH7gSMtMgkG7YYp0FWh/dqUJbTQD4dOwuBTfn5VDRVa6IdCI+PrYnigRScNMEkoSMPNf3EthRb6odC1CVY2DQTiW6LhNHgILfQm6G+a7JNQSMQJIgqm+5cHJbTQC6CpSdeY9UREmBoZ8lxqTEZhUGihF0LTBoGG28j7yHDSHmhVyIQW+hBoYp4RMf+T95PDaPY4iv1CC30wdNtsUAM+FaUU6EmHMT1/KTwKLfQC6CbcRgS5BEfMdGIURBHwTkcmtNCHQjfiPxEOk4jfNC304OtCJrTQB0G3gNQgb4oREQUaAfHtmkILvQQ6Gd+TAJgExMaIm4oRDcuPBVBooRdAfxJMT783Ij4x9rBY0KSAhRb6MGjSSJBhIhaRGyHWJlyDjEGhhV4ATRqPNGg0BYk2FsngxyFYoYVeBk2Ed/paMuBp45GKVyNA4qCN0EIfBP1JWCY1LGmNFNAjIiIN8Akt9EZo2gDQAkhA0kGSQoiKstBCL4VuDfG2YSAhADIM1aah0EIvg27MOipC0AP7JFxDRUihhd4C3QRtiEjQmOnTZ6QAzQtcQgu9DXpqFtKwTgeJKTxHzPpkKBLTT2ihN0GTn1RASI0JHUZweKZppIQWegF0EtRSwUmDRoIgRj19Phr0Qgu9ADqF0hpzjggLaTBoQBoTX2iht0CTsFwKxDRiISmMTQCPNkFCC70NuhXjqVF/JzCbwgLNnkeHQ2ihD4SmAl5jwLch2qbxSIURKydCC30wNBH5aTEhgRvS3DRNEjEMhBZ6CzQVBe8IAjQk841mJxn9Qgu9BXoyvO+E5dKgQA+taYIm42JsToQW+lBoYpgT43w6sHRwpFiSYN1Y7IQWegH0tMmmuCRDrhEbSOAmBX2EFnorNAm/0UajDdQR4442UKSYCS30BugE0YRiUtiVPENDccQwQMqJ0EIfBk2+/JNgNxWzT4R7KubToUlooTdApzc1X/60uN0NxFKj8dIYFFroJdCpsacNQgyvBcOuHUaawK7QQm+Bbsy5NAhMgiIR6JPI34iDb+8LLfQS6KYApeaBiHdTsDUNMGkwGpsroYVeAk2+4NMmSKCGDApEzCfhOZQuElroQ6GJod4UnCQORKOtECepOCG00FugW8GAFJFmuCdmXArn4oZGaKEXQ6cBgQwaNPj6aRGsw3NCC30wNDHApkVbU70ZGq6EfhruicqJ0EIfCp2aE1KcGnOcCPYEhITsULpIaKEPhCaDwFRYqNjQvH5niBkPWmihhf5pQKemn4bxiEFPxA1s4Akt9DJoItZRMZGadERAQM3I3eZEaKEPgCYBGTq0TwfWFqIkGKTPF1rojdCkaU9FrimKjWBwV2T8WA0VWuiHQm+6hBZaaKGFFvoh1x8g8/cClaKCgwAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更新日志"><span class="post-toc-number">2.</span> <span class="post-toc-text">更新日志</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装路径"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装路径</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>之前发过一个<code>h5ai</code>一键安装脚本，参考：h5ai一键安装脚本 for Debian，不过不能自动签发<code>SSL</code>证书还是有点不足的，恰好今天在<code>Github</code>上也发现了一个大佬写的<code>h5ai</code>一键安装脚本，而且还支持自动签发免费的<code>Let&#39;s Encrypt SSL</code>证书，很不错。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/h5ai.png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>【2017-12-15】</p>
+<ul>
+<li>添加一键<code>SSL</code>配置功能</li>
+<li>添加域名<code>IP</code>验证</li>
+<li>部分<code>bug</code>修复</li>
+<li>相关依赖完善</li>
+</ul>
+<p>【2017-12-14】</p>
+<ul>
+<li>实现<code>H5AI</code>基本功能</li>
+<li>完善安装相关所需依赖</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/wulabing/h5ai\_onekey\_install-lnp-" target="_blank" rel="noopener">https://github.com/wulabing/h5ai\_onekey\_install-lnp-</a></p>
+<p><strong>系统要求：</strong><code>Debian 8 +</code>，并使用纯净状态的发行版系统安装。还需要提前将你的域名解析到服务器。</p>
+<p>运行以下命令：</p>
+<pre><code>#下载脚本
+apt-get install git -y
+git clone https://github.com/wulabing/h5ai_onekey_install-lnp-.git h5ai
+cd h5ai
+
+#Debian 8运行命令
+bash h5ai.sh
+
+#Debian 9运行命令
+sed -i &apos;53,54d&apos; h5ai.sh &amp;&amp; bash h5ai.sh
+
+#脚本备份
+https://www.southcat.net/usr/shell/h5ai_ssl.sh</code></pre><p>安装会要求你输入相应的数字：</p>
+<pre><code>input: 请选择安装内容 
+1. h5ai
+2. SSL
+3. h5ai+SSL</code></pre><h2 id="安装路径"><a href="#安装路径" class="headerlink" title="安装路径"></a>安装路径</h2><pre><code>Nginx：/etc/nginx
+PHP: /etc/php/7.0
+h5ai目录：/home/wwwroot/your_domain</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-04-03T18:53:03.000Z" itemprop="datePublished">2020-04-04</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.254Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/04/04/lnmp1-4-e5-ae-89-e8-a3-85-e5-8f-8a-e9-83-a8-e7-bd-b2typecho-e6-88-96-e5-85-b6-e5-ae-83-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">lnmp1.4安装及部署typecho或其它博客教程</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/04/04/e5-88-86-e4-ba-ab-e4-b8-aa-e5-85-8d-e8-b4-b9-e8-a7-82-e7-9c-8b-e5-90-84-e5-a4-a7-e8-a7-86-e9-a2-91-e7-bd-91-e7-ab-99vip-e8-b5-84-e6-ba-90-e7-9a-84-e7-bd-91-e7-ab-99/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">分享个免费观看各大视频网站VIP资源的网站</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

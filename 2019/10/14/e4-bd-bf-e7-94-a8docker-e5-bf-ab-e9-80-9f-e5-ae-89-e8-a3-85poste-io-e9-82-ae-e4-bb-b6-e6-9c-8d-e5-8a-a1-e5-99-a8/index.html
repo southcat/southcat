@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>使用Docker快速安装Poste.io邮件服务器 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="使用Docker快速安装Poste.io邮件服务器 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/10/14/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85poste-io-e9-82-ae-e4-bb-b6-e6-9c-8d-e5-8a-a1-e5-99-a8/"><meta property="og:locale" content="en"><meta name="description" content="简介Poste.io是最近在国外非常火的轻量级邮件服务器。它具有非常高的稳定性，并提供非常出众的管理面板，能够轻易实现邮件收发、多域名控制、邮箱容量控制、邮件杀毒、邮件过滤以及Webmail等基础功能。同时，Poste还提供了投递统计分析、客户端自动适配、一键安装SSL证书、邮件转发、邮件别名、Catch-All等相当有用的功能。而且收发信可靠，非常适合个人、团体以及企业使用。另外，Poste邮件 - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/Poste.io(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/Poste.io(2).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/Poste.io(3).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/Poste.io(4).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/Poste.io(5).png"><meta property="article:published_time" content="2019-10-14T07:15:32.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.228Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.228Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2019/10/14/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85poste-io-e9-82-ae-e4-bb-b6-e6-9c-8d-e5-8a-a1-e5-99-a8/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2019/10/14/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85poste-io-e9-82-ae-e4-bb-b6-e6-9c-8d-e5-8a-a1-e5-99-a8/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2019/10/14/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85poste-io-e9-82-ae-e4-bb-b6-e6-9c-8d-e5-8a-a1-e5-99-a8/"
+    },
+    "headline": "使用Docker快速安装Poste.io邮件服务器 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-10-14T07:15:32.000Z",
+    "dateModified": "2020-04-24T09:34:44.228Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "简介Poste.io是最近在国外非常火的轻量级邮件服务器。它具有非常高的稳定性，并提供非常出众的管理面板，能够轻易实现邮件收发、多域名控制、邮箱容量控制、邮件杀毒、邮件过滤以及Webmail等基础功能。同时，Poste还提供了投递统计分析、客户端自动适配、一键安装SSL证书、邮件转发、邮件别名、Catch-All等相当有用的功能。而且收发信可靠，非常适合个人、团体以及企业使用。另外，Poste邮件 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=使用Docker快速安装Poste.io邮件服务器" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用Docker快速安装Poste.io邮件服务器&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=使用Docker快速安装Poste.io邮件服务器" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADr0lEQVR42u3a2W7kMAxE0f7/n555DZIW61YvMdO4fgmSeNExYIkiefv3gcdNlChRokR9HOo2HF/P+XEDeM3Xn1/Puff7vWfdO//4TFGilqDufnSHAZ4GlgZ4ugd5aXicokQtQtGbHBe+AzRdM517elGncYoS9VdQ6aH0RXx/1mmhbicrUaL+IiotfDTgTcFvepYoUX8FRT/q08J47/fT/dJENF3/kihdlKg3o6YPedPPl2WTRIl6I6rdCJ4edvr/NBmQQb+96iFK1ItRKbCcBtcUDtpCwLRwixK1GUU2fCmITQHplHBJk0d1vShRS1DTYJviQErYtJNOWtxFidqMogkPukCT+6WCWipE/DhPlKhlqKl5gyQnp2vJx06C4HEiEiVqKSo1b9SBZpg4nimUx8VXlKhfRlUNTbA4TZMnzQR0esmiRG1EkQ+RJi5T0Ns039MJSJSorShS/Ho0uD3dIxXtmmKBKFEbULSo1RTb0kdNm7lI0xVKZooS9YsoWvhqNoe0QSQVHEgwIErURlQzKBrQ0iIe2QTiJI4oUQtQKYhtNnm0AEAGSxbvGFGIEnUBinykJKHSFMee+fv4YkSJWoBKuJSEIS+EJlpSAqdquBIl6iJUu7F7NDlDA1tavEMFAlGiLka1RbJnigakQYsUDESJ2ohKRa4pYd82VqVEaUp+joVtUaKWoOiHmho1aDNWkxytAmxRohagSAEgTQ5ps0eaGNMkkhKcokRtQtFiNVlAm6YO8kJI4CtK1DZU21DVJEcIghbsYiOXKFELUCQATU1SKbilEwtJlFabRFGiLkDFZAZY9FLzVFpYaRNKnMxEiVqEmjZvU9KSDDgt8FMyhWxkRYnahCI3IOCUZKEDSxPPdC9RojagSPMUbSIhDVXTBEKSLnj2EyVqCSoVw0gA2yzkpKBNi9+iRG1BkWIbTXhOG89m4SaLNU68iBJ1MSoVqdOmjiQwm6I2KQ6KErUZRRfM1IzVYNtETlWdFyXqAlQbsJKEfxwELIrTIqAoURtQJBnSNBq2xXF6LnoBokQtQKWDfsgkYUme1dwnNjGKEnUBqtn4NQVsUthOCZbULDJWEkWJuhBFEvJ0IZ0mlCaxQwPcY0QhStTFqKZQTQoGzYYybTSnSWycKESJWohKgyYJfPLxPxJAPzxRiBJ1IYosnE3wSwrcZNP49OIrStSbUanRo2n8TRvQJsil/xMlahOKFNQeacyagmCyOJOmroeySaJEvRH1SYcoUaJEifqY4z+AwVMP72DkaQAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">使用Docker快速安装Poste.io邮件服务器</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-10-14</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用Docker快速安装Poste.io邮件服务器&url=http://hexo.southcat.net/2019/10/14/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85poste-io-e9-82-ae-e4-bb-b6-e6-9c-8d-e5-8a-a1-e5-99-a8/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=使用Docker快速安装Poste.io邮件服务器&url=http://hexo.southcat.net/2019/10/14/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85poste-io-e9-82-ae-e4-bb-b6-e6-9c-8d-e5-8a-a1-e5-99-a8/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/10/14/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85poste-io-e9-82-ae-e4-bb-b6-e6-9c-8d-e5-8a-a1-e5-99-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/10/14/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85poste-io-e9-82-ae-e4-bb-b6-e6-9c-8d-e5-8a-a1-e5-99-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/10/14/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85poste-io-e9-82-ae-e4-bb-b6-e6-9c-8d-e5-8a-a1-e5-99-a8/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/10/14/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85poste-io-e9-82-ae-e4-bb-b6-e6-9c-8d-e5-8a-a1-e5-99-a8/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/10/14/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85poste-io-e9-82-ae-e4-bb-b6-e6-9c-8d-e5-8a-a1-e5-99-a8/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADr0lEQVR42u3a2W7kMAxE0f7/n555DZIW61YvMdO4fgmSeNExYIkiefv3gcdNlChRokR9HOo2HF/P+XEDeM3Xn1/Puff7vWfdO//4TFGilqDufnSHAZ4GlgZ4ugd5aXicokQtQtGbHBe+AzRdM517elGncYoS9VdQ6aH0RXx/1mmhbicrUaL+IiotfDTgTcFvepYoUX8FRT/q08J47/fT/dJENF3/kihdlKg3o6YPedPPl2WTRIl6I6rdCJ4edvr/NBmQQb+96iFK1ItRKbCcBtcUDtpCwLRwixK1GUU2fCmITQHplHBJk0d1vShRS1DTYJviQErYtJNOWtxFidqMogkPukCT+6WCWipE/DhPlKhlqKl5gyQnp2vJx06C4HEiEiVqKSo1b9SBZpg4nimUx8VXlKhfRlUNTbA4TZMnzQR0esmiRG1EkQ+RJi5T0Ns039MJSJSorShS/Ho0uD3dIxXtmmKBKFEbULSo1RTb0kdNm7lI0xVKZooS9YsoWvhqNoe0QSQVHEgwIErURlQzKBrQ0iIe2QTiJI4oUQtQKYhtNnm0AEAGSxbvGFGIEnUBinykJKHSFMee+fv4YkSJWoBKuJSEIS+EJlpSAqdquBIl6iJUu7F7NDlDA1tavEMFAlGiLka1RbJnigakQYsUDESJ2ohKRa4pYd82VqVEaUp+joVtUaKWoOiHmho1aDNWkxytAmxRohagSAEgTQ5ps0eaGNMkkhKcokRtQtFiNVlAm6YO8kJI4CtK1DZU21DVJEcIghbsYiOXKFELUCQATU1SKbilEwtJlFabRFGiLkDFZAZY9FLzVFpYaRNKnMxEiVqEmjZvU9KSDDgt8FMyhWxkRYnahCI3IOCUZKEDSxPPdC9RojagSPMUbSIhDVXTBEKSLnj2EyVqCSoVw0gA2yzkpKBNi9+iRG1BkWIbTXhOG89m4SaLNU68iBJ1MSoVqdOmjiQwm6I2KQ6KErUZRRfM1IzVYNtETlWdFyXqAlQbsJKEfxwELIrTIqAoURtQJBnSNBq2xXF6LnoBokQtQKWDfsgkYUme1dwnNjGKEnUBqtn4NQVsUthOCZbULDJWEkWJuhBFEvJ0IZ0mlCaxQwPcY0QhStTFqKZQTQoGzYYybTSnSWycKESJWohKgyYJfPLxPxJAPzxRiBJ1IYosnE3wSwrcZNP49OIrStSbUanRo2n8TRvQJsil/xMlahOKFNQeacyagmCyOJOmroeySaJEvRH1SYcoUaJEifqY4z+AwVMP72DkaQAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">2.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#说明"><span class="post-toc-number">3.</span> <span class="post-toc-text">说明</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><code>Poste.io</code>是最近在国外非常火的轻量级邮件服务器。它具有非常高的稳定性，并提供非常出众的管理面板，能够轻易实现邮件收发、多域名控制、邮箱容量控制、邮件杀毒、邮件过滤以及<code>Webmail</code>等基础功能。同时，<code>Poste</code>还提供了投递统计分析、客户端自动适配、一键安装<code>SSL</code>证书、邮件转发、邮件别名、<code>Catch-All</code>等相当有用的功能。而且收发信可靠，非常适合个人、团体以及企业使用。另外，<code>Poste</code>邮件服务器基于<code>Docker</code>搭建，搭建过程十分简单。</p>
+<p><strong>官网：</strong><a href="https://poste.io/" target="_blank" rel="noopener">https://poste.io/</a></p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/Poste.io(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/Poste.io(2).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/Poste.io(3).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>首先我们介绍一下服务器的运行环境。由于基于<code>Docker</code>，因此大部分<code>Linux</code>发行版均可以运行<code>Poste</code>。运行的<code>Poste</code>占用内存在<code>800 MB</code>左右，因此建议选择一个内存<code>1 GB</code>或者以上的<code>VPS</code>进行搭建。<code>Poste</code>仅支持<code>64</code>位操作系统。</p>
+<p>在安装任何邮件服务器之前，我们需要配置好<code>hostname</code>。本文我们以<code>mx.qing.su</code>为例，当您在<code>SSH</code>中执行<code>hostname</code>命令时，应当看到<code>mx</code>的回显；当您在<code>SSH</code>中执行<code>hostname -f</code>命令时，应当看到<code>mx.qing.su</code>的回显。若您未配置好<code>hostname</code>，请不要继续。</p>
+<p>开始安装之前，建议您先设置好一部分<code>DNS</code>。我们需要设置这样的几条记录 (请用您自己的域名替代下文中的<code>qing.su</code>)：</p>
+<pre><code>qing.su A Any_IP
+mx.qing.su A 88.88.88.88
+qing.su MX mx.qing.su. 10
+mail.qing.su CNAME mx.qing.su.
+smtp.qing.su CNAME mx.qing.su.
+imap.qing.su CNAME mx.qing.su.
+qing.su TXT “v=spf1 mx ~all”
+_dmarc.qing.su TXT “v=DMARC1; p=none; rua=mailto:dmarc-reports@qing.su”
+88.88.88.88 PTR mx.qing.su</code></pre><p>其中<code>4</code>、<code>5</code>、<code>6</code>、<code>8</code>项为可选，第九项为域名<code>PTR</code>也就是设置<code>rDNS</code>，需要您在自己的服务器提供商处设定，比如<code>Vultr</code>在后台就可以直接设置<code>rDNS</code>。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>1、安装Docker</strong></p>
+<pre><code>#CentOS 6
+rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum update -y
+yum -y install docker-io
+service docker start
+chkconfig docker on
+
+#CentOS 7、Debian、Ubuntu
+curl -sSL https://get.docker.com/ | sh
+systemctl start docker
+systemctl enable docker</code></pre><p><strong>2、安装Poste</strong></p>
+<pre><code>#/srv/poste/data为Poste数据存放文件夹，如用户数据库、电子邮件、日志，方便备份。
+docker run -d -p 25:25 -p 80:80 -p 110:110 -p 143:143 -p 443:443 -p 587:587 -p 993:993 -p 995:995 -v /etc/localtime:/etc/localtime:ro -v /srv/poste/data:/data --name &quot;PosteServ&quot; -h &quot;mx.qing.su&quot; -t analogic/poste.io</code></pre><p>安装完成后，打开你的域名地址，进行安装配置。<br><img src="https://www.southcat.net/usr/picture/Poste.io(4).png" alt="请输入图片描述" title="请输入图片描述"><br>刚开始打开会显示不安全，然后点击左侧<code>System settings</code>-<code>TLS certificate</code>，申请免费的<code>SSL</code>证书即可。<br><img src="https://www.southcat.net/usr/picture/Poste.io(5).png" alt="请输入图片描述" title="请输入图片描述"><br>还有更多功能就自己慢慢折腾吧。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-10-14T07:15:32.000Z" itemprop="datePublished">2019-10-14</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.228Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/10/14/e5-85-8d-e8-b4-b9-e7-94-b3-e8-af-b7-e8-b0-b7-e6-ad-8cg-suite-e5-a5-97-e4-bb-b6-e3-80-81-e5-b9-b6-e8-8e-b7-e5-8f-96-e6-97-a0-e9-99-90-e7-a9-ba-e9-97-b4google-drive/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">免费申请谷歌G Suite套件、并获取无限空间Google Drive</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/10/14/opage-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-ae-9a-e5-88-b6-e5-8c-96-e4-b8-8a-e7-bd-91-e9-a6-96-e9-a1-b5-ef-bc-8c-e9-9b-86-e6-88-90-e6-90-9c-e7-b4-a2-ef-bc-8c-e7-bd-91-e7-ab-99-ef-bc-8c-e5-a4-a9-e6-b0-94/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Opage：一个定制化上网首页，集成搜索，网站，天气，备忘录</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

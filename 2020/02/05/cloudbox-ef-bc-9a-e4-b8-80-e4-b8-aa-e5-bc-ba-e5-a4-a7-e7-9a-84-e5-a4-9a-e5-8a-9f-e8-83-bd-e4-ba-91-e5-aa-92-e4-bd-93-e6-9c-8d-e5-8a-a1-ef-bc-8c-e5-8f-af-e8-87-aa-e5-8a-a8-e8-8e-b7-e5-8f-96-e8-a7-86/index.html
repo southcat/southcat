@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Cloudbox：一个强大的多功能云媒体服务，可自动获取视频资源并在线播放 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Cloudbox：一个强大的多功能云媒体服务，可自动获取视频资源并在线播放 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/02/05/cloudbox-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-ba-91-e5-aa-92-e4-bd-93-e6-9c-8d-e5-8a-a1-ef-bc-8c-e5-8f-af-e8-87-aa-e5-8a-a8-e8-8e-b7-e5-8f-96-e8-a7-86/"><meta property="og:locale" content="en"><meta name="description" content="说明：最近发现了一个很强的多媒体项目Cloudbox，差不多是一个基于Docker的盒子，基本上里面所有的应用都是为多媒体打造，包括自动搜索影视、下载、播放等等，常见的应用包括Plex&#x2F;Emby、Rclone&#x2F;Plexdrive、ruTorrent、Nextcloud、Resilio Sync，然后还有一大批不常见但很有用的应用，接下来都会大概介绍下，不然用起来很麻烦，博主只是大概的看了下。 Cl - John Doe - 南猫"><meta property="article:published_time" content="2020-02-05T13:11:32.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.246Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.246Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/02/05/cloudbox-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-ba-91-e5-aa-92-e4-bd-93-e6-9c-8d-e5-8a-a1-ef-bc-8c-e5-8f-af-e8-87-aa-e5-8a-a8-e8-8e-b7-e5-8f-96-e8-a7-86/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/02/05/cloudbox-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-ba-91-e5-aa-92-e4-bd-93-e6-9c-8d-e5-8a-a1-ef-bc-8c-e5-8f-af-e8-87-aa-e5-8a-a8-e8-8e-b7-e5-8f-96-e8-a7-86/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/02/05/cloudbox-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-ba-91-e5-aa-92-e4-bd-93-e6-9c-8d-e5-8a-a1-ef-bc-8c-e5-8f-af-e8-87-aa-e5-8a-a8-e8-8e-b7-e5-8f-96-e8-a7-86/"
+    },
+    "headline": "Cloudbox：一个强大的多功能云媒体服务，可自动获取视频资源并在线播放 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-02-05T13:11:32.000Z",
+    "dateModified": "2020-04-24T09:34:44.246Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：最近发现了一个很强的多媒体项目Cloudbox，差不多是一个基于Docker的盒子，基本上里面所有的应用都是为多媒体打造，包括自动搜索影视、下载、播放等等，常见的应用包括Plex/Emby、Rclone/Plexdrive、ruTorrent、Nextcloud、Resilio Sync，然后还有一大批不常见但很有用的应用，接下来都会大概介绍下，不然用起来很麻烦，博主只是大概的看了下。 Cl - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=Cloudbox：一个强大的多功能云媒体服务，可自动获取视频资源并在线播放" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Cloudbox：一个强大的多功能云媒体服务，可自动获取视频资源并在线播放&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=Cloudbox：一个强大的多功能云媒体服务，可自动获取视频资源并在线播放" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFWElEQVR42u3dwa4TWwxE0fz/TzcTBoD6uHY5LSTonQlPuSHpXpGs47Lv43P5uD4SiCCCCCKIIMKI8Bket3/x5/O/vubuv+/e688//3zP9HnT59Lr+O31Ioggwi3C9OHN83cXdHfjFOyElb4Aev0iiCDCGWEqYqcbSR/YFtWERL6E0/Xf3oMIIoiwRpgK191NTHAJIB3Y0mFKBBFE+HsIp4unGM0B6QQ4wdH7EkEEEXYN1HR4ml6XiuIER4KWdIh6tIsUQYSXITTh6L/052NpswgivAiBNChNuDH9nXSgSkHJJgB+ZCotgggvQkjhSTNc2Q5rp8YnHniKgawIIojAEMiFpMBjapK+HcKm990Oh0QQQYQLNVApTH1qOJoOWOT9p2HQFP6IIIIIGYEEpNMhJ6GRwxctyOQLi+8lgggi3IYqKTRpliboAOX086agtl+QCCKIwBHWy09F8EoHuJuF0lXRFEEEESICKUppmDLhTM1POnx9woMUX1QYRRDhxQhkkYoOSkjISovaZqhDi7IIIohwRkgFcrPI8VTjtQ1NSAgrgggi8LkDuWESkJKGaSqk6Ro3xRVPpUUQ4cUIaZkiHXqa96FBbju4bYJYEUQQIQ9kybCkDU9IuJKGwPSLaMMWEUQQ4RrzhPTB9Oe0MKZGbPv89FoRRBChQ0hNSWqiUjFsC2azBEoaPRFEECEj0AWNFGxuQo4p9CDF9jhoBdcugggifOLwhR6gmmCkCWHaIWwbuKIJlAgiiBAPPOTDm8XKqSGbroFcMx3oiCCCCBfaWUoXQZuldsmraZI2jdXtAUsEEUSoFrdS89QOcNJAJQUlDTpqtEQQQYRbhGboslmaoMFpWi6nz+FGSwQRRDgitDdOw5Jm8DsNbNKNkcfYQIkggggxGCGLEGR4swlYKRgprrGBEkEEEVb/QB5psmizNB10UlO2+RLGBkoEEUSofmG8WZRKw9AmQEkLHe0SZ9xUEUEEEaomhDZcU0hKG6jmELW+DxFEEOHYQKUwhAaidFjSNj10+SsNcccuUgQRRKh+4bspkqefp+fSAlcKY0hAJIIIIvDfd6AhSlqiSE0NWbqki5ppaHO8VxFEEGE8LDXFbxqgpEPRt4er6QsjAa4IIogw/08pNwtatBiR19KhbVoAI4V73FQRQQQRqgKT0OjhZzqMpWaLhK84hBFBBBFi0EqaFhp6frv0tQlbmpBYBBFEyItbqRGhGJtGLDVjzesRsAgiiHAsjKQwtYWLHsQ2S2Hp9STYFUEEEc4NVBpspmZpcyiaXtcOYclSRgxaRRBBhDqMSOFmsyzR4NCl0dWCtwgiiBAXq0jzkhYhUiBCbmIKYenBCZ0YRRBBhCsdesiiZ7uYQQaqFJvg4OGLCCKIEJcqSEi6PfDQIkcPZuR6UNAqgggvR0iHIVIAadhBhjcTHi2QOAQWQQQR4mGJLF98c3Bqix4JctNSyBFPBBFEOBZGugBFlzfJTbUBDQls6XK3CCKIMCOkwwktVE0RowWTXmOCQCdGEUR4OUIayKZBayp85L1JsSTD2K8aKBFEEOFKjcfUnNCApQlMmiENWRaLYYwIIogwNlCkcWkukA5DpuJIBiwp9Dl+YSKIIEIsjGRoSoskRWoGqpviWTVQIoggwuofp6RocQACAWmYmhbRRBBBBIawKVC0UE5BDFkmJQsdTRgrgggiPIfQDDzJoYUWuRTc0vD2kcIogggijKEsXb7YBKMTRBrsxKIqgggi1A1UakboAmXCbsJVsmA6LWqIIIIIM0IqUOkm6HAmDVKbIQsd3owHKRFEEKEeyP7PDxFEEEEEEUQQ4fbxA1//hI5LFDX1AAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Cloudbox：一个强大的多功能云媒体服务，可自动获取视频资源并在线播放</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-02-05</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Cloudbox：一个强大的多功能云媒体服务，可自动获取视频资源并在线播放&url=http://hexo.southcat.net/2020/02/05/cloudbox-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-ba-91-e5-aa-92-e4-bd-93-e6-9c-8d-e5-8a-a1-ef-bc-8c-e5-8f-af-e8-87-aa-e5-8a-a8-e8-8e-b7-e5-8f-96-e8-a7-86/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Cloudbox：一个强大的多功能云媒体服务，可自动获取视频资源并在线播放&url=http://hexo.southcat.net/2020/02/05/cloudbox-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-ba-91-e5-aa-92-e4-bd-93-e6-9c-8d-e5-8a-a1-ef-bc-8c-e5-8f-af-e8-87-aa-e5-8a-a8-e8-8e-b7-e5-8f-96-e8-a7-86/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/02/05/cloudbox-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-ba-91-e5-aa-92-e4-bd-93-e6-9c-8d-e5-8a-a1-ef-bc-8c-e5-8f-af-e8-87-aa-e5-8a-a8-e8-8e-b7-e5-8f-96-e8-a7-86/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/02/05/cloudbox-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-ba-91-e5-aa-92-e4-bd-93-e6-9c-8d-e5-8a-a1-ef-bc-8c-e5-8f-af-e8-87-aa-e5-8a-a8-e8-8e-b7-e5-8f-96-e8-a7-86/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/02/05/cloudbox-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-ba-91-e5-aa-92-e4-bd-93-e6-9c-8d-e5-8a-a1-ef-bc-8c-e5-8f-af-e8-87-aa-e5-8a-a8-e8-8e-b7-e5-8f-96-e8-a7-86/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/02/05/cloudbox-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-ba-91-e5-aa-92-e4-bd-93-e6-9c-8d-e5-8a-a1-ef-bc-8c-e5-8f-af-e8-87-aa-e5-8a-a8-e8-8e-b7-e5-8f-96-e8-a7-86/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/02/05/cloudbox-ef-bc-9a-e4-b8-80-e4-b8-aa-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-ba-91-e5-aa-92-e4-bd-93-e6-9c-8d-e5-8a-a1-ef-bc-8c-e5-8f-af-e8-87-aa-e5-8a-a8-e8-8e-b7-e5-8f-96-e8-a7-86/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFWElEQVR42u3dwa4TWwxE0fz/TzcTBoD6uHY5LSTonQlPuSHpXpGs47Lv43P5uD4SiCCCCCKIIMKI8Bket3/x5/O/vubuv+/e688//3zP9HnT59Lr+O31Ioggwi3C9OHN83cXdHfjFOyElb4Aev0iiCDCGWEqYqcbSR/YFtWERL6E0/Xf3oMIIoiwRpgK191NTHAJIB3Y0mFKBBFE+HsIp4unGM0B6QQ4wdH7EkEEEXYN1HR4ml6XiuIER4KWdIh6tIsUQYSXITTh6L/052NpswgivAiBNChNuDH9nXSgSkHJJgB+ZCotgggvQkjhSTNc2Q5rp8YnHniKgawIIojAEMiFpMBjapK+HcKm990Oh0QQQYQLNVApTH1qOJoOWOT9p2HQFP6IIIIIGYEEpNMhJ6GRwxctyOQLi+8lgggi3IYqKTRpliboAOX086agtl+QCCKIwBHWy09F8EoHuJuF0lXRFEEEESICKUppmDLhTM1POnx9woMUX1QYRRDhxQhkkYoOSkjISovaZqhDi7IIIohwRkgFcrPI8VTjtQ1NSAgrgggi8LkDuWESkJKGaSqk6Ro3xRVPpUUQ4cUIaZkiHXqa96FBbju4bYJYEUQQIQ9kybCkDU9IuJKGwPSLaMMWEUQQ4RrzhPTB9Oe0MKZGbPv89FoRRBChQ0hNSWqiUjFsC2azBEoaPRFEECEj0AWNFGxuQo4p9CDF9jhoBdcugggifOLwhR6gmmCkCWHaIWwbuKIJlAgiiBAPPOTDm8XKqSGbroFcMx3oiCCCCBfaWUoXQZuldsmraZI2jdXtAUsEEUSoFrdS89QOcNJAJQUlDTpqtEQQQYRbhGboslmaoMFpWi6nz+FGSwQRRDgitDdOw5Jm8DsNbNKNkcfYQIkggggxGCGLEGR4swlYKRgprrGBEkEEEVb/QB5psmizNB10UlO2+RLGBkoEEUSofmG8WZRKw9AmQEkLHe0SZ9xUEUEEEaomhDZcU0hKG6jmELW+DxFEEOHYQKUwhAaidFjSNj10+SsNcccuUgQRRKh+4bspkqefp+fSAlcKY0hAJIIIIvDfd6AhSlqiSE0NWbqki5ppaHO8VxFEEGE8LDXFbxqgpEPRt4er6QsjAa4IIogw/08pNwtatBiR19KhbVoAI4V73FQRQQQRqgKT0OjhZzqMpWaLhK84hBFBBBFi0EqaFhp6frv0tQlbmpBYBBFEyItbqRGhGJtGLDVjzesRsAgiiHAsjKQwtYWLHsQ2S2Hp9STYFUEEEc4NVBpspmZpcyiaXtcOYclSRgxaRRBBhDqMSOFmsyzR4NCl0dWCtwgiiBAXq0jzkhYhUiBCbmIKYenBCZ0YRRBBhCsdesiiZ7uYQQaqFJvg4OGLCCKIEJcqSEi6PfDQIkcPZuR6UNAqgggvR0iHIVIAadhBhjcTHi2QOAQWQQQR4mGJLF98c3Bqix4JctNSyBFPBBFEOBZGugBFlzfJTbUBDQls6XK3CCKIMCOkwwktVE0RowWTXmOCQCdGEUR4OUIayKZBayp85L1JsSTD2K8aKBFEEOFKjcfUnNCApQlMmiENWRaLYYwIIogwNlCkcWkukA5DpuJIBiwp9Dl+YSKIIEIsjGRoSoskRWoGqpviWTVQIoggwuofp6RocQACAWmYmhbRRBBBBIawKVC0UE5BDFkmJQsdTRgrgggiPIfQDDzJoYUWuRTc0vD2kcIogggijKEsXb7YBKMTRBrsxKIqgggi1A1UakboAmXCbsJVsmA6LWqIIIIIM0IqUOkm6HAmDVKbIQsd3owHKRFEEKEeyP7PDxFEEEEEEUQQ4fbxA1//hI5LFDX1AAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Cloudbox运作过程"><span class="post-toc-number">1.</span> <span class="post-toc-text">Cloudbox运作过程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number">2.</span> <span class="post-toc-text">准备工作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">4.</span> <span class="post-toc-text">使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#相关教程"><span class="post-toc-number">5.</span> <span class="post-toc-text">相关教程</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>最近发现了一个很强的多媒体项目<code>Cloudbox</code>，差不多是一个基于<code>Docker</code>的盒子，基本上里面所有的应用都是为多媒体打造，包括自动搜索影视、下载、播放等等，常见的应用包括<code>Plex</code>/<code>Emby</code>、<code>Rclone</code>/<code>Plexdrive</code>、<code>ruTorrent</code>、<code>Nextcloud</code>、<code>Resilio Sync</code>，然后还有一大批不常见但很有用的应用，接下来都会大概介绍下，不然用起来很麻烦，博主只是大概的看了下。</p>
+<p><code>Cloudbox</code>又分为<code>Mediabox</code>(多媒体服务)、<code>Feederbox</code>(下载服务)，你可以在一台服务器上部署完整的<code>Cloudbox</code>，这样会使用所有的应用，也可以在<code>2</code>台服务器上分别部署<code>Mediabox</code>和<code>Feederbox</code>，然后分工一起配合使用，这些具体会安装以下应用：</p>
+<pre><code>#Cloudbox
+Rclone、Plexdrive、NZBGet、ruTorrent、NZBHydra2、Jackett、Plex Media Server、Plex Autoscan、Sonarr、Radarr、PlexPy(Tautulli)、Ombi、Portainer、Organizr
+
+#Feederbox
+Rclone、Plexdrive、NZBGet、ruTorrent、NZBHydra2、Jackett、Sonarr、Radarr、Portainer、Organizr
+
+#Mediabox
+Rclone、Feeder Mount、Plexdrive、Plex Media Server、Plex Autoscan、PlexPy(Tautulli)、Ombi
+
+#可选应用
+Emby、Nextcloud、Resilio Sync、Plex Dupefinder、Heimdall、NZBHydra v1、Plex Requests、Sickbeard MP4 Automator</code></pre><p>大概介绍下应用：</p>
+<pre><code>Sonarr：Usenet和BitTorrent用户的一款RSS订阅工具。它可以监视你喜欢的多个电影、剧集的更新提醒，并将它们抓取、排序和重命名。
+Radarr：Sonarr的独立分支，用于通过Usenet和BitTorrent自动下载电影。
+Rclone/Plexdrive：远程存储网盘挂载工具，后者只能挂载Google Drive。
+NZBGet/ruTorrent：分别为Usenet和BitTorrent下载工具，可以配合Sonarr和Radarr一起下载资源。
+NZBHydra2：是NZB索引者的元搜索工具。它可以方便地访问许多NZB索引器。您可以从一个位置搜索所有索引器，并将其用作Sonarr，Radarr或CouchPotato等工具的索引器源。
+Jackett：是一个基于Web的应用程序，其作用类似于代理服务器，将搜索查询从下载客户端(例如Sonarr)引导到torrent跟踪器站点并将结果发回。下载客户端也可以使用Jackett从跟踪器站点获取RSS源。最后，它可以用作元搜索工具，直接从应用程序中查找种子。
+Plex Autoscan：可以扫描已导入的文件夹(相对于整个部分库文件夹)，协助Plex添加由Sonarr/Radarr导入的添加媒体文件，从而减少Google API使用过多而被限制。
+PlexPy：是一个基于Web的应用程序，与Plex一起运行，用于监视活动并跟踪各种统计数据。
+Ombi：是一个自托管的Web应用程序，可以自动为你的共享Plex或Emby用户提供自己请求内容的功能！Ombi可以链接到多个电视节目和电影DVR工具，为你创建无缝的端到端体验。
+Portainer：是一个开源轻量级管理UI，可让您轻松管理Docker容器，图像，网络和卷。
+Organizr：是一个基于Web的HTPC服务器管理器，允许您管理选项卡中的各种工具和程序。还支持用户管理，允许非管理员用户或访客通过Organizr访问某些网页。
+Plex/Emby：多媒体客户端，主要功能是存储+索引+转码+在线播放。
+Nextcloud：一个免费的，开源的网盘程序
+Resilio Sync：一个点对点的文件同步工具
+Plex Dupefinder：用了在Plex库中找到重复版本的媒体，并告诉Plex自动删除最低质量版本(基于评分算法)，留下一个高质量的媒体文件。
+Heimdall：用来添加各种链接地址的Web面板
+Sickbeard MP4 Automator：自动将视频文件转成mp4的工具</code></pre><p>其实这些应用配合起来看起来很强大，但玩的有点懵逼。</p>
+<p>如果你觉得你服务器空间不太够，可以配合<code>Rclone</code>/<code>Plexdrive</code>挂载远程存储一起使用，比如<code>Google Drive</code>，<code>Cloudbox</code>也是只建议使用<code>Gdrive</code>网盘，如果你没有无限空间的<code>Gdrive</code>，可以查看该文章免费申请一个→传送门。</p>
+<h2 id="Cloudbox运作过程"><a href="#Cloudbox运作过程" class="headerlink" title="Cloudbox运作过程"></a>Cloudbox运作过程</h2><p><code>Cloudbox</code>通过<code>Sonarr</code>下载您最喜爱的电视节目，<code>Radarr</code>下载您喜爱的电影。两者都使用<code>Usenet</code>(通过<code>NZBGet</code>)和/或<code>Torrent</code>(通过<code>ruTorrent</code>)来完成。</p>
+<p>下载完成后，<code>Sonarr</code>和<code>Radarr</code>会将这些下载内容移至服务器的<code>/mnt/local/Media/</code>文件夹，并向<code>Plex Autoscan</code>发送通知。</p>
+<p>反过来，<code>Plex AutoScan</code>将通过扫描特定的视频文件夹告诉<code>Plex</code>扫描新下载的电视节目或电影。然后会更快地出现在<code>Plex</code>中，而不需要扫描全部的视频库，这样可以减少<code>Cloud Storage API</code>使用次数，导致被限制。</p>
+<p><code>Cloudplow</code>最终会将所有内容从远程云存储上<code>/mnt/local/Media/</code>命名的文件夹移动<code>Media</code>，从而减少服务器上的存储空间。</p>
+<p>在此迁移期间，媒体文件将继续可供媒体服务器(例如<code>Plex</code>)访问，因为远程云存储(例如<code>Google Drive</code>)将挂载在服务器上。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>一台国外的服务器，建议内存<code>2G</code>以上、硬盘的话官方是建议<code>200G</code>，这里的话<code>20G</code>以上就可以了，最好越大越好，内存不够的可以用下<code>Swap</code>一键脚本→传送门。</p>
+<p>一个<code>Plex</code>账户，注册地址→传送门。</p>
+<p>一个一级域名，并将该域名的<code>DNS</code>服务器迁移到<code>Cloudfare</code>，再解析类似<code>*.southcat.net</code>泛域名到服务器<code>ip</code>。</p>
+<p>如果你不想迁移域名也可以，不过要解析多个二级域名到服务器<code>ip</code>，具体操作查看→传送门。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/Cloudbox/Cloudbox" target="_blank" rel="noopener">https://github.com/Cloudbox/Cloudbox</a></p>
+<p>支持系统：<code>Ubuntu 16.04</code>或<code>18.04</code>，仅限<code>64</code>位系统，这里<code>Debian</code>系统貌似也可以，不过最好是用<code>Ubuntu</code>，不然可能会有问题。</p>
+<p><strong>1、新建用户</strong><br>这里别用<code>root</code>用户安装，不会会有部分应用可能用不了，所以需要新建一个普通用户，如果你有普通用户的可以跳过这一步。</p>
+<pre><code>#新建moerats用户
+useradd -m moerats
+#获取sudo权限
+usermod -aG sudo moerats
+#设置密码等
+passwd moerats
+chsh -s /bin/bash moerats</code></pre><p><strong>2、安装依赖</strong><br>使用步骤<code>1</code>设置的普通用户登录<code>SSH</code>，使用命令：</p>
+<pre><code>curl -s https://cloudbox.works/scripts/dep.sh | sudo -H sh; curl -s https://cloudbox.works/scripts/repo.sh | bash
+或者
+wget -qO- https://cloudbox.works/scripts/dep.sh | sudo -H sh; wget -qO- https://cloudbox.works/scripts/repo.sh | bash</code></pre><p><strong>3、编辑配置文件</strong></p>
+<pre><code>cd ~/cloudbox
+#编辑下载和备份目录，该配置可以默认
+nano settings.yml
+
+#编辑登录等信息
+nano accounts.yml</code></pre><p><code>settings.yml</code>应该都看的懂，这里说下<code>accounts.yml</code>，大致参数意思如下：</p>
+<pre><code>#user为普通用户名称，passwd为登录密码，也就是所有应用Web端登录信息
+user: moerats
+passwd: moeratspasswd
+#domai为解析的一级域名
+domain: southcat.net
+#email和api为cloudfare的登录邮箱和api，api获取地址https://www.cloudflare.com/a/profile
+email: admin@southcat.net
+cloudflare_api_token: 4993d7315d
+#plex用户名和密码
+plex:
+  user: 
+  pass: 
+#pushover为推送应用，这个如果你觉得配置麻烦，可以留空，不影响安装
+pushover:
+  app_token: ap36cqsi5w
+  user_key: u2wtotir3
+  priority: 1</code></pre><p>这里的<code>pushover</code>起到推送作用，就是一般在下载完成，备份完成等一些操作会自动推送给你，有安卓/<code>IOS</code>/桌面端，具体使用查看→传送门，这里的<code>token</code>和<code>key</code>貌似好填，这里只说下<code>priority</code>参数为通知优先级，不会设置的，建议设置为<code>1</code>，也就是高优先级，如果你希望你不要错过推送消息，那就设置<code>2</code>，不过<code>2</code>会一直打扰你，直到你点开消息为止。</p>
+<p><strong>4、安装</strong></p>
+<pre><code>#安装Cloudbox
+sudo ansible-playbook cloudbox.yml --tags cloudbox
+
+#安装Feederbox
+sudo ansible-playbook cloudbox.yml --tags feederbox
+
+#安装Mediabox
+sudo ansible-playbook cloudbox.yml --tags mediabox</code></pre><p>安装的时候，使用<code>Cloudfare</code>的会自动给你解析好域名，并签发<code>SSL</code>证书。访问地址如下：</p>
+<pre><code>Jackett：https://jackett.yourdomain.com
+NZBGet：https://nzbget.yourdomain.com
+NZBHydra2：https://nzbhydra2.yourdomain.com
+Organizr：https://organizr.yourdomain.com
+Plex：https://plex.yourdomain.com
+WebTools for Plex*：http://plex.yourdomain.com:33400
+Plexpy (Tautulli)：https://plexpy.yourdomain.com
+Plex Requests：https://plexrequests.yourdomain.com
+Portainer：https://portainer.yourdomain.com
+Radarr：https://radarr.yourdomain.com
+ruTorrent：https://rutorrent.yourdomain.com
+Sonarr：https://sonarr.yourdomain.com</code></pre><p>其它可选安装：</p>
+<pre><code>#安装Emby
+sudo ansible-playbook cloudbox.yml --tags emby  
+
+#安装Nextcloud
+sudo ansible-playbook cloudbox.yml --tags nextcloud  
+
+#安装Resilio Sync
+sudo ansible-playbook cloudbox.yml --tags resilio-sync
+
+#安装Plex Dupefinder
+sudo ansible-playbook cloudbox.yml --tags plex_dupefinder
+
+#安装Heimdall
+sudo ansible-playbook cloudbox.yml --tags heimdall
+
+#安装NZBHydra v1
+sudo ansible-playbook cloudbox.yml --tags nzbhydra
+
+#安装Plex Requests
+sudo ansible-playbook cloudbox.yml --tags plexrequests </code></pre><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>操作之前需要先了解下服务器本地路径和<code>Google Drive</code>路径，这里以默认的<code>settings.yml</code>参数为参考。</p>
+<pre><code>#Google云端硬盘路径
+Media
+├── Movies #电影文件夹
+├── Music  #音乐文件夹
+└── TV #电视文件夹
+
+#本地路径
+mnt
+├──local
+|  └── Media #存储在本地的媒体文件
+├──remote
+|  └── Media #存储在Google Drive的媒体文件
+└──unionfs
+   └── Media #Plex，Sonarr和Radarr在扫描媒体时读取的文件夹。</code></pre><p><code>Google Drive</code>上的文件夹需要我们自己建立，具体参考→传送门。</p>
+<p>这里会定期检本地<code>local</code>路径的大小(默认为<code>30</code>分钟)。当文件夹大小达到其目标(默认为<code>200GB</code>)时，媒体文件将被移出/上传到云端，从而释放本地磁盘空间。</p>
+<p>这里的默认阈值是可以修改的，编辑配置文件：</p>
+<pre><code>sudo nano /opt/cloudplow/config.json</code></pre><p>检查时间间隔和默认值大致参数如下：</p>
+<pre><code>&quot;uploader&quot;: {
+    &quot;google&quot;: {
+        &quot;check_interval&quot;: 30,
+        &quot;exclude_open_files&quot;: true,
+        &quot;max_size_gb&quot;: 200,
+        &quot;opened_excludes&quot;: [
+            &quot;/downloads/&quot;
+        ],
+        &quot;size_excludes&quot;: [
+            &quot;downloads/*&quot;
+        ]
+    }</code></pre><p><code>check_interval</code>为时间间隔(默认分钟)，<code>max_size_gb</code>为大小(默认<code>G</code>)，建议最低<code>2G</code>。更多参数配置参考→传送门。</p>
+<p>最后重启生效：</p>
+<pre><code>sudo systemctl restart cloudplow</code></pre><p><strong>1、配置Rclone</strong><br>这里<code>Rclone</code>的作用大概就是将备份/媒体文件上传至<code>Google Drive</code>，使用命令：</p>
+<pre><code>rclone config</code></pre><p><code>name</code>那里需要命名<code>google</code>，具体过程查看→传送门。</p>
+<p><strong>2、配置Plexdrive</strong><br><code>Plexdrive</code>的作用就是让<code>Plex</code>从<code>Google Drive</code>读取媒体文件，利用缓存加快读取和减少<code>api</code>使用，先获取谷歌<code>API</code>凭据，获取步骤参考→传送门，然后使用命令：</p>
+<pre><code>#先替换之前的plexdrive二进制，不然后面有个参数会不支持
+wget https://github.com/dweidenfeld/plexdrive/releases/download/5.0.0/plexdrive-linux-amd64
+mv plexdrive-linux-amd64 /opt/plexdrive4/plexdrive
+chmod +x /opt/plexdrive4/plexdrive
+
+#挂载配置
+sudo /opt/plexdrive4/plexdrive mount -v 3 --refresh-interval=1m --chunk-check-threads=8 --chunk-load-threads=8 --chunk-load-ahead=4 --max-chunks=100 --fuse-options=allow_other,read_only --config=/opt/plexdrive4 --cache-file=/opt/plexdrive4/cache.bolt /mnt/remote</code></pre><p>然后会要你输入客户端<code>ID</code>和密匙，再打开获取到的链接绑定账号后，将自己获取到的<code>code</code>复制到<code>SSH</code>客户端确定即可。</p>
+<p>新建一个<code>Systemd</code>配置文件，使用命令：</p>
+<pre><code>sudo nano /etc/systemd/system/plexdrive.service</code></pre><p>先修改下面的用户和用户组，然后一起复制进去。</p>
+<pre><code>[Unit]
+Description=Plexdrive Mount
+After=network-online.target mongodb.service
+
+[Service]
+User=moerats
+Group=moerats
+Type=simple
+ExecStartPre=/bin/sleep 10
+ExecStart=/opt/plexdrive4/plexdrive mount \
+ --refresh-interval=1m \
+ --chunk-size=16m \
+ --fuse-options=allow_other,read_only \
+ --config=/opt/plexdrive4 \
+ --chunk-check-threads=4 \
+ --chunk-load-threads=4 \
+ --chunk-load-ahead=4 \
+ --max-chunks=20 \
+ -v 3 \
+  /mnt/remote
+ExecStop=/bin/fusermount -uz /mnt/remote
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target</code></pre><p>再使用<code>Ctrl+x</code>、<code>y</code>保存退出。</p>
+<p>启动：</p>
+<pre><code>sudo systemctl start plexdrive</code></pre><p>配置开机自启：</p>
+<pre><code>sudo systemctl enable plexdrive</code></pre><p>查看状态：</p>
+<pre><code>sudo systemctl status plexdrive</code></pre><p>显示<code>Active:active(running)</code>即为成功。</p>
+<p>最后其它应用程序使用可以直接看<code>Github</code>，写的很详细了，地址参考：</p>
+<pre><code>NZBGet：https://github.com/Cloudbox/Cloudbox/wiki/Install%3A-NZBGet
+ruTorrent：https://github.com/Cloudbox/Cloudbox/wiki/Install%3A-ruTorrent
+NZBHydra2：https://github.com/Cloudbox/Cloudbox/wiki/Install%3A-NZBHydra2
+Jackett：https://github.com/Cloudbox/Cloudbox/wiki/Install%3A-Jackett
+Plex Media Server：https://github.com/Cloudbox/Cloudbox/wiki/Install%3A-Plex-Media-Server
+Plex Autoscan：https://github.com/Cloudbox/Cloudbox/wiki/Install%3A-Plex-Autoscan
+Sonarr：https://github.com/Cloudbox/Cloudbox/wiki/Install%3A-Sonarr
+Radarr：https://github.com/Cloudbox/Cloudbox/wiki/Install%3A-Radarr
+PlexPy(Tautulli)：https://github.com/Cloudbox/Cloudbox/wiki/Install%3A-PlexPy-%28Tautulli%29
+Ombi：https://github.com/Cloudbox/Cloudbox/wiki/Install%3A-Ombi
+Portainer：https://github.com/Cloudbox/Cloudbox/wiki/Install%3A-Portainer
+Organizr：https://github.com/Cloudbox/Cloudbox/wiki/Install%3A-Organizr
+Emby：https://github.com/Cloudbox/Cloudbox/wiki/Extras%3A-Emby
+Nextcloud：https://github.com/Cloudbox/Cloudbox/wiki/Extras%3A-Nextcloud
+Resilio Sync：https://github.com/Cloudbox/Cloudbox/wiki/Extras%3A-Resilio-Sync
+Plex Dupefinder：https://github.com/Cloudbox/Cloudbox/wiki/Extras%3A-Plex-Dupefinder
+Heimdall：https://github.com/Cloudbox/Cloudbox/wiki/Extras%3A-Heimdall
+NZBHydra v1：https://github.com/Cloudbox/Cloudbox/wiki/Extras%3A-NZBHydra
+Plex Requests：https://github.com/Cloudbox/Cloudbox/wiki/Extras%3A-Plex-Requests
+Sickbeard MP4 Automator：https://github.com/Cloudbox/Cloudbox/wiki/Extra%3A-Sickbeard-MP4-Automator</code></pre><h2 id="相关教程"><a href="#相关教程" class="headerlink" title="相关教程"></a>相关教程</h2><ul>
+<li>swizzin：一个轻量级的多用户SeedBox，一键安装网盘/BT下载/多媒体应用等</li>
+<li>一个可以自动安装多网站程序的面板 ：YunoHost安装教程</li>
+<li>qBittorrent+Deluge+rTorrent+Transmission+H5ai多功能一键脚本</li>
+</ul>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-02-05T13:11:32.000Z" itemprop="datePublished">2020-02-05</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.246Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/02/05/e9-ad-94-e6-94-b9bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-for-debian-centos/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">魔改BBR一键安装脚本 for Debian/CentOS</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/02/05/e9-80-9a-e8-bf-87auth-log-e6-9d-a5-e6-9f-a5-e7-9c-8bvps-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-98-af-e5-90-a6-e8-a2-ab-e6-89-ab-e6-8f-8f-e5-92-8c-e6-9a-b4-e5-8a-9b-e7-a0-b4-e8-a7-a3/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">通过Auth.log来查看VPS服务器是否被扫描和暴力破解</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

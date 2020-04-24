@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Linux VPS一键搭建KMS服务器脚本及激活Windows和Office教程 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Linux VPS一键搭建KMS服务器脚本及激活Windows和Office教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/03/26/linux-vps-e4-b8-80-e9-94-ae-e6-90-ad-e5-bb-bakms-e6-9c-8d-e5-8a-a1-e5-99-a8-e8-84-9a-e6-9c-ac-e5-8f-8a-e6-bf-80-e6-b4-bbwindows-e5-92-8coffice-e6-95-99-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="说明：KMS就不详细介绍了，可以用来激活微软的一些系统和软件，让你免费体验正版的系统或软件。这里就分享个KMS激活服务器一键搭建脚本，可以供多人使用，一次激活有效期180天，且180天内只要服务器重新在线一次就会自动续期。 安装Github地址：https:&#x2F;&#x2F;github.com&#x2F;dakkidaze&#x2F;one-key-kms 使用命令： #CentOS，Redhat，Fedora等请选择CentO - John Doe - 南猫"><meta property="article:published_time" content="2020-03-25T21:47:25.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.253Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.253Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/03/26/linux-vps-e4-b8-80-e9-94-ae-e6-90-ad-e5-bb-bakms-e6-9c-8d-e5-8a-a1-e5-99-a8-e8-84-9a-e6-9c-ac-e5-8f-8a-e6-bf-80-e6-b4-bbwindows-e5-92-8coffice-e6-95-99-e7-a8-8b/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/03/26/linux-vps-e4-b8-80-e9-94-ae-e6-90-ad-e5-bb-bakms-e6-9c-8d-e5-8a-a1-e5-99-a8-e8-84-9a-e6-9c-ac-e5-8f-8a-e6-bf-80-e6-b4-bbwindows-e5-92-8coffice-e6-95-99-e7-a8-8b/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/03/26/linux-vps-e4-b8-80-e9-94-ae-e6-90-ad-e5-bb-bakms-e6-9c-8d-e5-8a-a1-e5-99-a8-e8-84-9a-e6-9c-ac-e5-8f-8a-e6-bf-80-e6-b4-bbwindows-e5-92-8coffice-e6-95-99-e7-a8-8b/"
+    },
+    "headline": "Linux VPS一键搭建KMS服务器脚本及激活Windows和Office教程 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-03-25T21:47:25.000Z",
+    "dateModified": "2020-04-24T09:34:44.253Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：KMS就不详细介绍了，可以用来激活微软的一些系统和软件，让你免费体验正版的系统或软件。这里就分享个KMS激活服务器一键搭建脚本，可以供多人使用，一次激活有效期180天，且180天内只要服务器重新在线一次就会自动续期。 安装Github地址：https://github.com/dakkidaze/one-key-kms 使用命令： #CentOS，Redhat，Fedora等请选择CentO - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=Linux VPS一键搭建KMS服务器脚本及激活Windows和Office教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Linux VPS一键搭建KMS服务器脚本及激活Windows和Office教程&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=Linux VPS一键搭建KMS服务器脚本及激活Windows和Office教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEoUlEQVR42u2ay3LcQAwD9/9/2rnkkHI0REO7lxVbl8T7kKbpKpoE8PpZeL2EFlpooYUW+sugX8N1+cW/r1999vd7/76WXr/6zO/nXj274RBa6C3QE1wCPz2QAp9Ap8+m/x8/L7TQi6CnpnR1sKmBnZrO1CjT/abiEg6hhRZ6PnQaWk6FOxVnakjpFyK00EK/B30a8qfX2wHmBJ2GE6GFFroTC9LBp6W+fb9dWj62ZQkt9JdDE6Bv+PdjaqjQQn8xdDS9CnF+KlxqVMQ0mISMj7qWQgv9xdBksSBFOR0yNUwiQtBzRKFDaKEXQJ/Et3QzasiToSdBEoMAiQ5CC70AOgl7kwBH3kuDCQnfvGPyxfCc0EI/DLoZKprQ3F0DgRp803eOvxShhV4AfQKezLJpQJjuR0X8BETCfJeFEVroxdApuEqFOmLAEbGADCaxuEILvQD6dDASYkkDRQrH0GAdEf/TYCK00Nugp5DrtNTToSQVhv4SSHjueF+hhV4AnRrWBBuX9mLJSANOGmBS8YQWeht0O0hMnyVDxB2Rv1lW4pYltNAPhibDO13sabBm+swEecdIFFroTdAJfloy6KDQigDEPGxEEKGF3gSdmkhaRog5T0w6IuqTYo9Ch9BCL4FOhl1qOmmpoEY7KXYK9ggt9HZoIgqSpeOOEdeafm0B0MIhtNAPhJ7CZ5NQ1/zcButIwLUesIQWegF0E1idBooYcilCea3gkIw7oYXeBE3M+TuCAzERiBDYhHRiSEBooRdAt1B3w2tNM7xrDsaiCi30EmgSTqULfxtsI8G69HMyIoUWehM0FdyIIU6N+SQoJEGSCoT/nUFooRdA0+WBABJxoREPSTOky47QQm+BpiLgnQEhLQhtE0sGYBQMhRZ6CTQxw5MpkA5OwzbpvVacFFrobdDvBGSIEDHdY2pQZJBpw3hCC70BuhXwqPHXin1ElJgWEnRWoYVeAE2XiCb8RoU8MshMhiEdYIQWehM0NcDb5Z0afY3R0BTn8llCC70IuhEIU1OiS0gzYKSipcFFaKG3QKdmQcS4UWAPBUsXEvGhGSi00Bugp4ekIN2nTPmmMLQIWDkRWugHQlPjLkG0ph8VHpIxn4x/oYXeBN2G2yrDrAjHkeKnxnbbtRRa6IdBTweiTacx/ujQQ55BBAyhhd4EPS0QtIk1wZw7YRoq/sciCS30ImgCOA34aXAhjYyIiSSkh7csoYV+IHQCSX/0k8DXLP6NQUhFRjyRCS30g6CTOZ8aRzL2k0FHRME2tBe3LKGFfjg0Pew7QbvWTCDhnSqYK7TQS6BJsJUOLdMCQ4YQumQ04SChhd4EnQI304JOhb/0nSQ+kNBPWkqEFno7dGuUv8CVzLd2KKpNA6GFXgBNDtm81g4ebSHSkjGGcoQWegn0JNhNgbWf4iLhmmmgISZePLfQQi+CJiLbnYWfCoWp+SVhIomQQgstdF4k0pCCAzBFeCY112o4EVropdAk7JJMthTWmwpHB5o0PAkt9CboZkGYmgg1+FsxoQnnvb1lCS30l0M3w0djit8N6kxFIvc63l9ooRdAb7qEFlpooYUW+kuuPyMk2BPamo/uAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Linux VPS一键搭建KMS服务器脚本及激活Windows和Office教程</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-03-26</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux VPS一键搭建KMS服务器脚本及激活Windows和Office教程&url=http://hexo.southcat.net/2020/03/26/linux-vps-e4-b8-80-e9-94-ae-e6-90-ad-e5-bb-bakms-e6-9c-8d-e5-8a-a1-e5-99-a8-e8-84-9a-e6-9c-ac-e5-8f-8a-e6-bf-80-e6-b4-bbwindows-e5-92-8coffice-e6-95-99-e7-a8-8b/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Linux VPS一键搭建KMS服务器脚本及激活Windows和Office教程&url=http://hexo.southcat.net/2020/03/26/linux-vps-e4-b8-80-e9-94-ae-e6-90-ad-e5-bb-bakms-e6-9c-8d-e5-8a-a1-e5-99-a8-e8-84-9a-e6-9c-ac-e5-8f-8a-e6-bf-80-e6-b4-bbwindows-e5-92-8coffice-e6-95-99-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/03/26/linux-vps-e4-b8-80-e9-94-ae-e6-90-ad-e5-bb-bakms-e6-9c-8d-e5-8a-a1-e5-99-a8-e8-84-9a-e6-9c-ac-e5-8f-8a-e6-bf-80-e6-b4-bbwindows-e5-92-8coffice-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/03/26/linux-vps-e4-b8-80-e9-94-ae-e6-90-ad-e5-bb-bakms-e6-9c-8d-e5-8a-a1-e5-99-a8-e8-84-9a-e6-9c-ac-e5-8f-8a-e6-bf-80-e6-b4-bbwindows-e5-92-8coffice-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/03/26/linux-vps-e4-b8-80-e9-94-ae-e6-90-ad-e5-bb-bakms-e6-9c-8d-e5-8a-a1-e5-99-a8-e8-84-9a-e6-9c-ac-e5-8f-8a-e6-bf-80-e6-b4-bbwindows-e5-92-8coffice-e6-95-99-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/03/26/linux-vps-e4-b8-80-e9-94-ae-e6-90-ad-e5-bb-bakms-e6-9c-8d-e5-8a-a1-e5-99-a8-e8-84-9a-e6-9c-ac-e5-8f-8a-e6-bf-80-e6-b4-bbwindows-e5-92-8coffice-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/03/26/linux-vps-e4-b8-80-e9-94-ae-e6-90-ad-e5-bb-bakms-e6-9c-8d-e5-8a-a1-e5-99-a8-e8-84-9a-e6-9c-ac-e5-8f-8a-e6-bf-80-e6-b4-bbwindows-e5-92-8coffice-e6-95-99-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEoUlEQVR42u2ay3LcQAwD9/9/2rnkkHI0REO7lxVbl8T7kKbpKpoE8PpZeL2EFlpooYUW+sugX8N1+cW/r1999vd7/76WXr/6zO/nXj274RBa6C3QE1wCPz2QAp9Ap8+m/x8/L7TQi6CnpnR1sKmBnZrO1CjT/abiEg6hhRZ6PnQaWk6FOxVnakjpFyK00EK/B30a8qfX2wHmBJ2GE6GFFroTC9LBp6W+fb9dWj62ZQkt9JdDE6Bv+PdjaqjQQn8xdDS9CnF+KlxqVMQ0mISMj7qWQgv9xdBksSBFOR0yNUwiQtBzRKFDaKEXQJ/Et3QzasiToSdBEoMAiQ5CC70AOgl7kwBH3kuDCQnfvGPyxfCc0EI/DLoZKprQ3F0DgRp803eOvxShhV4AfQKezLJpQJjuR0X8BETCfJeFEVroxdApuEqFOmLAEbGADCaxuEILvQD6dDASYkkDRQrH0GAdEf/TYCK00Nugp5DrtNTToSQVhv4SSHjueF+hhV4AnRrWBBuX9mLJSANOGmBS8YQWeht0O0hMnyVDxB2Rv1lW4pYltNAPhibDO13sabBm+swEecdIFFroTdAJfloy6KDQigDEPGxEEKGF3gSdmkhaRog5T0w6IuqTYo9Ch9BCL4FOhl1qOmmpoEY7KXYK9ggt9HZoIgqSpeOOEdeafm0B0MIhtNAPhJ7CZ5NQ1/zcButIwLUesIQWegF0E1idBooYcilCea3gkIw7oYXeBE3M+TuCAzERiBDYhHRiSEBooRdAt1B3w2tNM7xrDsaiCi30EmgSTqULfxtsI8G69HMyIoUWehM0FdyIIU6N+SQoJEGSCoT/nUFooRdA0+WBABJxoREPSTOky47QQm+BpiLgnQEhLQhtE0sGYBQMhRZ6CTQxw5MpkA5OwzbpvVacFFrobdDvBGSIEDHdY2pQZJBpw3hCC70BuhXwqPHXin1ElJgWEnRWoYVeAE2XiCb8RoU8MshMhiEdYIQWehM0NcDb5Z0afY3R0BTn8llCC70IuhEIU1OiS0gzYKSipcFFaKG3QKdmQcS4UWAPBUsXEvGhGSi00Bugp4ekIN2nTPmmMLQIWDkRWugHQlPjLkG0ph8VHpIxn4x/oYXeBN2G2yrDrAjHkeKnxnbbtRRa6IdBTweiTacx/ujQQ55BBAyhhd4EPS0QtIk1wZw7YRoq/sciCS30ImgCOA34aXAhjYyIiSSkh7csoYV+IHQCSX/0k8DXLP6NQUhFRjyRCS30g6CTOZ8aRzL2k0FHRME2tBe3LKGFfjg0Pew7QbvWTCDhnSqYK7TQS6BJsJUOLdMCQ4YQumQ04SChhd4EnQI304JOhb/0nSQ+kNBPWkqEFno7dGuUv8CVzLd2KKpNA6GFXgBNDtm81g4ebSHSkjGGcoQWegn0JNhNgbWf4iLhmmmgISZePLfQQi+CJiLbnYWfCoWp+SVhIomQQgstdF4k0pCCAzBFeCY112o4EVropdAk7JJMthTWmwpHB5o0PAkt9CboZkGYmgg1+FsxoQnnvb1lCS30l0M3w0djit8N6kxFIvc63l9ooRdAb7qEFlpooYUW+kuuPyMk2BPamo/uAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#激活Windows"><span class="post-toc-number">2.</span> <span class="post-toc-text">激活Windows</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#激活Office"><span class="post-toc-number">3.</span> <span class="post-toc-text">激活Office</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong><code>KMS</code>就不详细介绍了，可以用来激活微软的一些系统和软件，让你免费体验正版的系统或软件。这里就分享个<code>KMS</code>激活服务器一键搭建脚本，可以供多人使用，一次激活有效期<code>180</code>天，且<code>180</code>天内只要服务器重新在线一次就会自动续期。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/dakkidaze/one-key-kms" target="_blank" rel="noopener">https://github.com/dakkidaze/one-key-kms</a></p>
+<p>使用命令：</p>
+<pre><code>#CentOS，Redhat，Fedora等请选择CentOS脚本
+wget https://raw.githubusercontent.com/dakkidaze/one-key-kms/master/one-key-kms-centos.sh
+chmod +x one-key-kms-centos.sh
+./one-key-kms-centos.sh
+
+#Debian，Ubuntu，Mint等请选择Debian脚本
+wget https://raw.githubusercontent.com/dakkidaze/one-key-kms/master/one-key-kms-debian.sh
+chmod +x one-key-kms-debian.sh
+./one-key-kms-debian.sh
+
+#启动KMS
+wget https://raw.githubusercontent.com/dakkidaze/one-key-kms/master/kms.sh
+chmod +x kms.sh
+./kms.sh start</code></pre><p>注意放行服务器<code>1688</code>端口！</p>
+<h2 id="激活Windows"><a href="#激活Windows" class="headerlink" title="激活Windows"></a>激活Windows</h2><p>系统需要是<code>VL</code>版本的，然后使用管理员权限运行<code>cmd</code>，运行以下命令：</p>
+<pre><code>cd /d &quot;%SystemRoot%\system32&quot;
+slmgr /skms ip  #ip为你KMS的IP地址或者域名 
+slmgr /ato
+slmgr /xpr</code></pre><p>看到网上还有很多系统不是<code>VL</code>版本的激活方法，这个方法就不说了，感觉没啥用，因为不是<code>VL</code>版本的都没<code>KEY</code>，比如说旗舰版，家庭高级版等。</p>
+<h2 id="激活Office"><a href="#激活Office" class="headerlink" title="激活Office"></a>激活Office</h2><p>首先你的<code>Office</code>必须是<code>VOL</code>版本，否则无法激活。</p>
+<p>找到你的<code>Office</code>安装目录，如果你不知道你的<code>Office</code>装在哪个目录，可以鼠标右键一个程序图标比如<code>Word</code>，然后选择“打开文件所在的位置”，在上面地址栏就可以看到了。</p>
+<p>这里以<code>Office2016</code>为例，<code>32</code>位文件夹目录为<code>C:\Program Files (x86)\Microsoft Office\Office16</code>。<code>62</code>位目录为<code>C:\Program Files\Microsoft Office\Office16</code>。关于文件夹对应的版本说明：<code>Office16</code>是<code>Office2016</code>，<code>Office15</code>就是<code>Office2013</code>，<code>Office14</code>就是<code>Office2010</code>。</p>
+<p>下面以<code>32</code>位为参考。使用管理员权限运行<code>cmd</code>，运行以下命令：</p>
+<pre><code>#进入Office文件夹执行命令
+cd &quot;C:\Program Files (x86)\Microsoft Office\Office16&quot;
+cscript ospp.vbs /sethst:ip  #ip为你KMS的IP地址或者域名
+cscript ospp.vbs /act</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-03-25T21:47:25.000Z" itemprop="datePublished">2020-03-26</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.253Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/03/27/linux-vps-e4-bd-bf-e7-94-a8iftop-e7-9b-91-e6-8e-a7-e6-9c-8d-e5-8a-a1-e5-99-a8-e6-b5-81-e9-87-8f-ef-bc-8c-e6-9f-a5-e7-9c-8b-e7-bd-91-e7-bb-9c-e5-bc-82-e5-b8-b8-e6-83-85-e5-86-b5/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux VPS使用iftop监控服务器流量，查看网络异常情况</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/03/26/e6-9f-a5-e7-9c-8blinux-e7-b3-bb-e7-bb-9f-e6-80-a7-e8-83-bd-e9-85-8d-e7-bd-ae-e5-b8-b8-e7-94-a8-e5-91-bd-e4-bb-a4-e8-84-9a-e6-9c-ac/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">查看Linux系统性能配置常用命令脚本</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

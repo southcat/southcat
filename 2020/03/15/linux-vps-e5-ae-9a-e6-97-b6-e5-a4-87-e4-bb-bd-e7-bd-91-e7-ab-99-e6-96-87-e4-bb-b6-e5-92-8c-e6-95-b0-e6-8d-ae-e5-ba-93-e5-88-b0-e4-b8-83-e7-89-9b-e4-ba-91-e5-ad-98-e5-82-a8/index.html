@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Linux vps定时备份网站文件和数据库到七牛云存储 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Linux vps定时备份网站文件和数据库到七牛云存储 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/"><meta property="og:locale" content="en"><meta name="description" content="之前有说过Linux VPS每日自动备份FTP及数据库通过邮箱发送方法，不过需要自建FTP空间才行，较本教程有点麻烦，如果你没有FTP空间，可以申请一个七牛云存储，免费10G空间备份一般的小站足够了。这里介绍一个备份网站文件和数据库到七牛的脚本，实测效果还不错，Linux vps下弄个定时任务就可以每天定时自动备份了。 本脚本Github项目地址：https:&#x2F;&#x2F;github.com&#x2F;ccbika - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/bfqiniuyun.png"><meta property="article:published_time" content="2020-03-15T14:36:21.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.251Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.251Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/"
+    },
+    "headline": "Linux vps定时备份网站文件和数据库到七牛云存储 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-03-15T14:36:21.000Z",
+    "dateModified": "2020-04-24T09:34:44.251Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "之前有说过Linux VPS每日自动备份FTP及数据库通过邮箱发送方法，不过需要自建FTP空间才行，较本教程有点麻烦，如果你没有FTP空间，可以申请一个七牛云存储，免费10G空间备份一般的小站足够了。这里介绍一个备份网站文件和数据库到七牛的脚本，实测效果还不错，Linux vps下弄个定时任务就可以每天定时自动备份了。 本脚本Github项目地址：https://github.com/ccbika - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=Linux vps定时备份网站文件和数据库到七牛云存储" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Linux vps定时备份网站文件和数据库到七牛云存储&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=Linux vps定时备份网站文件和数据库到七牛云存储" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAElklEQVR42u2aQXIbQQwD/f9PO1eX4iEaI1+0bF2cSKvdabqCkAC/vhe+voQWWmihhRb6w6C/htfr5z+/8/Oz3/58und6Zrr29dyUQ2ihN0H/+o/+AHB64Ot3fysCKdp039f30rX/XSO00IugTwd9PcjpYeTnJHqpOCfBohxCCy30DEqKQQQrFXtsNoQWWui3hIw2/wnudJ+TeLWCKrTQQs+NOhGjyUggQ0ljSiShfXvKElroD4dOxtyn/PxTN1RooT8UugrAQqPSCk8y78m9TgL2Z6ml0EJ/GDQJwagpkAZ+Ygg0g8lUBBzgCS30w6DTkEFDutNnTdMzmX5pMJl+SUILvRG6CcdJ0DfdjxS8DQyTESG00Fug06GIELUBfjTlYWOU4JExKLTQD4Nug3Ky7EKWVilcs7gTg3uhhV4AnRZsTgKVltlSI5GCfBIEpmHjOHAILfTDoZuFmjQApEaBXPfOgt44uAgt9ALoSajSIQlkYzJSM6BdphNa6K3Qk0nQhnfE7CMG/a1gVlOW0EI/CJqYbOmz2wAvCR0tNhY3oYVeAE0CuXcOPBUwfYcOPFeLNkIL/XBo8hC63NIKIVmmS+dNy3ZCC70FugnPbpoQOlykxZnmPEfBFFroBdD0P34Uel+E7qkozd+jySC00AuhmwGENP+0YUlLcJNw0vsJLfQG6GZBjQbntOFoTP90JmQSCi30MugUiJPlm6ZhuBHMaWCpEg6hhX4odGuYU9OwKRJZrmkCvihkQgv9cOhk9qVrmwWcmwGkCR3GUEFooRdAJ9G6WWxLjcTN/dK15JcmtNBboKlYtGbfO81MGwJWZr/QQj8YujHxyAESLBUgstDTLOIJLfQWaDIkpIaiCffScJDEiZ45BnhCC/1gaNLM0yaFHPokZjQQoEGB0EJvhW4HAnJAWhhq2lPzfyyg0EIvgCY3uW0qSDFvPk/ieyyg0EIvgU7GQTLdqaGX3iNhfCpWtYkgtNAPhJ7Me/IeMQpoYzK9iLDFIEJooRdA02aCDCeTMZDEpoWiJgVqToQW+kHQBK4RGWrW0SYnDTnEzBBa6E3Q1CyfmhLS0EzDBiliGl5QsyW00Iug6TLcTaBOQUmDQ4V2DPCEFvrB0GmJrQkB6EJOGjRuzERiSAgt9AboaggHwVm6Pr1HFmKJIYjUW2ihHwg9hWhtIB6bA2jMY2GCwii00Jugk5CR0I4OKVND1JoJtFkSWuit0LS5P5kFbVCQFm3IkhwxIYQWeht009SnwzdBPhkuUnGpgAkt9DZoGrIlk78ZKCgcWeghYYXQQm+CbgSLHoocjpgI7zQ14/Kc0EI/FJoae0TUGtM+mfOkQAhUaKGFjuZg00wQsyEZCE34Pz5TaKEXQBOBScZCc9hG/JpFO7KsJ7TQW6CJgN00D9ScnwxDEsjTpkpooTdB3wwAzfIcETtqPiaT8VgooYUWGjcPaeGNCGZa5sODxelZQgstNHpAAzo1IWTBhxgQx3sJLfQi6EZ4moYiBW9pyEghHm16hBZ6E/RNsEYDNNqQtE0POV+1MSi00A+B3vQSWmihhRZa6A95/QPcabgzCK98OgAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Linux vps定时备份网站文件和数据库到七牛云存储</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-03-15</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux vps定时备份网站文件和数据库到七牛云存储&url=http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Linux vps定时备份网站文件和数据库到七牛云存储&url=http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAElklEQVR42u2aQXIbQQwD/f9PO1eX4iEaI1+0bF2cSKvdabqCkAC/vhe+voQWWmihhRb6w6C/htfr5z+/8/Oz3/58und6Zrr29dyUQ2ihN0H/+o/+AHB64Ot3fysCKdp039f30rX/XSO00IugTwd9PcjpYeTnJHqpOCfBohxCCy30DEqKQQQrFXtsNoQWWui3hIw2/wnudJ+TeLWCKrTQQs+NOhGjyUggQ0ljSiShfXvKElroD4dOxtyn/PxTN1RooT8UugrAQqPSCk8y78m9TgL2Z6ml0EJ/GDQJwagpkAZ+Ygg0g8lUBBzgCS30w6DTkEFDutNnTdMzmX5pMJl+SUILvRG6CcdJ0DfdjxS8DQyTESG00Fug06GIELUBfjTlYWOU4JExKLTQD4Nug3Ky7EKWVilcs7gTg3uhhV4AnRZsTgKVltlSI5GCfBIEpmHjOHAILfTDoZuFmjQApEaBXPfOgt44uAgt9ALoSajSIQlkYzJSM6BdphNa6K3Qk0nQhnfE7CMG/a1gVlOW0EI/CJqYbOmz2wAvCR0tNhY3oYVeAE0CuXcOPBUwfYcOPFeLNkIL/XBo8hC63NIKIVmmS+dNy3ZCC70FugnPbpoQOlykxZnmPEfBFFroBdD0P34Uel+E7qkozd+jySC00AuhmwGENP+0YUlLcJNw0vsJLfQG6GZBjQbntOFoTP90JmQSCi30MugUiJPlm6ZhuBHMaWCpEg6hhX4odGuYU9OwKRJZrmkCvihkQgv9cOhk9qVrmwWcmwGkCR3GUEFooRdAJ9G6WWxLjcTN/dK15JcmtNBboKlYtGbfO81MGwJWZr/QQj8YujHxyAESLBUgstDTLOIJLfQWaDIkpIaiCffScJDEiZ45BnhCC/1gaNLM0yaFHPokZjQQoEGB0EJvhW4HAnJAWhhq2lPzfyyg0EIvgCY3uW0qSDFvPk/ieyyg0EIvgU7GQTLdqaGX3iNhfCpWtYkgtNAPhJ7Me/IeMQpoYzK9iLDFIEJooRdA02aCDCeTMZDEpoWiJgVqToQW+kHQBK4RGWrW0SYnDTnEzBBa6E3Q1CyfmhLS0EzDBiliGl5QsyW00Iug6TLcTaBOQUmDQ4V2DPCEFvrB0GmJrQkB6EJOGjRuzERiSAgt9AboaggHwVm6Pr1HFmKJIYjUW2ihHwg9hWhtIB6bA2jMY2GCwii00Jugk5CR0I4OKVND1JoJtFkSWuit0LS5P5kFbVCQFm3IkhwxIYQWeht009SnwzdBPhkuUnGpgAkt9DZoGrIlk78ZKCgcWeghYYXQQm+CbgSLHoocjpgI7zQ14/Kc0EI/FJoae0TUGtM+mfOkQAhUaKGFjuZg00wQsyEZCE34Pz5TaKEXQBOBScZCc9hG/JpFO7KsJ7TQW6CJgN00D9ScnwxDEsjTpkpooTdB3wwAzfIcETtqPiaT8VgooYUWGjcPaeGNCGZa5sODxelZQgstNHpAAzo1IWTBhxgQx3sJLfQi6EZ4moYiBW9pyEghHm16hBZ6E/RNsEYDNNqQtE0POV+1MSi00A+B3vQSWmihhRZa6A95/QPcabgzCK98OgAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p>之前有说过Linux VPS每日自动备份FTP及数据库通过邮箱发送方法，不过需要自建FTP空间才行，较本教程有点麻烦，如果你没有<code>FTP</code>空间，可以申请一个七牛云存储，免费10G空间备份一般的小站足够了。这里介绍一个备份网站文件和数据库到七牛的脚本，实测效果还不错，<code>Linux vps</code>下弄个定时任务就可以每天定时自动备份了。</p>
+<p>本脚本<code>Github</code>项目地址：<a href="https://github.com/ccbikai/backuptoqiniu" target="_blank" rel="noopener">https://github.com/ccbikai/backuptoqiniu</a></p>
+<p>先去注册个七牛云账号，然后实名认证后，会送10G流量和空间。注册完后，在左侧位置找到对象存储，然后新建存储空间，并记住你新建的存储空间的名称，后面需要用到。<br><img src="https://www.southcat.net/usr/picture/bfqiniuyun.png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>注意：系统<code>python</code>版本得在2.7以上</p>
+<p><strong>1、安装zip</strong></p>
+<pre><code>apt-get install zip</code></pre><p><strong>2、安装备份脚本</strong></p>
+<pre><code>wget --no-check-certificate -O backuptoqiniu.zip https://www.southcat.net/usr/down/backuptoqiniu.zip
+unzip backuptoqiniu.zip &amp;&amp; cd backuptoqiniu
+python setup.py install</code></pre><p><strong>3、编辑配置文件</strong><br>使用<code>vi backuptoqiniu.sh</code>命令或者<code>Winscp</code>工具编辑</p>
+<pre><code>## 备份配置信息 ##
+
+# 备份名称，用于标记
+BACKUP_NAME=&quot;backup&quot;
+# 备份目录，多个请空格分隔
+BACKUP_SRC=&quot;/home/wwwroot/southcat.net&quot;
+# Mysql主机地址
+MYSQL_SERVER=&quot;localhost&quot;
+# Mysql用户名
+MYSQL_USER=&quot;root&quot;
+# Mysql密码
+MYSQL_PASS=&quot;mysqlpassword&quot;
+# Mysql备份数据库，多个请空格分隔
+MYSQL_DBS=&quot;dbname&quot;
+# 备份文件临时存放目录，一般不需要更改
+BACKUP_DIR=&quot;/tmp/backuptoqiniu&quot;
+# 备份文件压缩密码确保压缩包的安全
+BACKUP_FILE_PASSWD=&quot;123456&quot;
+
+## 备份配置信息 End ##
+
+## 七牛配置信息 ##
+
+#存放空间对应我们在七牛上创建的文件夹
+QINIU_BUCKET=&quot;Rats&quot;
+QINIU_ACCESS_KEY=&quot;ACCESS_KEY&quot;
+QINIU_SECRET_KEY=&quot;SECRET_KEY&quot;
+
+## 七牛配置信息 End ##</code></pre><p>上面的脚本配置基本都已经写的很清楚了，上半部分填写网站的信息，最后三行的信息在七牛获取。<code>QINIU_BUCKET</code>就是存储空间名，<code>ACCESS_KEY</code>和<code>SECRET_KEY</code>在个人面板-密钥管理里获取。那个<code>AK</code>和<code>SK</code>后面对应的长串就是密钥了。</p>
+<p><strong>4、测试脚本</strong></p>
+<pre><code>chmod +x backuptoqiniu.sh
+./backuptoqiniu.sh</code></pre><p>正常运行后我们可以去七牛的后台你新建的存储空间里查看有没有这个压缩包。</p>
+<p><strong>5、设置自动运行脚本</strong></p>
+<pre><code>crontab -e
+0 2 * * 0 /bin/bash /root/backuptoqiniu/backuptoqiniu.sh #添加这个脚本</code></pre><p>上面脚本的意思就是利用<code>crontab</code>定时任务每天凌晨2点自动运行这个脚本。具体<code>crontab</code>的用法可以自行搜索。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-03-15T14:36:21.000Z" itemprop="datePublished">2020-03-15</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.251Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/03/16/ubuntu-debian-e4-b8-8a-e5-ae-89-e8-a3-85-e5-92-8c-e5-90-af-e7-94-a8ipmitool-e6-95-99-e7-a8-8b/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Ubuntu/Debian上安装和启用ipmitool教程</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/03/15/lnmp-e7-8e-af-e5-a2-83-e4-b8-8b-e4-bd-bf-e7-94-a8cdn-e5-90-8e-e8-8e-b7-e5-8f-96-e8-ae-bf-e5-ae-a2-e7-9c-9f-e5-ae-9eip-e7-9a-84-e6-96-b9-e6-b3-95/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">LNMP环境下使用CDN后获取访客真实IP的方法</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

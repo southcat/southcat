@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>示例页面 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="示例页面 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="website"><meta property="og:url" content="http://hexo.southcat.net/sample-page/"><meta property="og:locale" content="en"><meta name="description" content="Who we areOur website address is: https:&#x2F;&#x2F;southcat.net. What personal data we collect and why we collect it评论When visitors leave comments on the site we collect the data shown in the comments form, an - John Doe - 南猫"><meta property="article:published_time" content="2018-04-27T13:56:03.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.227Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.227Z">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/sample-page/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=示例页面" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=示例页面&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=示例页面" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABiUlEQVR42u3ayw6DMAxEUf7/p9tVF0V4ZgwqONVlQ9VHcipFZJxkew24NhAgQCyB2MT1+Xx//7z+avDgd6pdELMRh4Nm17l6T6GrdkHMR1SNuQFYAZN2QayJUA8pNRhB/C/i9OQEYnmEnGhE2Nl/p9UuiLGIbtBN7z9N2yB+hrBFa9CoC0KXq3IQtyKOQks1IVUdVwWy6gPEfIQqZquOqsktKZJAzEWkBe3R66QAksUTiJGIZMGrGnRqglMPPRCzEZ3A4hZJ0j8BYjYi3UxJF0tUx61kBeJxRBpUOgH50kYciMcQyUBywUYF4CrkgpiLcIPJdZwGYxDrIJKGz4ZiO6GBGIlQE5QdWMHhjWqxBMRchAsp6UR1ZrIDMRfhil+3GJZeINZBuI245MBG8rC6tDkL4jZEumCmBq3b6C+BIMYi3Ea9CydJOG4vnIF4HOEOAHaLnOSAB4g1Ea6DTiCKdgNBLIFwMBWY5fdBjEa4w1rpAytBgZiP6ARdB3ULKiDmI568QIAAMRrxBpq7Cin5m8KcAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">示例页面</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2018-04-27</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=示例页面&url=http://hexo.southcat.net/sample-page/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=示例页面&url=http://hexo.southcat.net/sample-page/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/sample-page/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/sample-page/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/sample-page/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/sample-page/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/sample-page/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABiUlEQVR42u3ayw6DMAxEUf7/p9tVF0V4ZgwqONVlQ9VHcipFZJxkew24NhAgQCyB2MT1+Xx//7z+avDgd6pdELMRh4Nm17l6T6GrdkHMR1SNuQFYAZN2QayJUA8pNRhB/C/i9OQEYnmEnGhE2Nl/p9UuiLGIbtBN7z9N2yB+hrBFa9CoC0KXq3IQtyKOQks1IVUdVwWy6gPEfIQqZquOqsktKZJAzEWkBe3R66QAksUTiJGIZMGrGnRqglMPPRCzEZ3A4hZJ0j8BYjYi3UxJF0tUx61kBeJxRBpUOgH50kYciMcQyUBywUYF4CrkgpiLcIPJdZwGYxDrIJKGz4ZiO6GBGIlQE5QdWMHhjWqxBMRchAsp6UR1ZrIDMRfhil+3GJZeINZBuI245MBG8rC6tDkL4jZEumCmBq3b6C+BIMYi3Ea9CydJOG4vnIF4HOEOAHaLnOSAB4g1Ea6DTiCKdgNBLIFwMBWY5fdBjEa4w1rpAytBgZiP6ARdB3ULKiDmI568QIAAMRrxBpq7Cin5m8KcAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Who-we-are"><span class="post-toc-number">1.</span> <span class="post-toc-text">Who we are</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#What-personal-data-we-collect-and-why-we-collect-it"><span class="post-toc-number">2.</span> <span class="post-toc-text">What personal data we collect and why we collect it</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#评论"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">评论</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#媒体"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">媒体</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Contact-forms"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Contact forms</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Cookies"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">Cookies</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Embedded-content-from-other-websites"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">Embedded content from other websites</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Analytics"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">Analytics</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Who-we-share-your-data-with"><span class="post-toc-number">3.</span> <span class="post-toc-text">Who we share your data with</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#How-long-we-retain-your-data"><span class="post-toc-number">4.</span> <span class="post-toc-text">How long we retain your data</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#What-rights-you-have-over-your-data"><span class="post-toc-number">5.</span> <span class="post-toc-text">What rights you have over your data</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Where-we-send-your-data"><span class="post-toc-number">6.</span> <span class="post-toc-text">Where we send your data</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Your-contact-information"><span class="post-toc-number">7.</span> <span class="post-toc-text">Your contact information</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Additional-information"><span class="post-toc-number">8.</span> <span class="post-toc-text">Additional information</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#How-we-protect-your-data"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">How we protect your data</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#What-data-breach-procedures-we-have-in-place"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">What data breach procedures we have in place</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#What-third-parties-we-receive-data-from"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">What third parties we receive data from</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#What-automated-decision-making-and-or-profiling-we-do-with-user-data"><span class="post-toc-number">8.4.</span> <span class="post-toc-text">What automated decision making and&#x2F;or profiling we do with user data</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Industry-regulatory-disclosure-requirements"><span class="post-toc-number">8.5.</span> <span class="post-toc-text">Industry regulatory disclosure requirements</span></a></li></ol></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h2 id="Who-we-are"><a href="#Who-we-are" class="headerlink" title="Who we are"></a>Who we are</h2><p>Our website address is: <a href="https://southcat.net" target="_blank" rel="noopener">https://southcat.net</a>.</p>
+<h2 id="What-personal-data-we-collect-and-why-we-collect-it"><a href="#What-personal-data-we-collect-and-why-we-collect-it" class="headerlink" title="What personal data we collect and why we collect it"></a>What personal data we collect and why we collect it</h2><h3 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h3><p>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor’s IP address and browser user agent string to help spam detection. An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: <a href="https://automattic.com/privacy/" target="_blank" rel="noopener">https://automattic.com/privacy/</a>. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p>
+<h3 id="媒体"><a href="#媒体" class="headerlink" title="媒体"></a>媒体</h3><p>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p>
+<h3 id="Contact-forms"><a href="#Contact-forms" class="headerlink" title="Contact forms"></a>Contact forms</h3><h3 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h3><p>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year. If you have an account and you log in to this site, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser. When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select “Remember Me”, your login will persist for two weeks. If you log out of your account, the login cookies will be removed. If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p>
+<h3 id="Embedded-content-from-other-websites"><a href="#Embedded-content-from-other-websites" class="headerlink" title="Embedded content from other websites"></a>Embedded content from other websites</h3><p>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website. These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracing your interaction with the embedded content if you have an account and are logged in to that website.</p>
+<h3 id="Analytics"><a href="#Analytics" class="headerlink" title="Analytics"></a>Analytics</h3><h2 id="Who-we-share-your-data-with"><a href="#Who-we-share-your-data-with" class="headerlink" title="Who we share your data with"></a>Who we share your data with</h2><h2 id="How-long-we-retain-your-data"><a href="#How-long-we-retain-your-data" class="headerlink" title="How long we retain your data"></a>How long we retain your data</h2><p>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue. For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p>
+<h2 id="What-rights-you-have-over-your-data"><a href="#What-rights-you-have-over-your-data" class="headerlink" title="What rights you have over your data"></a>What rights you have over your data</h2><p>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p>
+<h2 id="Where-we-send-your-data"><a href="#Where-we-send-your-data" class="headerlink" title="Where we send your data"></a>Where we send your data</h2><p>Visitor comments may be checked through an automated spam detection service.</p>
+<h2 id="Your-contact-information"><a href="#Your-contact-information" class="headerlink" title="Your contact information"></a>Your contact information</h2><h2 id="Additional-information"><a href="#Additional-information" class="headerlink" title="Additional information"></a>Additional information</h2><h3 id="How-we-protect-your-data"><a href="#How-we-protect-your-data" class="headerlink" title="How we protect your data"></a>How we protect your data</h3><h3 id="What-data-breach-procedures-we-have-in-place"><a href="#What-data-breach-procedures-we-have-in-place" class="headerlink" title="What data breach procedures we have in place"></a>What data breach procedures we have in place</h3><h3 id="What-third-parties-we-receive-data-from"><a href="#What-third-parties-we-receive-data-from" class="headerlink" title="What third parties we receive data from"></a>What third parties we receive data from</h3><h3 id="What-automated-decision-making-and-or-profiling-we-do-with-user-data"><a href="#What-automated-decision-making-and-or-profiling-we-do-with-user-data" class="headerlink" title="What automated decision making and/or profiling we do with user data"></a>What automated decision making and/or profiling we do with user data</h3><h3 id="Industry-regulatory-disclosure-requirements"><a href="#Industry-regulatory-disclosure-requirements" class="headerlink" title="Industry regulatory disclosure requirements"></a>Industry regulatory disclosure requirements</h3>
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2018-04-27T13:56:03.000Z" itemprop="datePublished">2018-04-27</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.227Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+
+    <!-- Next Nav -->
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

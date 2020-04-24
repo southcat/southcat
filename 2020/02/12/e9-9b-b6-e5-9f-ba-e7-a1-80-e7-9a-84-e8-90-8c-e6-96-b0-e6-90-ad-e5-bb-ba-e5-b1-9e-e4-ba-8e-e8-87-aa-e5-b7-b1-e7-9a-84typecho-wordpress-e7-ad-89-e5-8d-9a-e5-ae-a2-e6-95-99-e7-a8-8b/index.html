@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>零基础的萌新搭建属于自己的Typecho/WordPress等博客教程 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="零基础的萌新搭建属于自己的Typecho&#x2F;WordPress等博客教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/02/12/e9-9b-b6-e5-9f-ba-e7-a1-80-e7-9a-84-e8-90-8c-e6-96-b0-e6-90-ad-e5-bb-ba-e5-b1-9e-e4-ba-8e-e8-87-aa-e5-b7-b1-e7-9a-84typecho-wordpress-e7-ad-89-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="说明：一直以来老有同学问博主怎么搭建博客，最好出个教程，然后就拖到了现在，这里就发个超小白教程，适合对建站不懂又想拥有一个自己的博客的同学，有闲置的VPS服务器的也可以搭建玩玩，不然就很浪费了。 准备工作#不想折腾的，直接选择国外注册域名和国外服务器 1、一个域名 域名可以自己随便选择一个后缀，如果想好好做博客，也想百度收录快的，建议首选com、net，cn也行；不考虑到收录什么的，就随便选个适合 - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/build_blog(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/build_blog(2).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/build_blog(3).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/build_blog(4).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/build_blog(5).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/build_blog(6).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/build_blog(7).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/build_blog(8).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/build_blog(9).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/build_blog(10).png"><meta property="article:published_time" content="2020-02-11T18:25:30.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.248Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.248Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/02/12/e9-9b-b6-e5-9f-ba-e7-a1-80-e7-9a-84-e8-90-8c-e6-96-b0-e6-90-ad-e5-bb-ba-e5-b1-9e-e4-ba-8e-e8-87-aa-e5-b7-b1-e7-9a-84typecho-wordpress-e7-ad-89-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/02/12/e9-9b-b6-e5-9f-ba-e7-a1-80-e7-9a-84-e8-90-8c-e6-96-b0-e6-90-ad-e5-bb-ba-e5-b1-9e-e4-ba-8e-e8-87-aa-e5-b7-b1-e7-9a-84typecho-wordpress-e7-ad-89-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/02/12/e9-9b-b6-e5-9f-ba-e7-a1-80-e7-9a-84-e8-90-8c-e6-96-b0-e6-90-ad-e5-bb-ba-e5-b1-9e-e4-ba-8e-e8-87-aa-e5-b7-b1-e7-9a-84typecho-wordpress-e7-ad-89-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/"
+    },
+    "headline": "零基础的萌新搭建属于自己的Typecho/WordPress等博客教程 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-02-11T18:25:30.000Z",
+    "dateModified": "2020-04-24T09:34:44.248Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：一直以来老有同学问博主怎么搭建博客，最好出个教程，然后就拖到了现在，这里就发个超小白教程，适合对建站不懂又想拥有一个自己的博客的同学，有闲置的VPS服务器的也可以搭建玩玩，不然就很浪费了。 准备工作#不想折腾的，直接选择国外注册域名和国外服务器 1、一个域名 域名可以自己随便选择一个后缀，如果想好好做博客，也想百度收录快的，建议首选com、net，cn也行；不考虑到收录什么的，就随便选个适合 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=零基础的萌新搭建属于自己的Typecho/WordPress等博客教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=零基础的萌新搭建属于自己的Typecho/WordPress等博客教程&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=零基础的萌新搭建属于自己的Typecho/WordPress等博客教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFXUlEQVR42u2dwW7jShAD/f8/7T094G2gIYvjXBYuXxzbkDRTAjrdJJ283j7eLxEIQQhCEIIQhBAhvMLjv8//OvDH6/+f4+n1z/Odjv15veU5/XzalxCEIIQzhNPinjZINv8EkCwubfAELsFP+xKCEISQIbSF0EW2xTX4aUMLlLYvIQhBCHcQHgtKOIYU0adzffq6NVNCEIIQfrcw3iw+Fc31eq1YPhVjIQhBCPcQ4qBxGJLQhQ4Fqy2WAE3H/eoUKQQhfBkEWrD+tedfV5uFIIQvgICMy8GAoU0LNXPSDVlE4Y9daSEI4UsgpEYoNUA3DcoyQBGgBFK6CUIQghByn3A7vBCYp4GKCKgpfEHfe9ybEIQghEcIS4FKRms6ZhnQ6FBETKJkDglBCEI49wkp8NSEU2qCLoHRVXQlN+AotApBCEJ4NQHlNpBFmqol8LEKqyRYJgQhCIFBaIImCWTRgpcKcGrCqLhLAmVCEIIQznpCKoytGaKfLcIKEXOJyBo/F4IQhBAHKHrRNdjRACwNE3mdmrL420EIQhDCu8FIJyPQ1p8X06YFs1oDKAQhCIF/6WMRWoioQQegxcwhIk00fYUgBCHgMOdiYhCRhQKghi8Vf6/MFyEI4Ysh0AVTc7YJKbfCSzN62g2cfzsIQQhfDoGEHojg2szYVeAlxbXdgGPRFIIQhHBdGFsRa8FNMki1kBcxbMl+hCAEIbxxPoEaLTdDF2mcVnOliatxuBKCEIQQIdwErpZhiBgvtOG6CXehpIoQhPDlEGhDQwYkEpiihmsTRmhTFA1lIQhBCEcIZKNXxQc0VzSkQUUVPBgKQQhCuCqMTcBo5mgLb9w0amRNU3BLCEIQQhRUiKHxSZNExFwqzqznEoIQhNBFldU0IYYLbbyW4kyDW2hNQhCCEGJhpMWHmp8oPPXavtxJ328CrBCEIIR31RNuBU0qbpCQ5nKuVkCrUCMEIQgBNUttE0toIw02bVijwusaKhOCEITAM0t0GEoDzbKpJsISYffWwBGCEITwe39naTFlUGBiDHGRc7WwiRCEIIQc0mjFrg0+S+FsgH/LnI03VQhCEMJRaCXGbAtgpWGLCrdNdFmCIk3oFYIQhND/Qd4SnGxmKg1xkaaqNXGkScKGrBCEIIT32gBh0zMcl94jps8aGIkOlBCEIIRaGInZSYEt4azWmNEbmAq1EIQgBPZFsCZsEMOFCjJEtG3NFxGKj9cRghCEcDRfkhjSmiQa9FoXTUEvTZsQhCCEdw1zNpGCCCik2aGBjFVUXY1hIQhBCPz/RZICQzdPBxr6TM4zmctCEIIQrg1Z2gQRI5YURCrQEDFWCEIQwg4hDRx0yCEBLAqIGjbEbDnuUQhCEEKFQAMSBFIKTDQhZnm9BEeEIAQhZAifDDdrOIsYIrfFkoCtU6QQhCCEOURBxM1ViL0FTDYa1yAEIQgBhTROxYwEqZaARrtOgktDpnHtQhCCEKL50oSSJZhxe75mqC5FtzZkQhCCEI7BrZtmZzVtabNEBGBaRGMDJgQhCOHYLDUB5B0e1HBZTJ5TY7QGS7CoIgQhCOGjRdxAWR5N8GmiEBJzhSAEIRybJbqh1oiQzZPhbQl+3N44IQhBCL0wUiGEirTU2G0NDw2CTgayEIQghCnMmYYfUgTTopphQ35eCu/jsUIQghBQSKMVMGqE0iGHBq6IqbIMUUIQghA+g0ALUypkZDBbXi8i7JReE4IQhPC6KXatIVqMXTqQUUOoNlpCEIIQ5gEqCZmtGK3hKhoAoddq5o0QhCCEe6GVFMAlJNGE0LV5WwALQQhCOEP45ocQhCAEIQhBCEJ4fPwBofwrhWns96YAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">零基础的萌新搭建属于自己的Typecho/WordPress等博客教程</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-02-12</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=零基础的萌新搭建属于自己的Typecho/WordPress等博客教程&url=http://hexo.southcat.net/2020/02/12/e9-9b-b6-e5-9f-ba-e7-a1-80-e7-9a-84-e8-90-8c-e6-96-b0-e6-90-ad-e5-bb-ba-e5-b1-9e-e4-ba-8e-e8-87-aa-e5-b7-b1-e7-9a-84typecho-wordpress-e7-ad-89-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=零基础的萌新搭建属于自己的Typecho/WordPress等博客教程&url=http://hexo.southcat.net/2020/02/12/e9-9b-b6-e5-9f-ba-e7-a1-80-e7-9a-84-e8-90-8c-e6-96-b0-e6-90-ad-e5-bb-ba-e5-b1-9e-e4-ba-8e-e8-87-aa-e5-b7-b1-e7-9a-84typecho-wordpress-e7-ad-89-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/02/12/e9-9b-b6-e5-9f-ba-e7-a1-80-e7-9a-84-e8-90-8c-e6-96-b0-e6-90-ad-e5-bb-ba-e5-b1-9e-e4-ba-8e-e8-87-aa-e5-b7-b1-e7-9a-84typecho-wordpress-e7-ad-89-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/02/12/e9-9b-b6-e5-9f-ba-e7-a1-80-e7-9a-84-e8-90-8c-e6-96-b0-e6-90-ad-e5-bb-ba-e5-b1-9e-e4-ba-8e-e8-87-aa-e5-b7-b1-e7-9a-84typecho-wordpress-e7-ad-89-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/02/12/e9-9b-b6-e5-9f-ba-e7-a1-80-e7-9a-84-e8-90-8c-e6-96-b0-e6-90-ad-e5-bb-ba-e5-b1-9e-e4-ba-8e-e8-87-aa-e5-b7-b1-e7-9a-84typecho-wordpress-e7-ad-89-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/02/12/e9-9b-b6-e5-9f-ba-e7-a1-80-e7-9a-84-e8-90-8c-e6-96-b0-e6-90-ad-e5-bb-ba-e5-b1-9e-e4-ba-8e-e8-87-aa-e5-b7-b1-e7-9a-84typecho-wordpress-e7-ad-89-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/02/12/e9-9b-b6-e5-9f-ba-e7-a1-80-e7-9a-84-e8-90-8c-e6-96-b0-e6-90-ad-e5-bb-ba-e5-b1-9e-e4-ba-8e-e8-87-aa-e5-b7-b1-e7-9a-84typecho-wordpress-e7-ad-89-e5-8d-9a-e5-ae-a2-e6-95-99-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFXUlEQVR42u2dwW7jShAD/f8/7T094G2gIYvjXBYuXxzbkDRTAjrdJJ283j7eLxEIQQhCEIIQhBAhvMLjv8//OvDH6/+f4+n1z/Odjv15veU5/XzalxCEIIQzhNPinjZINv8EkCwubfAELsFP+xKCEISQIbSF0EW2xTX4aUMLlLYvIQhBCHcQHgtKOIYU0adzffq6NVNCEIIQfrcw3iw+Fc31eq1YPhVjIQhBCPcQ4qBxGJLQhQ4Fqy2WAE3H/eoUKQQhfBkEWrD+tedfV5uFIIQvgICMy8GAoU0LNXPSDVlE4Y9daSEI4UsgpEYoNUA3DcoyQBGgBFK6CUIQghByn3A7vBCYp4GKCKgpfEHfe9ybEIQghEcIS4FKRms6ZhnQ6FBETKJkDglBCEI49wkp8NSEU2qCLoHRVXQlN+AotApBCEJ4NQHlNpBFmqol8LEKqyRYJgQhCIFBaIImCWTRgpcKcGrCqLhLAmVCEIIQznpCKoytGaKfLcIKEXOJyBo/F4IQhBAHKHrRNdjRACwNE3mdmrL420EIQhDCu8FIJyPQ1p8X06YFs1oDKAQhCIF/6WMRWoioQQegxcwhIk00fYUgBCHgMOdiYhCRhQKghi8Vf6/MFyEI4Ysh0AVTc7YJKbfCSzN62g2cfzsIQQhfDoGEHojg2szYVeAlxbXdgGPRFIIQhHBdGFsRa8FNMki1kBcxbMl+hCAEIbxxPoEaLTdDF2mcVnOliatxuBKCEIQQIdwErpZhiBgvtOG6CXehpIoQhPDlEGhDQwYkEpiihmsTRmhTFA1lIQhBCEcIZKNXxQc0VzSkQUUVPBgKQQhCuCqMTcBo5mgLb9w0amRNU3BLCEIQQhRUiKHxSZNExFwqzqznEoIQhNBFldU0IYYLbbyW4kyDW2hNQhCCEGJhpMWHmp8oPPXavtxJ328CrBCEIIR31RNuBU0qbpCQ5nKuVkCrUCMEIQgBNUttE0toIw02bVijwusaKhOCEITAM0t0GEoDzbKpJsISYffWwBGCEITwe39naTFlUGBiDHGRc7WwiRCEIIQc0mjFrg0+S+FsgH/LnI03VQhCEMJRaCXGbAtgpWGLCrdNdFmCIk3oFYIQhND/Qd4SnGxmKg1xkaaqNXGkScKGrBCEIIT32gBh0zMcl94jps8aGIkOlBCEIIRaGInZSYEt4azWmNEbmAq1EIQgBPZFsCZsEMOFCjJEtG3NFxGKj9cRghCEcDRfkhjSmiQa9FoXTUEvTZsQhCCEdw1zNpGCCCik2aGBjFVUXY1hIQhBCPz/RZICQzdPBxr6TM4zmctCEIIQrg1Z2gQRI5YURCrQEDFWCEIQwg4hDRx0yCEBLAqIGjbEbDnuUQhCEEKFQAMSBFIKTDQhZnm9BEeEIAQhZAifDDdrOIsYIrfFkoCtU6QQhCCEOURBxM1ViL0FTDYa1yAEIQgBhTROxYwEqZaARrtOgktDpnHtQhCCEKL50oSSJZhxe75mqC5FtzZkQhCCEI7BrZtmZzVtabNEBGBaRGMDJgQhCOHYLDUB5B0e1HBZTJ5TY7QGS7CoIgQhCOGjRdxAWR5N8GmiEBJzhSAEIRybJbqh1oiQzZPhbQl+3N44IQhBCL0wUiGEirTU2G0NDw2CTgayEIQghCnMmYYfUgTTopphQ35eCu/jsUIQghBQSKMVMGqE0iGHBq6IqbIMUUIQghA+g0ALUypkZDBbXi8i7JReE4IQhPC6KXatIVqMXTqQUUOoNlpCEIIQ5gEqCZmtGK3hKhoAoddq5o0QhCCEe6GVFMAlJNGE0LV5WwALQQhCOEP45ocQhCAEIQhBCEJ4fPwBofwrhWns96YAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number">1.</span> <span class="post-toc-text">准备工作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#相关教程"><span class="post-toc-number">3.</span> <span class="post-toc-text">相关教程</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>一直以来老有同学问博主怎么搭建博客，最好出个教程，然后就拖到了现在，这里就发个超小白教程，适合对建站不懂又想拥有一个自己的博客的同学，有闲置的<code>VPS</code>服务器的也可以搭建玩玩，不然就很浪费了。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><pre><code>#不想折腾的，直接选择国外注册域名和国外服务器
+1、一个域名
+域名可以自己随便选择一个后缀，如果想好好做博客，也想百度收录快的，建议首选com、net，cn也行；不考虑到收录什么的，就随便选个适合自己的。
+
+注册的话，国内的可以选择阿里云、腾讯云，不过需要实名；不想实名的直接选择国外Namesilo、Namecheap注册商等。
+
+2、一个VPS服务器
+这里也可以选择虚拟主机，不过用起来不灵活，限制也多，所以推荐使用VPS服务器搭建。
+
+对于服务器选择，一般分为国内服务器和国外服务器，大致区别如下：
+1)、国内服务器需要域名备案才能使用，缺点是价格贵(学生机会便宜些)，带宽低；优点是国内访问很稳定，同时也可以使用国内CDN加速。
+2)、国外服务器不需要域名备案，缺点是网络可能会经常波动(钱加够的话，也许可以解决)；优点大概是比国内便宜，带宽足。
+3)、香港服务器也是不需要备案的，访问速度和国内差不多，如果不想备案，可以直接选择香港服务器。</code></pre><p>准备好了域名后，先去域名商后台，找到<code>DNS</code>(解析)设置，解析域名的<code>A</code>记录到服务器的<code>ip</code>地址。</p>
+<pre><code>#提示：这里可以解析主域名，比如southcat.net，也可以解析二级域名，比如ty.southcat.net、xx.southcat.net。解析的是什么域名，到时候就使用什么域名。</code></pre><p>解析好了后，等待片刻解析就生效了。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>先去<code>VPS</code>服务器后台，重装个服务器，这里建议选择<code>CentOS 7</code>系统。</p>
+<p>然后使用<code>SSH</code>客户端(比如<code>Xshell</code>)登录<code>VPS</code>，使用命令：</p>
+<pre><code>#CentOS系统
+wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh
+#Ubuntu系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh
+#Debian系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh</code></pre><p>安装完成后会直接在<code>SSH</code>客户端显示后台信息。<br><img src="https://www.southcat.net/usr/picture/build_blog(1).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<pre><code>提示：如果我们后续未修改密码却忘记了密码的话，可以在SSH客户端使用命令bt default来查看安装后的默认后台信息。</code></pre><p>然后登陆后台，这时候宝塔会提示让我们选择环境。<br><img src="https://www.southcat.net/usr/picture/build_blog(2).png" alt="请输入图片描述" title="请输入图片描述"><br>这里建议选择<code>LNMP</code>，环境为<code>Nginx 1.15</code>、<code>PHP 7.2</code>、<code>Mysql 5.5</code>，如果内存<code>1G</code>建议选择<code>Mysql 5.6</code>、<code>2G</code>选择<code>5.7</code>。选择好了后点击一键安装即可。</p>
+<pre><code>提示：如果你弹不出这个环境安装提示，可以点击左侧软件管理，再手动选择安装。</code></pre><p>安装环境的时候等待时间可能会有点长，可以点击左上角红色的消息盒子查看进度，也可以通过左侧软件管理查看进度。<br><img src="https://www.southcat.net/usr/picture/build_blog(3).png" alt="请输入图片描述" title="请输入图片描述"><br>安装完成后，点击左侧软件管理-宝塔插件，安装<code>宝塔一键部署源码</code>，装好后点击设置。<br><img src="https://www.southcat.net/usr/picture/build_blog(4).png" alt="请输入图片描述" title="请输入图片描述"><br>然后选择博客一栏，会出现一些常用的博客程序。<br><img src="https://www.southcat.net/usr/picture/build_blog(5).png" alt="请输入图片描述" title="请输入图片描述"><br>根据自己的喜好选择一个博客程序，然后点击<code>一键部署</code>。</p>
+<pre><code>#关于程序选择，这里建议首选Wordpress或者Typecho，大致区别如下：
+Wordpress：使用人数全球最多，插件、模板都多，可定制性强，不过收费主题都有点贵。
+Typecho：也就是博主现在使用的程序，轻巧，后台简洁，挺适合做个人博客，但搞其它的就不适合了。</code></pre><p>然后会要你填入域名，也就是你解析到这个服务器<code>ip</code>的域名。<br><img src="https://www.southcat.net/usr/picture/build_blog(6).png" alt="请输入图片描述" title="请输入图片描述"><br>提交后，初步算安装完成了，然后记住给你的数据库名、用户名和密码。<br><img src="https://www.southcat.net/usr/picture/build_blog(7).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<pre><code>提示：如果忘记了数据库信息，可以点击面板左侧-数据库进行查看。</code></pre><p>再点击左侧的网站，找到你的域名，点击设置。<br><img src="https://www.southcat.net/usr/picture/build_blog(8).png" alt="请输入图片描述" title="请输入图片描述"><br>再点击伪静态，选择自己所安装的程序名称，比如<code>Typecho</code>，再点击保存即可。<br><img src="https://www.southcat.net/usr/picture/build_blog(9).png" alt="请输入图片描述" title="请输入图片描述"><br>此时到这里基本上就算部署完成了，然后打开你的域名，填入数据库信息，管理员信息安装即可。</p>
+<p>如果你还想域名有逼格点，比如浏览器那里显示一把小绿锁，那么再点击域名设置，找到<code>SSL</code>，填入邮箱，点击申请，然后再开启右上角的强制<code>HTTPS</code>。<br><img src="https://www.southcat.net/usr/picture/build_blog(10).png" alt="请输入图片描述" title="请输入图片描述"><br>此时，你在浏览器上也有了小绿锁。</p>
+<p>最后由于博主使用的是<code>Typecho</code>，所以这里提示下：</p>
+<pre><code>插件和模板可以去官方论坛查找，地址：http://forum.typecho.org/。
+
+#如果要收费模板的话，这里推荐几款，均价50左右
+Handsome主题：https://www.ihewro.com/archives/489/，也就是本博客主题
+Yodu主题：https://qqdie.com/archives/yodu.html
+Mirages主题：https://get233.com/archives/mirages-intro.html
+
+
+1、数据库备份
+点击左侧数据库，找到博客所使用的数据库，点击导出就行了。
+
+2、根目录备份
+一般根目录路径为/www/wwwroot/www.southcat.net，然后通过左侧的文件，找到该目录，点击全选，压缩，再下载本地即可。</code></pre><h2 id="相关教程"><a href="#相关教程" class="headerlink" title="相关教程"></a>相关教程</h2><ul>
+<li>小内存VPS一键安装Typecho/WordPress/Zblog/Kodexplorer及整站备份等</li>
+<li>小内存VPS安装Caddy+PHP 7+Sqlite 3环境，并快速搭建Typecho博客</li>
+<li>VPS服务器如何优化/加快网站的访问速度</li>
+</ul>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-02-11T18:25:30.000Z" itemprop="datePublished">2020-02-12</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.248Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/02/12/vultr-e5-88-a9-e7-94-a8-e5-bf-ab-e7-85-a7-e5-a4-87-e4-bb-bdsnapshots-e5-8a-9f-e8-83-bd-e5-bf-ab-e9-80-9f-e7-9a-84-e5-a4-87-e4-bb-bd-e5-92-8c-e8-bf-81-e7-a7-bb-e8-b5-84-e6-96-99/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Vultr利用快照备份Snapshots功能快速的备份和迁移资料</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/02/12/e5-8f-af-e4-bb-a5-e6-bb-a1-e9-80-9f-e4-b8-8b-e8-bd-bd-e7-99-be-e5-ba-a6-e4-ba-91-e6-96-87-e4-bb-b6-e7-9a-84-e5-b7-a5-e5-85-b7-ef-bc-9a-e7-99-be-e5-ba-a6-e7-bd-91-e7-9b-98-e4-b8-8b-e8-bd-bd-e5-99-a8-v/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">可以满速下载百度云文件的工具：百度网盘下载器 v1.5.0</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

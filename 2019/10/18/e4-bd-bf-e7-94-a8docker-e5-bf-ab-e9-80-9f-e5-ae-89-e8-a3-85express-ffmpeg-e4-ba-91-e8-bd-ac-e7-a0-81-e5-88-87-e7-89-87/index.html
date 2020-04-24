@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>使用Docker快速安装express-ffmpeg云转码切片 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="使用Docker快速安装express-ffmpeg云转码切片 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/10/18/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85express-ffmpeg-e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前博主介绍过这个云转码和搭建教程，查看：云转码express-ffmpeg+CMS一体化系统安装教程，功能确实强大，不过还是有很多人搭建容易出点小问题，这里博主就整了个Docker镜像，适合小白使用。 更新【2019.9.3】 重做镜像，新增部分变量参数，必要设置都给填了，使用更方便了。 【2018.11.4】 修复了上传错误等问题。安装注意：该安装方法不适用于OVZ等类似结构。内存太小的 - John Doe - 南猫"><meta property="article:published_time" content="2019-10-18T13:45:25.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.228Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.228Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2019/10/18/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85express-ffmpeg-e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2019/10/18/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85express-ffmpeg-e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2019/10/18/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85express-ffmpeg-e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87/"
+    },
+    "headline": "使用Docker快速安装express-ffmpeg云转码切片 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-10-18T13:45:25.000Z",
+    "dateModified": "2020-04-24T09:34:44.228Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：之前博主介绍过这个云转码和搭建教程，查看：云转码express-ffmpeg+CMS一体化系统安装教程，功能确实强大，不过还是有很多人搭建容易出点小问题，这里博主就整了个Docker镜像，适合小白使用。 更新【2019.9.3】 重做镜像，新增部分变量参数，必要设置都给填了，使用更方便了。 【2018.11.4】 修复了上传错误等问题。安装注意：该安装方法不适用于OVZ等类似结构。内存太小的 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=使用Docker快速安装express-ffmpeg云转码切片" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用Docker快速安装express-ffmpeg云转码切片&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=使用Docker快速安装express-ffmpeg云转码切片" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEI0lEQVR42u2aQY7jQAwD8/9P716DRVosenOwnPJlgsSGu3pgWSL5+vMDx0tIIYUUUkgh/xPyNRzv53z6/H79v59P157uMa1luu+4biGFXAr58aEdwBpgstD3306bNG38cd1CCrkY8rQgUkiaRU/nXSmA00YKKeSvQKbzTr+RpiEBTpsjpJC/Bjk129NiUkEhG0g2RUghnwR5anSbAnC6njYCzaZ8dQoRUsibQRIB6Y5/v6bWCSnkjSCjaTLAT0MzeYlPglhqEL7qagkp5I0gpwe5MVeaTUr3IYM0aviFFHIpZBJxk2mahl8qaiVIWqiEFPIpkKlRJ2bMCToN5KkBv2TICinkQshUMIhwlJqHRihLG0ELkJBCboWkIjAJQBCoZmMoKA4QCinkMshUXGiAMDUUxPiZ7p+MIiGF3AzZiMKNAUsFYyKepTAE6niEFHIJJBF3SaFBwhIctpMhnMRsIYXcDtkWgqlZJy90EnJIwwK6p5BCLoVsQhKpWJBhvDV3iCH18VohhVwIOT3MREyaCkIKHDWC1ZWQhpBCboRMi6ELbBZ7ORAIjFchhXwqJA4fgE2YChspXqmgHQMZQgq5FHJqftN3SXAi4SZShKYCdry3kEIuhCTNLw1HEPOIClWNoXQ8T0ghHwCZCs7UHKSbU5GKDg2xURFSyMWQNGhEQgzUUCWhxGQMjf8YIYVcDEnDD2QBKTTRBIBJCAMZPkIKuQSSvMCvDMDUOEqGU9Ow1EKWkEIugqQGbWqcSTCiMYToAC2kkE+CpIG+JEqnBr0SisEhpJBPgGwMlWkBV83ZqSkg4nM1hQgp5AJIKlzRYNNUfJqBmBjAVVhJSCGXQE5DbwrvtcMuXXja7GTQCinkZsg2mEdNm0ZMTpuRvjsWLyGFXAhJRCcy/CaBiRaq02ZMghiqrkIKuQyyFZSnhSRxLBUwaiLFQJWQQi6ETIuNIb0ytNs2CcRoElLIp0G2JmgqSE0DTwdr2nwgV0tIIW8OOQWBWiNoaiYa05YI3NPgIKSQWyFJMI8MrDTwlMJRjbmTzhFSyM2QEygN/ZIG/orBS8JKWBkQUsgFkE34ltyEBnHJS58EmI4MQgq5EJIUlTZoS4bdSaAmAzgyhYUUcikkDQbRlzlpvK+EpIgxFcVlIYW8OSQtAhSEGjupwSBNQxSrhRRyKWQSeVORIo0zDeanjXuBQ0ghnwJJgw/0pU9DhOkauqlCCvkESPQAw6JABOpGwJoErUthJSGFXAKZzJ+m6aZBBjIcEzELKwNCCrkMMhkuxBhKBYMMvUSQrht0IYV8GGQyfXDDDITlphBGM0hIIR8K2ZqfdJOScEwG+cppFlLIRZDUuEmfSeM8hQTTy/+y0yykkIsgm6AsDUhceXmnBr0Jbwgp5FbIJx9CCimkkEIKefH4CwiY5UGPTFuaAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">使用Docker快速安装express-ffmpeg云转码切片</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-10-18</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用Docker快速安装express-ffmpeg云转码切片&url=http://hexo.southcat.net/2019/10/18/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85express-ffmpeg-e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=使用Docker快速安装express-ffmpeg云转码切片&url=http://hexo.southcat.net/2019/10/18/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85express-ffmpeg-e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/10/18/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85express-ffmpeg-e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/10/18/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85express-ffmpeg-e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/10/18/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85express-ffmpeg-e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/10/18/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85express-ffmpeg-e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/10/18/e4-bd-bf-e7-94-a8docker-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85express-ffmpeg-e4-ba-91-e8-bd-ac-e7-a0-81-e5-88-87-e7-89-87/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEI0lEQVR42u2aQY7jQAwD8/9P716DRVosenOwnPJlgsSGu3pgWSL5+vMDx0tIIYUUUkgh/xPyNRzv53z6/H79v59P157uMa1luu+4biGFXAr58aEdwBpgstD3306bNG38cd1CCrkY8rQgUkiaRU/nXSmA00YKKeSvQKbzTr+RpiEBTpsjpJC/Bjk129NiUkEhG0g2RUghnwR5anSbAnC6njYCzaZ8dQoRUsibQRIB6Y5/v6bWCSnkjSCjaTLAT0MzeYlPglhqEL7qagkp5I0gpwe5MVeaTUr3IYM0aviFFHIpZBJxk2mahl8qaiVIWqiEFPIpkKlRJ2bMCToN5KkBv2TICinkQshUMIhwlJqHRihLG0ELkJBCboWkIjAJQBCoZmMoKA4QCinkMshUXGiAMDUUxPiZ7p+MIiGF3AzZiMKNAUsFYyKepTAE6niEFHIJJBF3SaFBwhIctpMhnMRsIYXcDtkWgqlZJy90EnJIwwK6p5BCLoVsQhKpWJBhvDV3iCH18VohhVwIOT3MREyaCkIKHDWC1ZWQhpBCboRMi6ELbBZ7ORAIjFchhXwqJA4fgE2YChspXqmgHQMZQgq5FHJqftN3SXAi4SZShKYCdry3kEIuhCTNLw1HEPOIClWNoXQ8T0ghHwCZCs7UHKSbU5GKDg2xURFSyMWQNGhEQgzUUCWhxGQMjf8YIYVcDEnDD2QBKTTRBIBJCAMZPkIKuQSSvMCvDMDUOEqGU9Ow1EKWkEIugqQGbWqcSTCiMYToAC2kkE+CpIG+JEqnBr0SisEhpJBPgGwMlWkBV83ZqSkg4nM1hQgp5AJIKlzRYNNUfJqBmBjAVVhJSCGXQE5DbwrvtcMuXXja7GTQCinkZsg2mEdNm0ZMTpuRvjsWLyGFXAhJRCcy/CaBiRaq02ZMghiqrkIKuQyyFZSnhSRxLBUwaiLFQJWQQi6ETIuNIb0ytNs2CcRoElLIp0G2JmgqSE0DTwdr2nwgV0tIIW8OOQWBWiNoaiYa05YI3NPgIKSQWyFJMI8MrDTwlMJRjbmTzhFSyM2QEygN/ZIG/orBS8JKWBkQUsgFkE34ltyEBnHJS58EmI4MQgq5EJIUlTZoS4bdSaAmAzgyhYUUcikkDQbRlzlpvK+EpIgxFcVlIYW8OSQtAhSEGjupwSBNQxSrhRRyKWQSeVORIo0zDeanjXuBQ0ghnwJJgw/0pU9DhOkauqlCCvkESPQAw6JABOpGwJoErUthJSGFXAKZzJ+m6aZBBjIcEzELKwNCCrkMMhkuxBhKBYMMvUSQrht0IYV8GGQyfXDDDITlphBGM0hIIR8K2ZqfdJOScEwG+cppFlLIRZDUuEmfSeM8hQTTy/+y0yykkIsgm6AsDUhceXmnBr0Jbwgp5FbIJx9CCimkkEIKefH4CwiY5UGPTFuaAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更新"><span class="post-toc-number">1.</span> <span class="post-toc-text">更新</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#相关目录"><span class="post-toc-number">3.</span> <span class="post-toc-text">相关目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#域名访问"><span class="post-toc-number">4.</span> <span class="post-toc-text">域名访问</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>之前博主介绍过这个云转码和搭建教程，查看：云转码express-ffmpeg+CMS一体化系统安装教程，功能确实强大，不过还是有很多人搭建容易出点小问题，这里博主就整了个<code>Docker</code>镜像，适合小白使用。</p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><pre><code>【2019.9.3】
+重做镜像，新增部分变量参数，必要设置都给填了，使用更方便了。
+【2018.11.4】
+修复了上传错误等问题。</code></pre><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>注意：</strong>该安装方法不适用于<code>OVZ</code>等类似结构。内存太小的话，建议加点<code>Swap</code>，<code>Swap</code>添加脚本→传送门。目前云转码为最新版本，如果作者有修复<code>Bug</code>和添加功能，请提醒博主更新下镜像。</p>
+<p><strong>说明：</strong>镜像测试了一下，上传和转码均正常，记得安装后，如果使用自带<code>CMS</code>播放，请在播放设置那里关掉强制<code>QQ</code>浏览器。</p>
+<p><strong>1、安装Docker</strong></p>
+<pre><code>#CentOS 6
+rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum update -y
+yum -y install docker-io
+service docker start
+chkconfig docker on
+
+#CentOS 7、Debian、Ubuntu
+curl -sSL https://get.docker.com/ | sh
+systemctl start docker
+systemctl enable docker</code></pre><p><strong>2、运行镜像</strong></p>
+<pre><code>#先看下面的参数详解，进行相关修改后，再将下面一起复制到ssh客户端运行
+docker run --restart=always --name express-ffmpeg -d \
+-p 3000:3000 \
+-e localip=192.168.2.1 \
+-e usr=moerats \
+-e pass=moerats \
+-e url=moerats \
+-v ~/express-ffmpeg/mongodb:/data \
+-v ~/express-ffmpeg/config:/express-ffmpeg/config \
+-v ~/express-ffmpeg/movies:/express-ffmpeg/movies \
+-v ~/express-ffmpeg/videos:/express-ffmpeg/public/videos \
+-v ~/express-ffmpeg/uploads:/express-ffmpeg/public/uploads \
+-v ~/express-ffmpeg/images:/express-ffmpeg/public/images \
+moerats/express-ffmpeg</code></pre><p>相关变量参数详解，自行修改：</p>
+<pre><code>serverip：服务器的ip地址
+#用户名、密码，后台路径均自己修改，且路径不能为admin
+usr：后台管理员用户名
+pass：后台管理员密码
+url：后台登录路径</code></pre><p>最后访问地址是<code>http://ip:3000</code>，后台路径为<code>http://ip:3000/moerats</code>，路径参考自己修改的。</p>
+<p>对于<code>CentOS</code>系统，还需要开启<code>3000</code>端口，开启如下：</p>
+<pre><code>#CentOS 6
+iptables -I INPUT -p tcp --dport 3000 -j ACCEPT
+service iptables save
+service iptables restart
+
+#CentOS 7
+firewall-cmd --zone=public --add-port=3000/tcp --permanent
+firewall-cmd --reload</code></pre><p>如果要用域名访问，就需要反代了。</p>
+<h2 id="相关目录"><a href="#相关目录" class="headerlink" title="相关目录"></a>相关目录</h2><pre><code>#数据库的目录
+~/express-ffmpeg/mongodb
+#配置文件目录
+~/express-ffmpeg/config
+#上传视频文件夹
+~/express-ffmpeg/movies
+#放切片文件、上传封面和VTT字幕文件夹
+~/express-ffmpeg/videos
+#上传文章图片的文件夹
+~/express-ffmpeg/uploads
+#上传图集的文件夹
+~/express-ffmpeg/images</code></pre><h2 id="域名访问"><a href="#域名访问" class="headerlink" title="域名访问"></a>域名访问</h2><p>反代可以用<code>Nginx</code>、<code>Apache</code>、<code>Caddy</code>，这里只说宝塔和<code>Caddy</code>。如果你网站有宝塔，就可以使用宝塔进行反代，如果没有，建议使用第<code>2</code>种的<code>Caddy</code>反代，配置很快。</p>
+<p><strong>1、宝塔反代</strong><br>先进入宝塔面板，然后点击左侧网站，添加站点，然后再点击添加好了的域名名称，这时候就进入了站点配置，点击反向代理，目标<code>URL</code>填入<code>http://127.0.0.1:3000</code>，再启用反向代理即可。至于启用<code>SSL</code>就不说了，直接在站点配置就可以启用。</p>
+<p><strong>2、Caddy反代</strong><br>安装<code>Caddy</code>：</p>
+<pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh
+#备用地址
+wget -N --no-check-certificate https://www.southcat.net/usr/shell/Caddy/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh</code></pre><p>配置<code>Caddy</code>：</p>
+<pre><code>#以下全部内容是一个整体，请修改域名后一起复制到SSH运行！
+
+#http访问，该配置不会自动签发SSL
+echo &quot;www.southcat.net {
+ gzip
+ proxy / 127.0.0.1:3000 {
+    header_upstream Host {host}
+    header_upstream X-Real-IP {remote}
+    header_upstream X-Forwarded-For {remote}
+    header_upstream X-Forwarded-Port {server_port}
+    header_upstream X-Forwarded-Proto {scheme}
+  }
+}&quot; &gt; /usr/local/caddy/Caddyfile
+
+#https访问，该配置会自动签发SSL，请提前解析域名到VPS服务器
+echo &quot;www.southcat.net {
+ gzip
+ tls admin@southcat.net
+ proxy / 127.0.0.1:3000 {
+    header_upstream Host {host}
+    header_upstream X-Real-IP {remote}
+    header_upstream X-Forwarded-For {remote}
+    header_upstream X-Forwarded-Port {server_port}
+    header_upstream X-Forwarded-Proto {scheme}
+  }
+}&quot; &gt; /usr/local/caddy/Caddyfile</code></pre><p><code>tls</code>参数会自动帮你签发<code>ssl</code>证书，如果你要使用自己的<code>ssl</code>，改为<code>tls /root/xx.crt /root/xx.key</code>即可。后面为<code>ssl</code>证书路径。</p>
+<p>启动<code>Caddy</code>：</p>
+<pre><code>/etc/init.d/caddy start</code></pre><p>就可以打开域名进行访问了。</p>
+<p><strong>3、Nginx配置</strong><br>如果你使用其它的，这里就大概发个<code>Nginx</code>反代配置，直接添加到配置文件即可。</p>
+<pre><code>#在配置文件里添加
+location / {
+     proxy_pass http://127.0.0.1:3000;
+     proxy_redirect off;
+     proxy_set_header X-Real-IP $remote_addr;
+     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-10-18T13:45:25.000Z" itemprop="datePublished">2019-10-18</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.228Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/10/19/pyone-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-for-centos-7-debian-8-ubuntu-16/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">PyOne一键安装脚本 for CentOS 7/Debian 8+/Ubuntu 16+</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/10/18/e4-b8-80-e4-b8-aa-e7-94-9f-e6-88-90-e5-8f-af-e8-87-aa-e5-ae-9a-e4-b9-89-e5-9c-b0-e5-9d-80-e7-9a-84-e7-9f-ad-e9-93-be-e6-8e-a5url-e7-bd-91-e7-ab-99/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一个生成可自定义地址的短链接URL网站</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

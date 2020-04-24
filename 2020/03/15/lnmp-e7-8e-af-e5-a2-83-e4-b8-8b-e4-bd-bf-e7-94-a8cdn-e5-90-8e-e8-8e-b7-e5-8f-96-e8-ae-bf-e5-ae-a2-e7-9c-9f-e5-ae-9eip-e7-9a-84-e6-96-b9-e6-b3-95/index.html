@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>LNMP环境下使用CDN后获取访客真实IP的方法 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="LNMP环境下使用CDN后获取访客真实IP的方法 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/03/15/lnmp-e7-8e-af-e5-a2-83-e4-b8-8b-e4-bd-bf-e7-94-a8cdn-e5-90-8e-e8-8e-b7-e5-8f-96-e8-ae-bf-e5-ae-a2-e7-9c-9f-e5-ae-9eip-e7-9a-84-e6-96-b9-e6-b3-95/"><meta property="og:locale" content="en"><meta name="description" content="说明：很多时候为了加速网站快速访问都会上CDN，这样一来程序和nginx日志获取到的访客IP地址就是CDN的节点IP而不是用户的真实IP了，这时候可以通过设置Nginx下的ngx_realip的模块是可以解决这个问题的，一般这个模块是默认没有添加的，不过军哥的lnmp是有这个模块的，所以设置会简单很多，这里说下具体方法。 方法以军哥的lnmp为例，只需要添加些参数即可！ 1、在lnmp安装目录&#x2F;r - John Doe - 南猫"><meta property="article:published_time" content="2020-03-15T12:26:10.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.252Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.252Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/03/15/lnmp-e7-8e-af-e5-a2-83-e4-b8-8b-e4-bd-bf-e7-94-a8cdn-e5-90-8e-e8-8e-b7-e5-8f-96-e8-ae-bf-e5-ae-a2-e7-9c-9f-e5-ae-9eip-e7-9a-84-e6-96-b9-e6-b3-95/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/03/15/lnmp-e7-8e-af-e5-a2-83-e4-b8-8b-e4-bd-bf-e7-94-a8cdn-e5-90-8e-e8-8e-b7-e5-8f-96-e8-ae-bf-e5-ae-a2-e7-9c-9f-e5-ae-9eip-e7-9a-84-e6-96-b9-e6-b3-95/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/03/15/lnmp-e7-8e-af-e5-a2-83-e4-b8-8b-e4-bd-bf-e7-94-a8cdn-e5-90-8e-e8-8e-b7-e5-8f-96-e8-ae-bf-e5-ae-a2-e7-9c-9f-e5-ae-9eip-e7-9a-84-e6-96-b9-e6-b3-95/"
+    },
+    "headline": "LNMP环境下使用CDN后获取访客真实IP的方法 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-03-15T12:26:10.000Z",
+    "dateModified": "2020-04-24T09:34:44.252Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：很多时候为了加速网站快速访问都会上CDN，这样一来程序和nginx日志获取到的访客IP地址就是CDN的节点IP而不是用户的真实IP了，这时候可以通过设置Nginx下的ngx_realip的模块是可以解决这个问题的，一般这个模块是默认没有添加的，不过军哥的lnmp是有这个模块的，所以设置会简单很多，这里说下具体方法。 方法以军哥的lnmp为例，只需要添加些参数即可！ 1、在lnmp安装目录/r - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=LNMP环境下使用CDN后获取访客真实IP的方法" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=LNMP环境下使用CDN后获取访客真实IP的方法&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=LNMP环境下使用CDN后获取访客真实IP的方法" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEm0lEQVR42u2aQXLjQAwD/f9PZ6/JlkU0xr5IbF3ikm3N9LiKIQG8fhZeL6GFFlpooYW+GfRruP584de9q8/+/s67e/8/7/T+uz0SDqGF3gLdLEIOaDqYd2tevT8d5vT6kkNooRdBXxWlK6CpuF0VnHRI0/PpQY7FVWihhf6ZCtfV6+mQ3j0zFbR3a6WDElpooTN0AknDCBlSpoNLhyK00ELnRn2CnQrZtHgqkFNTlH6Er0xZQgt9c+jUgNzl79fUUKGFvjF0NL2CgJ8KzlXTcTW0XD2LCIpfcy2FFvrG0GkgSI1KK+hP4mASHVtDQmihhWYFpVlwMviTsUCNQiweCi30AugUoiGbPBX7UhGbvpeMh9iRCS30Q6HJcNAMH5NgRxoPYvQ34mFUToQW+oHQjWFHGg5aFKlxQItgMgCEFnoDdCoOjZneDgSpmSAH3hiQQgu9CZo0BFORI6GaBD41P+l75EcQWuhN0G3hSKJeEhDJ0EAKKQnuCi30JugpBNsY5FOT05jpU6Gk66EpS2ihHwydhvtWXE/NQ3NAxEzAhy+00IugyXBBDbsT8SAdfmp0iPkntNAboCexnr5PP/+JWEFC7HGfQgu9ALox8KZNJEEhCRNJHKABnXFdoYVeAE2ajlasp0FWYhJM8FOTJLTQW6Eno42EYGj4jcDRAkjETCT2Cy30A6GT6UbFAxKCaYK35MdIAoTQQm+GJgUqme8n5h4KvYHAzvQjCS30Jmhqtk2CYDMUNJsmgt+xgSe00A+FJv/gk2GXwquocQDPaPeKmhOhhX4YNBkiyELTgEEhm6GD7ldoobdBN8EVsrEUiiNGwSeiwrgHoYVeAE1MsjTsp8Gfmvx0vVHQnw5IaKEXQJ828FTcI8MLGVQaIx81J0IL/VDoE7GgMfzIZ5thhoSCKhFBaKEfBv1NQ3wK5qRAHhEaW/NQaKE3QpNBgIqAVAwkhYwOF0S8FFroTdC0aaBwqKBAgY8GB/DehRZ6ITRpAGjwJZl0pElpRIMYwBFa6EXQRIgnobhkCFDDnw4V076FFnojdBoMpqDL1PC3TQ5Zix5+5VoKLfTDoJM4SII1KQA3iQ7JXG+CPamgCS30FmiyaXLRJqQZdE4K42VRFVroJdBEaKciQNNEUDOuaaBGo09ooRdA09DqiUHfvqYCQjIPotgvtNAPh56MOfxAICRQU48KgE2gT2iht0ATQy4FzynEtKGTvRDzT2iht0OnYtYK96lQkeDcCfDbZwgt9ALoVGRIU0HutwGeVlggor/QQm+CJgHUFIyhwZkmEE/CAEmkEFrobdAksJ4CqCeFjRxmGj6oaCG00FugkxFOD+MkpENNxKYYHqeAhRb64dBVI38gylO4E7P+UmAQWugF0KQRmAZ8YprTYQQXpCJgjzsyoYV+EHRqTqiA96kJn9YhQ8/4ntBCL4JOIh81+0iBpIJAa97HAxRaaKFr0Z0I/ydwzbMvC6zQQguNixYR7E5DOs3+xqFHaKEXQU+CYDsQEBgy/KcwbStCCC30FuhUdNI/fxpqJcZ9EhapmfCRGiq00DeG3nQJLbTQQgst9E2uf0tONO8pASQVAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">LNMP环境下使用CDN后获取访客真实IP的方法</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-03-15</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=LNMP环境下使用CDN后获取访客真实IP的方法&url=http://hexo.southcat.net/2020/03/15/lnmp-e7-8e-af-e5-a2-83-e4-b8-8b-e4-bd-bf-e7-94-a8cdn-e5-90-8e-e8-8e-b7-e5-8f-96-e8-ae-bf-e5-ae-a2-e7-9c-9f-e5-ae-9eip-e7-9a-84-e6-96-b9-e6-b3-95/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=LNMP环境下使用CDN后获取访客真实IP的方法&url=http://hexo.southcat.net/2020/03/15/lnmp-e7-8e-af-e5-a2-83-e4-b8-8b-e4-bd-bf-e7-94-a8cdn-e5-90-8e-e8-8e-b7-e5-8f-96-e8-ae-bf-e5-ae-a2-e7-9c-9f-e5-ae-9eip-e7-9a-84-e6-96-b9-e6-b3-95/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/03/15/lnmp-e7-8e-af-e5-a2-83-e4-b8-8b-e4-bd-bf-e7-94-a8cdn-e5-90-8e-e8-8e-b7-e5-8f-96-e8-ae-bf-e5-ae-a2-e7-9c-9f-e5-ae-9eip-e7-9a-84-e6-96-b9-e6-b3-95/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/03/15/lnmp-e7-8e-af-e5-a2-83-e4-b8-8b-e4-bd-bf-e7-94-a8cdn-e5-90-8e-e8-8e-b7-e5-8f-96-e8-ae-bf-e5-ae-a2-e7-9c-9f-e5-ae-9eip-e7-9a-84-e6-96-b9-e6-b3-95/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/03/15/lnmp-e7-8e-af-e5-a2-83-e4-b8-8b-e4-bd-bf-e7-94-a8cdn-e5-90-8e-e8-8e-b7-e5-8f-96-e8-ae-bf-e5-ae-a2-e7-9c-9f-e5-ae-9eip-e7-9a-84-e6-96-b9-e6-b3-95/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/03/15/lnmp-e7-8e-af-e5-a2-83-e4-b8-8b-e4-bd-bf-e7-94-a8cdn-e5-90-8e-e8-8e-b7-e5-8f-96-e8-ae-bf-e5-ae-a2-e7-9c-9f-e5-ae-9eip-e7-9a-84-e6-96-b9-e6-b3-95/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/03/15/lnmp-e7-8e-af-e5-a2-83-e4-b8-8b-e4-bd-bf-e7-94-a8cdn-e5-90-8e-e8-8e-b7-e5-8f-96-e8-ae-bf-e5-ae-a2-e7-9c-9f-e5-ae-9eip-e7-9a-84-e6-96-b9-e6-b3-95/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEm0lEQVR42u2aQXLjQAwD/f9PZ6/JlkU0xr5IbF3ikm3N9LiKIQG8fhZeL6GFFlpooYW+GfRruP584de9q8/+/s67e/8/7/T+uz0SDqGF3gLdLEIOaDqYd2tevT8d5vT6kkNooRdBXxWlK6CpuF0VnHRI0/PpQY7FVWihhf6ZCtfV6+mQ3j0zFbR3a6WDElpooTN0AknDCBlSpoNLhyK00ELnRn2CnQrZtHgqkFNTlH6Er0xZQgt9c+jUgNzl79fUUKGFvjF0NL2CgJ8KzlXTcTW0XD2LCIpfcy2FFvrG0GkgSI1KK+hP4mASHVtDQmihhWYFpVlwMviTsUCNQiweCi30AugUoiGbPBX7UhGbvpeMh9iRCS30Q6HJcNAMH5NgRxoPYvQ34mFUToQW+oHQjWFHGg5aFKlxQItgMgCEFnoDdCoOjZneDgSpmSAH3hiQQgu9CZo0BFORI6GaBD41P+l75EcQWuhN0G3hSKJeEhDJ0EAKKQnuCi30JugpBNsY5FOT05jpU6Gk66EpS2ihHwydhvtWXE/NQ3NAxEzAhy+00IugyXBBDbsT8SAdfmp0iPkntNAboCexnr5PP/+JWEFC7HGfQgu9ALox8KZNJEEhCRNJHKABnXFdoYVeAE2ajlasp0FWYhJM8FOTJLTQW6Eno42EYGj4jcDRAkjETCT2Cy30A6GT6UbFAxKCaYK35MdIAoTQQm+GJgUqme8n5h4KvYHAzvQjCS30Jmhqtk2CYDMUNJsmgt+xgSe00A+FJv/gk2GXwquocQDPaPeKmhOhhX4YNBkiyELTgEEhm6GD7ldoobdBN8EVsrEUiiNGwSeiwrgHoYVeAE1MsjTsp8Gfmvx0vVHQnw5IaKEXQJ828FTcI8MLGVQaIx81J0IL/VDoE7GgMfzIZ5thhoSCKhFBaKEfBv1NQ3wK5qRAHhEaW/NQaKE3QpNBgIqAVAwkhYwOF0S8FFroTdC0aaBwqKBAgY8GB/DehRZ6ITRpAGjwJZl0pElpRIMYwBFa6EXQRIgnobhkCFDDnw4V076FFnojdBoMpqDL1PC3TQ5Zix5+5VoKLfTDoJM4SII1KQA3iQ7JXG+CPamgCS30FmiyaXLRJqQZdE4K42VRFVroJdBEaKciQNNEUDOuaaBGo09ooRdA09DqiUHfvqYCQjIPotgvtNAPh56MOfxAICRQU48KgE2gT2iht0ATQy4FzynEtKGTvRDzT2iht0OnYtYK96lQkeDcCfDbZwgt9ALoVGRIU0HutwGeVlggor/QQm+CJgHUFIyhwZkmEE/CAEmkEFrobdAksJ4CqCeFjRxmGj6oaCG00FugkxFOD+MkpENNxKYYHqeAhRb64dBVI38gylO4E7P+UmAQWugF0KQRmAZ8YprTYQQXpCJgjzsyoYV+EHRqTqiA96kJn9YhQ8/4ntBCL4JOIh81+0iBpIJAa97HAxRaaKFr0Z0I/ydwzbMvC6zQQguNixYR7E5DOs3+xqFHaKEXQU+CYDsQEBgy/KcwbStCCC30FuhUdNI/fxpqJcZ9EhapmfCRGiq00DeG3nQJLbTQQgst9E2uf0tONO8pASQVAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>很多时候为了加速网站快速访问都会上<code>CDN</code>，这样一来程序和<code>nginx</code>日志获取到的访客<code>IP</code>地址就是<code>CDN</code>的节点<code>IP</code>而不是用户的真实<code>IP</code>了，这时候可以通过设置<code>Nginx</code>下的<code>ngx_realip</code>的模块是可以解决这个问题的，一般这个模块是默认没有添加的，不过军哥的<code>lnmp</code>是有这个模块的，所以设置会简单很多，这里说下具体方法。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>以军哥的<code>lnmp</code>为例，只需要添加些参数即可！</p>
+<p>1、在<code>lnmp</code>安装目录<code>/root/lnmp</code>下找到<code>lnmp.conf</code>并编辑<code>Nginx_Modules_Options</code>。</p>
+<pre><code>Nginx_Modules_Options=&apos;--with-http_realip_module&apos;</code></pre><p>保存后执行<code>./upgrade.sh nginx</code>来升级下<code>Nginx</code>就可以了。</p>
+<p>2、找到网站配置文件，即<code>/usr/local/nginx/conf/vhost/xx.com.conf</code>并编辑。在任意一个<code>location</code>里加入以下参数：</p>
+<pre><code>set_real_ip_from  103.138.13.10/34;
+set_real_ip_from  107.63.132.0/29;
+set_real_ip_from  108.62.120.0/26;
+set_real_ip_from  45.113.252.0/26;
+real_ip_header    X-Forwarded-For;
+real_ip_recursive on;</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-03-15T12:26:10.000Z" itemprop="datePublished">2020-03-15</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.252Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/03/15/linux-vps-e5-ae-9a-e6-97-b6-e5-a4-87-e4-bb-bd-e7-bd-91-e7-ab-99-e6-96-87-e4-bb-b6-e5-92-8c-e6-95-b0-e6-8d-ae-e5-ba-93-e5-88-b0-e4-b8-83-e7-89-9b-e4-ba-91-e5-ad-98-e5-82-a8/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux vps定时备份网站文件和数据库到七牛云存储</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/03/15/e4-b8-80-e4-b8-aa-e5-8f-af-e4-bb-a5-e5-90-8c-e6-97-b6-e7-9b-91-e6-8e-a7-e5-a4-9a-e4-b8-aavps-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-bf-a1-e6-81-af-e7-9a-84-e9-9d-a2-e6-9d-bf-ef-bc-9apsdash-e5-ae-89-e8-a3-85/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一个可以同时监控多个VPS服务器信息的面板：psdash安装教程</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

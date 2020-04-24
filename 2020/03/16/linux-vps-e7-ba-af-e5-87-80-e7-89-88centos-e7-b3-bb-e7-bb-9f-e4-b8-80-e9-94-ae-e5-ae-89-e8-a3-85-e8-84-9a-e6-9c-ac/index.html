@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Linux VPS纯净版CentOS系统一键安装脚本 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Linux VPS纯净版CentOS系统一键安装脚本 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/03/16/linux-vps-e7-ba-af-e5-87-80-e7-89-88centos-e7-b3-bb-e7-bb-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/"><meta property="og:locale" content="en"><meta name="description" content="背景 适用于由GRUB引导的CentOS，Ubuntu，Debian系统。 使用官方发行版去掉模板预装的软件。 同时也可以解决内核版本与软件不兼容的问题。 只要有root权限，还您一个纯净的系统。  相关教程：Linux VPS纯净版Debian&#x2F;Ubuntu系统一键安装脚本。 注意 全自动安装默认root密码：Vicer，安装完成后请立即更改密码。 全自动安装时默认提供VNC功能，可使用VNC  - John Doe - 南猫"><meta property="article:published_time" content="2020-03-16T07:15:45.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.252Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.252Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/03/16/linux-vps-e7-ba-af-e5-87-80-e7-89-88centos-e7-b3-bb-e7-bb-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/03/16/linux-vps-e7-ba-af-e5-87-80-e7-89-88centos-e7-b3-bb-e7-bb-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/03/16/linux-vps-e7-ba-af-e5-87-80-e7-89-88centos-e7-b3-bb-e7-bb-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/"
+    },
+    "headline": "Linux VPS纯净版CentOS系统一键安装脚本 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-03-16T07:15:45.000Z",
+    "dateModified": "2020-04-24T09:34:44.252Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "背景 适用于由GRUB引导的CentOS，Ubuntu，Debian系统。 使用官方发行版去掉模板预装的软件。 同时也可以解决内核版本与软件不兼容的问题。 只要有root权限，还您一个纯净的系统。  相关教程：Linux VPS纯净版Debian/Ubuntu系统一键安装脚本。 注意 全自动安装默认root密码：Vicer，安装完成后请立即更改密码。 全自动安装时默认提供VNC功能，可使用VNC  - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=Linux VPS纯净版CentOS系统一键安装脚本" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Linux VPS纯净版CentOS系统一键安装脚本&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=Linux VPS纯净版CentOS系统一键安装脚本" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADm0lEQVR42u3aUW7rMAwFUe9/06+/RSDxDtXkmTEmPy0aN9YJYIoief174OsSJUqUKFGPQ13F6/c1yw/5dd3r76uf1f++/u313midokQNQe0WvILvFr26Ob12Bdp9TrlOUaIGodJiSHDoBpfquhRMVusTJeqbUNsPamyw1cYaFyxK1INQqwV1Es60saa/ixL1jajqQ04Oiyko7L6I3b3emqWLEvVhVPVgT/r5tmqSKFEfRMWie7Fxrr6A6nCZgsPu2rd3PUSJ+iCK3Gy3uabmQAo+JFi1vgxRooaiqge2SjwreGpApMBQfdGiRE1DnT781U2779Hmd1WkESVqAirBSFOZFP4rBG0yxCadKFEDUCTJPG0ApASYXkOwokRNQaUEsxNIUoKaGuAEUTYRRIkagjod9iAJ8buKM2n4S5SoaajOIY5u2OS9FADSZixK1FRUd+OsoGkQMf3eXY8oUdNQNJElNyZBg274tDgjStQkVCqYpOYbDQrpOtr8K4OHKFEDULRpnRZOGmjkMEkLNqJETUbtDm9pgIQ+1LT4Se+BGgSiRN2EIonpruFNg033fVJEbSW0okT9RxRtUpMNstv0Jslxaw2iRA1AkeEpWlysBnzpoCQZltwmCaJEDUHRIkcaeiQHxarJd1J0ESVqKoo0mlPQSIGCHExpwIlZuihRN6FIEIgNZDDYS5oMZB0oUIgSNQhFN9yTQ153gIsUYUSJ+hZUtcnRDZQ0HWigQYOSokQNQdGHkxwgSUHldOAqfsmiRA1A0YSyM/BIhjzokBUJSqJETUJVmzBdLNmYaSMv/V4GFlGihqHIhtcpftKBLlIEQkUhUaIGoDrNZ3xYC/Bdcps2+ph4ixI1AEWSRdqE7gaMqqCZCqDlcIgoUTei0oXdTbE6QNIGAQHEk68oUTej6NBT2jCrJhoNGp1mnShRE1FpeCMFj86DThPoFICW/y9K1AAUCRapeEmHF+mBkibYfxoOESXqw6hqQWSo4+TQSIoq9H6iRE1BkQezEzyu8KINggu+RImahqLDVmn4qj3I0RgiJk1sUaKmoDoP9WlAqRCdwkss3ogSNQSVNkESADoPOC3QkARYlKipKFo4pDepgs/JsFY7SxclajgqDVN1hjlI45usDw8xihI1EJUGdGnySjf71JRoTWaKEnUDKhXmSRKbmgRkKCQNqJTrFCVqCIomn533yWBIdzgkHSJFiZqAetJLlChRokQ95vUD35LUcfkTyuwAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Linux VPS纯净版CentOS系统一键安装脚本</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-03-16</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux VPS纯净版CentOS系统一键安装脚本&url=http://hexo.southcat.net/2020/03/16/linux-vps-e7-ba-af-e5-87-80-e7-89-88centos-e7-b3-bb-e7-bb-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Linux VPS纯净版CentOS系统一键安装脚本&url=http://hexo.southcat.net/2020/03/16/linux-vps-e7-ba-af-e5-87-80-e7-89-88centos-e7-b3-bb-e7-bb-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/03/16/linux-vps-e7-ba-af-e5-87-80-e7-89-88centos-e7-b3-bb-e7-bb-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/03/16/linux-vps-e7-ba-af-e5-87-80-e7-89-88centos-e7-b3-bb-e7-bb-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/03/16/linux-vps-e7-ba-af-e5-87-80-e7-89-88centos-e7-b3-bb-e7-bb-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/03/16/linux-vps-e7-ba-af-e5-87-80-e7-89-88centos-e7-b3-bb-e7-bb-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/03/16/linux-vps-e7-ba-af-e5-87-80-e7-89-88centos-e7-b3-bb-e7-bb-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADm0lEQVR42u3aUW7rMAwFUe9/06+/RSDxDtXkmTEmPy0aN9YJYIoief174OsSJUqUKFGPQ13F6/c1yw/5dd3r76uf1f++/u313midokQNQe0WvILvFr26Ob12Bdp9TrlOUaIGodJiSHDoBpfquhRMVusTJeqbUNsPamyw1cYaFyxK1INQqwV1Es60saa/ixL1jajqQ04Oiyko7L6I3b3emqWLEvVhVPVgT/r5tmqSKFEfRMWie7Fxrr6A6nCZgsPu2rd3PUSJ+iCK3Gy3uabmQAo+JFi1vgxRooaiqge2SjwreGpApMBQfdGiRE1DnT781U2779Hmd1WkESVqAirBSFOZFP4rBG0yxCadKFEDUCTJPG0ApASYXkOwokRNQaUEsxNIUoKaGuAEUTYRRIkagjod9iAJ8buKM2n4S5SoaajOIY5u2OS9FADSZixK1FRUd+OsoGkQMf3eXY8oUdNQNJElNyZBg274tDgjStQkVCqYpOYbDQrpOtr8K4OHKFEDULRpnRZOGmjkMEkLNqJETUbtDm9pgIQ+1LT4Se+BGgSiRN2EIonpruFNg033fVJEbSW0okT9RxRtUpMNstv0Jslxaw2iRA1AkeEpWlysBnzpoCQZltwmCaJEDUHRIkcaeiQHxarJd1J0ESVqKoo0mlPQSIGCHExpwIlZuihRN6FIEIgNZDDYS5oMZB0oUIgSNQhFN9yTQ153gIsUYUSJ+hZUtcnRDZQ0HWigQYOSokQNQdGHkxwgSUHldOAqfsmiRA1A0YSyM/BIhjzokBUJSqJETUJVmzBdLNmYaSMv/V4GFlGihqHIhtcpftKBLlIEQkUhUaIGoDrNZ3xYC/Bdcps2+ph4ixI1AEWSRdqE7gaMqqCZCqDlcIgoUTei0oXdTbE6QNIGAQHEk68oUTej6NBT2jCrJhoNGp1mnShRE1FpeCMFj86DThPoFICW/y9K1AAUCRapeEmHF+mBkibYfxoOESXqw6hqQWSo4+TQSIoq9H6iRE1BkQezEzyu8KINggu+RImahqLDVmn4qj3I0RgiJk1sUaKmoDoP9WlAqRCdwkss3ogSNQSVNkESADoPOC3QkARYlKipKFo4pDepgs/JsFY7SxclajgqDVN1hjlI45usDw8xihI1EJUGdGnySjf71JRoTWaKEnUDKhXmSRKbmgRkKCQNqJTrFCVqCIomn533yWBIdzgkHSJFiZqAetJLlChRokQ95vUD35LUcfkTyuwAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#背景"><span class="post-toc-number">1.</span> <span class="post-toc-text">背景</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注意"><span class="post-toc-number">2.</span> <span class="post-toc-text">注意</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#需要"><span class="post-toc-number">3.</span> <span class="post-toc-text">需要</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#提示"><span class="post-toc-number">5.</span> <span class="post-toc-text">提示</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
+<li>适用于由<code>GRUB</code>引导的<code>CentOS</code>，<code>Ubuntu</code>，<code>Debian</code>系统。</li>
+<li>使用官方发行版去掉模板预装的软件。</li>
+<li>同时也可以解决内核版本与软件不兼容的问题。</li>
+<li>只要有<code>root</code>权限，还您一个纯净的系统。</li>
+</ul>
+<p><strong>相关教程：</strong>Linux VPS纯净版Debian/Ubuntu系统一键安装脚本。</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<li>全自动安装默认<code>root</code>密码：<code>Vicer</code>，安装完成后请立即更改密码。</li>
+<li>全自动安装时默认提供<code>VNC</code>功能，可使用<code>VNC Viewer</code>查看进度。</li>
+<li><code>VNC</code>端口为<code>1</code>或者<code>5901</code>，可自行尝试连接(成功后<code>VNC</code>功能会消失)。</li>
+<li>目前只支持<code>CentOS 6.9</code>及以下版本(<code>5.x</code>、<code>6.x</code>)，<code>7</code>版本以后添加。</li>
+</ul>
+<p><strong>特别注意：</strong><code>OpenVZ</code>构架不适用。</p>
+<h2 id="需要"><a href="#需要" class="headerlink" title="需要"></a>需要</h2><ol>
+<li><code>Debian</code>/<code>Ubuntu</code>/<code>CentOS</code>系统(由<code>GRUB</code>引导)；</li>
+<li><code>wget</code>用来下载文件，获取公网<code>IP</code>;</li>
+<li><code>ip</code>获取网关，掩码等;</li>
+<li><code>sed awk grep</code>处理文本流；</li>
+<li><code>openssl</code>创建<code>root</code>用户密码;</li>
+<li><code>xz-utils</code>重新打包镜像。</li>
+</ol>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>1、安装依赖</strong></p>
+<pre><code>#Debian/Ubuntu
+apt-get install -y xz-utils openssl gawk coreutils file
+
+#RedHat/CentOS
+yum install -y xz openssl gawk coreutils file</code></pre><p>如果出现了错误，请升级系统</p>
+<pre><code>#Debian/Ubuntu
+apt-get update
+
+#RedHat/CentOS
+yum update</code></pre><p><strong>2、脚本下载及使用</strong><br>脚本下载：</p>
+<pre><code>wget --no-check-certificate -qO CentOSNET.sh &apos;https://moeclub.org/attachment/LinuxShell/CentOSNET.sh&apos; &amp;&amp; chmod a+x CentOSNET.sh
+#脚本备份
+https://www.southcat.net/usr/down/CentOSNET.sh</code></pre><p>脚本使用：</p>
+<pre><code>Usage:
+        bash CentOSNET.sh       -c/--centos [dist-version]
+                                -v/--ver [32/i386|64/amd64]
+                                --ip-addr/--ip-gate/--ip-mask
+                                -yum/--mirror
+                                -a/-m</code></pre><p><strong>3、全自动安装</strong></p>
+<pre><code>#使用默认镜像全自动安装
+bash CentOSNET.sh -c 6.8 -v 64 -a
+
+#使用自定义镜像全自动安装
+bash CentOSNET.sh -c 6.9 -v 64 -a --mirror &apos;http://mirror.centos.org/centos&apos;
+
+#使用自定义镜像自定义网络参数全自动安装
+#bash CentOSNET.sh -c 6.9 -v 64 -a --ip-addr x.x.x.x --ip-gate x.x.x.x --ip-mask x.x.x.x --mirror &apos;http://mirror.centos.org/centos&apos;</code></pre><h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><ul>
+<li>如果看到“<code>Starting graphical installation</code>”或者类似表达，则表示正在安装。</li>
+<li>正常情况下只需要耐心等待安装完成即可。</li>
+<li>如果需要查看进度，使用<code>VNC Viewer</code>(或者其他<code>VNC</code>连接工具)。</li>
+<li>连接提示中的<code>IP</code>地址：端口进行连接(端口一般为<code>1</code>或者<code>5901</code>)。</li>
+</ul>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-03-16T07:15:45.000Z" itemprop="datePublished">2020-03-16</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.252Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/03/16/e5-9c-a8ubuntu-centos-debian-e7-b3-bb-e7-bb-9f-e4-b8-8b-ef-bc-8c-e4-bd-bf-e7-94-a8cpu-e6-8c-96monero-xmr-e5-b8-81/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">在Ubuntu/CentOS/Debian系统下，使用CPU挖Monero (XMR)币</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/03/16/e5-9c-a8ubuntu-debian-e4-b8-8b-e5-ae-89-e8-a3-85utorrent-ef-bc-8c-e5-8f-af-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bdbt-e7-a7-8d-e5-ad-90-e7-a3-81-e5-8a-9b/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">在Ubuntu/Debian下安装uTorrent，可离线下载BT种子磁力</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

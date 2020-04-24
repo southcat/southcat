@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>一款面向个人，团队，小型组织的免费开源网盘程序：kiftd搭建教程 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="一款面向个人，团队，小型组织的免费开源网盘程序：kiftd搭建教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/12/25/e4-b8-80-e6-ac-be-e9-9d-a2-e5-90-91-e4-b8-aa-e4-ba-ba-ef-bc-8c-e5-9b-a2-e9-98-9f-ef-bc-8c-e5-b0-8f-e5-9e-8b-e7-bb-84-e7-bb-87-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-9b-98-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前博主介绍过很多网盘程序，比如：Nextcloud、FileRun、Cloudreve、Seafile、Filebrowser等，都挺强大的，不过博主最近一直想要一款简洁又强大的网盘程序，然后就发现了Kiftd网盘，一款全方位面向个人，团队，小型组织的文件传输系统的免费开源网盘，无上传限制，视频音乐在线播放，图片浏览等等，功能非常的强大。无论是Windows、Linux还是Unix(包括M - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/kiftd(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/kiftd(2).png"><meta property="article:published_time" content="2019-12-25T00:51:04.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.241Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.241Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2019/12/25/e4-b8-80-e6-ac-be-e9-9d-a2-e5-90-91-e4-b8-aa-e4-ba-ba-ef-bc-8c-e5-9b-a2-e9-98-9f-ef-bc-8c-e5-b0-8f-e5-9e-8b-e7-bb-84-e7-bb-87-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-9b-98-e7-a8-8b/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2019/12/25/e4-b8-80-e6-ac-be-e9-9d-a2-e5-90-91-e4-b8-aa-e4-ba-ba-ef-bc-8c-e5-9b-a2-e9-98-9f-ef-bc-8c-e5-b0-8f-e5-9e-8b-e7-bb-84-e7-bb-87-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-9b-98-e7-a8-8b/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2019/12/25/e4-b8-80-e6-ac-be-e9-9d-a2-e5-90-91-e4-b8-aa-e4-ba-ba-ef-bc-8c-e5-9b-a2-e9-98-9f-ef-bc-8c-e5-b0-8f-e5-9e-8b-e7-bb-84-e7-bb-87-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-9b-98-e7-a8-8b/"
+    },
+    "headline": "一款面向个人，团队，小型组织的免费开源网盘程序：kiftd搭建教程 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-25T00:51:04.000Z",
+    "dateModified": "2020-04-24T09:34:44.241Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：之前博主介绍过很多网盘程序，比如：Nextcloud、FileRun、Cloudreve、Seafile、Filebrowser等，都挺强大的，不过博主最近一直想要一款简洁又强大的网盘程序，然后就发现了Kiftd网盘，一款全方位面向个人，团队，小型组织的文件传输系统的免费开源网盘，无上传限制，视频音乐在线播放，图片浏览等等，功能非常的强大。无论是Windows、Linux还是Unix(包括M - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=一款面向个人，团队，小型组织的免费开源网盘程序：kiftd搭建教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=一款面向个人，团队，小型组织的免费开源网盘程序：kiftd搭建教程&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=一款面向个人，团队，小型组织的免费开源网盘程序：kiftd搭建教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFY0lEQVR42u2cwY7bUAwD/f8/nV562BZ+4lBOD4Unl91NkxdrDAgSyeb6+PhcIhCCEIQgBCEIYYRwDY8/3vD7779/3h7+4/1//3733p9/T7/fnTO9JtUlBCEI4R7CqZA7UKfXkUII+AnyBHZ6/liXEIQghCOE00WkC2wb5tQ4T6BORUyvT3UJQQhC2ENIhZDn0wDUDE4TfCEIQQj/HkICMTUxstBMzfQ0YKUmKgQhCOEZhLQYVQ0HPE+FEwqkGaqEIAQhzBCIuPE//vya2iwEIbwIAhlSqMHSCrKTqJKGIHqdX3GlhSCEF0EghVCDhoifpBFXBkphyApBCELIEMjSk0xaUgAxdSZjh4gpaVkTghCEwCBsRND2tY1YSgYvIgzHmyoEIQghLlCpoRDDhAQ3SBCTGr/EILo9SwhCEMJovpCQxibQ0Qg2JHxFF7Rk5gpBCEI4my/ENE2Hkw/fBENT00xnHYc4IQhBCGiBIqEMAoKIrJPJQoNgVAiqtkghCOGlENLBdBAiIdC0QJFrIICTyCIEIQjhDIE2uK3B2oRAyLBEwiJJWBGCEISQISShI5knKWxFhhwqtjxprii9JgQhvBwCaXjkgyYTNA02CdzGPE4whCAEIbBhaStiJDEjDUbpJtCQFgmECkEIQpjNF9rISECKNNgmJEICXNF8vULKXQhCEMIqtLUJYm1CIDRAkgAJQQhC+KwaIw5AAlO1aaqkQDqM0VCJEIQgBAaBGK1EgE1iCSmCGCqkhmqBEoIQhICMUmKyTMU1sJqhiAZFa0NWCEJ4MQSy5CQhgy5AaZAhyxkxWvFCJwQhCCGaL2lRSoJmG7QgRg0JfCXB+PZ9QhCCEEYIm2bzjRAGEUZS2HQjuApBCELgXyKRFhoyzNDziUEziSbNMoZEFSEI4eUQpgJIWKoxXhuADTAiFI8LlBCEIIRPCl1NjScNOOlCngY3G5E1LlBCEIIQUNghhSWokdI2N2qwtI1yDGkIQQhCwOJFE64gQisRSIjQs7kBQhCCEDgEEohKJmvzb8TQJWdPN3S8KUIQghBuISSTlJguNOBBhNIkzKTgBhGIhCAEIVwopJFM07RkPQ1/NY2ZhkKON00IQhDCKKokQ2VqZFQgoRCS2EPgx+YqBCEIIRqyT4aaBI8UQcTWTeO8PVcIQhBCFFo3CwoJW09mL/m8xozFIowQhCCEo6hCRU3avEgYi5jCjUHciLhCEIIQ2AJFRVEymDTNlhS3FVzrLVIIQhBC/LKmpnnRMFUSQk/n0OUtPi8EIQhhNGTTUENNkiSEEuDb36frQ660EIQghHHAGA1NGLCgQ1EroBDhpE6qCEEIQsABTWLQEMOVhjRoqIPchNvmKQQhCAEFt75ROLoIMEylRYwGv4UgBCEwCOTiiGCRip8GnyT0kmELF05T7kIQwkshEBOGmqdT8WS5SWeQABcxc4UgBCHw/+9ABhHybyS83Zi9zaCFg2RCEIIQbhvj1LjSh1HDNZmpjSG7WcBGQ1YIQhAC/tIXGrggga0mCLoxZCZxB0+MQhDCyyGkN5HXJTGGmjDkdU3jmwQaIQhBCBlCY8wmYYQMT61A0hivSIwVghCEcByWqADamKRkuaGhzBT0ouKLEIQghBkCNTiaUFdajmi4gyxo9JxqWBKCEF4OYTPgNIJpY+iSYklYhDReIQhBCOwL7afGsjVFW+OmKSyJMGiLFIIQhIAhJAGVmB8JDBFJY6MDIdR1YxSCEISAF5zWQCEGzJMhig5rQhCCEPoFamvOEnOECLAUMgl6CUEIQmAQiGhCg5akyHRWDFeEG5JCX0IQghCuGOZ840MIQhCCEIQgBCHcPn4BnK0k7hvfr6MAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">一款面向个人，团队，小型组织的免费开源网盘程序：kiftd搭建教程</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-25</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=一款面向个人，团队，小型组织的免费开源网盘程序：kiftd搭建教程&url=http://hexo.southcat.net/2019/12/25/e4-b8-80-e6-ac-be-e9-9d-a2-e5-90-91-e4-b8-aa-e4-ba-ba-ef-bc-8c-e5-9b-a2-e9-98-9f-ef-bc-8c-e5-b0-8f-e5-9e-8b-e7-bb-84-e7-bb-87-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-9b-98-e7-a8-8b/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=一款面向个人，团队，小型组织的免费开源网盘程序：kiftd搭建教程&url=http://hexo.southcat.net/2019/12/25/e4-b8-80-e6-ac-be-e9-9d-a2-e5-90-91-e4-b8-aa-e4-ba-ba-ef-bc-8c-e5-9b-a2-e9-98-9f-ef-bc-8c-e5-b0-8f-e5-9e-8b-e7-bb-84-e7-bb-87-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-9b-98-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/12/25/e4-b8-80-e6-ac-be-e9-9d-a2-e5-90-91-e4-b8-aa-e4-ba-ba-ef-bc-8c-e5-9b-a2-e9-98-9f-ef-bc-8c-e5-b0-8f-e5-9e-8b-e7-bb-84-e7-bb-87-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-9b-98-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/12/25/e4-b8-80-e6-ac-be-e9-9d-a2-e5-90-91-e4-b8-aa-e4-ba-ba-ef-bc-8c-e5-9b-a2-e9-98-9f-ef-bc-8c-e5-b0-8f-e5-9e-8b-e7-bb-84-e7-bb-87-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-9b-98-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/12/25/e4-b8-80-e6-ac-be-e9-9d-a2-e5-90-91-e4-b8-aa-e4-ba-ba-ef-bc-8c-e5-9b-a2-e9-98-9f-ef-bc-8c-e5-b0-8f-e5-9e-8b-e7-bb-84-e7-bb-87-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-9b-98-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/12/25/e4-b8-80-e6-ac-be-e9-9d-a2-e5-90-91-e4-b8-aa-e4-ba-ba-ef-bc-8c-e5-9b-a2-e9-98-9f-ef-bc-8c-e5-b0-8f-e5-9e-8b-e7-bb-84-e7-bb-87-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-9b-98-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/12/25/e4-b8-80-e6-ac-be-e9-9d-a2-e5-90-91-e4-b8-aa-e4-ba-ba-ef-bc-8c-e5-9b-a2-e9-98-9f-ef-bc-8c-e5-b0-8f-e5-9e-8b-e7-bb-84-e7-bb-87-e7-9a-84-e5-85-8d-e8-b4-b9-e5-bc-80-e6-ba-90-e7-bd-91-e7-9b-98-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFY0lEQVR42u2cwY7bUAwD/f8/nV562BZ+4lBOD4Unl91NkxdrDAgSyeb6+PhcIhCCEIQgBCEIYYRwDY8/3vD7779/3h7+4/1//3733p9/T7/fnTO9JtUlBCEI4R7CqZA7UKfXkUII+AnyBHZ6/liXEIQghCOE00WkC2wb5tQ4T6BORUyvT3UJQQhC2ENIhZDn0wDUDE4TfCEIQQj/HkICMTUxstBMzfQ0YKUmKgQhCOEZhLQYVQ0HPE+FEwqkGaqEIAQhzBCIuPE//vya2iwEIbwIAhlSqMHSCrKTqJKGIHqdX3GlhSCEF0EghVCDhoifpBFXBkphyApBCELIEMjSk0xaUgAxdSZjh4gpaVkTghCEwCBsRND2tY1YSgYvIgzHmyoEIQghLlCpoRDDhAQ3SBCTGr/EILo9SwhCEMJovpCQxibQ0Qg2JHxFF7Rk5gpBCEI4my/ENE2Hkw/fBENT00xnHYc4IQhBCGiBIqEMAoKIrJPJQoNgVAiqtkghCOGlENLBdBAiIdC0QJFrIICTyCIEIQjhDIE2uK3B2oRAyLBEwiJJWBGCEISQISShI5knKWxFhhwqtjxprii9JgQhvBwCaXjkgyYTNA02CdzGPE4whCAEIbBhaStiJDEjDUbpJtCQFgmECkEIQpjNF9rISECKNNgmJEICXNF8vULKXQhCEMIqtLUJYm1CIDRAkgAJQQhC+KwaIw5AAlO1aaqkQDqM0VCJEIQgBAaBGK1EgE1iCSmCGCqkhmqBEoIQhICMUmKyTMU1sJqhiAZFa0NWCEJ4MQSy5CQhgy5AaZAhyxkxWvFCJwQhCCGaL2lRSoJmG7QgRg0JfCXB+PZ9QhCCEEYIm2bzjRAGEUZS2HQjuApBCELgXyKRFhoyzNDziUEziSbNMoZEFSEI4eUQpgJIWKoxXhuADTAiFI8LlBCEIIRPCl1NjScNOOlCngY3G5E1LlBCEIIQUNghhSWokdI2N2qwtI1yDGkIQQhCwOJFE64gQisRSIjQs7kBQhCCEDgEEohKJmvzb8TQJWdPN3S8KUIQghBuISSTlJguNOBBhNIkzKTgBhGIhCAEIVwopJFM07RkPQ1/NY2ZhkKON00IQhDCKKokQ2VqZFQgoRCS2EPgx+YqBCEIIRqyT4aaBI8UQcTWTeO8PVcIQhBCFFo3CwoJW09mL/m8xozFIowQhCCEo6hCRU3avEgYi5jCjUHciLhCEIIQ2AJFRVEymDTNlhS3FVzrLVIIQhBC/LKmpnnRMFUSQk/n0OUtPi8EIQhhNGTTUENNkiSEEuDb36frQ660EIQghHHAGA1NGLCgQ1EroBDhpE6qCEEIQsABTWLQEMOVhjRoqIPchNvmKQQhCAEFt75ROLoIMEylRYwGv4UgBCEwCOTiiGCRip8GnyT0kmELF05T7kIQwkshEBOGmqdT8WS5SWeQABcxc4UgBCHw/+9ABhHybyS83Zi9zaCFg2RCEIIQbhvj1LjSh1HDNZmpjSG7WcBGQ1YIQhAC/tIXGrggga0mCLoxZCZxB0+MQhDCyyGkN5HXJTGGmjDkdU3jmwQaIQhBCBlCY8wmYYQMT61A0hivSIwVghCEcByWqADamKRkuaGhzBT0ouKLEIQghBkCNTiaUFdajmi4gyxo9JxqWBKCEF4OYTPgNIJpY+iSYklYhDReIQhBCOwL7afGsjVFW+OmKSyJMGiLFIIQhIAhJAGVmB8JDBFJY6MDIdR1YxSCEISAF5zWQCEGzJMhig5rQhCCEPoFamvOEnOECLAUMgl6CUEIQmAQiGhCg5akyHRWDFeEG5JCX0IQghCuGOZ840MIQhCCEIQgBCHcPn4BnK0k7hvfr6MAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#功能特点"><span class="post-toc-number">2.</span> <span class="post-toc-text">功能特点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#域名访问"><span class="post-toc-number">4.</span> <span class="post-toc-text">域名访问</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>之前博主介绍过很多网盘程序，比如：Nextcloud、FileRun、Cloudreve、Seafile、Filebrowser等，都挺强大的，不过博主最近一直想要一款简洁又强大的网盘程序，然后就发现了<code>Kiftd</code>网盘，一款全方位面向个人，团队，小型组织的文件传输系统的免费开源网盘，无上传限制，视频音乐在线播放，图片浏览等等，功能非常的强大。无论是<code>Windows</code>、<code>Linux</code>还是<code>Unix</code>(包括<code>Mac OS X</code>)，均可运行使用。这里就发下搭建教程。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/kiftd(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/kiftd(2).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="功能特点"><a href="#功能特点" class="headerlink" title="功能特点"></a>功能特点</h2><ul>
+<li>无上传限制：<code>1MB</code>的文档和超过<code>4GB</code>的高清电影资源？均能够随意上传和下载。</li>
+<li>主流商业网盘特有的高级功能甚至需要收费的功能——文件夹访问权限控制、<code>MP4</code>视频在线影院、<code>MP3</code>音乐在线欣赏、图片文件在线预览、<code>PDF</code>文档在线阅读，<code>kiftd</code>均一一具备，每一份<code>kiftd</code>均是“完全版”。</li>
+<li>操作系统全兼容：无论是<code>Windows</code>、<code>Linux</code>还是<code>Unix</code>(包括<code>Mac OS X</code>)，均可运行使用。</li>
+<li>同时满足日常或专业需求：<code>kiftd</code>同时具备了图形界面模式和纯命令模式的双操作模式，无论您是喜欢点击鼠标的电脑小白还是需要使用命令在远程<code>Linux</code>上部署的运维人员，均能完美操作。</li>
+<li>无任何使用成本：<code>kiftd</code>完全开源免费，因此唯一的使用成本就是需要安装它。至于之后您想将其用于什么领域，哪怕是商业领域——均无任何限制。</li>
+<li>无内置代码的隐患：<code>kiftd</code>完全开源，您可以随意下载其源代码，并用它自己编译一份<code>kiftd</code>；同时，它删除即走，绝不和你撒娇卖萌。保护用户硬件环境，从开源做起。</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/KOHGYLW/kiftd" target="_blank" rel="noopener">https://github.com/KOHGYLW/kiftd</a></p>
+<p>由于<code>Linux</code>系统运行过程对小白很不友好，所以这里只说<code>Linux</code>系统，<code>Windows</code>和<code>Mac</code>可以看说明，很简单。</p>
+<p><strong>1、安装java</strong><br>首先使用命令<code>java -version</code>查看服务器上有没有<code>java</code>环境，如果没有就需要安装了。</p>
+<p>先去下载<code>jdk</code>文件→下载地址，由于这个不能直接复制超链接下载，必须先<code>Accept</code>条款后，才能下载，有点麻烦，所以这里博主就直接将最新版的<code>jdk</code>文件包放服务器供使用了。</p>
+<pre><code>#64位系统下载jdk文件
+wget -O jdk.tar.gz https://www.southcat.net/usr/down/JDK/jdk-8u192-linux-x64.tar.gz
+#32位系统下载jdk文件
+wget -O jdk.tar.gz https://www.southcat.net/usr/down/JDK/jdk-8u192-linux-i586.tar.gz
+
+#解压并删除压缩文件
+tar -zxvf jdk.tar.gz &amp;&amp; rm -rf jdk.tar.gz</code></pre><p>编辑<code>/etc/profile</code>文件：</p>
+<pre><code>nano /etc/profile</code></pre><p>在后面添加以下代码：</p>
+<pre><code>JAVA_HOME=/root/jdk1.8.0_192
+export JRE_HOME=/root/jdk1.8.0_192/jre 
+export CLASSPATH=$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH 
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH</code></pre><p>然后使用<code>Ctrl+x</code>，<code>y</code>保存退出。</p>
+<p>使配置生效：</p>
+<pre><code>source /etc/profile</code></pre><p>查看<code>java</code>版本：</p>
+<pre><code>#有以下输出就安装成功
+root@Rats:~# java -version
+java version &quot;1.8.0_192&quot;
+Java(TM) SE Runtime Environment (build 1.8.0_192-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.192-b12, mixed mode)</code></pre><p><strong>2、安装git</strong></p>
+<pre><code>#CentOS 7系统
+yum install git -y
+
+#Debian、Ubuntu系统
+apt install git -y</code></pre><p><strong>3、安装kiftd</strong></p>
+<pre><code>git clone https://github.com/KOHGYLW/kiftd.git
+cd kiftd
+#运行程序，目前最新为kiftd-1.0.18
+java -jar kiftd-*-RELEASE.jar -start
+
+#后台运行
+nohup java -jar kiftd-*-RELEASE.jar -start &gt;&gt; /root/output.log 2&gt;&amp;1 &amp;</code></pre><p>然后访问<code>ip:8080</code>，默认管理员账户和密码为<code>admin</code>、<code>000000</code>。</p>
+<p>如果界面打不开，可能还需要开启<code>8080</code>端口，开启如下：</p>
+<pre><code>#CentOS 6
+iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+service iptables save
+service iptables restart
+
+#CentOS 7
+firewall-cmd --zone=public --add-port=8080/tcp --permanent
+firewall-cmd --reload</code></pre><p>最后如果你要修改网盘界面的一些信息的话，直接编辑源码文件夹里的<code>webContext/home.html</code>即可；修改端口密码的话，可以看看<code>conf</code>文件夹。</p>
+<h2 id="域名访问"><a href="#域名访问" class="headerlink" title="域名访问"></a>域名访问</h2><p>可能有些人不习惯使用<code>IP</code>访问网盘，这里可以使用<code>Nginx</code>、<code>Apache</code>、<code>Caddy</code>反代端口，这里只说宝塔<code>Nginx</code>和<code>Caddy</code>。如果你网站有宝塔，就可以使用宝塔进行反代，如果没有，建议使用第<code>2</code>种的<code>Caddy</code>反代，配置很快。</p>
+<p><strong>1、宝塔反代</strong><br>先进入宝塔面板，然后点击左侧网站，添加站点，然后再点击添加好了的域名名称，这时候就进入了站点配置，点击反向代理，目标<code>URL</code>填入<code>http://127.0.0.1:8080</code>，再启用反向代理即可。至于启用<code>SSL</code>就不说了，直接在站点配置就可以启用。</p>
+<p><strong>2、Caddy反代</strong><br>安装<code>Caddy</code>：</p>
+<pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh
+#备用地址
+wget -N --no-check-certificate https://www.southcat.net/usr/shell/Caddy/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh</code></pre><p>配置<code>Caddy</code>：</p>
+<pre><code>#以下全部内容是一个整体，请修改域名后一起复制到SSH运行！
+
+#http访问，该配置不会自动签发SSL
+echo &quot;xx.com {
+ gzip
+ proxy / 127.0.0.1:8080 {
+    header_upstream Host {host}
+    header_upstream X-Real-IP {remote}
+    header_upstream X-Forwarded-For {remote}
+    header_upstream X-Forwarded-Port {server_port}
+    header_upstream X-Forwarded-Proto {scheme}
+  }
+}&quot; &gt; /usr/local/caddy/Caddyfile
+
+#https访问，该配置会自动签发SSL，请提前解析域名到VPS服务器
+echo &quot;xx.com {
+ gzip
+ tls admin@southcat.net
+ proxy / 127.0.0.1:8080 {
+    header_upstream Host {host}
+    header_upstream X-Real-IP {remote}
+    header_upstream X-Forwarded-For {remote}
+    header_upstream X-Forwarded-Port {server_port}
+    header_upstream X-Forwarded-Proto {scheme}
+  }
+}&quot; &gt; /usr/local/caddy/Caddyfile</code></pre><p><code>tls</code>参数会自动帮你签发<code>ssl</code>证书，如果你要使用自己的<code>ssl</code>，改为<code>tls /root/xx.crt /root/xx.key</code>即可。后面为<code>ssl</code>证书路径。</p>
+<p>启动<code>Caddy</code>：</p>
+<pre><code>/etc/init.d/caddy start</code></pre><p>就可以打开域名进行访问了。</p>
+<pre><code>#在配置文件里添加
+location / {
+     proxy_pass http://127.0.0.1:8080;
+     proxy_redirect off;
+     proxy_set_header X-Real-IP $remote_addr;
+     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-25T00:51:04.000Z" itemprop="datePublished">2019-12-25</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.241Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/26/windows-e4-b8-80-e9-94-ae-e5-82-bb-e7-93-9c-e5-bc-8f-e5-85-8d-e7-bc-96-e8-af-91monero-e7-9f-bf-e6-9c-ba-ef-bc-8c-e5-b9-b6-e7-94-a8cpu-e6-8c-96-e7-9f-bfmonero/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Windows一键傻瓜式免编译Monero矿机，并用CPU挖矿Monero</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/25/vultr-e6-96-b0-e7-94-a8-e6-88-b7-e5-85-8d-e8-b4-b9-e9-a2-863-e7-be-8e-e5-85-83-e5-85-a8-e7-90-8315-e6-9c-ba-e6-88-bf-kvm-e6-9e-b6-e6-9e-84-e6-9c-88-e4-bb-982-5-e7-be-8e-e5-85-83/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Vultr新用户免费领3美元/全球15机房/KVM架构/月付2.5美元</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

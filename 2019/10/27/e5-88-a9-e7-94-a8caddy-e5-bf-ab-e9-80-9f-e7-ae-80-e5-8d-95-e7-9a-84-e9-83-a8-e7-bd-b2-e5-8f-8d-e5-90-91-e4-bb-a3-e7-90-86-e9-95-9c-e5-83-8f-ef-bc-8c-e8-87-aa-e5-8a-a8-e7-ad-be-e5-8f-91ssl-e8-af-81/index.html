@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>利用Caddy快速简单的部署反向代理/镜像，自动签发SSL证书 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="利用Caddy快速简单的部署反向代理&#x2F;镜像，自动签发SSL证书 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e7-ae-80-e5-8d-95-e7-9a-84-e9-83-a8-e7-bd-b2-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-e9-95-9c-e5-83-8f-ef-bc-8c-e8-87-aa-e5-8a-a8-e7-ad-be-e5-8f-91ssl-e8-af-81/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前关于反向代理教程发了好几个了，参考：利用Nginx反向代理来简单镜像HTTP(S)网站的方法，不过对比使用Caddy来反代的方法，还是麻烦了些，但是Nginx性能却好些，各有优点吧，一般不想折腾的就建议使用Caddy来反代，毕竟Caddy配置简单也支持自签Let’s Encrypt SSL证书，很方便。 安装Caddy运行以下命令： wget -N --no-check-certific - John Doe - 南猫"><meta property="article:published_time" content="2019-10-27T06:04:16.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.233Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.233Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e7-ae-80-e5-8d-95-e7-9a-84-e9-83-a8-e7-bd-b2-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-e9-95-9c-e5-83-8f-ef-bc-8c-e8-87-aa-e5-8a-a8-e7-ad-be-e5-8f-91ssl-e8-af-81/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e7-ae-80-e5-8d-95-e7-9a-84-e9-83-a8-e7-bd-b2-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-e9-95-9c-e5-83-8f-ef-bc-8c-e8-87-aa-e5-8a-a8-e7-ad-be-e5-8f-91ssl-e8-af-81/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e7-ae-80-e5-8d-95-e7-9a-84-e9-83-a8-e7-bd-b2-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-e9-95-9c-e5-83-8f-ef-bc-8c-e8-87-aa-e5-8a-a8-e7-ad-be-e5-8f-91ssl-e8-af-81/"
+    },
+    "headline": "利用Caddy快速简单的部署反向代理/镜像，自动签发SSL证书 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-10-27T06:04:16.000Z",
+    "dateModified": "2020-04-24T09:34:44.233Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：之前关于反向代理教程发了好几个了，参考：利用Nginx反向代理来简单镜像HTTP(S)网站的方法，不过对比使用Caddy来反代的方法，还是麻烦了些，但是Nginx性能却好些，各有优点吧，一般不想折腾的就建议使用Caddy来反代，毕竟Caddy配置简单也支持自签Let’s Encrypt SSL证书，很方便。 安装Caddy运行以下命令： wget -N --no-check-certific - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=利用Caddy快速简单的部署反向代理/镜像，自动签发SSL证书" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=利用Caddy快速简单的部署反向代理/镜像，自动签发SSL证书&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=利用Caddy快速简单的部署反向代理/镜像，自动签发SSL证书" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFXklEQVR42u3dzXIaSRREYb3/S+OtjanMk4W0sDlsZizoputTxI37N+Ovh6/HlwQiiCCCCCKIEBG+wuuPC37786t/b+8/f1967/nnz9edfvZ873YuEUQQ4TXCy6BxuPkJ73SI9FDp8M/XpXucPlvPJYIIIhwR2o3TgycwcrjTYdv1Kai2c4kgggj3CCkpasGxJTgNICVRLUiKIIIIPxsYT4lHe58UNKR4akG7JWkiiCACR2gHJAc9NjQD1lIIkSRqKgxFEEGEudH6L//z27rNIojwQQg0qLWhSkpwvmsYcwrOqdnyLVNpEUT4IARSjKwFDm3CpELqneSLnEcEEUTICCQQ3iQq630p8toIenm9CCKIcEyWUhOFDkeWZYx1AEMbq1PyJ4IIIsSmym2zlRZUqcBKByeNWfp5EUQQISO0hSu6gLkkRmTxI/28NV1a4BVBBBFyAUUTmFPD5DsSIFrMNZj0jLGpIoIIIjyWhIQ2RNaA2u5Fh6w0iTsmSyKIIMI0hH13SSIF0rbcuQxnUhIngggidIQ2SE3Lk2SJen2lJW2ShLUlbxFEEKHvMbYGSXswErxa8tTus8KiQa8IIoiAmiqkAGqNWtocJU2QdwqoGGBFEEGEmCy15uTy8O2+dGkzFUBkeByDvAgiiBCbKmQASgPhErBQEAuHb0MaNHwRQQQRHrT4WZMQ0milgZkueC1DFxFEEKEj3CQqdEBCE6O2VNGSo+uBrAgiiPB1E8Ba4kKaIvTADbgtdaOETwQRRHiJkAYwpJAiDVsSeOlAdi3a0PBFBBFEuEpYFpTlIGQZow1pySKHCCKIwBBow5IGQdIQScvfLTkjA9ma9IkggggvEWijtT3wspDdmic3eO08fwVSEUQQASMszdPpP7QogxRSxLX7YTwRRBChFlCtaUkXImiDhUDTRa/2LLiKFEGED0cgQWltnpIASD63BNY2QKoFlAgiiDD9z2HWxY52oNvG7dLMjYFXBBFEiIFxCWjpOrJklZqqrdm6XB+fXwQRRMAI6ee0uCJNE3LYFizbtcegLIIIIhyXOZcEhjRQUiBcrl0bPCm4xgJKBBFEQM3KZfniZrBCFq7SYKf9kuIQRwQRRIiB8ZSQkADXvjAVWsvCBln+JAsaIoggQh7ILouR6+CkLYPRQWv7Bcz3FEEEEerwZS1QaKK1JFftIKToQ00YEUQQ4dhopQkT+dLbgUkLhgSeFlMiiCAC+ztkySLUWhyR5QmSsJHCqhVnIoggAkdoTc2lWFmWu1qApY2bebFTBBFEqMOXE0b7YpK8kIbMMgCmA6N5ICuCCB+MQAIhefC2VEGWJ0ij5J0F03kgK4IIH4iwLj2RoWcrfpbASwNlQq8FlAgiiIC+ZBmSULhloNMGKK2AqkmcCCKIUButrehpiU1rfK6F2rrMRd4TQQQReFPlVEi1pmlqctJhzLLcQQfKuIASQQQR0A2WQuamiFqSrqUIQ8maCCKIgJMl0qR4pzCizVb63s0vRAQRRMhNlbSs0Q5PhzGtCUJw2+fb0pkIIojwwHlCC3BL0GxJTCqC1nuR5VIRRBBhQ2iDDzpgpUthtEFCBjs0SNaMUQQRPhyhvQjSbVNjGcqSxbBUTKGptAgiiDAtYrQbk8SLDGvo8He9D5pKiyCCCPgvt21fRAcspJlLmzspKKfPiSCCCBmhNSfbcKY1XW8KKDogogVUTJZEEEGEa4RlmEqGMyTQ0sFuSthqsiSCCCJghPZwLTGhzRvaTCFFXh0oiSCCCHMB1QofkjTdFkdrAUV+ASKIIEJH+OmHW4a8SyLWMGrSJ4IIIswD2f/5JYIIIogggggivHz9AhWWplDp2KEFAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">利用Caddy快速简单的部署反向代理/镜像，自动签发SSL证书</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-10-27</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=利用Caddy快速简单的部署反向代理/镜像，自动签发SSL证书&url=http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e7-ae-80-e5-8d-95-e7-9a-84-e9-83-a8-e7-bd-b2-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-e9-95-9c-e5-83-8f-ef-bc-8c-e8-87-aa-e5-8a-a8-e7-ad-be-e5-8f-91ssl-e8-af-81/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=利用Caddy快速简单的部署反向代理/镜像，自动签发SSL证书&url=http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e7-ae-80-e5-8d-95-e7-9a-84-e9-83-a8-e7-bd-b2-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-e9-95-9c-e5-83-8f-ef-bc-8c-e8-87-aa-e5-8a-a8-e7-ad-be-e5-8f-91ssl-e8-af-81/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e7-ae-80-e5-8d-95-e7-9a-84-e9-83-a8-e7-bd-b2-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-e9-95-9c-e5-83-8f-ef-bc-8c-e8-87-aa-e5-8a-a8-e7-ad-be-e5-8f-91ssl-e8-af-81/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e7-ae-80-e5-8d-95-e7-9a-84-e9-83-a8-e7-bd-b2-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-e9-95-9c-e5-83-8f-ef-bc-8c-e8-87-aa-e5-8a-a8-e7-ad-be-e5-8f-91ssl-e8-af-81/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e7-ae-80-e5-8d-95-e7-9a-84-e9-83-a8-e7-bd-b2-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-e9-95-9c-e5-83-8f-ef-bc-8c-e8-87-aa-e5-8a-a8-e7-ad-be-e5-8f-91ssl-e8-af-81/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e7-ae-80-e5-8d-95-e7-9a-84-e9-83-a8-e7-bd-b2-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-e9-95-9c-e5-83-8f-ef-bc-8c-e8-87-aa-e5-8a-a8-e7-ad-be-e5-8f-91ssl-e8-af-81/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/10/27/e5-88-a9-e7-94-a8caddy-e5-bf-ab-e9-80-9f-e7-ae-80-e5-8d-95-e7-9a-84-e9-83-a8-e7-bd-b2-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-e9-95-9c-e5-83-8f-ef-bc-8c-e8-87-aa-e5-8a-a8-e7-ad-be-e5-8f-91ssl-e8-af-81/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFXklEQVR42u3dzXIaSRREYb3/S+OtjanMk4W0sDlsZizoputTxI37N+Ovh6/HlwQiiCCCCCKIEBG+wuuPC37786t/b+8/f1967/nnz9edfvZ873YuEUQQ4TXCy6BxuPkJ73SI9FDp8M/XpXucPlvPJYIIIhwR2o3TgycwcrjTYdv1Kai2c4kgggj3CCkpasGxJTgNICVRLUiKIIIIPxsYT4lHe58UNKR4akG7JWkiiCACR2gHJAc9NjQD1lIIkSRqKgxFEEGEudH6L//z27rNIojwQQg0qLWhSkpwvmsYcwrOqdnyLVNpEUT4IARSjKwFDm3CpELqneSLnEcEEUTICCQQ3iQq630p8toIenm9CCKIcEyWUhOFDkeWZYx1AEMbq1PyJ4IIIsSmym2zlRZUqcBKByeNWfp5EUQQISO0hSu6gLkkRmTxI/28NV1a4BVBBBFyAUUTmFPD5DsSIFrMNZj0jLGpIoIIIjyWhIQ2RNaA2u5Fh6w0iTsmSyKIIMI0hH13SSIF0rbcuQxnUhIngggidIQ2SE3Lk2SJen2lJW2ShLUlbxFEEKHvMbYGSXswErxa8tTus8KiQa8IIoiAmiqkAGqNWtocJU2QdwqoGGBFEEGEmCy15uTy8O2+dGkzFUBkeByDvAgiiBCbKmQASgPhErBQEAuHb0MaNHwRQQQRHrT4WZMQ0milgZkueC1DFxFEEKEj3CQqdEBCE6O2VNGSo+uBrAgiiPB1E8Ba4kKaIvTADbgtdaOETwQRRHiJkAYwpJAiDVsSeOlAdi3a0PBFBBFEuEpYFpTlIGQZow1pySKHCCKIwBBow5IGQdIQScvfLTkjA9ma9IkggggvEWijtT3wspDdmic3eO08fwVSEUQQASMszdPpP7QogxRSxLX7YTwRRBChFlCtaUkXImiDhUDTRa/2LLiKFEGED0cgQWltnpIASD63BNY2QKoFlAgiiDD9z2HWxY52oNvG7dLMjYFXBBFEiIFxCWjpOrJklZqqrdm6XB+fXwQRRMAI6ee0uCJNE3LYFizbtcegLIIIIhyXOZcEhjRQUiBcrl0bPCm4xgJKBBFEQM3KZfniZrBCFq7SYKf9kuIQRwQRRIiB8ZSQkADXvjAVWsvCBln+JAsaIoggQh7ILouR6+CkLYPRQWv7Bcz3FEEEEerwZS1QaKK1JFftIKToQ00YEUQQ4dhopQkT+dLbgUkLhgSeFlMiiCAC+ztkySLUWhyR5QmSsJHCqhVnIoggAkdoTc2lWFmWu1qApY2bebFTBBFEqMOXE0b7YpK8kIbMMgCmA6N5ICuCCB+MQAIhefC2VEGWJ0ij5J0F03kgK4IIH4iwLj2RoWcrfpbASwNlQq8FlAgiiIC+ZBmSULhloNMGKK2AqkmcCCKIUButrehpiU1rfK6F2rrMRd4TQQQReFPlVEi1pmlqctJhzLLcQQfKuIASQQQR0A2WQuamiFqSrqUIQ8maCCKIgJMl0qR4pzCizVb63s0vRAQRRMhNlbSs0Q5PhzGtCUJw2+fb0pkIIojwwHlCC3BL0GxJTCqC1nuR5VIRRBBhQ2iDDzpgpUthtEFCBjs0SNaMUQQRPhyhvQjSbVNjGcqSxbBUTKGptAgiiDAtYrQbk8SLDGvo8He9D5pKiyCCCPgvt21fRAcspJlLmzspKKfPiSCCCBmhNSfbcKY1XW8KKDogogVUTJZEEEGEa4RlmEqGMyTQ0sFuSthqsiSCCCJghPZwLTGhzRvaTCFFXh0oiSCCCHMB1QofkjTdFkdrAUV+ASKIIEJH+OmHW4a8SyLWMGrSJ4IIIswD2f/5JYIIIogggggivHz9AhWWplDp2KEFAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Caddy"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装Caddy</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置文件"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置文件</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>之前关于反向代理教程发了好几个了，参考：利用Nginx反向代理来简单镜像HTTP(S)网站的方法，不过对比使用<code>Caddy</code>来反代的方法，还是麻烦了些，但是<code>Nginx</code>性能却好些，各有优点吧，一般不想折腾的就建议使用<code>Caddy</code>来反代，毕竟<code>Caddy</code>配置简单也支持自签<code>Let’s Encrypt SSL</code>证书，很方便。</p>
+<h2 id="安装Caddy"><a href="#安装Caddy" class="headerlink" title="安装Caddy"></a>安装Caddy</h2><p>运行以下命令：</p>
+<pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh
+#备用地址
+wget -N --no-check-certificate https://www.southcat.net/usr/shell/Caddy/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh</code></pre><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>以下所有示例域名为<code>toyoo.ml</code>，请注意替换为自己的域名 ！</p>
+<p><strong>1、服务器IP反向代理</strong><br>下面是一个，用你服务器的<code>IP</code>来反向代理一个<code>http</code>协议的网站<code>http://www.baidu.com</code> 。</p>
+<pre><code># 以下全部内容是一个整体，是一个命令，全部复制粘贴到SSH软件中并一起执行！
+echo &quot;:80 {
+ gzip
+ proxy / http://www.baidu.com
+}&quot; &gt; /usr/local/caddy/Caddyfile</code></pre><p>服务器<code>IP</code>也可以反向代理<code>HTTPS</code>协议的网站，但是需要自签<code>SSL</code>证书，现在的浏览器一般都不会认自签的<code>SSL</code>证书，所以不建议这么做。</p>
+<p><strong>2、域名反向代理HTTP</strong><br>下面是一个，用你的域名来反向代理一个<code>http</code>协议的网站<code>http://www.baidu.com</code>。</p>
+<pre><code># 以下全部内容是一个整体，是一个命令，全部复制粘贴到SSH软件中并一起执行！
+echo &quot;http://toyoo.ml {
+ gzip
+ proxy / http://www.baidu.com
+}&quot; &gt; /usr/local/caddy/Caddyfile</code></pre><p>如果你需要反向代理<code>HTTPS</code>协议的网站，比如<code>https://www.baidu.com</code>，那么继续看下面步骤。</p>
+<p><strong>3、域名反向代理HTTPS</strong><br>如果你有<code>SSL</code>证书和密匙的话，把<code>SSL</code>证书(<code>xxx.crt</code>)和密匙(<code>xxx.key</code>)文件放到<code>/root</code>文件夹下（也可以是其他文件夹，自己改下面代码），然后这样做：</p>
+<pre><code># 以下全部内容是一个整体，是一个命令，全部复制粘贴到SSH软件中并一起执行！
+echo &quot;https://toyoo.ml {
+ gzip
+ tls /root/xxx.crt /root/xxx.key
+ proxy / https://www.baidu.com
+}&quot; &gt; /usr/local/caddy/Caddyfile</code></pre><p>如果你没有<code>SSL</code>证书和密匙，那么你可以这样做：</p>
+<p>下面的<code>xxxx@xxx.xx</code>改成你的邮箱，同时需要注意的是，申请<code>SSL</code>证书前，请务必提前解析好域名记录(解析后最好等一会，以全球生效)，否则<code>Caddy</code>会申请并配置失败！</p>
+<pre><code># 以下全部内容是一个整体，是一个命令，全部复制粘贴到SSH软件中并一起执行！
+echo &quot;https://toyoo.ml {
+ gzip
+ tls xxxx@xxx.xx
+ proxy / https://www.baidu.com
+}&quot; &gt; /usr/local/caddy/Caddyfile</code></pre><p>如果一切正常，那么<code>Caddy</code>会自动帮你申请<code>SSL</code>证书并配置好，而且会定时续约<code>SSL</code>证书和强制<code>http</code>重定向至<code>https</code>！</p>
+<p><strong>4、HTTP重定向为HTTPS</strong><br>当你是手动指定<code>SSL</code>证书和密匙 来配置的话，<code>Caddy</code>只会监听<code>443</code>端口(<code>https</code>)，并不会自动设置<code>80</code>端口(<code>http</code>)的重定向（如果是<code>Caddy</code>自动申请的<code>SSL</code>证书，那么就自动做好了），如果要做重定向的话，可以这样做：</p>
+<p>下面的示例代码中，是把<code>http://toyoo.ml</code>、<code>http://233.toyoo.ml</code>、<code>https://666.toyoo.ml</code>三个域名都重定向到了 <code>https://toyoo.ml</code>。</p>
+<pre><code># 以下全部内容是一个整体，是一个命令，全部复制粘贴到SSH软件中并一起执行！
+echo &quot;http://toyoo.ml ,http://233.toyoo.ml ,https://666.toyoo.ml {
+ redir https://toyoo.ml{url}
+}
+https://toyoo.ml {
+ gzip
+ tls /root/xxx.crt /root/xxx.key
+ proxy / https://www.baidu.com
+}&quot; &gt; /usr/local/caddy/Caddyfile</code></pre><p>修改完<code>Caddy</code>的配置文件后，重启<code>Caddy</code>即可。</p>
+<pre><code>/etc/init.d/caddy restart</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-10-27T06:04:16.000Z" itemprop="datePublished">2019-10-27</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.233Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/10/27/goindex-ef-bc-9a-e4-b8-80-e4-b8-aa-e6-97-a0-e9-9c-80-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9a-84google-drive-e7-9b-ae-e5-bd-95-e7-b4-a2-e5-bc-95-e7-a8-8b-e5-ba-8f/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">GoIndex：一个无需服务器的Google Drive目录索引程序</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/10/27/e5-85-8d-e8-b4-b9-e9-80-815-e4-b8-aaoffice365-e3-msdn-25-e7-94-a8-e6-88-b7-e6-b3-a8-e5-86-8c-e9-93-be-e6-8e-a5/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">免费送5个Office365 E3 MSDN 25用户注册链接</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

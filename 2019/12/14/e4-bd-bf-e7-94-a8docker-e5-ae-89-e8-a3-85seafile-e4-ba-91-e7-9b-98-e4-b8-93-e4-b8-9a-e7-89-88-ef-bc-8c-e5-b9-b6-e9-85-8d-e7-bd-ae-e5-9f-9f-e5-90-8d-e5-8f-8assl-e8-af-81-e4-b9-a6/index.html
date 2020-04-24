@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>使用Docker安装Seafile云盘专业版，并配置域名及SSL证书 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="使用Docker安装Seafile云盘专业版，并配置域名及SSL证书 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/12/14/e4-bd-bf-e7-94-a8docker-e5-ae-89-e8-a3-85seafile-e4-ba-91-e7-9b-98-e4-b8-93-e4-b8-9a-e7-89-88-ef-bc-8c-e5-b9-b6-e9-85-8d-e7-bd-ae-e5-9f-9f-e5-90-8d-e5-8f-8assl-e8-af-81-e4-b9-a6/"><meta property="og:locale" content="en"><meta name="description" content="说明：Seafile是一个开源的文件云存储平台，主要是为团队设计的，功能很多，用户可加密资料库，且密码不会保存在服务器端，管理员也无权访问你的文件。用户之间也可以共享和同步文件，方便了团队协同工作。其版本分为开源免费版和专业版，两者区别挺大的，比如专业版多了搜索、集群、亚马逊S3、Ceph、阿里云OSS等功能，而且专业版3用户免费，一两个人用的话建议专业版，这里说下专业版安装教程。如果人多建议使用 - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/Seafile_Pro(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/Seafile_Pro(2).png"><meta property="article:published_time" content="2019-12-14T01:52:31.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.239Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.239Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2019/12/14/e4-bd-bf-e7-94-a8docker-e5-ae-89-e8-a3-85seafile-e4-ba-91-e7-9b-98-e4-b8-93-e4-b8-9a-e7-89-88-ef-bc-8c-e5-b9-b6-e9-85-8d-e7-bd-ae-e5-9f-9f-e5-90-8d-e5-8f-8assl-e8-af-81-e4-b9-a6/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2019/12/14/e4-bd-bf-e7-94-a8docker-e5-ae-89-e8-a3-85seafile-e4-ba-91-e7-9b-98-e4-b8-93-e4-b8-9a-e7-89-88-ef-bc-8c-e5-b9-b6-e9-85-8d-e7-bd-ae-e5-9f-9f-e5-90-8d-e5-8f-8assl-e8-af-81-e4-b9-a6/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2019/12/14/e4-bd-bf-e7-94-a8docker-e5-ae-89-e8-a3-85seafile-e4-ba-91-e7-9b-98-e4-b8-93-e4-b8-9a-e7-89-88-ef-bc-8c-e5-b9-b6-e9-85-8d-e7-bd-ae-e5-9f-9f-e5-90-8d-e5-8f-8assl-e8-af-81-e4-b9-a6/"
+    },
+    "headline": "使用Docker安装Seafile云盘专业版，并配置域名及SSL证书 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-14T01:52:31.000Z",
+    "dateModified": "2020-04-24T09:34:44.239Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：Seafile是一个开源的文件云存储平台，主要是为团队设计的，功能很多，用户可加密资料库，且密码不会保存在服务器端，管理员也无权访问你的文件。用户之间也可以共享和同步文件，方便了团队协同工作。其版本分为开源免费版和专业版，两者区别挺大的，比如专业版多了搜索、集群、亚马逊S3、Ceph、阿里云OSS等功能，而且专业版3用户免费，一两个人用的话建议专业版，这里说下专业版安装教程。如果人多建议使用 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=使用Docker安装Seafile云盘专业版，并配置域名及SSL证书" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用Docker安装Seafile云盘专业版，并配置域名及SSL证书&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=使用Docker安装Seafile云盘专业版，并配置域名及SSL证书" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFXElEQVR42u2dy24jVxQD9f8/rawCJI4uWbztLBJVb2bksfpRAohD8tjzenu8XyIQghCEIAQhCCFCeIXjb2/4y+s///7z+36+99Prn+dK50vnTdenzyUEIQjhM4SPolG+/ulGjhf78NAJGPkw0jnocwlBCEI4Q2ji075eLxhulpzj9NBUPD++RwhCEMJjCO0BydDTXrehqAm1EIQghH8fQjI7J0h0GEKDTRiE0oAmBCEI4Q4CGVJOwciNYWrfewLXApfFGApBCELYg9b/8p+/ljYLQQhfBKGWlgfBa0VKC2Wb2aKiS8/zqJUWghC+CMIymJDwlJQjqaQhD5M+mGnQEoIQhFCF8XRTTZCaaLZhJgnfjXlC5a4QhCCEGKo8DVRbUUpgkrKliS75gIQgBCG8j3nC8hDpxklwuoajS/nTQuAYqghBCEJAi1LE+NDzkCGIit4ihkfAQhCCEGohe3MhMli1IYcUKVQQCUAhCEEIZwjpxpLgPVnUouaHLHAspQxqpYUgBCFEE3T6vhZ8LsZmCXOI2ROCEITwOxBIIXJ6TRY9lxB3HY5IACQEIQjhXfcYW7mSxJIEovQhiRjTQa59EEIQghBy0ErE64m5aWEKXfRYlr4aQCEIQQh5WGoHebi2uNXCT7qUsQxrx3MLQQhCiEsaJBih4CgsGoDcFLqzgRKCEIRQl5voIEWMzs2y6I2ZwgOeEIQgBAQhPRQNYEkBu5gfYqCaKTyWL0IQghDmX+a2CGYLPSlA+n5yHyhZEoIQhIAWK9qCRBO2VJySIPZ0TmLS4ocoBCEIIRaypLSgi95JKNvAtA5OSeSFIAQhbBBIWUpDDrKwQcqTRQyJWXq85S4EIXwhhKWEbUaFQmrXTeEMGeCqGROCEIQwFbKt3HhS1DYTRIOZ9ZiXNIQghC+GQJY0l3ClDThLqLoslZLQVQhCEEL+fYxUlIjIPQ1pG0BaIFcoQhCCEI4QmhG6MTtLqduM2XINLLxCEIIQojCSEoQubKSvrcPZMkRdGSghCEEIc0hJhacFteQgRTAR8To4CUEIQojLnOQCbVGLmLLVuJFQpw1l0UAJQQhCQKUqFc95SAEhyrK4RZc/kIsUghCEgH64ggojCWYXAV7PORXLQhCCEFDQmozQbbi6CFe7fiuA24KIEIQghLufiyRhKjkPLVlJoJIAtjKnJktCEIIQJhPVhLOVvK04fWqmqDgKQQhC4EFrEzoilOvS128bKCLAQhCCEPh/fEMWs1oJ2ozXIsy0aGliGkMVIQhBCO+0iPHEvCSztJQ3DRZdJkeFrBCEIIT3YnjaycmgMwvXwyXuKvhCEIIQYiFLQ40l5KDG6amBooVyXdIQghCEgMpTWojcBBxk+bsthSaBP96vEIQghGPQSha2U2hChJWanmXJgyxy4/JFCEIQwnu9yLp4TQYkUrBSA9U+QCEIQQgdQipSX+FYBqkW4rZr3Ijo1YK3EIQghBcJWBc41DQR49REmgarQhCCEBgEanpIsEkNEzFcSwDcRHN2kUIQwhdDIEsZdNChgWgKY8jS2FLoTotbQhCCEFChSYSOAL01YuR8a+EjBCEIYfuhD3IhGrymAaYFsutCVlpC+8e/CUEIQqjC2G6WGB0SeKx/ruKZ7ksIQhBChtDMBxlAlsUKIrzEzLUy9qqQFYIQhDD9wlgimE3QJpMDBylaCMUGSghCEAKGQILNpSQlJoiaJrpoVoclIQhBCDMEMow0cW2iuiyRLWZNCEIQAocQlxngg9MbIwsVtOChoaoQhCAEDmFZnGoLkiRkWQCR4qYZvOPQJwQhCGEuZP/PhxCEIAQhCEEIQvh4/AE6WGaQpd8wsQAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">使用Docker安装Seafile云盘专业版，并配置域名及SSL证书</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-14</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用Docker安装Seafile云盘专业版，并配置域名及SSL证书&url=http://hexo.southcat.net/2019/12/14/e4-bd-bf-e7-94-a8docker-e5-ae-89-e8-a3-85seafile-e4-ba-91-e7-9b-98-e4-b8-93-e4-b8-9a-e7-89-88-ef-bc-8c-e5-b9-b6-e9-85-8d-e7-bd-ae-e5-9f-9f-e5-90-8d-e5-8f-8assl-e8-af-81-e4-b9-a6/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=使用Docker安装Seafile云盘专业版，并配置域名及SSL证书&url=http://hexo.southcat.net/2019/12/14/e4-bd-bf-e7-94-a8docker-e5-ae-89-e8-a3-85seafile-e4-ba-91-e7-9b-98-e4-b8-93-e4-b8-9a-e7-89-88-ef-bc-8c-e5-b9-b6-e9-85-8d-e7-bd-ae-e5-9f-9f-e5-90-8d-e5-8f-8assl-e8-af-81-e4-b9-a6/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/12/14/e4-bd-bf-e7-94-a8docker-e5-ae-89-e8-a3-85seafile-e4-ba-91-e7-9b-98-e4-b8-93-e4-b8-9a-e7-89-88-ef-bc-8c-e5-b9-b6-e9-85-8d-e7-bd-ae-e5-9f-9f-e5-90-8d-e5-8f-8assl-e8-af-81-e4-b9-a6/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/12/14/e4-bd-bf-e7-94-a8docker-e5-ae-89-e8-a3-85seafile-e4-ba-91-e7-9b-98-e4-b8-93-e4-b8-9a-e7-89-88-ef-bc-8c-e5-b9-b6-e9-85-8d-e7-bd-ae-e5-9f-9f-e5-90-8d-e5-8f-8assl-e8-af-81-e4-b9-a6/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/12/14/e4-bd-bf-e7-94-a8docker-e5-ae-89-e8-a3-85seafile-e4-ba-91-e7-9b-98-e4-b8-93-e4-b8-9a-e7-89-88-ef-bc-8c-e5-b9-b6-e9-85-8d-e7-bd-ae-e5-9f-9f-e5-90-8d-e5-8f-8assl-e8-af-81-e4-b9-a6/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/12/14/e4-bd-bf-e7-94-a8docker-e5-ae-89-e8-a3-85seafile-e4-ba-91-e7-9b-98-e4-b8-93-e4-b8-9a-e7-89-88-ef-bc-8c-e5-b9-b6-e9-85-8d-e7-bd-ae-e5-9f-9f-e5-90-8d-e5-8f-8assl-e8-af-81-e4-b9-a6/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/12/14/e4-bd-bf-e7-94-a8docker-e5-ae-89-e8-a3-85seafile-e4-ba-91-e7-9b-98-e4-b8-93-e4-b8-9a-e7-89-88-ef-bc-8c-e5-b9-b6-e9-85-8d-e7-bd-ae-e5-9f-9f-e5-90-8d-e5-8f-8assl-e8-af-81-e4-b9-a6/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFXElEQVR42u2dy24jVxQD9f8/rawCJI4uWbztLBJVb2bksfpRAohD8tjzenu8XyIQghCEIAQhCCFCeIXjb2/4y+s///7z+36+99Prn+dK50vnTdenzyUEIQjhM4SPolG+/ulGjhf78NAJGPkw0jnocwlBCEI4Q2ji075eLxhulpzj9NBUPD++RwhCEMJjCO0BydDTXrehqAm1EIQghH8fQjI7J0h0GEKDTRiE0oAmBCEI4Q4CGVJOwciNYWrfewLXApfFGApBCELYg9b/8p+/ljYLQQhfBKGWlgfBa0VKC2Wb2aKiS8/zqJUWghC+CMIymJDwlJQjqaQhD5M+mGnQEoIQhFCF8XRTTZCaaLZhJgnfjXlC5a4QhCCEGKo8DVRbUUpgkrKliS75gIQgBCG8j3nC8hDpxklwuoajS/nTQuAYqghBCEJAi1LE+NDzkCGIit4ihkfAQhCCEGohe3MhMli1IYcUKVQQCUAhCEEIZwjpxpLgPVnUouaHLHAspQxqpYUgBCFEE3T6vhZ8LsZmCXOI2ROCEITwOxBIIXJ6TRY9lxB3HY5IACQEIQjhXfcYW7mSxJIEovQhiRjTQa59EEIQghBy0ErE64m5aWEKXfRYlr4aQCEIQQh5WGoHebi2uNXCT7qUsQxrx3MLQQhCiEsaJBih4CgsGoDcFLqzgRKCEIRQl5voIEWMzs2y6I2ZwgOeEIQgBAQhPRQNYEkBu5gfYqCaKTyWL0IQghDmX+a2CGYLPSlA+n5yHyhZEoIQhIAWK9qCRBO2VJySIPZ0TmLS4ocoBCEIIRaypLSgi95JKNvAtA5OSeSFIAQhbBBIWUpDDrKwQcqTRQyJWXq85S4EIXwhhKWEbUaFQmrXTeEMGeCqGROCEIQwFbKt3HhS1DYTRIOZ9ZiXNIQghC+GQJY0l3ClDThLqLoslZLQVQhCEEL+fYxUlIjIPQ1pG0BaIFcoQhCCEI4QmhG6MTtLqduM2XINLLxCEIIQojCSEoQubKSvrcPZMkRdGSghCEEIc0hJhacFteQgRTAR8To4CUEIQojLnOQCbVGLmLLVuJFQpw1l0UAJQQhCQKUqFc95SAEhyrK4RZc/kIsUghCEgH64ggojCWYXAV7PORXLQhCCEFDQmozQbbi6CFe7fiuA24KIEIQghLufiyRhKjkPLVlJoJIAtjKnJktCEIIQJhPVhLOVvK04fWqmqDgKQQhC4EFrEzoilOvS128bKCLAQhCCEPh/fEMWs1oJ2ozXIsy0aGliGkMVIQhBCO+0iPHEvCSztJQ3DRZdJkeFrBCEIIT3YnjaycmgMwvXwyXuKvhCEIIQYiFLQ40l5KDG6amBooVyXdIQghCEgMpTWojcBBxk+bsthSaBP96vEIQghGPQSha2U2hChJWanmXJgyxy4/JFCEIQwnu9yLp4TQYkUrBSA9U+QCEIQQgdQipSX+FYBqkW4rZr3Ijo1YK3EIQghBcJWBc41DQR49REmgarQhCCEBgEanpIsEkNEzFcSwDcRHN2kUIQwhdDIEsZdNChgWgKY8jS2FLoTotbQhCCEFChSYSOAL01YuR8a+EjBCEIYfuhD3IhGrymAaYFsutCVlpC+8e/CUEIQqjC2G6WGB0SeKx/ruKZ7ksIQhBChtDMBxlAlsUKIrzEzLUy9qqQFYIQhDD9wlgimE3QJpMDBylaCMUGSghCEAKGQILNpSQlJoiaJrpoVoclIQhBCDMEMow0cW2iuiyRLWZNCEIQAocQlxngg9MbIwsVtOChoaoQhCAEDmFZnGoLkiRkWQCR4qYZvOPQJwQhCGEuZP/PhxCEIAQhCEEIQvh4/AE6WGaQpd8wsQAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#客户端登录"><span class="post-toc-number">3.</span> <span class="post-toc-text">客户端登录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加管理员"><span class="post-toc-number">4.</span> <span class="post-toc-text">添加管理员</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录结构"><span class="post-toc-number">5.</span> <span class="post-toc-text">目录结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#升级Seafile"><span class="post-toc-number">6.</span> <span class="post-toc-text">升级Seafile</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题查看"><span class="post-toc-number">7.</span> <span class="post-toc-text">问题查看</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#相关教程"><span class="post-toc-number">8.</span> <span class="post-toc-text">相关教程</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong><code>Seafile</code>是一个开源的文件云存储平台，主要是为团队设计的，功能很多，用户可加密资料库，且密码不会保存在服务器端，管理员也无权访问你的文件。用户之间也可以共享和同步文件，方便了团队协同工作。其版本分为开源免费版和专业版，两者区别挺大的，比如专业版多了搜索、集群、亚马逊<code>S3</code>、<code>Ceph</code>、阿里云<code>OSS</code>等功能，而且专业版<code>3</code>用户免费，一两个人用的话建议专业版，这里说下专业版安装教程。如果人多建议使用开源免费版，安装可以查看：Linux VPS一键安装Seafile搭建私有云盘存储。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/Seafile_Pro(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/Seafile_Pro(2).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/haiwen/seafile-docs-cn" target="_blank" rel="noopener">https://github.com/haiwen/seafile-docs-cn</a></p>
+<p><strong>1、安装Docker</strong></p>
+<pre><code>#CentOS 6
+rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum update -y
+yum -y install docker-io
+service docker start
+chkconfig docker on
+
+#CentOS 7、Debian、Ubuntu
+curl -sSL https://get.docker.com/ | sh
+systemctl start docker
+systemctl enable docker</code></pre><p><strong>2、安装Seafile专业版</strong><br>先访问该地址：<a href="https://customer.seafile.com，注册个账号，然后点击左侧的`Downloads`，这时候你会看到`Seafile`专业版的`Docker`登录信息。" target="_blank" rel="noopener">https://customer.seafile.com，注册个账号，然后点击左侧的`Downloads`，这时候你会看到`Seafile`专业版的`Docker`登录信息。</a></p>
+<p>然后使用<code>VPS</code>登陆<code>Seafile</code>的私有仓库：</p>
+<pre><code>#登录仓库地址docker.seadrive.org，输入给你的用户名和密码即可
+docker login docker.seadrive.org</code></pre><p>运行<code>Seafile</code>专业版容器：</p>
+<pre><code>#记得修改默认域名、管理员用户名和密码，本配置可自动申请Let&apos;s encrypt SSL证书，记得提前解析好域名
+docker run -d --name seafile \
+  -e SEAFILE_SERVER_LETSENCRYPT=true \
+  -e SEAFILE_SERVER_HOSTNAME=southcat.net \
+  -e SEAFILE_ADMIN_EMAIL=admin@southcat.net \
+  -e SEAFILE_ADMIN_PASSWORD=moerats_password \
+  -v /root/seafile:/shared \
+  -p 80:80 \
+  -p 443:443 \
+  docker.seadrive.org/seafileltd/seafile-pro:latest
+
+#如果你想使用自己的SSL证书，需要创建/root/seafile/ssl目录, 并将你的证书以及私钥放入这个目录中，如果的网站名称为southcat.net, 那么你的证书名称必须为southcat.net.crt，私钥名称必须为southcat.net.key。</code></pre><p>安装完成后，需要进行初始化配置，打开域名会出现<code>502 Bad Gateway</code>，等待几分钟再访问就可以看到<code>Seafile</code>的<code>Web</code>界面了，此后<code>Seafile</code>数据会保存在服务器的<code>/root/seafile</code>目录。</p>
+<h2 id="客户端登录"><a href="#客户端登录" class="headerlink" title="客户端登录"></a>客户端登录</h2><p>我们除了可以通过域名登录查看外，还可以使用专用的客户端登录，支持<code>Windows</code>客户端、<code>Mac</code>客户端、<code>Linux</code>客户端、<code>Terminal</code>客户端、<code>Android</code>客户端、<code>iPad</code>/<code>iPhone</code>客户端。</p>
+<p>客户端下载：<a href="https://www.seafile.com/download/，安装后打开客户端，直接填入域名，用户名和密码登录即可。" target="_blank" rel="noopener">https://www.seafile.com/download/，安装后打开客户端，直接填入域名，用户名和密码登录即可。</a></p>
+<h2 id="添加管理员"><a href="#添加管理员" class="headerlink" title="添加管理员"></a>添加管理员</h2><pre><code>docker exec -it seafile /opt/seafile/seafile-server-latest/reset-admin.sh</code></pre><p>然后根据提示输入用户名以及密码即可。</p>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>这里说下容器内<code>/shared</code>的目录结构，可直接查看映射在外部的<code>/root/seafile</code>文件夹即可。</p>
+<pre><code>/shared/db：mysql服务的数据目录。
+/shared/seafile：Seafile服务的配置文件以及数据文件。
+/shared/logs：日志目录。
+/shared/logs/var-log：我们将容器内的/var/log挂载到本目录，您可以在shared/logs/var-log/nginx/中找到nginx的日志文件。
+/shared/logs/seafile：Seafile服务运行产生的日志文件目录，比如您可以在 shared/logs/seafile/seafile.log文件中看到seaf-server的日志。
+/shared/ssl：存放证书的目录。</code></pre><h2 id="升级Seafile"><a href="#升级Seafile" class="headerlink" title="升级Seafile"></a>升级Seafile</h2><pre><code>#该命令可以升级到Seafile的最新版本
+docker pull docker.seadrive.org/seafileltd/seafile-pro:latest
+docker rm -f seafile
+docker run -d --name seafile \
+  -e SEAFILE_SERVER_LETSENCRYPT=true \
+  -e SEAFILE_SERVER_HOSTNAME=southcat.net \
+  -e SEAFILE_ADMIN_EMAIL=admin@southcat.net \
+  -e SEAFILE_ADMIN_PASSWORD=moerats_password \
+  -v /root/seafile:/shared \
+  -p 80:80 \
+  -p 443:443 \
+  docker.seadrive.org/seafileltd/seafile-pro:latest</code></pre><h2 id="问题查看"><a href="#问题查看" class="headerlink" title="问题查看"></a>问题查看</h2><pre><code>docker logs -f seafile
+#或者
+docker exec -it seafile bash</code></pre><h2 id="相关教程"><a href="#相关教程" class="headerlink" title="相关教程"></a>相关教程</h2><ul>
+<li>一款不错的个人私有云：NextCloud安装教程</li>
+<li>多功能网盘&amp;&amp;文件管理器：FileRun安装教程</li>
+<li>私有云盘&amp;&amp;在线文件管理器：可道云KodExplorer安装教程</li>
+<li>一个基于GO的轻量级文件管理系统：FileManager安装教程</li>
+</ul>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-14T01:52:31.000Z" itemprop="datePublished">2019-12-14</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.239Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/14/lnmp-e4-b8-ad-e4-b8-80-e4-ba-9b-e9-9a-90-e8-97-8f-e7-9a-84-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-e5-8f-8a-e7-9b-ae-e5-bd-95-e8-af-a6-e8-a7-a3/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">LNMP中一些隐藏的安装脚本及目录详解</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/14/hostdare-ef-bc-9a-e6-b4-9b-e6-9d-89-e7-9f-b6crea-e6-9c-ba-e6-88-bf-cn2-gia-e7-ba-bf-e8-b7-af-e5-b9-b4-e4-bb-9816-e7-be-8e-e5-85-83-e6-94-af-e6-8c-81-e6-94-af-e4-bb-98-e5-ae-9d-e5-92-8c-e5-be-ae/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">HostDare：洛杉矶Crea机房/CN2 GIA线路/年付16美元/支持支付宝和微信</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>使用CoolQ Telegram Bot X转发/合并QQ群和Telegram群之间的消息 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="使用CoolQ Telegram Bot X转发&#x2F;合并QQ群和Telegram群之间的消息 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/12/03/e4-bd-bf-e7-94-a8coolq-telegram-bot-x-e8-bd-ac-e5-8f-91-e5-90-88-e5-b9-b6qq-e7-be-a4-e5-92-8ctelegram-e7-be-a4-e4-b9-8b-e9-97-b4-e7-9a-84-e6-b6-88-e6-81-af/"><meta property="og:locale" content="en"><meta name="description" content="说明：近些年Telegram聊天软件受到了许多人喜爱，甚至使用时间上超过了QQ，但是有着那些离不开QQ的人，两边经常切换貌似有点不方便，这里就分享个整合系统CoolQ Telegram Bot X，可以在Telegram群收发QQ群消息！这样我们就可以在电报上收到QQ群消息以及发送。支持图片、发送表情等功能。 #通过该系统，我们可以实现： TG群和QQ群相互转发， TG群单向转发到QQ群， QQ群 - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/CoolQ_TG(1).jpg"><meta property="og:image" content="https://www.southcat.net/usr/picture/CoolQ_TG(2).png"><meta property="article:published_time" content="2019-12-03T14:25:56.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.237Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.237Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2019/12/03/e4-bd-bf-e7-94-a8coolq-telegram-bot-x-e8-bd-ac-e5-8f-91-e5-90-88-e5-b9-b6qq-e7-be-a4-e5-92-8ctelegram-e7-be-a4-e4-b9-8b-e9-97-b4-e7-9a-84-e6-b6-88-e6-81-af/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2019/12/03/e4-bd-bf-e7-94-a8coolq-telegram-bot-x-e8-bd-ac-e5-8f-91-e5-90-88-e5-b9-b6qq-e7-be-a4-e5-92-8ctelegram-e7-be-a4-e4-b9-8b-e9-97-b4-e7-9a-84-e6-b6-88-e6-81-af/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2019/12/03/e4-bd-bf-e7-94-a8coolq-telegram-bot-x-e8-bd-ac-e5-8f-91-e5-90-88-e5-b9-b6qq-e7-be-a4-e5-92-8ctelegram-e7-be-a4-e4-b9-8b-e9-97-b4-e7-9a-84-e6-b6-88-e6-81-af/"
+    },
+    "headline": "使用CoolQ Telegram Bot X转发/合并QQ群和Telegram群之间的消息 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-03T14:25:56.000Z",
+    "dateModified": "2020-04-24T09:34:44.237Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：近些年Telegram聊天软件受到了许多人喜爱，甚至使用时间上超过了QQ，但是有着那些离不开QQ的人，两边经常切换貌似有点不方便，这里就分享个整合系统CoolQ Telegram Bot X，可以在Telegram群收发QQ群消息！这样我们就可以在电报上收到QQ群消息以及发送。支持图片、发送表情等功能。 #通过该系统，我们可以实现： TG群和QQ群相互转发， TG群单向转发到QQ群， QQ群 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=使用CoolQ Telegram Bot X转发/合并QQ群和Telegram群之间的消息" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用CoolQ Telegram Bot X转发/合并QQ群和Telegram群之间的消息&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=使用CoolQ Telegram Bot X转发/合并QQ群和Telegram群之间的消息" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEjklEQVR42u3a204bQRBFUf//T5OnSAmZqbNPW0jx1OaFAGbcq1FKdXt9Lfx4iRYtWrRo0R+Gfg0fv39+9fn7v/96+B+vpf+++vr7e92dkThEi96Epge/Qp9czh0+PfPq96lDtOht6BTArqAN/uo16cB3iLtANjlEixadg8SUaEwBbwpg6dKmoCpatOgukKWglgqWVBBM7zu9VrRo0V9Voj4lJXeHnQIQSUjuLrB9nmjRG9EnjcH/8fOPd0NFi/4A9EnhnhKKpjk4FRP0D/EjU0vRoj8UfTIko4g2WJLzTIlRbDqIFr0AnYqM1BxIryWFwzQYIIPDFGhFi96InhryKVA1TcOUxKSkp/ndGMhEi34o+u4//7TwRobrJ/D2IpoFANGiN6PJ8ippHJCLIxdLg9pY+IgWvQhNAk+z2No2GsiAbgq2CSxa9EY0aew1DQdyMFQohOXc1OAQLXobug0YJPloioiUBDUNRFxwiBa9DE2X1VNBPwXHJhi1yc+4PCda9MPRaXk1NQlSkhOL++ECTy7hNrCKFr0AnQ42JRbtz5pCglwqXeoRLXobmh6CJBtTI5A0BKfLSwE3DRlFi96EnooJssw2JTl0qXVqFDR/iNv3EC16CZouw9BB+3SQBEsXN70+Nh9Fi16Apm9OlnKaZTeCSEs2JPhVnRPRoh+Eng7eDAbQcBwUC2khlizyxEAmWvQC9FTQ0yKFNvDpkg4KUmQZSLToBejmEKSJSC6oDWYpsKViRbToTeiUZDRBgzYGaVNhSkzoYpBo0dvQJ8syp8nEBDgd3leJjmjRy9A0qKRhO72M1DBslm9QESRa9BI0XbKhB6fPnZbe6KIAea5o0VvRpHlPgg0ZDtIEZEpc6JlFi96EngIJXb4hBT0pbpqhHBnaixa9GU2b+STxp43FttBISwQxCIoWvQDdFg8xWJSNxtRMIAtzZFFWtOhN6GbYng7RNBtTokLem3wtWvQ29EmDngYTMqijA4b0fbwQK1r0g9H00FPyQjDNJZCAmRbqxgGeaNEL0CSApEIgLb6+M6SjSVO1ECta9APRNMCkh6eLIM14OnggX4sWvR09NdhpkX5SBEyX1CzpkmAmWvQmNAkIBE0ugy7rpSYCHQ6KFr0NnQIGedO2MGmW4mgzMjY6RYtegKYDupRETMVFei5p6tMkaBwsiha9BP1Ow4AEoVTc0OKFJjpx0Ua06EVosohKgsdUBKSl2PZ5KekRLXoTugk8pJlPsU2h0hRDY4NRtOglaLLwQhL/dLjmwM0CDV3sFS16C5oEszSMowjaTEiXRBMmFL1Fi34Q+rTpRhqCTUGRgLQAQgM80aIXoslQLyUMzdA/BaJ3l3BEi96Cbor4NMA7GeylxuK7gU606I1oWrDToVwa4KcARF9Pvh+3i0SLfiiaBLDUTDxZgEnDgQlDF/ZEixadl9zJUI4M/k+fTQLsP+8nWrToccGOJgikmdAu5NDG5FEgEy36AeipIUgSj+YZKYilhgQd8okWvRVNGoPtG5Om4NSoIK+ZAuTl+USLXoDe9CFatGjRokV/yMcvKkx3gtlfZe8AAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">使用CoolQ Telegram Bot X转发/合并QQ群和Telegram群之间的消息</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-03</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用CoolQ Telegram Bot X转发/合并QQ群和Telegram群之间的消息&url=http://hexo.southcat.net/2019/12/03/e4-bd-bf-e7-94-a8coolq-telegram-bot-x-e8-bd-ac-e5-8f-91-e5-90-88-e5-b9-b6qq-e7-be-a4-e5-92-8ctelegram-e7-be-a4-e4-b9-8b-e9-97-b4-e7-9a-84-e6-b6-88-e6-81-af/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=使用CoolQ Telegram Bot X转发/合并QQ群和Telegram群之间的消息&url=http://hexo.southcat.net/2019/12/03/e4-bd-bf-e7-94-a8coolq-telegram-bot-x-e8-bd-ac-e5-8f-91-e5-90-88-e5-b9-b6qq-e7-be-a4-e5-92-8ctelegram-e7-be-a4-e4-b9-8b-e9-97-b4-e7-9a-84-e6-b6-88-e6-81-af/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/12/03/e4-bd-bf-e7-94-a8coolq-telegram-bot-x-e8-bd-ac-e5-8f-91-e5-90-88-e5-b9-b6qq-e7-be-a4-e5-92-8ctelegram-e7-be-a4-e4-b9-8b-e9-97-b4-e7-9a-84-e6-b6-88-e6-81-af/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/12/03/e4-bd-bf-e7-94-a8coolq-telegram-bot-x-e8-bd-ac-e5-8f-91-e5-90-88-e5-b9-b6qq-e7-be-a4-e5-92-8ctelegram-e7-be-a4-e4-b9-8b-e9-97-b4-e7-9a-84-e6-b6-88-e6-81-af/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/12/03/e4-bd-bf-e7-94-a8coolq-telegram-bot-x-e8-bd-ac-e5-8f-91-e5-90-88-e5-b9-b6qq-e7-be-a4-e5-92-8ctelegram-e7-be-a4-e4-b9-8b-e9-97-b4-e7-9a-84-e6-b6-88-e6-81-af/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/12/03/e4-bd-bf-e7-94-a8coolq-telegram-bot-x-e8-bd-ac-e5-8f-91-e5-90-88-e5-b9-b6qq-e7-be-a4-e5-92-8ctelegram-e7-be-a4-e4-b9-8b-e9-97-b4-e7-9a-84-e6-b6-88-e6-81-af/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/12/03/e4-bd-bf-e7-94-a8coolq-telegram-bot-x-e8-bd-ac-e5-8f-91-e5-90-88-e5-b9-b6qq-e7-be-a4-e5-92-8ctelegram-e7-be-a4-e4-b9-8b-e9-97-b4-e7-9a-84-e6-b6-88-e6-81-af/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEjklEQVR42u3a204bQRBFUf//T5OnSAmZqbNPW0jx1OaFAGbcq1FKdXt9Lfx4iRYtWrRo0R+Gfg0fv39+9fn7v/96+B+vpf+++vr7e92dkThEi96Epge/Qp9czh0+PfPq96lDtOht6BTArqAN/uo16cB3iLtANjlEixadg8SUaEwBbwpg6dKmoCpatOgukKWglgqWVBBM7zu9VrRo0V9Voj4lJXeHnQIQSUjuLrB9nmjRG9EnjcH/8fOPd0NFi/4A9EnhnhKKpjk4FRP0D/EjU0vRoj8UfTIko4g2WJLzTIlRbDqIFr0AnYqM1BxIryWFwzQYIIPDFGhFi96InhryKVA1TcOUxKSkp/ndGMhEi34o+u4//7TwRobrJ/D2IpoFANGiN6PJ8ippHJCLIxdLg9pY+IgWvQhNAk+z2No2GsiAbgq2CSxa9EY0aew1DQdyMFQohOXc1OAQLXobug0YJPloioiUBDUNRFxwiBa9DE2X1VNBPwXHJhi1yc+4PCda9MPRaXk1NQlSkhOL++ECTy7hNrCKFr0AnQ42JRbtz5pCglwqXeoRLXobmh6CJBtTI5A0BKfLSwE3DRlFi96EnooJssw2JTl0qXVqFDR/iNv3EC16CZouw9BB+3SQBEsXN70+Nh9Fi16Apm9OlnKaZTeCSEs2JPhVnRPRoh+Eng7eDAbQcBwUC2khlizyxEAmWvQC9FTQ0yKFNvDpkg4KUmQZSLToBejmEKSJSC6oDWYpsKViRbToTeiUZDRBgzYGaVNhSkzoYpBo0dvQJ8syp8nEBDgd3leJjmjRy9A0qKRhO72M1DBslm9QESRa9BI0XbKhB6fPnZbe6KIAea5o0VvRpHlPgg0ZDtIEZEpc6JlFi96EngIJXb4hBT0pbpqhHBnaixa9GU2b+STxp43FttBISwQxCIoWvQDdFg8xWJSNxtRMIAtzZFFWtOhN6GbYng7RNBtTokLem3wtWvQ29EmDngYTMqijA4b0fbwQK1r0g9H00FPyQjDNJZCAmRbqxgGeaNEL0CSApEIgLb6+M6SjSVO1ECta9APRNMCkh6eLIM14OnggX4sWvR09NdhpkX5SBEyX1CzpkmAmWvQmNAkIBE0ugy7rpSYCHQ6KFr0NnQIGedO2MGmW4mgzMjY6RYtegKYDupRETMVFei5p6tMkaBwsiha9BP1Ow4AEoVTc0OKFJjpx0Ua06EVosohKgsdUBKSl2PZ5KekRLXoTugk8pJlPsU2h0hRDY4NRtOglaLLwQhL/dLjmwM0CDV3sFS16C5oEszSMowjaTEiXRBMmFL1Fi34Q+rTpRhqCTUGRgLQAQgM80aIXoslQLyUMzdA/BaJ3l3BEi96Cbor4NMA7GeylxuK7gU606I1oWrDToVwa4KcARF9Pvh+3i0SLfiiaBLDUTDxZgEnDgQlDF/ZEixadl9zJUI4M/k+fTQLsP+8nWrToccGOJgikmdAu5NDG5FEgEy36AeipIUgSj+YZKYilhgQd8okWvRVNGoPtG5Om4NSoIK+ZAuTl+USLXoDe9CFatGjRokV/yMcvKkx3gtlfZe8AAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">2.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#特性"><span class="post-toc-number">3.</span> <span class="post-toc-text">特性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>近些年<code>Telegram</code>聊天软件受到了许多人喜爱，甚至使用时间上超过了<code>QQ</code>，但是有着那些离不开<code>QQ</code>的人，两边经常切换貌似有点不方便，这里就分享个整合系统<code>CoolQ Telegram Bot X</code>，可以在<code>Telegram</code>群收发<code>QQ</code>群消息！这样我们就可以在电报上收到<code>QQ</code>群消息以及发送。支持图片、发送表情等功能。</p>
+<pre><code>#通过该系统，我们可以实现：
+TG群和QQ群相互转发，
+TG群单向转发到QQ群，
+QQ群单向转发到TG群，
+TG A群单向转发到TG B群，
+QQ A群单向转发到QQ B群。</code></pre><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><code>CoolQ Telegram Bot X</code>是一个消息转发机器人。它能够实现<code>QQ</code>/<code>Telegram</code>群组之间的消息转发。仅需简单的配置，就能方便的定制属于自己的转发逻辑。想要连接<code>QQ</code>群和<code>Telegram</code>群组，或者合并多个群组的消息？一个<code>CoolQ Telegram Bot X</code>就能满足你。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/CoolQ_TG(1).jpg" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><pre><code>#深度集成
+CoolQ Telegram Bot X集成了QQ机器人和Telegram机器人。酷Q Message SDK保证了每一条QQ消息都能稳定和可靠的接收和发送。基于官方Telegram Bot API的Telegram C++ SDK ，强力驱动收发Telegram的多种消息。消息转发逻辑处理单元会根据转发配置，将QQ机器人或Telegram机器人接收到的消息转发到相应的群组。
+
+两个消息处理SDK和消息转发逻辑处理单元均被打包进一个酷Q插件。启动酷Q，启用CoolQ Telegram Bot X插件，一切就是这么简单)
+
+#多向转发
+CoolQ Telegram Bot X支持多种转发类型。不管是QQ转发到Telegram，还是Telegram转发到QQ，都能正确的解析和转发消息。当然了， QQ转发到QQ以及Telegram转发到Telegram同样支持，帮助你管理和合并不同群组的消息。
+
+在一些情况下，你可能需要单向消息转发，而不是双向转发。不用担心，CoolQ Telegram Bot X贴心的考虑到了这一点，轻松胜任单向消息转发。
+
+#智能转换
+你可能已经发现，QQ表情是一种特殊的文字。这难不倒CoolQ Telegram Bot X，在转发到Telegram群组时，它会自动将QQ表情转换为对应的emoji。在未来的计划中，我们将提供更多特殊消息内容的解析和智能转换。</code></pre><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>1、安装酷Q机器人</strong><br><code>Windows</code>系统请直接从<code>酷Q</code>官方网站下载软件：点击访问，然后安装<code>酷Q</code>。<br><code>Linux</code>系统查看教程：使用Docker安装Wine-CoolQ，并运行酷Q 。</p>
+<pre><code>#酷Q有两个版本
+Air版可以免费使用，但只支持发送文字消息。
+Pro版是收费软件，需要支付授权费用后才能进行使用。Pro版支持更多的功能。
+
+#目前Air版足够使用。以后可能会调用Pro版提供的功能，实现更智能的消息解析和转发。</code></pre><p><strong>2、下载CTBX插件</strong><br>首先下载最新版的<code>CoolQ Telegram Bot X</code>插件→下载地址，解压出来后，我们会获取到一个<code>cpk</code>格式插件和配置文件，分别放入<code>酷Q根目录/app/</code>和<code>酷Q根目录/app/top.jogle.ctbx/config/</code>里，并重新命名配置文件<code>config.json</code>。</p>
+<p>这里以博主提供的<code>Docker</code>安装酷<code>Q</code>为例，酷<code>Q</code>根目录被映射到了外部的<code>/coolq</code>文件夹，可以直接使用命令：</p>
+<pre><code>#下载CTBX插件，如果插件有更新记得替换下载链接
+wget https://github.com/JogleLew/coolq-telegram-bot-x/releases/download/10.2.1/top.jogle.ctbx.zip
+#解压插件
+unzip top.jogle.ctbx.zip
+#新建配置文件存放文件夹
+mkdir -p /coolq/app/top.jogle.ctbx/config/
+#移动插件
+mv top.jogle.ctbx.cpk /coolq/app/
+#移动配置文件并重新命名
+mv config/config_example.json /coolq/app/top.jogle.ctbx/config/config.json
+#清理垃圾
+rm -rf top.jogle.ctbx.zip config
+#给文件夹权限
+chmod 777 /coolq/app/top.jogle.ctbx</code></pre><p>解压文件的时候，如果出现<code>-bash: unzip: command not found</code>，需要运行命令：</p>
+<pre><code>#CentOS系统
+yum -y install unzip
+
+#Debian/Ubuntu系统
+apt install unzip -y</code></pre><p><strong>3、配置插件</strong></p>
+<pre><code>提示：这里配置文件有个地方的格式有点小错误，在第3个和第4个规则之间缺个逗号“,”，记得在后面编辑的时候补齐，不然运行会报错。</code></pre><p>接下来我们还需要编辑<code>config.json</code>配置文件，需要用到的参数有：</p>
+<pre><code>Bot_Token(Telegram机器人的Token)，Bot_QQ(酷Q登录的机器人QQ)，QQ群号码和Telegram群ID。</code></pre><p><code>Telegram</code>的<code>Token</code>获取方法如下：</p>
+<pre><code>1、在Telegram关注@BotFather
+2、再到对话框依次输入：/start=&gt;/newbot，然后会要你给机器人命名(如：MoeratsBot)，命名完成会给你一个Token。
+3、为了顺利使用，还需要输入/mybots，然后依次选择Bot Settings=&gt;Group Privacy=&gt;Turn off。</code></pre><p><code>Telegram</code>群<code>ID</code>获取方法如下：</p>
+<pre><code>1、新建一个Telegram群，然后把你的机器人拉进群
+2、发送一条消息并@下机器人，比如：/my_id @MoeratsBot
+3、在浏览器输入https://api.telegram.org/botxx:xx/getUpdates(其中xx:xx为Token)，然后会返回类似信息：&quot;chat&quot;:{&quot;id&quot;:-2265968,&quot;title&quot;:&quot;MOERATS&quot;。此时的-2265968就为群ID。</code></pre><p>这时候参数都有了，然后开始编辑配置文件：</p>
+<pre><code>#不习惯用命令编辑的，可以直接通过FTP登录VPS，再找到文件进行编辑
+nano /coolq/app/top.jogle.ctbx/config/config.json</code></pre><p>依次填入相应的参数信息，参考图如下：<br><img src="https://www.southcat.net/usr/picture/CoolQ_TG(2).png" alt="请输入图片描述" title="请输入图片描述"><br>部分参数解释：</p>
+<pre><code>#From_Group和To_Group
+转发的来源群组和目标群组，这里对于Tg群需要输入chat_id，QQ群需要输入群号。
+
+#Type
+转发方式，目前支持所有的转发方式，即：T&lt;-&gt;Q、T-&gt;Q、Q-&gt;T、Q-&gt;Q、T-&gt;T，其中默认左边的为From_Group右边的是To_Group，也就是说Q&lt;-&gt;T和T&lt;-&gt;Q是不等价的，如果是T&lt;-&gt;Q的话TG群的id应该写在From_Group，而如果是Q&lt;-&gt;T的话QQ群号应该写在From_Group。
+
+完全重复的转发规则后者会取代前者，同一个群组可以被应用于不同的转发规则上，说简单点就是一张有向图。
+
+举例：
+T&lt;-&gt;Q：QQ群1和TG群2相互转发
+Q&lt;-&gt;T：TG群3和QQ群4相互转发
+T-&gt;Q：TG群5单向转发到QQ群6
+Q-&gt;T：QQ群7单向转发到TG群8
+Q-&gt;Q：QQ群9单向转发到QQ群10
+T-&gt;T：TG群11单向转发到TG群12</code></pre><p>编辑好了后，使用<code>Ctrl+x</code>，<code>y</code>保存退出。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-03T14:25:56.000Z" itemprop="datePublished">2019-12-03</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.237Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/03/e4-b8-80-e6-ac-be-e4-ba-8c-e6-ac-a1-e5-85-83-e7-9a-84web-e5-a4-9a-e4-ba-ba-e5-9c-a8-e7-ba-bf-e7-bd-91-e7-bb-9c-e8-81-8a-e5-a4-a9-e7-b3-bb-e7-bb-9f-ef-bc-9afiora-e5-ae-89-e8-a3-85-e5-8f-8a-e4-bd-bf/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一款二次元的Web多人在线网络聊天系统：Fiora安装及使用</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/03/live-msn-e7-ad-89-e5-be-ae-e8-bd-af-e7-bb-9d-e7-89-88-e9-82-ae-e7-ae-b1-e8-af-a6-e7-bb-86-e7-9a-84-e6-b3-a8-e5-86-8c-e6-95-99-e7-a8-8b/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">live/msn等微软绝版邮箱详细的注册教程</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>一款开源免费且基于Laravel开发的在线点播系统：MeEdu搭建教程 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="一款开源免费且基于Laravel开发的在线点播系统：MeEdu搭建教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/12/11/e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e5-85-8d-e8-b4-b9-e4-b8-94-e5-9f-ba-e4-ba-8elaravel-e5-bc-80-e5-8f-91-e7-9a-84-e5-9c-a8-e7-ba-bf-e7-82-b9-e6-92-ad-e7-b3-bb-e7-bb-9f-ef-bc-9ameedu-e6-90-ad/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前看有童鞋需要个点播系统，恰好就看到个不错的MeEdu，一个开源免费的在线点播，电子书和会员收费三大模块为一的整合系统，该系统主要的目的是让每位身负技能的人都可以通过MeEdu来构建自己的知识付费应用，通过MeEdu将自己的知识进行变现，而且功能也很多，具体的下面会列举出来，这里就发个搭建教程。 截图 功能 视频点播板块 手机号注册 视频收费 视频评论互动 课程收费 课程评论互动 会员收费 - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/MeEdu(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/MeEdu(2).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/MeEdu(3).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/MeEdu(4).png"><meta property="article:published_time" content="2019-12-10T17:49:53.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.237Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.237Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2019/12/11/e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e5-85-8d-e8-b4-b9-e4-b8-94-e5-9f-ba-e4-ba-8elaravel-e5-bc-80-e5-8f-91-e7-9a-84-e5-9c-a8-e7-ba-bf-e7-82-b9-e6-92-ad-e7-b3-bb-e7-bb-9f-ef-bc-9ameedu-e6-90-ad/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2019/12/11/e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e5-85-8d-e8-b4-b9-e4-b8-94-e5-9f-ba-e4-ba-8elaravel-e5-bc-80-e5-8f-91-e7-9a-84-e5-9c-a8-e7-ba-bf-e7-82-b9-e6-92-ad-e7-b3-bb-e7-bb-9f-ef-bc-9ameedu-e6-90-ad/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2019/12/11/e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e5-85-8d-e8-b4-b9-e4-b8-94-e5-9f-ba-e4-ba-8elaravel-e5-bc-80-e5-8f-91-e7-9a-84-e5-9c-a8-e7-ba-bf-e7-82-b9-e6-92-ad-e7-b3-bb-e7-bb-9f-ef-bc-9ameedu-e6-90-ad/"
+    },
+    "headline": "一款开源免费且基于Laravel开发的在线点播系统：MeEdu搭建教程 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-10T17:49:53.000Z",
+    "dateModified": "2020-04-24T09:34:44.237Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：之前看有童鞋需要个点播系统，恰好就看到个不错的MeEdu，一个开源免费的在线点播，电子书和会员收费三大模块为一的整合系统，该系统主要的目的是让每位身负技能的人都可以通过MeEdu来构建自己的知识付费应用，通过MeEdu将自己的知识进行变现，而且功能也很多，具体的下面会列举出来，这里就发个搭建教程。 截图 功能 视频点播板块 手机号注册 视频收费 视频评论互动 课程收费 课程评论互动 会员收费 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=一款开源免费且基于Laravel开发的在线点播系统：MeEdu搭建教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=一款开源免费且基于Laravel开发的在线点播系统：MeEdu搭建教程&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=一款开源免费且基于Laravel开发的在线点播系统：MeEdu搭建教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFY0lEQVR42u2cu3LbQBAE+f8/TScOFOBmeo5KbDYTWSoABNpVWzsP8vX29X6JQAhCEIIQhCCECOEVXj+PebzI37///Pnz3Kff2/Xae8WHOrz38bmEIAQhPEIgb3p6sAbn6bh0c+0/4XT807/bcwlBCEI4Q0hD7DTY2s0/PcBy4zdDlQxrIQhBCL8D4fT7aQimh0rnpGGaBixd4IQgBCF8DmERJm3JaotSEkTtmvS5hCAEIdwJKGKSUBOELFNteWoDcRGGQhCCEHaj9V/++WtusxCE8EUQSKBxG7ok04MGLksQ1Azg61RaCEL4IgiLGLkxXknw0szVuPDAherxXoQgBCHUZWkNTtoAqzcCBt8SANNzhCAEIfRliYar1NykBuv6AM1USYO1CighCEEI1QRdlhZ6U0vQshQ9luOEIAQhnI3WTxehW/FDy1rEqJkNGiEIQQjRVFlC018xNcZr0XshJVMhCEEIZz+BCqNUqkhFLCKeaFmcXrOBFYIQhNCLW7REfQOGmqdNlC0iqwY1QhCCELCpQssUdIC1JYgEPFTANcNGCEIQQv68QwsryKJDTI0lqF1LHx+rSCEIQQg1GCFipZkyKTiNJugrf4i83Qe6NyEIQQixpNEWJVqwWoPVVhapAw6AwE0VIQjhyyGsQScpWDVRs4YsywJHw1shCEEIrKRBjc22bBFBtAowEh4n8NFtFoIQhDAXpYgJSkLeJrIWYdfAx3BHCEIQAg5fWuCRHoCEoqQctpgt9L2FIAQhvGejtYUlLchtxgoJUiloEr4ezxeCEIRQB2MrTrRFiQqtBI+WLBbDJwayQhCCEPCXNjTDhZSq1/BkXdjIc6BlSQhCEML0QXG6BDXTlJgzacGiC1kNhYUgBCHgZYk+VBugNEhdQpa1ZFbDFyEIQQhIuLQSFzFTV8FFxBs1h2uJSwhCEEINZJfi9hqINBO0LWDteDKgUSotBCF8OYRb0UTKEHVhAUvYUiydBq8QhCCEaqrQ8jQNURfBc1MMactcDHWEIAQhHE0VKpjoIGulTCJ62iAm9xqHtxCEIIRoqtBlpRmebVlq5Q0q5tqxVYwJQQhCQMsSLVi081q4SgcwKYZQI0cIQhACg1DFBihdtOMWGOSapJwRB7sQhCCEKKAWsUIC1LXESQYmGXx0eApBCEJ4H8OXZTgRIdMWqkUcLYNwCYyFIAQhnAfjbcmqGah0cJEiRjJu16BYCEIQAvs+RiI80pu1YbWCJqKshblHeEIQghBicYuIj3T8zQOshulS1mrDUghCEMKzdvikKE2g3Iiwtig12KgAKgQhCAFDoCKkBaYNyrp4UWMXiSkhCEEI1VQhpWoSxtJQdjF56fHYuBWCEIQQA9l2c3RQEsOUmrVtoBLj5/hMQhCCECajtS0ttISdzklGKzFaWnjzcfgiBCF8IQRapFoK3otQomUMUgClYk8IQhDC3RfLkJAjGa3NnE2L1W8UQOI1hSAEIRyN1nZhWpai4ejNgCMCLImw6jYLQQhCQAbIbZiShBg1eWmpbDlfCEIQAvusNBlyN4tJCk5peZsWy0iRRAhCEAL//oT25mQY0SCFDGEq4Nq1H88XghCEUANZJDxe+QMbtw+SQBLjtp2PU2khCOGLIbQB+OkNtIWIiLCbcte1gBKCEIQwfzEULUQ0U5aWstrwJINRCEIQwgZhMU2bkUoM1TXAxSErKIwJQQhC+AwCEUS0mEGEDSmVNThX7TUhCEEIEwQiXEiISwNWIrooHCEIQQgbhDaUqFC6FUZtEC5hbFvYhCAEIWQIS5BJBmUSTYsx0h6YGKtxkRKCEIQwB7L/80sIQhCCEIQgBCE8vv4ASW7mEJ++mu0AAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">一款开源免费且基于Laravel开发的在线点播系统：MeEdu搭建教程</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-11</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=一款开源免费且基于Laravel开发的在线点播系统：MeEdu搭建教程&url=http://hexo.southcat.net/2019/12/11/e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e5-85-8d-e8-b4-b9-e4-b8-94-e5-9f-ba-e4-ba-8elaravel-e5-bc-80-e5-8f-91-e7-9a-84-e5-9c-a8-e7-ba-bf-e7-82-b9-e6-92-ad-e7-b3-bb-e7-bb-9f-ef-bc-9ameedu-e6-90-ad/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=一款开源免费且基于Laravel开发的在线点播系统：MeEdu搭建教程&url=http://hexo.southcat.net/2019/12/11/e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e5-85-8d-e8-b4-b9-e4-b8-94-e5-9f-ba-e4-ba-8elaravel-e5-bc-80-e5-8f-91-e7-9a-84-e5-9c-a8-e7-ba-bf-e7-82-b9-e6-92-ad-e7-b3-bb-e7-bb-9f-ef-bc-9ameedu-e6-90-ad/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/12/11/e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e5-85-8d-e8-b4-b9-e4-b8-94-e5-9f-ba-e4-ba-8elaravel-e5-bc-80-e5-8f-91-e7-9a-84-e5-9c-a8-e7-ba-bf-e7-82-b9-e6-92-ad-e7-b3-bb-e7-bb-9f-ef-bc-9ameedu-e6-90-ad/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/12/11/e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e5-85-8d-e8-b4-b9-e4-b8-94-e5-9f-ba-e4-ba-8elaravel-e5-bc-80-e5-8f-91-e7-9a-84-e5-9c-a8-e7-ba-bf-e7-82-b9-e6-92-ad-e7-b3-bb-e7-bb-9f-ef-bc-9ameedu-e6-90-ad/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/12/11/e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e5-85-8d-e8-b4-b9-e4-b8-94-e5-9f-ba-e4-ba-8elaravel-e5-bc-80-e5-8f-91-e7-9a-84-e5-9c-a8-e7-ba-bf-e7-82-b9-e6-92-ad-e7-b3-bb-e7-bb-9f-ef-bc-9ameedu-e6-90-ad/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/12/11/e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e5-85-8d-e8-b4-b9-e4-b8-94-e5-9f-ba-e4-ba-8elaravel-e5-bc-80-e5-8f-91-e7-9a-84-e5-9c-a8-e7-ba-bf-e7-82-b9-e6-92-ad-e7-b3-bb-e7-bb-9f-ef-bc-9ameedu-e6-90-ad/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/12/11/e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e5-85-8d-e8-b4-b9-e4-b8-94-e5-9f-ba-e4-ba-8elaravel-e5-bc-80-e5-8f-91-e7-9a-84-e5-9c-a8-e7-ba-bf-e7-82-b9-e6-92-ad-e7-b3-bb-e7-bb-9f-ef-bc-9ameedu-e6-90-ad/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFY0lEQVR42u2cu3LbQBAE+f8/TScOFOBmeo5KbDYTWSoABNpVWzsP8vX29X6JQAhCEIIQhCCECOEVXj+PebzI37///Pnz3Kff2/Xae8WHOrz38bmEIAQhPEIgb3p6sAbn6bh0c+0/4XT807/bcwlBCEI4Q0hD7DTY2s0/PcBy4zdDlQxrIQhBCL8D4fT7aQimh0rnpGGaBixd4IQgBCF8DmERJm3JaotSEkTtmvS5hCAEIdwJKGKSUBOELFNteWoDcRGGQhCCEHaj9V/++WtusxCE8EUQSKBxG7ok04MGLksQ1Azg61RaCEL4IgiLGLkxXknw0szVuPDAherxXoQgBCHUZWkNTtoAqzcCBt8SANNzhCAEIfRliYar1NykBuv6AM1USYO1CighCEEI1QRdlhZ6U0vQshQ9luOEIAQhnI3WTxehW/FDy1rEqJkNGiEIQQjRVFlC018xNcZr0XshJVMhCEEIZz+BCqNUqkhFLCKeaFmcXrOBFYIQhNCLW7REfQOGmqdNlC0iqwY1QhCCELCpQssUdIC1JYgEPFTANcNGCEIQQv68QwsryKJDTI0lqF1LHx+rSCEIQQg1GCFipZkyKTiNJugrf4i83Qe6NyEIQQixpNEWJVqwWoPVVhapAw6AwE0VIQjhyyGsQScpWDVRs4YsywJHw1shCEEIrKRBjc22bBFBtAowEh4n8NFtFoIQhDAXpYgJSkLeJrIWYdfAx3BHCEIQAg5fWuCRHoCEoqQctpgt9L2FIAQhvGejtYUlLchtxgoJUiloEr4ezxeCEIRQB2MrTrRFiQqtBI+WLBbDJwayQhCCEPCXNjTDhZSq1/BkXdjIc6BlSQhCEML0QXG6BDXTlJgzacGiC1kNhYUgBCHgZYk+VBugNEhdQpa1ZFbDFyEIQQhIuLQSFzFTV8FFxBs1h2uJSwhCEEINZJfi9hqINBO0LWDteDKgUSotBCF8OYRb0UTKEHVhAUvYUiydBq8QhCCEaqrQ8jQNURfBc1MMactcDHWEIAQhHE0VKpjoIGulTCJ62iAm9xqHtxCEIIRoqtBlpRmebVlq5Q0q5tqxVYwJQQhCQMsSLVi081q4SgcwKYZQI0cIQhACg1DFBihdtOMWGOSapJwRB7sQhCCEKKAWsUIC1LXESQYmGXx0eApBCEJ4H8OXZTgRIdMWqkUcLYNwCYyFIAQhnAfjbcmqGah0cJEiRjJu16BYCEIQAvs+RiI80pu1YbWCJqKshblHeEIQghBicYuIj3T8zQOshulS1mrDUghCEMKzdvikKE2g3Iiwtig12KgAKgQhCAFDoCKkBaYNyrp4UWMXiSkhCEEI1VQhpWoSxtJQdjF56fHYuBWCEIQQA9l2c3RQEsOUmrVtoBLj5/hMQhCCECajtS0ttISdzklGKzFaWnjzcfgiBCF8IQRapFoK3otQomUMUgClYk8IQhDC3RfLkJAjGa3NnE2L1W8UQOI1hSAEIRyN1nZhWpai4ejNgCMCLImw6jYLQQhCQAbIbZiShBg1eWmpbDlfCEIQAvusNBlyN4tJCk5peZsWy0iRRAhCEAL//oT25mQY0SCFDGEq4Nq1H88XghCEUANZJDxe+QMbtw+SQBLjtp2PU2khCOGLIbQB+OkNtIWIiLCbcte1gBKCEIQwfzEULUQ0U5aWstrwJINRCEIQwgZhMU2bkUoM1TXAxSErKIwJQQhC+AwCEUS0mEGEDSmVNThX7TUhCEEIEwQiXEiISwNWIrooHCEIQQgbhDaUqFC6FUZtEC5hbFvYhCAEIWQIS5BJBmUSTYsx0h6YGKtxkRKCEIQwB7L/80sIQhCCEIQgBCE8vv4ASW7mEJ++mu0AAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#功能"><span class="post-toc-number">2.</span> <span class="post-toc-text">功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>之前看有童鞋需要个点播系统，恰好就看到个不错的<code>MeEdu</code>，一个开源免费的在线点播，电子书和会员收费三大模块为一的整合系统，该系统主要的目的是让每位身负技能的人都可以通过<code>MeEdu</code>来构建自己的知识付费应用，通过<code>MeEdu</code>将自己的知识进行变现，而且功能也很多，具体的下面会列举出来，这里就发个搭建教程。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/MeEdu(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/MeEdu(2).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/MeEdu(3).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/MeEdu(4).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
+<li>视频点播板块</li>
+<li>手机号注册</li>
+<li>视频收费</li>
+<li>视频评论互动</li>
+<li>课程收费</li>
+<li>课程评论互动</li>
+<li>会员收费</li>
+<li>站内消息</li>
+<li>邮件通知</li>
+<li>有赞云支付系统</li>
+<li>邮件订阅</li>
+<li>后台系统</li>
+<li>单元测试</li>
+<li>系统公告</li>
+<li>数据表格导出</li>
+<li><code>SEO</code>优化</li>
+<li>数据定时备份</li>
+<li>电子书板块</li>
+<li><code>API</code>接口</li>
+<li>微信小程序</li>
+<li>广告系统</li>
+<li>友情链接</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/Qsnh/meedu" target="_blank" rel="noopener">https://github.com/Qsnh/meedu</a></p>
+<p><strong>环境要求：</strong><code>PHP &gt;= 7.2</code>、<code>MySql &gt;= 5.6</code>、<code>Composer</code>。</p>
+<p><strong>PHP扩展：</strong><code>Zip</code>、<code>OpenSSL</code>、<code>PDO</code>、<code>Mbstring</code>、<code>Tokenizer</code>、<code>XML</code>、<code>Fileinfo</code>。</p>
+<p><strong>1、安装宝塔</strong></p>
+<pre><code>#CentOS系统
+wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh
+#Ubuntu系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh
+#Debian系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh</code></pre><p>安装完成后，进入面板，点击左侧软件管理，然后安装<code>PHP 7.2+</code>(这里先建议使用<code>PHP 7.2</code>)、<code>Nginx</code>、<code>Mysql 5.6+</code>。</p>
+<p>接下来再找到左侧软件管理-<code>PHP</code>管理-设置-安装<code>Fileinfo</code>扩展。</p>
+<pre><code>#如果Fileinfo拓展安装失败，就是内存太小，我们可以添加swap，不适用于ovz
+1、脚本添加，脚本地址：https://www.southcat.net/archives/722/。
+2、面板添加，找到左侧软件管理-系统工具-安装Linux工具箱，然后进入工具箱添加。</code></pre><p>然后同样的在<code>PHP</code>设置里找到禁用函数，删除<code>proc_open</code>和<code>symlink</code>函数，再重启<code>PHP</code>。</p>
+<p><strong>2、安装Zip扩展</strong></p>
+<pre><code>提示：安装PHP 7.2的可以跳过该步骤。</code></pre><p>一般安装宝塔的时候，<code>PHP</code>一些常用的扩展都会顺便给你装上，但目前<code>7.3</code>版本的貌似还没<code>zip</code>扩展，以后说不准，所以在安装之前可以使用<code>php -m</code>检查下扩展，然后再确定要不要安装。</p>
+<p>这里就选择编译安装该扩展。编译之前需要先安装<code>libzip</code>，考虑到一些版本过低的问题，这里都采用编译安装或升级。</p>
+<p>由于这里是编译最新版的<code>libzip</code>，需要<code>CMake 3.0.2+</code>，可以查看下版本，使用命令：</p>
+<pre><code>cmake --version</code></pre><p>一般情况下是低于这个版本的，这里我们开始升级<code>CMake</code>版本，使用命令：</p>
+<pre><code>#CMake下载地址：https://cmake.org/files
+cd ~
+wget https://cmake.org/files/v3.13/cmake-3.13.4.tar.gz
+tar -zxvf cmake-3.13.4.tar.gz &amp;&amp; cd cmake-3.13.4
+./configure
+make &amp;&amp; make install</code></pre><p>开始安装<code>libzip</code>，使用命令：</p>
+<pre><code>#libzip下载地址：https://libzip.org/download/
+cd ~
+wget https://libzip.org/download/libzip-1.5.1.tar.gz
+tar -zxvf libzip-1.5.1.tar.gz &amp;&amp; cd libzip-1.5.1
+mkdir build &amp;&amp; cd build &amp;&amp; cmake .. 
+make &amp;&amp; make install</code></pre><p>再安装<code>zip</code>，使用命令：</p>
+<pre><code>#zip下载地址：http://pecl.php.net/package/zip，这里以最新版1.15.4为准
+cd ~
+wget http://pecl.php.net/get/zip-1.15.4.tgz
+tar -zxvf zip-1.15.4.tgz &amp;&amp; cd zip-1.15.4
+phpize
+./configure --with-php-config=/www/server/php/73/bin/php-config
+make &amp;&amp; make install
+echo &quot;extension=zip.so;&quot; &gt;&gt; /www/server/php/73/etc/php.ini</code></pre><p><strong>3、安装Composer</strong></p>
+<pre><code>curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer</code></pre><p><strong>4、安装程序</strong><br>我们先点击左侧网站，添加域名；然后再点击左侧数据库-添加数据库。</p>
+<p>运行命令：</p>
+<pre><code>#进入网站根目录，将路径修改成自己的再运行
+cd /www/wwwroot/www.southcat.net
+#安装meedu
+composer create-project qsnh/meedu=dev-master
+#将源码移动到根目录
+mv meedu/{,.}* ./
+#编辑环境变量
+nano .env</code></pre><p>修改相关信息：</p>
+<pre><code>#数据库信息
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=moerats
+DB_USERNAME=moerats
+DB_PASSWORD=moerats
+
+#其它信息
+APP_NAME=MeEdu
+APP_ENV=local(这里如果正式运行，请修改为：production)
+APP_KEY=
+APP_DEBUG=true(如果安装没问题，建议改为false)
+APP_LOG_LEVEL=debug
+APP_URL=http://localhost(这里修改你自己的域名地址)</code></pre><p>接着再使用命令：</p>
+<pre><code>#创建上传目录软链接
+php artisan storage:link
+#设置storage目录权限为777
+chmod -R  0777 storage
+#安装数据表
+php artisan migrate
+#初始化系统权限
+php artisan install role
+#初始化管理员，安装提示输入管理员的账号和密码！
+php artisan install administrator
+#初始化后台菜单
+php artisan install backend_menu
+#生成安装锁
+php artisan install:lock</code></pre><p><strong>5、设置伪静态</strong><br>点击域名设置-网站目录，运行目录选择<code>public</code>，并把防跨站的勾去掉并重启<code>PHP</code>。然后点击伪静态，输入以下代码：</p>
+<pre><code>location / {  
+    try_files $uri $uri/ /index.php$is_args$query_string;  
+}</code></pre><p>然后就可以正常访问网站了，后台地址<code>/backend/login</code>。</p>
+<p><strong>6、设置定时任务</strong><br>点击宝塔面板左侧计划任务，设置为每<code>1</code>分钟执行一次，执行内容为：</p>
+<pre><code>#修改为自己的域名再设置
+php /www/wwwroot/www.southcat.net/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1</code></pre><p><strong>7、配置队列监听器</strong><br>安装<code>Supervisor</code>：</p>
+<pre><code>pip install supervisor
+wget -N -P /etc/ --no-check-certificate  https://coding.net/u/cvc/p/supervisor/git/raw/master/supervisord.conf</code></pre><p>新增配置代码：</p>
+<pre><code>#以下为一整条命令，先修改为自己的域名，再一起复制到SSH运行
+echo &quot;[program:meedu]
+process_name=%(program_name)s_%(process_num)02d
+command=php /www/wwwroot/www.southcat.net/artisan queue:work --sleep=3 --tries=3
+autostart=true
+autorestart=true
+user=root
+numprocs=4
+redirect_stderr=true
+stdout_logfile=/www/wwwroot/www.southcat.net/storage/logs/supervisor.log&quot; &gt;&gt; /etc/supervisord.conf</code></pre><p>启动服务：</p>
+<pre><code>/usr/bin/supervisord -c /etc/supervisord.conf</code></pre><p>如果配置正确，你会看到<code>supervisor</code>的输出日志，日志路径就是上面配置的<code>stdout_logfile</code>的值。</p>
+<p>再设置<code>supervisor</code>开机自启，如果你是<code>Debian 9</code>、<code>Ubuntu 17+</code>，需要先使用命令：</p>
+<pre><code>1、添加rc-local.service，以下为一整条命令，一起复制运行
+cat &gt; /etc/systemd/system/rc-local.service &lt;&lt;EOF
+[Unit]
+Description=/etc/rc.local
+ConditionPathExists=/etc/rc.local
+
+[Service]
+Type=forking
+ExecStart=/etc/rc.local start
+TimeoutSec=0
+StandardOutput=tty
+RemainAfterExit=yes
+SysVStartPriority=99
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+2、新建rc-local文件，以下为一整条命令，一起复制运行
+cat &gt; /etc/rc.local &lt;&lt;EOF
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will &quot;exit 0&quot; on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.    
+EOF
+
+3、添加权限并设置开机自启
+chmod +x /etc/rc.local
+systemctl start rc-local
+systemctl enable rc-local</code></pre><p>再将启动命令加入<code>rc.local</code>文件，使用命令：</p>
+<pre><code>#CentOS 7系统
+echo &quot;/usr/bin/supervisord -c /etc/supervisord.conf&quot; &gt;&gt; /etc/rc.d/rc.local
+chmod +x /etc/rc.d/rc.local
+
+#CentOS 6、Debian、Ubuntu系统
+echo &quot;/usr/bin/supervisord -c /etc/supervisord.conf&quot; &gt;&gt; /etc/rc.local
+chmod +x /etc/rc.local</code></pre><p>如果需要开启微信小程序，需要执行命令：</p>
+<pre><code>php artisan passport:install</code></pre><p>该命令是生成<code>RSA</code>加密密钥和小程序端的<code>ID</code>和<code>Secret</code>。注意将输出的<code>id</code>和<code>secret</code>填写到小程序配置文件中。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-10T17:49:53.000Z" itemprop="datePublished">2019-12-11</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.237Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/11/easyengine-ef-bc-9avps-e4-b8-8a-e6-9c-80-e7-ae-80-e5-8d-95-e7-9a-84-e5-88-9b-e5-bb-bawordpress-e7-ab-99-e7-82-b9/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">EasyEngine：VPS上最简单的创建WordPress站点</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/11/e5-b0-8f-e5-86-85-e5-ad-98vps-e5-ae-89-e8-a3-85caddyphp-7sqlite-3-e7-8e-af-e5-a2-83-ef-bc-8c-e5-b9-b6-e5-bf-ab-e9-80-9f-e6-90-ad-e5-bb-batypecho-e5-8d-9a-e5-ae-a2/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">小内存VPS安装Caddy+PHP 7+Sqlite 3环境，并快速搭建Typecho博客</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>多种功能强大的BT离线下载程序Docker镜像及安装 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="多种功能强大的BT离线下载程序Docker镜像及安装 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/"><meta property="og:locale" content="en"><meta name="description" content="说明：最近看到很多小伙伴对离线下载啥的，兴趣蛮大，博主以前也水了不少了BT下载相关的脚本和安装，不过都没Docker简单，这里就找了一些用的人比较多，也经常在维护的BT离线程序的Docker镜像，包括Aria2、utorrent、Deluge、Transmission、Rutorrent、Qbittorrent，算是比较全了，这里就分享下。 安装Docker首先安装下面程序之前，需要在服务器上安装 - John Doe - 南猫"><meta property="article:published_time" content="2019-10-19T23:28:30.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.230Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.230Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/"
+    },
+    "headline": "多种功能强大的BT离线下载程序Docker镜像及安装 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-10-19T23:28:30.000Z",
+    "dateModified": "2020-04-24T09:34:44.230Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：最近看到很多小伙伴对离线下载啥的，兴趣蛮大，博主以前也水了不少了BT下载相关的脚本和安装，不过都没Docker简单，这里就找了一些用的人比较多，也经常在维护的BT离线程序的Docker镜像，包括Aria2、utorrent、Deluge、Transmission、Rutorrent、Qbittorrent，算是比较全了，这里就分享下。 安装Docker首先安装下面程序之前，需要在服务器上安装 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=多种功能强大的BT离线下载程序Docker镜像及安装" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=多种功能强大的BT离线下载程序Docker镜像及安装&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=多种功能强大的BT离线下载程序Docker镜像及安装" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEoElEQVR42u2dwZLTUBAD9/9/Gi4cYMkbtV72Ek/nQrHYsdsuhEaaKr5+Lfx8CS200EILLfSHQX8Nn39O+PP7Vz//fnz6rr+P+f7d9Hhyzf+OEVroJdAv/9J/+0Jy/KsHcwI7nT8d/wq04hBa6EXQ00WnY0/CQc473Sy9TrqG0EILnYXkJCJJqCYxu7kGebBCCy30+YuJYNFhIonRZH6SORFaaKG56EzhwumCU/hARSoJ3o9PWUIL/eHQZHD4hF9/LA0VWugPho6l1xDknR5c+jkRPRoMTobmurUUWugPhk4DRRryaehHSsI0rJCXM3630EIvgE6mfSrn00WIyJHifzp+ChKOA4fQQj8YmizWTKZjCt9TiEiukQKNtAAUl+eEFvph0OQm6UJdW/oRQZsGlWSMhBZ6IzQxFSRgIA+MwN0syqV7FFrojdBkKGhCAmIqCCgNHEjRJ7TQW6CToDSLNqTkf7dkT4XjUTiFFnoR9I1RmESEDgRtiZDEaww2hBZ6AXQyKY3QkBujJRz9eVP8CS30FuhmWKdmhi7atEXdFC7E5QKhhV4ATYrtplQjw8HttWg5iLaLhBb6odCTASBmgg4hRJSoqN2UBUILvQn6drini3YElohTevhpKBJa6A3QN4M/WW5tQ/smRKALdCgNFVroh0K35dpkEqgokWGEmiHyIoQWegM0DfqbxTdyYzRUaB5GKvqEFnoLNA3yaSGfBg5SMBDTMj1c3FoKLfTDoKlBaMP1G3GkAUMjsEILvQ2aDAxkOZYM+NPDpQux6T7HQERooZdA08A+Ldc0S6wkzGtCQnSu0EIvgCZLpU1o3wwF1Jy0ZfzxhQot9AJoImRJbJqiPf1ZehDE1ODkRGihHwqdBgNSoFOD0gwxbWhYT1lCC/1A6NPJ0z/+Nw+gESm6hENfiNBCb4VuFliSqUimZBom6GJPGzgKLfQW6CgAA3gaWkjJnqDpQk/6CC30BmgCRcxDEhgSKhAhnIQtmhmhhV4ATRfkmuL+drGGhIep9B8DRqGFXgCdhgyyoNYODjSsIKUDNUxCC70FullSe8d03BoSWvIlARZa6C3QRKxoQEdEcBK1Zkk2nRc3BoUWegE0XX5r4d8SH1DgUTMjtNAboJuBYRITUr43g0NjbKbhJToyoYV+MHQSh5tgjgbxsXyD5cPEILTQW6BTQEAGkJuA8CfEkCwGCC30Rmhq/NsBpRk4SEnYFg2jkAkt9AOhk8lvCnfyIEhYkAYbamJiaym00A+FbsJzvHw6CCQp7RtjkgIGoYXeBE0XzVPw1j4oUuCR0I8WA0ILvQmaFOOT8U9DfzIoZMGmMURCC70ZmpqLd4LAJFy0yE+ilZZ1hBZ6M/S7NxuNAgj7mkUcFEYILfQC6BSqJ5ORzElTBNJijrwAXOAJLfQDoVOxlswKuTgNJWhBMAkkKuWFFvrh0DQcIMKXlu1uQv13BhmhhRa6+09waUHQhI+02KMhhtBCC82W2kjQTxbpJhNCRDSFEUILvQ2a3jQN+KahJQ0Gbdk3GRuhhd4ITUXhZlmWDPi0AKRF3vEFCS30AuhNH6GFFlpooYX+kM9vmMsWAGaNLIQAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">多种功能强大的BT离线下载程序Docker镜像及安装</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-10-20</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=多种功能强大的BT离线下载程序Docker镜像及安装&url=http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=多种功能强大的BT离线下载程序Docker镜像及安装&url=http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/10/20/e5-a4-9a-e7-a7-8d-e5-8a-9f-e8-83-bd-e5-bc-ba-e5-a4-a7-e7-9a-84bt-e7-a6-bb-e7-ba-bf-e4-b8-8b-e8-bd-bd-e7-a8-8b-e5-ba-8fdocker-e9-95-9c-e5-83-8f-e5-8f-8a-e5-ae-89-e8-a3-85/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEoElEQVR42u2dwZLTUBAD9/9/Gi4cYMkbtV72Ek/nQrHYsdsuhEaaKr5+Lfx8CS200EILLfSHQX8Nn39O+PP7Vz//fnz6rr+P+f7d9Hhyzf+OEVroJdAv/9J/+0Jy/KsHcwI7nT8d/wq04hBa6EXQ00WnY0/CQc473Sy9TrqG0EILnYXkJCJJqCYxu7kGebBCCy30+YuJYNFhIonRZH6SORFaaKG56EzhwumCU/hARSoJ3o9PWUIL/eHQZHD4hF9/LA0VWugPho6l1xDknR5c+jkRPRoMTobmurUUWugPhk4DRRryaehHSsI0rJCXM3630EIvgE6mfSrn00WIyJHifzp+ChKOA4fQQj8YmizWTKZjCt9TiEiukQKNtAAUl+eEFvph0OQm6UJdW/oRQZsGlWSMhBZ6IzQxFSRgIA+MwN0syqV7FFrojdBkKGhCAmIqCCgNHEjRJ7TQW6CToDSLNqTkf7dkT4XjUTiFFnoR9I1RmESEDgRtiZDEaww2hBZ6AXQyKY3QkBujJRz9eVP8CS30FuhmWKdmhi7atEXdFC7E5QKhhV4ATYrtplQjw8HttWg5iLaLhBb6odCTASBmgg4hRJSoqN2UBUILvQn6drini3YElohTevhpKBJa6A3QN4M/WW5tQ/smRKALdCgNFVroh0K35dpkEqgokWGEmiHyIoQWegM0DfqbxTdyYzRUaB5GKvqEFnoLNA3yaSGfBg5SMBDTMj1c3FoKLfTDoKlBaMP1G3GkAUMjsEILvQ2aDAxkOZYM+NPDpQux6T7HQERooZdA08A+Ldc0S6wkzGtCQnSu0EIvgCZLpU1o3wwF1Jy0ZfzxhQot9AJoImRJbJqiPf1ZehDE1ODkRGihHwqdBgNSoFOD0gwxbWhYT1lCC/1A6NPJ0z/+Nw+gESm6hENfiNBCb4VuFliSqUimZBom6GJPGzgKLfQW6CgAA3gaWkjJnqDpQk/6CC30BmgCRcxDEhgSKhAhnIQtmhmhhV4ATRfkmuL+drGGhIep9B8DRqGFXgCdhgyyoNYODjSsIKUDNUxCC70FullSe8d03BoSWvIlARZa6C3QRKxoQEdEcBK1Zkk2nRc3BoUWegE0XX5r4d8SH1DgUTMjtNAboJuBYRITUr43g0NjbKbhJToyoYV+MHQSh5tgjgbxsXyD5cPEILTQW6BTQEAGkJuA8CfEkCwGCC30Rmhq/NsBpRk4SEnYFg2jkAkt9AOhk8lvCnfyIEhYkAYbamJiaym00A+FbsJzvHw6CCQp7RtjkgIGoYXeBE0XzVPw1j4oUuCR0I8WA0ILvQmaFOOT8U9DfzIoZMGmMURCC70ZmpqLd4LAJFy0yE+ilZZ1hBZ6M/S7NxuNAgj7mkUcFEYILfQC6BSqJ5ORzElTBNJijrwAXOAJLfQDoVOxlswKuTgNJWhBMAkkKuWFFvrh0DQcIMKXlu1uQv13BhmhhRa6+09waUHQhI+02KMhhtBCC82W2kjQTxbpJhNCRDSFEUILvQ2a3jQN+KahJQ0Gbdk3GRuhhd4ITUXhZlmWDPi0AKRF3vEFCS30AuhNH6GFFlpooYX+kM9vmMsWAGaNLIQAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Docker"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装Docker</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Aria2"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装Aria2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装utorrent"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装utorrent</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Deluge"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装Deluge</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Transmission"><span class="post-toc-number">5.</span> <span class="post-toc-text">安装Transmission</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Rutorrent"><span class="post-toc-number">6.</span> <span class="post-toc-text">安装Rutorrent</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Qbittorrent"><span class="post-toc-number">7.</span> <span class="post-toc-text">安装Qbittorrent</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>最近看到很多小伙伴对离线下载啥的，兴趣蛮大，博主以前也水了不少了<code>BT</code>下载相关的脚本和安装，不过都没<code>Docker</code>简单，这里就找了一些用的人比较多，也经常在维护的<code>BT</code>离线程序的<code>Docker</code>镜像，包括<code>Aria2</code>、<code>utorrent</code>、<code>Deluge</code>、<code>Transmission</code>、<code>Rutorrent</code>、<code>Qbittorrent</code>，算是比较全了，这里就分享下。</p>
+<h2 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h2><p>首先安装下面程序之前，需要在服务器上安装<code>Docker</code>环境，使用命令：</p>
+<pre><code>#CentOS 6系统
+rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum update -y
+yum -y install docker-io
+service docker start
+chkconfig docker on
+
+#CentOS 7、Debian、Ubuntu系统
+curl -sSL https://get.docker.com/ | sh
+systemctl start docker
+systemctl enable docker</code></pre><h2 id="安装Aria2"><a href="#安装Aria2" class="headerlink" title="安装Aria2"></a>安装Aria2</h2><p><strong>镜像来源：</strong><a href="https://hub.docker.com/r/onisuly/aria2-with-webui" target="_blank" rel="noopener">https://hub.docker.com/r/onisuly/aria2-with-webui</a></p>
+<p>先安装<code>Docker</code>，然后执行以下命令：</p>
+<pre><code>docker run --restart=always --name aria2-ariang -d \
+-p 6060:80 \
+-p 6800:6800 \
+-e SECRET=moerats \
+-v ~/aria2/down:/data \
+-v ~/aria2/conf:/conf \
+onisuly/aria2-with-webui</code></pre><p>安装完成后，相关信息如下：</p>
+<pre><code>AriaNg地址：http://ip:6060
+aria2连接端口：6800
+aria2连接密匙：moerats
+下载/配置目录：~/aria2</code></pre><p><code>CentOS</code>系统安装后，可能还需要开启相应的端口，大致如下：</p>
+<pre><code>#CentOS 6
+iptables -I INPUT -p tcp --dport 6060 -j ACCEPT
+iptables -A INPUT -p tcp --dport 6800 -j ACCEPT
+service iptables save
+service iptables restart
+
+#CentOS 7
+firewall-cmd --zone=public --add-port=6060/tcp --permanent
+firewall-cmd --zone=public --add-port=6800/tcp --permanent
+firewall-cmd --reload</code></pre><p>如果你不想用了，可以使用以下命令卸载：</p>
+<pre><code>#删掉容器
+ContainerID=`docker ps|grep onisuly/aria2-with-webui|awk &apos;{print $1}&apos;`
+docker kill ${ContainerID}
+docker rm ${ContainerID}
+docker rmi `docker images|grep onisuly/aria2-with-webui|awk &apos;{print $3}&apos;`
+#删掉下载文件夹
+rm -rf ~/aria2</code></pre><h2 id="安装utorrent"><a href="#安装utorrent" class="headerlink" title="安装utorrent"></a>安装utorrent</h2><p><strong>镜像来源：</strong><a href="https://hub.docker.com/r/ekho/utorrent" target="_blank" rel="noopener">https://hub.docker.com/r/ekho/utorrent</a></p>
+<p>先安装<code>Docker</code>，然后执行以下命令：</p>
+<pre><code>docker run --restart=always --name utorrent -d \
+-p 8080:8080 \
+-p 6881:6881 \
+-v ~/utorrent:/utorrent/data \
+ekho/utorrent</code></pre><p>安装完成后，相关信息如下：</p>
+<pre><code>utorrent地址：http://ip:8080/gui
+访问用户名：admin
+访问密码：为空
+下载目录：~/utorrent</code></pre><p><code>CentOS</code>系统安装后，可能还需要开启相应的端口，大致如下：</p>
+<pre><code>#CentOS 6
+iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+iptables -A INPUT -p tcp --dport 6881 -j ACCEPT
+service iptables save
+service iptables restart
+
+#CentOS 7
+firewall-cmd --zone=public --add-port=8080/tcp --permanent
+firewall-cmd --zone=public --add-port=6881/tcp --permanent
+firewall-cmd --reload</code></pre><p>如果你不想用了，可以使用以下命令卸载：</p>
+<pre><code>#删掉容器
+ContainerID=`docker ps|grep ekho/utorrent|awk &apos;{print $1}&apos;`
+docker kill ${ContainerID}
+docker rm ${ContainerID}
+docker rmi `docker images|grep ekho/utorrent|awk &apos;{print $3}&apos;`
+#删掉下载文件夹
+rm -rf ~/utorrent</code></pre><h2 id="安装Deluge"><a href="#安装Deluge" class="headerlink" title="安装Deluge"></a>安装Deluge</h2><p><strong>镜像来源：</strong><a href="https://hub.docker.com/r/linuxserver/deluge" target="_blank" rel="noopener">https://hub.docker.com/r/linuxserver/deluge</a></p>
+<p>先安装<code>Docker</code>，然后执行以下命令：</p>
+<pre><code>docker run --restart=always --name deluge -d \
+--net=host \
+-v ~/deluge/config:/config \
+-v ~/deluge/downloads:/downloads \
+linuxserver/deluge</code></pre><p>安装完成后，相关信息如下：</p>
+<pre><code>deluge地址：http://ip:8112
+访问密码：deluge
+配置/下载目录：~/deluge</code></pre><p><code>CentOS</code>系统安装后，可能还需要开启相应的端口，大致如下：</p>
+<pre><code>#CentOS 6
+iptables -I INPUT -p tcp --dport 8112 -j ACCEPT
+service iptables save
+service iptables restart
+
+#CentOS 7
+firewall-cmd --zone=public --add-port=8112/tcp --permanent
+firewall-cmd --reload</code></pre><p>进入界面后，记得点击上方的<code>Preferences</code>，将下载目录设置为<code>/downloads</code>。</p>
+<p>如果你不想用了，可以使用以下命令卸载：</p>
+<pre><code>#删掉容器
+ContainerID=`docker ps|grep linuxserver/deluge|awk &apos;{print $1}&apos;`
+docker kill ${ContainerID}
+docker rm ${ContainerID}
+docker rmi `docker images|grep linuxserver/deluge|awk &apos;{print $3}&apos;`
+#删掉下载文件夹
+rm -rf ~/deluge</code></pre><h2 id="安装Transmission"><a href="#安装Transmission" class="headerlink" title="安装Transmission"></a>安装Transmission</h2><p><strong>镜像来源：</strong><a href="https://hub.docker.com/r/linuxserver/transmission" target="_blank" rel="noopener">https://hub.docker.com/r/linuxserver/transmission</a></p>
+<p>先安装<code>Docker</code>，然后执行以下命令：</p>
+<pre><code>docker run --restart=always --name transmission -d \
+-e TRANSMISSION_WEB_HOME=/transmission-web-control/ \
+-e USER=moerats \
+-e PASS=moerats \
+-p 9091:9091 \
+-p 51413:51413 \
+-p 51413:51413/udp \
+-v ~/transmission/config:/config \
+-v ~/transmission/downloads:/downloads \
+-v ~/transmission/watch:/watch \
+linuxserver/transmission</code></pre><p>安装完成后，相关信息如下：</p>
+<pre><code>transmission地址：http://ip:9091
+访问用户名：moerats
+访问密码：moerats
+配置/下载目录：~/transmission</code></pre><p><code>CentOS</code>系统安装后，可能还需要开启相应的端口，大致如下：</p>
+<pre><code>#CentOS 6
+iptables -I INPUT -p tcp --dport 9091 -j ACCEPT
+iptables -A INPUT -p tcp --dport 51413 -j ACCEPT
+iptables -A INPUT -p udp --dport 51413 -j ACCEPT
+service iptables save
+service iptables restart
+
+#CentOS 7
+firewall-cmd --zone=public --add-port=9091/tcp --permanent
+firewall-cmd --zone=public --add-port=51413/tcp --permanent
+firewall-cmd --zone=public --add-port=51413/udp --permanent
+firewall-cmd --reload</code></pre><p>如果你不想用了，可以使用以下命令卸载：</p>
+<pre><code>#删掉容器
+ContainerID=`docker ps|grep linuxserver/transmission|awk &apos;{print $1}&apos;`
+docker kill ${ContainerID}
+docker rm ${ContainerID}
+docker rmi `docker images|grep linuxserver/transmission|awk &apos;{print $3}&apos;`
+#删掉下载文件夹
+rm -rf ~/transmission</code></pre><h2 id="安装Rutorrent"><a href="#安装Rutorrent" class="headerlink" title="安装Rutorrent"></a>安装Rutorrent</h2><p><strong>镜像来源：</strong><a href="https://hub.docker.com/r/linuxserver/rutorrent" target="_blank" rel="noopener">https://hub.docker.com/r/linuxserver/rutorrent</a></p>
+<p>先安装<code>Docker</code>，然后执行以下命令：</p>
+<pre><code>docker run --restart=always --name rutorrent -d \
+-p 2222:80 \
+-p 5000:5000 \
+-p 51413:51413 \
+-p 6881:6881/udp \
+-v ~/rutorrent/config:/config \
+-v ~/rutorrent/downloads:/downloads \
+linuxserver/rutorrent</code></pre><p>安装完成后，相关信息如下：</p>
+<pre><code>rutorrent地址：http://ip:2222
+配置/下载目录：~/rutorrent</code></pre><p><code>CentOS</code>系统安装后，可能还需要开启相应的端口，大致如下：</p>
+<pre><code>#CentOS 6
+iptables -I INPUT -p tcp --dport 2222 -j ACCEPT
+iptables -A INPUT -p tcp --dport 5000 -j ACCEPT
+iptables -A INPUT -p tcp --dport 51413 -j ACCEPT
+iptables -A INPUT -p udp --dport 6881 -j ACCEPT
+service iptables save
+service iptables restart
+
+#CentOS 7
+firewall-cmd --zone=public --add-port=2222/tcp --permanent
+firewall-cmd --zone=public --add-port=5000/tcp --permanent
+firewall-cmd --zone=public --add-port=51413/tcp --permanent
+firewall-cmd --zone=public --add-port=6881/udp --permanent
+firewall-cmd --reload</code></pre><p>如果你不想用了，可以使用以下命令卸载：</p>
+<pre><code>#删掉容器
+ContainerID=`docker ps|grep linuxserver/rutorrent|awk &apos;{print $1}&apos;`
+docker kill ${ContainerID}
+docker rm ${ContainerID}
+docker rmi `docker images|grep linuxserver/rutorrent|awk &apos;{print $3}&apos;`
+#删掉下载文件夹
+rm -rf ~/rutorrent</code></pre><h2 id="安装Qbittorrent"><a href="#安装Qbittorrent" class="headerlink" title="安装Qbittorrent"></a>安装Qbittorrent</h2><p><strong>镜像来源：</strong><a href="https://hub.docker.com/r/linuxserver/qbittorrent" target="_blank" rel="noopener">https://hub.docker.com/r/linuxserver/qbittorrent</a></p>
+<p>先安装<code>Docker</code>，然后执行以下命令：</p>
+<pre><code>docker run --restart=always --name qbittorrent -d \
+-p 6881:6881 \
+-p 6881:6881/udp \
+-p 8080:8080 \
+-v ~/qbittorrent/config:/config \
+-v ~/qbittorrent/downloads:/downloads \
+linuxserver/qbittorrent</code></pre><p>安装完成后，相关信息如下：</p>
+<pre><code>qbittorrent地址：http://ip:8080
+用户名：admin
+密码：adminadmin
+配置和/下载目录：~/qbittorrent</code></pre><p><code>CentOS</code>系统安装后，可能还需要开启相应的端口，大致如下：</p>
+<pre><code>#CentOS 6
+iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+iptables -A INPUT -p tcp --dport 6881 -j ACCEPT
+iptables -A INPUT -p udp --dport 6881 -j ACCEPT
+service iptables save
+service iptables restart
+
+#CentOS 7
+firewall-cmd --zone=public --add-port=8080/tcp --permanent
+firewall-cmd --zone=public --add-port=6881/tcp --permanent
+firewall-cmd --zone=public --add-port=6881/udp --permanent
+firewall-cmd --reload</code></pre><p>如果你不想用了，可以使用以下命令卸载：</p>
+<pre><code>#删掉容器
+ContainerID=`docker ps|grep linuxserver/qbittorrent|awk &apos;{print $1}&apos;`
+docker kill ${ContainerID}
+docker rm ${ContainerID}
+docker rmi `docker images|grep linuxserver/qbittorrent|awk &apos;{print $3}&apos;`
+#删掉下载文件夹
+rm -rf ~/qbittorrent</code></pre><p>这里顺便推荐个磁力链接聚合搜索<code>magnetW</code>，有兴趣的可以下载<code>Windows/Mac</code>端应用程序，下载地址→传送门。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-10-19T23:28:30.000Z" itemprop="datePublished">2019-10-20</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.230Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/10/20/e4-bd-bf-e7-94-a8lnmp-e5-b8-b8-e8-a7-81-e9-97-ae-e9-a2-98-e8-a7-a3-e7-ad-94/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">使用LNMP常见问题解答</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/10/20/e5-ae-9d-e5-a1-94-e9-9d-a2-e6-9d-bflnmp-e5-bc-80-e5-90-afbrotli-e5-8e-8b-e7-bc-a9-ef-bc-8c-e5-8f-af-e6-8f-90-e9-ab-98-e7-bd-91-e7-ab-99-e5-8a-a0-e8-bd-bd-e9-80-9f-e5-ba-a6/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">宝塔面板LNMP开启Brotli压缩，可提高网站加载速度</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

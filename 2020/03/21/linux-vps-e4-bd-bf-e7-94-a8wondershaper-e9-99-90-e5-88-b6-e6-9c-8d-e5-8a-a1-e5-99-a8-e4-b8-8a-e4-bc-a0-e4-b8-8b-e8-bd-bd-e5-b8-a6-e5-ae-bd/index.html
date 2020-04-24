@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Linux VPS使用WonderShaper限制服务器上传/下载带宽 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Linux VPS使用WonderShaper限制服务器上传&#x2F;下载带宽 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/03/21/linux-vps-e4-bd-bf-e7-94-a8wondershaper-e9-99-90-e5-88-b6-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-b8-8a-e4-bc-a0-e4-b8-8b-e8-bd-bd-e5-b8-a6-e5-ae-bd/"><meta property="og:locale" content="en"><meta name="description" content="说明：最近看有人问博主如何限制服务器的上传带宽，所以就分享下此前经常用的一个限速脚本WonderShaper，原理的话，网上比较详细的解释是WonderShaper使用tc来定义流量调整命令，使用QoS来处理特定的网络接口。外发流量通过放在不同优先级的队列中，达到限制传出流量速率的目的；而传入流量通过丢包的方式来达到速率限制的目的。用起来挺方便的，有需求的可以了解下。 使用Github地址：htt - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/WonderShaper(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/WonderShaper(2).png"><meta property="article:published_time" content="2020-03-20T19:33:42.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.253Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.253Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/03/21/linux-vps-e4-bd-bf-e7-94-a8wondershaper-e9-99-90-e5-88-b6-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-b8-8a-e4-bc-a0-e4-b8-8b-e8-bd-bd-e5-b8-a6-e5-ae-bd/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/03/21/linux-vps-e4-bd-bf-e7-94-a8wondershaper-e9-99-90-e5-88-b6-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-b8-8a-e4-bc-a0-e4-b8-8b-e8-bd-bd-e5-b8-a6-e5-ae-bd/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/03/21/linux-vps-e4-bd-bf-e7-94-a8wondershaper-e9-99-90-e5-88-b6-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-b8-8a-e4-bc-a0-e4-b8-8b-e8-bd-bd-e5-b8-a6-e5-ae-bd/"
+    },
+    "headline": "Linux VPS使用WonderShaper限制服务器上传/下载带宽 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-03-20T19:33:42.000Z",
+    "dateModified": "2020-04-24T09:34:44.253Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：最近看有人问博主如何限制服务器的上传带宽，所以就分享下此前经常用的一个限速脚本WonderShaper，原理的话，网上比较详细的解释是WonderShaper使用tc来定义流量调整命令，使用QoS来处理特定的网络接口。外发流量通过放在不同优先级的队列中，达到限制传出流量速率的目的；而传入流量通过丢包的方式来达到速率限制的目的。用起来挺方便的，有需求的可以了解下。 使用Github地址：htt - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=Linux VPS使用WonderShaper限制服务器上传/下载带宽" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Linux VPS使用WonderShaper限制服务器上传/下载带宽&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=Linux VPS使用WonderShaper限制服务器上传/下载带宽" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEJ0lEQVR42u3ay3YaMRBFUf7/p5NJBgmh654rGFDtwyTLNrS1lWWpXo9fP+D1EClSpEiRIt9EPobX83v+ecCfr6fP/f2+5+c8v+/q97x6Dl63SJFLkemhzw94/tkVgqCmTZs2AK1bpMjFyKtFJWDCpwWn504bGtcgUuQPQb5axNX3Xv2ey4AaBBXVf4JIkTdHTrBpMWkDrg6yNkEQKfJOyKtA9xVqSnZTIE0v9ClY+HgWIlLklyHT4fKt/36sWidS5BchY9NkOBRoAJCeR4KDqfD8dldLpMgvQraNG7r4tFAShEzJNNkAkSK3ImkhmRR/yWbQYJ82e1DSLFLkMmQqUjWFLZIwk6bQlECTwECkyK1I0rCZAvGpuDR9r2ngknX+t16RIpci0wfTxZ0+S5/XNnfiz0SKXIo8GSBKBxR9TYkAbRTVA4QiRX45kgw4kIv4JEGeknLStB0TApEilyLTHzwdrKWX9zvFLpoEiBS5FUkTZtKobZPiJkAnG3YZDIgUuQx5lJCCwyQNPZENbYpacVhJpMglSFrATUk0GT46ScrTARWLyyJFLkLSpmlzgFxtDhlGPGq20ixEpMhFyGYw4WToiAxQpCFEEoSIFHlXJGnkTBf7FMg3AUS6/FHSLFLkIiRtstKh2ulwmBY/BRu04DUWl0WKXIJMw0jNxU+T3jZAp41gkSLvgGyKw/jhoEBFAvuUeOMAXaTIRchYoC2CBJoAN4nw1ISNybhIkQuRp02ZVPxqEt10WDVNnjELESlyATJd0OkSTk1bclCQZtJRwi5S5EIkTXxPFkQTanoY0XWKFLkd+YkiMk1oT5LvaYPHopdIkQuRdFiWNmjIoUGHoUihayxiixS5ENkMLJDmEB30IwcR+T4O0EWKXIgkBd1p+I80WWNQXQwlxXWIFLkcSQNhkuimxJgcYGRQEDd8RIpcgmwKVlMiTBqrpCg9BRdNEUykyM3I1HRtA226uAnTDi+JFHlHZDpk6EU9bRJNnEkCEQ82kSIXIunlSxPcZpNIw6c5GEWKvBMyDfC2Rd8EJoXlmBQ3DR+RIhchTw4A8odPBv/I5U7AY4AuUuQyZLMIMhhx9cvJAUKbOx8J0EWK/EJkMyREg2/S5GkTZFKEFinyLshpCKhp/LRftw2fpogmUuRWJDkEaNBNAm/aPEoFaBSEiBS5FEkuVtrQIQkwbcqSgvdYRBMpcjnyk0Ws1JitClIhaEBTkiJFLkHSQ4E0TVPxigw0JHxVQBMpcimSLLJpgqYBptRkaps8sQkrUuRCZHMApOEkkuw2CXEqtF1utkiRN0WeNmGnQ4cOO5HhjXpyWaTIGyFpAEEGmZqkIBWnRYq8G5I2YkgDtTkgUgCSmjzjQSdS5FJkGoigBwAZJoqJLhhWwsNSIkUuRN75JVKkSJEiRR6+fgNus8ZSwKjQ3AAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Linux VPS使用WonderShaper限制服务器上传/下载带宽</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-03-21</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux VPS使用WonderShaper限制服务器上传/下载带宽&url=http://hexo.southcat.net/2020/03/21/linux-vps-e4-bd-bf-e7-94-a8wondershaper-e9-99-90-e5-88-b6-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-b8-8a-e4-bc-a0-e4-b8-8b-e8-bd-bd-e5-b8-a6-e5-ae-bd/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Linux VPS使用WonderShaper限制服务器上传/下载带宽&url=http://hexo.southcat.net/2020/03/21/linux-vps-e4-bd-bf-e7-94-a8wondershaper-e9-99-90-e5-88-b6-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-b8-8a-e4-bc-a0-e4-b8-8b-e8-bd-bd-e5-b8-a6-e5-ae-bd/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/03/21/linux-vps-e4-bd-bf-e7-94-a8wondershaper-e9-99-90-e5-88-b6-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-b8-8a-e4-bc-a0-e4-b8-8b-e8-bd-bd-e5-b8-a6-e5-ae-bd/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/03/21/linux-vps-e4-bd-bf-e7-94-a8wondershaper-e9-99-90-e5-88-b6-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-b8-8a-e4-bc-a0-e4-b8-8b-e8-bd-bd-e5-b8-a6-e5-ae-bd/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/03/21/linux-vps-e4-bd-bf-e7-94-a8wondershaper-e9-99-90-e5-88-b6-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-b8-8a-e4-bc-a0-e4-b8-8b-e8-bd-bd-e5-b8-a6-e5-ae-bd/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/03/21/linux-vps-e4-bd-bf-e7-94-a8wondershaper-e9-99-90-e5-88-b6-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-b8-8a-e4-bc-a0-e4-b8-8b-e8-bd-bd-e5-b8-a6-e5-ae-bd/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/03/21/linux-vps-e4-bd-bf-e7-94-a8wondershaper-e9-99-90-e5-88-b6-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-b8-8a-e4-bc-a0-e4-b8-8b-e8-bd-bd-e5-b8-a6-e5-ae-bd/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEJ0lEQVR42u3ay3YaMRBFUf7/p5NJBgmh654rGFDtwyTLNrS1lWWpXo9fP+D1EClSpEiRIt9EPobX83v+ecCfr6fP/f2+5+c8v+/q97x6Dl63SJFLkemhzw94/tkVgqCmTZs2AK1bpMjFyKtFJWDCpwWn504bGtcgUuQPQb5axNX3Xv2ey4AaBBXVf4JIkTdHTrBpMWkDrg6yNkEQKfJOyKtA9xVqSnZTIE0v9ClY+HgWIlLklyHT4fKt/36sWidS5BchY9NkOBRoAJCeR4KDqfD8dldLpMgvQraNG7r4tFAShEzJNNkAkSK3ImkhmRR/yWbQYJ82e1DSLFLkMmQqUjWFLZIwk6bQlECTwECkyK1I0rCZAvGpuDR9r2ngknX+t16RIpci0wfTxZ0+S5/XNnfiz0SKXIo8GSBKBxR9TYkAbRTVA4QiRX45kgw4kIv4JEGeknLStB0TApEilyLTHzwdrKWX9zvFLpoEiBS5FUkTZtKobZPiJkAnG3YZDIgUuQx5lJCCwyQNPZENbYpacVhJpMglSFrATUk0GT46ScrTARWLyyJFLkLSpmlzgFxtDhlGPGq20ixEpMhFyGYw4WToiAxQpCFEEoSIFHlXJGnkTBf7FMg3AUS6/FHSLFLkIiRtstKh2ulwmBY/BRu04DUWl0WKXIJMw0jNxU+T3jZAp41gkSLvgGyKw/jhoEBFAvuUeOMAXaTIRchYoC2CBJoAN4nw1ISNybhIkQuRp02ZVPxqEt10WDVNnjELESlyATJd0OkSTk1bclCQZtJRwi5S5EIkTXxPFkQTanoY0XWKFLkd+YkiMk1oT5LvaYPHopdIkQuRdFiWNmjIoUGHoUihayxiixS5ENkMLJDmEB30IwcR+T4O0EWKXIgkBd1p+I80WWNQXQwlxXWIFLkcSQNhkuimxJgcYGRQEDd8RIpcgmwKVlMiTBqrpCg9BRdNEUykyM3I1HRtA226uAnTDi+JFHlHZDpk6EU9bRJNnEkCEQ82kSIXIunlSxPcZpNIw6c5GEWKvBMyDfC2Rd8EJoXlmBQ3DR+RIhchTw4A8odPBv/I5U7AY4AuUuQyZLMIMhhx9cvJAUKbOx8J0EWK/EJkMyREg2/S5GkTZFKEFinyLshpCKhp/LRftw2fpogmUuRWJDkEaNBNAm/aPEoFaBSEiBS5FEkuVtrQIQkwbcqSgvdYRBMpcjnyk0Ws1JitClIhaEBTkiJFLkHSQ4E0TVPxigw0JHxVQBMpcimSLLJpgqYBptRkaps8sQkrUuRCZHMApOEkkuw2CXEqtF1utkiRN0WeNmGnQ4cOO5HhjXpyWaTIGyFpAEEGmZqkIBWnRYq8G5I2YkgDtTkgUgCSmjzjQSdS5FJkGoigBwAZJoqJLhhWwsNSIkUuRN75JVKkSJEiRR6+fgNus8ZSwKjQ3AAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开机自启"><span class="post-toc-number">2.</span> <span class="post-toc-text">开机自启</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>最近看有人问博主如何限制服务器的上传带宽，所以就分享下此前经常用的一个限速脚本<code>WonderShaper</code>，原理的话，网上比较详细的解释是<code>WonderShaper</code>使用<code>tc</code>来定义流量调整命令，使用<code>QoS</code>来处理特定的网络接口。外发流量通过放在不同优先级的队列中，达到限制传出流量速率的目的；而传入流量通过丢包的方式来达到速率限制的目的。用起来挺方便的，有需求的可以了解下。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><strong>Github地址：</strong><a href="https://github.com/magnific0/wondershaper" target="_blank" rel="noopener">https://github.com/magnific0/wondershaper</a></p>
+<p>安装的话是可以直接用软件包安装，不过版本都不太新，所以这里直接从<code>Github</code>拉取最新源码。</p>
+<p><strong>1、安装依赖</strong></p>
+<pre><code>#Debian/Ubuntu系统
+apt install -y make git
+
+#CentOS系统
+yum install make git -y</code></pre><p><strong>2、安装WonderShaper</strong></p>
+<pre><code>git clone https://github.com/magnific0/wondershaper.git
+cd wondershaper
+make install</code></pre><p><strong>3、设置限速</strong></p>
+<pre><code>#使用命令
+USAGE: wondershaper [-hcs] [-a &lt;adapter&gt;] [-d &lt;rate&gt;] [-u &lt;rate&gt;]
+
+OPTIONS:
+   -h           Show this message
+   -a &lt;adapter&gt; Set the adapter
+   -d &lt;rate&gt;    Set maximum download rate (in Kbps) and/or
+   -u &lt;rate&gt;    Set maximum upload rate (in Kbps)
+   -p           Use presets in /etc/conf.d/wondershaper.conf
+   -c           Clear the limits from adapter
+   -s           Show the current status of adapter
+   -v           Show the current version</code></pre><p>首先查看网卡：</p>
+<pre><code>#这里提供三个可以查看网卡的命令，建议使用第一个
+ifconfig
+ip addr
+route</code></pre><p>比如我要限制<code>eth0</code>网卡速度，使用命令：</p>
+<pre><code>#限制上传带宽为10M
+wondershaper -a eth0 -u 10240
+#限制下载带宽为10M
+wondershaper -a eth0 -d 10240
+#限制上传和上传均10M
+wondershaper -a eth0 -d 10240 -u 10240
+#清楚网卡限速规则
+wondershaper -c -a eth0</code></pre><p>然后我们可以测一下速，使用命令：</p>
+<pre><code>wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
+chmod +x speedtest-cli
+./speedtest-cli</code></pre><p>这是没限速前的测速：<br><img src="https://www.southcat.net/usr/picture/WonderShaper(1).png" alt="请输入图片描述" title="请输入图片描述"><br>上传/下载限速<code>10M</code>后的测速：<br><img src="https://www.southcat.net/usr/picture/WonderShaper(2).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="开机自启"><a href="#开机自启" class="headerlink" title="开机自启"></a>开机自启</h2><p>一般设置限速规则后，服务器重启的话，限速规则会自动失效，所以这里需要稍微设置一下，使其开机也自动生效，这里就说<code>2</code>种方法。</p>
+<p><strong>1、使用rc.local</strong><br>这是最简单的设置自启方法，不过<code>Debian 9</code>、<code>Ubuntu 17+</code>是没有<code>rc.local</code>文件的，所以使用该系统的需要先配置一下。</p>
+<pre><code>1、添加rc-local.service，以下为一整条命令，一起复制运行
+cat &gt; /etc/systemd/system/rc-local.service &lt;&lt;EOF
+[Unit]
+Description=/etc/rc.local
+ConditionPathExists=/etc/rc.local
+
+[Service]
+Type=forking
+ExecStart=/etc/rc.local start
+TimeoutSec=0
+StandardOutput=tty
+RemainAfterExit=yes
+SysVStartPriority=99
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+2、新建rc-local文件，以下为一整条命令，一起复制运行
+cat &gt; /etc/rc.local &lt;&lt;EOF
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will &quot;exit 0&quot; on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.    
+EOF
+
+3、添加权限并设置开机自启
+chmod +x /etc/rc.local
+systemctl start rc-local
+systemctl enable rc-local</code></pre><p>最后将启动命令加入<code>rc.local</code>文件，使用命令：</p>
+<pre><code>#CentOS 7系统
+echo &quot;wondershaper -a eth0 -d 10240 -u 10240&quot; &gt;&gt; /etc/rc.d/rc.local
+chmod +x /etc/rc.d/rc.local
+
+#CentOS 6、Debian、Ubuntu系统
+echo &quot;wondershaper -a eth0 -d 10240 -u 10240&quot; &gt;&gt; /etc/rc.local
+chmod +x /etc/rc.local</code></pre><p>这里限速命令自行修改。</p>
+<p><strong>2、使用Systemd</strong><br>由于安装的时候，<code>Systemd</code>配置文件也给你了，所以就方便使用了，不过该方法只适用于<code>CentOS 7</code>、<code>Debian 8+</code>、<code>Ubuntu 16+</code>等。</p>
+<p>由于启动时，默认调用的配置文件为<code>/etc/conf.d/wondershaper.conf</code>，所以先编辑该文件：</p>
+<pre><code>nano /etc/conf.d/wondershaper.conf</code></pre><p>大致如下：</p>
+<pre><code>[wondershaper]
+# Adapter
+#
+IFACE=&quot;eth0&quot;
+
+# Download rate in Kbps
+#
+DSPEED=&quot;10240&quot;
+
+# Upload rate in Kbps
+#
+USPEED=&quot;10240&quot;</code></pre><p>参数依次为网卡、下载、上传限制，修改好了后，使用<code>Ctrl+x</code>、<code>y</code>保存退出。</p>
+<pre><code>systemctl start wondershaper
+systemctl enable wondershaper</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-03-20T19:33:42.000Z" itemprop="datePublished">2020-03-21</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.253Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/03/21/caddy-e7-8e-af-e5-a2-83-e4-b8-8bwordpress-e5-8d-9a-e5-ae-a2-e4-bc-aa-e9-9d-99-e6-80-81-e8-ae-be-e7-bd-ae/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Caddy环境下WordPress博客伪静态设置</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/03/20/e4-bd-bf-e7-94-a8eh-forwarder-bot-e5-ae-9e-e7-8e-b0telegram-e5-90-8c-e6-97-b6-e6-94-b6-e5-8f-91-e5-a4-9a-e4-b8-aa-e5-be-ae-e4-bf-a1-qq-e6-b6-88-e6-81-af/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">使用EH Forwarder Bot实现Telegram同时收发多个微信/QQ消息</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

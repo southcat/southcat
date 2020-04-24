@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>CentOS一键安装Resilio Sync来搭建专用文件共享系统 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="CentOS一键安装Resilio Sync来搭建专用文件共享系统 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/03/01/centos-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85resilio-sync-e6-9d-a5-e6-90-ad-e5-bb-ba-e4-b8-93-e7-94-a8-e6-96-87-e4-bb-b6-e5-85-b1-e4-ba-ab-e7-b3-bb-e7-bb-9f/"><meta property="og:locale" content="en"><meta name="description" content="简介Resilio Sync是一种依赖于BitTorrent协议的专用文件共享系统，原为BitTorrent Sync，简称BitSync是一款功能非常强大的同步工具，并且支持多终端设备：windows、linux、移动设备等都没有问题，再加上国内网盘纷纷关闭，如果您想自建搭建同步工具使用BitSync是一个非常不错的方案。 Resilio Sync官网：https:&#x2F;&#x2F;www.resilio.c - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/resilio(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/resilio(2).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/resilio(3).png"><meta property="article:published_time" content="2020-02-29T20:39:36.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.250Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.250Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/03/01/centos-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85resilio-sync-e6-9d-a5-e6-90-ad-e5-bb-ba-e4-b8-93-e7-94-a8-e6-96-87-e4-bb-b6-e5-85-b1-e4-ba-ab-e7-b3-bb-e7-bb-9f/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/03/01/centos-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85resilio-sync-e6-9d-a5-e6-90-ad-e5-bb-ba-e4-b8-93-e7-94-a8-e6-96-87-e4-bb-b6-e5-85-b1-e4-ba-ab-e7-b3-bb-e7-bb-9f/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/03/01/centos-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85resilio-sync-e6-9d-a5-e6-90-ad-e5-bb-ba-e4-b8-93-e7-94-a8-e6-96-87-e4-bb-b6-e5-85-b1-e4-ba-ab-e7-b3-bb-e7-bb-9f/"
+    },
+    "headline": "CentOS一键安装Resilio Sync来搭建专用文件共享系统 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-02-29T20:39:36.000Z",
+    "dateModified": "2020-04-24T09:34:44.250Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "简介Resilio Sync是一种依赖于BitTorrent协议的专用文件共享系统，原为BitTorrent Sync，简称BitSync是一款功能非常强大的同步工具，并且支持多终端设备：windows、linux、移动设备等都没有问题，再加上国内网盘纷纷关闭，如果您想自建搭建同步工具使用BitSync是一个非常不错的方案。 Resilio Sync官网：https://www.resilio.c - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=CentOS一键安装Resilio Sync来搭建专用文件共享系统" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=CentOS一键安装Resilio Sync来搭建专用文件共享系统&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=CentOS一键安装Resilio Sync来搭建专用文件共享系统" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEq0lEQVR42u2dQXIcMQwD9/+fTi45JSOiofiyw55LqrKWRi1XaBKAK59fC5+P0EILLbTQQn8Z9Gd4/ln05++evub0WdrrtPZpn7/X/71H4hBa6C3Qj//oD4eaPn8COB3wCeDpgqZzTHs+rhda6EXQp8KRCsnpZVOBmQoRKYptIRVaaKFzw0ChTxdICs/pgqdCJrTQQt8VsgREilAaRFLzIrTQQvcDx6mBwC+Cg8Tp80koSJcltNBboYkg9w1//pgaKrTQXwxNhgUyxFORkAwhZF0qYP/lWgot9BdDUyAqHkyXMQ0OEzy5APQNEVroBdDJCGuEPzpsJLGfmojNOqGF3gidGoVUaG72IoJFawAci7HQQi+CTgJ9E8qhTUwaaKhBT98ttNAboEmQtQ3LpsJC3kUaIxrUEVroTdBp8G8PQoM16XIbcYI0LUILvQU6/ZCn4l0KxqWgHQn20CDfUXAQWugF0CS4lsIv1IijF5wKUwq5H88qtNBLoKcBAA/oRfC9GVxIEUxnFlroTdCtmJ+COMTES4JjGiKIKDkaeEIL/WLoJOZNJnpqaqZhYBogbkzEVIiFFnoT9CiQF8EZIjgQkf9WYKzUUKGFXgLdCgq4MQBDAzbioPCPC5nQQr8IemoQiPEdxTgoIlLxghbdKCIILfTLoanQRkI16ZKIGdea7mmd0EJvgaYCwdS8NAdIpjsRF6gYgVLAQgv9MmgiAtLACzXTfjJUN31DhBZ6KzQJtRDRPZn7p4KGRL0ipIMCsUIL/WLomx/0UzNBBoqbC5rMBHReoYVeBE1CcdQoa8MzFIqe91j4hBZ6ATQVBFKIJTX8kwhAw3h032NxFFroBdBpUKdB1vRSIiy25gMREIQWehs0Ec5Jkbox60jobjobESlHh0NooV8KTYrCjXHWinhUDCRCYxw4hBb6pdBJQCfCPimEab8UAEhDDjL6hBZ6CTR94W0xouG7Mfj26X55BYsIQgv9MuipmJGhnw4CNABw0xjhNUILvQD6JpRGLyddFilQTSMUi6HQQi+ApkZYGhLIYJDMO9qwNKKD0EILnQf/1BA0AZ1GGMCDBenIhBb6pdBUqCfGfQrjpMGE7NHs/885hRZ6AXQTaEuFqRHt0tBCLqcpbkILvQU6hdImAY+K9q25P4XwSPGqXUuhhX4pdNsoNA0/Dcenh4r+WOwXWuiXQSdDrREFSaDuRtBrAgJj0yO00AugqUBACgc19umAkwYaculCC70VejLkyRBAQNqvI0b7dK6YGBRa6BdDT+J5Y5yTA9yYe7RJwlOW0EIvgv4Jka4pSkkooANHbI6EFnoJdAqcTsNHeiENsiajvWmUhBZ6M/QkwiWjnDYL9HJvCmElQAot9GLoJPrRMB0N2KSD0+I3FmKhhV4ATQy3ZM415vgkyrcmId1XaKG3QRNxvhHlJ0GBDA4pwHNT9IQWehv01OzTRoQK+Tjs9ul+ESaKIEILLXT9n24S0z6JiD9RFB+Lr9BCC101FUQgmITDJliXho/Hdwgt9CLoJjyXLiSJgiRU0zRDdFASWugt0EnwS4EXYtKnQB69iGldDPcJLfQC6E2P0EILLbTQQn/J8xtip/Ug6qf31QAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">CentOS一键安装Resilio Sync来搭建专用文件共享系统</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-03-01</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=CentOS一键安装Resilio Sync来搭建专用文件共享系统&url=http://hexo.southcat.net/2020/03/01/centos-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85resilio-sync-e6-9d-a5-e6-90-ad-e5-bb-ba-e4-b8-93-e7-94-a8-e6-96-87-e4-bb-b6-e5-85-b1-e4-ba-ab-e7-b3-bb-e7-bb-9f/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=CentOS一键安装Resilio Sync来搭建专用文件共享系统&url=http://hexo.southcat.net/2020/03/01/centos-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85resilio-sync-e6-9d-a5-e6-90-ad-e5-bb-ba-e4-b8-93-e7-94-a8-e6-96-87-e4-bb-b6-e5-85-b1-e4-ba-ab-e7-b3-bb-e7-bb-9f/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/03/01/centos-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85resilio-sync-e6-9d-a5-e6-90-ad-e5-bb-ba-e4-b8-93-e7-94-a8-e6-96-87-e4-bb-b6-e5-85-b1-e4-ba-ab-e7-b3-bb-e7-bb-9f/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/03/01/centos-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85resilio-sync-e6-9d-a5-e6-90-ad-e5-bb-ba-e4-b8-93-e7-94-a8-e6-96-87-e4-bb-b6-e5-85-b1-e4-ba-ab-e7-b3-bb-e7-bb-9f/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/03/01/centos-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85resilio-sync-e6-9d-a5-e6-90-ad-e5-bb-ba-e4-b8-93-e7-94-a8-e6-96-87-e4-bb-b6-e5-85-b1-e4-ba-ab-e7-b3-bb-e7-bb-9f/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/03/01/centos-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85resilio-sync-e6-9d-a5-e6-90-ad-e5-bb-ba-e4-b8-93-e7-94-a8-e6-96-87-e4-bb-b6-e5-85-b1-e4-ba-ab-e7-b3-bb-e7-bb-9f/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/03/01/centos-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85resilio-sync-e6-9d-a5-e6-90-ad-e5-bb-ba-e4-b8-93-e7-94-a8-e6-96-87-e4-bb-b6-e5-85-b1-e4-ba-ab-e7-b3-bb-e7-bb-9f/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEq0lEQVR42u2dQXIcMQwD9/+fTi45JSOiofiyw55LqrKWRi1XaBKAK59fC5+P0EILLbTQQn8Z9Gd4/ln05++evub0WdrrtPZpn7/X/71H4hBa6C3Qj//oD4eaPn8COB3wCeDpgqZzTHs+rhda6EXQp8KRCsnpZVOBmQoRKYptIRVaaKFzw0ChTxdICs/pgqdCJrTQQt8VsgREilAaRFLzIrTQQvcDx6mBwC+Cg8Tp80koSJcltNBboYkg9w1//pgaKrTQXwxNhgUyxFORkAwhZF0qYP/lWgot9BdDUyAqHkyXMQ0OEzy5APQNEVroBdDJCGuEPzpsJLGfmojNOqGF3gidGoVUaG72IoJFawAci7HQQi+CTgJ9E8qhTUwaaKhBT98ttNAboEmQtQ3LpsJC3kUaIxrUEVroTdBp8G8PQoM16XIbcYI0LUILvQU6/ZCn4l0KxqWgHQn20CDfUXAQWugF0CS4lsIv1IijF5wKUwq5H88qtNBLoKcBAA/oRfC9GVxIEUxnFlroTdCtmJ+COMTES4JjGiKIKDkaeEIL/WLoJOZNJnpqaqZhYBogbkzEVIiFFnoT9CiQF8EZIjgQkf9WYKzUUKGFXgLdCgq4MQBDAzbioPCPC5nQQr8IemoQiPEdxTgoIlLxghbdKCIILfTLoanQRkI16ZKIGdea7mmd0EJvgaYCwdS8NAdIpjsRF6gYgVLAQgv9MmgiAtLACzXTfjJUN31DhBZ6KzQJtRDRPZn7p4KGRL0ipIMCsUIL/WLomx/0UzNBBoqbC5rMBHReoYVeBE1CcdQoa8MzFIqe91j4hBZ6ATQVBFKIJTX8kwhAw3h032NxFFroBdBpUKdB1vRSIiy25gMREIQWehs0Ec5Jkbox60jobjobESlHh0NooV8KTYrCjXHWinhUDCRCYxw4hBb6pdBJQCfCPimEab8UAEhDDjL6hBZ6CTR94W0xouG7Mfj26X55BYsIQgv9MuipmJGhnw4CNABw0xjhNUILvQD6JpRGLyddFilQTSMUi6HQQi+ApkZYGhLIYJDMO9qwNKKD0EILnQf/1BA0AZ1GGMCDBenIhBb6pdBUqCfGfQrjpMGE7NHs/885hRZ6AXQTaEuFqRHt0tBCLqcpbkILvQU6hdImAY+K9q25P4XwSPGqXUuhhX4pdNsoNA0/Dcenh4r+WOwXWuiXQSdDrREFSaDuRtBrAgJj0yO00AugqUBACgc19umAkwYaculCC70VejLkyRBAQNqvI0b7dK6YGBRa6BdDT+J5Y5yTA9yYe7RJwlOW0EIvgv4Jka4pSkkooANHbI6EFnoJdAqcTsNHeiENsiajvWmUhBZ6M/QkwiWjnDYL9HJvCmElQAot9GLoJPrRMB0N2KSD0+I3FmKhhV4ATQy3ZM415vgkyrcmId1XaKG3QRNxvhHlJ0GBDA4pwHNT9IQWehv01OzTRoQK+Tjs9ul+ESaKIEILLXT9n24S0z6JiD9RFB+Lr9BCC101FUQgmITDJliXho/Hdwgt9CLoJjyXLiSJgiRU0zRDdFASWugt0EnwS4EXYtKnQB69iGldDPcJLfQC6E2P0EILLbTQQn/J8xtip/Ug6qf31QAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置"><span class="post-toc-number">3.</span> <span class="post-toc-text">设置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#相关命令"><span class="post-toc-number">4.</span> <span class="post-toc-text">相关命令</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><code>Resilio Sync</code>是一种依赖于<code>BitTorrent</code>协议的专用文件共享系统，原为<code>BitTorrent Sync</code>，简称<code>BitSync</code>是一款功能非常强大的同步工具，并且支持多终端设备：<code>windows</code>、<code>linux</code>、移动设备等都没有问题，再加上国内网盘纷纷关闭，如果您想自建搭建同步工具使用<code>BitSync</code>是一个非常不错的方案。</p>
+<p><strong>Resilio Sync官网：</strong><a href="https://www.resilio.com/" target="_blank" rel="noopener">https://www.resilio.com/</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code>#安装必要的软件包
+yum -y install wget unzip
+#下载脚本
+wget https://www.southcat.net/usr/down/Resilio-Sync.zip
+#解压并安装
+unzip Resilio-Sync.zip &amp;&amp; cd Resilio-Sync &amp;&amp; chmod +x mysync.sh sync.sh &amp;&amp; ./sync.sh</code></pre><p>根据提示设置用户名和密码后，直到安装成功！</p>
+<h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><p>1、输入<code>http://IP:8888</code>会要求输入刚刚设置的账号密码。<br><img src="https://www.southcat.net/usr/picture/resilio(1).png" alt="请输入图片描述" title="请输入图片描述"><br>2、输入成功进入初始化界面，随便起一个名称，勾选协议进入<code>RslSync</code>后台。<br><img src="https://www.southcat.net/usr/picture/resilio(2).png" alt="请输入图片描述" title="请输入图片描述"><br>3、打开右上角–设置–<code>Preferences</code>–选择中文进行保存，这样就是中文界面啦。<br><img src="https://www.southcat.net/usr/picture/resilio(3).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h2><p>为了方便管理，安装成功后请输入命令：<code>source ~/.bashrc</code>使<code>alias</code>生效，这样就可以使用<code>mysync</code>命令来管理了，<code>mysync</code>说明如下：</p>
+<pre><code>#Resilio安装目录
+/home/RslSync
+#配置文件
+/home/RslSync/sync.conf
+#查看RslSync状态
+mysync status
+#停止
+mysync stop
+#启动
+mysync start</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-02-29T20:39:36.000Z" itemprop="datePublished">2020-03-01</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.250Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/03/01/vps-e4-bc-98-e5-8c-96-e4-b9-8b-e6-b7-bb-e5-8a-a0swap-e4-ba-a4-e6-8d-a2-e5-88-86-e5-8c-ba/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">VPS优化之添加swap交换分区</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/03/01/linux-vps-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85seafile-e6-90-ad-e5-bb-ba-e7-a7-81-e6-9c-89-e4-ba-91-e7-9b-98-e5-ad-98-e5-82-a8/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux VPS一键安装Seafile搭建私有云盘存储</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

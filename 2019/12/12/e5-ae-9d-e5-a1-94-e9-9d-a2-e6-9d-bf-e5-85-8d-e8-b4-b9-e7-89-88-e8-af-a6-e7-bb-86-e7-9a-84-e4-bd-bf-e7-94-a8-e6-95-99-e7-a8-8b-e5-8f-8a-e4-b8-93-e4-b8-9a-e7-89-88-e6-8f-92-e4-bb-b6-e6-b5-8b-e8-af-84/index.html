@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>宝塔面板免费版详细的使用教程及专业版插件测评 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="宝塔面板免费版详细的使用教程及专业版插件测评 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/12/12/e5-ae-9d-e5-a1-94-e9-9d-a2-e6-9d-bf-e5-85-8d-e8-b4-b9-e7-89-88-e8-af-a6-e7-bb-86-e7-9a-84-e4-bd-bf-e7-94-a8-e6-95-99-e7-a8-8b-e5-8f-8a-e4-b8-93-e4-b8-9a-e7-89-88-e6-8f-92-e4-bb-b6-e6-b5-8b-e8-af-84/"><meta property="og:locale" content="en"><meta name="description" content="说明：在现如今VPS服务器的普及下，很多站长都愿意购买VPS服务器而不是购买虚拟主机来跑网站和项目，一来是VPS服务器可以根据自己的需要来安装相关的插件及服务，二来是现阶段的服务器价格也能满足我们的成本负担。不过我们在使用Linux服务器建站的时候，纯粹使用SSH客户端操作的时候很麻烦，特别是对小白很不友好。所以很多玩服务器的朋友还是习惯使用Web面板来部署环境，这样我们可以非常轻松简单的管理网站 - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(2).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(3).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(4).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(5).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(6).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(7).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(12).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(8).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(9).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(10).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(11).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(13).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(14).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(15).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(16).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(17).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(18).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(19).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(20).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(21).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(22).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(23).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(24).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(25).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(26).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(27).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(28).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(29).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(30).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(31).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(32).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(46).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(47).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(48).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(49).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(50).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(51).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/BTCP(52).png"><meta property="article:published_time" content="2019-12-12T10:58:53.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.238Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.238Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2019/12/12/e5-ae-9d-e5-a1-94-e9-9d-a2-e6-9d-bf-e5-85-8d-e8-b4-b9-e7-89-88-e8-af-a6-e7-bb-86-e7-9a-84-e4-bd-bf-e7-94-a8-e6-95-99-e7-a8-8b-e5-8f-8a-e4-b8-93-e4-b8-9a-e7-89-88-e6-8f-92-e4-bb-b6-e6-b5-8b-e8-af-84/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2019/12/12/e5-ae-9d-e5-a1-94-e9-9d-a2-e6-9d-bf-e5-85-8d-e8-b4-b9-e7-89-88-e8-af-a6-e7-bb-86-e7-9a-84-e4-bd-bf-e7-94-a8-e6-95-99-e7-a8-8b-e5-8f-8a-e4-b8-93-e4-b8-9a-e7-89-88-e6-8f-92-e4-bb-b6-e6-b5-8b-e8-af-84/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2019/12/12/e5-ae-9d-e5-a1-94-e9-9d-a2-e6-9d-bf-e5-85-8d-e8-b4-b9-e7-89-88-e8-af-a6-e7-bb-86-e7-9a-84-e4-bd-bf-e7-94-a8-e6-95-99-e7-a8-8b-e5-8f-8a-e4-b8-93-e4-b8-9a-e7-89-88-e6-8f-92-e4-bb-b6-e6-b5-8b-e8-af-84/"
+    },
+    "headline": "宝塔面板免费版详细的使用教程及专业版插件测评 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-12T10:58:53.000Z",
+    "dateModified": "2020-04-24T09:34:44.238Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：在现如今VPS服务器的普及下，很多站长都愿意购买VPS服务器而不是购买虚拟主机来跑网站和项目，一来是VPS服务器可以根据自己的需要来安装相关的插件及服务，二来是现阶段的服务器价格也能满足我们的成本负担。不过我们在使用Linux服务器建站的时候，纯粹使用SSH客户端操作的时候很麻烦，特别是对小白很不友好。所以很多玩服务器的朋友还是习惯使用Web面板来部署环境，这样我们可以非常轻松简单的管理网站 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=宝塔面板免费版详细的使用教程及专业版插件测评" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=宝塔面板免费版详细的使用教程及专业版插件测评&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=宝塔面板免费版详细的使用教程及专业版插件测评" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFcElEQVR42u2dQY7bMBAE9f9PK1djQ05Xk5tD4NLFWVsWxTIwmOnu2M/r8T4iEIIQhCAEIQhhhPAMx+c5n4+7930+//Oc3XVW1129Rs9Zrb3dlxCEIIQlhGXR2Cw6bWC18XTO6vyfG9ptdrXODvRyL0IQghC2EKYiRgrjrpDtXlv9O52XNjfd//J+hCAEIRxBSAVr9TxtjAiAaS3yKAQhCOH3Iew2Pl2DNEhps6QRSgVaCEIQQg+BbJCKHdNwQwvl7r52jVoa7K6mSCEI4csgTMXqf378NbVZCEL4IgjRtAwCCFmYCLNEKCGiyj9xpYUghC+CMG1gamhIISIm7gTlxBgi+xGCEITwjIWxKWTUYCEbo4UvgZmuPRZ0IQhBCGNhTEEIUvzaa1JTpr23BEwIQhDCu9UTaBCCGizJlN2dS0IcJDQ6GbtCEIIQHuQ7UHFkMjpps9U2RmnYakKe22ZJCEIQAh6IiIBJwtiNeJOKYAxgkCIvBCEIYTRfSPORGp00zBBxhYqwKZCOg1tCEIIQYhgyFZUUloqCBghf0sGIBsXHkIYQhCAEbG5O4QoimFCQTYC7MWGrgLcQhPDlEMjipNDRxgeFJy7WunKlhSAEISBD4yRs1QY8kxmzG86m4jedIwQhCCEPUElkaUxaEuxuxFQChhZ0IQhBCNl3oM0MLUxJNE1AyYcwFVQUEhWCEIQwiipNSCsZLW0AIxVRWhSpKCQEIQghQyCBrVuDlpgl1BQmgu14X0IQghCw+XIT4KKBKmL8nBiy1EQSghCEkL+ALoU2aEE6MUxpmJwYsig0IgQhCAGJKuQ1KoASYfVmkGsGqL8+QCEIQQjIkE3FKRU20kSl5oZcpzF1x2ZJCEIQAjYzY9ABBihSeCINWuSe6lC5EIQghDGkcSq0kr/JWk0Ai977CEgIQhACKow0lEUKVCPUUFGVNkPR+BWCEISABqjG5KDhDFL06FBGG7JoKAlBCEIYzRdaGKnImYakBlwD52iKFIIQhPC24S0azKRwTgMdqTDTQUoIQhAC/zGsFOxqGixiuNLmqnkfNmSFIAQh4B+VaEXV1OSQ8EYC2YizoxkjBCEIoRZaSVArGbRUdCXvnwosbaaEIAQhdN+pQgYoKqKchDOpwUuHp20QRAhCEMIotCaRlSwwFUNSuOiGG/Nn+2EIQQhCiANUG5pMm6YGLg1oJHM4DXVCEIIQOIRGCKkCUk/+8Vy6AWrYEFFXCEIQQg5ppIGFNDqTkUMDWaloJ7EHFWohCEEIlSGbGg5atIh4255LC+ok4ghBCEJ4kfnSNDykcSIDGBmUUhi8FWyFIAQh5N+aT83K1OCQEBc1atrgJ2nykCstBCF8OYTG3CQ3mhofYvY0TRUpptv1hCAEIWBRhQ4qNLx1a6iSjV2bL0IQghBe2ihRwZMetyYsGaDiICgEIQgBiyqt4UFDGcgoDdefCnNVwIUgBCEsB6h2aEkNy4nhmoa2JAhTE3g7RQpBCEJAISwyEB2ZoYWoQhuiSQBaXlMIQhBCFFqJQXoa2iDFNDU/1MAlIVQhCEEIc46RNE4NhCbg1Yg1LzyiMCsEIQghhjmTAEuFi8bEJabJSQAkijFCEIIQts0SFUCpWUoLbxPKnIoy+VDiACUEIQghFhTaIKWA1tRs0WaMBDaIICQEIQghf6E9CWKgoQQWt2T8pNAXKeSp8ApBCELog1uN+JGarDTgJBOHGETHU6QQhCCEK+GCCrCkwDbGLhnk8IcjBCEI4QrCtBB5PomyKXBBmygMVghCEEI9QJFQVRO2QE3M0/0HUiK4CkEIQuAQyGCTzNa2iKGbLI0fGvoSghCE8MQw5zceQhCCEIQgBCEIYXn8ASWHhX/SRqfZAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">宝塔面板免费版详细的使用教程及专业版插件测评</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-12</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=宝塔面板免费版详细的使用教程及专业版插件测评&url=http://hexo.southcat.net/2019/12/12/e5-ae-9d-e5-a1-94-e9-9d-a2-e6-9d-bf-e5-85-8d-e8-b4-b9-e7-89-88-e8-af-a6-e7-bb-86-e7-9a-84-e4-bd-bf-e7-94-a8-e6-95-99-e7-a8-8b-e5-8f-8a-e4-b8-93-e4-b8-9a-e7-89-88-e6-8f-92-e4-bb-b6-e6-b5-8b-e8-af-84/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=宝塔面板免费版详细的使用教程及专业版插件测评&url=http://hexo.southcat.net/2019/12/12/e5-ae-9d-e5-a1-94-e9-9d-a2-e6-9d-bf-e5-85-8d-e8-b4-b9-e7-89-88-e8-af-a6-e7-bb-86-e7-9a-84-e4-bd-bf-e7-94-a8-e6-95-99-e7-a8-8b-e5-8f-8a-e4-b8-93-e4-b8-9a-e7-89-88-e6-8f-92-e4-bb-b6-e6-b5-8b-e8-af-84/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/12/12/e5-ae-9d-e5-a1-94-e9-9d-a2-e6-9d-bf-e5-85-8d-e8-b4-b9-e7-89-88-e8-af-a6-e7-bb-86-e7-9a-84-e4-bd-bf-e7-94-a8-e6-95-99-e7-a8-8b-e5-8f-8a-e4-b8-93-e4-b8-9a-e7-89-88-e6-8f-92-e4-bb-b6-e6-b5-8b-e8-af-84/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/12/12/e5-ae-9d-e5-a1-94-e9-9d-a2-e6-9d-bf-e5-85-8d-e8-b4-b9-e7-89-88-e8-af-a6-e7-bb-86-e7-9a-84-e4-bd-bf-e7-94-a8-e6-95-99-e7-a8-8b-e5-8f-8a-e4-b8-93-e4-b8-9a-e7-89-88-e6-8f-92-e4-bb-b6-e6-b5-8b-e8-af-84/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/12/12/e5-ae-9d-e5-a1-94-e9-9d-a2-e6-9d-bf-e5-85-8d-e8-b4-b9-e7-89-88-e8-af-a6-e7-bb-86-e7-9a-84-e4-bd-bf-e7-94-a8-e6-95-99-e7-a8-8b-e5-8f-8a-e4-b8-93-e4-b8-9a-e7-89-88-e6-8f-92-e4-bb-b6-e6-b5-8b-e8-af-84/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/12/12/e5-ae-9d-e5-a1-94-e9-9d-a2-e6-9d-bf-e5-85-8d-e8-b4-b9-e7-89-88-e8-af-a6-e7-bb-86-e7-9a-84-e4-bd-bf-e7-94-a8-e6-95-99-e7-a8-8b-e5-8f-8a-e4-b8-93-e4-b8-9a-e7-89-88-e6-8f-92-e4-bb-b6-e6-b5-8b-e8-af-84/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/12/12/e5-ae-9d-e5-a1-94-e9-9d-a2-e6-9d-bf-e5-85-8d-e8-b4-b9-e7-89-88-e8-af-a6-e7-bb-86-e7-9a-84-e4-bd-bf-e7-94-a8-e6-95-99-e7-a8-8b-e5-8f-8a-e4-b8-93-e4-b8-9a-e7-89-88-e6-8f-92-e4-bb-b6-e6-b5-8b-e8-af-84/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFcElEQVR42u2dQY7bMBAE9f9PK1djQ05Xk5tD4NLFWVsWxTIwmOnu2M/r8T4iEIIQhCAEIQhhhPAMx+c5n4+7930+//Oc3XVW1129Rs9Zrb3dlxCEIIQlhGXR2Cw6bWC18XTO6vyfG9ptdrXODvRyL0IQghC2EKYiRgrjrpDtXlv9O52XNjfd//J+hCAEIRxBSAVr9TxtjAiAaS3yKAQhCOH3Iew2Pl2DNEhps6QRSgVaCEIQQg+BbJCKHdNwQwvl7r52jVoa7K6mSCEI4csgTMXqf378NbVZCEL4IgjRtAwCCFmYCLNEKCGiyj9xpYUghC+CMG1gamhIISIm7gTlxBgi+xGCEITwjIWxKWTUYCEbo4UvgZmuPRZ0IQhBCGNhTEEIUvzaa1JTpr23BEwIQhDCu9UTaBCCGizJlN2dS0IcJDQ6GbtCEIIQHuQ7UHFkMjpps9U2RmnYakKe22ZJCEIQAh6IiIBJwtiNeJOKYAxgkCIvBCEIYTRfSPORGp00zBBxhYqwKZCOg1tCEIIQYhgyFZUUloqCBghf0sGIBsXHkIYQhCAEbG5O4QoimFCQTYC7MWGrgLcQhPDlEMjipNDRxgeFJy7WunKlhSAEISBD4yRs1QY8kxmzG86m4jedIwQhCCEPUElkaUxaEuxuxFQChhZ0IQhBCNl3oM0MLUxJNE1AyYcwFVQUEhWCEIQwiipNSCsZLW0AIxVRWhSpKCQEIQghQyCBrVuDlpgl1BQmgu14X0IQghCw+XIT4KKBKmL8nBiy1EQSghCEkL+ALoU2aEE6MUxpmJwYsig0IgQhCAGJKuQ1KoASYfVmkGsGqL8+QCEIQQjIkE3FKRU20kSl5oZcpzF1x2ZJCEIQAjYzY9ABBihSeCINWuSe6lC5EIQghDGkcSq0kr/JWk0Ai977CEgIQhACKow0lEUKVCPUUFGVNkPR+BWCEISABqjG5KDhDFL06FBGG7JoKAlBCEIYzRdaGKnImYakBlwD52iKFIIQhPC24S0azKRwTgMdqTDTQUoIQhAC/zGsFOxqGixiuNLmqnkfNmSFIAQh4B+VaEXV1OSQ8EYC2YizoxkjBCEIoRZaSVArGbRUdCXvnwosbaaEIAQhdN+pQgYoKqKchDOpwUuHp20QRAhCEMIotCaRlSwwFUNSuOiGG/Nn+2EIQQhCiANUG5pMm6YGLg1oJHM4DXVCEIIQOIRGCKkCUk/+8Vy6AWrYEFFXCEIQQg5ppIGFNDqTkUMDWaloJ7EHFWohCEEIlSGbGg5atIh4255LC+ok4ghBCEJ4kfnSNDykcSIDGBmUUhi8FWyFIAQh5N+aT83K1OCQEBc1atrgJ2nykCstBCF8OYTG3CQ3mhofYvY0TRUpptv1hCAEIWBRhQ4qNLx1a6iSjV2bL0IQghBe2ihRwZMetyYsGaDiICgEIQgBiyqt4UFDGcgoDdefCnNVwIUgBCEsB6h2aEkNy4nhmoa2JAhTE3g7RQpBCEJAISwyEB2ZoYWoQhuiSQBaXlMIQhBCFFqJQXoa2iDFNDU/1MAlIVQhCEEIc46RNE4NhCbg1Yg1LzyiMCsEIQghhjmTAEuFi8bEJabJSQAkijFCEIIQts0SFUCpWUoLbxPKnIoy+VDiACUEIQghFhTaIKWA1tRs0WaMBDaIICQEIQghf6E9CWKgoQQWt2T8pNAXKeSp8ApBCELog1uN+JGarDTgJBOHGETHU6QQhCCEK+GCCrCkwDbGLhnk8IcjBCEI4QrCtBB5PomyKXBBmygMVghCEEI9QJFQVRO2QE3M0/0HUiK4CkEIQuAQyGCTzNa2iKGbLI0fGvoSghCE8MQw5zceQhCCEIQgBCEIYXn8ASWHhX/SRqfZAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装面板"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装面板</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#免费版使用教程"><span class="post-toc-number">2.</span> <span class="post-toc-text">免费版使用教程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#专业版及收费插件测评"><span class="post-toc-number">3.</span> <span class="post-toc-text">专业版及收费插件测评</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>在现如今<code>VPS</code>服务器的普及下，很多站长都愿意购买<code>VPS</code>服务器而不是购买虚拟主机来跑网站和项目，一来是<code>VPS</code>服务器可以根据自己的需要来安装相关的插件及服务，二来是现阶段的服务器价格也能满足我们的成本负担。不过我们在使用<code>Linux</code>服务器建站的时候，纯粹使用<code>SSH</code>客户端操作的时候很麻烦，特别是对小白很不友好。所以很多玩服务器的朋友还是习惯使用<code>Web</code>面板来部署环境，这样我们可以非常轻松简单的管理网站。</p>
+<p>现阶段发展起来的<code>Web</code>免费以及付费的面板我们罗列出来大大小小至少能有<code>20-30</code>个，比如我们国内较为熟悉的<code>WDCP</code>、<code>宝塔</code>、<code>AMH</code>、<code>Lnmp</code>以及国外用户使用较多的<code>VestaCP</code>都还是不错的。本文就主要说下宝塔，该面板差不多是博主认为使用最方便，功能也是很全的，目前来说有免费版和专业版(其实也就是免费使用收费插件)，对于一般人来说，免费版够用了，当然专业版也有它的价值，比如可以免费使用很多好的插件，这里就详细的说下免费版使用教程及专业版插件测评，顺便说下使用方法让更多刚开始学会建站的小白了解下。</p>
+<h2 id="安装面板"><a href="#安装面板" class="headerlink" title="安装面板"></a>安装面板</h2><p>现阶段的宝塔面板已经更新到<code>6.2</code>版本，由于还处于不稳定状态，所以博主推荐安装<code>5.9</code>版本，系统建议选择<code>CentOS</code>。</p>
+<p><code>Linux</code>面板<code>5.9</code>(稳定版)安装命令：</p>
+<pre><code>#请使用纯净系统安装，也就是没安装过网站环境，比如PHP、Nginx、Mysql等
+#CentOS系统
+yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh
+#Ubuntu/Deepin系统：
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; sudo bash install.sh
+#Debian系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; bash install.sh
+#Fedora系统
+wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; bash install.sh</code></pre><p>先使用<code>SSH</code>客户端(这里推荐<code>Xshell</code>)登录<code>VPS</code>服务器，再把上面的安装脚本复制进去<code>Enter</code>运行，一分钟左右即可安装完成宝塔面板。安装完成后会直接在<code>SSH</code>客户端显示后台信息。<br><img src="https://www.southcat.net/usr/picture/BTCP(1).png" alt="请输入图片描述" title="请输入图片描述"><br>如果我们后续未修改密码却忘记了密码的话，可以在<code>SSH</code>客户端使用命令<code>bt default</code>来查看安装后的默认后台信息。</p>
+<h2 id="免费版使用教程"><a href="#免费版使用教程" class="headerlink" title="免费版使用教程"></a>免费版使用教程</h2><p><strong>1、网站环境搭建</strong><br>我们安装宝塔面板后根据信息登录后台，最开始是没有网站环境的，只有个面板而已，然后宝塔会提示让我们选择环境。<br><img src="https://www.southcat.net/usr/picture/BTCP(2).png" alt="请输入图片描述" title="请输入图片描述"><br>这里就根据你所安装的程序对环境版本的要求来进行选择了，博主一直使用<code>Lnmp</code>，所以就只选了<code>Nginx 1.12</code>、<code>PHP 7.1</code>、 <code>Mysql 5.5</code>，然后开始点击一键安装，直到安装完成，时间看你的机器性能，性能好就安装快，反之就慢。</p>
+<p>安装好了后，在首页就能让我们知道很多有用的信息，比如版本信息、在线时间、网站、数据库数量、服务器状态(进程管理/端口管理)软件、网络等等，总之很人性化。<br><img src="https://www.southcat.net/usr/picture/BTCP(3).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p><strong>2、添加域名</strong><br>如何进行网站搭建呢？首先肯定是需要你在你的域名服务商将域名的<code>A</code>记录解析到安装宝塔的<code>VPS</code>服务器了，然后再选择面板左侧网站-添加站点，后面有其他修改默认页面（<code>404</code>等页面）等功能，我们可以按需设置即可。<br><img src="https://www.southcat.net/usr/picture/BTCP(4).png" alt="请输入图片描述" title="请输入图片描述"><br>然后设置好后，我们点击该域名的设置按钮，可以看到如下功能：<br><img src="https://www.southcat.net/usr/picture/BTCP(5).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<pre><code>站点设置：域名管理，可以管理主机名。
+子目录绑定：可以为当前站点绑定其他域名作为子目录域名。
+网站目录：可以自己修改网站的入口。
+流量限制：利用nginx相关参数来对当前站点进行限制。
+伪静态：我们可以自行修改或者添加程序所需的伪静态配置，而且上面包含很多程序常用的伪静态配置。
+默认文档：默认文档为当前站点的默认首页，我们可以按需设置。
+配置文件：配置文件为当前站点的默认配置信息，请谨慎修改。
+SSL：当前宝塔是SSL证书已经非常成熟，我们可以自己填写自己的证书，也可以使用免费的Let&apos;s Encrypt证书，或者宝塔账号实名后，使用宝塔自己签发的证书。
+PHP版本：我们可以根据需要在此处切换PHP的版本。
+Tomcat：采用Java环境时，可以配置Tomcat。
+301重定向：我们可以对当前站点开启301重定向到其他站点。
+反向代理：反向代理在采用Nginx环境时可以使用，我们可以利用Nginx的特性，来代理其他网站。
+防盗链：防盗链采用Nginx规则，来对域名的URL后缀设置仅允许访问的规则，避免流量被盗用。
+响应日志：响应日志可以看到当前网站是所有记录信息。</code></pre><p><strong>3、文件管理</strong><br>域名添加并设置好了后，就需要上传网站源码了，选择面板左侧网站-文件，这是强大好用的文件管理器，支持鼠标右键，支持复制粘贴/删除/上传等常用功能，可以直接替换<code>FTP</code>的功能使用。<br><img src="https://www.southcat.net/usr/picture/BTCP(6).png" alt="请输入图片描述" title="请输入图片描述"><br>通常网站根目录在<code>/www/wwwroot</code>中，进入域名文件夹上传自己所需的网站源码即可。</p>
+<p><strong>4、数据库管理</strong><br>宝塔对数据库大部分操作都已经实现了，同时有导入导出功能(这个功能是利用了<code>mysqldump</code>来对数据库进行操作)，使用起来还是很方便的。<br><img src="https://www.southcat.net/usr/picture/BTCP(7).png" alt="请输入图片描述" title="请输入图片描述"><br>当然如果我们需要改动数据库文件的话，可以通过上面的<code>phpMyAdmin</code>入口进入到数据库<code>WEB</code>管理界面(这里需要事先安装好<code>phpMyAdmin</code>)，对数据库进行一系列操作，记得提前在面板中同步一下数据库。<br><img src="https://www.southcat.net/usr/picture/BTCP(12).png" alt="请输入图片描述" title="请输入图片描述"><br>这里基本上建站只需要做到以上<code>4</code>个步骤就可以了，接下来就说下其余的功能。</p>
+<p><strong>5、监控</strong><br>宝塔的监控项目可以对系统的详细监控，比如系统负载、<code>CPU</code>、内存，<code>IO</code>等，更清楚的查看服务器全天候运行状况，默认保留30天。<br><img src="https://www.southcat.net/usr/picture/BTCP(8).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p><strong>6、安全</strong><br><code>SSH</code>管理、防火墙、面板操作日志都在这里，我们可以对服务器整个操作进行记录跟踪。在这里更改<code>SSH</code>端口防止被爆破扫描，或者直接关闭<code>SSH</code>登录，开启防火墙端口等操作。<br><img src="https://www.southcat.net/usr/picture/BTCP(9).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p><strong>7、宝塔计划任务</strong><br>在所有服务器中，计划任务非常重要，因为服务器随时会面临各种问题，而计划任务的备份就是你最后的救星，所以我们应该妥善设置好自己的服务器计划任务来对数据保驾护航。</p>
+<p>任务类型包含以下部分：<code>Shell</code>脚本、备份网站、备份数据库、日志切割、释放内存、访问<code>URL</code>。<br><img src="https://www.southcat.net/usr/picture/BTCP(10).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p><strong>8、软件管理</strong><br>软件管理里面对宝塔上付费以及免费的软件都能在这里进行购买、安装、配置、卸载操作。<br><img src="https://www.southcat.net/usr/picture/BTCP(11).png" alt="请输入图片描述" title="请输入图片描述"><br>宝塔面板在追求便利和快速的同时，也保留了配置文件的编辑功能，官网提供了很多程序的默认路径，这对我们进行修改提供了很多帮助，所以无论你是小白还是大神，都能简单的使用宝塔面板。</p>
+<h2 id="专业版及收费插件测评"><a href="#专业版及收费插件测评" class="headerlink" title="专业版及收费插件测评"></a>专业版及收费插件测评</h2><p>博主近几天获得了永久专业版，就顺便体验了下收费插件(专业版是永久免费使用，免费版需要按月付费)，这里就详细的测评下功能，如果你对某些插件有兴趣的，可以注册个宝塔账号→注册链接，使用该链接注册并绑定宝塔的直接赠送半年的宝塔小程序，然后单独购买一个月的插件体验下。如果你有钱的话，功能也需要，可以试着买专业版，永久使用收费插件。</p>
+<p>目前专业版可以免费使用以下几个收费插件：<br><img src="https://www.southcat.net/usr/picture/BTCP(13).png" alt="请输入图片描述" title="请输入图片描述"><br>这些插件大多都是其他软件含有的功能，如果我们能使用免费版，大多可以自己安装其他软件来实现上面的功能，但是有句话说得好，存在必有存在的价值，如果一个面板对所有能用到的程序进行整合的话，也未尝不是一件好事情。</p>
+<p>现阶段的宝塔面板最稳定的就是<code>5.9</code>版本，在<code>6.0</code>版本中，整个界面已经趋于扁平化，不像<code>5.9</code>这样的<code>Bootstrap</code>风格非常明显，由于<code>6.0</code>版本还未趋于成熟，所以我们采用<code>5.9</code>的版本来为大家做详细测试。</p>
+<p>专业版首页如下：<br><img src="https://www.southcat.net/usr/picture/BTCP(14).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>专业版插件页面：<br><img src="https://www.southcat.net/usr/picture/BTCP(15).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p><strong>1、网站防篡改程序</strong></p>
+<pre><code>官方介绍：事件型防篡改程序，可有效保护网站重要文件不被木马篡改。
+目前网页防篡改的实现技术主要有：外挂轮询技术、核心内嵌技术、事件触发技术等，网页防篡改主流产品现在市场上也比较多，由于宝塔面板进行了整合，所以我们详细测试下宝塔的防篡改功能。</code></pre><p>为了测试防篡改效果，我们先从软件市场的一件部署中部署一个<code>Wordpress</code>博客程序，并且通过<code>Host</code>回源的方法来对域名进行解析。<br><img src="https://www.southcat.net/usr/picture/BTCP(16).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/BTCP(17).png" alt="请输入图片描述" title="请输入图片描述"><br>在添加站点并按照<code>Wordprss</code>要求安装好博客后，我们在插件中开启这个网站的防篡改开关。<br><img src="https://www.southcat.net/usr/picture/BTCP(18).png" alt="请输入图片描述" title="请输入图片描述"><br>然后我们利用自带的文件管理去修改<code>.php</code>文件，注意，防篡改保护的文件类型在上图的保护菜单中可以自定义设置。</p>
+<p>这里我们尝试修改一下<code>wp-config.php</code>，该文件为整个博客的数据库配置文件。<br><img src="https://www.southcat.net/usr/picture/BTCP(19).png" alt="请输入图片描述" title="请输入图片描述"><br>将其修改为<code>123</code>后，进行保存操作。刷新后，打开整个博客的其他页面均可正常浏览，我们回到防篡改插件中查看修改记录，可以发现如下的篡改日志记录：<br><img src="https://www.southcat.net/usr/picture/BTCP(20).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>宝塔自带的文件管理方式就和我们常见的<code>FTP</code>方式一样，通过在线文件管理，我们可以很方便的对程序代码进行修改，由于篇幅问题，我们就测试了一下防篡改的文件保护功能，对于防篡改，还有其他很多的防护点可以进行测试，刚才通过上面测试我们可以发现，对程序的修改操作已经进行了拦截，在我们部署的很多程序中，挂马和篡改是现阶段网站遇到的最大问题，其他很多程序也有防篡改功能，但是实质上，我们还是乐意将程序整合在一起，通过一个入口来管理所有的插件，这样的操作方式是最简单也是最方便的。</p>
+<p><strong>2、网站监控报表</strong></p>
+<pre><code>官方介绍：网站监控报表可以实时精确统计网站流量、ip、uv、pv、请求、蜘蛛等数据。</code></pre><p>对于网站监控，在我们建站初期，都喜欢采用譬如：<code>CNZZ</code>、站长之家、<code>51La</code>、百度统计等监控方式来查看网站的访问量，这些程序大多都采用嵌入页面的方式来对网站进行<code>PV</code>和<code>IP</code>的记录，但是前不久，某一个监控程序爆出了监控被劫持的事情，采用该监控的网站会出现恶意广告，并且宝塔官方采用从面板底层对我们部署的站点进行监控，无需在网站中设置任何代码，只要安装好该插件，即可对网站中存在的<code>Web</code>站点进行监控。</p>
+<p>刚才我们测试防篡改的时候，添加了一个<code>test.com</code>站点，我们测试中对该站点的操作已经被网站监控报表记录了下来，当然，我们采用的是<code>Host</code>回源方式，其他人根本无法访问到改地址，这个记录全是我这边测试出来的结果。<br><img src="https://www.southcat.net/usr/picture/BTCP(21).png" alt="请输入图片描述" title="请输入图片描述"><br>我们点击详情，可以查看到改站点的详细记录。<br><img src="https://www.southcat.net/usr/picture/BTCP(22).png" alt="请输入图片描述" title="请输入图片描述"><br>里面可以详细记录：监控概览、流量统计、蜘蛛统计、错误日志、访问客户端以及网站日志的详细情况，对于我们的站点监控，该项目已经能够非常详细明了的进行监控操作。整个菜单部分截图如下：<br><img src="https://www.southcat.net/usr/picture/BTCP(23).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/BTCP(24).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/BTCP(25).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/BTCP(26).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/BTCP(27).png" alt="请输入图片描述" title="请输入图片描述"><br>对于我们整合面板来说，网站监控报表提供的功能已经足够我们日常使用。</p>
+<p><strong>3、Apache防火墙&amp;Nginx防火墙</strong></p>
+<pre><code>官方介绍：有效防止sql注入/xss/一句话木马等常见渗透攻击。宝塔网站防火墙依赖luaJIT组件，部分环境版本可能要重装后才能使用。
+主要功能：
+1、常规过滤，包括GET(URI、URI参数)、POST、Cookie、User-Agent、Header、IP黑白名单、URI黑白名单等。
+2、禁止国外站点访问，开启后，该站点只允许国内用户访问(包括香港、澳门、台湾)。
+3、URI加密保护，常用于对网站后台的保护。
+4、URI专用规则，快速修补漏洞。
+5、CDN模式，如果您的站点使用了CDN，请开启CDN模式，否则防火墙可能影响网站的正常访问。</code></pre><p>由于当前当前面板安装的是<code>Lnmp</code>构架，所以我们对<code>Nginx</code>防火墙进行在线测试。<br><img src="https://www.southcat.net/usr/picture/BTCP(28).png" alt="请输入图片描述" title="请输入图片描述"><br>全局配置中是对当前宝塔面板所有程序进行控制，举个例子，我们需要对全部站点进行<code>CC</code>防护，就能在全局配置中进行设置操作，如果需要对某一个站点进行操作的话，我们点击站点配置即可对单独站点进行配置操作。<br><img src="https://www.southcat.net/usr/picture/BTCP(29).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/BTCP(30).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/BTCP(31).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/BTCP(32).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p><strong>4、宝塔负载均衡</strong></p>
+<pre><code>官方介绍：宝塔负载均衡是基于Nginx的负载均衡。</code></pre><p>关于负载均衡的解释：</p>
+<pre><code>由于目前现有网络的各个核心部分随着业务量的提高，访问量和数据流量的快速增长，其处理能力和计算强度也相应地增大，使得单一的服务器设备根本无法承担。在此情况下，如果扔掉现有设备去做大量的硬件升级，这样将造成现有资源的浪费，而且如果再面临下一次业务量的提升时，这又将导致再一次硬件升级的高额成本投入，甚至性能再卓越的设备也不能满足当前业务量增长的需求。
+
+针对此情况而衍生出来的一种廉价有效透明的方法以扩展现有网络设备和服务器的带宽、增加吞吐量、加强网络数据处理能力、提高网络的灵活性和可用性的技术就是负载均衡。</code></pre><p>这里就不说具体使用方法了，宝塔官方说的很清楚了，查看→传送门。</p>
+<p>该功能对于<code>Nginx</code>来说，反向代理和负载均衡本身就是其最大的功能模块，但是由于手动配置的繁琐性，导致该功能的运用很少，宝塔将繁琐的命令改为图形界面的配置方式来说，大大增加了我们的可用性，使得我们普通人也能对复杂的<code>Nginx</code>进行负载均衡配置。</p>
+<p><strong>5、MySQL主从复制</strong></p>
+<pre><code>官方介绍：轻松实现MySQL主从复制、主主复制。</code></pre><p>关于主从复制的解释：</p>
+<pre><code>MySQL主从复制就是两台数据库的相互复制，就是分一个主机器一个备节点的机器，当主机器插入一条记录之后，备节点的机器也会插入一条记录，是不是感觉很很神奇呢？当时我听到这个的时候，哇，还有这种神器啊，那么再也不用担心数据压力100%，在实际的环境中大多数数据库都是并发比较大，所以需要通过一些技术做数据库的主从复制。</code></pre><p>对于<code>MySQL</code>主从复制来说，百度能查到很多教程，在<code>MySQL</code>官方文档中也能获取到相关文档，但是我们知其然而不知其所以然，由于涉及到很多复杂的命令，除非专业的运维人员才能搞定，对于我们简单的使用者来说，我们只是需要简单的<code>MySQL</code>数据库复制，而不想涉及到过多的专业命令，所以这个宝塔<code>MySQL</code>主从复制插件非常适合我们使用。</p>
+<p>详细的使用方法查看→传送门。</p>
+<p>对于该功能最蛋疼的是，我们采用的<code>MySQL</code>主从面板需要购买两个授权版本，这样才能在两个服务器上进行主从复制操作。</p>
+<p><strong>6、宝塔任务管理器</strong></p>
+<pre><code>官方介绍：轻松管理进程、启动项、用户、服务、计划任务、会话。</code></pre><p>宝塔任务管理器就有点类似于<code>Shell</code>界面下的<code>top</code>命令，但是宝塔任务管理器又新增了很多管理功能，可以对、进程、启动项、服务、网络、用户、计划任务、会话等信息进行管理。</p>
+<p>进程描述：追踪每个进程的CPU/内存/磁盘使用情况，点击进程名称可查看该进程更详细的信息。<br><img src="https://www.southcat.net/usr/picture/BTCP(46).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>启动项描述：列出所有随系统启动的项目，包括<code>init</code>服务，用户自定义启动脚本。<br><img src="https://www.southcat.net/usr/picture/BTCP(47).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>服务描述：每个服务有对应的运行级别设置，若在对应的运行级别设为开启，则表示系统将在对应运行级别启动该服务。<br><img src="https://www.southcat.net/usr/picture/BTCP(48).png" alt="请输入图片描述" title="请输入图片描述"><br>下面列出每个运行级别代表的状态：</p>
+<pre><code>Level-0: 关机
+Level-1: 单用户模式
+Level-2: 无网络的多用户模式
+Level-3: 命令行模式下的完全的多用户模式(服务器通常在此模式下运行)
+Level-4: 系统未使用
+Level-5: 图形GUI模式(部分安装了GUI的系统会自动进入此模式)
+Level-6: 重启</code></pre><p>网络描述：快速查看当前服务器网络状态。<br><img src="https://www.southcat.net/usr/picture/BTCP(49).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>用户描述：可以在此处看到系统中存在的所有用户，并可以进行相关管理操作。<br><img src="https://www.southcat.net/usr/picture/BTCP(50).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>计划任务描述：解析<code>crond</code>服务中的所有计划任务，用户可查看任务周期、内容，或删除指定任务。<br><img src="https://www.southcat.net/usr/picture/BTCP(51).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>会话描述：列出当前通过<code>SSH</code>成功登陆系统的会话。<br><img src="https://www.southcat.net/usr/picture/BTCP(52).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p><strong>7、宝塔微信小程序</strong></p>
+<pre><code>官方介绍：宝塔小程序提供服务器监控及安全扫码登录面板</code></pre><p>宝塔微信小程序目前只支持宝塔<code>Linux</code>面板，可以关联绑定多台服务器，单台服务器也可以授权多个微信用户绑定，拥有服务器监控功能以及安全扫码登录面板功能，方便用户随时查看服务器状态。绑定方法查看→传送门。</p>
+<p>目前该功能貌似没卵用，也就看下服务器状态而已，不过官方介绍说后续会逐渐增加更多的面板管理功能给我们使用。到时候再看了。</p>
+<p><strong>8、宝塔数据同步工具</strong></p>
+<pre><code>官方介绍：基于Rsync开发的数据同步工具。</code></pre><p>在<code>Linux</code>下，我们传输文件使用最多的就是<code>SCP</code>和<code>Rsync</code>两个插件，我更喜欢使用<code>SCP</code>来进行传输，但是在很多场景下，我们传输的内容非常多，或者说，我们需要对文件进行增量传输，这时候，<code>Rsync</code>的优势就体现了出来，所以这个程序也就是利用<code>Rsync</code>功能写的一个小工具，可以让我们图形界面的来使用<code>Rsync</code>同步工具。</p>
+<p>详细使用方法查看→传送门</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-12T10:58:53.000Z" itemprop="datePublished">2019-12-12</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.238Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/12/linux-vps-e4-bd-bf-e7-94-a8webbench-apache-ab-e8-bf-9b-e8-a1-8c-e7-bd-91-e7-ab-99-e5-8e-8b-e5-8a-9b-e6-b5-8b-e8-af-95/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux VPS使用Webbench/Apache-ab进行网站压力测试</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/12/e4-bd-bf-e7-94-a8crt-e5-92-8cca-bundle-e6-96-87-e4-bb-b6-e7-bb-99-e7-bd-91-e7-ab-99-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">使用crt和ca-bundle文件给网站配置ssl证书教程</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

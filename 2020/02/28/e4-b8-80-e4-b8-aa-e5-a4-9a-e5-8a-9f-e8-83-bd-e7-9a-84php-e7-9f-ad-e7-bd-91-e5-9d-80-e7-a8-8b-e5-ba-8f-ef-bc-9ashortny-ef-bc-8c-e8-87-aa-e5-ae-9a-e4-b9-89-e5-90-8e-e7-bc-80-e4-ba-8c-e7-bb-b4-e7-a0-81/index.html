@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>一个多功能的PHP短网址程序：Shortny，自定义后缀/二维码/链接统计等 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="一个多功能的PHP短网址程序：Shortny，自定义后缀&#x2F;二维码&#x2F;链接统计等 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/02/28/e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84php-e7-9f-ad-e7-bd-91-e5-9d-80-e7-a8-8b-e5-ba-8f-ef-bc-9ashortny-ef-bc-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e5-90-8e-e7-bc-80-e4-ba-8c-e7-bb-b4-e7-a0-81/"><meta property="og:locale" content="en"><meta name="description" content="说明：Shortny是一款国外的PHP短网址源码，程序非常小巧，但是功能是很多的，支持自定义后缀、加密访问，查看链接统计，而且还支持放广告，这个广告功能相信有些人会喜欢。界面也比较好看，支持白天&#x2F;夜晚切换模式，由于官方的程序是收费的，所以这里博主提供的是由顶点网破解的最新版Shortny v2.0.1，顺便说下安装方法和一些细节处理。 截图 特性#前端 简洁、优雅、反应灵敏的设计 创建URL 创建 - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/Shortny(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/Shortny(2).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/Shortny(3).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/Shortny(4).png"><meta property="article:published_time" content="2020-02-28T06:03:54.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.250Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.250Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/02/28/e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84php-e7-9f-ad-e7-bd-91-e5-9d-80-e7-a8-8b-e5-ba-8f-ef-bc-9ashortny-ef-bc-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e5-90-8e-e7-bc-80-e4-ba-8c-e7-bb-b4-e7-a0-81/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/02/28/e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84php-e7-9f-ad-e7-bd-91-e5-9d-80-e7-a8-8b-e5-ba-8f-ef-bc-9ashortny-ef-bc-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e5-90-8e-e7-bc-80-e4-ba-8c-e7-bb-b4-e7-a0-81/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/02/28/e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84php-e7-9f-ad-e7-bd-91-e5-9d-80-e7-a8-8b-e5-ba-8f-ef-bc-9ashortny-ef-bc-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e5-90-8e-e7-bc-80-e4-ba-8c-e7-bb-b4-e7-a0-81/"
+    },
+    "headline": "一个多功能的PHP短网址程序：Shortny，自定义后缀/二维码/链接统计等 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-02-28T06:03:54.000Z",
+    "dateModified": "2020-04-24T09:34:44.250Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：Shortny是一款国外的PHP短网址源码，程序非常小巧，但是功能是很多的，支持自定义后缀、加密访问，查看链接统计，而且还支持放广告，这个广告功能相信有些人会喜欢。界面也比较好看，支持白天/夜晚切换模式，由于官方的程序是收费的，所以这里博主提供的是由顶点网破解的最新版Shortny v2.0.1，顺便说下安装方法和一些细节处理。 截图 特性#前端 简洁、优雅、反应灵敏的设计 创建URL 创建 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=一个多功能的PHP短网址程序：Shortny，自定义后缀/二维码/链接统计等" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=一个多功能的PHP短网址程序：Shortny，自定义后缀/二维码/链接统计等&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=一个多功能的PHP短网址程序：Shortny，自定义后缀/二维码/链接统计等" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFY0lEQVR42u3dyXITQRREUf3/T4sNC4buzJtleQF9vcFgWao6ini8KezX24/3SwIRRBBBBBFEiAiv8PHbN/z8+9XX//z87jl+/fqfz3n1Wu37rv796px3ZxJBBBGuES6DRrjk1eEoJEG+e2w6R4K6vZcIIohwi3D3gjGwhAC3QpwG0bvXa/cSQQQRPoeQkhOa2KTLtgvTy4sgggjfh0ATGXKYBNqKo7vHpKAtgggi7Ah3hUa7+NXn7TnugiIFbpf7eBUpgggPQ2gB61/982PdZhFEeBDCUqCQxOqrgTEVR6Sp8i1TaRFEeBACaajSRmj7PjKoSWBkMETvI4IIIuTAuAwycTJy0KCljdQEf1eYiSCCCAxhCVgkQKVD3AW+0+Wx1hCOwyARRBBhKqBSQbIkWW1ISoe76WJrUSeCCCL0ucOSBK1QCfAELZ0dN2hEEEEEPHxZGiI0eWoHp8nOSdCsjVYRRBAhBrClQbIMb0iTlAbN1kjFi1siiCDCizZHaNOSFDW06ULg6BIXriJFEEGEGsxOByhL0CTLFmsBRYKsCCKI0GeRdDliOTxBJc1R0mxpgx0RRBBhD4zLUhW5AGl4kgEuaaiQNw8lSyKI8GCEdXGTFEgEaLkALY5aQfjXOUUQQQSULBEIOsglDd01KSLDHPTGiiCCCJeBsSVAsQgZlj6Xha3W6CFnqm+qCCKIUJc06LCUDF3J5UjgW4e77ZwiiCBCRrhLYNZBZ1rsaI3UtcFDhzrxzRRBBBHikgZZ5FxeeFnSoM3SFNCXAkwEEUR4xVlkW5QmIG1pmzZAW1BbCy7UWRJBBBFwYEwDUNIkWYYuS3OVDow+kiyJIMIDEdrl24u3IoosdJ8MgknCdHleEUQQAQXGZeC6DGTJ406aO/Sc0/8OIojwYATS6DgZqqDGRlnQpN+7NIBFEEGEHWFpXrYlKvr8ZFmUPL4NdEUQQYSO0IIPKYSWxggd7Jzg4MArgggi3BZQJ4VQW7wgQbA1WtckihR6IoggQv59kekgLTiRBc1liEKHQe2caGFMBBFEOGq0kgSEJFAnBRp5U9Jj4plEEEGEGhhpI6Qtf6aFrNrsAAtgdPErFmciiCDCJUJLYlAx8mI/uJoOWJdFUDqMjYFRBBFEQItaywJWg10D5BKM2xuBA6MIIohQGxHLghUdoJDhSrrQOohFnSURRBDhS7+ski53Lo2YpUmbAioq3EQQQYS4uEWDWStqyJJHGry0AoosYaCAKYIIIqACiiQmtMmxQKciakFLwRBXkSKI8FCEFPToIue6lEGTq4ZHAiROlkQQQYQ3CSK04dISlxRYyUClDWtPmq8iiCAC7zEug80WtGjhQ7GXgisGbBFEEKEmS+mF1mSJJFvLRWljhwRfEUQQgSVLLbDQpgYZ6LRASJ+TAF2iiSCCCLeBsRU+tPlKFiZOCigCmpa9UKNVBBFEeJNgR5ojLYCmpgi5bBvIpGA6D2RFEOHhCMvAIyVNS+FFE5xlUDufTwQRRLgtoJaBKh3ApCRoGeLQAoosk8QqUgQRREC/BG8duLbDTwkNCKjrcFkEEUQ4+0W6p0sXpGFCmyunyRJqxoggggho+EKHobSAOhmq0kSNBENcQIkgggj4h86lJ02LlGQwki64LGuRxGveXhNBhAcikMsuhVVLelpyRIYuZKCTij4RRBAhI7Qlqhb8SOODFDetMUMatHi5SwQRRDhCIA1PEmCXpYplueOkIBNBBBE+h0CbqcsFSZOGNF3JUFgEEUToCKlh2RYe1qUtsnSxDH1JM0cEEUTgCK3wIA2XVtw05GXwuiRH8Y0UQQQR5oHs//whgggiiCCCCCJcfvwAmZSnQc+1wp0AAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">一个多功能的PHP短网址程序：Shortny，自定义后缀/二维码/链接统计等</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-02-28</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=一个多功能的PHP短网址程序：Shortny，自定义后缀/二维码/链接统计等&url=http://hexo.southcat.net/2020/02/28/e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84php-e7-9f-ad-e7-bd-91-e5-9d-80-e7-a8-8b-e5-ba-8f-ef-bc-9ashortny-ef-bc-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e5-90-8e-e7-bc-80-e4-ba-8c-e7-bb-b4-e7-a0-81/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=一个多功能的PHP短网址程序：Shortny，自定义后缀/二维码/链接统计等&url=http://hexo.southcat.net/2020/02/28/e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84php-e7-9f-ad-e7-bd-91-e5-9d-80-e7-a8-8b-e5-ba-8f-ef-bc-9ashortny-ef-bc-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e5-90-8e-e7-bc-80-e4-ba-8c-e7-bb-b4-e7-a0-81/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/02/28/e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84php-e7-9f-ad-e7-bd-91-e5-9d-80-e7-a8-8b-e5-ba-8f-ef-bc-9ashortny-ef-bc-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e5-90-8e-e7-bc-80-e4-ba-8c-e7-bb-b4-e7-a0-81/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/02/28/e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84php-e7-9f-ad-e7-bd-91-e5-9d-80-e7-a8-8b-e5-ba-8f-ef-bc-9ashortny-ef-bc-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e5-90-8e-e7-bc-80-e4-ba-8c-e7-bb-b4-e7-a0-81/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/02/28/e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84php-e7-9f-ad-e7-bd-91-e5-9d-80-e7-a8-8b-e5-ba-8f-ef-bc-9ashortny-ef-bc-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e5-90-8e-e7-bc-80-e4-ba-8c-e7-bb-b4-e7-a0-81/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/02/28/e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84php-e7-9f-ad-e7-bd-91-e5-9d-80-e7-a8-8b-e5-ba-8f-ef-bc-9ashortny-ef-bc-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e5-90-8e-e7-bc-80-e4-ba-8c-e7-bb-b4-e7-a0-81/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/02/28/e4-b8-80-e4-b8-aa-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-9a-84php-e7-9f-ad-e7-bd-91-e5-9d-80-e7-a8-8b-e5-ba-8f-ef-bc-9ashortny-ef-bc-8c-e8-87-aa-e5-ae-9a-e4-b9-89-e5-90-8e-e7-bc-80-e4-ba-8c-e7-bb-b4-e7-a0-81/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFY0lEQVR42u3dyXITQRREUf3/T4sNC4buzJtleQF9vcFgWao6ini8KezX24/3SwIRRBBBBBFEiAiv8PHbN/z8+9XX//z87jl+/fqfz3n1Wu37rv796px3ZxJBBBGuES6DRrjk1eEoJEG+e2w6R4K6vZcIIohwi3D3gjGwhAC3QpwG0bvXa/cSQQQRPoeQkhOa2KTLtgvTy4sgggjfh0ATGXKYBNqKo7vHpKAtgggi7Ah3hUa7+NXn7TnugiIFbpf7eBUpgggPQ2gB61/982PdZhFEeBDCUqCQxOqrgTEVR6Sp8i1TaRFEeBACaajSRmj7PjKoSWBkMETvI4IIIuTAuAwycTJy0KCljdQEf1eYiSCCCAxhCVgkQKVD3AW+0+Wx1hCOwyARRBBhKqBSQbIkWW1ISoe76WJrUSeCCCL0ucOSBK1QCfAELZ0dN2hEEEEEPHxZGiI0eWoHp8nOSdCsjVYRRBAhBrClQbIMb0iTlAbN1kjFi1siiCDCizZHaNOSFDW06ULg6BIXriJFEEGEGsxOByhL0CTLFmsBRYKsCCKI0GeRdDliOTxBJc1R0mxpgx0RRBBhD4zLUhW5AGl4kgEuaaiQNw8lSyKI8GCEdXGTFEgEaLkALY5aQfjXOUUQQQSULBEIOsglDd01KSLDHPTGiiCCCJeBsSVAsQgZlj6Xha3W6CFnqm+qCCKIUJc06LCUDF3J5UjgW4e77ZwiiCBCRrhLYNZBZ1rsaI3UtcFDhzrxzRRBBBHikgZZ5FxeeFnSoM3SFNCXAkwEEUR4xVlkW5QmIG1pmzZAW1BbCy7UWRJBBBFwYEwDUNIkWYYuS3OVDow+kiyJIMIDEdrl24u3IoosdJ8MgknCdHleEUQQAQXGZeC6DGTJ406aO/Sc0/8OIojwYATS6DgZqqDGRlnQpN+7NIBFEEGEHWFpXrYlKvr8ZFmUPL4NdEUQQYSO0IIPKYSWxggd7Jzg4MArgggi3BZQJ4VQW7wgQbA1WtckihR6IoggQv59kekgLTiRBc1liEKHQe2caGFMBBFEOGq0kgSEJFAnBRp5U9Jj4plEEEGEGhhpI6Qtf6aFrNrsAAtgdPErFmciiCDCJUJLYlAx8mI/uJoOWJdFUDqMjYFRBBFEQItaywJWg10D5BKM2xuBA6MIIohQGxHLghUdoJDhSrrQOohFnSURRBDhS7+ski53Lo2YpUmbAioq3EQQQYS4uEWDWStqyJJHGry0AoosYaCAKYIIIqACiiQmtMmxQKciakFLwRBXkSKI8FCEFPToIue6lEGTq4ZHAiROlkQQQYQ3CSK04dISlxRYyUClDWtPmq8iiCAC7zEug80WtGjhQ7GXgisGbBFEEKEmS+mF1mSJJFvLRWljhwRfEUQQgSVLLbDQpgYZ6LRASJ+TAF2iiSCCCLeBsRU+tPlKFiZOCigCmpa9UKNVBBFEeJNgR5ojLYCmpgi5bBvIpGA6D2RFEOHhCMvAIyVNS+FFE5xlUDufTwQRRLgtoJaBKh3ApCRoGeLQAoosk8QqUgQRREC/BG8duLbDTwkNCKjrcFkEEUQ4+0W6p0sXpGFCmyunyRJqxoggggho+EKHobSAOhmq0kSNBENcQIkgggj4h86lJ02LlGQwki64LGuRxGveXhNBhAcikMsuhVVLelpyRIYuZKCTij4RRBAhI7Qlqhb8SOODFDetMUMatHi5SwQRRDhCIA1PEmCXpYplueOkIBNBBBE+h0CbqcsFSZOGNF3JUFgEEUToCKlh2RYe1qUtsnSxDH1JM0cEEUTgCK3wIA2XVtw05GXwuiRH8Y0UQQQR5oHs//whgggiiCCCCCJcfvwAmZSnQc+1wp0AAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#特性"><span class="post-toc-number">2.</span> <span class="post-toc-text">特性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二维码修改"><span class="post-toc-number">4.</span> <span class="post-toc-text">二维码修改</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong><code>Shortny</code>是一款国外的<code>PHP</code>短网址源码，程序非常小巧，但是功能是很多的，支持自定义后缀、加密访问，查看链接统计，而且还支持放广告，这个广告功能相信有些人会喜欢。界面也比较好看，支持白天/夜晚切换模式，由于官方的程序是收费的，所以这里博主提供的是由顶点网破解的最新版<code>Shortny v2.0.1</code>，顺便说下安装方法和一些细节处理。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/Shortny(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/Shortny(2).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/Shortny(3).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/Shortny(4).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><pre><code>#前端
+简洁、优雅、反应灵敏的设计
+创建URL
+创建自定义URL
+密码保护的链接
+链接统计
+暗色主题
+小书签
+复制和共享链接
+
+#后端
+删除网址
+编辑网站设置
+添加或编辑广告
+分析
+使用自定义CSS
+
+#功能
+垃圾邮件检查器
+所有输入都经过验证以进行保护。
+安全支护板
+命中计数</code></pre><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>环境要求：</strong><code>PHP</code>、<code>Mysql</code>、<code>Nginx</code>/<code>Apache</code>，搭建方法自行选择，这里使用宝塔演示。</p>
+<p><strong>1、安装宝塔</strong></p>
+<pre><code>#CentOS系统
+wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh
+#Ubuntu系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh
+#Debian系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh</code></pre><p>安装完成后，进入面板，点击左侧软件管理，然后安装<code>PHP</code>、<code>Nginx</code>或<code>Apache</code>、<code>Mysql</code>。</p>
+<p><strong>2、上传程序</strong><br>点击面板左侧-添加站点，数据库选择<code>Mysql</code>，设置好数据库名称、密码。</p>
+<p>然后上传源码到根目录并解压出来(源码下载：Shortny_v2.0.1)，也可以直接在<code>SSH</code>客户端使用命令：</p>
+<pre><code>#将下面根目录地址改成自己的再运行
+cd /www/wwwroot/www.southcat.net
+wget https://www.southcat.net/usr/down/Shortny_v2.0.1.zip
+unzip Shortny_v2.0.1.zip &amp;&amp; rm -rf Shortny_v2.0.1.zip</code></pre><p><strong>3、伪静态设置</strong></p>
+<pre><code>#Apache，编辑.htaccess文件，将本地地址修改成自己的域名，比如：
+ErrorDocument 404 https://www.southcat.net/404
+ErrorDocument 403 https://www.southcat.net/404
+
+#Nginx，点击域名设置-伪静态，然后将下面例子的域名改成自己的，再复制进去，例子：
+rewrite ^/about /about.php last;
+rewrite ^/api-about /api-about.php last;
+rewrite ^/contact /contact.php last;
+rewrite ^/tos /tos.php last;
+rewrite ^/([^/.]+)/?$ /link.php?id=$1 last;
+rewrite ^/404 /404.php last;
+error_page 404 http://www.southcat.net/404;
+error_page 403 http://www.southcat.net/404;</code></pre><p>最后开始安装，由于伪静态问题，只能通过具体路径安装，链接如下：</p>
+<pre><code>#安装路径，记得修改下面域名地址
+https://www.southcat.net/install/index.html
+#后台路径
+https://www.southcat.net/admin/index.php</code></pre><p>安装完成后，默认用户名和密码均为<code>admin</code>。</p>
+<h2 id="二维码修改"><a href="#二维码修改" class="headerlink" title="二维码修改"></a>二维码修改</h2><p>源码默认的使用<code>google</code>的<code>api</code>生成二维码图片，在国内访问肯定是不会显示出来的，这就大大减少了体验，不过不用慌，有爱的博主自然会提前研究下解决方法，这里就说下，使其在国内也可以使用二维码功能。</p>
+<p>1、下载博主提供的二维码文件，下载地址：Shortnyqr.zip。</p>
+<p>2、文件解压出<code>3</code>个文件，如果你的短地址网站使用<code>http</code>，那将<code>http_qr</code>文件命名为<code>qr</code>；反之使用<code>https</code>，那么将<code>https_qr</code>命名为<code>qr</code>。然后再将<code>phpqrcode</code>和重新命令的<code>qr</code>文件上传到网站根目录。</p>
+<p>3、找到网站根目录<code>stats.php</code>文件的<code>87</code>行和<code>functions/created.php</code>文件的<code>71</code>行，将<code>src</code>后面的参数替换下，修改如下：</p>
+<pre><code>#记得将域名替换成自己的
+src=&quot;https://www.southcat.net/qr.php?url=&lt;?php echo $created_link; ?&gt;</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-02-28T06:03:54.000Z" itemprop="datePublished">2020-02-28</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.250Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/02/28/e9-98-bf-e9-87-8c-e4-ba-91centos-7-e7-b3-bb-e7-bb-9f-e4-b8-80-e9-94-ae-e5-87-80-e5-8c-96-e8-84-9a-e6-9c-ac-ef-bc-8c-e5-8f-af-e4-bc-98-e5-8c-96-e5-b9-b6-e5-87-80-e5-8c-96-e9-98-bf-e9-87-8c-e4-ba-91ecs/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">阿里云CentOS 7系统一键净化脚本，可优化并净化阿里云ECS实例</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/02/27/e7-bb-88-e4-ba-8e-e6-9a-82-e6-97-b6-e5-b9-b2-e6-8e-89-e4-ba-86php-fpm-e5-92-8cwordpress-e5-86-85-e5-ad-98-e6-ba-a2-e5-87-ba-e9-97-ae-e9-a2-98/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">终于暂时干掉了PHP-fpm和Wordpress内存溢出问题</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

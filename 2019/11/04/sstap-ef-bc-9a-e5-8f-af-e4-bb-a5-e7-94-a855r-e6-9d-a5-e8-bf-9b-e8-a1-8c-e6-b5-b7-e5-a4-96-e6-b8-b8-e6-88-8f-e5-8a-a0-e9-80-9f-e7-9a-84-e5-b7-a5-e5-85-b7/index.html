@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>SSTap：可以用55R来进行海外游戏加速的工具 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="SSTap：可以用55R来进行海外游戏加速的工具 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/11/04/sstap-ef-bc-9a-e5-8f-af-e4-bb-a5-e7-94-a855r-e6-9d-a5-e8-bf-9b-e8-a1-8c-e6-b5-b7-e5-a4-96-e6-b8-b8-e6-88-8f-e5-8a-a0-e9-80-9f-e7-9a-84-e5-b7-a5-e5-85-b7/"><meta property="og:locale" content="en"><meta name="description" content="说明：该软件是一款利用虚拟网卡技术在网络层实现的DaiLi工具，并能在网络层拦截所有连接并转发给HTTP、SOCKS4、55R等，而无需对其它的应用程序做任何修改或设置。它能同时转发TCP，UDP数据包。很稳定，非常适合于游戏玩家使用。 更新【2017.11.20】作者已弃更，官网下载地址已失效，博主分享多个历史版本，包括最新版供大家使用。 使用下载地址：https:&#x2F;&#x2F;down.southcat - John Doe - 南猫"><meta property="article:published_time" content="2019-11-04T01:04:47.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.232Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.232Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2019/11/04/sstap-ef-bc-9a-e5-8f-af-e4-bb-a5-e7-94-a855r-e6-9d-a5-e8-bf-9b-e8-a1-8c-e6-b5-b7-e5-a4-96-e6-b8-b8-e6-88-8f-e5-8a-a0-e9-80-9f-e7-9a-84-e5-b7-a5-e5-85-b7/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2019/11/04/sstap-ef-bc-9a-e5-8f-af-e4-bb-a5-e7-94-a855r-e6-9d-a5-e8-bf-9b-e8-a1-8c-e6-b5-b7-e5-a4-96-e6-b8-b8-e6-88-8f-e5-8a-a0-e9-80-9f-e7-9a-84-e5-b7-a5-e5-85-b7/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2019/11/04/sstap-ef-bc-9a-e5-8f-af-e4-bb-a5-e7-94-a855r-e6-9d-a5-e8-bf-9b-e8-a1-8c-e6-b5-b7-e5-a4-96-e6-b8-b8-e6-88-8f-e5-8a-a0-e9-80-9f-e7-9a-84-e5-b7-a5-e5-85-b7/"
+    },
+    "headline": "SSTap：可以用55R来进行海外游戏加速的工具 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-11-04T01:04:47.000Z",
+    "dateModified": "2020-04-24T09:34:44.232Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：该软件是一款利用虚拟网卡技术在网络层实现的DaiLi工具，并能在网络层拦截所有连接并转发给HTTP、SOCKS4、55R等，而无需对其它的应用程序做任何修改或设置。它能同时转发TCP，UDP数据包。很稳定，非常适合于游戏玩家使用。 更新【2017.11.20】作者已弃更，官网下载地址已失效，博主分享多个历史版本，包括最新版供大家使用。 使用下载地址：https://down.southcat - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=SSTap：可以用55R来进行海外游戏加速的工具" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=SSTap：可以用55R来进行海外游戏加速的工具&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=SSTap：可以用55R来进行海外游戏加速的工具" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEj0lEQVR42u2dwXLbUAwD/f8/nd4TP2IhuweJq0uniSK9pWdYEkCmr5+F10tooYUWWmihbwb9Gq7jD4d7yHPefe90/+9nvXs24RBa6C3Qp0MlCHLI088lqOm+0xkjh9BCL4KeXjy9/Mr3SKNMzelUgBOH0EIL/Rf6HcSp6dH7TveSYUhooYX+DvTxoYdDnJrSu2dNzyPDidBCCz0P6mkJSLDNknH6+/S1/7JlCS30zaGnYf5Of35NDRVa6BtDR9MrNBYi9k9CBBl+yDD0VddSaKFvDJ0WgjTQp8WfFoEIi+nDSc8XWugt0MSATwtFgp0ERLrUkGUHiwhCC/1Q6GYoScZeamC0oJNB0IiGf5qx0EIvgKZBGCq4U5ONNEr6PmIcCC30JujmH3naWJL51xj0V8K1bz88oYVeAj2Z4sRoo8YdDdSnQYgMSMjAE1roB0ITcY0sETQgRwcbGhagQ43QQm+DvtoopsLRxkbNwAZWaKG3QtOlIDWmtGQ0oiIN2qWlI6aLhBb6gdCtmEDCNFSIJwdvDYfKwBNa6AdCtyJBY/g1wZrJgCMDyMQgtNDboOlgkAx2YhSgZf/CEISanNBCL4BuDbf0Mir6NUE6EvBDJoHQQi+Bpg3oE6GQDiVXhpDpHEILvQ36E0MuLSHUmCdhm2RIoAIILfQS6NSU6FJC7idLPx16UlHHRia00A+GJstEY6Y3S0sqcBpy0sKBTHmhhX4QdBL0SRFSU5sGHSoYkCEkmolCC70AehLgG/O8FfcbYZAYf2TpEFrordCNsEeG/2lxSE00mX4pICu00NugSUDt6qBBIWkTpIbjJYdDaKEfAk0GEdJcWmOgakBAQEgipdBCb4FOhlhjek8iAnkuESpe5RWHE6GFfiA0aRJkCEgvnwoyNbHJDKwMfqGFXgRNgytE5CcBVxrE+YFXEhyFFnoTNFnIaWMiB6DmfzpfXQShhV4A3ZhsTZFI8KYRDqnYPw5YQgu9APpqAIaaA+MCUAoFKVwXDUGhhV4C3cCnYSAF6NrwXRI6iGEhtNDboNsgKlkkmsZICtQONigFLLTQD4cmg0QSC9NQQYebJAy2gV2hhd4ETcW11IhI+Ob0NRq+aYoqtNAboWngJQXOG/PuqqhPAwHHIgot9FLoT809KkBcMQGmd8ciCC30Amg6yNOgDQ6nvth/GtIafbXYL7TQD4NOL6FNjS4ANHzbBHuwECK00EugScjmSrAumfNtwC4JhXFhEVroZdCtyD69kDbJxmigYYHjeYQWeiF0O4CQ4Goj4pMCXTX/hBZ6C3QS4YmRR4S/JsBDl480LAkt9Dboq2IBOTwV/+jCQYXF43AktNCLoT9pRmihBwsL/RCwGSC00AugieFGRXwiADYGXGMqEBFRaKG3QNMGRsR5GrRJYmIjGODGK7TQi6DJYacCNEs/EQxPgwwN+Ly9V2ihhUa/NNoMC02TSwtKMhaFFlroDroRANOzaQCXhm8+Hk6EFvrm0Klx0MGiGWJSg0oFF1pooXthsAmmUsB0TzL3kmFwLKLQQi+A3nQJLbTQQgst9E2uf2Ex9SC+7QwkAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">SSTap：可以用55R来进行海外游戏加速的工具</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-11-04</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=SSTap：可以用55R来进行海外游戏加速的工具&url=http://hexo.southcat.net/2019/11/04/sstap-ef-bc-9a-e5-8f-af-e4-bb-a5-e7-94-a855r-e6-9d-a5-e8-bf-9b-e8-a1-8c-e6-b5-b7-e5-a4-96-e6-b8-b8-e6-88-8f-e5-8a-a0-e9-80-9f-e7-9a-84-e5-b7-a5-e5-85-b7/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=SSTap：可以用55R来进行海外游戏加速的工具&url=http://hexo.southcat.net/2019/11/04/sstap-ef-bc-9a-e5-8f-af-e4-bb-a5-e7-94-a855r-e6-9d-a5-e8-bf-9b-e8-a1-8c-e6-b5-b7-e5-a4-96-e6-b8-b8-e6-88-8f-e5-8a-a0-e9-80-9f-e7-9a-84-e5-b7-a5-e5-85-b7/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/11/04/sstap-ef-bc-9a-e5-8f-af-e4-bb-a5-e7-94-a855r-e6-9d-a5-e8-bf-9b-e8-a1-8c-e6-b5-b7-e5-a4-96-e6-b8-b8-e6-88-8f-e5-8a-a0-e9-80-9f-e7-9a-84-e5-b7-a5-e5-85-b7/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/11/04/sstap-ef-bc-9a-e5-8f-af-e4-bb-a5-e7-94-a855r-e6-9d-a5-e8-bf-9b-e8-a1-8c-e6-b5-b7-e5-a4-96-e6-b8-b8-e6-88-8f-e5-8a-a0-e9-80-9f-e7-9a-84-e5-b7-a5-e5-85-b7/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/11/04/sstap-ef-bc-9a-e5-8f-af-e4-bb-a5-e7-94-a855r-e6-9d-a5-e8-bf-9b-e8-a1-8c-e6-b5-b7-e5-a4-96-e6-b8-b8-e6-88-8f-e5-8a-a0-e9-80-9f-e7-9a-84-e5-b7-a5-e5-85-b7/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/11/04/sstap-ef-bc-9a-e5-8f-af-e4-bb-a5-e7-94-a855r-e6-9d-a5-e8-bf-9b-e8-a1-8c-e6-b5-b7-e5-a4-96-e6-b8-b8-e6-88-8f-e5-8a-a0-e9-80-9f-e7-9a-84-e5-b7-a5-e5-85-b7/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/11/04/sstap-ef-bc-9a-e5-8f-af-e4-bb-a5-e7-94-a855r-e6-9d-a5-e8-bf-9b-e8-a1-8c-e6-b5-b7-e5-a4-96-e6-b8-b8-e6-88-8f-e5-8a-a0-e9-80-9f-e7-9a-84-e5-b7-a5-e5-85-b7/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEj0lEQVR42u2dwXLbUAwD/f8/nd4TP2IhuweJq0uniSK9pWdYEkCmr5+F10tooYUWWmihbwb9Gq7jD4d7yHPefe90/+9nvXs24RBa6C3Qp0MlCHLI088lqOm+0xkjh9BCL4KeXjy9/Mr3SKNMzelUgBOH0EIL/Rf6HcSp6dH7TveSYUhooYX+DvTxoYdDnJrSu2dNzyPDidBCCz0P6mkJSLDNknH6+/S1/7JlCS30zaGnYf5Of35NDRVa6BtDR9MrNBYi9k9CBBl+yDD0VddSaKFvDJ0WgjTQp8WfFoEIi+nDSc8XWugt0MSATwtFgp0ERLrUkGUHiwhCC/1Q6GYoScZeamC0oJNB0IiGf5qx0EIvgKZBGCq4U5ONNEr6PmIcCC30JujmH3naWJL51xj0V8K1bz88oYVeAj2Z4sRoo8YdDdSnQYgMSMjAE1roB0ITcY0sETQgRwcbGhagQ43QQm+DvtoopsLRxkbNwAZWaKG3QtOlIDWmtGQ0oiIN2qWlI6aLhBb6gdCtmEDCNFSIJwdvDYfKwBNa6AdCtyJBY/g1wZrJgCMDyMQgtNDboOlgkAx2YhSgZf/CEISanNBCL4BuDbf0Mir6NUE6EvBDJoHQQi+Bpg3oE6GQDiVXhpDpHEILvQ36E0MuLSHUmCdhm2RIoAIILfQS6NSU6FJC7idLPx16UlHHRia00A+GJstEY6Y3S0sqcBpy0sKBTHmhhX4QdBL0SRFSU5sGHSoYkCEkmolCC70AehLgG/O8FfcbYZAYf2TpEFrordCNsEeG/2lxSE00mX4pICu00NugSUDt6qBBIWkTpIbjJYdDaKEfAk0GEdJcWmOgakBAQEgipdBCb4FOhlhjek8iAnkuESpe5RWHE6GFfiA0aRJkCEgvnwoyNbHJDKwMfqGFXgRNgytE5CcBVxrE+YFXEhyFFnoTNFnIaWMiB6DmfzpfXQShhV4A3ZhsTZFI8KYRDqnYPw5YQgu9APpqAIaaA+MCUAoFKVwXDUGhhV4C3cCnYSAF6NrwXRI6iGEhtNDboNsgKlkkmsZICtQONigFLLTQD4cmg0QSC9NQQYebJAy2gV2hhd4ETcW11IhI+Ob0NRq+aYoqtNAboWngJQXOG/PuqqhPAwHHIgot9FLoT809KkBcMQGmd8ciCC30Amg6yNOgDQ6nvth/GtIafbXYL7TQD4NOL6FNjS4ANHzbBHuwECK00EugScjmSrAumfNtwC4JhXFhEVroZdCtyD69kDbJxmigYYHjeYQWeiF0O4CQ4Goj4pMCXTX/hBZ6C3QS4YmRR4S/JsBDl480LAkt9Dboq2IBOTwV/+jCQYXF43AktNCLoT9pRmihBwsL/RCwGSC00AugieFGRXwiADYGXGMqEBFRaKG3QNMGRsR5GrRJYmIjGODGK7TQi6DJYacCNEs/EQxPgwwN+Ly9V2ihhUa/NNoMC02TSwtKMhaFFlroDroRANOzaQCXhm8+Hk6EFvrm0Klx0MGiGWJSg0oFF1pooXthsAmmUsB0TzL3kmFwLKLQQi+A3nQJLbTQQgst9E2uf2Ex9SC+7QwkAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更新"><span class="post-toc-number">1.</span> <span class="post-toc-text">更新</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>该软件是一款利用虚拟网卡技术在网络层实现的<code>DaiLi</code>工具，并能在网络层拦截所有连接并转发给<code>HTTP</code>、<code>SOCKS4</code>、<code>55R</code>等，而无需对其它的应用程序做任何修改或设置。它能同时转发<code>TCP</code>，<code>UDP</code>数据包。很稳定，非常适合于游戏玩家使用。</p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>【2017.11.20】<br>作者已弃更，官网下载地址已失效，博主分享多个历史版本，包括最新版供大家使用。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><strong>下载地址：</strong><a href="https://down.southcat.net/55Tap/" target="_blank" rel="noopener">https://down.southcat.net/55Tap/</a></p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-11-04T01:04:47.000Z" itemprop="datePublished">2019-11-04</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.232Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/11/04/aria2aria2ngoneindex-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac-ef-bc-8c-e4-b8-8b-e8-bd-bd-e5-90-8e-e8-87-aa-e5-8a-a8-e4-b8-8a-e4-bc-a0-e8-87-b3onedrive/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Aria2+Aria2Ng+OneIndex一键安装脚本，下载后自动上传至OneDrive</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/11/03/haproxy-e5-ae-89-e8-a3-85-e5-8f-8a-e7-ab-af-e5-8f-a3-e8-bd-ac-e5-8f-91-e9-85-8d-e7-bd-ae/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Haproxy安装及端口转发配置</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

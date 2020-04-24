@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>一款好用、美观的OneDrive目录列表程序：OLAINDEX | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="一款好用、美观的OneDrive目录列表程序：OLAINDEX | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/12/18/e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84onedrive-e7-9b-ae-e5-bd-95-e5-88-97-e8-a1-a8-e7-a8-8b-e5-ba-8f-ef-bc-9aolaindex/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前我们使用的最多的OneDrive目录列表程序就是Oneindex，博主已经写了很多使用教程了，最近有大佬受Oneindex启发，功能借鉴其思想，写出一个基于laravel5框架的OneDrive目录列表程序，看上去很不错，这里分享下。 截图 简介 OneDrive目录索引； 基于最新PHP框架laravel5搭建而成； 基于bootswatch响应式页面布局，适配PC、平板、手机；  功 - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/OLAINDEX(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/OLAINDEX(2).png"><meta property="article:published_time" content="2019-12-18T15:59:56.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.240Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.240Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2019/12/18/e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84onedrive-e7-9b-ae-e5-bd-95-e5-88-97-e8-a1-a8-e7-a8-8b-e5-ba-8f-ef-bc-9aolaindex/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2019/12/18/e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84onedrive-e7-9b-ae-e5-bd-95-e5-88-97-e8-a1-a8-e7-a8-8b-e5-ba-8f-ef-bc-9aolaindex/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2019/12/18/e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84onedrive-e7-9b-ae-e5-bd-95-e5-88-97-e8-a1-a8-e7-a8-8b-e5-ba-8f-ef-bc-9aolaindex/"
+    },
+    "headline": "一款好用、美观的OneDrive目录列表程序：OLAINDEX | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-18T15:59:56.000Z",
+    "dateModified": "2020-04-24T09:34:44.240Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：之前我们使用的最多的OneDrive目录列表程序就是Oneindex，博主已经写了很多使用教程了，最近有大佬受Oneindex启发，功能借鉴其思想，写出一个基于laravel5框架的OneDrive目录列表程序，看上去很不错，这里分享下。 截图 简介 OneDrive目录索引； 基于最新PHP框架laravel5搭建而成； 基于bootswatch响应式页面布局，适配PC、平板、手机；  功 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=一款好用、美观的OneDrive目录列表程序：OLAINDEX" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=一款好用、美观的OneDrive目录列表程序：OLAINDEX&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=一款好用、美观的OneDrive目录列表程序：OLAINDEX" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEmklEQVR42u2aQZLbQAwD9/+fTi65JPEQDdkXD9sXV7ZkaZqqYggQP78Wfn6EFlpooYUW+sugf4bP6Zq/bvTn3+n7vwO8uNfp+n+fTc748hqhhV4CfTpU+vvpMFOxJthX1yb46rxCC70I+nRDctjTfU5FmA6Z7jXdOxZGaKGF/nUaRp4OGKdCTs0pDUZCCy30M+jTw6cGlhrcqSEl0SG00EI/Exwt5KnJTeIhFeNUuFogCS30Euj08G/5/pgbKrTQXwwdl17BqGuaVGqUp7+1g8zbW0uhhf5iaGroJUM+GYmkEGQoIYuH472FFnoRNAWgRnxa6JPnUvOCLAOFFnobdBLqKeQyHWQyJGghSCAgLiGEFnoR9JPAWzIPW0FBBxLyooQWejv09HBqyCUDIAXqmibXhnaEFnobdHrQBJga2akJkcaZRAdZQAot9CboSRgQEUKbFvlNE75NC8eXL01ooRdAE7FOrk3fJzBaALJErJIIQgt9KXRqXE1BqHihIYBpMElhvVFwCC305dB0gE9LALrkb+Cml0CWhUILvQ2aDBFNUahpT83CJ0LjseAQWugLoNMynQ4jxLyjpuKTAF9qckILvQ26Ccw14blUsDRUNMGeGPgRWuiF0EngU6FBhpwmCE8KUpsIQgt9IXQKiadhhZgOCYqaDano6WxCC70JOjUfGkylAqZd1o9CgpqRQgu9BDoNA+0SvTEHk1lIFoBkUBJa6K3QRHykAb8N3qWhiATxUgGEFnoTdCMGEhC9lhaABARIIxZa6I3QVCSkBXsK59CAXlu8R41MaKEvhE4LtDSwTGYDOsxDU78RJUILvQm6MfPIIVoTvzEK0gAzGiFCC70AmgzxpOG1S7onz2gDP8dGJrTQF0MTEzCZ9Y3ImJrRVAQSunsriSC00JdBJ+E+LdjIUp0Y9CQAN72YeiITWuiLoZMIaEI1xLSjQiYt/umLE1roLdA0oEaGDGJEUBMhvYB01tHsF1roi6GJkEg3fmdx0CzfyXA0hoCEFnoZdCPQ02+bA9LwHDU78NZSaKEvhG5Nwck4IMY8vbYZnFKjFFroTdDNYpsckjQ6ahgk0dM2RKGF3gRNlmBPlnl0gdcA0gYrtNDbod8165vfEtGQTEIqmoQWehN089BkFJClGm1eafGejMi44RBa6Iuh6X/6aQHfhOgas6ERMuMgJLTQC6Cb5kRCLWSA+cQ9p4EFCQ6hhb4YmiznmmuIIUCN+3aYGc1IoYVeAE0Gj6nhPREBqQg4DAfDuUILvQmaLtuJACDmwyeaJQnpoYlMaKEvhaZGQGscNoKlCd6kBYDQQm+GJoM7GV7Sb6fitmYiGYbwAk9ooZdAVw0CGHZEFJAADzUhKpUltNAXQacBpDUGSPCVCh2yFCT3FVrobdBkqdYs8MlyfxIOTYAmFVloobdC0zBqGl6SGEiigjyzETLR7Bda6MXQ6MYgOJuMCLKopyG+txuZ0EJfDE0FCDUUnhSLBnY/PpwILfSXQU9Dxzvin4Z1iHCgZsfbJoLQQn85dCvc6UMmcUDCbs1yABkMQgu9AHrTR2ihhRZaaKG/5PMbjhZWsc6OqoEAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">一款好用、美观的OneDrive目录列表程序：OLAINDEX</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-18</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=一款好用、美观的OneDrive目录列表程序：OLAINDEX&url=http://hexo.southcat.net/2019/12/18/e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84onedrive-e7-9b-ae-e5-bd-95-e5-88-97-e8-a1-a8-e7-a8-8b-e5-ba-8f-ef-bc-9aolaindex/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=一款好用、美观的OneDrive目录列表程序：OLAINDEX&url=http://hexo.southcat.net/2019/12/18/e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84onedrive-e7-9b-ae-e5-bd-95-e5-88-97-e8-a1-a8-e7-a8-8b-e5-ba-8f-ef-bc-9aolaindex/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/12/18/e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84onedrive-e7-9b-ae-e5-bd-95-e5-88-97-e8-a1-a8-e7-a8-8b-e5-ba-8f-ef-bc-9aolaindex/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/12/18/e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84onedrive-e7-9b-ae-e5-bd-95-e5-88-97-e8-a1-a8-e7-a8-8b-e5-ba-8f-ef-bc-9aolaindex/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/12/18/e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84onedrive-e7-9b-ae-e5-bd-95-e5-88-97-e8-a1-a8-e7-a8-8b-e5-ba-8f-ef-bc-9aolaindex/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/12/18/e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84onedrive-e7-9b-ae-e5-bd-95-e5-88-97-e8-a1-a8-e7-a8-8b-e5-ba-8f-ef-bc-9aolaindex/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/12/18/e4-b8-80-e6-ac-be-e5-a5-bd-e7-94-a8-e3-80-81-e7-be-8e-e8-a7-82-e7-9a-84onedrive-e7-9b-ae-e5-bd-95-e5-88-97-e8-a1-a8-e7-a8-8b-e5-ba-8f-ef-bc-9aolaindex/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEmklEQVR42u2aQZLbQAwD9/+fTi65JPEQDdkXD9sXV7ZkaZqqYggQP78Wfn6EFlpooYUW+sugf4bP6Zq/bvTn3+n7vwO8uNfp+n+fTc748hqhhV4CfTpU+vvpMFOxJthX1yb46rxCC70I+nRDctjTfU5FmA6Z7jXdOxZGaKGF/nUaRp4OGKdCTs0pDUZCCy30M+jTw6cGlhrcqSEl0SG00EI/Exwt5KnJTeIhFeNUuFogCS30Euj08G/5/pgbKrTQXwwdl17BqGuaVGqUp7+1g8zbW0uhhf5iaGroJUM+GYmkEGQoIYuH472FFnoRNAWgRnxa6JPnUvOCLAOFFnobdBLqKeQyHWQyJGghSCAgLiGEFnoR9JPAWzIPW0FBBxLyooQWejv09HBqyCUDIAXqmibXhnaEFnobdHrQBJga2akJkcaZRAdZQAot9CboSRgQEUKbFvlNE75NC8eXL01ooRdAE7FOrk3fJzBaALJErJIIQgt9KXRqXE1BqHihIYBpMElhvVFwCC305dB0gE9LALrkb+Cml0CWhUILvQ2aDBFNUahpT83CJ0LjseAQWugLoNMynQ4jxLyjpuKTAF9qckILvQ26Ccw14blUsDRUNMGeGPgRWuiF0EngU6FBhpwmCE8KUpsIQgt9IXQKiadhhZgOCYqaDano6WxCC70JOjUfGkylAqZd1o9CgpqRQgu9BDoNA+0SvTEHk1lIFoBkUBJa6K3QRHykAb8N3qWhiATxUgGEFnoTdCMGEhC9lhaABARIIxZa6I3QVCSkBXsK59CAXlu8R41MaKEvhE4LtDSwTGYDOsxDU78RJUILvQm6MfPIIVoTvzEK0gAzGiFCC70AmgzxpOG1S7onz2gDP8dGJrTQF0MTEzCZ9Y3ImJrRVAQSunsriSC00JdBJ+E+LdjIUp0Y9CQAN72YeiITWuiLoZMIaEI1xLSjQiYt/umLE1roLdA0oEaGDGJEUBMhvYB01tHsF1roi6GJkEg3fmdx0CzfyXA0hoCEFnoZdCPQ02+bA9LwHDU78NZSaKEvhG5Nwck4IMY8vbYZnFKjFFroTdDNYpsckjQ6ahgk0dM2RKGF3gRNlmBPlnl0gdcA0gYrtNDbod8165vfEtGQTEIqmoQWehN089BkFJClGm1eafGejMi44RBa6Iuh6X/6aQHfhOgas6ERMuMgJLTQC6Cb5kRCLWSA+cQ9p4EFCQ6hhb4YmiznmmuIIUCN+3aYGc1IoYVeAE0Gj6nhPREBqQg4DAfDuUILvQmaLtuJACDmwyeaJQnpoYlMaKEvhaZGQGscNoKlCd6kBYDQQm+GJoM7GV7Sb6fitmYiGYbwAk9ooZdAVw0CGHZEFJAADzUhKpUltNAXQacBpDUGSPCVCh2yFCT3FVrobdBkqdYs8MlyfxIOTYAmFVloobdC0zBqGl6SGEiigjyzETLR7Bda6MXQ6MYgOJuMCLKopyG+txuZ0EJfDE0FCDUUnhSLBnY/PpwILfSXQU9Dxzvin4Z1iHCgZsfbJoLQQn85dCvc6UMmcUDCbs1yABkMQgu9AHrTR2ihhRZaaKG/5PMbjhZWsc6OqoEAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">2.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#功能"><span class="post-toc-number">3.</span> <span class="post-toc-text">功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#TODO"><span class="post-toc-number">4.</span> <span class="post-toc-text">TODO</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境要求"><span class="post-toc-number">5.</span> <span class="post-toc-text">环境要求</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">6.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#特殊文件功能"><span class="post-toc-number">7.</span> <span class="post-toc-text">特殊文件功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其它设置"><span class="post-toc-number">8.</span> <span class="post-toc-text">其它设置</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>之前我们使用的最多的<code>OneDrive</code>目录列表程序就是Oneindex，博主已经写了很多使用教程了，最近有大佬受<code>Oneindex</code>启发，功能借鉴其思想，写出一个基于<code>laravel5</code>框架的<code>OneDrive</code>目录列表程序，看上去很不错，这里分享下。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/OLAINDEX(1).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li><code>OneDrive</code>目录索引；</li>
+<li>基于最新<code>PHP</code>框架<code>laravel5</code>搭建而成；</li>
+<li>基于<code>bootswatch</code>响应式页面布局，适配<code>PC</code>、平板、手机；</li>
+</ul>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
+<li><code>OneDrive</code>目录查看索引，支持分页查看；</li>
+<li>图床功能（国内不太稳低）；</li>
+<li>支持文件路径一键复制、下载；</li>
+<li>支持代码、图片、文本文件即时预览；</li>
+<li>支持音视频播放（兼容大部分格式），视频播放采用<code>Dplayer</code>，音乐播放采用<code>Aplayer</code>；</li>
+<li>支持文件夹加密（需管理员）；</li>
+<li>支持文件上传（需管理员）；</li>
+<li>支持<code>readme</code>/<code>head</code>说明文件添加/编辑/删除；</li>
+<li>支持文件搜索（需管理员）；</li>
+<li>支持自定义创建文件夹（需管理员）；</li>
+<li>支持文件/文件夹删除（需管理员）；</li>
+<li>后台基本管理，支持主题，预览设置等等（清理缓存后及时生效）（需管理员）。</li>
+<li><code>v2.0</code>全新路径显示（<code>pathinfo</code>）</li>
+<li>添加看图相册</li>
+<li>配置文件化，不再依赖数据库</li>
+</ul>
+<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ul>
+<li>共享目录支持</li>
+<li>支持视频字幕，音频歌词</li>
+<li>支持后台大文件上传，断点续传</li>
+</ul>
+<h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><pre><code>PHP &gt;= 7.1.3
+OpenSSL PHP
+PHP PDO 扩展
+PHP Mbstring 扩展
+PHP Tokenizer 扩展
+PHP XML 扩展
+PHP Ctype 扩展
+PHP JSON 扩展
+PHP Fileinfo 扩展(非必需，但最好安装)</code></pre><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/WangNingkai/OLAINDEX" target="_blank" rel="noopener">https://github.com/WangNingkai/OLAINDEX</a></p>
+<p>这里为了方便，可以直接使用宝塔搭建<code>lnmp</code>环境。</p>
+<p><strong>1、安装宝塔</strong></p>
+<pre><code>#Centos系统
+yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh
+
+#Ubuntu系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; sudo bash install.sh
+
+#Debian系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; bash install.sh</code></pre><p>然后进入后台再安装<code>PHP 7.2</code>、<code>Nginx</code>，这里基本上除了<code>Fileinfo</code>扩展，其余都默认安装好了。</p>
+<p>接下来再找到左侧软件管理-<code>PHP</code>管理-设置-安装<code>Fileinfo</code>扩展(非必需扩展，不过不安装的话，不保证安装程序能成功)。</p>
+<pre><code>#如果Fileinfo拓展安装失败，就是内存太小，我们可以添加swap，不适用于ovz
+1、脚本添加，脚本地址：https://www.southcat.net/archives/722/。
+2、面板添加，找到左侧软件管理-系统工具-安装Linux工具箱，然后进入工具箱添加。</code></pre><p>然后同样的在<code>PHP</code>设置里找到禁用函数，删除<code>proc_open</code>、<code>proc_get_status</code>和<code>putenv</code>函数，最后重启<code>PHP</code>。</p>
+<p><strong>2、安装Composer</strong></p>
+<pre><code>curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer</code></pre><p><strong>3、安装程序</strong><br>我们先点击左侧网站，添加域名，此时网站根目录就是<code>/www/wwwroot/xx.com</code>。</p>
+<p>运行命令：</p>
+<pre><code>#将域名修改成自己的再运行
+cd /www/wwwroot/xx.com
+git clone https://github.com/WangNingkai/OLAINDEX.git tmp 
+mv tmp/.git . 
+rm -rf tmp 
+git reset --hard 
+cp database/database.sample.sqlite database/database.sqlite  # 数据库文件
+composer install -vvv # 这里确保已成功安装 composer ，如果报权限问题，建议给予用户完整权限。
+chmod -R 777 storage 
+chown -R www:www * # 此处 www 根据服务器具体用户组而定
+php artisan od:install # 此处绑定域名需根据实际域名谨慎填写（包含http/https）</code></pre><p><strong>5、伪静态设置</strong><br>点击域名设置-网站目录，运行目录选择<code>public</code>，并把防跨站的勾去掉并重启<code>PHP</code>。然后点击伪静态，输入以下代码：</p>
+<pre><code>location / {
+    try_files $uri $uri/ /index.php?$query_string;
+}</code></pre><p>最后就可以打开域名进行安装配置了。<br><img src="https://www.southcat.net/usr/picture/OLAINDEX(2).png" alt="请输入图片描述" title="请输入图片描述"><br>注意回调地址<code>redirect_uri</code>需要是<code>https</code>地址，可以直接在宝塔开启免费<code>SSL</code>证书。如果你使用上面的一键申请绑定账号失败了，可以试试手动申请<code>client_id</code>、<code>client_secret</code>，申请方法→传送门。</p>
+<p>后台地址：<code>https://xx.com/admin</code>，密码：<code>12345678</code>。</p>
+<h2 id="特殊文件功能"><a href="#特殊文件功能" class="headerlink" title="特殊文件功能"></a>特殊文件功能</h2><pre><code>#不建议创建和以下同名的文件夹和文件，否则会导致文件无法查看下载
+README.md、HEAD.md 、.password 、.deny特殊文件使用
+
+#在文件夹底部添加说明
+在onedrive的文件夹中添加README.md文件，使用markdown语法。
+
+#在文件夹头部添加说明
+在onedrive的文件夹中添加HEAD.md 文件，使用markdown语法。
+
+#加密文件夹
+在onedrive的文件夹中添加.password文件，填入密码，密码不能为空。
+
+#禁止访问文件夹
+在onedrive的文件夹中添加.deny文件，该文件夹被禁止访问。</code></pre><h2 id="其它设置"><a href="#其它设置" class="headerlink" title="其它设置"></a>其它设置</h2><pre><code>#重置全部数据，删除数据库数据
+php artisan od:reset
+
+#重置OneDrive登陆账号
+php artisan od:logout
+
+#升级程序
+git pull
+composer install -vvv
+php artisan od:update</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-18T15:59:56.000Z" itemprop="datePublished">2019-12-18</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.240Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/19/lnmp-e7-8e-af-e5-a2-83-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-9c-80-e7-ae-80-e5-8d-95-e6-95-99-e7-a8-8b/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">LNMP环境配置SSL证书最简单教程</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/18/e4-b8-80-e4-b8-aa-e4-ba-8c-e6-ac-a1-e5-85-83-e6-90-9c-e5-9b-be-e3-80-81-e6-90-9c-e7-95-aa-e3-80-81-e6-90-9c-e6-9c-ac-e5-ad-90qq-e6-9c-ba-e5-99-a8-e4-ba-ba-ef-bc-8c-e6-94-af-e6-8c-81saucenao-e3-80-81w/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一个二次元搜图、搜番、搜本子QQ机器人，支持SauceNAO、WhatAnime、Ascii2d等网站</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>MKOnlineMusicPlayer：一款开源的基于Meting的在线音乐播放器 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="MKOnlineMusicPlayer：一款开源的基于Meting的在线音乐播放器 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/02/02/mkonlinemusicplayer-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e7-9a-84-e5-9f-ba-e4-ba-8emeting-e7-9a-84-e5-9c-a8-e7-ba-bf-e9-9f-b3-e4-b9-90-e6-92-ad-e6-94-be-e5-99-a8/"><meta property="og:locale" content="en"><meta name="description" content="说明：今天一直在找一款绚丽，且功能强大的音乐播放器源码来替代博客的音乐WEB界面，最终找到了MKOnlineMusicPlayer，是一款基于Meting的在线音乐播放器，界面看上去很漂亮，可以同步网易云音乐歌单，且播放器音乐来自于QQ音乐，网易云音乐，虾米音乐，百度音乐，酷狗音乐，可以指定音乐平台搜索音乐，还可以直接下载，获取外链等，很强大，就分享一下。 简介MKOnlineMusicPlaye - John Doe - 南猫"><meta property="article:published_time" content="2020-02-02T05:41:10.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.245Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.245Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/02/02/mkonlinemusicplayer-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e7-9a-84-e5-9f-ba-e4-ba-8emeting-e7-9a-84-e5-9c-a8-e7-ba-bf-e9-9f-b3-e4-b9-90-e6-92-ad-e6-94-be-e5-99-a8/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/02/02/mkonlinemusicplayer-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e7-9a-84-e5-9f-ba-e4-ba-8emeting-e7-9a-84-e5-9c-a8-e7-ba-bf-e9-9f-b3-e4-b9-90-e6-92-ad-e6-94-be-e5-99-a8/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/02/02/mkonlinemusicplayer-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e7-9a-84-e5-9f-ba-e4-ba-8emeting-e7-9a-84-e5-9c-a8-e7-ba-bf-e9-9f-b3-e4-b9-90-e6-92-ad-e6-94-be-e5-99-a8/"
+    },
+    "headline": "MKOnlineMusicPlayer：一款开源的基于Meting的在线音乐播放器 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-02-02T05:41:10.000Z",
+    "dateModified": "2020-04-24T09:34:44.245Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：今天一直在找一款绚丽，且功能强大的音乐播放器源码来替代博客的音乐WEB界面，最终找到了MKOnlineMusicPlayer，是一款基于Meting的在线音乐播放器，界面看上去很漂亮，可以同步网易云音乐歌单，且播放器音乐来自于QQ音乐，网易云音乐，虾米音乐，百度音乐，酷狗音乐，可以指定音乐平台搜索音乐，还可以直接下载，获取外链等，很强大，就分享一下。 简介MKOnlineMusicPlaye - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=MKOnlineMusicPlayer：一款开源的基于Meting的在线音乐播放器" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=MKOnlineMusicPlayer：一款开源的基于Meting的在线音乐播放器&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=MKOnlineMusicPlayer：一款开源的基于Meting的在线音乐播放器" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEsklEQVR42u2dwXLbUAwD8/8/3V7b1A9YPudQi6tLJrZsaakpSwLo9OvXwuNLaKGFFlpooT8M+iscf33g2+uvfk/f988N/PHa98++Ojddm3IILfQW6Jd/6A9feHov/f799QaWrtUKFzmEFnoRdGpM7Tx6s6cGdLrRdh1yDaGFFjoPG6chojWqNoS0gqQHIrTQQs8b2amxnIYG0vBOBU6FSkURWmihWdNpi3tqaKkwpwLdNMsf3bKEFvrDoWmT+d9//pgaKrTQHwxdTa8wpJzEebpgpHOaWJDMgbddS6GF/mDoJvClBaK918T8dF4TGNqDePndQgu9ALo1hWTkpWbXBoYm7hHodG5cOIQWegE0NbmJSU9hmtCfhAUSFPinIEILvQA6GXPkgm1guQ3MkcWkmfdVGBRa6IdCT4M2k6bVQrbEIJgW5jioCC30ImgSjGuNgjafiSnfoCfhW6GF3gTdwnE02JKWezrwtCZJRMG6cAgt9EOh2wCSGhyBIsG5SeNLRarCo9BCL4C+EfCJ4TYNuLWCNvOdCBRCC70Jut3cxCi7MdTbubQYo8Sg0EI/HHoizk2aFQnbkaGlLSbtIQgt9AZo2iwmAmEzBYmIT65LTAahhd4ITQcPEmadhGQmAZ42AKHlSGihF0ET0/vKCIeB95umNzEThRZ6C/RkoRgZ4MVMm8CnxYUUTGihN0FT4X5igJMmR0PqVIAkhRZa6E3QN0vFTdCmHVQMnIb2hBZ6C3T7Cz2BUaFuYrTfiJPN5Bda6E3QZPCYGHGt+dy8Tu+zNmGhhV4KfTNUTAedJObR4pGFSGihN0JPzG0CQhaJyWDRBh8iZAot9BboJrw1Q402lCYS3hjvpEGiFLDQQj8IOg0TZPEg4iD5XmrMpeLXByi00EugW1N7VwBojXJiEk7uRWihN0JPBfcmAJDhgRoDt2Y8Ds8JLfQiaLpskNDq6fNJTCACIgn0jBqZ0EI/DJoad9R8J0vLTdCHCoWjoI3QQj8EOol0qRjvDBg3gO0ekJkvtNALoE9DfYJozW8caoPhmonI/3LQEVroRdC0KdCwWms6bbiYBPaoMS+00Nug6ZJAF/tkqKUBhRSSDlO1kQkt9MOgySBCFoWJcU5EyCQ2JOMeu5ZCC/1Q6ARGwq7E1CNBWNLsmnlXCya00EugUwim/WxFmiwcJCTQBqYoVggt9AJoYoY304yIENMADgnWtMaJEoNCC/1A6GSQkQFlGsQjg9E01NOam9BCb4FuC0cDnywcZDGgoZmbJie00NugpyJcalgEsg0oTYSYGoJCC70FOt3UxLSbDCgkGJcEBPoZ5FoKLfTDoInBNhX9iLFHjfpm3BOxUGiht0C3wZ2Y7dOFow04pDG1AsWFQ2ihF0JT0Z8E2EjxkhkXTbmBqCG00Bug2xCQBILWhJrhd7qHG4ERBQWEFnoJNAnFpcZ2s7hQoTEVkjQyoYXeCj018kjzuhUEbo392oCFFlrot/6zbDqAkLArERJq6E5ooYXG/wC1NZRUDBqsIQ9l7FoKLfRDoZvRTsy1ZBSkIiWjj5gNeMgRWugl0NPAS7spaiBM3muLCBIYhBZ6AfSmQ2ihhRZaaKE/5PgNPU62Uc5+AdQAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">MKOnlineMusicPlayer：一款开源的基于Meting的在线音乐播放器</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-02-02</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=MKOnlineMusicPlayer：一款开源的基于Meting的在线音乐播放器&url=http://hexo.southcat.net/2020/02/02/mkonlinemusicplayer-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e7-9a-84-e5-9f-ba-e4-ba-8emeting-e7-9a-84-e5-9c-a8-e7-ba-bf-e9-9f-b3-e4-b9-90-e6-92-ad-e6-94-be-e5-99-a8/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=MKOnlineMusicPlayer：一款开源的基于Meting的在线音乐播放器&url=http://hexo.southcat.net/2020/02/02/mkonlinemusicplayer-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e7-9a-84-e5-9f-ba-e4-ba-8emeting-e7-9a-84-e5-9c-a8-e7-ba-bf-e9-9f-b3-e4-b9-90-e6-92-ad-e6-94-be-e5-99-a8/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/02/02/mkonlinemusicplayer-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e7-9a-84-e5-9f-ba-e4-ba-8emeting-e7-9a-84-e5-9c-a8-e7-ba-bf-e9-9f-b3-e4-b9-90-e6-92-ad-e6-94-be-e5-99-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/02/02/mkonlinemusicplayer-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e7-9a-84-e5-9f-ba-e4-ba-8emeting-e7-9a-84-e5-9c-a8-e7-ba-bf-e9-9f-b3-e4-b9-90-e6-92-ad-e6-94-be-e5-99-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/02/02/mkonlinemusicplayer-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e7-9a-84-e5-9f-ba-e4-ba-8emeting-e7-9a-84-e5-9c-a8-e7-ba-bf-e9-9f-b3-e4-b9-90-e6-92-ad-e6-94-be-e5-99-a8/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/02/02/mkonlinemusicplayer-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e7-9a-84-e5-9f-ba-e4-ba-8emeting-e7-9a-84-e5-9c-a8-e7-ba-bf-e9-9f-b3-e4-b9-90-e6-92-ad-e6-94-be-e5-99-a8/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/02/02/mkonlinemusicplayer-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e7-9a-84-e5-9f-ba-e4-ba-8emeting-e7-9a-84-e5-9c-a8-e7-ba-bf-e9-9f-b3-e4-b9-90-e6-92-ad-e6-94-be-e5-99-a8/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEsklEQVR42u2dwXLbUAwD8/8/3V7b1A9YPudQi6tLJrZsaakpSwLo9OvXwuNLaKGFFlpooT8M+iscf33g2+uvfk/f988N/PHa98++Ojddm3IILfQW6Jd/6A9feHov/f799QaWrtUKFzmEFnoRdGpM7Tx6s6cGdLrRdh1yDaGFFjoPG6chojWqNoS0gqQHIrTQQs8b2amxnIYG0vBOBU6FSkURWmihWdNpi3tqaKkwpwLdNMsf3bKEFvrDoWmT+d9//pgaKrTQHwxdTa8wpJzEebpgpHOaWJDMgbddS6GF/mDoJvClBaK918T8dF4TGNqDePndQgu9ALo1hWTkpWbXBoYm7hHodG5cOIQWegE0NbmJSU9hmtCfhAUSFPinIEILvQA6GXPkgm1guQ3MkcWkmfdVGBRa6IdCT4M2k6bVQrbEIJgW5jioCC30ImgSjGuNgjafiSnfoCfhW6GF3gTdwnE02JKWezrwtCZJRMG6cAgt9EOh2wCSGhyBIsG5SeNLRarCo9BCL4C+EfCJ4TYNuLWCNvOdCBRCC70Jut3cxCi7MdTbubQYo8Sg0EI/HHoizk2aFQnbkaGlLSbtIQgt9AZo2iwmAmEzBYmIT65LTAahhd4ITQcPEmadhGQmAZ42AKHlSGihF0ET0/vKCIeB95umNzEThRZ6C/RkoRgZ4MVMm8CnxYUUTGihN0FT4X5igJMmR0PqVIAkhRZa6E3QN0vFTdCmHVQMnIb2hBZ6C3T7Cz2BUaFuYrTfiJPN5Bda6E3QZPCYGHGt+dy8Tu+zNmGhhV4KfTNUTAedJObR4pGFSGihN0JPzG0CQhaJyWDRBh8iZAot9BboJrw1Q402lCYS3hjvpEGiFLDQQj8IOg0TZPEg4iD5XmrMpeLXByi00EugW1N7VwBojXJiEk7uRWihN0JPBfcmAJDhgRoDt2Y8Ds8JLfQiaLpskNDq6fNJTCACIgn0jBqZ0EI/DJoad9R8J0vLTdCHCoWjoI3QQj8EOol0qRjvDBg3gO0ekJkvtNALoE9DfYJozW8caoPhmonI/3LQEVroRdC0KdCwWms6bbiYBPaoMS+00Nug6ZJAF/tkqKUBhRSSDlO1kQkt9MOgySBCFoWJcU5EyCQ2JOMeu5ZCC/1Q6ARGwq7E1CNBWNLsmnlXCya00EugUwim/WxFmiwcJCTQBqYoVggt9AJoYoY304yIENMADgnWtMaJEoNCC/1A6GSQkQFlGsQjg9E01NOam9BCb4FuC0cDnywcZDGgoZmbJie00NugpyJcalgEsg0oTYSYGoJCC70FOt3UxLSbDCgkGJcEBPoZ5FoKLfTDoInBNhX9iLFHjfpm3BOxUGiht0C3wZ2Y7dOFow04pDG1AsWFQ2ihF0JT0Z8E2EjxkhkXTbmBqCG00Bug2xCQBILWhJrhd7qHG4ERBQWEFnoJNAnFpcZ2s7hQoTEVkjQyoYXeCj018kjzuhUEbo392oCFFlrot/6zbDqAkLArERJq6E5ooYXG/wC1NZRUDBqsIQ9l7FoKLfRDoZvRTsy1ZBSkIiWjj5gNeMgRWugl0NPAS7spaiBM3muLCBIYhBZ6AfSmQ2ihhRZaaKE/5PgNPU62Uc5+AdQAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#相关链接"><span class="post-toc-number">2.</span> <span class="post-toc-text">相关链接</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#界面欣赏"><span class="post-toc-number">3.</span> <span class="post-toc-text">界面欣赏</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注意事项"><span class="post-toc-number">4.</span> <span class="post-toc-text">注意事项</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常见问题"><span class="post-toc-number">5.</span> <span class="post-toc-text">常见问题</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>今天一直在找一款绚丽，且功能强大的音乐播放器源码来替代博客的音乐<code>WEB</code>界面，最终找到了<code>MKOnlineMusicPlayer</code>，是一款基于<code>Meting</code>的在线音乐播放器，界面看上去很漂亮，可以同步网易云音乐歌单，且播放器音乐来自于<code>QQ</code>音乐，网易云音乐，虾米音乐，百度音乐，酷狗音乐，可以指定音乐平台搜索音乐，还可以直接下载，获取外链等，很强大，就分享一下。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><code>MKOnlineMusicPlayer</code>是一款开源的基于<code>Meting</code>的在线音乐播放器。具有音乐搜索、播放、下载、歌词同步显示、个人网易云音乐播放列表同步等功能。</p>
+<p>前端界面参照<code>QQ</code>音乐网页版进行布局，同时采用了流行的响应式设计，无论是在<code>PC</code>端还是在手机端，均能给您带来原生<code>app</code>般的使用体验。</p>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p><strong>在线演示：</strong><a href="http://lab.mkblog.cn/music/" target="_blank" rel="noopener">http://lab.mkblog.cn/music/</a><br><strong>GitHub地址：</strong><a href="https://github.com/mengkunsoft/MKOnlineMusicPlayer" target="_blank" rel="noopener">https://github.com/mengkunsoft/MKOnlineMusicPlayer</a><br><strong>下载地址：</strong>点击下载</p>
+<h2 id="界面欣赏"><a href="#界面欣赏" class="headerlink" title="界面欣赏"></a>界面欣赏</h2><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><pre><code>#运行环境
+php5.4+, curl_exec, file_get_contents, json_decode, openssl_encrypt
+
+#兼容性
+本播放器设计支持IE9及以上的现代浏览器。并且已在Chrome、firefox、IE11等浏览器测试使用正常。
+
+#歌曲
+播放器中的歌曲来自各大音乐平台，歌曲版权归各大平台享有。请支持正版音乐。</code></pre><h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><pre><code>#歌单读取失败-404
+本程序需要上传至网站空间(服务器)使用，不支持在本地打开。
+
+#歌单读取失败-200
+请确保你的服务器支持PHP ，并且PHP版本&gt;=5.4。
+
+#歌单页封面显示不出来
+请打开api.php，将第十行的define(&apos;HTTPS&apos;, true); 修改为define(&apos;HTTPS&apos;, false);。</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-02-02T05:41:10.000Z" itemprop="datePublished">2020-02-02</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.245Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/02/02/e8-a7-86-e9-a2-91-e5-88-87-e7-89-87-e5-90-8e-e8-87-aa-e5-8a-a8-e4-b8-8a-e4-bc-a0-e8-87-b3-e5-9b-bd-e5-86-85-e5-85-8d-e8-b4-b9cdn-ef-bc-8c-e6-97-a0-e6-88-90-e6-9c-ac-e5-8a-a0-e9-80-9f-e8-a7-86/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">视频切片后自动上传至国内免费CDN，无成本加速视频播放</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/02/01/e4-bd-bf-e7-94-a8linux-vps-e8-87-aa-e5-8a-a8-e5-88-a0-e9-99-a4-e5-9c-a8-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e7-9a-84-e4-b8-80-e5-88-87-e5-9b-9e-e5-a4-8d-e9-bb-91-e5-8e-86-e5-8f-b2/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">使用Linux VPS自动删除在百度贴吧的一切回复(黑历史)</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

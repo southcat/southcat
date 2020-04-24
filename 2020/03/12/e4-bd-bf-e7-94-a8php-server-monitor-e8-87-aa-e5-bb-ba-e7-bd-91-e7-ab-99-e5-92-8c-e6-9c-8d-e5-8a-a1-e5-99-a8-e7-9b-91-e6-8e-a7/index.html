@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>使用PHP Server Monitor自建网站和服务器监控 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="使用PHP Server Monitor自建网站和服务器监控 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/03/12/e4-bd-bf-e7-94-a8php-server-monitor-e8-87-aa-e5-bb-ba-e7-bd-91-e7-ab-99-e5-92-8c-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9b-91-e6-8e-a7/"><meta property="og:locale" content="en"><meta name="description" content="说明：对于我们网站和服务器多的人来说，需要个监控工具是很有必要的，观察服务器和网站都是一目了然，之前发了个网络监控工具，参考：Uptime Robot ：免费且功能强大的在线网站服务器监控工具，使用起来还是不错的，刚刚在小z博客也看到个不错的，就发一下。 简介PHP Server Monitor是使用PHP开发的网络监控工具，用于检查您的网站和服务器是否已启动并正常运行，支持Ping、Tcping - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/ServerMonitor(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/ServerMonitor(2).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/ServerMonitor(3).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/ServerMonitor(4).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/ServerMonitor(5).png"><meta property="article:published_time" content="2020-03-12T01:52:53.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.251Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.251Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/03/12/e4-bd-bf-e7-94-a8php-server-monitor-e8-87-aa-e5-bb-ba-e7-bd-91-e7-ab-99-e5-92-8c-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9b-91-e6-8e-a7/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/03/12/e4-bd-bf-e7-94-a8php-server-monitor-e8-87-aa-e5-bb-ba-e7-bd-91-e7-ab-99-e5-92-8c-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9b-91-e6-8e-a7/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/03/12/e4-bd-bf-e7-94-a8php-server-monitor-e8-87-aa-e5-bb-ba-e7-bd-91-e7-ab-99-e5-92-8c-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9b-91-e6-8e-a7/"
+    },
+    "headline": "使用PHP Server Monitor自建网站和服务器监控 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-03-12T01:52:53.000Z",
+    "dateModified": "2020-04-24T09:34:44.251Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：对于我们网站和服务器多的人来说，需要个监控工具是很有必要的，观察服务器和网站都是一目了然，之前发了个网络监控工具，参考：Uptime Robot ：免费且功能强大的在线网站服务器监控工具，使用起来还是不错的，刚刚在小z博客也看到个不错的，就发一下。 简介PHP Server Monitor是使用PHP开发的网络监控工具，用于检查您的网站和服务器是否已启动并正常运行，支持Ping、Tcping - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=使用PHP Server Monitor自建网站和服务器监控" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用PHP Server Monitor自建网站和服务器监控&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=使用PHP Server Monitor自建网站和服务器监控" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEG0lEQVR42u3aS3bbQAwFUe1/08k4Chuv0OSgQZUmdmSH6sucgPh9/vzA6yNSpEiRIkXeRH6K1z9/4eu9q++rr9/ff//O1Wd8f/7VeapzixQ5FUkuWn1QOvzV766uXeFXN3l1RpEiJyNXh7w6bHXoKtisgtbqZtFgtzyLSJEvRXZuQPVAT4lFdVNSoiFS5C8h04Gr91eBpLpuKg5EivwFJD1kAqwOkxL1KiGokpJHqhCRIg9DVoc9+etj3TqRIg9CxqFJKJJTEt1taHUD2yNTLZEiD0LSBlJqUFUHpocl75PzihQ5Hdk5IAkgnWuSBlYa9iwb0CJFDkSSgWpqEncShk7DmTS6y6AnUuRAZDpo1cTdaWRVgYLgO41ukSInIys0bQqnJJsckt5slLCIFPkCZGfoQxcCO41rUkw/XoWIFHkQcidhpklzJ1lPAbAKgsviXaTIgcjO4DX9LBXVq0BBml6dRSmRIt+ITE0j0vSig1nSTKZLvSJFTkd2//PTBHqZNBfBrEoSUiJy+bkiRQ5F0qYvGrIUC0okkaAF9NZUS6TIIcjUEO40kEkyTpeWOoWDSJFvQdLlA5J4pwf+6gakZJsOg8sOukiRg5B08EqDyt3kIOHJwrFIkVOR6bC7yTUpuKuhTWchHzeyRIocgkwFKRmGkuDU+bydglukyLcgyaJuZ8GIXo883KsEPRYKIkUORZJkmgxNSYBICUAaKpGCWqTI6cinFh/IUhNJxneui5MBkSKHIFOg6AxKaeAhiXs6T7mEIVLkcCQdkpLGNE3Q6YLhVrIvUuRQJGkSk8WFNNS50wzb+gyRIgcjSVOZ/GznUJ2imzaWRYqcjiRJNflzJ2ikplW7mUy7dSJFDkGmBlXnQJ0AlAp4kiBc/o5IkUORKREnS0zksFXAIPhURKCBj0iRg5A7Q8/U4CWJOF28qG5Qa6olUuThyN1EvROAaOAgCXpKUESKnI6ki+vpIU6CUDXM7Qa79A8jUuRUJMWSBV5aeJPlQVqw39qSFCnyMCRZaCDNpLTosLuA1Ek0lo0skSIHIQm2iySFMV3O3VmiEilyMpIMO9OCIG0uk8+4O/CJyYBIkUORVWJAC2XanCKLSJ1lX5EipyNJI7ezkNtdlujcwO0qRKTIIcjOQ727/NBZkEiLErT4xh10kSIPRtLDpYc3aYqlwjcNi1pokSKHI0kjiSz9lQ9oGHBS8xoVCiJFDkR2m7c74E7zmgxd6TKhSJFTkWSJcCdp7i5SdBcfWoFHpMhhyGrYQh7WOzeENqa2i2iRIl+MTA/qNJShA9xOIzkOq0SK/BEkKYxJYkAGPrSofyQZECnyIGQKAFVCTZvS3WBGl5jQpFmkyEHIKtntFrOdm0ODCF3K+O96IkUORL75JVKkSJEiRW6+/gI1vgJdnkQLnwAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">使用PHP Server Monitor自建网站和服务器监控</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-03-12</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用PHP Server Monitor自建网站和服务器监控&url=http://hexo.southcat.net/2020/03/12/e4-bd-bf-e7-94-a8php-server-monitor-e8-87-aa-e5-bb-ba-e7-bd-91-e7-ab-99-e5-92-8c-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9b-91-e6-8e-a7/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=使用PHP Server Monitor自建网站和服务器监控&url=http://hexo.southcat.net/2020/03/12/e4-bd-bf-e7-94-a8php-server-monitor-e8-87-aa-e5-bb-ba-e7-bd-91-e7-ab-99-e5-92-8c-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9b-91-e6-8e-a7/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/03/12/e4-bd-bf-e7-94-a8php-server-monitor-e8-87-aa-e5-bb-ba-e7-bd-91-e7-ab-99-e5-92-8c-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9b-91-e6-8e-a7/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/03/12/e4-bd-bf-e7-94-a8php-server-monitor-e8-87-aa-e5-bb-ba-e7-bd-91-e7-ab-99-e5-92-8c-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9b-91-e6-8e-a7/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/03/12/e4-bd-bf-e7-94-a8php-server-monitor-e8-87-aa-e5-bb-ba-e7-bd-91-e7-ab-99-e5-92-8c-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9b-91-e6-8e-a7/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/03/12/e4-bd-bf-e7-94-a8php-server-monitor-e8-87-aa-e5-bb-ba-e7-bd-91-e7-ab-99-e5-92-8c-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9b-91-e6-8e-a7/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/03/12/e4-bd-bf-e7-94-a8php-server-monitor-e8-87-aa-e5-bb-ba-e7-bd-91-e7-ab-99-e5-92-8c-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-9b-91-e6-8e-a7/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOQAAADkCAAAAACtPNdRAAAEG0lEQVR42u3aS3bbQAwFUe1/08k4Chuv0OSgQZUmdmSH6sucgPh9/vzA6yNSpEiRIkXeRH6K1z9/4eu9q++rr9/ff//O1Wd8f/7VeapzixQ5FUkuWn1QOvzV766uXeFXN3l1RpEiJyNXh7w6bHXoKtisgtbqZtFgtzyLSJEvRXZuQPVAT4lFdVNSoiFS5C8h04Gr91eBpLpuKg5EivwFJD1kAqwOkxL1KiGokpJHqhCRIg9DVoc9+etj3TqRIg9CxqFJKJJTEt1taHUD2yNTLZEiD0LSBlJqUFUHpocl75PzihQ5Hdk5IAkgnWuSBlYa9iwb0CJFDkSSgWpqEncShk7DmTS6y6AnUuRAZDpo1cTdaWRVgYLgO41ukSInIys0bQqnJJsckt5slLCIFPkCZGfoQxcCO41rUkw/XoWIFHkQcidhpklzJ1lPAbAKgsviXaTIgcjO4DX9LBXVq0BBml6dRSmRIt+ITE0j0vSig1nSTKZLvSJFTkd2//PTBHqZNBfBrEoSUiJy+bkiRQ5F0qYvGrIUC0okkaAF9NZUS6TIIcjUEO40kEkyTpeWOoWDSJFvQdLlA5J4pwf+6gakZJsOg8sOukiRg5B08EqDyt3kIOHJwrFIkVOR6bC7yTUpuKuhTWchHzeyRIocgkwFKRmGkuDU+bydglukyLcgyaJuZ8GIXo883KsEPRYKIkUORZJkmgxNSYBICUAaKpGCWqTI6cinFh/IUhNJxneui5MBkSKHIFOg6AxKaeAhiXs6T7mEIVLkcCQdkpLGNE3Q6YLhVrIvUuRQJGkSk8WFNNS50wzb+gyRIgcjSVOZ/GznUJ2imzaWRYqcjiRJNflzJ2ikplW7mUy7dSJFDkGmBlXnQJ0AlAp4kiBc/o5IkUORKREnS0zksFXAIPhURKCBj0iRg5A7Q8/U4CWJOF28qG5Qa6olUuThyN1EvROAaOAgCXpKUESKnI6ki+vpIU6CUDXM7Qa79A8jUuRUJMWSBV5aeJPlQVqw39qSFCnyMCRZaCDNpLTosLuA1Ek0lo0skSIHIQm2iySFMV3O3VmiEilyMpIMO9OCIG0uk8+4O/CJyYBIkUORVWJAC2XanCKLSJ1lX5EipyNJI7ezkNtdlujcwO0qRKTIIcjOQ727/NBZkEiLErT4xh10kSIPRtLDpYc3aYqlwjcNi1pokSKHI0kjiSz9lQ9oGHBS8xoVCiJFDkR2m7c74E7zmgxd6TKhSJFTkWSJcCdp7i5SdBcfWoFHpMhhyGrYQh7WOzeENqa2i2iRIl+MTA/qNJShA9xOIzkOq0SK/BEkKYxJYkAGPrSofyQZECnyIGQKAFVCTZvS3WBGl5jQpFmkyEHIKtntFrOdm0ODCF3K+O96IkUORL75JVKkSJEiRW6+/gI1vgJdnkQLnwAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加定时任务"><span class="post-toc-number">3.</span> <span class="post-toc-text">添加定时任务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置中文"><span class="post-toc-number">4.</span> <span class="post-toc-text">设置中文</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#后台部分截图"><span class="post-toc-number">5.</span> <span class="post-toc-text">后台部分截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">6.</span> <span class="post-toc-text">总结</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>对于我们网站和服务器多的人来说，需要个监控工具是很有必要的，观察服务器和网站都是一目了然，之前发了个网络监控工具，参考：Uptime Robot ：免费且功能强大的在线网站服务器监控工具，使用起来还是不错的，刚刚在小<code>z</code>博客也看到个不错的，就发一下。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><code>PHP Server Monitor</code>是使用<code>PHP</code>开发的网络监控工具，用于检查您的网站和服务器是否已启动并正常运行，支持<code>Ping</code>、<code>Tcping</code>、网站等监控，提供了友好的<code>Web</code>的用户界面，方便管理与查看，当服务器宕机会自动发送邮件或短信通知。</p>
+<p><strong>官方地址：</strong><a href="http://www.phpservermonitor.org/" target="_blank" rel="noopener">http://www.phpservermonitor.org/</a></p>
+<p><strong>提示：</strong>由于需要使用<code>crontab</code>等作为定时任务，推荐使用<code>VPS</code>进行安装。下图可以直观的看出<code>VPS</code>网络情况变化，非常方便。<br><img src="https://www.southcat.net/usr/picture/ServerMonitor(1).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>1、搭建web环境</strong><br>推荐宝塔和军哥的<code>lnmp</code>一键包。<br><code>lnmp</code>安装方法可参考：<a href="https://www.southcat.net/archives/61/" target="_blank" rel="noopener">https://www.southcat.net/archives/61/</a><br>宝塔安装方法可看：<a href="https://www.southcat.net/archives/254/" target="_blank" rel="noopener">https://www.southcat.net/archives/254/</a></p>
+<p><strong>2、上传程序及配置</strong><br>官方下载地址：phpservermon-v3.2.0.zip，访问下载地址下载最新版本，解压至您站点根目录，访问<code>http://youdomain.com/install.php</code>根据提示填写数据库信息完成安装。如果不能写入配置文件，可以手动将数据库信息添加到<code>config.php</code>做法如下：</p>
+<pre><code>#复制配置文件
+cp config.php.sample config.php
+#修改配置文件
+vi config.php
+#填写数据库信息
+define(&apos;PSM_DB_PREFIX&apos;, &apos;monitor_&apos;);#表前缀，保持默认
+define(&apos;PSM_DB_USER&apos;, &apos;status&apos;);#数据库用户
+define(&apos;PSM_DB_PASS&apos;, &apos;xxxxxxx&apos;);#数据库密码
+define(&apos;PSM_DB_NAME&apos;, &apos;status&apos;);#数据库用户名
+define(&apos;PSM_DB_HOST&apos;, &apos;localhost&apos;);#数据库连接地址
+define(&apos;PSM_DB_PORT&apos;, &apos;3306&apos;);#数据库连接端口，一般默认3306
+define(&apos;PSM_BASE_URL&apos;, &apos;http://xx.com&apos;);#网站地址</code></pre><p>官方安装文档：<a href="http://docs.phpservermonitor.org/en/latest/install.html" target="_blank" rel="noopener">http://docs.phpservermonitor.org/en/latest/install.html</a></p>
+<h2 id="添加定时任务"><a href="#添加定时任务" class="headerlink" title="添加定时任务"></a>添加定时任务</h2><p>网站安装好了还没有完毕，还得添加采集任务，否则无法获取数据。以<code>Linux</code>系统(<code>CentOS</code>)为例，<code>Linux</code>一般使用<code>crontab</code>作为定时任务，方法如下：</p>
+<pre><code>#安装crontab
+yum -y install crontabs
+#添加定时任务
+crontab -e
+#计划任务中添加如下内容，请根据实际情况修改路径
+*/5 * * * * /usr/local/php/bin/php /home/wwwroot/xx.com/cron/status.cron.php
+#重载crontab
+service crond reload</code></pre><p>查看<code>PHP</code>路径方法：<code>which php</code>，然后版上面的<code>/usr/local/php/bin/php</code>改成自己<code>PHP</code>路径。<code>status.cron.php</code>为<code>PHP Server Monitor</code>脚本地址，请填写绝对路径。</p>
+<h2 id="设置中文"><a href="#设置中文" class="headerlink" title="设置中文"></a>设置中文</h2><p><code>PHP Server Monitor</code>支持多种语言，可以在后台设置中修改为中文，如下截图。添加监控、<code>SMTP</code>设置什么的就比较简单了，大家可自行研究。<br><img src="https://www.southcat.net/usr/picture/ServerMonitor(2).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="后台部分截图"><a href="#后台部分截图" class="headerlink" title="后台部分截图"></a>后台部分截图</h2><p><img src="https://www.southcat.net/usr/picture/ServerMonitor(3).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/ServerMonitor(4).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/ServerMonitor(5).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><code>PHP Server Monitor</code>配置非常简单，功能也基本够用，代码是开源的，可以很方便的集成或二次开发，有兴趣的童鞋可以研究下。安装<code>PHP Server Monitor</code>的目的主要是为了监控国外<code>VPS</code>网络变化，后期会每周或每月送出监控报告。还是很不错的。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-03-12T01:52:53.000Z" itemprop="datePublished">2020-03-12</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.251Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/03/12/pxder-ef-bc-9ap-e7-ab-99pixiv-e6-8f-92-e7-94-bb-e6-89-b9-e9-87-8f-e4-b8-8b-e8-bd-bd-e5-99-a8/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Pxder：P站(Pixiv)插画批量下载器</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/03/12/iptables-e4-b9-8b-e7-a6-81ping-e5-92-8cddos-e5-90-91-e5-a4-96-e5-8f-91-e5-8c-85/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">iptables之禁ping和ddos向外发包</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

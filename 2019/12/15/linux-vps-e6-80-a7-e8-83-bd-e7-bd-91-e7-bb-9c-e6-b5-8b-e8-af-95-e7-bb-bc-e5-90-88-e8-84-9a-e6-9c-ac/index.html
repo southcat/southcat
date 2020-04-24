@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Linux VPS性能/网络测试综合脚本 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Linux VPS性能&#x2F;网络测试综合脚本 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/12/15/linux-vps-e6-80-a7-e8-83-bd-e7-bd-91-e7-bb-9c-e6-b5-8b-e8-af-95-e7-bb-bc-e5-90-88-e8-84-9a-e6-9c-ac/"><meta property="og:locale" content="en"><meta name="description" content="说明：目前的VPS测试脚本有很多，不过测试项目都不是很全，于是千影大佬根据众多测试脚本重新修改编写了一个全新的Linux VPS测试脚本。该脚本最大的特点是测试全面，运行迅速，不会因为硬盘i&#x2F;o低下或者网络状况不好，造成测试时间较长的问题，无论是什么机器，不带UnixBench都能很快的执行完，测试完后还可以通过网页分享结果。 测试项目 获取系统基本信息 测试硬盘存取延迟、iops、存取速度 测试 - John Doe - 南猫"><meta property="article:published_time" content="2019-12-14T23:53:34.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.239Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.239Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2019/12/15/linux-vps-e6-80-a7-e8-83-bd-e7-bd-91-e7-bb-9c-e6-b5-8b-e8-af-95-e7-bb-bc-e5-90-88-e8-84-9a-e6-9c-ac/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2019/12/15/linux-vps-e6-80-a7-e8-83-bd-e7-bd-91-e7-bb-9c-e6-b5-8b-e8-af-95-e7-bb-bc-e5-90-88-e8-84-9a-e6-9c-ac/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2019/12/15/linux-vps-e6-80-a7-e8-83-bd-e7-bd-91-e7-bb-9c-e6-b5-8b-e8-af-95-e7-bb-bc-e5-90-88-e8-84-9a-e6-9c-ac/"
+    },
+    "headline": "Linux VPS性能/网络测试综合脚本 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-14T23:53:34.000Z",
+    "dateModified": "2020-04-24T09:34:44.239Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：目前的VPS测试脚本有很多，不过测试项目都不是很全，于是千影大佬根据众多测试脚本重新修改编写了一个全新的Linux VPS测试脚本。该脚本最大的特点是测试全面，运行迅速，不会因为硬盘i/o低下或者网络状况不好，造成测试时间较长的问题，无论是什么机器，不带UnixBench都能很快的执行完，测试完后还可以通过网页分享结果。 测试项目 获取系统基本信息 测试硬盘存取延迟、iops、存取速度 测试 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=Linux VPS性能/网络测试综合脚本" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Linux VPS性能/网络测试综合脚本&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=Linux VPS性能/网络测试综合脚本" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADrUlEQVR42u3b0XLbMAxEUf//T7fPScPdCzW2YM/1S52JIvFohgQJoI8/H/h5iBIlSpSoj0M9wuf7NV9uEK77fu2PA/jhWafn4HGKErUEdXpoGsDpmvb99ALaC0LjFCVqEep0kzShySAnkNNiQsYpStQ7olJQPE1mEozRgEWJ+iBUCo4tcE42vmlDLErUu6HSTdoBLi0ep/ud8O3ev7JLFyXqyag0sTf9+2vZJFGinogiScc00dvftYXntGmlm+FLVQ9Rop6IShORDDQtMG3xIS9vND5RohagUuIwTdZ2SGwTnVzfvv/zkkWJWoBKD6WHuEnyMT0nDRgdLEWJWoJqSQ+SvKcJmsnv2uKBGq5EiXoxigRgcngkiwwp5KUCei0wiBK1DDXd2LZC3HQTS4O0KFGbUXQTOm1gTInJBCLNxcdDpShRC1BXEpYkAUMSli0Qp2RmLGSLErUARZrryWBJIa1tlKeJTlGitqEmCZU2aLJhbRtYErhr1UOUqJtQrXn3yneS+G8LE11sUBeZKFE3oEjRum1e2wGRJjYnBW1Rorah2qY2BU2SzKSLSlpgSCJVlKhNKDJIOqmnCwNp/KXXixK1AXUlUJIHk2atFshrg1WreogSdTOKFABawpEWGkjChzRviRK1DUUSia0YMEm40MNoG8+440WUqBejpg2DtImKHARJA1d7IaJEbUGliT65aUvOkCDbNsR1oyxK1BLUpaLx44H+s2ZbeBqcHEZFidqGokmWK4fISYGAFL/TZkCUqA2odhCcNG+QgyJp/pgWLkSJ2oSiDR2kUTdBaRKHHBhHwVeUqBejSHGZBtxpwYAWqcdNjKJE3YhqCwJt6CAb4bYw0Bc23qWLEnUDigbMNEiaEKXBdNJsJUrUFhQZVCpEp2vJYZE2jpADqihRW1DTZqqrhz6yyLTFIRbIRYlagmqbzbqRHDQPk8WJ/ixK1EYUCXokKTIpKJAmk0nwFiVqE4oUu+ghsB3iSMPHNCDH1U+UqBtRaeKSoPw/B0ZSFECFDFGiFqDoBpYGZdrEmxYNei9cnRcl6oUoGhhJEJ4Ez1Tga/c5JoJEiVqAQhMw/L4N7krjRwvix42wKFFLUNOHtcnfJjhpFCYb6JjMFCXqZhRJHJKHkMVnUoRo9zgGX1Gi3gg1TXIm8KS5a1R0EyXqTVCk+YMGy0lCFCVtRIlahGrNVK1ARwDpYJkKAbiQLkrUEhRJrNAmRpIsmfw92TCLErUJ9UkfUaJEiRL1MZ+/OmBTDwV3iiEAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Linux VPS性能/网络测试综合脚本</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-15</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux VPS性能/网络测试综合脚本&url=http://hexo.southcat.net/2019/12/15/linux-vps-e6-80-a7-e8-83-bd-e7-bd-91-e7-bb-9c-e6-b5-8b-e8-af-95-e7-bb-bc-e5-90-88-e8-84-9a-e6-9c-ac/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Linux VPS性能/网络测试综合脚本&url=http://hexo.southcat.net/2019/12/15/linux-vps-e6-80-a7-e8-83-bd-e7-bd-91-e7-bb-9c-e6-b5-8b-e8-af-95-e7-bb-bc-e5-90-88-e8-84-9a-e6-9c-ac/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/12/15/linux-vps-e6-80-a7-e8-83-bd-e7-bd-91-e7-bb-9c-e6-b5-8b-e8-af-95-e7-bb-bc-e5-90-88-e8-84-9a-e6-9c-ac/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/12/15/linux-vps-e6-80-a7-e8-83-bd-e7-bd-91-e7-bb-9c-e6-b5-8b-e8-af-95-e7-bb-bc-e5-90-88-e8-84-9a-e6-9c-ac/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/12/15/linux-vps-e6-80-a7-e8-83-bd-e7-bd-91-e7-bb-9c-e6-b5-8b-e8-af-95-e7-bb-bc-e5-90-88-e8-84-9a-e6-9c-ac/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/12/15/linux-vps-e6-80-a7-e8-83-bd-e7-bd-91-e7-bb-9c-e6-b5-8b-e8-af-95-e7-bb-bc-e5-90-88-e8-84-9a-e6-9c-ac/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/12/15/linux-vps-e6-80-a7-e8-83-bd-e7-bd-91-e7-bb-9c-e6-b5-8b-e8-af-95-e7-bb-bc-e5-90-88-e8-84-9a-e6-9c-ac/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADrUlEQVR42u3b0XLbMAxEUf//T7fPScPdCzW2YM/1S52JIvFohgQJoI8/H/h5iBIlSpSoj0M9wuf7NV9uEK77fu2PA/jhWafn4HGKErUEdXpoGsDpmvb99ALaC0LjFCVqEep0kzShySAnkNNiQsYpStQ7olJQPE1mEozRgEWJ+iBUCo4tcE42vmlDLErUu6HSTdoBLi0ep/ud8O3ev7JLFyXqyag0sTf9+2vZJFGinogiScc00dvftYXntGmlm+FLVQ9Rop6IShORDDQtMG3xIS9vND5RohagUuIwTdZ2SGwTnVzfvv/zkkWJWoBKD6WHuEnyMT0nDRgdLEWJWoJqSQ+SvKcJmsnv2uKBGq5EiXoxigRgcngkiwwp5KUCei0wiBK1DDXd2LZC3HQTS4O0KFGbUXQTOm1gTInJBCLNxcdDpShRC1BXEpYkAUMSli0Qp2RmLGSLErUARZrryWBJIa1tlKeJTlGitqEmCZU2aLJhbRtYErhr1UOUqJtQrXn3yneS+G8LE11sUBeZKFE3oEjRum1e2wGRJjYnBW1Rorah2qY2BU2SzKSLSlpgSCJVlKhNKDJIOqmnCwNp/KXXixK1AXUlUJIHk2atFshrg1WreogSdTOKFABawpEWGkjChzRviRK1DUUSia0YMEm40MNoG8+440WUqBejpg2DtImKHARJA1d7IaJEbUGliT65aUvOkCDbNsR1oyxK1BLUpaLx44H+s2ZbeBqcHEZFidqGokmWK4fISYGAFL/TZkCUqA2odhCcNG+QgyJp/pgWLkSJ2oSiDR2kUTdBaRKHHBhHwVeUqBejSHGZBtxpwYAWqcdNjKJE3YhqCwJt6CAb4bYw0Bc23qWLEnUDigbMNEiaEKXBdNJsJUrUFhQZVCpEp2vJYZE2jpADqihRW1DTZqqrhz6yyLTFIRbIRYlagmqbzbqRHDQPk8WJ/ixK1EYUCXokKTIpKJAmk0nwFiVqE4oUu+ghsB3iSMPHNCDH1U+UqBtRaeKSoPw/B0ZSFECFDFGiFqDoBpYGZdrEmxYNei9cnRcl6oUoGhhJEJ4Ez1Tga/c5JoJEiVqAQhMw/L4N7krjRwvix42wKFFLUNOHtcnfJjhpFCYb6JjMFCXqZhRJHJKHkMVnUoRo9zgGX1Gi3gg1TXIm8KS5a1R0EyXqTVCk+YMGy0lCFCVtRIlahGrNVK1ARwDpYJkKAbiQLkrUEhRJrNAmRpIsmfw92TCLErUJ9UkfUaJEiRL1MZ+/OmBTDwV3iiEAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#测试项目"><span class="post-toc-number">1.</span> <span class="post-toc-text">测试项目</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#测试样本"><span class="post-toc-number">3.</span> <span class="post-toc-text">测试样本</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>目前的<code>VPS</code>测试脚本有很多，不过测试项目都不是很全，于是千影大佬根据众多测试脚本重新修改编写了一个全新的<code>Linux VPS</code>测试脚本。该脚本最大的特点是测试全面，运行迅速，不会因为硬盘<code>i/o</code>低下或者网络状况不好，造成测试时间较长的问题，无论是什么机器，不带<code>UnixBench</code>都能很快的执行完，测试完后还可以通过网页分享结果。</p>
+<h2 id="测试项目"><a href="#测试项目" class="headerlink" title="测试项目"></a>测试项目</h2><ul>
+<li>获取系统基本信息</li>
+<li>测试硬盘存取延迟、<code>iops</code>、存取速度</li>
+<li>测试本机带宽</li>
+<li>测试本机到<code>25</code>个国外节点下载速度</li>
+<li>测试本机到<code>8</code>个国内节点下载速度</li>
+<li>测试本机到国内<code>9</code>个节点的路由</li>
+<li>测试本机到国内<code>9</code>个节点的延迟与丢包</li>
+</ul>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><strong>1、下载脚本</strong></p>
+<pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/chiakge/Linux-Server-Bench-Test/master/linuxtest.sh</code></pre><p><strong>2、使用命令</strong></p>
+<pre><code>#不含UnixBench的测试，无网页分享
+bash linuxtest.sh
+
+#不含UnixBench的测试，带网页分享
+bash linuxtest.sh s
+
+#含UnixBench的测试，不带网页分享
+bash linuxtest.sh a
+
+#含UnixBench的测试，带网页分享
+bash linuxtest.sh as</code></pre><h2 id="测试样本"><a href="#测试样本" class="headerlink" title="测试样本"></a>测试样本</h2><pre><code>========== 开始记录测试信息 ==========
+测试时间：2018-05-15 18:06:27
+----------------------------------------------------------------------
+CPU model            : Virtual CPU a7769a6388d5
+Number of cores      : 1
+CPU frequency        : 2394.454 MHz
+Total size of Disk   : 20.2 GB (4.7 GB Used)
+Total amount of Mem  : 492 MB (107 MB Used)
+Total amount of Swap : 1023 MB (4 MB Used)
+System uptime        : 2 days, 20 hour 0 min
+Load average         : 0.65, 0.18, 0.06
+OS                   : Debian GNU/Linux 9
+Arch                 : x86_64 (64 Bit)
+Kernel               : 4.9.0-5-amd64
+ip                   : 108.61.126.101
+ipaddr               : 日本 东京都 东京  choopa.com
+vm                   : kvm
+----------------------------------------------------------------------
+===== 开始硬盘性能测试 =====
+ioping: seek rate
+    min/avg/max/mdev = 197.8 us / 337.5 us / 5.84 ms / 142.6 us
+ioping: sequential speed
+    generated 2.84 k requests in 5.00 s, 709.8 MiB, 567 iops, 141.9 MiB/s
+===== 硬盘性能测试完成 =====
+----------------------------------------------------------------------
+===== 开始speedtest =====
+Retrieving speedtest.net configuration...
+Testing from Choopa, LLC (108.61.*.*)...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Hosted by cloudremix (Tokyo) [12.58 km]: 4.648 ms
+Testing download speed................................................................................
+Download: 764.43 Mbit/s
+Testing upload speed................................................................................................
+Upload: 139.42 Mbit/s
+Share results: http://www.speedtest.net/result/7310913596.png
+===== speedtest完成 =====
+----------------------------------------------------------------------
+Node Name:                      IPv4 address:                  Download Speed
+CacheFly:                       204.93.150.152:          102.64 MiB/s |  821.10 Mbps
+Linode, Tokyo, JP:              106.187.96.148:           36.95 MiB/s |  295.59 Mbps
+Linode, Tokyo2, JP:             139.162.65.37:            76.18 MiB/s |  609.43 Mbps
+Linode, Singapore, SG:          139.162.23.4:             16.44 MiB/s |  131.48 Mbps
+Linode, Fremont, CA:            50.116.14.9:             277.89 KiB/s |    2.17 Mbps
+Linode, Newark, NJ:             50.116.57.237:             7.84 MiB/s |   62.71 Mbps
+Linode, London, UK:             176.58.107.39:             6.27 MiB/s |   50.20 Mbps
+Linode, Frankfurt, DE:          139.162.130.8:             5.66 MiB/s |   45.27 Mbps
+Softlayer, Tokyo, JP:           161.202.125.20:          130.64 MiB/s | 1045.14 Mbps
+Softlayer, Singapore, SG:       119.81.28.170:           469.33 KiB/s |    3.67 Mbps
+Softlayer, Seoul, KR:           119.81.28.170:           495.91 KiB/s |    3.87 Mbps
+Softlayer, HongKong, CN:        119.81.130.170:          374.38 KiB/s |    2.92 Mbps
+Softlayer, Dallas, TX:          169.48.124.82:             1.55 MiB/s |   12.37 Mbps
+Softlayer, Seattle, WA:         67.228.112.250:          301.42 KiB/s |    2.35 Mbps
+Softlayer, Frankfurt, DE:       159.122.69.4:            472.46 KiB/s |    3.69 Mbps
+Softlayer, Paris, FR:           159.8.64.212:            271.49 KiB/s |    2.12 Mbps
+Leaseweb, HongKong, CN:         43.249.36.49:              2.09 MiB/s |   16.71 Mbps
+Leaseweb, Singapore, SG:        103.254.153.18:          288.60 KiB/s |    2.25 Mbps
+Leaseweb, Washington D.C., US:  207.244.94.80:           146.71 KiB/s |    1.15 Mbps
+Leaseweb, San Francisco, US:    209.58.135.187:          464.09 KiB/s |    3.63 Mbps
+Leaseweb, Netherlands, NL:      5.79.108.33:             149.20 KiB/s |    1.17 Mbps
+OVH, Montreal, CA:              192.99.19.165:             1.04 MiB/s |    8.34 Mbps
+ChinaTelecom, Shanghai, CN:     101.95.48.41:            193.00 KiB/s |    1.51 Mbps
+ChinaTelecom, Beijing, CN:      60.247.96.2:             341.15 KiB/s |    2.67 Mbps
+ChinaUnicom, Beijing, CN:       61.135.202.2:              2.46 MiB/s |   19.72 Mbps
+ChinaTelecom, Guangzhou, CN:    119.145.88.166:          383.05 KiB/s |    2.99 Mbps
+ChinaMobile, Guangzhou, CN:     221.179.46.222:          960.18 KiB/s |    7.50 Mbps
+ChinaTelecom, Hefei, CN:        61.191.111.11:           290.96 KiB/s |    2.27 Mbps
+ChinaUnicom, Hefei, CN:         112.122.10.26:             1.71 MiB/s |   13.65 Mbps
+ChinaMobile, Hefei, CN:         120.209.140.60:          790.67 KiB/s |    6.18 Mbps
+Hinet, Taiwan, TW:              210.61.132.1:              6.43 MiB/s |   51.41 Mbps
+----------------------------------------------------------------------
+===== 测试 [四川电信] 的回程路由 =====
+traceroute to 125.64.38.178 (125.64.38.178), 30 hops max, 60 byte packets
+ 1  *
+ 2  209.222.31.33  19.72 ms  AS20473  日本 东京都 东京 choopa.com
+ 3  vl627-br2-cer.tyo1.choopa.net (45.76.201.93)  1.09 ms  AS20473  日本 东京都 东京 choopa.com
+ 4  ae-12.r01.tokyjp05.jp.bb.gin.ntt.net (120.88.53.65)  2.61 ms  AS2914  日本 东京都 东京 ntt.com
+ 5  ae-4.r03.tokyjp05.jp.bb.gin.ntt.net (129.250.6.188)  2.08 ms  AS2914  日本 东京都 东京 ntt.com
+ 6  ae-4.r31.tokyjp05.jp.bb.gin.ntt.net (129.250.3.57)  1.93 ms  AS2914  日本 东京都 东京 ntt.com
+ 7  ae-10.r26.tokyjp05.jp.bb.gin.ntt.net (129.250.2.152)  1.81 ms  AS2914  日本 东京都 东京 ntt.com
+ 8  202.97.51.61  85.03 ms  AS4134  中国 上海 电信
+ 9  202.97.90.58  83.64 ms  AS4134  中国 上海 电信
+10  202.97.57.230  86.66 ms  AS4134  中国 上海 电信
+11  202.97.36.2  134.01 ms  AS4134  中国 四川 成都 电信
+12  *
+13  118.123.217.86  134.36 ms  AS38283  中国 四川 成都 电信
+14  118.123.214.38  131.01 ms  AS38283  中国 四川 成都 电信
+15  125.64.38.178  129.30 ms  AS38283  中国 四川 成都 电信
+
+===== 回程 [四川电信] 路由测试结束 =====
+===== 测试 [北京电信] 的回程路由 =====
+traceroute to 106.120.243.142 (106.120.243.142), 30 hops max, 60 byte packets
+ 1  *
+ 2  209.222.31.33  16.77 ms  AS20473  日本 东京都 东京 choopa.com
+ 3  vl627-br2-cer.tyo1.choopa.net (45.76.201.93)  0.97 ms  AS20473  日本 东京都 东京 choopa.com
+ 4  ae-12.r01.tokyjp05.jp.bb.gin.ntt.net (120.88.53.65)  62.23 ms  AS2914  日本 东京都 东京 ntt.com
+ 5  ae-4.r03.tokyjp05.jp.bb.gin.ntt.net (129.250.6.188)  2.17 ms  AS2914  日本 东京都 东京 ntt.com
+ 6  ae-4.r31.tokyjp05.jp.bb.gin.ntt.net (129.250.3.57)  2.00 ms  AS2914  日本 东京都 东京 ntt.com
+ 7  ae-11.r27.tokyjp05.jp.bb.gin.ntt.net (129.250.2.154)  4.03 ms  AS2914  日本 东京都 东京 ntt.com
+ 8  *
+ 9  *
+10  202.97.34.157  109.75 ms  AS4134  中国 北京 电信
+11  *
+12  *
+13  6.254.120.106.static.bjtelecom.net (106.120.254.6)  107.99 ms  AS4847  中国 北京 电信
+14  142.243.120.106.static.bjtelecom.net (106.120.243.142)  107.59 ms  AS4847  中国 北京 电信
+
+===== 回程 [北京电信] 路由测试结束 =====
+===== 测试 [北京联通] 的回程路由 =====
+traceroute to 103.254.70.52 (103.254.70.52), 30 hops max, 60 byte packets
+ 1  *
+ 2  209.222.31.33  43.39 ms  AS20473  日本 东京都 东京 choopa.com
+ 3  *
+ 4  ae-12.r01.tokyjp05.jp.bb.gin.ntt.net (120.88.53.65)  1.61 ms  AS2914  日本 东京都 东京 ntt.com
+ 5  ae-4.r03.tokyjp05.jp.bb.gin.ntt.net (129.250.6.188)  1.92 ms  AS2914  日本 东京都 东京 ntt.com
+ 6  ae-4.r31.tokyjp05.jp.bb.gin.ntt.net (129.250.3.57)  2.02 ms  AS2914  日本 东京都 东京 ntt.com
+ 7  ae-10.r26.tokyjp05.jp.bb.gin.ntt.net (129.250.2.152)  1.71 ms  AS2914  日本 东京都 东京 ntt.com
+ 8  202.97.94.9  82.06 ms  AS4134  中国 上海 电信
+ 9  202.97.90.30  86.60 ms  AS4134  中国 上海 电信
+10  202.97.94.238  88.84 ms  AS4134  中国 上海 电信
+11  202.97.34.149  107.28 ms  AS4134  中国 北京 电信
+12  *
+13  *
+14  *
+15  119.40.40.74  132.06 ms  AS4847  中国 北京 cnispunion.org 联通
+16  *
+17  103.254.70.52  112.12 ms  AS4808,AS4847  中国 北京 联通/电信
+
+===== 回程 [北京联通] 路由测试结束 =====
+===== 测试 [北京移动] 的回程路由 =====
+traceroute to 218.205.152.14 (218.205.152.14), 30 hops max, 60 byte packets
+ 1  *
+ 2  209.222.31.33  16.58 ms  AS20473  日本 东京都 东京 choopa.com
+ 3  vl627-br2-cer.tyo1.choopa.net (45.76.201.93)  1.02 ms  AS20473  日本 东京都 东京 choopa.com
+ 4  *
+ 5  ce-0-14-0-1.r02.tokyjp05.jp.bb.gin.ntt.net (120.88.54.97)  2.43 ms  AS2914  日本 东京都 东京 ntt.com
+ 6  *
+ 7  ae-4.r24.tkokhk01.hk.bb.gin.ntt.net (129.250.2.51)  50.50 ms  AS2914  中国 香港 ntt.com
+ 8  ae-1.r03.tkokhk01.hk.bb.gin.ntt.net (129.250.6.98)  50.19 ms  AS2914  中国 香港 ntt.com
+ 9  ae-1.a01.chwahk02.hk.bb.gin.ntt.net (129.250.5.161)  51.50 ms  AS2914  中国 香港 ntt.com
+10  203.131.254.2  49.16 ms  AS2914  中国 香港 ntt.com
+11  *
+12  223.120.2.2  54.42 ms  AS58453  中国 广东 广州 移动
+13  223.120.22.21  87.17 ms  AS58453  中国 广东 广州 移动
+14  221.183.55.102  298.44 ms  AS9808  中国 北京 移动
+15  221.183.46.254  87.28 ms  AS9808  中国 北京 移动
+16  221.176.27.253  152.95 ms  AS9808  中国 北京 移动
+17  *
+18  *
+19  211.136.63.106  88.03 ms  AS56048  中国 北京 移动
+20  218.205.152.14  89.40 ms  AS56048  中国 北京 移动
+
+===== 回程 [北京移动] 路由测试结束 =====
+===== 测试 [上海移动] 的回程路由 =====
+traceroute to 117.131.14.202 (117.131.14.202), 30 hops max, 60 byte packets
+ 1  *
+ 2  209.222.31.33  12.84 ms  AS20473  日本 东京都 东京 choopa.com
+ 3  vl627-br2-cer.tyo1.choopa.net (45.76.201.93)  1.05 ms  AS20473  日本 东京都 东京 choopa.com
+ 4  *
+ 5  ce-0-14-0-1.r02.tokyjp05.jp.bb.gin.ntt.net (120.88.54.97)  2.64 ms  AS2914  日本 东京都 东京 ntt.com
+ 6  ae-3.r30.tokyjp05.jp.bb.gin.ntt.net (129.250.3.23)  2.20 ms  AS2914  日本 东京都 东京 ntt.com
+ 7  ae-4.r24.tkokhk01.hk.bb.gin.ntt.net (129.250.2.51)  50.40 ms  AS2914  中国 香港 ntt.com
+ 8  ae-1.r02.tkokhk01.hk.bb.gin.ntt.net (129.250.6.92)  54.46 ms  AS2914  中国 香港 ntt.com
+ 9  ae-2.a01.chwahk02.hk.bb.gin.ntt.net (129.250.6.123)  59.84 ms  AS2914  中国 香港 ntt.com
+10  203.131.254.2  49.43 ms  AS2914  中国 香港 ntt.com
+11  223.120.2.53  49.60 ms  AS58453  中国 香港 移动
+12  223.120.2.2  54.56 ms  AS58453  中国 广东 广州 移动
+13  223.120.22.5  78.88 ms  AS58453  中国 上海 移动
+14  221.183.55.26  80.49 ms  AS9808  中国 上海 移动
+15  221.176.22.205  79.56 ms  AS9808  中国 上海 移动
+16  221.176.22.13  80.06 ms  AS9808  中国 上海 移动
+17  221.176.19.58  78.65 ms  AS9808  中国 上海 移动
+18  221.181.125.154  80.03 ms  AS24400  中国 上海 移动
+19  117.131.14.202  81.55 ms  AS24400  中国 上海 移动
+
+===== 回程 [上海移动] 路由测试结束 =====
+===== 测试 [上海电信] 的回程路由 =====
+traceroute to 211.144.205.58 (211.144.205.58), 30 hops max, 60 byte packets
+ 1  *
+ 2  209.222.31.33  16.58 ms  AS20473  日本 东京都 东京 choopa.com
+ 3  vl627-br2-cer.tyo1.choopa.net (45.76.201.93)  2.57 ms  AS20473  日本 东京都 东京 choopa.com
+ 4  ae-12.r01.tokyjp05.jp.bb.gin.ntt.net (120.88.53.65)  62.10 ms  AS2914  日本 东京都 东京 ntt.com
+ 5  ae-25.r02.tokyjp05.jp.bb.gin.ntt.net (129.250.6.182)  2.19 ms  AS2914  日本 东京都 东京 ntt.com
+ 6  ae-3.r30.tokyjp05.jp.bb.gin.ntt.net (129.250.3.23)  2.04 ms  AS2914  日本 东京都 东京 ntt.com
+ 7  ae-9.r24.osakjp02.jp.bb.gin.ntt.net (129.250.7.79)  9.18 ms  AS2914  日本 大阪府 大阪 ntt.com
+ 8  ae-20.r00.osakjp02.jp.bb.gin.ntt.net (129.250.5.39)  9.53 ms  AS2914  日本 大阪府 大阪 ntt.com
+ 9  219.158.39.197  116.61 ms  AS4837  中国 上海 联通
+10  219.158.113.126  125.50 ms  AS4837  中国 上海 联通
+11  219.158.113.113  110.49 ms  AS4837  中国 上海 联通
+12  *
+13  112.64.252.86  120.11 ms  AS17621  中国 上海 联通
+14  140.207.48.250  117.57 ms  AS17621  中国 上海 联通
+15  208.162.dsnet (211.144.208.162)  108.13 ms  AS23853  中国 上海 shuxun.net 电信/联通
+16  208.134.dsnet (211.144.208.134)  118.50 ms  AS23853  中国 上海 shuxun.net 电信/联通
+17  205.58.dsnet (211.144.205.58)  108.55 ms  AS17621,AS23853  中国 上海 shuxun.net 电信/联通
+
+===== 回程 [上海电信] 路由测试结束 =====
+===== 测试 [上海联通] 的回程路由 =====
+traceroute to 220.196.42.133 (220.196.42.133), 30 hops max, 60 byte packets
+ 1  *
+ 2  209.222.31.33  20.79 ms  AS20473  日本 东京都 东京 choopa.com
+ 3  vl627-br2-cer.tyo1.choopa.net (45.76.201.93)  1.23 ms  AS20473  日本 东京都 东京 choopa.com
+ 4  ae-12.r01.tokyjp05.jp.bb.gin.ntt.net (120.88.53.65)  15.15 ms  AS2914  日本 东京都 东京 ntt.com
+ 5  ae-4.r03.tokyjp05.jp.bb.gin.ntt.net (129.250.6.188)  1.82 ms  AS2914  日本 东京都 东京 ntt.com
+ 6  ae-4.r30.tokyjp05.jp.bb.gin.ntt.net (129.250.3.34)  2.02 ms  AS2914  日本 东京都 东京 ntt.com
+ 7  ae-9.r24.osakjp02.jp.bb.gin.ntt.net (129.250.7.79)  9.45 ms  AS2914  日本 大阪府 大阪 ntt.com
+ 8  ae-20.r00.osakjp02.jp.bb.gin.ntt.net (129.250.5.39)  9.42 ms  AS2914  日本 大阪府 大阪 ntt.com
+ 9  *
+10  219.158.113.126  113.83 ms  AS4837  中国 上海 联通
+11  *
+12  *
+13  112.64.247.194  112.50 ms  AS17621  中国 上海 联通
+14  112.65.207.162  102.99 ms  AS17621  中国 上海 联通
+15  140.207.207.37  101.11 ms  AS17621  中国 上海 联通
+16  140.207.207.186  114.45 ms  AS17621  中国 上海 联通
+17  220.196.42.133  102.02 ms  AS17621  中国 上海 联通
+
+===== 回程 [上海联通] 路由测试结束 =====
+===== 测试 [广东联通] 的回程路由 =====
+traceroute to 27.40.0.30 (27.40.0.30), 30 hops max, 60 byte packets
+ 1  *
+ 2  209.222.31.33  16.63 ms  AS20473  日本 东京都 东京 choopa.com
+ 3  vl627-br2-cer.tyo1.choopa.net (45.76.201.93)  2.04 ms  AS20473  日本 东京都 东京 choopa.com
+ 4  ae-12.r01.tokyjp05.jp.bb.gin.ntt.net (120.88.53.65)  22.58 ms  AS2914  日本 东京都 东京 ntt.com
+ 5  ae-4.r03.tokyjp05.jp.bb.gin.ntt.net (129.250.6.188)  2.37 ms  AS2914  日本 东京都 东京 ntt.com
+ 6  ae-4.r30.tokyjp05.jp.bb.gin.ntt.net (129.250.3.34)  2.19 ms  AS2914  日本 东京都 东京 ntt.com
+ 7  ae-9.r26.tokyjp05.jp.bb.gin.ntt.net (129.250.2.10)  1.79 ms  AS2914  日本 东京都 东京 ntt.com
+ 8  219.158.42.5  63.99 ms  AS4837  中国 广东 广州 联通
+ 9  219.158.98.93  67.69 ms  AS4837  中国 广东 广州 联通
+10  219.158.24.125  59.30 ms  AS4837  中国 广东 广州 联通
+11  120.81.0.34  60.63 ms  AS17816  中国 广东 广州 联通
+12  221.4.6.2  61.73 ms  AS17816  中国 广东 广州 联通
+13  27.40.0.30  60.70 ms  AS17816  中国 广东 广州 联通
+
+===== 回程 [广东联通] 路由测试结束 =====
+===== 测试 [广东移动] 的回程路由 =====
+traceroute to 211.139.129.222 (211.139.129.222), 30 hops max, 60 byte packets
+ 1  *
+ 2  209.222.31.33  17.33 ms  AS20473  日本 东京都 东京 choopa.com
+ 3  vl627-br2-cer.tyo1.choopa.net (45.76.201.93)  1.02 ms  AS20473  日本 东京都 东京 choopa.com
+ 4  *
+ 5  ce-0-14-0-1.r02.tokyjp05.jp.bb.gin.ntt.net (120.88.54.97)  2.44 ms  AS2914  日本 东京都 东京 ntt.com
+ 6  ae-3.r30.tokyjp05.jp.bb.gin.ntt.net (129.250.3.23)  3.10 ms  AS2914  日本 东京都 东京 ntt.com
+ 7  ae-4.r24.tkokhk01.hk.bb.gin.ntt.net (129.250.2.51)  50.28 ms  AS2914  中国 香港 ntt.com
+ 8  ae-1.r02.tkokhk01.hk.bb.gin.ntt.net (129.250.6.92)  54.53 ms  AS2914  中国 香港 ntt.com
+ 9  ce-0-4-0-0.r02.tkokhk01.hk.ce.gin.ntt.net (203.131.241.82)  47.76 ms  AS2914  中国 香港 ntt.com
+10  223.120.2.117  47.23 ms  AS58453  中国 香港 移动
+11  223.120.2.82  53.15 ms  AS58453  中国 香港 移动
+12  221.183.55.82  54.49 ms  AS9808  中国 广东 广州 移动
+13  221.183.25.118  53.30 ms  AS9808  中国 广东 广州 移动
+14  221.176.22.157  57.43 ms  AS9808  中国 广东 广州 移动
+15  221.183.14.126  56.49 ms  AS9808  中国 广东 广州 移动
+16  120.198.206.198  59.19 ms  AS56040  中国 广东 广州 移动
+17  120.197.27.250  59.96 ms  AS56040  中国 广东 广州 移动
+18  211.139.129.222  57.43 ms  AS56040  中国 广东 广州 移动
+
+===== 回程 [广东移动] 路由测试结束 =====
+----------------------------------------------------------------------
+【四川电信】 - 125.64.38.178
+10 packets transmitted, 10 received, 0% packet loss, time 9012ms
+rtt min/avg/max/mdev = 128.773/128.972/129.617/0.253 ms
+----------------------------------------------------------------------
+【北京电信】 - 106.120.243.142
+10 packets transmitted, 10 received, 0% packet loss, time 9006ms
+rtt min/avg/max/mdev = 107.442/107.535/107.645/0.394 ms
+----------------------------------------------------------------------
+【北京联通】 - 103.254.70.52
+10 packets transmitted, 9 received, 10% packet loss, time 9013ms
+rtt min/avg/max/mdev = 109.617/109.884/110.060/0.305 ms
+----------------------------------------------------------------------
+【北京移动】 - 218.205.152.14
+10 packets transmitted, 10 received, 0% packet loss, time 9012ms
+rtt min/avg/max/mdev = 89.018/89.152/89.315/0.210 ms
+----------------------------------------------------------------------
+【上海移动】 - 117.131.14.202
+10 packets transmitted, 10 received, 0% packet loss, time 9011ms
+rtt min/avg/max/mdev = 80.851/81.351/81.915/0.435 ms
+----------------------------------------------------------------------
+【上海电信】 - 211.144.205.58
+10 packets transmitted, 4 received, 60% packet loss, time 9125ms
+rtt min/avg/max/mdev = 108.511/109.197/110.554/0.875 ms
+----------------------------------------------------------------------
+【上海联通】 - 220.196.42.133
+10 packets transmitted, 9 received, 10% packet loss, time 9020ms
+rtt min/avg/max/mdev = 101.208/101.942/102.581/0.503 ms
+----------------------------------------------------------------------
+【广东联通】 - 27.40.0.30
+10 packets transmitted, 10 received, 0% packet loss, time 9014ms
+rtt min/avg/max/mdev = 60.410/61.356/62.579/0.582 ms
+----------------------------------------------------------------------
+【广东移动】 - 211.139.129.222
+10 packets transmitted, 10 received, 0% packet loss, time 9015ms
+rtt min/avg/max/mdev = 56.736/57.183/57.598/0.407 ms
+----------------------------------------------------------------------
+min:最低延迟
+avg:平均延迟
+max:最高延迟
+mdev:平均偏差
+----------------------------------------------------------------------</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-14T23:53:34.000Z" itemprop="datePublished">2019-12-15</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.239Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/15/debian-9-10-e5-bf-ab-e9-80-9f-e5-bc-80-e5-90-afgoogle-bbr-e7-9a-84-e6-96-b9-e6-b3-95-ef-bc-8c-e5-ae-9e-e7-8e-b0-e9-ab-98-e6-95-88-e5-8d-95-e8-be-b9-e5-8a-a0-e9-80-9f/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Debian 9/10快速开启Google BBR的方法，实现高效单边加速</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/15/debian-ubuntu-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85node-js-v8-x-e5-8f-8a-e5-85-b6-e5-ae-83-e7-89-88-e6-9c-ac-e6-96-b9-e6-b3-95/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Debian/Ubuntu快速安装Node.js v8.x及其它版本方法</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

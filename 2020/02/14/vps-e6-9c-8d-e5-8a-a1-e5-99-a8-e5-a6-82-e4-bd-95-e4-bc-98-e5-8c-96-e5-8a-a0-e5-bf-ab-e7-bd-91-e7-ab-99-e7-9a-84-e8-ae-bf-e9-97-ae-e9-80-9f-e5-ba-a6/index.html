@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>VPS服务器如何优化/加快网站的访问速度 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="VPS服务器如何优化&#x2F;加快网站的访问速度 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/02/14/vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-a6-82-e4-bd-95-e4-bc-98-e5-8c-96-e5-8a-a0-e5-bf-ab-e7-bd-91-e7-ab-99-e7-9a-84-e8-ae-bf-e9-97-ae-e9-80-9f-e5-ba-a6/"><meta property="og:locale" content="en"><meta name="description" content="说明：我们很多人建了网站后，都很在意网站的打开速度，几乎很多都以为速度只与延迟有关，其实不仅仅延迟，也有其它因素影响我们的网站打开速度，这里就具体说一下网站优化方法。 方法1、域名的解析速度当用户访问你的网址时，首先会连接域名解析的服务商，服务商会返回IP地址，这里会存在延迟，当然，用户短时间内再次访问时由于缓存这里的延迟可以忽略不计。 优化办法：尽量使用智能解析服务商，比如国内的dnspod、c - John Doe - 南猫"><meta property="article:published_time" content="2020-02-14T13:58:58.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.248Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.248Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/02/14/vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-a6-82-e4-bd-95-e4-bc-98-e5-8c-96-e5-8a-a0-e5-bf-ab-e7-bd-91-e7-ab-99-e7-9a-84-e8-ae-bf-e9-97-ae-e9-80-9f-e5-ba-a6/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/02/14/vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-a6-82-e4-bd-95-e4-bc-98-e5-8c-96-e5-8a-a0-e5-bf-ab-e7-bd-91-e7-ab-99-e7-9a-84-e8-ae-bf-e9-97-ae-e9-80-9f-e5-ba-a6/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/02/14/vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-a6-82-e4-bd-95-e4-bc-98-e5-8c-96-e5-8a-a0-e5-bf-ab-e7-bd-91-e7-ab-99-e7-9a-84-e8-ae-bf-e9-97-ae-e9-80-9f-e5-ba-a6/"
+    },
+    "headline": "VPS服务器如何优化/加快网站的访问速度 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-02-14T13:58:58.000Z",
+    "dateModified": "2020-04-24T09:34:44.248Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：我们很多人建了网站后，都很在意网站的打开速度，几乎很多都以为速度只与延迟有关，其实不仅仅延迟，也有其它因素影响我们的网站打开速度，这里就具体说一下网站优化方法。 方法1、域名的解析速度当用户访问你的网址时，首先会连接域名解析的服务商，服务商会返回IP地址，这里会存在延迟，当然，用户短时间内再次访问时由于缓存这里的延迟可以忽略不计。 优化办法：尽量使用智能解析服务商，比如国内的dnspod、c - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=VPS服务器如何优化/加快网站的访问速度" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=VPS服务器如何优化/加快网站的访问速度&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=VPS服务器如何优化/加快网站的访问速度" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAElklEQVR42u2bSXIjQQwD9f9Pz1xnUROJki8qZl+89KLK6giaBODXr4XHS2ihhRZaaKG/DPo1HH/d8MfPT9f8e/7dfeT7d+t49326779rhBZ6CfTTwtNCpvuevr77zKdNmtaXnvn2GqGFXgT9rnCkRU/XTMVl2ti0pvSsJw6hhRb6/6aAFpqTYpaeN70QoYUWui9kaRGkEJKhJg0xaWgRWmih54IyAaXidiJKTIWUPu/jKUtoob8ceioy3/T1x9RQoYX+YuhoekFBjwwMaShpDAUiHB67lkIL/cXQreiWmn0ypDwBEoGwNf6EFnob9CS6T8BEBKDiPhUQmmIamxOhhb4cmhQPMvifCgjEDJjCNlMIR2ihN0F/Ulxa4Z80IxRmEvofC5zQQi+ATs07LVBUuJs2LhXVk8DeKAwKLfSl0MSYQ3/8YVinKT6kgSIbILTQW6CJ2N4a4FTwJ0b+ZCySc0gNFVroy6CbIX8S4cjATwpXapTa64QWehP0VFiaoGtjktMmhBbBOjwntNAXQ5NFR7MbGO6p0KXCRo35sdgJLfQCaDR8g2G9Ef5PhgsiWFRBG6GFXgDdNh6nIuCJKJg2CQkZQgu9DJoOGk2YNRkEp6J+K0wKLfQWaLLgqaloB4Xpvk+NwRjQFVroZdBEoGuKDx1OSDH8tJESWugt0KRQkN/TzUviHQ0EpA2MgVihhb4UOhUCGqppBpO02NQMJfMOORxCC30pdBLo6EBAm/7WLJiEiNasF1roDdCtiUZDsydmXTLbT5772JwILfTl0CeFiBr5pDE5eXb9XKGFXgCdBP/pw5NoR4M8n4h+TUBIaKE3QU/CHgm/NIWIGPjJxCOiYjVlCS30ZdDt8JEEQDoU0M1vhxZk4Akt9MXQSQxMYgFtblIzQ00DKnag6i200JdBk6aEhFNTWJZuEG2M6AYKLfQmaCqykWAchUzGf7vhOBggtNBLoFNTn87RkF3aUNqk0DXGdJHQQl8MTQ12IhikokeLWRIHanFRaKEXQRNwAjt9cCsonIQDxnULLfQCaBKQSQ1AE8KhhSkV0JONElroDdBkYE/D/jQsNAMLFQxOgnNCC70Rmg4JTYE5EfSbTSFBAaGF3gRNzfDUrEyb1Q4yjbiRAjrIlBda6Auhp4OKfikgR5uZ1MDQwjdOWUILfSk0XSwZCujiqZBIRI0mjCO00Bug28E8FZdUxFrRn2wgbWaEFnoDdGo86JDeNiUkONsEZMk6hRZ6G3T6Q0+KSxrqGxOPbhwN8Agt9DZoKuSfBNxGwa4w48nw8fjyhBZ6CXQzJFBzoG1S2pBNeilx4BBa6EuhicDfNBFEfCfnI8CL/ROL0EILnQM1J2GYBEKM90bMGEUEoYW+GLo18BrRgZh/ZIhIIuUUqvsR11Joob8MugnXTMN8Y9Yhcb7YEGRGCi30IugksjXBNWoQEAOOhHDqgUNooYVGgZtU3OhnEOOdGg9CCy10bu5JkDUJBqmJSUPLUeETWuhF0FQISEbeaeEh55oXILTQm6FJ44EF9YNQDRH8m3seX4TQQi+A3nQILbTQQgst9JccvwFR2JWAyh3sTwAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">VPS服务器如何优化/加快网站的访问速度</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-02-14</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=VPS服务器如何优化/加快网站的访问速度&url=http://hexo.southcat.net/2020/02/14/vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-a6-82-e4-bd-95-e4-bc-98-e5-8c-96-e5-8a-a0-e5-bf-ab-e7-bd-91-e7-ab-99-e7-9a-84-e8-ae-bf-e9-97-ae-e9-80-9f-e5-ba-a6/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=VPS服务器如何优化/加快网站的访问速度&url=http://hexo.southcat.net/2020/02/14/vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-a6-82-e4-bd-95-e4-bc-98-e5-8c-96-e5-8a-a0-e5-bf-ab-e7-bd-91-e7-ab-99-e7-9a-84-e8-ae-bf-e9-97-ae-e9-80-9f-e5-ba-a6/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/02/14/vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-a6-82-e4-bd-95-e4-bc-98-e5-8c-96-e5-8a-a0-e5-bf-ab-e7-bd-91-e7-ab-99-e7-9a-84-e8-ae-bf-e9-97-ae-e9-80-9f-e5-ba-a6/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/02/14/vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-a6-82-e4-bd-95-e4-bc-98-e5-8c-96-e5-8a-a0-e5-bf-ab-e7-bd-91-e7-ab-99-e7-9a-84-e8-ae-bf-e9-97-ae-e9-80-9f-e5-ba-a6/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/02/14/vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-a6-82-e4-bd-95-e4-bc-98-e5-8c-96-e5-8a-a0-e5-bf-ab-e7-bd-91-e7-ab-99-e7-9a-84-e8-ae-bf-e9-97-ae-e9-80-9f-e5-ba-a6/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/02/14/vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-a6-82-e4-bd-95-e4-bc-98-e5-8c-96-e5-8a-a0-e5-bf-ab-e7-bd-91-e7-ab-99-e7-9a-84-e8-ae-bf-e9-97-ae-e9-80-9f-e5-ba-a6/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/02/14/vps-e6-9c-8d-e5-8a-a1-e5-99-a8-e5-a6-82-e4-bd-95-e4-bc-98-e5-8c-96-e5-8a-a0-e5-bf-ab-e7-bd-91-e7-ab-99-e7-9a-84-e8-ae-bf-e9-97-ae-e9-80-9f-e5-ba-a6/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAElklEQVR42u2bSXIjQQwD9f9Pz1xnUROJki8qZl+89KLK6giaBODXr4XHS2ihhRZaaKG/DPo1HH/d8MfPT9f8e/7dfeT7d+t49326779rhBZ6CfTTwtNCpvuevr77zKdNmtaXnvn2GqGFXgT9rnCkRU/XTMVl2ti0pvSsJw6hhRb6/6aAFpqTYpaeN70QoYUWui9kaRGkEJKhJg0xaWgRWmih54IyAaXidiJKTIWUPu/jKUtoob8ceioy3/T1x9RQoYX+YuhoekFBjwwMaShpDAUiHB67lkIL/cXQreiWmn0ypDwBEoGwNf6EFnob9CS6T8BEBKDiPhUQmmIamxOhhb4cmhQPMvifCgjEDJjCNlMIR2ihN0F/Ulxa4Z80IxRmEvofC5zQQi+ATs07LVBUuJs2LhXVk8DeKAwKLfSl0MSYQ3/8YVinKT6kgSIbILTQW6CJ2N4a4FTwJ0b+ZCySc0gNFVroy6CbIX8S4cjATwpXapTa64QWehP0VFiaoGtjktMmhBbBOjwntNAXQ5NFR7MbGO6p0KXCRo35sdgJLfQCaDR8g2G9Ef5PhgsiWFRBG6GFXgDdNh6nIuCJKJg2CQkZQgu9DJoOGk2YNRkEp6J+K0wKLfQWaLLgqaloB4Xpvk+NwRjQFVroZdBEoGuKDx1OSDH8tJESWugt0KRQkN/TzUviHQ0EpA2MgVihhb4UOhUCGqppBpO02NQMJfMOORxCC30pdBLo6EBAm/7WLJiEiNasF1roDdCtiUZDsydmXTLbT5772JwILfTl0CeFiBr5pDE5eXb9XKGFXgCdBP/pw5NoR4M8n4h+TUBIaKE3QU/CHgm/NIWIGPjJxCOiYjVlCS30ZdDt8JEEQDoU0M1vhxZk4Akt9MXQSQxMYgFtblIzQ00DKnag6i200JdBk6aEhFNTWJZuEG2M6AYKLfQmaCqykWAchUzGf7vhOBggtNBLoFNTn87RkF3aUNqk0DXGdJHQQl8MTQ12IhikokeLWRIHanFRaKEXQRNwAjt9cCsonIQDxnULLfQCaBKQSQ1AE8KhhSkV0JONElroDdBkYE/D/jQsNAMLFQxOgnNCC70Rmg4JTYE5EfSbTSFBAaGF3gRNzfDUrEyb1Q4yjbiRAjrIlBda6Auhp4OKfikgR5uZ1MDQwjdOWUILfSk0XSwZCujiqZBIRI0mjCO00Bug28E8FZdUxFrRn2wgbWaEFnoDdGo86JDeNiUkONsEZMk6hRZ6G3T6Q0+KSxrqGxOPbhwN8Agt9DZoKuSfBNxGwa4w48nw8fjyhBZ6CXQzJFBzoG1S2pBNeilx4BBa6EuhicDfNBFEfCfnI8CL/ROL0EILnQM1J2GYBEKM90bMGEUEoYW+GLo18BrRgZh/ZIhIIuUUqvsR11Joob8MugnXTMN8Y9Yhcb7YEGRGCi30IugksjXBNWoQEAOOhHDqgUNooYVGgZtU3OhnEOOdGg9CCy10bu5JkDUJBqmJSUPLUeETWuhF0FQISEbeaeEh55oXILTQm6FJ44EF9YNQDRH8m3seX4TQQi+A3nQILbTQQgst9JccvwFR2JWAyh3sTwAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#相关教程"><span class="post-toc-number">2.</span> <span class="post-toc-text">相关教程</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>我们很多人建了网站后，都很在意网站的打开速度，几乎很多都以为速度只与延迟有关，其实不仅仅延迟，也有其它因素影响我们的网站打开速度，这里就具体说一下网站优化方法。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p><strong>1、域名的解析速度</strong><br>当用户访问你的网址时，首先会连接域名解析的服务商，服务商会返回<code>IP</code>地址，这里会存在延迟，当然，用户短时间内再次访问时由于缓存这里的延迟可以忽略不计。</p>
+<pre><code>优化办法：尽量使用智能解析服务商，比如国内的dnspod、cloudxns等，尽量用你目标群体国家的服务商。</code></pre><p><strong>2、连接你服务器IP地址的延迟</strong><br>域名服务商返回<code>IP</code>地址后，客户再连接<code>IP</code>地址会存在延迟。</p>
+<pre><code>优化办法：使用离你目标客户延迟小的服务器，比如访问你网站的大部分是国人，那么可以选择国内vps或者香港vps。</code></pre><p><strong>3、网站服务器的响应速度</strong><br>客户通过<code>IP</code>地址链接到服务器并发出请求后，服务器会处理请求，返回页面数据，这里存在响应时间。主要由服务器运算速度的影响。</p>
+<pre><code>优化方法：购买运算性能好的vps服务器，比如高性能cpu服务器，多核等。
+
+
+优化方法：一是选择上传带宽大的vps服务器，并且用bbr或者锐速给vps服务器加速，再就是优化网页内容，网页代码，压缩图片等等。</code></pre><h2 id="相关教程"><a href="#相关教程" class="headerlink" title="相关教程"></a>相关教程</h2><ul>
+<li>BBR+BBR魔改+Lotsever(锐速)一键脚本</li>
+<li>TinyPNG：一个可以在线压缩图片的网站</li>
+</ul>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-02-14T13:58:58.000Z" itemprop="datePublished">2020-02-14</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.248Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/02/15/e4-b8-80-e6-ac-be-e6-9e-81-e6-98-93-e6-90-ad-e5-bb-ba-e7-9a-84-e8-87-aa-e5-8a-a9git-e6-9c-8d-e5-8a-a1-e5-99-a8-ef-bc-9agogs-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一款极易搭建的自助Git服务器：Gogs安装教程</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/02/14/linux-centos-e4-b8-8bnginx-e5-8f-8d-e5-90-91-e4-bb-a3-e7-90-86-e6-95-99-e7-a8-8b/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux Centos下Nginx反向代理教程</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

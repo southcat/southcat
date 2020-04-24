@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>pyLoad：一款开源、免费带Web面板的多功能下载神器 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="pyLoad：一款开源、免费带Web面板的多功能下载神器 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/04/02/pyload-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e3-80-81-e5-85-8d-e8-b4-b9-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-b8-8b-e8-bd-bd-e7-a5-9e-e5-99-a8/"><meta property="og:locale" content="en"><meta name="description" content="说明：pyLoad是一款免费和开源下载管理器，用Python编写，旨在通过Web实现极其轻量级，易于扩展和完全可管理的下载器，不仅可以直接下载直链，而且也可以从很多网站中解析出文件&#x2F;视频等进行下载，比如115网盘，youtube等，包括很多男同学们很喜欢的某些视频网站，不过还是建议少看点好，得注意身体，这里就发个大概搭建方法。 截图 安装Github地址：https:&#x2F;&#x2F;github.com&#x2F;py - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/pyload(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/pyload(2).png"><meta property="article:published_time" content="2020-04-02T15:18:11.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.254Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.254Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/04/02/pyload-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e3-80-81-e5-85-8d-e8-b4-b9-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-b8-8b-e8-bd-bd-e7-a5-9e-e5-99-a8/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/04/02/pyload-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e3-80-81-e5-85-8d-e8-b4-b9-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-b8-8b-e8-bd-bd-e7-a5-9e-e5-99-a8/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/04/02/pyload-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e3-80-81-e5-85-8d-e8-b4-b9-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-b8-8b-e8-bd-bd-e7-a5-9e-e5-99-a8/"
+    },
+    "headline": "pyLoad：一款开源、免费带Web面板的多功能下载神器 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-04-02T15:18:11.000Z",
+    "dateModified": "2020-04-24T09:34:44.254Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：pyLoad是一款免费和开源下载管理器，用Python编写，旨在通过Web实现极其轻量级，易于扩展和完全可管理的下载器，不仅可以直接下载直链，而且也可以从很多网站中解析出文件/视频等进行下载，比如115网盘，youtube等，包括很多男同学们很喜欢的某些视频网站，不过还是建议少看点好，得注意身体，这里就发个大概搭建方法。 截图 安装Github地址：https://github.com/py - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=pyLoad：一款开源、免费带Web面板的多功能下载神器" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=pyLoad：一款开源、免费带Web面板的多功能下载神器&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=pyLoad：一款开源、免费带Web面板的多功能下载神器" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFQ0lEQVR42u3cS3LbQBAEUdz/0vTKC1MzXVlDcCEjubEsgSDmKaKjf/b18vW6JBBBBBFEEEGEEeEaXqtr/v79n5strl99/X7tdL/Vte/XrT7r/frxXCKIIMISYRk0NggJZ3fdDmB1TcI6uf/yXCKIIMIWYRf8yMPtAleCS0GNfp2ef/vMIoggwhECDWwTUEp4UvCjCZcIIojwfYQpeSLvJQVNKuDo/ei5RBBBhLMCiiY1tKhqGjJTQTclXrdXkSKI8DCEFLB+65+3dZtFEOFBCHFoCRqeJ83TqRkzfX4qqqZ7HU+lRRDhQQi0gJkKGtJQaYoocmCayE04Ioggwn5nqfmw1BwlA9qTw5LhDmn6iCCCCHuE0yZFGrTWS1RlwzUtf00DYRFEECEj0MEHOVgzjGkP0gyF46KpCCKIMDZaUzMjBb1m6XpKwkiydJJAxQJKBBFEeKVhKC2SCAAJehQkNXtQgSaCCCJshy9tMCOJTrNklZKckwA9nUsEEUTI+wmpWEoNmAZs+n5aHqUD4xhIRRBBhFhAtc1ReoDUBCFNk7SceVsVKYIID0a4Y8CaEq8EloodmqA1zRsRRBCBLXOShafjRSm4sHXHkIUsk4ogggjzQDY1RKcii36NCptyYQwvZYgggggRoQ4m5SJHs6SZFjsT5i0DWRFEEAE3Kmljo12kahFOCy4RRBAhIzRJCVn6pMkSWcyahjDp86dkSgQRRMi1A1mMJEsRLSoJrDQY0oUTEUQQgTdamyFLOkhKfugyRvP96v0iiCBCLKDIAuXUfGmWv0hwboJknTyJIIIIqNHaHrpZ7KJDl7ZoIof+8R4RRBBhRKCDDNosORnGkqZpwp4CsggiiMD+vcMUiOhwNg09Lvgig9sUbNO9RRBBhLl2SMsNp0MPCtMMWFMDhQZpEUQQgTdVUgNkCkx0eENw6RJ5Cp6xgBJBBBFiAUUWNEhylRq51RAV4NDAK4IIIpz3E06apGnQ2y6MkSTqq1WkCCI8ACEFnJRQ0QSGLmXQgJeaqqQxLIIIInAEukhBhyK7BsdpYpWaO2gwJIIIIowI7QFTItMOaekyBy24YoNFBBFEqBe3UjGUiiSSiJ02WGjyhgeyIoggwosmMqkZOwWj1GyhTRg60E2/IBFEEIH/v8208CGFCmnSkp+ToN0GXBFEECEvbp0sYKUPJcsS6bBNQkUGQCKIIAJHIItPdJBCG7enA9m2oSKCCCIwhBTAmiYLHY62QS4lWjSgooxRBBEejkAO0w5XSXCkA1kSiKcAi5MlEUQQAR2CNmVTUpUe+o4CqmoIiSCCCNtkiTwkXZ6gD/7NookMZUUQQYQ5TyCBkCZBqdihi1ufLoOgAkoEEUTIF6SgEoatFKhNdJrl0aMCSgQRHo5AG620qXq6aJGA6UJnNUgSQQQRloGxeSNpbtBhDUmWyPXkfeNAVgQRRIiBrg4yxbIEGdbSJCkNcKoCSgQRRIgFE0liSLOTDElSYCWNVAomgggi8H4CbbjQwNTgpmYKbaKmIY8IIoiQEVLzIyVB7cAmNUiawEgCtwgiiMD2E9oChhZFZCBLmic0IKYEKxZQIoggAi6c6AfRe1HQlKyRQq4qoEQQQYSLBsRmoWs6AClwSIHVLmv8+JkIIoiwRfi0IUKAaDO1HfTQ5msMjCKIIAJCIIsR9GEpOBkYp19IKrpEEEGEzwIjHmoUC1sJmDZ7UtEngggidAh0kDk9LB3ekiFP03idgi9e0hBBBBFQo5UWTKQhQ5cu20Olz9sFeBFEEKHfT/ifXyKIIIIIIoggwvL1B/bdJ8HY9FTNAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">pyLoad：一款开源、免费带Web面板的多功能下载神器</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-04-02</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=pyLoad：一款开源、免费带Web面板的多功能下载神器&url=http://hexo.southcat.net/2020/04/02/pyload-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e3-80-81-e5-85-8d-e8-b4-b9-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-b8-8b-e8-bd-bd-e7-a5-9e-e5-99-a8/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=pyLoad：一款开源、免费带Web面板的多功能下载神器&url=http://hexo.southcat.net/2020/04/02/pyload-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e3-80-81-e5-85-8d-e8-b4-b9-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-b8-8b-e8-bd-bd-e7-a5-9e-e5-99-a8/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/04/02/pyload-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e3-80-81-e5-85-8d-e8-b4-b9-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-b8-8b-e8-bd-bd-e7-a5-9e-e5-99-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/04/02/pyload-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e3-80-81-e5-85-8d-e8-b4-b9-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-b8-8b-e8-bd-bd-e7-a5-9e-e5-99-a8/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/04/02/pyload-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e3-80-81-e5-85-8d-e8-b4-b9-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-b8-8b-e8-bd-bd-e7-a5-9e-e5-99-a8/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/04/02/pyload-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e3-80-81-e5-85-8d-e8-b4-b9-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-b8-8b-e8-bd-bd-e7-a5-9e-e5-99-a8/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/04/02/pyload-ef-bc-9a-e4-b8-80-e6-ac-be-e5-bc-80-e6-ba-90-e3-80-81-e5-85-8d-e8-b4-b9-e5-b8-a6web-e9-9d-a2-e6-9d-bf-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e4-b8-8b-e8-bd-bd-e7-a5-9e-e5-99-a8/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFQ0lEQVR42u3cS3LbQBAEUdz/0vTKC1MzXVlDcCEjubEsgSDmKaKjf/b18vW6JBBBBBFEEEGEEeEaXqtr/v79n5strl99/X7tdL/Vte/XrT7r/frxXCKIIMISYRk0NggJZ3fdDmB1TcI6uf/yXCKIIMIWYRf8yMPtAleCS0GNfp2ef/vMIoggwhECDWwTUEp4UvCjCZcIIojwfYQpeSLvJQVNKuDo/ei5RBBBhLMCiiY1tKhqGjJTQTclXrdXkSKI8DCEFLB+65+3dZtFEOFBCHFoCRqeJ83TqRkzfX4qqqZ7HU+lRRDhQQi0gJkKGtJQaYoocmCayE04Ioggwn5nqfmw1BwlA9qTw5LhDmn6iCCCCHuE0yZFGrTWS1RlwzUtf00DYRFEECEj0MEHOVgzjGkP0gyF46KpCCKIMDZaUzMjBb1m6XpKwkiydJJAxQJKBBFEeKVhKC2SCAAJehQkNXtQgSaCCCJshy9tMCOJTrNklZKckwA9nUsEEUTI+wmpWEoNmAZs+n5aHqUD4xhIRRBBhFhAtc1ReoDUBCFNk7SceVsVKYIID0a4Y8CaEq8EloodmqA1zRsRRBCBLXOShafjRSm4sHXHkIUsk4ogggjzQDY1RKcii36NCptyYQwvZYgggggRoQ4m5SJHs6SZFjsT5i0DWRFEEAE3Kmljo12kahFOCy4RRBAhIzRJCVn6pMkSWcyahjDp86dkSgQRRMi1A1mMJEsRLSoJrDQY0oUTEUQQgTdamyFLOkhKfugyRvP96v0iiCBCLKDIAuXUfGmWv0hwboJknTyJIIIIqNHaHrpZ7KJDl7ZoIof+8R4RRBBhRKCDDNosORnGkqZpwp4CsggiiMD+vcMUiOhwNg09Lvgig9sUbNO9RRBBhLl2SMsNp0MPCtMMWFMDhQZpEUQQgTdVUgNkCkx0eENw6RJ5Cp6xgBJBBBFiAUUWNEhylRq51RAV4NDAK4IIIpz3E06apGnQ2y6MkSTqq1WkCCI8ACEFnJRQ0QSGLmXQgJeaqqQxLIIIInAEukhBhyK7BsdpYpWaO2gwJIIIIowI7QFTItMOaekyBy24YoNFBBFEqBe3UjGUiiSSiJ02WGjyhgeyIoggwosmMqkZOwWj1GyhTRg60E2/IBFEEIH/v8208CGFCmnSkp+ToN0GXBFEECEvbp0sYKUPJcsS6bBNQkUGQCKIIAJHIItPdJBCG7enA9m2oSKCCCIwhBTAmiYLHY62QS4lWjSgooxRBBEejkAO0w5XSXCkA1kSiKcAi5MlEUQQAR2CNmVTUpUe+o4CqmoIiSCCCNtkiTwkXZ6gD/7NookMZUUQQYQ5TyCBkCZBqdihi1ufLoOgAkoEEUTIF6SgEoatFKhNdJrl0aMCSgQRHo5AG620qXq6aJGA6UJnNUgSQQQRloGxeSNpbtBhDUmWyPXkfeNAVgQRRIiBrg4yxbIEGdbSJCkNcKoCSgQRRIgFE0liSLOTDElSYCWNVAomgggi8H4CbbjQwNTgpmYKbaKmIY8IIoiQEVLzIyVB7cAmNUiawEgCtwgiiMD2E9oChhZFZCBLmic0IKYEKxZQIoggAi6c6AfRe1HQlKyRQq4qoEQQQYSLBsRmoWs6AClwSIHVLmv8+JkIIoiwRfi0IUKAaDO1HfTQ5msMjCKIIAJCIIsR9GEpOBkYp19IKrpEEEGEzwIjHmoUC1sJmDZ7UtEngggidAh0kDk9LB3ekiFP03idgi9e0hBBBBFQo5UWTKQhQ5cu20Olz9sFeBFEEKHfT/ifXyKIIIIIIoggwvL1B/bdJ8HY9FTNAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong><code>pyLoad</code>是一款免费和开源下载管理器，用<code>Python</code>编写，旨在通过<code>Web</code>实现极其轻量级，易于扩展和完全可管理的下载器，不仅可以直接下载直链，而且也可以从很多网站中解析出文件/视频等进行下载，比如<code>115网盘</code>，<code>youtube</code>等，包括很多男同学们很喜欢的某些视频网站，不过还是建议少看点好，得注意身体，这里就发个大概搭建方法。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/pyload(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/pyload(2).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/pyload/pyload" target="_blank" rel="noopener">https://github.com/pyload/pyload</a></p>
+<p><strong>1、安装依赖</strong></p>
+<pre><code>#Debian/Ubuntu系统，Ubuntu系统需要将python-imaging换成python-pil后再运行命令
+apt update
+apt install -y python-setuptools python-requests python-pycurl python-crypto python-imaging python-pyxmpp python-jinja2 python-thrift python-feedparser python-beautifulsoup python-pip tesseract-ocr python-beaker python-django unzip screen
+
+#CentOS 7系统
+yum install unzip screen -y 
+wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+pip install pycryptodome pycurl django jinja jinja2 beaker thrift feedparser beautifulsoup tesseract pillow</code></pre><p><strong>2、安装ffmpeg</strong></p>
+<pre><code>wget https://www.southcat.net/usr/down/ffmpeg/ffmpeg-git-$(getconf LONG_BIT)bit-static.tar.xz
+tar xvf ffmpeg-git-*-static.tar.xz
+mv ffmpeg-git-*/ffmpeg  ffmpeg-git-*/ffprobe /usr/bin/
+rm -rf ffmpeg-git-*</code></pre><p><strong>3、安装pyLoad</strong></p>
+<pre><code>#下载最新稳定版
+wget https://github.com/pyload/pyload/archive/stable.zip
+unzip stable.zip
+cd pyload-stable
+#配置，不知道怎么选择的，除了账号设置那里，全部默认即可
+python pyLoadCore.py</code></pre><p>配置好了就直接启动：</p>
+<pre><code>python pyLoadCore.py
+#后台运行
+screen -dmS pyload python pyLoadCore.py</code></pre><p>访问地址为<code>ip:8000</code>，以你配置期间填的运行端口为准。</p>
+<p><code>CentOS 7</code>需要开一下防火墙端口，使用命令：</p>
+<pre><code>firewall-cmd --zone=public --add-port=8000/tcp --permanent
+firewall-cmd --reload</code></pre><p>登录<code>Web</code>面板后可以点击上面<code>Config</code>-<code>Plugin</code>，根据插件类型就可以查看支持哪些网站了，也可以进行适当设置，然后添加下载任务的时候，直接填上文件直链地址，或者支持的视频网站地址就可以了，该程序会自动根据你给的视频地址，解析出视频链接并且下载到本地。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-04-02T15:18:11.000Z" itemprop="datePublished">2020-04-02</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.254Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/04/03/e5-87-ba-e7-8e-b0importerror-no-module-named-setuptools-e9-94-99-e8-af-af-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9-e6-b3-95/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">出现&#34;ImportError: No module named setuptools&#34;错误的解决方法</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/04/02/linux-e5-ae-89-e8-a3-85dos2unix-e6-9d-a5-e8-bd-ac-e6-8d-a2-e6-96-87-e4-bb-b6-e6-a0-bc-e5-bc-8f/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux安装dos2unix来转换文件格式</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

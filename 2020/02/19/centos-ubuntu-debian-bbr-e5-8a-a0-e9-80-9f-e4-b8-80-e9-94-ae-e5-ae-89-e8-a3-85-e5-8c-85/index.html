@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Centos/Ubuntu/Debian BBR加速一键安装包 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Centos&#x2F;Ubuntu&#x2F;Debian BBR加速一键安装包 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/02/19/centos-ubuntu-debian-bbr-e5-8a-a0-e9-80-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e5-8c-85/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前整理过一篇BBR安装方法使用 Google BBR 拥塞算法加速 TCP，后来看到秋水大大自己写的BBR一键安装脚本很方便，也很全面，就搬运过来了。 提示:本脚本会把系统升级到最新内核！如果你有特定内核版本需求的话请慎用。 本脚本适用环境系统支持：CentOS 6+，Debian 7+，Ubuntu 12+虚拟技术：OpenVZ 以外的，比如 KVM、Xen、VMware 等内存要求：≥ - John Doe - 南猫"><meta property="article:published_time" content="2020-02-19T08:36:41.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.248Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.248Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/02/19/centos-ubuntu-debian-bbr-e5-8a-a0-e9-80-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e5-8c-85/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/02/19/centos-ubuntu-debian-bbr-e5-8a-a0-e9-80-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e5-8c-85/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/02/19/centos-ubuntu-debian-bbr-e5-8a-a0-e9-80-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e5-8c-85/"
+    },
+    "headline": "Centos/Ubuntu/Debian BBR加速一键安装包 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-02-19T08:36:41.000Z",
+    "dateModified": "2020-04-24T09:34:44.248Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：之前整理过一篇BBR安装方法使用 Google BBR 拥塞算法加速 TCP，后来看到秋水大大自己写的BBR一键安装脚本很方便，也很全面，就搬运过来了。 提示:本脚本会把系统升级到最新内核！如果你有特定内核版本需求的话请慎用。 本脚本适用环境系统支持：CentOS 6+，Debian 7+，Ubuntu 12+虚拟技术：OpenVZ 以外的，比如 KVM、Xen、VMware 等内存要求：≥ - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=Centos/Ubuntu/Debian BBR加速一键安装包" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Centos/Ubuntu/Debian BBR加速一键安装包&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=Centos/Ubuntu/Debian BBR加速一键安装包" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADtUlEQVR42u2aQW7jMBAE/f9P7172kA3M6WpZDhmjdAkCWCRLAIfD7n78+cDnIZRQQgkl1MdBPYbnvxf+/f/1L3336QK+/O77mKt501xCCXUK1GrSaeDpt98XTBaf5kLrFEqog6BWg6wW3BSSVYFYfTxSTJ6uTyihfinUNGHa+NOHWI0rlFCfCLVsIodikN6Z3rtyKAsl1ElQdIOPg4aDNB3m5P1bunShhHoz1LSxT/p7m5oklFBvhCKiIxVUpo29en8qElQYFUqok6DoJE2jSU2DVpSJ4wkl1GFQV4vGylAjwmX6UPTiKZRQp0Alo20yoKcFVBt8cSinj40aWqGE+mGoVZOaRP20qPRbIpKmAzkGroQSajPUdCimzdyac8TkJgaEUEKdCjVt8GRGr8agDS0pCuiSKZRQB0G1ZhsRLZsw4y1CjVBCHQZFwu70QCWBxMaIQGKOUEIdBJU2cQK7EvJojDdyWRRKqFOgyKWMBjSoyE9+R0w/oYQ6DYoUB3Lgko2eCgAxtsdLpVBCHQQ1bd5mc1P4JNBQMUYooU6EIiDJPGsLDTG+azNBKKEOhkqbkj5NKJKGR6JBIJRQG6GaoGCasB2nEVFrMVMooTZCNeIjEfgbM5yaElVDK5RQG6HSwolonxrSFNhqxM5JRBVKqBOgWgOahhXpBifGwBQQEUqo06CappaIJamYTE0xCYWMRUoooQ6AogI8BSWNLRVSJiHncpculFBvhmpEzSYQQsahF0gc0hJKqAOgpsWlgtGYAhQ2iaKXUmRCCbUBagpINSGQ9mMRU5yaE0IJdRIUWUi6yFFTfGp+6RoqJ1EooTZAUVFzdQAmITOJnU1oCxkEQgm1GSqZcFSIoY0oKRSTAPpSly6UUG+GmgR6YoilZrgJHdNCgwJXQgm1ASoJJaSxJcIL+XhUDMWBK6GE2giVDOVkjDXGNzlok7iD3XmhhPphqGRkNyESYja3h2y6lI4NrVBCbYAiZlcSP0gAsikyRDR9WoyEEuogKBrmvRq4Su+3hea2S6JQQt0MRYCmi1+z6YlAQ8LBsVAIJdRGqCi6l+GpqVml4atk4KGGViihNkGlTU1FeiKkJKGHmgsocCWUUBuhSNiDGNPkME/mwBTkisKQUEIdBNWEfacN3QopV8y65ccQSqhfBPXKZS8JpVOzmuZ6qVAIJdQmqCsGQmMStKEs3NAKJdRGKGQUg0OTGOG0ISYGu1BCnQhFms9mc5OmmAZMyCEulFAnQX3SI5RQQgkl1Mc8fwHsOXPgLxRpnQAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Centos/Ubuntu/Debian BBR加速一键安装包</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-02-19</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Centos/Ubuntu/Debian BBR加速一键安装包&url=http://hexo.southcat.net/2020/02/19/centos-ubuntu-debian-bbr-e5-8a-a0-e9-80-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e5-8c-85/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Centos/Ubuntu/Debian BBR加速一键安装包&url=http://hexo.southcat.net/2020/02/19/centos-ubuntu-debian-bbr-e5-8a-a0-e9-80-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e5-8c-85/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/02/19/centos-ubuntu-debian-bbr-e5-8a-a0-e9-80-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e5-8c-85/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/02/19/centos-ubuntu-debian-bbr-e5-8a-a0-e9-80-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e5-8c-85/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/02/19/centos-ubuntu-debian-bbr-e5-8a-a0-e9-80-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e5-8c-85/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/02/19/centos-ubuntu-debian-bbr-e5-8a-a0-e9-80-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e5-8c-85/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/02/19/centos-ubuntu-debian-bbr-e5-8a-a0-e9-80-9f-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e5-8c-85/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADtUlEQVR42u2aQW7jMBAE/f9P7172kA3M6WpZDhmjdAkCWCRLAIfD7n78+cDnIZRQQgkl1MdBPYbnvxf+/f/1L3336QK+/O77mKt501xCCXUK1GrSaeDpt98XTBaf5kLrFEqog6BWg6wW3BSSVYFYfTxSTJ6uTyihfinUNGHa+NOHWI0rlFCfCLVsIodikN6Z3rtyKAsl1ElQdIOPg4aDNB3m5P1bunShhHoz1LSxT/p7m5oklFBvhCKiIxVUpo29en8qElQYFUqok6DoJE2jSU2DVpSJ4wkl1GFQV4vGylAjwmX6UPTiKZRQp0Alo20yoKcFVBt8cSinj40aWqGE+mGoVZOaRP20qPRbIpKmAzkGroQSajPUdCimzdyac8TkJgaEUEKdCjVt8GRGr8agDS0pCuiSKZRQB0G1ZhsRLZsw4y1CjVBCHQZFwu70QCWBxMaIQGKOUEIdBJU2cQK7EvJojDdyWRRKqFOgyKWMBjSoyE9+R0w/oYQ6DYoUB3Lgko2eCgAxtsdLpVBCHQQ1bd5mc1P4JNBQMUYooU6EIiDJPGsLDTG+azNBKKEOhkqbkj5NKJKGR6JBIJRQG6GaoGCasB2nEVFrMVMooTZCNeIjEfgbM5yaElVDK5RQG6HSwolonxrSFNhqxM5JRBVKqBOgWgOahhXpBifGwBQQEUqo06CappaIJamYTE0xCYWMRUoooQ6AogI8BSWNLRVSJiHncpculFBvhmpEzSYQQsahF0gc0hJKqAOgpsWlgtGYAhQ2iaKXUmRCCbUBagpINSGQ9mMRU5yaE0IJdRIUWUi6yFFTfGp+6RoqJ1EooTZAUVFzdQAmITOJnU1oCxkEQgm1GSqZcFSIoY0oKRSTAPpSly6UUG+GmgR6YoilZrgJHdNCgwJXQgm1ASoJJaSxJcIL+XhUDMWBK6GE2giVDOVkjDXGNzlok7iD3XmhhPphqGRkNyESYja3h2y6lI4NrVBCbYAiZlcSP0gAsikyRDR9WoyEEuogKBrmvRq4Su+3hea2S6JQQt0MRYCmi1+z6YlAQ8LBsVAIJdRGqCi6l+GpqVml4atk4KGGViihNkGlTU1FeiKkJKGHmgsocCWUUBuhSNiDGNPkME/mwBTkisKQUEIdBNWEfacN3QopV8y65ccQSqhfBPXKZS8JpVOzmuZ6qVAIJdQmqCsGQmMStKEs3NAKJdRGKGQUg0OTGOG0ISYGu1BCnQhFms9mc5OmmAZMyCEulFAnQX3SI5RQQgkl1Mc8fwHsOXPgLxRpnQAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>之前整理过一篇BBR安装方法使用 Google BBR 拥塞算法加速 TCP，后来看到秋水大大自己写的BBR一键安装脚本很方便，也很全面，就搬运过来了。</p>
+<p><strong>提示:</strong>本脚本会把系统升级到最新内核！如果你有特定内核版本需求的话请慎用。</p>
+<p><strong>本脚本适用环境</strong><br>系统支持：CentOS 6+，Debian 7+，Ubuntu 12+<br>虚拟技术：OpenVZ 以外的，比如 KVM、Xen、VMware 等<br>内存要求：≥128M<br>日期　　：2017 年 02 月 22 日</p>
+<p><strong>关于本脚本</strong><br>1、本脚本已在Vultr上的VPS全部测试通过。<br>2、当脚本检测到VPS的虚拟方式为OpenVZ时，会提示错误，并自动退出安装。<br>3、某些服务商（如DigitalOcean）可能需要首先将VPS配置为可自定义内核，然后grub2的配置才会生效。<br>4、脚本运行完重启发现开不了机的，打开VPS后台控制面板的VNC, 开机卡在grub引导, 手动选择内核即可。<br>5、由于是使用最新版系统内核，最好请勿在生产环境安装，以免产生不可预测之后果。</p>
+<p><strong>使用方法</strong><br>使用root用户登录，运行以下命令：</p>
+<pre><code>wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
+chmod +x bbr.sh
+./bbr.sh</code></pre><p>安装完成后，脚本会提示需要重启VPS，输入y并回车后重启。<br>重启完成后，进入VPS，验证一下是否成功安装最新内核并开启TCP BBR，输入以下命令：</p>
+<pre><code>uname -r</code></pre><p>查看内核版本，含有4.10就表示OK了</p>
+<pre><code>sysctl net.ipv4.tcp_available_congestion_control</code></pre><p>返回值一般为：net.ipv4.tcp_available_congestion_control = bbr cubic reno</p>
+<pre><code>sysctl net.ipv4.tcp_congestion_control</code></pre><p>返回值一般为：net.ipv4.tcp_congestion_control = bbr</p>
+<pre><code>sysctl net.core.default_qdisc</code></pre><p>返回值一般为:net.core.default_qdisc = fq</p>
+<pre><code>lsmod | grep bbr</code></pre><p>返回值有tcp_bbr模块即说明bbr已启动。</p>
+<p><strong>内核升级方法</strong><br>如果是CentOS系统，执行如下命令即可升级内核：</p>
+<pre><code>yum --enablerepo=elrepo-kernel -y install kernel-ml kernel-ml-devel</code></pre><p>CentOS 6的话，执行命令：</p>
+<pre><code>sed -i &apos;s/^default=.*/default=0/g&apos; /boot/grub/grub.conf</code></pre><p>CentOS 7的话，执行命令：</p>
+<pre><code>grub2-set-default 0</code></pre><p>如果是<code>Debian/Ubuntu</code>系统，则需要手动下载最新版内核来安装升级。<br>点击这里下载最新版的内核deb安装包。<br>如果系统是64位，则下载amd64的linux-image中含有generic这个deb包；<br>如果系统是32位，则下载i386的linux-image中含有generic这个deb包；</p>
+<p>安装的命令如下（以最新版的64位4.9.3举例而已，请替换为下载好的deb包）：</p>
+<pre><code>dpkg -i linux-image-4.9.3-040903-generic_4.9.3-040903.201701120631_amd64.deb</code></pre><p>安装完成后，再执行命令：</p>
+<pre><code>/usr/sbin/update-grub</code></pre><p>最后，重启VPS即可。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-02-19T08:36:41.000Z" itemprop="datePublished">2020-02-19</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.248Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/02/20/vps-ftp-e5-bf-ab-e9-80-9f-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">VPS FTP快速安装教程</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/02/19/e5-85-8d-e8-b4-b9-e7-9a-84linux-e6-9c-8d-e5-8a-a1-e5-99-a8-e7-ae-a1-e7-90-86-e9-9d-a2-e6-9d-bf-ef-bc-9a-e5-ae-9d-e5-a1-946-2-e6-ad-a3-e5-bc-8f-e7-89-88-e5-8f-91-e5-b8-83/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">免费的Linux服务器管理面板：宝塔6.2正式版发布</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

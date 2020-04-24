@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>OpenVZ平台Google BBR一键安装脚本 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="OpenVZ平台Google BBR一键安装脚本 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/12/27/openvz-e5-b9-b3-e5-8f-b0google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/"><meta property="og:locale" content="en"><meta name="description" content="说明：此前用的一直是91yun大神制作的openvz的BBR一键包，今天看到扩软博主也制作了个openvz的BBR一键包，就转过来了。不过对于VPS，还是建议选择KVM架构，可玩性高，推荐款性价比高的VPS：搬瓦工VPS。 更新：[2017.07.24]更新了liblkl-hijack.so并打上了最近网上很火的“魔改版”BBR补丁，同时更新了haproxy。老版本的朋友可以重新下载安装脚本再安装 - John Doe - 南猫"><meta property="article:published_time" content="2019-12-26T16:37:18.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.240Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.240Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2019/12/27/openvz-e5-b9-b3-e5-8f-b0google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2019/12/27/openvz-e5-b9-b3-e5-8f-b0google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2019/12/27/openvz-e5-b9-b3-e5-8f-b0google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/"
+    },
+    "headline": "OpenVZ平台Google BBR一键安装脚本 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-26T16:37:18.000Z",
+    "dateModified": "2020-04-24T09:34:44.240Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：此前用的一直是91yun大神制作的openvz的BBR一键包，今天看到扩软博主也制作了个openvz的BBR一键包，就转过来了。不过对于VPS，还是建议选择KVM架构，可玩性高，推荐款性价比高的VPS：搬瓦工VPS。 更新：[2017.07.24]更新了liblkl-hijack.so并打上了最近网上很火的“魔改版”BBR补丁，同时更新了haproxy。老版本的朋友可以重新下载安装脚本再安装 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=OpenVZ平台Google BBR一键安装脚本" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=OpenVZ平台Google BBR一键安装脚本&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=OpenVZ平台Google BBR一键安装脚本" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADrklEQVR42u3b3W6DMAyGYe7/prejSfsh/l5nbXHRy8km1gYeJOLE9o6PGx6HKFGiRIm6Heoojj9f+nbu63fy3erv38c5vdFwnR9jiRI1BFUNdnae4s7GWX3+7KFV45w+aFGiBqFWg3QHX6HPxqrG+z0WuR9Rot4FlYLv6maqsaqgXl1blKg7oVLQPMKx+n41kYgS9a6oapDOJJBuuJpUyEL4Iat0UaKejEov9pSfD8smiRL1RFRMui82eWebvfSir4Iw3VA+rOohStQTUSkZSS92gKObLK0WwqeBXJSoAai0cduZUNJn0o2njeEy4SNK1DAUSYLsTAapwEAW0inxKUrUJFSVGOkWuFOgTZNBtwAoStQ0VDcpWS08qw1lJ+FJ7gE1XIkSdTFqdWNV0SA1JpJJgSRv0r2JEjUR1SkakGRKvAlwjTQ+mv1EiXoxijZVkQtX36uCd7UopgVuUaImoKrA1kmEdIIpWShX0FaBQJSoF6NIc2E1idBAmTaZZNKKY4oSNQiVJohucmbnRScTTQkXJWoAir7MnWJ2p8DW2YS2i26iRF2E2mkEpud2gyxN8ogSNRWVLkabSVJzSUrYpKBcTkKiRA1B0cC4U9gmi2Ra9I5jiRI1BNVtRKRFs/RZWvTDhT1RogagOo2D6YbTONVilDSa4OArStSFKHIhUjBLi2HykGiDCKokihJ1ESoVsTsFuLSoJYvgnaSnKFHTUKQATRKSOwmZKqinQI8qiaJEXYQiL236HB0zTRxp4okFAlGiLkRVhTcSRLtNvWRSIBvCsuFKlKgLUaQ5gxadY/PGwf+ps7NhFCVqEqpTPKOfJ4E4BexucBYlagpqtyGqE1x3Ant1fvkARYkahiIbO1pgJgU5UsjuLGxFiZqE6i4+ycaQvOgpKJMiuyhRk1A7RYGy6akx0ZCiAg38okRNQqXBuovaVPgmzVadpkdRoiajUiNVCoykOYs2U5HmElGiJqJS4r2zyIyFsYP98wop7pWFbFGiLkaRhSpp7KAL2XTtbkOYKFFTUKTpo5MAIcnPzsPrLGxFiZqA+k+wpJtIHDzBIqDcyIoSNQBFEow06Vi9yBWim3BpVz1EiXoxKhUHqgQnuVgK5uTa7YlClKiLUTQRT4oDncmHJEZxsU6UqDdCkSYPOolU50jBIBYIRIkajkrFr5RAiQXolFChTcOiRA1C7TRzkCJ4Z2FKCwXL30WJGoKiiXgSkEnTVqdpJC18RYmahrrTIUqUKFGibnN8AjRzUh58hu+1AAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">OpenVZ平台Google BBR一键安装脚本</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-27</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=OpenVZ平台Google BBR一键安装脚本&url=http://hexo.southcat.net/2019/12/27/openvz-e5-b9-b3-e5-8f-b0google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=OpenVZ平台Google BBR一键安装脚本&url=http://hexo.southcat.net/2019/12/27/openvz-e5-b9-b3-e5-8f-b0google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/12/27/openvz-e5-b9-b3-e5-8f-b0google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/12/27/openvz-e5-b9-b3-e5-8f-b0google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/12/27/openvz-e5-b9-b3-e5-8f-b0google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/12/27/openvz-e5-b9-b3-e5-8f-b0google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/12/27/openvz-e5-b9-b3-e5-8f-b0google-bbr-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAADUCAAAAADBtVLEAAADrklEQVR42u3b3W6DMAyGYe7/prejSfsh/l5nbXHRy8km1gYeJOLE9o6PGx6HKFGiRIm6Heoojj9f+nbu63fy3erv38c5vdFwnR9jiRI1BFUNdnae4s7GWX3+7KFV45w+aFGiBqFWg3QHX6HPxqrG+z0WuR9Rot4FlYLv6maqsaqgXl1blKg7oVLQPMKx+n41kYgS9a6oapDOJJBuuJpUyEL4Iat0UaKejEov9pSfD8smiRL1RFRMui82eWebvfSir4Iw3VA+rOohStQTUSkZSS92gKObLK0WwqeBXJSoAai0cduZUNJn0o2njeEy4SNK1DAUSYLsTAapwEAW0inxKUrUJFSVGOkWuFOgTZNBtwAoStQ0VDcpWS08qw1lJ+FJ7gE1XIkSdTFqdWNV0SA1JpJJgSRv0r2JEjUR1SkakGRKvAlwjTQ+mv1EiXoxijZVkQtX36uCd7UopgVuUaImoKrA1kmEdIIpWShX0FaBQJSoF6NIc2E1idBAmTaZZNKKY4oSNQiVJohucmbnRScTTQkXJWoAir7MnWJ2p8DW2YS2i26iRF2E2mkEpud2gyxN8ogSNRWVLkabSVJzSUrYpKBcTkKiRA1B0cC4U9gmi2Ra9I5jiRI1BNVtRKRFs/RZWvTDhT1RogagOo2D6YbTONVilDSa4OArStSFKHIhUjBLi2HykGiDCKokihJ1ESoVsTsFuLSoJYvgnaSnKFHTUKQATRKSOwmZKqinQI8qiaJEXYQiL236HB0zTRxp4okFAlGiLkRVhTcSRLtNvWRSIBvCsuFKlKgLUaQ5gxadY/PGwf+ps7NhFCVqEqpTPKOfJ4E4BexucBYlagpqtyGqE1x3Ant1fvkARYkahiIbO1pgJgU5UsjuLGxFiZqE6i4+ycaQvOgpKJMiuyhRk1A7RYGy6akx0ZCiAg38okRNQqXBuovaVPgmzVadpkdRoiajUiNVCoykOYs2U5HmElGiJqJS4r2zyIyFsYP98wop7pWFbFGiLkaRhSpp7KAL2XTtbkOYKFFTUKTpo5MAIcnPzsPrLGxFiZqA+k+wpJtIHDzBIqDcyIoSNQBFEow06Vi9yBWim3BpVz1EiXoxKhUHqgQnuVgK5uTa7YlClKiLUTQRT4oDncmHJEZxsU6UqDdCkSYPOolU50jBIBYIRIkajkrFr5RAiQXolFChTcOiRA1C7TRzkCJ4Z2FKCwXL30WJGoKiiXgSkEnTVqdpJC18RYmahrrTIUqUKFGibnN8AjRzUh58hu+1AAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#错误说明"><span class="post-toc-number">2.</span> <span class="post-toc-text">错误说明</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多端口加速"><span class="post-toc-number">3.</span> <span class="post-toc-text">多端口加速</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更新glibc"><span class="post-toc-number">4.</span> <span class="post-toc-text">更新glibc</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#判断BBR已正常工作"><span class="post-toc-number">5.</span> <span class="post-toc-text">判断BBR已正常工作</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>此前用的一直是91yun大神制作的<code>openvz</code>的<code>BBR</code>一键包，今天看到扩软博主也制作了个<code>openvz</code>的<code>BBR</code>一键包，就转过来了。不过对于<code>VPS</code>，还是建议选择<code>KVM</code>架构，可玩性高，推荐款性价比高的<code>VPS</code>：搬瓦工VPS。</p>
+<p><strong>更新：</strong><br>[2017.07.24]<br>更新了<code>liblkl-hijack.so</code>并打上了最近网上很火的“魔改版”<code>BBR</code>补丁，同时更新了<code>haproxy</code>。老版本的朋友可以重新下载安装脚本再安装一遍，需要先停止当前的服务。</p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>已测试通过的系统：<code>Ubuntu 14.04 x64</code>、<code>Ubuntu 16.04 x64</code>、<code>CentOS 6 x64</code>、<code>CentOS 7 x64</code>只支持<code>64</code>位系统，要求<code>glibc</code>版本<code>2.14</code>以上。</p>
+<pre><code>wget --no-check-certificate https://raw.githubusercontent.com/kuoruan/shell-scripts/master/ovz-bbr/ovz-bbr-installer.sh
+chmod +x ovz-bbr-installer.sh
+./ovz-bbr-installer.sh</code></pre><p><strong>注意：</strong>安装失败的话，可能后台没有开启<code>TUN/TAP</code>。<br><strong>需要配置的有如下几个选项：</strong><br>1、需要加速的端口，即的<code>55</code>端口。加速开启之后，流量会先经过<code>BBR</code>处理，之后再发送给后端的<code>55</code>。<br>2、可能需要配置 “公网接口名称”，即你服务器上具有公网<code>IP</code>的接口名称。搬瓦工<code>OpenVZ</code>上默认都是<code>venet0</code>，但是有朋友可能需要安装在其他服务器上，所以我加入了此选项。</p>
+<p><strong>注意：</strong>在有<code>firewalld</code>的服务器上安装的时候，<code>firewalld</code>会干扰<code>iptables</code>的规则，造成网络不通（现在具体原因未知，谁有解决方案可以提示一下）。所以在装有<code>firewalld</code>的服务器上需要先退出<code>firewalld</code>：</p>
+<pre><code>systemctl stop firewalld
+systemctl stop firewalld</code></pre><p><strong>如需卸载，请使用：</strong></p>
+<pre><code>./ovz-bbr-installer.sh uninstall</code></pre><h2 id="错误说明"><a href="#错误说明" class="headerlink" title="错误说明"></a>错误说明</h2><p>有些机器一切正常，但是加速失败。从网友的反馈来看，可能需要将<code>55</code>的监听地址从<code>vps IP</code>改到<code>127.0.0.1</code>或者 <code>0.0.0.0</code>，具体未测试，加速失败的朋友可以试一试。</p>
+<h2 id="多端口加速"><a href="#多端口加速" class="headerlink" title="多端口加速"></a>多端口加速</h2><p>安装的时候只配置了一个加速端口，但是你可以配置多端口加速，配置方法非常简单。修改文件</p>
+<pre><code># vi /usr/local/haproxy-lkl/etc/port-rules</code></pre><p>在文件里添加需要加速的端口，每行一条，可以配置单个端口或者端口范围，以<code>#</code>开头的行将被忽略。 例如：<code>8800</code>或者<code>8800-8810</code>配置完成之后，只需要重启<code>haproxy-lkl</code>即可。</p>
+<p><strong>注：</strong>最初版本的实现是需要再开一个新端口，后来经人提醒，我又看了一下<code>HAproxy</code>的配置说明，可以直接代理后端端口，不必再开新端口。请注意，使用该方法后，如果<code>HAproxy</code>进程异常退出，会造成无法连接原有端口。所以，请确保在退出 <code>HAproxy</code>时是通过命令正常退出的，在退出时会自动清理原有的防火墙规则。</p>
+<p>使用<code>systemctl</code>或者<code>service</code>命令来启动、停止和重启<code>HAporxy-lkl</code>：</p>
+<pre><code>systemctl {start|stop|restart} haproxy-lkl
+
+
+service haproxy-lkl {start|stop|restart}</code></pre><p><code>/usr/local/haproxy-lkl/etc/haproxy.cfg</code>这个文件是通过<code>port-rules</code>自动生成的，每次启动都会重新生成，所以直接修改它的配置没用。 如果想要自定义配置，请修改启动文件：</p>
+<pre><code>/usr/local/haproxy-lkl/sbin/haproxy-lkl</code></pre><h2 id="更新glibc"><a href="#更新glibc" class="headerlink" title="更新glibc"></a>更新glibc</h2><p><strong>1、<code>CentOS 6</code>更新<code>glibc</code>，首先下载如下几个文件：</strong></p>
+<pre><code>wget http://ftp.redsleeve.org/pub/steam/glibc-2.15-60.el6.x86_64.rpm \
+http://ftp.redsleeve.org/pub/steam/glibc-common-2.15-60.el6.x86_64.rpm \
+http://ftp.redsleeve.org/pub/steam/glibc-devel-2.15-60.el6.x86_64.rpm \
+http://ftp.redsleeve.org/pub/steam/glibc-headers-2.15-60.el6.x86_64.rpm \
+http://ftp.redsleeve.org/pub/steam/nscd-2.15-60.el6.x86_64.rpm</code></pre><p><strong>2、然后安装：</strong></p>
+<pre><code># rpm -Uvh glibc-2.15-60.el6.x86_64.rpm \
+glibc-common-2.15-60.el6.x86_64.rpm \
+glibc-devel-2.15-60.el6.x86_64.rpm \
+glibc-headers-2.15-60.el6.x86_64.rpm \
+nscd-2.15-60.el6.x86_64.rpm</code></pre><p><strong>3、如果以上步骤无法更新，可以手动编译更新</strong></p>
+<pre><code>wget http://ftp.gnu.org/gnu/glibc/glibc-2.15.tar.gz
+wget http://ftp.gnu.org/gnu/glibc/glibc-ports-2.15.tar.gz
+tar -zxf glibc-2.15.tar.gz
+tar -zxf glibc-ports-2.15.tar.gz
+mv glibc-ports-2.15 glibc-2.15/ports
+mkdir glibc-build-2.15
+cd glibc-build-2.15
+../glibc-2.15/configure --prefix=/usr --disable-profile --enable-add-ons --with-headers=/usr/include --with-binutils=/usr/bin
+make all &amp;&amp; make install</code></pre><p><strong>4、检查一下：</strong></p>
+<pre><code># ldd --version
+ldd (GNU libc) 2.15
+Copyright (C) 2012 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Written by Roland McGrath and Ulrich Drepper.</code></pre><p>已经升级到<code>glibc 2.15</code>了。</p>
+<h2 id="判断BBR已正常工作"><a href="#判断BBR已正常工作" class="headerlink" title="判断BBR已正常工作"></a>判断BBR已正常工作</h2><p>判断<code>bbr</code>是否正常启动可以尝试<code>ping 10.0.0.2</code>，如果能通，说明<code>bbr</code>已经启动。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-26T16:37:18.000Z" itemprop="datePublished">2019-12-27</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.240Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/12/27/centos-6-centos-7-debian-e5-8d-95-e7-bd-91-e5-8d-a1-e7-bb-91-e5-ae-9a-e5-a4-9a-e4-b8-aaip-e7-9a-84-e6-96-b9-e6-b3-95/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Centos 6/Centos 7/Debian单网卡绑定多个IP的方法</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/12/26/wordpress-e5-8d-9a-e5-ae-a2-e5-90-8e-e5-8f-b0-e8-87-aa-e5-8a-a8-e6-9b-b4-e6-96-b0-e5-90-8e-ef-bc-8c-e8-bf-98-e4-b8-80-e7-9b-b4-e6-8f-90-e7-a4-ba-e6-9b-b4-e6-96-b0-e7-9a-84-e8-a7-a3-e5-86-b3-e6-96-b9/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">WordPress博客后台自动更新后，还一直提示更新的解决方法</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

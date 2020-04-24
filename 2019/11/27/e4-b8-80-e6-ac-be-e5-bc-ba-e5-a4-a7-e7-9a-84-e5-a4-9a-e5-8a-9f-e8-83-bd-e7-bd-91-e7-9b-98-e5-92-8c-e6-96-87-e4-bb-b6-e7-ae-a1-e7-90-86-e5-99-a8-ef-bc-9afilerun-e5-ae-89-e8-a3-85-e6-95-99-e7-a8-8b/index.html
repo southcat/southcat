@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>一款强大的多功能网盘和文件管理器：FileRun安装教程 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="一款强大的多功能网盘和文件管理器：FileRun安装教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2019/11/27/e4-b8-80-e6-ac-be-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-bd-91-e7-9b-98-e5-92-8c-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-9afilerun-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/"><meta property="og:locale" content="en"><meta name="description" content="说明：关于FileRun多用户网盘之前已经介绍过了，参考：File Run-多功能的VPS文件管理器，对于安装方法，只是简单的说了下，估计还有很多人不会安装，这里就详细的说下安装方法，不得不说这个网盘安装过程有点坑爹，特别是在PHP配置方面，博主花了很久才配置完全。本教程使用2种方法安装，使用宝塔面板和手动编译安装，对于新手建议直接用宝塔，爱折腾的可以用编译的方法，后者要快些，不过相对前者更容易出 - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/File%20Run(1).jpg"><meta property="og:image" content="https://www.southcat.net/usr/picture/File%20Run(2).jpg"><meta property="og:image" content="https://www.southcat.net/usr/picture/Filerun(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/Filerun(2).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/Filerun(3).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/Filerun(4).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/Filerun(5).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/Filerun(6).png"><meta property="article:published_time" content="2019-11-27T06:18:16.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.235Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.235Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2019/11/27/e4-b8-80-e6-ac-be-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-bd-91-e7-9b-98-e5-92-8c-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-9afilerun-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2019/11/27/e4-b8-80-e6-ac-be-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-bd-91-e7-9b-98-e5-92-8c-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-9afilerun-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2019/11/27/e4-b8-80-e6-ac-be-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-bd-91-e7-9b-98-e5-92-8c-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-9afilerun-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/"
+    },
+    "headline": "一款强大的多功能网盘和文件管理器：FileRun安装教程 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-11-27T06:18:16.000Z",
+    "dateModified": "2020-04-24T09:34:44.235Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：关于FileRun多用户网盘之前已经介绍过了，参考：File Run-多功能的VPS文件管理器，对于安装方法，只是简单的说了下，估计还有很多人不会安装，这里就详细的说下安装方法，不得不说这个网盘安装过程有点坑爹，特别是在PHP配置方面，博主花了很久才配置完全。本教程使用2种方法安装，使用宝塔面板和手动编译安装，对于新手建议直接用宝塔，爱折腾的可以用编译的方法，后者要快些，不过相对前者更容易出 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=一款强大的多功能网盘和文件管理器：FileRun安装教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=一款强大的多功能网盘和文件管理器：FileRun安装教程&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=一款强大的多功能网盘和文件管理器：FileRun安装教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFWUlEQVR42u2dy24cMRAD/f8/PbkmxogsykaAxLUXv3ZGUi3Q6CaZycfj6/kQgRCEIAQhCEEIEcJHeP1xwaeff7/283vS79/u1X7/+Z5v9357TzuXEIQghHcIr0WjbOgEIh2qgX8D2SATUMdzCEEIQjhCSJtJG2gAyCFS0X3b12ldAlMIQhDC90FoG07Fkr6PNF8EuhCEIIS/CyEVt1bQSKOUDpvuSc8lBCEI4W6AummOTpsiYk0TTtohl8FQCEIQwi60/stfv01tFoIQfhCEaloexIulaLWBiQiypOCle33JlRaCEH4QBDKMkAFqOUQrxJOBMhiyQhCCEHYIqRimIkgL2mrmLEMZEXuFIAQhMAg3G6PBKyqM0vBYGvQIaCEIQQhnCCQI1YakVhhXc7YZO6kxIkOcEIQghAyhmarEnFkGICra3IS1CHAhCEEIXU8gi5HBpBU3Eqygw10LcNbiLgQhCCGaL4vwmRZqfyPNVSuENPQ1NUtCEIIQrgpdEk5T8UtCKAF6Gyg7AhKCEIQwBbfoIEMhUHN1XbcFSY8flhCEIISj0HpjoqyNDg1+pUaOCLokMCYEIQghQ4iDRhEy2qKr8PEVQWYRhIQgBCF0UWURWdIB6WES6PX7FNiYlCUhCOGHQ2gBKxrebMLtMnil5ocaya0pE4IQhNCF1lhIinnbgNEDEvFkCW8c1xGCEIQQQxrNTCGFiJowq3CzNEFNiBGCEITAICwBjcUEoeJHC440s4YWcyEIQQhdY2zGZtokNU1aoWwfACl+U1MlBCEIIQqtJBzVDkULIi2Yy/BFDSAhCEEIGQIJRdNQFz0IGX5I8/QtA5QQhCAE/AC5xaylAw7aIHwtgY9ovghBCEJ46ILJrG3FkJq0TYS9CZJVsVYIQhBChEBMVBLIWK4lRYxcS8ykOkAJQQhCeKi4uZijpJm6EV/TvUkhjAOUEIQghIeYKSTYTQcvWtyScUKL+JUhKwQhCCEuSsIRi4nSDJq2zmLIIENICEIQwrFZSiFOIqguYutN8W0NFy2mcYASghCE8KxBLRrYII0PGagSSBpERc2SEIQghKeJDrcNESl2VHQlYQzyYQlBCEJgEMjipGG5EUqI2VODFuPgJAQhCKFDSBsk4ikpjLdFlJrG7T01uCUEIQihFhfSeCwbINdUcRQKJ6SIC0EIQnhws7QaKOQQ6WDUdKHGEDGchSAEIezPY7wJYaVBjB6wFdTFlD0OgUIQghCi0JoajiactGK4GLBrIIPsLQ5QQhCCEPDDYJoh00RQ0kiRQYl8T4owSrQKQQhCQMMUCUvQzS5BjRVI+/CEIAQh7BCWIBQxTklIgxQ50kQRoEIQghB4mJMOTsuBmvhBBiJyfRrMqiErBCEIAf8Hd8QspUMSMVFJUGMZ8mKzJAQhCKH+Q+8WiCIBqZv3NsGkDWxpXSEIQQgMAjVjqQFDAh6ngy9BjlWwicEtIQhBCLEwUVNjMVpoKIsYQi3U8YCXEIQghAyhBSWbWHoTvmgN0RIEIUWyNktCEMIPh9AOTcTXZISuJgs9ONlH/XCEIAQhRAitKcJixSjUJoBkXSIExwFKCEIQwvRwFiKSkiBmC1OlYYjcq4nFdYASghCEMBWrNai1BjepYbMGNqYBSghCEAJ+iBMRZGcDZPiZDlz4eiEIQQhHCItJ0oYnKtCuBiwNlpD7C0EIQriHcFOkiPBCGi7SIJHm7PUMQhCCEL6lMFLBk4q5pDAuxjERb4UgBCH05yytg8xiwizCzDJwrSayEIQghA6BGJm0kWoDDd0kKbRU9Dk2UkIQghBmQ/Z/fglBCEIQghCEIITX1y+63YZw1kbARQAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">一款强大的多功能网盘和文件管理器：FileRun安装教程</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-11-27</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=一款强大的多功能网盘和文件管理器：FileRun安装教程&url=http://hexo.southcat.net/2019/11/27/e4-b8-80-e6-ac-be-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-bd-91-e7-9b-98-e5-92-8c-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-9afilerun-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=一款强大的多功能网盘和文件管理器：FileRun安装教程&url=http://hexo.southcat.net/2019/11/27/e4-b8-80-e6-ac-be-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-bd-91-e7-9b-98-e5-92-8c-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-9afilerun-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2019/11/27/e4-b8-80-e6-ac-be-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-bd-91-e7-9b-98-e5-92-8c-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-9afilerun-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2019/11/27/e4-b8-80-e6-ac-be-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-bd-91-e7-9b-98-e5-92-8c-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-9afilerun-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2019/11/27/e4-b8-80-e6-ac-be-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-bd-91-e7-9b-98-e5-92-8c-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-9afilerun-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2019/11/27/e4-b8-80-e6-ac-be-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-bd-91-e7-9b-98-e5-92-8c-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-9afilerun-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2019/11/27/e4-b8-80-e6-ac-be-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-a4-9a-e5-8a-9f-e8-83-bd-e7-bd-91-e7-9b-98-e5-92-8c-e6-96-87-e4-bb-b6-e7-ae-a1-e7-90-86-e5-99-a8-ef-bc-9afilerun-e5-ae-89-e8-a3-85-e6-95-99-e7-a8-8b/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAAAAADrYxXWAAAFWUlEQVR42u2dy24cMRAD/f8/PbkmxogsykaAxLUXv3ZGUi3Q6CaZycfj6/kQgRCEIAQhCEEIEcJHeP1xwaeff7/283vS79/u1X7/+Z5v9357TzuXEIQghHcIr0WjbOgEIh2qgX8D2SATUMdzCEEIQjhCSJtJG2gAyCFS0X3b12ldAlMIQhDC90FoG07Fkr6PNF8EuhCEIIS/CyEVt1bQSKOUDpvuSc8lBCEI4W6AummOTpsiYk0TTtohl8FQCEIQwi60/stfv01tFoIQfhCEaloexIulaLWBiQiypOCle33JlRaCEH4QBDKMkAFqOUQrxJOBMhiyQhCCEHYIqRimIkgL2mrmLEMZEXuFIAQhMAg3G6PBKyqM0vBYGvQIaCEIQQhnCCQI1YakVhhXc7YZO6kxIkOcEIQghAyhmarEnFkGICra3IS1CHAhCEEIXU8gi5HBpBU3Eqygw10LcNbiLgQhCCGaL4vwmRZqfyPNVSuENPQ1NUtCEIIQrgpdEk5T8UtCKAF6Gyg7AhKCEIQwBbfoIEMhUHN1XbcFSY8flhCEIISj0HpjoqyNDg1+pUaOCLokMCYEIQghQ4iDRhEy2qKr8PEVQWYRhIQgBCF0UWURWdIB6WES6PX7FNiYlCUhCOGHQ2gBKxrebMLtMnil5ocaya0pE4IQhNCF1lhIinnbgNEDEvFkCW8c1xGCEIQQQxrNTCGFiJowq3CzNEFNiBGCEITAICwBjcUEoeJHC440s4YWcyEIQQhdY2zGZtokNU1aoWwfACl+U1MlBCEIIQqtJBzVDkULIi2Yy/BFDSAhCEEIGQIJRdNQFz0IGX5I8/QtA5QQhCAE/AC5xaylAw7aIHwtgY9ovghBCEJ46ILJrG3FkJq0TYS9CZJVsVYIQhBChEBMVBLIWK4lRYxcS8ykOkAJQQhCeKi4uZijpJm6EV/TvUkhjAOUEIQghIeYKSTYTQcvWtyScUKL+JUhKwQhCCEuSsIRi4nSDJq2zmLIIENICEIQwrFZSiFOIqguYutN8W0NFy2mcYASghCE8KxBLRrYII0PGagSSBpERc2SEIQghKeJDrcNESl2VHQlYQzyYQlBCEJgEMjipGG5EUqI2VODFuPgJAQhCKFDSBsk4ikpjLdFlJrG7T01uCUEIQihFhfSeCwbINdUcRQKJ6SIC0EIQnhws7QaKOQQ6WDUdKHGEDGchSAEIezPY7wJYaVBjB6wFdTFlD0OgUIQghCi0JoajiactGK4GLBrIIPsLQ5QQhCCEPDDYJoh00RQ0kiRQYl8T4owSrQKQQhCQMMUCUvQzS5BjRVI+/CEIAQh7BCWIBQxTklIgxQ50kQRoEIQghB4mJMOTsuBmvhBBiJyfRrMqiErBCEIAf8Hd8QspUMSMVFJUGMZ8mKzJAQhCKH+Q+8WiCIBqZv3NsGkDWxpXSEIQQgMAjVjqQFDAh6ngy9BjlWwicEtIQhBCLEwUVNjMVpoKIsYQi3U8YCXEIQghAyhBSWbWHoTvmgN0RIEIUWyNktCEMIPh9AOTcTXZISuJgs9ONlH/XCEIAQhRAitKcJixSjUJoBkXSIExwFKCEIQwvRwFiKSkiBmC1OlYYjcq4nFdYASghCEMBWrNai1BjepYbMGNqYBSghCEAJ+iBMRZGcDZPiZDlz4eiEIQQhHCItJ0oYnKtCuBiwNlpD7C0EIQriHcFOkiPBCGi7SIJHm7PUMQhCCEL6lMFLBk4q5pDAuxjERb4UgBCH05yytg8xiwizCzDJwrSayEIQghA6BGJm0kWoDDd0kKbRU9Dk2UkIQghBmQ/Z/fglBCEIQghCEIITX1y+63YZw1kbARQAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法一"><span class="post-toc-number">2.</span> <span class="post-toc-text">方法一</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法二"><span class="post-toc-number">3.</span> <span class="post-toc-text">方法二</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>关于<code>FileRun</code>多用户网盘之前已经介绍过了，参考：File Run-多功能的VPS文件管理器，对于安装方法，只是简单的说了下，估计还有很多人不会安装，这里就详细的说下安装方法，不得不说这个网盘安装过程有点坑爹，特别是在<code>PHP</code>配置方面，博主花了很久才配置完全。本教程使用<code>2</code>种方法安装，使用宝塔面板和手动编译安装，对于新手建议直接用宝塔，爱折腾的可以用编译的方法，后者要快些，不过相对前者更容易出问题。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/File%20Run(1).jpg" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/File%20Run(2).jpg" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p><strong>1、安装宝塔面板</strong></p>
+<pre><code>#Centos系统
+yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh
+
+#Ubuntu系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; sudo bash install.sh
+
+#Debian系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; bash install.sh</code></pre><p>安装完成会给面板地址，用户名和密码你。</p>
+<p><strong>2、安装环境并上传FileRun</strong><br>进入面板后，根据提示安装<code>nginx</code>，<code>php 7.0</code>，<code>mysql 5.6</code>环境，再添加域名，解析域名，然后将<code>FileRun</code>程序下载并上传解压到网站根目录，并建好数据库。<code>FileRun</code>程序下载地址：<a href="https://www.filerun.com/download。" target="_blank" rel="noopener">https://www.filerun.com/download。</a></p>
+<p><strong>3、安装PHP拓展</strong><br><code>Filerun</code>需要安装<code>ionCube</code>、<code>imagemagick</code>和<code>Exif</code>拓展。可进入<code>PHP</code>管理进行安装。<br><img src="https://www.southcat.net/usr/picture/Filerun(1).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p><strong>4、修改PHP配置文件</strong><br>和步骤<code>3</code>一样，同样的在<code>PHP</code>管理里找到配置文件，进行如下修改：</p>
+<pre><code>#找到open_basedir，大概在293行，记得替换成你的域名
+open_basedir = /www/wwwroot/yourdomain.com/:/tmp/:/proc/
+
+#找到disable_functions，大概在298行
+删掉exec,代码即可。</code></pre><p>编辑好了后，重启<code>PHP</code>。<br><strong>5、安装FileRun程序</strong><br>打开域名，根据提示检查配置信息后，再输入数据库名称、用户名、密码安装<code>FileRun</code>程序。<br><img src="https://www.southcat.net/usr/picture/Filerun(2).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/Filerun(3).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/Filerun(4).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>安装成功显示如下信息。<br><img src="https://www.southcat.net/usr/picture/Filerun(5).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>最后就可以直接登录，第一次会要你修改密码等信息。<br><img src="https://www.southcat.net/usr/picture/Filerun(6).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>本教程在<code>CentOS 7</code>下测试成功。编译的环境为<code>Apache</code>，<code>Mysql 5.6</code>和<code>PHP 7.0</code>。</p>
+<p><strong>1、安装Apache</strong></p>
+<pre><code>#安装并启动Apache Web服务器
+yum install httpd -y
+systemctl start httpd.service </code></pre><p>此时我们进入<code>http://ip</code>地址可以看到<code>Apache</code>欢迎页面。</p>
+<p><strong>2、安装Mysql 5.6</strong></p>
+<pre><code>#下载并安装Mysql
+wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+rpm -ivh mysql-community-release-el7-5.noarch.rpm
+yum install mysql-server
+
+#设置权限
+chown -R root:root /var/lib/mysql
+service mysqld restart
+
+#重置Mysql密码
+mysql -u root
+use mysql;
+update user set password=password(&apos;moerats&apos;) where user=&apos;root&apos;;
+exit;
+
+#重启数据库
+service mysqld restart
+
+#创建数据库
+mysql -uroot -p
+create database filerun;
+exit;</code></pre><p><strong>3、安装PHP 7.0</strong></p>
+<pre><code>#更新yum源
+rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+
+#安装PHP并启动
+yum install php70w-fpm 
+systemctl enable php-fpm.service  
+systemctl start php-fpm.service</code></pre><p>为了在<code>Apache</code>上使用<code>PHP-FPM</code>，我们需要编辑<code>Apache</code>配置文件。</p>
+<pre><code>vi /etc/httpd/conf/httpd.conf</code></pre><p>在最后即<code>IncludeOptional conf.d/*.conf</code>之前添加以下代码：</p>
+<pre><code>&lt;IfModule proxy_module&gt;  
+  ProxyPassMatch ^/(.*\.php(/.*)?)$ fcgi://127.0.0.1:9000/var/www/html/$1
+&lt;/IfModule&gt; </code></pre><p>并在<code>DirectoryIndex</code>指令后面添加<code>index.php</code>即：</p>
+<pre><code>DirectoryIndex index.html index.php #大约在164行</code></pre><p>再重新启动<code>Apache</code>。</p>
+<pre><code>systemctl restart httpd.service</code></pre><p><strong>4、配置PHP 7.0</strong><br>安装<code>FileRun</code>所需的<code>PHP</code>模块</p>
+<pre><code>yum install php70w-mbstring php70w-mcrypt php70w-opcache php70w-pdo php70w-mysql php70w-gd php70w-xml</code></pre><p>安装<code>ionCube</code>模块</p>
+<pre><code>cd /usr/lib64/php/modules
+yum install wget -y
+wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz  
+tar xvfz ioncube_loaders_lin_x86-64.tar.gz </code></pre><p>在<code>/etc/php.d</code>文件夹创建并编辑<code>filerun.ini</code>文件，可以使用<code>FTP</code>工具完成，也可以直接使用以下命令：</p>
+<pre><code>#以下是一整个命令，一起复制运行即可。
+echo &quot;expose_php              = Off  
+error_reporting         = E_ALL &amp; ~E_NOTICE  
+display_errors          = On  
+display_startup_errors  = Off  
+log_errors              = On  
+ignore_repeated_errors  = Off  
+allow_url_fopen         = On  
+allow_url_include       = Off  
+variables_order         = &quot;GPCS&quot;  
+allow_webdav_methods    = On  
+memory_limit            = 128M  
+max_execution_time      = 300  
+output_buffering        = Off  
+output_handler          = &quot;&quot;  
+zlib.output_compression = Off  
+zlib.output_handler     = &quot;&quot;  
+safe_mode               = Off  
+register_globals        = Off  
+magic_quotes_gpc        = Off  
+upload_max_filesize     = 20M  
+post_max_size           = 20M  
+enable_dl               = Off  
+disable_functions       = &quot;&quot;  
+disable_classes         = &quot;&quot;  
+session.save_handler     = files  
+session.use_cookies      = 1  
+session.use_only_cookies = 1  
+session.auto_start       = 0  
+session.cookie_lifetime  = 0  
+session.cookie_httponly  = 1  
+date.timezone            = &quot;UTC&quot;
+
+zend_extension = /usr/lib64/php/modules/ioncube/ioncube_loader_lin_7.0.so&quot; &gt; /etc/php.d/filerun.ini</code></pre><p>重启<code>PHP</code></p>
+<pre><code>systemctl restart php-fpm.service</code></pre><p><strong>5、安装FileRun</strong></p>
+<pre><code>#下载最新版本FileRun
+cd /var/www/html/  
+wget -O FileRun.zip http://www.filerun.com/download-latest 
+#解压
+yum install unzip
+unzip FileRun.zip
+#授权目录
+chown -R apache:apache /var/www/html/</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-11-27T06:18:16.000Z" itemprop="datePublished">2019-11-27</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.235Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2019/11/27/linux-e5-b9-bf-e5-91-8a-e8-bf-87-e6-bb-a4-e5-b1-8f-e8-94-bd-e8-bd-af-e4-bb-b6-ef-bc-9aadbyby-e4-b8-80-e9-94-ae-e5-ae-89-e8-a3-85-e8-84-9a-e6-9c-ac/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux广告过滤/屏蔽软件：ADbyby一键安装脚本</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2019/11/27/e5-88-86-e4-ba-ab-e5-87-a0-e4-b8-aa-e5-9c-a8-e7-ba-bf-e6-89-ab-e6-8f-8f-e7-97-85-e6-af-92-e8-bd-af-e4-bb-b6-e7-9a-84-e7-bd-91-e7-ab-99/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">分享几个在线扫描病毒软件的网站</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

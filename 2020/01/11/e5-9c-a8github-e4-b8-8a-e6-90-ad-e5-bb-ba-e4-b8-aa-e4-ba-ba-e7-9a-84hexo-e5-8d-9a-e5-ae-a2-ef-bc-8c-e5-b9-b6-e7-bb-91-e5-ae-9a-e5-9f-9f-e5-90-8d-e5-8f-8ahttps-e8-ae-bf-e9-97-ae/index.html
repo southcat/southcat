@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>在Github上搭建个人的Hexo博客，并绑定域名及Https访问 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="在Github上搭建个人的Hexo博客，并绑定域名及Https访问 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2020/01/11/e5-9c-a8github-e4-b8-8a-e6-90-ad-e5-bb-ba-e4-b8-aa-e4-ba-ba-e7-9a-84hexo-e5-8d-9a-e5-ae-a2-ef-bc-8c-e5-b9-b6-e7-bb-91-e5-ae-9a-e5-9f-9f-e5-90-8d-e5-8f-8ahttps-e8-ae-bf-e9-97-ae/"><meta property="og:locale" content="en"><meta name="description" content="说明：Hexo是一个很简洁的博客程序，可将其部署到Github上并使用Git二级域名进行访问，等于为我们节省了服务器和域名成本，而且还可以绑定自己的域名访问，这里就说下具体搭建教程。 简介Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 截图 搭建1、创建Github账户浏览器进入https:&#x2F;&#x2F;githu - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/Hexo(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/Hexo(2).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/Hexo(4).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/Hexo(3).png"><meta property="article:published_time" content="2020-01-10T22:28:47.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.242Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.242Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2020/01/11/e5-9c-a8github-e4-b8-8a-e6-90-ad-e5-bb-ba-e4-b8-aa-e4-ba-ba-e7-9a-84hexo-e5-8d-9a-e5-ae-a2-ef-bc-8c-e5-b9-b6-e7-bb-91-e5-ae-9a-e5-9f-9f-e5-90-8d-e5-8f-8ahttps-e8-ae-bf-e9-97-ae/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2020/01/11/e5-9c-a8github-e4-b8-8a-e6-90-ad-e5-bb-ba-e4-b8-aa-e4-ba-ba-e7-9a-84hexo-e5-8d-9a-e5-ae-a2-ef-bc-8c-e5-b9-b6-e7-bb-91-e5-ae-9a-e5-9f-9f-e5-90-8d-e5-8f-8ahttps-e8-ae-bf-e9-97-ae/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2020/01/11/e5-9c-a8github-e4-b8-8a-e6-90-ad-e5-bb-ba-e4-b8-aa-e4-ba-ba-e7-9a-84hexo-e5-8d-9a-e5-ae-a2-ef-bc-8c-e5-b9-b6-e7-bb-91-e5-ae-9a-e5-9f-9f-e5-90-8d-e5-8f-8ahttps-e8-ae-bf-e9-97-ae/"
+    },
+    "headline": "在Github上搭建个人的Hexo博客，并绑定域名及Https访问 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-01-10T22:28:47.000Z",
+    "dateModified": "2020-04-24T09:34:44.242Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：Hexo是一个很简洁的博客程序，可将其部署到Github上并使用Git二级域名进行访问，等于为我们节省了服务器和域名成本，而且还可以绑定自己的域名访问，这里就说下具体搭建教程。 简介Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 截图 搭建1、创建Github账户浏览器进入https://githu - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=在Github上搭建个人的Hexo博客，并绑定域名及Https访问" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=在Github上搭建个人的Hexo博客，并绑定域名及Https访问&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=在Github上搭建个人的Hexo博客，并绑定域名及Https访问" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEhElEQVR42u3czZLTQAxF4bz/Sw/bqcHWPZKzcetkAwWJ019TCP0Vn5+Fr49o0aJFixb9MvSneP33oebr92eunvX351ef/fvdV++jDtGit6Av/9JfHOoKQVBXMHKZ3UuJDtGiF6HvHngXmKqDJdDV+ytkeha+GNGiRf9UCcHd71fvqYJd9WvV2USLFj0LZFXgor9fHYqgq6RJtGjROVGvCvaUMJAAeIeqGgnpeY+rLNGiX45Ojb23/Pi1bqho0S9Gx6EXDCQkuaCFSjewfX1qKVr0i9E0yaBFQ/ezHUgnwbk8g2jRC9G0kUfg5AI730cD522hJFr0AnRKBsiw7e7iaBMwJSepAZiWcESL3oQmQ7HusI8UHiSAdhIhsrQnWvQWNF1emxQgKVClYNht6OMmgmjRh6JJck+X5EiCQoIavYxOMSNa9Cb0txp8JMDRpn8LEwol0aK3octmWnO5hTYMU2BMyRNtRIgWvRlNvqQ7ZLt6fwpWk+F79SzRorehSaO8O1hPQBroUiMyBUVUcIgWfRh6MlRPl0WGfJMhwKNlH9GiF6DTgzrL5fR59Ls6yzdpuCha9DZ0atSRw0wXXb81pEtNDtGiN6BT8kCH9t2GA1l8I4VFNcSPVZZo0QejOwUAaTB0mhL0ckkyVF22aNHb0NUHSQAjxUO1RJsucDLwEy16G5pCqguiC3UpwKXFORJIy/OIFr0A3S3S6TIqDTh0aJACKWksiBa9Cd1pxpMmfFUoPEk+SKGCCg7Rog9GV4GHBLjU8CeLNp1LSufFVZZo0YejyXJLuii62JaSGzqoawVA0aKXocmwPQWqScOALtKQZ5SLAaJFL0DTpVPSpOs8iwz+u0PC2NQULXoButOYo++tgkwqUGiSk5Ii0aK3oknx3mnMpSKBDgUpnDQwRIvehL4LWCTQkKYDGbLTxIcMBUdDedGiD0J3DkW+oLvUOklCusWLaNHb0FViUV3AJFDRRiAdQrSWgESLXoROB6CDM3qJNEBOl/vKAZ5o0QejpwVAWmx5UnB0mxop0RItehuaBBK6BEMurbMEl56bGv5l50S06IPRpEBIQ7nUOCAFDRkqkEaHaNGiWcMtBbQpriz+m00OtDEoWvTBaFpQdBt5qeCYXgwtdkSL3oimhX43eJABXnretLkYkxPRog9H02Ki+sc/Lq6FAJUKDTK4x0vuokUfjCZDuOkhOkXFNKjSRQHRoreguw980iB8uhA7aWCKFr0RXQUDkgSkBKFqNtxh02VX+NaSu2jRB6I7C+lpOZYuxdCGQDcYoqG8aNEHo0mT/27BhTQdJgGukwzRoaNo0dvRqRlABn+TpZ1JgYIHjqJFL0CTIJMOmGCpYZCCZqeRUDYiRItegiaBiAa4zsIqCUapkU+SFtGiN6JpAkAaA6SAmWJIg+P2D0q0aNGj/wA5BbYUBCfLcqjJKFq06Djgo0XGXeGQmg7d5boymIoWvQhNFmxSwUEbAwSOmvcfvuAuWvQmNBm8p8BSNdxpElIeeNDsaG0iiBZ9CHrTS7Ro0aJFi37J6x/QW1TPle47sQAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">在Github上搭建个人的Hexo博客，并绑定域名及Https访问</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-01-11</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=在Github上搭建个人的Hexo博客，并绑定域名及Https访问&url=http://hexo.southcat.net/2020/01/11/e5-9c-a8github-e4-b8-8a-e6-90-ad-e5-bb-ba-e4-b8-aa-e4-ba-ba-e7-9a-84hexo-e5-8d-9a-e5-ae-a2-ef-bc-8c-e5-b9-b6-e7-bb-91-e5-ae-9a-e5-9f-9f-e5-90-8d-e5-8f-8ahttps-e8-ae-bf-e9-97-ae/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=在Github上搭建个人的Hexo博客，并绑定域名及Https访问&url=http://hexo.southcat.net/2020/01/11/e5-9c-a8github-e4-b8-8a-e6-90-ad-e5-bb-ba-e4-b8-aa-e4-ba-ba-e7-9a-84hexo-e5-8d-9a-e5-ae-a2-ef-bc-8c-e5-b9-b6-e7-bb-91-e5-ae-9a-e5-9f-9f-e5-90-8d-e5-8f-8ahttps-e8-ae-bf-e9-97-ae/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2020/01/11/e5-9c-a8github-e4-b8-8a-e6-90-ad-e5-bb-ba-e4-b8-aa-e4-ba-ba-e7-9a-84hexo-e5-8d-9a-e5-ae-a2-ef-bc-8c-e5-b9-b6-e7-bb-91-e5-ae-9a-e5-9f-9f-e5-90-8d-e5-8f-8ahttps-e8-ae-bf-e9-97-ae/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2020/01/11/e5-9c-a8github-e4-b8-8a-e6-90-ad-e5-bb-ba-e4-b8-aa-e4-ba-ba-e7-9a-84hexo-e5-8d-9a-e5-ae-a2-ef-bc-8c-e5-b9-b6-e7-bb-91-e5-ae-9a-e5-9f-9f-e5-90-8d-e5-8f-8ahttps-e8-ae-bf-e9-97-ae/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2020/01/11/e5-9c-a8github-e4-b8-8a-e6-90-ad-e5-bb-ba-e4-b8-aa-e4-ba-ba-e7-9a-84hexo-e5-8d-9a-e5-ae-a2-ef-bc-8c-e5-b9-b6-e7-bb-91-e5-ae-9a-e5-9f-9f-e5-90-8d-e5-8f-8ahttps-e8-ae-bf-e9-97-ae/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2020/01/11/e5-9c-a8github-e4-b8-8a-e6-90-ad-e5-bb-ba-e4-b8-aa-e4-ba-ba-e7-9a-84hexo-e5-8d-9a-e5-ae-a2-ef-bc-8c-e5-b9-b6-e7-bb-91-e5-ae-9a-e5-9f-9f-e5-90-8d-e5-8f-8ahttps-e8-ae-bf-e9-97-ae/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2020/01/11/e5-9c-a8github-e4-b8-8a-e6-90-ad-e5-bb-ba-e4-b8-aa-e4-ba-ba-e7-9a-84hexo-e5-8d-9a-e5-ae-a2-ef-bc-8c-e5-b9-b6-e7-bb-91-e5-ae-9a-e5-9f-9f-e5-90-8d-e5-8f-8ahttps-e8-ae-bf-e9-97-ae/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAAD0CAAAAACJRFQiAAAEhElEQVR42u3czZLTQAxF4bz/Sw/bqcHWPZKzcetkAwWJ019TCP0Vn5+Fr49o0aJFixb9MvSneP33oebr92eunvX351ef/fvdV++jDtGit6Av/9JfHOoKQVBXMHKZ3UuJDtGiF6HvHngXmKqDJdDV+ytkeha+GNGiRf9UCcHd71fvqYJd9WvV2USLFj0LZFXgor9fHYqgq6RJtGjROVGvCvaUMJAAeIeqGgnpeY+rLNGiX45Ojb23/Pi1bqho0S9Gx6EXDCQkuaCFSjewfX1qKVr0i9E0yaBFQ/ezHUgnwbk8g2jRC9G0kUfg5AI730cD522hJFr0AnRKBsiw7e7iaBMwJSepAZiWcESL3oQmQ7HusI8UHiSAdhIhsrQnWvQWNF1emxQgKVClYNht6OMmgmjRh6JJck+X5EiCQoIavYxOMSNa9Cb0txp8JMDRpn8LEwol0aK3octmWnO5hTYMU2BMyRNtRIgWvRlNvqQ7ZLt6fwpWk+F79SzRorehSaO8O1hPQBroUiMyBUVUcIgWfRh6MlRPl0WGfJMhwKNlH9GiF6DTgzrL5fR59Ls6yzdpuCha9DZ0atSRw0wXXb81pEtNDtGiN6BT8kCH9t2GA1l8I4VFNcSPVZZo0QejOwUAaTB0mhL0ckkyVF22aNHb0NUHSQAjxUO1RJsucDLwEy16G5pCqguiC3UpwKXFORJIy/OIFr0A3S3S6TIqDTh0aJACKWksiBa9Cd1pxpMmfFUoPEk+SKGCCg7Rog9GV4GHBLjU8CeLNp1LSufFVZZo0YejyXJLuii62JaSGzqoawVA0aKXocmwPQWqScOALtKQZ5SLAaJFL0DTpVPSpOs8iwz+u0PC2NQULXoButOYo++tgkwqUGiSk5Ii0aK3oknx3mnMpSKBDgUpnDQwRIvehL4LWCTQkKYDGbLTxIcMBUdDedGiD0J3DkW+oLvUOklCusWLaNHb0FViUV3AJFDRRiAdQrSWgESLXoROB6CDM3qJNEBOl/vKAZ5o0QejpwVAWmx5UnB0mxop0RItehuaBBK6BEMurbMEl56bGv5l50S06IPRpEBIQ7nUOCAFDRkqkEaHaNGiWcMtBbQpriz+m00OtDEoWvTBaFpQdBt5qeCYXgwtdkSL3oimhX43eJABXnretLkYkxPRog9H02Ki+sc/Lq6FAJUKDTK4x0vuokUfjCZDuOkhOkXFNKjSRQHRoreguw980iB8uhA7aWCKFr0RXQUDkgSkBKFqNtxh02VX+NaSu2jRB6I7C+lpOZYuxdCGQDcYoqG8aNEHo0mT/27BhTQdJgGukwzRoaNo0dvRqRlABn+TpZ1JgYIHjqJFL0CTIJMOmGCpYZCCZqeRUDYiRItegiaBiAa4zsIqCUapkU+SFtGiN6JpAkAaA6SAmWJIg+P2D0q0aNGj/wA5BbYUBCfLcqjJKFq06Djgo0XGXeGQmg7d5boymIoWvQhNFmxSwUEbAwSOmvcfvuAuWvQmNBm8p8BSNdxpElIeeNDsaG0iiBZ9CHrTS7Ro0aJFi37J6x/QW1TPle47sQAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">2.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#搭建"><span class="post-toc-number">3.</span> <span class="post-toc-text">搭建</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#绑定域名"><span class="post-toc-number">4.</span> <span class="post-toc-text">绑定域名</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong><code>Hexo</code>是一个很简洁的博客程序，可将其部署到<code>Github</code>上并使用<code>Git</code>二级域名进行访问，等于为我们节省了服务器和域名成本，而且还可以绑定自己的域名访问，这里就说下具体搭建教程。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><code>Hexo</code>是一个快速、简洁且高效的博客框架。<code>Hexo</code>使用<code>Markdown</code>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/Hexo(1).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p><strong>1、创建Github账户</strong><br>浏览器进入<a href="https://github.com，注册一个账号，再打开https://github.com/new创建一个项目。名称填`Github用户名.github.io`。" target="_blank" rel="noopener">https://github.com，注册一个账号，再打开https://github.com/new创建一个项目。名称填`Github用户名.github.io`。</a><br><img src="https://www.southcat.net/usr/picture/Hexo(2).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p><strong>2、安装Node.js和Git</strong><br>使用<code>SSH</code>客户端登录<code>VPS</code>，运行命令：</p>
+<pre><code>#Ubuntu和Debian系统
+curl -sL https://deb.nodesource.com/setup_9.x | bash -
+apt-get install -y nodejs git
+
+#Centos系统
+curl -sL https://rpm.nodesource.com/setup_9.x | bash -
+yum install nodejs git -y</code></pre><p><strong>3、安装Hexo</strong></p>
+<pre><code>#新建文件夹存放Hexo文件，名称自己定
+mkdir /Rats &amp;&amp; cd /Rats
+#安装Hexo
+npm install hexo-cli -g
+#初始化配置
+hexo init
+#安装必要组件
+npm install
+#启动Hexo
+hexo server</code></pre><p>然后打开<code>http://ip:4000</code>，就可以进入<code>Hexo</code>博客了，如果进不了，请放行服务器的<code>4000</code>端口。接下来我们就同步到<code>Github</code>上。</p>
+<p><strong>4、配置Git信息</strong></p>
+<pre><code>#请将下面Git用户名和邮箱修改成自己的
+git config --global user.name &quot;MOERATS&quot;
+git config --global user.email &quot;admin@southcat.net&quot;
+#生成密匙
+ssh-keygen -t rsa -C &quot;admin@southcat.net&quot;</code></pre><p>生成过程可以直接回车，此时会在<code>/root/.ssh</code>目录中生成<code>2</code>个文件，然后打开<code>id_rsa.pub</code>，并复制里面的内容。</p>
+<pre><code>cat /root/.ssh/id_rsa.pub</code></pre><p>复制好后，使用浏览器进入<a href="https://github.com/settings/ssh/new，`Title`随便填，然后把刚刚复制的内容填到`Key`确认。" target="_blank" rel="noopener">https://github.com/settings/ssh/new，`Title`随便填，然后把刚刚复制的内容填到`Key`确认。</a></p>
+<p>再编辑<code>_config.yml</code>文件，文件在之前新建的文件夹里，你可以使用<code>ftp</code>客户端编辑，也可以使用<code>vi</code>或<code>nano</code>编辑。</p>
+<pre><code>nano /Rats/_config.yml
+#编辑网站信息，自己看情况修改
+title: Rat&apos;s Blog
+subtitle: A blog
+description: A blog
+keywords: A blog
+author: Rat&apos;s
+language: zh-CN
+timezone: Asia/Shanghai
+
+#添加配置，在最后添加，请修改为自己的Git地址
+deploy:
+  type: git
+  repo: https://github.com/MOERATS/MOERATS.github.io.git
+  branch: master</code></pre><p><strong>5、同步到Github</strong><br>同步前，先安装一个拓展，不然会出现<code>deloyer not found:git</code>错误。</p>
+<pre><code>npm install hexo-deployer-git --save</code></pre><p>再使用命令同步</p>
+<pre><code>hexo g
+hexo d</code></pre><p>同步的时候，会要求我们输入<code>Github</code>用户名和密码，然后我们就可以通过<code>https://xx.github.io/</code>进入博客了。</p>
+<p><strong>6、发布文章</strong><br>使用命令新建文章。</p>
+<pre><code>hexo new &quot;标题&quot;</code></pre><p>此时会在<code>/Rats/source/_posts</code>目录下生成个<code>markdown</code>文件，然后你就用<code>Markdown</code>编辑器进行编辑。</p>
+<p>接下来就可以使用命令发布并同步到<code>Github</code>了。</p>
+<pre><code>hexo d -g</code></pre><h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>如果你想用<code>Github</code>二级域名访问，就无视这一步，如果你想用自己的域名访问，请继续看。</p>
+<p>先解析域名的<code>CNAME</code>记录到你的<code>Git</code>二级域名。如果你想用<code>Https</code>访问，可以使用<code>CloudFlare</code>解析域名，并开启<code>CDN</code>强制<code>Http</code>转<code>Https</code>。<br><img src="https://www.southcat.net/usr/picture/Hexo(4).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>然后访问你的博客<code>Git</code>项目地址，点击<code>Create new file</code>新建文件，命名<code>CNAME</code>，内容写上你的域名，不要<code>http</code>等。<br><img src="https://www.southcat.net/usr/picture/Hexo(3).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>这时候就可以通过自己的域名访问博客了。</p>
+<pre><code>#你可以用ftp添加CNAME文件，也可以使用命令，注意后面的路径
+echo &quot;www.southcat.net&quot; &gt; /Rats/source/CNAME</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-01-10T22:28:47.000Z" itemprop="datePublished">2020-01-11</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.242Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2020/01/11/e4-b8-80-e6-ac-be-e4-b8-8d-e9-94-99-e7-9a-84-e8-bd-bb-e8-ae-ba-e5-9d-9b-e7-a8-8b-e5-ba-8f-ef-bc-9axiuno-bbs-4-0-e6-90-ad-e5-bb-ba-e6-95-99-e7-a8-8b/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一款不错的轻论坛程序：Xiuno BBS 4.0搭建教程</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2020/01/11/centos-6-e7-b3-bb-e7-bb-9fapache-e7-8e-af-e5-a2-83-e9-85-8d-e7-bd-aessl-e8-af-81-e4-b9-a6-e6-95-99-e7-a8-8b/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">CentOS 6系统Apache环境配置SSL证书教程</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>
