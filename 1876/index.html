@@ -155,7 +155,7 @@
     <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="WordPress博客后台自动更新后，还一直提示更新的解决方法 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/1876/"><meta property="og:locale" content="en"><meta name="description" content="说明：刚刚将一个自己长时间不管的wordpress博客自动更新到了4.9版本后，发现后台还是一直提示更新，仔细看是因为语言翻译的问题，去翻译文件目录那里看了下，文件是替换成功了，猜想估计是权限问题，读取不了，就找了下方法，发现和之前提到的安装h5ai网盘后读取不出文件的问题是一样的，就是scandir函数被禁用了，这里说下方法。 方法只需要修改php.ini文件就可以了，以军哥lnmp为例，文件位 - John Doe - 南猫"><meta property="article:published_time" content="2019-12-26T08:27:13.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.240Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.240Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="WordPress博客后台自动更新后，还一直提示更新的解决方法 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/1876/"><meta property="og:locale" content="en"><meta name="description" content="说明：刚刚将一个自己长时间不管的wordpress博客自动更新到了4.9版本后，发现后台还是一直提示更新，仔细看是因为语言翻译的问题，去翻译文件目录那里看了下，文件是替换成功了，猜想估计是权限问题，读取不了，就找了下方法，发现和之前提到的安装h5ai网盘后读取不出文件的问题是一样的，就是scandir函数被禁用了，这里说下方法。 方法只需要修改php.ini文件就可以了，以军哥lnmp为例，文件位 - John Doe - 南猫"><meta property="article:published_time" content="2019-12-26T08:27:13.000Z"><meta property="article:modified_time" content="2020-04-24T11:46:03.157Z"><meta property="og:updated_time" content="2020-04-24T11:46:03.157Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
@@ -196,7 +196,7 @@
     },
     
     "datePublished": "2019-12-26T08:27:13.000Z",
-    "dateModified": "2020-04-24T09:34:44.240Z",
+    "dateModified": "2020-04-24T11:46:03.157Z",
     "author": {
         "@type": "Person",
         "name": "John Doe",
@@ -217,7 +217,7 @@
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search.html?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -256,8 +256,10 @@
         <a href="/archives/" class="navbar-link">Archives</a>
     
     
-        <a href="/search" class="navbar-link">Search</a>
+        <a href="/search.html" class="navbar-link">Search</a>
     
+    
+        <a href="/link.html" class="navbar-link">Friends</a>
     
     
         <div class="dropdown dropdown-right">
@@ -464,7 +466,7 @@
 
 <p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-26T08:27:13.000Z" itemprop="datePublished">2019-12-26</time>
 
-    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.240Z" itemprop="dateModified">2020-04-24</time>
+    , Updated at&nbsp;<time datetime="2020-04-24T11:46:03.157Z" itemprop="dateModified">2020-04-24</time>
 
 </p>
 <p class="post-footer-info mb-0 pt-2">

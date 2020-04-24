@@ -155,7 +155,7 @@
     <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    <meta property="og:title" content="Nginx环境下对部分网站做防盗链设置及外链的跳转 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/1766/"><meta property="og:locale" content="en"><meta name="description" content="说明：对于Nginx防盗链的设置，之前发过一篇文章：Linux VPS下Nginx与Apache环境防盗链设置方法，而这个方法就是连所有的网站都屏蔽了，有时候并不适合有些网站，现在再分享一个Nginx限制部分网站外链权限的方法。 方法以下代码均在站点配置文件添加即可！ 1、屏蔽部分网站和IP if ($http_referer ~* abcd.com|bcde.org|cdef.me|103.35 - John Doe - 南猫"><meta property="article:published_time" content="2019-11-25T10:15:06.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.235Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.235Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+    <meta property="og:title" content="Nginx环境下对部分网站做防盗链设置及外链的跳转 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/1766/"><meta property="og:locale" content="en"><meta name="description" content="说明：对于Nginx防盗链的设置，之前发过一篇文章：Linux VPS下Nginx与Apache环境防盗链设置方法，而这个方法就是连所有的网站都屏蔽了，有时候并不适合有些网站，现在再分享一个Nginx限制部分网站外链权限的方法。 方法以下代码均在站点配置文件添加即可！ 1、屏蔽部分网站和IP if ($http_referer ~* abcd.com|bcde.org|cdef.me|103.35 - John Doe - 南猫"><meta property="article:published_time" content="2019-11-25T10:15:06.000Z"><meta property="article:modified_time" content="2020-04-24T11:46:02.885Z"><meta property="og:updated_time" content="2020-04-24T11:46:02.885Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
 
     
 
@@ -196,7 +196,7 @@
     },
     
     "datePublished": "2019-11-25T10:15:06.000Z",
-    "dateModified": "2020-04-24T09:34:44.235Z",
+    "dateModified": "2020-04-24T11:46:02.885Z",
     "author": {
         "@type": "Person",
         "name": "John Doe",
@@ -217,7 +217,7 @@
     
     "potentialAction": {
         "@type": "SearchAction",
-        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "target": "http://hexo.southcat.net/search.html?s={search_term_string}",
         "query-input": "required name=search_term_string"
     },
     
@@ -256,8 +256,10 @@
         <a href="/archives/" class="navbar-link">Archives</a>
     
     
-        <a href="/search" class="navbar-link">Search</a>
+        <a href="/search.html" class="navbar-link">Search</a>
     
+    
+        <a href="/link.html" class="navbar-link">Friends</a>
     
     
         <div class="dropdown dropdown-right">
@@ -477,7 +479,7 @@
 
 <p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-11-25T10:15:06.000Z" itemprop="datePublished">2019-11-25</time>
 
-    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.235Z" itemprop="dateModified">2020-04-24</time>
+    , Updated at&nbsp;<time datetime="2020-04-24T11:46:02.885Z" itemprop="dateModified">2020-04-24</time>
 
 </p>
 <p class="post-footer-info mb-0 pt-2">
