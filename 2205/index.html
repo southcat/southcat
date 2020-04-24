@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Onedrivecmd：OneDrive的命令行客户端，可直接上传/下载文件等 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Onedrivecmd：OneDrive的命令行客户端，可直接上传&#x2F;下载文件等 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2205/"><meta property="og:locale" content="en"><meta name="description" content="说明：onedrivecmd是一个OneDrive的命令行客户端，可以直接在VPS上对OneDrive网盘进行上传&#x2F;下载&#x2F;编辑等操作，还可以直接将文件离线到网盘，支持OneDrive个人版和商业版等，该工具和博主以前发个2款Google Drive命令行工具差不多，查看：skicka、Gdrive，对Google Drive更有兴趣的可以试试。 功能 根据路径取文件。 配置文件 (~&#x2F;.onedr - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/onedrivecmd.png"><meta property="article:published_time" content="2019-10-20T12:50:45.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.229Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.229Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2205/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2205/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2205/"
+    },
+    "headline": "Onedrivecmd：OneDrive的命令行客户端，可直接上传/下载文件等 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-10-20T12:50:45.000Z",
+    "dateModified": "2020-04-24T09:34:44.229Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：onedrivecmd是一个OneDrive的命令行客户端，可以直接在VPS上对OneDrive网盘进行上传/下载/编辑等操作，还可以直接将文件离线到网盘，支持OneDrive个人版和商业版等，该工具和博主以前发个2款Google Drive命令行工具差不多，查看：skicka、Gdrive，对Google Drive更有兴趣的可以试试。 功能 根据路径取文件。 配置文件 (~/.onedr - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=Onedrivecmd：OneDrive的命令行客户端，可直接上传/下载文件等" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Onedrivecmd：OneDrive的命令行客户端，可直接上传/下载文件等&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=Onedrivecmd：OneDrive的命令行客户端，可直接上传/下载文件等" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABgElEQVR42u3a0QrCMAyF4b3/S+uVIKM9OSljOx3/bhTU+gk1SZMdn4DrAAECxBaIQ1y/1//fe/7MaB1nXRDZiOGmOS3W+XJnXRD5iGpDOtjZ43RdEFsiRptxtGHdwAZif4QKXKNEBeI9CJloBklMPb88i4K4HeEUuiuPl1fbIG5BlIfWycarAtGlp3IQtyLcQ45bzMyC3TCggYhFOElIFTHOQdlKYCAiEN0DrsK5xRCIbES1MdUiqxsWRDbCTTadQ5BKetN/B4g4RKeIcZsk6keAyEbMDsdOUlPBaelADCIC4SSwTtFTfRZENqIatlQJzE1yIPZBVM3wlSarO+AFkYlwGmeqAVI1VGXBBCISURU0nSCk8CD2QlTNke6wtipwQeQjqkHcSiGsAhuIbIQzsO8M5NwiB0Q2ojN8cRptThENIh/h3ADYCWjOTeUg9kSsNk/UQAfEOxAqmanhrBz2g4hGVDdrrSSssoECIhbhNsLcJll10xCIbMSTFwgQIKIRX6SmqYkQRKTeAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Onedrivecmd：OneDrive的命令行客户端，可直接上传/下载文件等</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-10-20</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Onedrivecmd：OneDrive的命令行客户端，可直接上传/下载文件等&url=http://hexo.southcat.net/2205/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Onedrivecmd：OneDrive的命令行客户端，可直接上传/下载文件等&url=http://hexo.southcat.net/2205/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2205/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2205/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2205/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2205/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2205/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABgElEQVR42u3a0QrCMAyF4b3/S+uVIKM9OSljOx3/bhTU+gk1SZMdn4DrAAECxBaIQ1y/1//fe/7MaB1nXRDZiOGmOS3W+XJnXRD5iGpDOtjZ43RdEFsiRptxtGHdwAZif4QKXKNEBeI9CJloBklMPb88i4K4HeEUuiuPl1fbIG5BlIfWycarAtGlp3IQtyLcQ45bzMyC3TCggYhFOElIFTHOQdlKYCAiEN0DrsK5xRCIbES1MdUiqxsWRDbCTTadQ5BKetN/B4g4RKeIcZsk6keAyEbMDsdOUlPBaelADCIC4SSwTtFTfRZENqIatlQJzE1yIPZBVM3wlSarO+AFkYlwGmeqAVI1VGXBBCISURU0nSCk8CD2QlTNke6wtipwQeQjqkHcSiGsAhuIbIQzsO8M5NwiB0Q2ojN8cRptThENIh/h3ADYCWjOTeUg9kSsNk/UQAfEOxAqmanhrBz2g4hGVDdrrSSssoECIhbhNsLcJll10xCIbMSTFwgQIKIRX6SmqYkQRKTeAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#功能"><span class="post-toc-number">1.</span> <span class="post-toc-text">功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong><code>onedrivecmd</code>是一个<code>OneDrive</code>的命令行客户端，可以直接在<code>VPS</code>上对<code>OneDrive</code>网盘进行上传/下载/编辑等操作，还可以直接将文件离线到网盘，支持<code>OneDrive</code>个人版和商业版等，该工具和博主以前发个<code>2</code>款<code>Google Drive</code>命令行工具差不多，查看：skicka、Gdrive，对<code>Google Drive</code>更有兴趣的可以试试。</p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
+<li>根据路径取文件。</li>
+<li>配置文件 (<code>~/.onedrive.json</code>)。</li>
+<li>可对单个文件上传下载。</li>
+<li>可列远程目录，包括文件大小和时间戳。</li>
+<li>上传与下载有进度条，也可用aria2进行下载。</li>
+<li>离线下载（此功能仅通过API提供，Web和官方客户端都是没有的）。</li>
+<li>直接获取直链！。</li>
+<li><code>Python 2</code>和<code>3</code>通用。</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/cnbeining/onedrivecmd" target="_blank" rel="noopener">https://github.com/cnbeining/onedrivecmd</a></p>
+<p><strong>说明：</strong>博主使用<code>Python 2</code>和<code>3</code>测试了下，发现<code>Python 2</code>下会出现点小问题，不过也还是可以用的，这里建议通过<code>Python 3</code>安装<code>Onedrivecmd</code>。</p>
+<p><strong>1、安装pip或pip3</strong><br>如果你想用<code>Python 2</code>，一般系统都自带<code>Python 2</code>，可以使用以下命令安装<code>pip</code>：</p>
+<pre><code>#CentOS 6.x 32位
+rpm -ivh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+yum install -y python-pip
+
+#CentOS 6.x 64位
+rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum install -y python-pip
+
+#CentOS 7.x
+yum install -y epel-release
+yum install -y python-pip
+#如果CentOS 7安装出现No package python-pip available，可以用以下命令进行安装
+wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+
+#Debian/Ubuntu系统
+apt-get -y update
+apt-get -y install python-pip</code></pre><p>如果你想用<code>Python 3</code>，可以使用以下脚本自动安装<code>Python 3</code>和<code>pip3</code>：</p>
+<pre><code>#Ubuntu很多系统自带Python 3，就不说安装方法了
+#CentOS系统
+wget https://www.southcat.net/usr/shell/Python3/CentOS_Python3.6.sh &amp;&amp; sh CentOS_Python3.6.sh
+#Debian系统
+wget https://www.southcat.net/usr/shell/Python3/Debian_Python3.6.sh &amp;&amp; sh Debian_Python3.6.sh
+
+#查看是否安装成功
+python3 -V</code></pre><p><strong>2、安装onedrivecmd</strong></p>
+<pre><code>#Python 2安装
+pip install onedrivecmd
+
+#Python 3安装
+pip3 install onedrivecmd</code></pre><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><strong>1、使用命令</strong></p>
+<pre><code>#注意根目录为od:/，后面带/为目录，不带为文件
+Usage onedrivecmd:
+onedrivecmd -h 
+onedrivecmd [OPTIONS] init 个人版登陆
+onedrivecmd [OPTIONS] init_business 企业/Office 365/Education登陆
+onedrivecmd [OPTIONS] list od:/foo/bar/ 列目录
+onedrivecmd [OPTIONS] share od:/foo/bar/ 共享
+onedrivecmd [OPTIONS] direct od:/foo/bar/ 取直链！这个直链不过期
+onedrivecmd [OPTIONS] get od:/foo/file.txt /tmp/ 下载
+onedrivecmd [OPTIONS] put /tmp/hello.txt od:/bar/ 上传
+onedrivecmd [OPTIONS] delete od:/foo/bar 删除
+onedrivecmd [OPTIONS] mkdir od:/foo/bar/ 建目录
+onedrivecmd [OPTIONS] search foobar 搜索
+onedrivecmd [OPTIONS] remote http://thecatapi.com/api/images/get?format=src&amp;type=gif 离线下载
+onedrivecmd [OPTIONS] quota 看容量
+
+[OPTIONS]
+-conf=&quot;~/.onedrive.json&quot;: 配置文件，此文件和密码一样重要
+-h: 帮助
+-hack: 用SDK上传/aria2下载
+-recursive=false: 递归列目录，速度比想象中慢得多
+-chunk=62914560: 上传分片大小，必须是320K的倍数，不能超过60MB
+-url=False: 只列出文件下载URL，这个URL失效很快</code></pre><p><strong>2、使用示例</strong><br>首先使用命令登录<code>OneDrive</code>。</p>
+<pre><code>#个人版登录命令
+onedrivecmd init
+
+#企业/Office 365/Education登录命令
+onedrivecmd init_business</code></pre><p>然后将那串网址复制到浏览器登录账号，再将验证码输到<code>SSH</code>客户端确认。<br><img src="https://www.southcat.net/usr/picture/onedrivecmd.png" alt="请输入图片描述" title="请输入图片描述"><br>注意默认配置文件是<code>/root/.onedrive.json</code>，可以自己设置。此文件和你的密码一样重要！泄露会导致你的盘被随便查看！</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-10-20T12:50:45.000Z" itemprop="datePublished">2019-10-20</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.229Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/1819/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux VPS服务器SSH端口一键修改脚本</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/1856/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux VPS的Windows DD包详细的制作教程</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>使用Aria2+Aria2Ng+OneIndex+OneDrive建立不限流量/离线BT下载/在线观看网盘 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="使用Aria2+Aria2Ng+OneIndex+OneDrive建立不限流量&#x2F;离线BT下载&#x2F;在线观看网盘 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2187/"><meta property="og:locale" content="en"><meta name="description" content="说明：这个教程之前发过一个脚本：Aria2+Aria2Ng+OneIndex一键安装脚本，下载后自动上传至OneDrive，不过由于系统支持较少，加上很多人想手动安装，这里就单独拿来水一篇文章。 获取OneDrive现在OneIndex是可以使用个人的OneDrive网盘，不过容量太小，很难满足一些人的需求，这里提一下之前说过的2个申请OneDrive 5T的方法。 1、申请微软的Office 3 - John Doe - 南猫"><meta property="article:published_time" content="2020-01-30T23:02:59.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.246Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.246Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2187/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2187/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2187/"
+    },
+    "headline": "使用Aria2+Aria2Ng+OneIndex+OneDrive建立不限流量/离线BT下载/在线观看网盘 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-01-30T23:02:59.000Z",
+    "dateModified": "2020-04-24T09:34:44.246Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：这个教程之前发过一个脚本：Aria2+Aria2Ng+OneIndex一键安装脚本，下载后自动上传至OneDrive，不过由于系统支持较少，加上很多人想手动安装，这里就单独拿来水一篇文章。 获取OneDrive现在OneIndex是可以使用个人的OneDrive网盘，不过容量太小，很难满足一些人的需求，这里提一下之前说过的2个申请OneDrive 5T的方法。 1、申请微软的Office 3 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=使用Aria2+Aria2Ng+OneIndex+OneDrive建立不限流量/离线BT下载/在线观看网盘" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用Aria2+Aria2Ng+OneIndex+OneDrive建立不限流量/离线BT下载/在线观看网盘&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=使用Aria2+Aria2Ng+OneIndex+OneDrive建立不限流量/离线BT下载/在线观看网盘" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABiElEQVR42u3ay27DMBBDUf//T7erLlqMSMowHKq43qRIY+UEGGge1vVVcF0gQIA4AnGJ6+f/v24cPvP3/WRdEN2IMWiGxaZ7Vmi3Loh+hArICTLdv3pdrgviSIQKMPVZEP8X4b5QJTQQZyNkohELTn8/nkVBvI5ICt07r49X2yBeQdim1SQp1Sg91pWDeBWhNp6pGXawZLMD0Y1wGJXEXNOsfgiIboTbiORCwWY2BSWIbkQ6JHUbWBqwIM5ApE2ua3xWyWx8H0QtIn3QsjskUeuA6Ea4BlY1yWpz2m6IQdQgXCPrCl8XzKvvAdGL2C1SXHOTDlhB9CJc4eIeqqQNNYgzEKowVQksfZgrH/aDqESowYdDuabZNkUgahHJcGM3qbnhCohuRFLkJof/0qAG0Y24c1BYDU7SIgdENyJpgpKHMS6QtyorEB9HpAeF3QA9PSAE4lyEGprtDkbsZgXiGIQajmwH493ABPE6IklEuwnLFkggahF3Dwqn0GizAlGD+OQFAgSIasQ3CGEqCfDgVXMAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">使用Aria2+Aria2Ng+OneIndex+OneDrive建立不限流量/离线BT下载/在线观看网盘</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-01-31</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用Aria2+Aria2Ng+OneIndex+OneDrive建立不限流量/离线BT下载/在线观看网盘&url=http://hexo.southcat.net/2187/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=使用Aria2+Aria2Ng+OneIndex+OneDrive建立不限流量/离线BT下载/在线观看网盘&url=http://hexo.southcat.net/2187/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2187/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2187/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2187/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2187/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2187/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABiElEQVR42u3ay27DMBBDUf//T7erLlqMSMowHKq43qRIY+UEGGge1vVVcF0gQIA4AnGJ6+f/v24cPvP3/WRdEN2IMWiGxaZ7Vmi3Loh+hArICTLdv3pdrgviSIQKMPVZEP8X4b5QJTQQZyNkohELTn8/nkVBvI5ICt07r49X2yBeQdim1SQp1Sg91pWDeBWhNp6pGXawZLMD0Y1wGJXEXNOsfgiIboTbiORCwWY2BSWIbkQ6JHUbWBqwIM5ApE2ua3xWyWx8H0QtIn3QsjskUeuA6Ea4BlY1yWpz2m6IQdQgXCPrCl8XzKvvAdGL2C1SXHOTDlhB9CJc4eIeqqQNNYgzEKowVQksfZgrH/aDqESowYdDuabZNkUgahHJcGM3qbnhCohuRFLkJof/0qAG0Y24c1BYDU7SIgdENyJpgpKHMS6QtyorEB9HpAeF3QA9PSAE4lyEGprtDkbsZgXiGIQajmwH493ABPE6IklEuwnLFkggahF3Dwqn0GizAlGD+OQFAgSIasQ3CGEqCfDgVXMAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取OneDrive"><span class="post-toc-number">1.</span> <span class="post-toc-text">获取OneDrive</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置Aria2上传"><span class="post-toc-number">3.</span> <span class="post-toc-text">配置Aria2上传</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>这个教程之前发过一个脚本：Aria2+Aria2Ng+OneIndex一键安装脚本，下载后自动上传至OneDrive，不过由于系统支持较少，加上很多人想手动安装，这里就单独拿来水一篇文章。</p>
+<h2 id="获取OneDrive"><a href="#获取OneDrive" class="headerlink" title="获取OneDrive"></a>获取OneDrive</h2><p>现在<code>OneIndex</code>是可以使用个人的<code>OneDrive</code>网盘，不过容量太小，很难满足一些人的需求，这里提一下之前说过的<code>2</code>个申请<code>OneDrive 5T</code>的方法。</p>
+<p>1、申请微软的<code>Office 365</code>开发者计划，地址：免费获得一年的21TB OneDrive和Microsoft Office 365企业<br>2、使用热心大佬提供的临时邮箱申请一个，方法如下：</p>
+<pre><code>1)、进入注册地址https://products.office.com/en-us/student?tab=students
+2)、输入如有乐享提供的临时邮箱，地址：https://51.ruyo.net/8263.html
+3)、填入密码，和从临时邮箱获取的验证码</code></pre><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>1、安装宝塔</strong></p>
+<pre><code>#Centos系统
+yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh
+#Ubuntu系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; sudo bash install.sh
+#Debian系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; bash install.sh</code></pre><p>安装完成后，进入面板安装<code>PHP 5.6+</code>、<code>Nginx</code>。</p>
+<p><strong>2、安装OneIndex</strong><br>先添加域名，然后上传程序文件到网站根目录<code>/www/wwwroot/xx.com</code>，将文件解压出来，并设置<code>config/</code>、<code>cache/</code>可读写权限，程序下载：OneIndex.zip。</p>
+<p>也可以使用命令上传到根目录：</p>
+<pre><code>#Debian/Ubuntu系统
+apt-get install git -y
+#CentOS系统
+yum install git -y
+
+#修改为自己域名根目录后再运行
+cd /www/wwwroot/xx.com
+git clone https://github.com/donwa/oneindex.git
+mv oneindex/* ./
+chmod -R 777 config/ cache/</code></pre><p>再点击域名设置，添加<code>Nginx</code>伪静态：</p>
+<pre><code>location / {
+if (!-f $request_filename){
+set $rule_0 1$rule_0;
+}
+if (!-d $request_filename){
+set $rule_0 2$rule_0;
+}
+if ($rule_0 = &quot;21&quot;){
+rewrite ^/(.*)$ /index.php?/$1 last;
+}
+}</code></pre><p>最后打开域名进行安装和绑定<code>OneDrive</code>了，后台地址：<code>https://xx.com/?/admin</code>，默认密码：<code>oneindex</code>。如果你想给域名加上<code>https</code>安全访问，可以通过域名设置配置一下<code>SSL</code>证书。</p>
+<p><strong>3、安装Aria2</strong><br>这里用的逗比的脚本，使用命令：</p>
+<pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; bash aria2.sh
+#备用地址
+wget -N --no-check-certificate https://www.southcat.net/usr/shell/Aria2/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; bash aria2.sh</code></pre><p>安装完成后，如果我们想修改密码、下载文件位置、端口的话，可以使用命令<code>bash aria2.sh</code>，再选择修改配置即可，这里建议使用该脚本配置自动更新<code>BT-Tracker</code>服务器，对下载<code>BT</code>有加成。</p>
+<p><strong>4、安装AriaNg</strong><br>这一步和安装<code>OneIndex</code>差不多，先添加一个域名，不想用域名的可以在添加域名那里填上<code>IP</code>或者<code>IP:端口</code>，然后将<code>AriaNg</code>程序上传到对应的根目录，可以使用命令：</p>
+<pre><code>#这里以添加IP为例
+#Debian/Ubuntu系统
+apt-get install unzip -y
+#CentOS系统
+yum install unzip -y
+
+cd /www/wwwroot/11.22.33.44
+wget https://www.southcat.net/usr/down/aria-ng-0.2.0.zip &amp;&amp; unzip aria-ng-0.2.0.zip</code></pre><p>这时候我们就可以使用<code>IP</code>访问<code>AriaNg</code>界面了，或者<code>IP:端口</code>，这取决于你添加域名的时候填的什么了。</p>
+<h2 id="配置Aria2上传"><a href="#配置Aria2上传" class="headerlink" title="配置Aria2上传"></a>配置Aria2上传</h2><p>这里说下<code>3</code>种自动上传的方法，第<code>1</code>种使用<code>OneIndex</code>程序自带的上传，第<code>2</code>种使用<code>Rclone</code>挂载后自动上传，第<code>3</code>种使用上传脚本，由于前<code>2</code>种上传有<code>BUG</code>，建议使用第<code>3</code>种脚本上传，对于不想折腾的人来说，也可以直接使用第<code>1</code>种方法。</p>
+<p><strong>1、OneIndex上传</strong><br>先在<code>/root/.aria2</code>文件夹新建一个上传脚本，命名<code>oneindexup.sh</code>。</p>
+<pre><code>#这里也可以使用vi命令，自己看着办
+nano /root/.aria2/oneindexup.sh</code></pre><p>将以下代码修改后，复制进脚本：</p>
+<pre><code>#!/bin/bash
+path=$3 #取原始路径，我的环境下如果是单文件则为/data/demo.png,如果是文件夹则该值为文件夹内某个文件比如/data/a/b/c/d.jpg
+downloadpath=&apos;/usr/local/caddy/www/aria2/Download&apos;  #修改成Aria2下载文件夹
+domain=&apos;southcat.net&apos;  #修改成自己域名
+
+if [ $2 -eq 0 ]
+        then
+                exit 0
+fi
+while true; do  #提取下载文件根路径，如把/data/a/b/c/d.jpg变成/data/a
+filepath=$path
+path=${path%/*}; 
+if [ &quot;$path&quot; = &quot;$downloadpath&quot; ] &amp;&amp; [ $2 -eq 1 ]  #如果下载的是单个文件
+    then
+    php /www/wwwroot/$domain/one.php upload:file $filepath /$folder/
+    rm -rf $filepath
+    php /www/wwwroot/$domain/one.php cache:refresh
+    exit 0
+elif [ &quot;$path&quot; = &quot;$downloadpath&quot; ]
+    then
+    php /www/wwwroot/$domain/one.php upload:folder $filepath /$folder/
+    rm -rf &quot;$filepath/&quot;
+    php /www/wwwroot/$domain/one.php cache:refresh
+    exit 0
+fi
+done</code></pre><p>然后再授权：</p>
+<pre><code>chmod +x /root/.aria2/oneindexup.sh</code></pre><p>最后在配置文件<code>aria2.conf</code>里加上一行<code>on-download-complete=/root/.aria2/oneindexup.sh</code>，可以直接使用命令：</p>
+<pre><code>echo &quot;on-download-complete=/root/.aria2/oneindexup.sh&quot; &gt;&gt;/root/.aria2/aria2.conf
+#重启Aria2
+service aria2 restart</code></pre><p><strong>2、Rclone挂载上传</strong><br>我们先使用挂载<code>Rclone</code>挂载<code>OneDrive</code>，挂载方法查看：在Debian/Ubuntu上使用rclone挂载OneDrive网盘，然后步骤就和上面的<code>OneIndex</code>上传方法一样了，就是上传脚本不一样，上传脚本如下：</p>
+<pre><code>#!/bin/bash
+path=$3 #取原始路径，我的环境下如果是单文件则为/data/demo.png,如果是文件夹则该值为文件夹内某个文件比如/data/a/b/c/d.jpg
+downloadpath=&apos;/root/Download&apos;  #Aria2下载文件目录
+name=&apos;RATS&apos;  #配置Rclone时的name
+folder=&apos;VPS&apos;  #网盘里的文件夹
+
+if [ $2 -eq 0 ]
+        then
+                exit 0
+fi
+while true; do  #提取下载文件根路径，如把/data/a/b/c/d.jpg变成/data/a
+filepath=$path
+path=${path%/*}; 
+if [ &quot;$path&quot; = &quot;$downloadpath&quot; ] &amp;&amp; [ $2 -eq 1 ]  #如果下载的是单个文件
+    then
+    rclone move &quot;$filepath&quot; ${name}:${folder}/     
+    exit 0
+elif [ &quot;$path&quot; = &quot;$downloadpath&quot; ]   #文件夹
+    then
+    while [[ &quot;`ls -A &quot;$filepath/&quot;`&quot; != &quot;&quot; ]]; do
+    rclone move &quot;$filepath&quot;/ ${name}:${folder}/&quot;${filepath##*/}&quot;/ --delete-empty-src-dirs
+    done
+    rm -rf &quot;$filepath/&quot;
+    exit 0
+fi
+done</code></pre><p><strong>3、使用上传脚本</strong><br>方法参考：VPS上传文件到OneDrive网盘脚本，可配合Aria2实现自动上传。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-01-30T23:02:59.000Z" itemprop="datePublished">2020-01-31</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.246Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/1478/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">lowendscript：适用于64MB内存的LNMP一键安装包</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/1761/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">给博客网站添加Hitokoto - 一言经典语句功能</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

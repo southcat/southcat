@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>使用Searx搭建一个私人的搜索引擎平台，可展现Google/Bing等70多种搜索网站的搜索结果 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="使用Searx搭建一个私人的搜索引擎平台，可展现Google&#x2F;Bing等70多种搜索网站的搜索结果 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2345/"><meta property="og:locale" content="en"><meta name="description" content="说明：现在百毒各种犀利操作导致很多人都转向了谷歌，不过由于谷歌在国内被墙，对一些人来说访问起来是有点困难的，除了挂梯子以外，反代谷歌也可以，很久前就发过这种教程→传送门，不过最近找到了个好项目Searx，一个基于Python的完全开源免费搜索引擎平台，为你提供来自Google、Bing、Yahoo等70多种各大视频、图片、搜索、磁力等网站结果展示，并对搜索结果进行优化，同时不会存储你的任何搜索信息 - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/Searx(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/Searx(2).png"><meta property="article:published_time" content="2019-11-28T02:19:35.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.236Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.236Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2345/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2345/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2345/"
+    },
+    "headline": "使用Searx搭建一个私人的搜索引擎平台，可展现Google/Bing等70多种搜索网站的搜索结果 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-11-28T02:19:35.000Z",
+    "dateModified": "2020-04-24T09:34:44.236Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：现在百毒各种犀利操作导致很多人都转向了谷歌，不过由于谷歌在国内被墙，对一些人来说访问起来是有点困难的，除了挂梯子以外，反代谷歌也可以，很久前就发过这种教程→传送门，不过最近找到了个好项目Searx，一个基于Python的完全开源免费搜索引擎平台，为你提供来自Google、Bing、Yahoo等70多种各大视频、图片、搜索、磁力等网站结果展示，并对搜索结果进行优化，同时不会存储你的任何搜索信息 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=使用Searx搭建一个私人的搜索引擎平台，可展现Google/Bing等70多种搜索网站的搜索结果" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用Searx搭建一个私人的搜索引擎平台，可展现Google/Bing等70多种搜索网站的搜索结果&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=使用Searx搭建一个私人的搜索引擎平台，可展现Google/Bing等70多种搜索网站的搜索结果" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABiUlEQVR42u3aQW7DQAxD0dz/0u2qG6MiqcJxOMX3pkDqjF+AgaSR/PoquF4gQIA4AvES18//r3+v91w/T9YF0Y34ddMYhHp4si6IfsS0mNqMDmvXBXEkQj1U3Qvi/yKmoJYkNBBnI1SiUYFJJbbbsiiIxxHbQnebuN5SbYN4G8IeWkXh6gLcbadyEI8iVODZFrVjUJoCGohaxPTQJPhMaPdDQPQi0sOLephaY9qUIHoR6hDjFkm/PxXAILoRyWEmuVcVP7aoAVGDSAOQa4IodFzUgKhAbIcrqimWDONA9CM2TfWkmFEbUwYrEBUI1UBzjXIXkFyDFcQ5CNXo2AQ5m9BAVCKSg+/mhZ1po0bVNogKRDJ8cw0x11Ab1wZRi7BNzxs2LYizEMkgzuHU/bcNZ0E8gtgM7JPNmhY5ILoRm0F9Orhz64PoR6QF6wRWSWxstIA4EpG+1Jc0RlbDWRD1iG3xkvwQEN2I9GWtJMFNh+c/FzUgHkckL3KpTZwkORDnID55gQABohrxDd37acnxhwNnAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">使用Searx搭建一个私人的搜索引擎平台，可展现Google/Bing等70多种搜索网站的搜索结果</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-11-28</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用Searx搭建一个私人的搜索引擎平台，可展现Google/Bing等70多种搜索网站的搜索结果&url=http://hexo.southcat.net/2345/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=使用Searx搭建一个私人的搜索引擎平台，可展现Google/Bing等70多种搜索网站的搜索结果&url=http://hexo.southcat.net/2345/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2345/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2345/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2345/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2345/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2345/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABiUlEQVR42u3aQW7DQAxD0dz/0u2qG6MiqcJxOMX3pkDqjF+AgaSR/PoquF4gQIA4AvES18//r3+v91w/T9YF0Y34ddMYhHp4si6IfsS0mNqMDmvXBXEkQj1U3Qvi/yKmoJYkNBBnI1SiUYFJJbbbsiiIxxHbQnebuN5SbYN4G8IeWkXh6gLcbadyEI8iVODZFrVjUJoCGohaxPTQJPhMaPdDQPQi0sOLephaY9qUIHoR6hDjFkm/PxXAILoRyWEmuVcVP7aoAVGDSAOQa4IodFzUgKhAbIcrqimWDONA9CM2TfWkmFEbUwYrEBUI1UBzjXIXkFyDFcQ5CNXo2AQ5m9BAVCKSg+/mhZ1po0bVNogKRDJ8cw0x11Ab1wZRi7BNzxs2LYizEMkgzuHU/bcNZ0E8gtgM7JPNmhY5ILoRm0F9Orhz64PoR6QF6wRWSWxstIA4EpG+1Jc0RlbDWRD1iG3xkvwQEN2I9GWtJMFNh+c/FzUgHkckL3KpTZwkORDnID55gQABohrxDd37acnxhwNnAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#手动安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">手动安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Docker安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">Docker安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#域名反代"><span class="post-toc-number">4.</span> <span class="post-toc-text">域名反代</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>现在百毒各种犀利操作导致很多人都转向了谷歌，不过由于谷歌在国内被墙，对一些人来说访问起来是有点困难的，除了挂梯子以外，反代谷歌也可以，很久前就发过这种教程→传送门，不过最近找到了个好项目<code>Searx</code>，一个基于<code>Python</code>的完全开源免费搜索引擎平台，为你提供来自<code>Google</code>、<code>Bing</code>、<code>Yahoo</code>等<code>70</code>多种各大视频、图片、搜索、磁力等网站结果展示，并对搜索结果进行优化，同时不会存储你的任何搜索信息，搭建也很方便，有兴趣的可以搭建给需要谷歌的同事或朋友用下。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/Searx(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/Searx(2).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h2><p><strong>项目地址：</strong><a href="https://github.com/asciimoo/searx" target="_blank" rel="noopener">https://github.com/asciimoo/searx</a></p>
+<p><strong>1、安装pip</strong></p>
+<pre><code>#CentOS 6.x 32位
+rpm -ivh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+yum install -y python-pip
+
+#CentOS 6.x 64位
+rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum install -y python-pip
+
+#CentOS 7.x
+yum install -y epel-release
+yum install -y python-pip
+#如果CentOS 7安装出现No package python-pip available，可以用以下命令进行安装
+wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+
+#Debian/Ubuntu系统
+apt-get -y update
+apt-get -y install python-pip</code></pre><p><strong>2、安装git</strong></p>
+<pre><code>#Debian/Ubuntu系统
+apt-get -y install git
+
+#CentOS系统
+yum -y install git</code></pre><p><strong>3、编辑Searx</strong></p>
+<pre><code>#拉取源码
+git clone https://github.com/asciimoo/searx.git
+#安装依赖
+cd searx
+pip install -r requirements.txt
+#编辑配置文件
+nano searx/settings.yml</code></pre><p>修改名称什么参数，应该都看的懂，自行设置，这里只说下<code>4</code>种参数：</p>
+<pre><code>language：为搜索语言，默认en-US，如果你的搜索以中文为主，那就改成zh-CN，当然这个语言在搜索界面也可以设置
+port：为监听端口，默认8888，可自行修改。
+bind_address：为监控地址，默认为127.0.0.1，如果需要让ip地址能被外网访问，就修改为0.0.0.0，这里建议默认，然后再用域名反代即可。
+secret_key：该参数为加密密匙，可自行设置，数值可以在ssh客户端使用openssl rand -hex 16命令生成。</code></pre><p>这里你也可以不用<code>nano</code>编辑器，直接使用命令修改：</p>
+<pre><code>#修改language，默认为中文搜索结果
+sed -i &apos;s/language : &quot;en-US&quot;/language : &quot;zh-CN&quot;/g&apos; searx/settings.yml
+#修改secret_key
+sed -i &quot;s/ultrasecretkey/`openssl rand -hex 16`/g&quot; searx/settings.yml
+#修改bind_address，改了后就可以使用ip访问了，如果你使用域名的话，可以不修改
+sed -i &apos;s/bind_address : &quot;127.0.0.1&quot;/bind_address : &quot;0.0.0.0&quot;/g&apos; searx/settings.yml
+#修改port，比如修改成8000
+sed -i &quot;s/port : 8888/port : 8000/g&quot; searx/settings.yml</code></pre><p>更多参数设置可以参考→传送门。</p>
+<p><strong>4、运行Searx</strong><br>安装<code>screen</code>：</p>
+<pre><code>#CentOS系统
+yum install screen -y
+
+#Debian/Ubuntu系统
+apt-get install screen -y</code></pre><p>后台运行：</p>
+<pre><code>screen -dmS searx python searx/webapp.py</code></pre><p>然后使用<code>ip:port</code>访问，如果你的<code>bind_address</code>地址没修改，可能浏览器会访问不了，就需要反代了，方法后面会说。</p>
+<p>如果你修改了<code>bind_address</code>地址为<code>0.0.0.0</code>，还打不开媒体界面的话，还需要开启防火墙端口，使用命令：</p>
+<pre><code>#CentOS 6
+iptables -I INPUT -p tcp --dport 8888 -j ACCEPT
+service iptables save
+service iptables restart
+
+#CentOS 7
+firewall-cmd --zone=public --add-port=8888/tcp --permanent
+firewall-cmd --reload</code></pre><p>如果你开了端口还不能打开，可能还需要去服务商后台开启对应的端口。</p>
+<h2 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h2><p>这里貌似用官方的<code>Dockerfile</code>文件构建镜像的时候会报错，所以博主自己写了个<code>Dockerfile</code>文件，安装也很快。</p>
+<p><strong>Github地址：</strong><a href="https://github.com/iiiiiii1/Docker-Searx" target="_blank" rel="noopener">https://github.com/iiiiiii1/Docker-Searx</a></p>
+<p><strong>1、安装Docker</strong></p>
+<pre><code>#CentOS 6
+rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+yum update -y
+yum -y install docker-io
+service docker start
+chkconfig docker on
+
+#CentOS 7、Debian、Ubuntu
+curl -sSL https://get.docker.com/ | sh
+systemctl start docker
+systemctl enable docker</code></pre><p><strong>2、安装git</strong></p>
+<pre><code>#Debian/Ubuntu系统
+apt-get -y install git
+
+#CentOS系统
+yum -y install git</code></pre><p><strong>3、构建镜像</strong></p>
+<pre><code>#拉取源码
+git clone https://github.com/iiiiiii1/Docker-Searx
+#构建镜像，搜索语言默认已改成中文
+cd Docker-Searx
+docker build -t searx .</code></pre><p><strong>4、启动镜像</strong></p>
+<pre><code>docker run -d --name searx -p 8888:8888 searx </code></pre><p>启动命令被我简化了，详细可参考→传送门，然后使用<code>ip:8888</code>，访问即可，映射端口可自行修改，比如<code>-p 8000:8888</code>。</p>
+<h2 id="域名反代"><a href="#域名反代" class="headerlink" title="域名反代"></a>域名反代</h2><p>这里是建议使用域名反代的，反代可以用<code>Nginx</code>、<code>Apache</code>、<code>Caddy</code>，这里只说宝塔和<code>Caddy</code>。如果你网站有宝塔，就可以使用宝塔进行反代，如果没有，建议使用第<code>2</code>种的<code>Caddy</code>反代，配置很快。</p>
+<p><strong>1、宝塔反代</strong><br>先进入宝塔面板，然后点击左侧网站，添加站点，然后再点击添加好了的域名名称，这时候就进入了站点配置，点击反向代理，目标<code>URL</code>填入<code>http://127.0.0.1:8888</code>，再启用反向代理即可。至于启用<code>SSL</code>就不说了，直接在站点配置就可以启用。</p>
+<p><strong>2、Caddy反代</strong><br>安装<code>Caddy</code>：</p>
+<pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh
+#备用地址
+wget -N --no-check-certificate https://www.southcat.net/usr/shell/Caddy/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh</code></pre><p>配置<code>Caddy</code>：</p>
+<pre><code>#以下全部内容是一个整体，请修改域名后一起复制到SSH运行！
+
+#http访问，该配置不会自动签发SSL
+echo &quot;www.southcat.net {
+ gzip
+ proxy / 127.0.0.1:8888 {
+    header_upstream Host {host}
+    header_upstream X-Real-IP {remote}
+    header_upstream X-Forwarded-For {remote}
+    header_upstream X-Forwarded-Port {server_port}
+    header_upstream X-Forwarded-Proto {scheme}
+  }
+}&quot; &gt; /usr/local/caddy/Caddyfile
+
+#https访问，该配置会自动签发SSL，请提前解析域名到VPS服务器
+echo &quot;www.southcat.net {
+ gzip
+ tls admin@southcat.net
+ proxy / 127.0.0.1:8888 {
+    header_upstream Host {host}
+    header_upstream X-Real-IP {remote}
+    header_upstream X-Forwarded-For {remote}
+    header_upstream X-Forwarded-Port {server_port}
+    header_upstream X-Forwarded-Proto {scheme}
+  }
+}&quot; &gt; /usr/local/caddy/Caddyfile</code></pre><p><code>tls</code>参数会自动帮你签发<code>ssl</code>证书，如果你要使用自己的<code>ssl</code>，改为<code>tls /root/xx.crt /root/xx.key</code>即可。后面为<code>ssl</code>证书路径。</p>
+<p>启动<code>Caddy</code>：</p>
+<pre><code>/etc/init.d/caddy start</code></pre><p>就可以打开域名进行访问了。</p>
+<p><strong>3、Nginx配置</strong><br>如果你使用其它的，这里就大概发个<code>Nginx</code>反代配置，直接添加到配置文件即可。</p>
+<pre><code>#在配置文件里添加
+  location / {
+      proxy_pass http://127.0.0.1:8888;
+      proxy_set_header        Host                 $host;
+      proxy_set_header        X-Real-IP            $remote_addr;
+      proxy_set_header        X-Forwarded-For      $proxy_add_x_forwarded_for;
+      proxy_set_header        X-Remote-Port        $remote_port;
+      proxy_set_header        X-Forwarded-Proto    $scheme;
+      proxy_redirect          off;
+  }</code></pre><p>最后使用的时候，记得在高级设置那里将搜索语言设置成你需要的就行了，不然搜出来的结果可能不会让你满意。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-11-28T02:19:35.000Z" itemprop="datePublished">2019-11-28</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.236Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/1730/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">右下角浏览器：可伪装成弹窗广告的浏览器，学生和上班族必备</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2200/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">使用AVS搭建我们的视频/照片/游戏分享平台</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

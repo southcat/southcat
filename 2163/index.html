@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>qBittorrent+Deluge+rTorrent+Transmission+H5ai多功能一键脚本 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="qBittorrent+Deluge+rTorrent+Transmission+H5ai多功能一键脚本 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2163/"><meta property="og:locale" content="en"><meta name="description" content="说明：博主今天逛了下Github，发现了一个大佬写的一个脚本，很强大，这里分享一下，脚本可安装qBittorrent、Deluge、rTorrent、Transmission、H5ai、Flood、Remote Desktop、wine &amp;amp; mono、Flexget、rclone、BBR及一些功能，如ffmpeg、mediainfo、mkvtoolnix、eac3to、bluray脚本、m - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/qDrth(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/qDrth(2).png"><meta property="article:published_time" content="2019-11-23T12:43:50.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.234Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.234Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2163/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2163/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2163/"
+    },
+    "headline": "qBittorrent+Deluge+rTorrent+Transmission+H5ai多功能一键脚本 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-11-23T12:43:50.000Z",
+    "dateModified": "2020-04-24T09:34:44.234Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：博主今天逛了下Github，发现了一个大佬写的一个脚本，很强大，这里分享一下，脚本可安装qBittorrent、Deluge、rTorrent、Transmission、H5ai、Flood、Remote Desktop、wine &amp;amp;amp; mono、Flexget、rclone、BBR及一些功能，如ffmpeg、mediainfo、mkvtoolnix、eac3to、bluray脚本、m - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=qBittorrent+Deluge+rTorrent+Transmission+H5ai多功能一键脚本" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=qBittorrent+Deluge+rTorrent+Transmission+H5ai多功能一键脚本&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=qBittorrent+Deluge+rTorrent+Transmission+H5ai多功能一键脚本" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABkklEQVR42u3bQQ6DMAxEUe5/6XZLJXs8phVx6GdTqQrwFlZsJ+F4DbgOECBAbIE4xHUe83FzMub8n/VcEGMRYdAkL45e4Nwf/Q9iNiIKLBWEDlQ9F8QzEFFwZigQ/4GIJp4oiYF4BiJLNKq4kUXsL7MoiNsRqiD95vdn1TaIWxFOgFUJqprUvu7KQdyKqIoXBVGNkHoeiPmILEmpJJQ1yGohpUxgIMYhVJNTXU5BYwUmiOUIZ+EjmtSyl0Xj0sU4EGMRnclHBbSCyQQGYiTCSWjOWLd5AjEX4RS3VVJSC2bqfhAzEc6NzqK62oCxExiIMYjOpORs3ruLqyBmIqpJqGqS3E39S5suIJYj1KTVLV6cwAWxF8LZnOsujqQJDMRoRLbBUh3icA99WJMViKUIdyPOaZCcTRkQ8xGdg8LqgE/VGLe6chDLEVWyql7cLX5B7IGoDgBWILfpAfEMhBNkTkPdOkkCYjRCTUJXPkQAsQfCWvx0HnzoD9RA7IGoDgqrZriT/C5X2yBuRay8QIAAMRrxBkB+eMholEhuAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">qBittorrent+Deluge+rTorrent+Transmission+H5ai多功能一键脚本</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-11-23</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=qBittorrent+Deluge+rTorrent+Transmission+H5ai多功能一键脚本&url=http://hexo.southcat.net/2163/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=qBittorrent+Deluge+rTorrent+Transmission+H5ai多功能一键脚本&url=http://hexo.southcat.net/2163/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2163/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2163/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2163/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2163/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2163/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABkklEQVR42u3bQQ6DMAxEUe5/6XZLJXs8phVx6GdTqQrwFlZsJ+F4DbgOECBAbIE4xHUe83FzMub8n/VcEGMRYdAkL45e4Nwf/Q9iNiIKLBWEDlQ9F8QzEFFwZigQ/4GIJp4oiYF4BiJLNKq4kUXsL7MoiNsRqiD95vdn1TaIWxFOgFUJqprUvu7KQdyKqIoXBVGNkHoeiPmILEmpJJQ1yGohpUxgIMYhVJNTXU5BYwUmiOUIZ+EjmtSyl0Xj0sU4EGMRnclHBbSCyQQGYiTCSWjOWLd5AjEX4RS3VVJSC2bqfhAzEc6NzqK62oCxExiIMYjOpORs3ruLqyBmIqpJqGqS3E39S5suIJYj1KTVLV6cwAWxF8LZnOsujqQJDMRoRLbBUh3icA99WJMViKUIdyPOaZCcTRkQ8xGdg8LqgE/VGLe6chDLEVWyql7cLX5B7IGoDgBWILfpAfEMhBNkTkPdOkkCYjRCTUJXPkQAsQfCWvx0HnzoD9RA7IGoDgqrZriT/C5X2yBuRay8QIAAMRrxBkB+eMholEhuAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#运行脚本"><span class="post-toc-number">1.</span> <span class="post-toc-text">运行脚本</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#选项说明"><span class="post-toc-number">2.</span> <span class="post-toc-text">选项说明</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#增加功能"><span class="post-toc-number">3.</span> <span class="post-toc-text">增加功能</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>博主今天逛了下<code>Github</code>，发现了一个大佬写的一个脚本，很强大，这里分享一下，脚本可安装<code>qBittorrent</code>、<code>Deluge</code>、<code>rTorrent</code>、<code>Transmission</code>、<code>H5ai</code>、<code>Flood</code>、<code>Remote</code> <code>Desktop</code>、<code>wine &amp; mono</code>、<code>Flexget</code>、<code>rclone</code>、<code>BBR</code>及一些功能，如<code>ffmpeg</code>、<code>mediainfo</code>、<code>mkvtoolnix</code>、<code>eac3to</code>、<code>bluray</code>脚本、<code>mktorrent</code>，基本上该有的都有了，可能有些有人都没听说过，博主在后面会说明下。</p>
+<h2 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h2><p><strong>Github地址：</strong><a href="https://github.com/Aniverse/inexistence" target="_blank" rel="noopener">https://github.com/Aniverse/inexistence</a></p>
+<p><strong>系统要求：</strong><code>Ubuntu 16.04</code>、<code>18.04</code>；<code>Debian 8</code>、<code>9</code> ；<code>Ubuntu 14.04</code>、<code>Debian 7</code>可以选择用脚本升级系统，且尽量使用纯净系统，即刚重装的系统。</p>
+<p>运行命令：</p>
+<pre><code>bash -c &quot;$(wget --no-check-certificate -qO- https://github.com/Aniverse/inexistence/raw/master/inexistence.sh)&quot;
+#或者
+wget --no-check-certificate -qO inexistence.sh https://github.com/Aniverse/inexistence/raw/master/inexistence.sh
+bash inexistence.sh</code></pre><p>然后会出现以下选项：</p>
+<pre><code>##关于选项及说明请先看文章后面，然后再进行选择
+
+#是否升级系统，本选项只在Ubuntu 14.04、Debian 7中出现
+You are now running Ubuntu 14.04.5, which is not supported by this script
+
+01) Upgrade to Ubuntu 16.04 (Default)
+02) Upgrade to Ubuntu 18.04
+03) Do NOT upgrade system and exit script
+Would you like to upgrade your system? (Default 01): 
+
+#添加账号和密码
+The script needs a username
+This will be your primary user. It can be an existing user or a new user 
+Enter username: rats
+Confirm that username is rats, [Y]es or [N]o? y
+
+The script needs a password, it will be used for Unix and WebUI 
+The password must consist of characters and numbers and at least 8 chars,
+or you can leave it blank to generate a random password
+Enter the password: moerats
+Enter the new password again: moerats
+
+#改变系统源
+Would you like to change sources list? [Y]es or [N]o: y
+/etc/apt/sources.list will be replaced
+
+01) Use all available threads (Default)
+02) Use half of available threads
+03) Use one thread
+04) Use two threads
+How many threads do you want to use when compiling? (Default 01): 
+
+#安装时是否添加虚拟内存，本选项只在2G以下的服务器中显示
+Note that Your RAM is below 1926MB, memory may got exhausted when compiling
+Would you like to use swap when compiling? [Y]es or [N]o: 
+
+#安装Deluge
+01) Deluge 1.3.11
+02) Deluge 1.3.12
+03) Deluge 1.3.13
+04) Deluge 1.3.14
+05) Deluge 1.3.15
+30) Select another version
+40) Deluge 1.3.13 from repo
+99) Do not install Deluge
+Which version of Deluge do you want? (Default 05): 
+
+#安装qBittorrent
+01) qBittorrent 3.3.7
+02) qBittorrent 3.3.11
+03) qBittorrent 3.3.14
+04) qBittorrent 3.3.16
+11) qBittorrent 4.0.2
+12) qBittorrent 4.0.3
+13) qBittorrent 4.0.4
+14) qBittorrent 4.1.0
+15) qBittorrent 4.1.1
+30) Select another version
+40) qBittorrent 3.3.7 from repo
+99) Do not install qBittorrent
+Which version of qBittorrent do you want? (Default 13): 
+
+#安装rTorrent，包括ruTorrent，nginx，ffmpeg 3.4.2，rar 5.5.0，h5ai
+14) rTorrent 0.9.6 (feature-bind branch on Jun 6, 2018)
+15) rTorrent 0.9.7 (with IPv6 support)
+99) Do not install rTorrent
+Note that Debian 9 and Ubuntu 18.04 is only supported by rTorrent 0.9.6 and later
+Which version of rTorrent do you want? (Default 14): 
+
+#安装flood，rTorrent的一个面板
+Would you like to install flood?  [Y]es or [N]o: 
+
+#安装Transmission
+01) Transmission 2.77
+02) Transmission 2.82
+03) Transmission 2.84
+04) Transmission 2.92
+05) Transmission 2.93
+06) Transmission 2.94
+30) Select another version
+40) Transmission 2.92 from repo
+99) Do not install Transmission
+Which version of Transmission do you want? (Default 40): 
+
+#安装VNC和X2Go
+01) VNC  with xfce4
+02) X2Go with xfce4
+99) Do not install remote desktop
+Would you like to install remote desktop? (Default 99): 
+
+#安装wine和mono
+Would you like to install wine and mono? [Y]es or [N]o: 
+
+#安装MKVToolnix、mktorrent、eac3to、mediainfo、ffmpeg
+MKVToolnix, mktorrent, eac3to, mediainfo, ffmpeg ...
+Would you like to install the above additional softwares? [Y]es or [N]o: 
+
+#安装Flexget
+Would you like to install Flexget? [Y]es or [N]o: 
+
+#安装rclone
+Would you like to install rclone? [Y]es or [N]o: 
+
+#安装BBR
+Your kernel is newer than 4.9, but BBR is not enabled
+Would you like to use BBR?  [Y]es or [N]o: 
+
+#系统设置
+Would you like to do some system tweaks?  [Y]es or [N]o: </code></pre><p>选择好后，会进行确认：<br><img src="https://www.southcat.net/usr/picture/qDrth(1).png" alt="请输入图片描述" title="请输入图片描述"><br>如果没问题，选择<code>y</code>开始安装，直到安装完成。<br><img src="https://www.southcat.net/usr/picture/qDrth(2).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="选项说明"><a href="#选项说明" class="headerlink" title="选项说明"></a>选项说明</h2><p>本选项说明可能不会及时更新，不过以后脚本更新的话，大都差不多，请自行选择安装。</p>
+<p><strong>1、是否升级系统</strong><br>如果你的系统是<code>Debian 7</code>或<code>Ubuntu 14.04</code>，你可以用本脚本来升级到<code>Debian 8</code>、<code>9</code>或<code>Ubuntu 16.04</code>、<code>18.04</code>，理论上整个升级过程应该是无交互的，应该不会碰到什么问题，升级完后会直接执行重启命令，重启完后你需要再次运行脚本来完成软件的安装</p>
+<p><strong>2、输入账号密码</strong><br>你输入的账号密码会被用于各类软件以及<code>SSH</code>的登录验证，用户名需要以字母开头，长度<code>4-16</code>位；密码最好同时包含字母和数字，长度至少8位，请记住用户名和密码。</p>
+<p><strong>3、改变系统源</strong><br>其实大多数情况下无需换源；但某些盒子默认的源可能有点问题，所以这里干脆做成默认都换源了。</p>
+<p><strong>4、安装时是否添加虚拟内存</strong><br>一些内存不够大的<code>VPS</code>在编译安装时可能物理内存不足，使用<code>swap</code>可以解决这个问题，实测<code>1GB</code>内存的<code>Vultr VPS</code>安装 <code>Flood</code>不开启<code>swap</code>的话会失败，开启就没问题了，目前对于物理内存小于<code>1926MB</code>的都默认启用<code>swap</code>，如果内存大于这个值那么你根本就不会看到这个选项。</p>
+<p><strong>5、安装Deluge</strong><br>默认选项为从源码安装<code>1.3.15</code>，此外还会安装一些实用的<code>Deluge</code>第三方插件。</p>
+<pre><code>AutoRemovePlus是自动删种插件，支持WebUI与GtkUI。
+ltconfig是一个调整libtorrent-rasterbar参数的插件，在安装完后就启用了High Performance Seed模式。
+Stats、TotalTraffic、Pieces、LabelPlus、YaRSS2、NoFolder 都只能在GUI下设置，WebUI下无法显示。
+Stats和TotalTraffic、Pieces分别可以实现速度曲线和流量统计、区块统计。
+LabelPlus是加强版的标签管理，支持自动根据Tracker对种子限速，刷Frds可用；也只有GUI可用。
+YaRSS2是用于RSS的插件；NoFolder可以让Deluge在下载种子时不生成文件夹，辅种可用。</code></pre><p><strong>6、安装qBittorrent</strong><br><code>Debian 8</code>下安装<code>qBittorrent 4.0</code>目前还在测试阶段，隐藏选项<code>21</code>，是可以在<code>WebUI</code>下跳过校验的<code>3.3.11</code>版本，使用修改版客户端、跳过校验存在风险，后果自负。</p>
+<p><strong>7、安装rTorrent</strong><br>这部分是调用修改的<code>rtinst</code>来安装的，默认选项为安装原版<code>0.9.4</code>。</p>
+<pre><code>安装rTorrent，ruTorrent，nginx，ffmpeg 3.4.2，rar 5.5.0，h5ai目录列表程序。
+0.9.2-0.9.4支持IPv6用的是打好补丁的版本，属于修改版客户端。
+0.9.6支持IPv6用的是feature-bind分支，原生支持IPv6（Debian 9 强制使用此版本）。
+不修改SSH端口，FTP使用vsftpd，端口号21，监听IPv6。
+设置了Deluge、qBittorrent、Transmission WebUI的反代。
+ruTorrent版本为来自master分支的3.8版，此外还安装了如下的插件和主题。
+club-QuickBox MaterialDesign第三方主题。
+AutoDL-Irssi（原版rtinst自带）。
+Filemanager插件可以在ruTorrent上管理文件、右键创建压缩包、生成mediainfo和截图。
+ruTorrent Mobile插件可以优化ruTorrent在手机上的显示效果（不需要的话可以手动禁用插件）。
+spectrogram插件可以在ruTorrent上获取音频文件的频谱。
+Fileshare插件创建有时限、可自定义密码的文件分享链接。
+Mediastream插件可以在线观看盒子的视频文件。</code></pre><p>隐藏选项<code>11-15</code> ，分别对应<code>1.3.5-1.3.9</code>版本，隐藏选项<code>21</code>，是可以跳过校验、全磁盘预分配的<code>1.3.15</code>版本，使用修改版客户端、跳过校验 存在风险，后果自负。</p>
+<p><strong>8、安装flood</strong><br>选择不安装<code>rTorrent</code>的话这个选项不会出现，<code>Flood</code>是<code>rTorrent</code>的另一个<code>WebUI</code>，界面美观，加载速度快，不过功能上不如<code>ruTorrent</code>。</p>
+<p><strong>9、安装Transmission</strong><br><code>Transmission</code>默认选择从仓库里安装，节省时间(<code>ban 2.93</code>以前版本的站点也不是很多），此外还会安装美化版的<code>WebUI</code>，更方便易用。隐藏选项<code>11</code>和<code>12</code>，分别对应可以跳过校验、无文件打开数限制的<code>2.92</code>、<code>2.93</code>版本，使用修改版客户端、跳过校验存在风险，后果自负。</p>
+<p><strong>10、安装VNC和X2Go</strong><br>远程桌面选项，默认不安装，远程桌面可以完成一些<code>CLI</code>下做不了或者<code>CLI</code>实现起来很麻烦的操作，比如<code>BD-Remux</code>，<code>wine uTorrent</code>，<code>VNC</code>目前在<code>Debian</code>下安装完后无法连接，建议<code>Debian</code>系统用<code>X2Go</code>或者另外想办法安装<code>VNC</code>。</p>
+<p><strong>11、安装wine和mono</strong><br>这两个默认也是不安装的，<code>wine</code>可以实现在<code>Linux</code>上运行<code>Windows</code>程序，比如<code>DVDFab</code>、<code>uTorrent</code>，<code>mono</code>是一个跨平台的<code>.NET</code>运行环境，<code>BDinfoCLI</code>、<code>Jackett</code>、<code>Sonarr</code>等软件的运行都需要<code>mono</code>。</p>
+<p><strong>12、安装ffmpeg、MKVToolnix等</strong><br>安装最新版本的<code>ffmpeg</code>、<code>mediainfo</code>、<code>mkvtoolnix</code>、<code>eac3to</code>、<code>bluray</code>脚本、<code>mktorrent</code>。</p>
+<pre><code>mediainfo用最新版是因为某些站发种填信息时有这方面的要求，比如HDBits。
+mkvtoolnix主要是用于做BD-Remux。
+ffmpeg对于大多数盒子用户来说主要是拿来做视频截图用，采用git的Static Builds。
+eac3to需要wine来运行，做remux时用得上。
+mktorrent由于1.1版的实际表现不是很理想，因此选择从系统源安装1.0版本。
+BDinfoCLI已经自带了，需要mono来运行。
+bluray其实也自带了。</code></pre><p><strong>13、安装Flexget</strong><br>默认不安装；这里启用了<code>daemon</code>模式和<code>WebUI</code>，还预设了一些模板，仅供参考，因为配置文件里的<code>passkey</code>需要用户自己修改，所以这里也没有启用<code>schedules</code>或<code>crontab</code>，需要的话自己设置</p>
+<p><strong>14、安装rclone</strong><br>默认不安装。安装好后自己输入<code>rclone config</code>进行配置。</p>
+<p><strong>15、安装BBR</strong><br>如果你想安装魔改版<code>BBR</code>或锐速，请移步到：BBR+BBR魔改+Lotsever(锐速)一键脚本，脚本会检测你当前的内核版本，大于<code>4.9</code>是默认不安装新内核与<code>BBR</code>，高于<code>4.9</code>是默认直接启用<code>BBR</code>（不安装新内核）。</p>
+<p><strong>16、系统设置</strong><br>默认启用，具体操作如下：</p>
+<pre><code>修改时区为UTC+8
+语言编码设置为en.UTF-8
+设置alias简化命令
+提高系统文件打开数
+修改screen设置
+释放最大分区的保留空间</code></pre><h2 id="增加功能"><a href="#增加功能" class="headerlink" title="增加功能"></a>增加功能</h2><pre><code>#Password
+修改SSH、Deluge、ruTorrent、Transmission、qBittorrent、Flexget密码的脚本
+
+#Version
+升级、降级Deluge、ruTorrent、Transmission、qBittorrent版本的脚本
+
+#Box
+考虑把各种客户端的安装每个都做成单独的脚本，然后在inexistence、banben中需要安装的时候直接调用，这个思路是从 QuickBox那边学到的，最后的命令大概这样子box install vnc、box purge qbittorrent。</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-11-23T12:43:50.000Z" itemprop="datePublished">2019-11-23</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.234Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2026/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一些体验/评价不好的VPS商家或产品汇总</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/673/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">IOS剁手记</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

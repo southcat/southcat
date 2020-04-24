@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>在Ubuntu/CentOS/Debian系统下，使用CPU挖Monero (XMR)币 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="在Ubuntu&#x2F;CentOS&#x2F;Debian系统下，使用CPU挖Monero (XMR)币 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/1872/"><meta property="og:locale" content="en"><meta name="description" content="说明：最近挖矿教程发了不少，参考：MinerGate：在Windows、Mac、Ubuntu、安卓手机上挖矿教程，CentOS 7下莱特币（Litecoin）挖矿教程，现在再发个Ubuntu&#x2F;CentOS&#x2F;Debian系统的挖矿教程，这里最好使用独立服务器挖，VPS尽量别尝试，不然会被商家停止or删除。要是你的VPS多，不在乎，那就限制CPU后再挖，参考：Linux VPS通过安装CPULimit - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/Ubuntu_xmr(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/Ubuntu_xmr(2).png"><meta property="article:published_time" content="2020-03-16T07:22:42.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.251Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.251Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/1872/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/1872/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/1872/"
+    },
+    "headline": "在Ubuntu/CentOS/Debian系统下，使用CPU挖Monero (XMR)币 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-03-16T07:22:42.000Z",
+    "dateModified": "2020-04-24T09:34:44.251Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：最近挖矿教程发了不少，参考：MinerGate：在Windows、Mac、Ubuntu、安卓手机上挖矿教程，CentOS 7下莱特币（Litecoin）挖矿教程，现在再发个Ubuntu/CentOS/Debian系统的挖矿教程，这里最好使用独立服务器挖，VPS尽量别尝试，不然会被商家停止or删除。要是你的VPS多，不在乎，那就限制CPU后再挖，参考：Linux VPS通过安装CPULimit - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=在Ubuntu/CentOS/Debian系统下，使用CPU挖Monero (XMR)币" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=在Ubuntu/CentOS/Debian系统下，使用CPU挖Monero (XMR)币&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=在Ubuntu/CentOS/Debian系统下，使用CPU挖Monero (XMR)币" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABh0lEQVR42u3awY6DMAyEYd7/pdvTXiIyM0ZA7dXPZauWpt9KFrbjHJ8G1wECBIgRiENcf5+vf9d71veTdUH0RpwGzebH1+849G5dEP0Ru8WuYNN1QcxErEG4BqS7F8T/Q6jFXUIDMRuhEo0KxLPXt2dREK8jqoVuNXE9Um2DeAxhm1a1iCmEbuvKQbyKUA8eFWSu0VHJDER/xPqham4c0q0Loj9iV6wmr1UCc98D0RdR3QTbBZr6R7aNFIi2iKSpcc2QS2an74NoiVA3p4lNJTC5PoiWCJe8SoVrOIwD0R+RDl2rAzc3uAHRF+GKVPeQShIbiDkItSGeDO1d0yQDFURLhEtGqkFKHl5qEwZET0SpMA02SkpNEYi2CBeUblCX3AtiFiIdxF0qZu8ezoJ4HFENPBfM6WFSEL0RlY2x5HCXK6BBzEC4A4DpBnqlEAYxE5EO4ZONkdLuHYhxiMqh4HhCDKIVwm2kqUF95QDQpSwK4nXElYPCqtFRjRSI/ohfXiBAgGiN+AKPggopHPTzLwAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">在Ubuntu/CentOS/Debian系统下，使用CPU挖Monero (XMR)币</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-03-16</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=在Ubuntu/CentOS/Debian系统下，使用CPU挖Monero (XMR)币&url=http://hexo.southcat.net/1872/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=在Ubuntu/CentOS/Debian系统下，使用CPU挖Monero (XMR)币&url=http://hexo.southcat.net/1872/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/1872/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/1872/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/1872/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/1872/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/1872/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABh0lEQVR42u3awY6DMAyEYd7/pdvTXiIyM0ZA7dXPZauWpt9KFrbjHJ8G1wECBIgRiENcf5+vf9d71veTdUH0RpwGzebH1+849G5dEP0Ru8WuYNN1QcxErEG4BqS7F8T/Q6jFXUIDMRuhEo0KxLPXt2dREK8jqoVuNXE9Um2DeAxhm1a1iCmEbuvKQbyKUA8eFWSu0VHJDER/xPqham4c0q0Loj9iV6wmr1UCc98D0RdR3QTbBZr6R7aNFIi2iKSpcc2QS2an74NoiVA3p4lNJTC5PoiWCJe8SoVrOIwD0R+RDl2rAzc3uAHRF+GKVPeQShIbiDkItSGeDO1d0yQDFURLhEtGqkFKHl5qEwZET0SpMA02SkpNEYi2CBeUblCX3AtiFiIdxF0qZu8ezoJ4HFENPBfM6WFSEL0RlY2x5HCXK6BBzEC4A4DpBnqlEAYxE5EO4ZONkdLuHYhxiMqh4HhCDKIVwm2kqUF95QDQpSwK4nXElYPCqtFRjRSI/ohfXiBAgGiN+AKPggopHPTzLwAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#教程"><span class="post-toc-number">1.</span> <span class="post-toc-text">教程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常见问题"><span class="post-toc-number">2.</span> <span class="post-toc-text">常见问题</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>最近挖矿教程发了不少，参考：MinerGate：在Windows、Mac、Ubuntu、安卓手机上挖矿教程，CentOS 7下莱特币（Litecoin）挖矿教程，现在再发个<code>Ubuntu/CentOS/Debian</code>系统的挖矿教程，这里最好使用独立服务器挖，<code>VPS</code>尽量别尝试，不然会被商家停止<code>or</code>删除。要是你的<code>VPS</code>多，不在乎，那就限制<code>CPU</code>后再挖，参考：Linux VPS通过安装CPULimit来限制CPU使用率，这里就说下教程。</p>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p><strong>1、获取钱包地址</strong><br>钱包地址获取途径有很多，这里建议去<code>https://hitbtc.com</code>注册个账号，然后进入后台点击<code>Account</code>然后往下找到<code>Monero</code>货币并获取钱包地址，即<code>Wallet address</code>。<br><img src="https://www.southcat.net/usr/picture/Ubuntu_xmr(1).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p><strong>2、Payment-ID获取</strong><br>在服务器上运行以下命令：</p>
+<pre><code>openssl rand -hex 32</code></pre><p><img src="https://www.southcat.net/usr/picture/Ubuntu_xmr(2).png" alt="请输入图片描述" title="请输入图片描述"><br>即可获取<code>Payment-ID</code>也就是支付<code>ID</code>。</p>
+<p><strong>3、安装挖矿程序</strong><br>这里建议使用<code>Ubuntu</code>系统，听说效率更高。</p>
+<pre><code>#Ubuntu系统，在Ubuntu 14.04测试成功
+add-apt-repository ppa:ubuntu-toolchain-r/test
+apt update
+apt install gcc-5 g++-5 make
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 1 --slave /usr/bin/g++ g++ /usr/bin/g++-5
+curl -L http://www.cmake.org/files/v3.4/cmake-3.4.1.tar.gz | tar -xvzf - -C /tmp/
+cd /tmp/cmake-3.4.1/ &amp;&amp; ./configure &amp;&amp; make &amp;&amp; sudo make install &amp;&amp; cd -
+update-alternatives --install /usr/bin/cmake cmake /usr/local/bin/cmake 1 --force
+apt install libmicrohttpd-dev libssl-dev libhwloc-dev
+git clone https://github.com/fireice-uk/xmr-stak-cpu xmr-stak
+cd xmr-stak
+cmake .
+make install
+
+#CentOS系统
+yum install centos-release-scl cmake3 hwloc-devel libmicrohttpd-devel openssl-devel
+yum install devtoolset-4-gcc*
+scl enable devtoolset-4 bash
+git clone https://github.com/fireice-uk/xmr-stak-cpu xmr-stak
+cd xmr-stak
+cmake3 .
+make install
+
+#Debian系统，在Debian 8测试成功
+echo &quot;deb http://ftp.us.debian.org/debian unstable main contrib non-free&quot; &gt;&gt; /etc/apt/sources.list.d/unstable.list
+apt-get update
+apt-get install -t unstable gcc-5 g++-5 make
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 1 --slave /usr/bin/g++ g++ /usr/bin/g++-5
+curl -L http://www.cmake.org/files/v3.4/cmake-3.4.1.tar.gz | tar -xvzf - -C /tmp/
+cd /tmp/cmake-3.4.1/ &amp;&amp; ./configure &amp;&amp; make &amp;&amp; make install &amp;&amp; cd -
+update-alternatives --install /usr/bin/cmake cmake /usr/local/bin/cmake 1 --force
+apt install libmicrohttpd-dev libssl-dev libhwloc-dev
+git clone https://github.com/fireice-uk/xmr-stak-cpu xmr-stak
+cd xmr-stak
+cmake .
+make install</code></pre><p><strong>4、设置CPU、钱包、Payment-ID</strong><br>在<code>/root/xmr-stak/bin/config.txt</code>设置<code>CPU</code>、钱包、<code>Payment-ID</code>。</p>
+<pre><code>#修改CPU信息
+cpu_threads_conf部分，建议CPU核数的50%
+#修改钱包、Payment-ID、矿工号和Email地址
+wallet_address后面的。
+#修改pool_address
+改为自己服务器近的。
+#修改httpd_port
+改为自己喜欢的端口，然后使用IP:端口就可以查看运行情况</code></pre><p>也可用以下代码替换：</p>
+<pre><code>&quot;cpu_threads_conf&quot; : 
+[
+     { &quot;low_power_mode&quot; : false, &quot;no_prefetch&quot; : true, &quot;affine_to_cpu&quot; : 0 },
+     { &quot;low_power_mode&quot; : false, &quot;no_prefetch&quot; : true, &quot;affine_to_cpu&quot; : 2 },
+     { &quot;low_power_mode&quot; : false, &quot;no_prefetch&quot; : true, &quot;affine_to_cpu&quot; : 4 },
+     { &quot;low_power_mode&quot; : false, &quot;no_prefetch&quot; : true, &quot;affine_to_cpu&quot; : 6 },
+],
+
+&quot;use_slow_memory&quot; : &quot;warn&quot;,
+&quot;nicehash_nonce&quot; : false,
+&quot;aes_override&quot; : null,
+&quot;use_tls&quot; : false,
+&quot;tls_secure_algo&quot; : true,
+&quot;tls_fingerprint&quot; : &quot;&quot;,
+&quot;pool_address&quot; : &quot;xmr-us-east1.nanopool.org:14444&quot;,
+&quot;wallet_address&quot; : &quot;钱包地址.Payment-ID.矿工编号/Email&quot;,  #矿工编号可以随便填
+&quot;pool_password&quot; : &quot;x&quot;,
+&quot;call_timeout&quot; : 10,
+&quot;retry_time&quot; : 10,
+&quot;giveup_limit&quot; : 0,
+&quot;verbose_level&quot; : 3,
+&quot;h_print_time&quot; : 60,
+&quot;daemon_mode&quot; : false,
+&quot;output_file&quot; : &quot;&quot;,
+&quot;httpd_port&quot; : 1024,
+&quot;prefer_ipv4&quot; : true,</code></pre><p><code>Monero</code>矿池有很多，官网<code>http://moneropools.com/</code>中列举了很多个矿池，可以选择想加入的矿池。我这里选择的是<code>xmr.nanopool.org</code>。</p>
+<p><strong>5、开始挖矿</strong><br>运行命令：</p>
+<pre><code>cd /root/xmr-stak/bin
+screen -S mine
+./xmr-stak-cpu</code></pre><p>即可后台开始挖矿。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><pre><code>#如何更改捐赠比例
+编辑xmr-stak下的donate-level.h文件，把
+constexpr double fDevDonationLevel = 2.0 / 100.0;
+改为
+constexpr double fDevDonationLevel = 0.5 / 100.0;
+也可以改为其他比例。
+
+#Linux下挖矿出现MEMORY ALLOC FAILED: mmap failed错误
+运行命令：
+sysctl -w vm.nr_hugepages=128
+然后编辑文件/etc/security/limits.conf, 在倒数第二行或者之前加入下面两行：
+soft memlock 262144
+hard memlock 262144
+然后重启或者注销并重新登录。</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-03-16T07:22:42.000Z" itemprop="datePublished">2020-03-16</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.251Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/1884/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">ImgURL：一款功能多且简洁的图床程序</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2025/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux VPS纯净版CentOS系统一键安装脚本</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

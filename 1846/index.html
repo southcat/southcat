@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Linux VPS无限制一键全自动DD安装Windows脚本 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Linux VPS无限制一键全自动DD安装Windows脚本 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/1846/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前有大佬发过一个DD全自动脚本，参考：Linux VPS全自动DD安装Windows一键脚本，不过只能使用http直链，还是有点限制的，这次Vicer大佬也制作了个无限制DD安装Windows脚本，包括https链接的都可以直接DD，对于很多人来说，是很方便的。 简介突破没有VNC，没有救援模式，内存比dd包小的限制。使用Debian Live CD中的busybox做中间媒介，经过复杂的 - John Doe - 南猫"><meta property="article:published_time" content="2019-11-04T23:08:50.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.232Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.232Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/1846/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/1846/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/1846/"
+    },
+    "headline": "Linux VPS无限制一键全自动DD安装Windows脚本 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-11-04T23:08:50.000Z",
+    "dateModified": "2020-04-24T09:34:44.232Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：之前有大佬发过一个DD全自动脚本，参考：Linux VPS全自动DD安装Windows一键脚本，不过只能使用http直链，还是有点限制的，这次Vicer大佬也制作了个无限制DD安装Windows脚本，包括https链接的都可以直接DD，对于很多人来说，是很方便的。 简介突破没有VNC，没有救援模式，内存比dd包小的限制。使用Debian Live CD中的busybox做中间媒介，经过复杂的 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=Linux VPS无限制一键全自动DD安装Windows脚本" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Linux VPS无限制一键全自动DD安装Windows脚本&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=Linux VPS无限制一键全自动DD安装Windows脚本" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABg0lEQVR42u3awY7CMAxF0f7/T8+sRhqhxL4WqH1BtxuglOYgWXXs5PoJOC4RIkQcgbiKY/vjf9/9vX/9DbmviFxENdDrIKvPywGa+4rIR6wGqQJzdV0VsMvrRRyN2D2IdoEo4nsR1flJYhNxHoLccDV5oYH6VhYVcTuimqC88/qx2baIWxG4eC2QJCA/UpWLuAXRBVh1bheE5KEn4gwELYJ3iYwmQBHZiGlzjBRGu2vGCUzEI4guIXUT3N3Dqgp4EdkI2jidFj6oCS8iEkEWW7okRs+NCmIRjyFocdMF5CSJichHkIkIXZAjE2gR2Qg6cHfzLpDbBCYiBjEpdkjDrCuQROQjqmZYtWGn+xMILiISMQkyEmx04iMiF1Ft2qOQbhMYXnQREYGYLMB1DTPaXBORjUAL63BCS5qpIs5ATBbS6ISXbAoSkY2gG/26RDXZUC7iTMR0YJIARZyN6IpfEry4SSIiCkEGoo1UsjFERDaCbBSmhQ+dCIvIRTx5iBAhIhrxC6FIqYnGzsmfAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Linux VPS无限制一键全自动DD安装Windows脚本</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-11-05</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux VPS无限制一键全自动DD安装Windows脚本&url=http://hexo.southcat.net/1846/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Linux VPS无限制一键全自动DD安装Windows脚本&url=http://hexo.southcat.net/1846/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/1846/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/1846/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/1846/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/1846/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/1846/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABg0lEQVR42u3awY7CMAxF0f7/T8+sRhqhxL4WqH1BtxuglOYgWXXs5PoJOC4RIkQcgbiKY/vjf9/9vX/9DbmviFxENdDrIKvPywGa+4rIR6wGqQJzdV0VsMvrRRyN2D2IdoEo4nsR1flJYhNxHoLccDV5oYH6VhYVcTuimqC88/qx2baIWxG4eC2QJCA/UpWLuAXRBVh1bheE5KEn4gwELYJ3iYwmQBHZiGlzjBRGu2vGCUzEI4guIXUT3N3Dqgp4EdkI2jidFj6oCS8iEkEWW7okRs+NCmIRjyFocdMF5CSJichHkIkIXZAjE2gR2Qg6cHfzLpDbBCYiBjEpdkjDrCuQROQjqmZYtWGn+xMILiISMQkyEmx04iMiF1Ft2qOQbhMYXnQREYGYLMB1DTPaXBORjUAL63BCS5qpIs5ATBbS6ISXbAoSkY2gG/26RDXZUC7iTMR0YJIARZyN6IpfEry4SSIiCkEGoo1UsjFERDaCbBSmhQ+dCIvIRTx5iBAhIhrxC6FIqYnGzsmfAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#系统需求"><span class="post-toc-number">2.</span> <span class="post-toc-text">系统需求</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用限制"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用限制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装脚本"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装脚本</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用示例"><span class="post-toc-number">5.</span> <span class="post-toc-text">使用示例</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注意事项"><span class="post-toc-number">6.</span> <span class="post-toc-text">注意事项</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DD包提供"><span class="post-toc-number">7.</span> <span class="post-toc-text">DD包提供</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>之前有大佬发过一个<code>DD</code>全自动脚本，参考：Linux VPS全自动DD安装Windows一键脚本，不过只能使用<code>http</code>直链，还是有点限制的，这次<code>Vicer</code>大佬也制作了个无限制<code>DD</code>安装<code>Windows</code>脚本，包括<code>https</code>链接的都可以直接<code>DD</code>，对于很多人来说，是很方便的。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>突破没有<code>VNC</code>，没有救援模式，内存比<code>dd</code>包小的限制。使用<code>Debian Live CD</code>中的<code>busybox</code>做中间媒介，经过复杂的处理，使本机的网络参数传进<code>Windows</code>操作系统中，即使没有<code>DHCP</code>能够让<code>Windows</code>获取网络参数，也能让<code>Windows</code>操作系统在开机的第一时间能够连通网络。</p>
+<h2 id="系统需求"><a href="#系统需求" class="headerlink" title="系统需求"></a>系统需求</h2><p>1、<code>Debian/Ubuntu/CentOS</code>系统(由<code>GRUB</code>引导)；<br>2、<code>wget</code>用来下载文件，获取公网IP;<br>3、<code>ip</code>获取网关，掩码等;<br>4、<code>sed awk grep</code>处理文本流；<br>5、<code>VNC</code>安装系统(此项为可选)。<br>6、无<code>DHCP</code>时额外需求: <code>iconv</code></p>
+<pre><code>#Debian/Ubuntu
+## 一般自带
+#RedHat/CentOS
+yum install glibc-common</code></pre><h2 id="使用限制"><a href="#使用限制" class="headerlink" title="使用限制"></a>使用限制</h2><p>1、需要定制<code>dd</code>包</p>
+<ul>
+<li>默认<code>Administrator</code>账户登录</li>
+<li>默认开启远程桌面(默认<code>3389</code>端口)</li>
+<li>适当的调整防火墙(可选)</li>
+</ul>
+<p>2、需要相关的虚拟化驱动，VirtIO驱动，XEN驱动。</p>
+<p>3、<code>dd</code>包解压后的体积不能超过机器第一块硬盘的最大容积</p>
+<h2 id="安装脚本"><a href="#安装脚本" class="headerlink" title="安装脚本"></a>安装脚本</h2><pre><code>wget --no-check-certificate -qO DebianNET.sh &apos;https://moeclub.org/attachment/LinuxShell/DebianNET.sh&apos; &amp;&amp; bash DebianNET.sh -dd &apos;[Windows dd包直连地址]&apos;
+#脚本备份
+https://www.southcat.net/usr/shell/DD_Win/DebianNET.sh</code></pre><p>萌咖提供的<code>demo</code>包(<code>1.19G</code>;已激活)：</p>
+<pre><code>#在你的机器上全新安装，如果你有VNC，可以看到全部过程。
+https://moeclub.org/get-win7embx86-auto
+#该包只添加了VirtIO驱动,理论上仅能在KVM，Hyper-V构架下正常运行。
+#如需在其他虚拟化构架下运行，请自行添加相关虚拟化驱动。
+#备用地址
+https://down.southcat.net/Windows/win7embx86-auto.gz</code></pre><p>使用的是<code>Windows Embedded Standard 7</code>(<code>Thin PC</code>)作为底包，官方精简。</p>
+<h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><pre><code>wget --no-check-certificate -qO DebianNET.sh &apos;https://moeclub.org/attachment/LinuxShell/DebianNET.sh&apos; &amp;&amp; bash DebianNET.sh -dd &apos;https://down.southcat.net/Windows/win7embx86-auto.gz&apos;</code></pre><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>程登陆账号为: <code>Administrator</code><br>远程登陆密码为: <code>Vicer</code><br>仅修改了主机名，可放心使用。(建议自己制作.)<br>如果因此违反了<code>TOS</code>，萌咖不负任何责任。</p>
+<p>萌咖提供的可用的<code>DD</code>包：</p>
+<pre><code>#与本地用iso镜像安装过程一样，如果你有VNC，可看到全部过程。
+#因为全新安装!!! 全新安装!!! 全新安装!!! 所以会等待久一点。
+#Windows Embedded 8.1 Industry Pro x64 (2.87G;KVM;XEN;Hyper-V;未激活)
+https://down.southcat.net/Windows/win8embx64-auto.gz</code></pre><h2 id="DD包提供"><a href="#DD包提供" class="headerlink" title="DD包提供"></a>DD包提供</h2><pre><code>http://down.80host.com/iso/dd/WS2008R2Enterprise-Joodle-Template.gz
+http://down.80host.com/iso/dd/Windows2012R2-Joodle-Template.gz
+Username:Administrator
+Password:Password147
+
+http://down.80host.com/iso/dd/win2003_with_update.gz
+Username:administrator
+Password:80hostkvmlamjj
+
+Laiboke.com制作的中文版2012R2
+http://down.80host.com/iso/dd/Win2012R2ZW.gz
+Username:Administrator
+Password:Laiboke.com</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-11-04T23:08:50.000Z" itemprop="datePublished">2019-11-05</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.232Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2288/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">VPS上传文件到OneDrive网盘脚本，可配合Aria2实现自动上传</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/2179/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Aria2+Aria2Ng+OneIndex一键安装脚本，下载后自动上传至OneDrive</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

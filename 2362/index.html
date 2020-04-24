@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>小涴熊漫画CMS：一款不错的开源免费的漫画连载系统，带采集API | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="小涴熊漫画CMS：一款不错的开源免费的漫画连载系统，带采集API | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2362/"><meta property="og:locale" content="en"><meta name="description" content="说明：最近想搞个漫画站玩玩，就找了个不错的系统小涴熊漫画CMS，开源免费，基于ThinkPHP 5.1及Redis缓存，自带火车头api方便我们采集发布，功能就不多说了，可以看下面的截图，差不多漫画系统都差不多。作者更新也积极，貌似还计划加入会员系统等其他功能，这里就发一下。 截图 安装Github地址：https:&#x2F;&#x2F;github.com&#x2F;hiliqi&#x2F;xiaohuanxiong 环境要求：PH - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/xwxmhcms(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/xwxmhcms(2).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/xwxmhcms(3).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/xwxmhcms(4).png"><meta property="article:published_time" content="2020-03-04T06:57:19.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.251Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.251Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2362/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2362/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2362/"
+    },
+    "headline": "小涴熊漫画CMS：一款不错的开源免费的漫画连载系统，带采集API | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-03-04T06:57:19.000Z",
+    "dateModified": "2020-04-24T09:34:44.251Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：最近想搞个漫画站玩玩，就找了个不错的系统小涴熊漫画CMS，开源免费，基于ThinkPHP 5.1及Redis缓存，自带火车头api方便我们采集发布，功能就不多说了，可以看下面的截图，差不多漫画系统都差不多。作者更新也积极，貌似还计划加入会员系统等其他功能，这里就发一下。 截图 安装Github地址：https://github.com/hiliqi/xiaohuanxiong 环境要求：PH - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=小涴熊漫画CMS：一款不错的开源免费的漫画连载系统，带采集API" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=小涴熊漫画CMS：一款不错的开源免费的漫画连载系统，带采集API&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=小涴熊漫画CMS：一款不错的开源免费的漫画连载系统，带采集API" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABhUlEQVR42u3aS46DMBBFUfa/6e45wfWu3TSUo8sEKSjmDEp2fTh+GlyHCBEitkAcxXX1/Pzb1TpkXRG9EZdBc1rs6tno5WRdEf0Ro8XOkBGoug/XFbElIm1io2AU8b2Iq+CskCK+B1EeNCFoK+Qtp6iIxxEp0V2935pti3gMEYvWInFNG9xtVbmIRxHVxlO9mABTISWiJ2Kp4bXQNCkPMBEtEaSwSQltKqQ/QCJaIkZ/ohvTStNVRH8EaYyTAy8lP2joIuJ1RJl0DCB0E4uNFhEtETODN9IUmwpyEVsgSNClZIYM8ET0RVRJaWqgpQ0pNVhF9EbMFL6kiZqSaBF9EXQYm5rmadOK2baINohYoIBiZmaoL2IPBD2oSDFMBnAi+iPoIG4pmb17OCvi3xH0Q+GZhgpJckT0RpBBPd6AQqCK2AdBPsigQ3xSUIvYF0GDjzRGUEEsYgsEHbiiYDz++AW7iMcQ5GMtWiylREdEfwRthMWG+eCAm5r8iHgd8eYlQoSI1ohfMOkKKQY0jf0AAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">小涴熊漫画CMS：一款不错的开源免费的漫画连载系统，带采集API</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-03-04</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=小涴熊漫画CMS：一款不错的开源免费的漫画连载系统，带采集API&url=http://hexo.southcat.net/2362/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=小涴熊漫画CMS：一款不错的开源免费的漫画连载系统，带采集API&url=http://hexo.southcat.net/2362/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2362/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2362/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2362/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2362/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2362/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABhUlEQVR42u3aS46DMBBFUfa/6e45wfWu3TSUo8sEKSjmDEp2fTh+GlyHCBEitkAcxXX1/Pzb1TpkXRG9EZdBc1rs6tno5WRdEf0Ro8XOkBGoug/XFbElIm1io2AU8b2Iq+CskCK+B1EeNCFoK+Qtp6iIxxEp0V2935pti3gMEYvWInFNG9xtVbmIRxHVxlO9mABTISWiJ2Kp4bXQNCkPMBEtEaSwSQltKqQ/QCJaIkZ/ohvTStNVRH8EaYyTAy8lP2joIuJ1RJl0DCB0E4uNFhEtETODN9IUmwpyEVsgSNClZIYM8ET0RVRJaWqgpQ0pNVhF9EbMFL6kiZqSaBF9EXQYm5rmadOK2baINohYoIBiZmaoL2IPBD2oSDFMBnAi+iPoIG4pmb17OCvi3xH0Q+GZhgpJckT0RpBBPd6AQqCK2AdBPsigQ3xSUIvYF0GDjzRGUEEsYgsEHbiiYDz++AW7iMcQ5GMtWiylREdEfwRthMWG+eCAm5r8iHgd8eYlQoSI1ohfMOkKKQY0jf0AAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#采集"><span class="post-toc-number">3.</span> <span class="post-toc-text">采集</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>最近想搞个漫画站玩玩，就找了个不错的系统<code>小涴熊漫画CMS</code>，开源免费，基于<code>ThinkPHP 5.1</code>及<code>Redis</code>缓存，自带火车头<code>api</code>方便我们采集发布，功能就不多说了，可以看下面的截图，差不多漫画系统都差不多。作者更新也积极，貌似还计划加入会员系统等其他功能，这里就发一下。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/xwxmhcms(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/xwxmhcms(2).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/xwxmhcms(3).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/xwxmhcms(4).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/hiliqi/xiaohuanxiong" target="_blank" rel="noopener">https://github.com/hiliqi/xiaohuanxiong</a></p>
+<p><strong>环境要求：</strong><code>PHP 5.6-7.2</code>、<code>MySQL &gt;= 5.7</code>、<code>Redis</code>、<code>Redis</code>扩展</p>
+<p><strong>1、安装环境</strong><br>这里依旧走简单路线，使用宝塔面板做演示，使用命令：</p>
+<pre><code>#CentOS系统
+wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh
+#Ubuntu系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh
+#Debian系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh</code></pre><p>安装完成后，进入面板，点击左侧软件管理，然后安装<code>PHP 7.2</code>、<code>Nginx</code>、<code>Mysql 5.7+</code>、<code>Redis</code>。</p>
+<p>接下来再找到左侧软件管理-<code>PHP</code>管理-设置-安装<code>Redis</code>扩展。</p>
+<p><strong>2、安装程序</strong><br>我们先点击左侧网站，添加域名；然后再点击左侧数据库-添加数据库。</p>
+<p>运行命令：</p>
+<pre><code>#进入网站根目录，将路径修改成自己的再运行
+cd /www/wwwroot/www.southcat.net
+#拉取源码
+git clone https://github.com/hiliqi/xiaohuanxiong
+#将源码移动到根目录
+mv hanman/{,.}* ./
+#授权用户组
+chown -R www:www ./ </code></pre><p><strong>3、设置伪静态</strong><br>点击域名设置-网站目录，运行目录选择<code>public</code>，并把防跨站的勾去掉并重启<code>PHP</code>。然后点击伪静态，输入以下代码：</p>
+<pre><code>if (!-e $request_filename) {  
+      rewrite  ^(.*)$  /index.php?s=/$1  last;  
+      break;  
+    } </code></pre><p>然后打开<code>http://url/install</code>开始安装程序。</p>
+<p>如果要开启<code>404</code>，而不让<code>cms</code>报错信息显示出来，需要修改<code>config/app.php</code>文件：</p>
+<pre><code>#去掉第一排的//即可
+&apos;exception_tmpl&apos;         =&gt; Env::get(&apos;app_path&apos;) . &apos;index/view/pub/404.html&apos;,
+&apos;exception_tmpl&apos;         =&gt; Env::get(&apos;think_path&apos;) . &apos;tpl/think_exception.tpl&apos;,</code></pre><h2 id="采集"><a href="#采集" class="headerlink" title="采集"></a>采集</h2><p>通常情况下，漫画站图片资源分两种，一种本地化，一种盗链方式，这里建议将图片本地化，这样能保证网站资源稳定性，并且该程序还提供了火车头采集器的<code>API</code>，能够很简单的对接火车头采集器进行漫画和章节图片的采集。</p>
+<p>首先我们需要一个火车采集器，官网→传送门，不过分为免费版和收费版，但免费版由于某些功能限制，没法满足图片本地化需求，所以暂时不适用，如果你有钱可以买一个收费版的，不过没钱也没事，可以直接使用火车头<code>V7.6</code>企业破解版，大概目前最新的一个破解版，也可以满足该程序的采集需求，具体怎么下载，就自行百度，很多网站提供下载链接。</p>
+<pre><code>注意：由于火车头V7和V8没有url编码解码功能，所以不能采集带有中文链接的漫画网站，但V9版本可以，有钱可以直接上。</code></pre><p>采集<code>api</code>说明：</p>
+<pre><code>采集api地址：域名/api/index/save。
+请求方式：post
+表单字段及说明：
+book_name 漫画名
+nick_name 漫画别名
+tags 分类，多个分类用|隔开
+author 作者名字
+src 采集源
+end 状态，1代表完结，0代表连载中
+cover_url 封面图远程地址
+chapter_name 章节名
+images 由图片标签组成的字符串，示例：
+&lt;img src=&quot;http://www.m.com/1.jpg&quot;&gt;&lt;img src=&quot;http://www.m.com/2.jpg&quot;&gt;&lt;img src=&quot;http://www.m.com/3.jpg&quot;&gt;
+api_key 用于身份验证，要和后台配置的api密钥相同
+summary 漫画简介</code></pre><p>详细的采集参数说明可以查看→传送门。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-03-04T06:57:19.000Z" itemprop="datePublished">2020-03-04</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.251Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/1643/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">VestaCP多PHP(v5.5,v5.6,v7)一键安装脚本</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/701/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">两枚jetbrain账号  已经激活一年学生套餐</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

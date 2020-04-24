@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>使用Plexdrive/Rclone+Google Drive搭建无限容量的媒体库，适用于Plex/Emby/Jellyfin等 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="使用Plexdrive&#x2F;Rclone+Google Drive搭建无限容量的媒体库，适用于Plex&#x2F;Emby&#x2F;Jellyfin等 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2343/"><meta property="og:locale" content="en"><meta name="description" content="说明：一般我们玩Plex、Emby、Jellyfin这些媒体服务器的时候，都会考虑到硬盘大小的问题。如果考虑到成本的话，那就只能挂载无限网盘了，这里就建议用Google Drive，挂载方法的话可以用Plexdrive和Rclone。 提示：本教程需要国外的服务器，且挂载后看电影、听音乐的时候不需要梯子Plexdrive是一个可以安装Gdrive应用的工具，看名字像是为Plex量身打造，其实其它应 - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/plexdrive(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/plexdrive(2).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/plexdrive(3).png"><meta property="article:published_time" content="2020-02-13T03:28:34.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.249Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.249Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2343/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2343/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2343/"
+    },
+    "headline": "使用Plexdrive/Rclone+Google Drive搭建无限容量的媒体库，适用于Plex/Emby/Jellyfin等 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-02-13T03:28:34.000Z",
+    "dateModified": "2020-04-24T09:34:44.249Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：一般我们玩Plex、Emby、Jellyfin这些媒体服务器的时候，都会考虑到硬盘大小的问题。如果考虑到成本的话，那就只能挂载无限网盘了，这里就建议用Google Drive，挂载方法的话可以用Plexdrive和Rclone。 提示：本教程需要国外的服务器，且挂载后看电影、听音乐的时候不需要梯子Plexdrive是一个可以安装Gdrive应用的工具，看名字像是为Plex量身打造，其实其它应 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=使用Plexdrive/Rclone+Google Drive搭建无限容量的媒体库，适用于Plex/Emby/Jellyfin等" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=使用Plexdrive/Rclone+Google Drive搭建无限容量的媒体库，适用于Plex/Emby/Jellyfin等&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=使用Plexdrive/Rclone+Google Drive搭建无限容量的媒体库，适用于Plex/Emby/Jellyfin等" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABi0lEQVR42u3bwarDMAxE0fz/T7erQimWZhRCMi43mxZe4pyFasuS3/EKuA4QIEBsgTia6/vvn++/z6zGccYFkY1YBk3x4t9nVi93xgWRj6gG6wassPa4ILZEdAHW3QvifxEVpFqoQPwPoltouoVs9f3yVRTE7QiV6J79vDTbBnEbQm5aRUJTTUSX7spB3IroJp5q4XISn24xA5GNqCYtt/DhFk3aBQxEJEIFqrPJqQooq6AEkYtwCqlVUqI2Qd2mCEQuQhVOVZG9K7Suni9/HSCiEOphNXF1C1iHAZGPcIscTtLjTHYgMhFOMDkbHxWEy3tARCLcAFNNWSe5BbEv4mwT1mnsg8hHOAWQSeG8CtQ20QURhXAKZ84k5B4UA7EHQhXCJgcEnQYciHzEpBE3SYy7oAWRi3ADzymcOfeNCuwgHkOcab50zVu74Q8iGuEkrOowxyRhBrEvwg0+pzAy2hCD2AKhXjQZA0Q+wj34Jwukh/6nJBD5iOlB4Umjxe78gIhBPHmBAAEiGvEGujqJqRFlpTEAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">使用Plexdrive/Rclone+Google Drive搭建无限容量的媒体库，适用于Plex/Emby/Jellyfin等</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-02-13</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=使用Plexdrive/Rclone+Google Drive搭建无限容量的媒体库，适用于Plex/Emby/Jellyfin等&url=http://hexo.southcat.net/2343/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=使用Plexdrive/Rclone+Google Drive搭建无限容量的媒体库，适用于Plex/Emby/Jellyfin等&url=http://hexo.southcat.net/2343/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2343/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2343/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2343/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2343/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2343/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABi0lEQVR42u3bwarDMAxE0fz/T7erQimWZhRCMi43mxZe4pyFasuS3/EKuA4QIEBsgTia6/vvn++/z6zGccYFkY1YBk3x4t9nVi93xgWRj6gG6wassPa4ILZEdAHW3QvifxEVpFqoQPwPoltouoVs9f3yVRTE7QiV6J79vDTbBnEbQm5aRUJTTUSX7spB3IroJp5q4XISn24xA5GNqCYtt/DhFk3aBQxEJEIFqrPJqQooq6AEkYtwCqlVUqI2Qd2mCEQuQhVOVZG9K7Suni9/HSCiEOphNXF1C1iHAZGPcIscTtLjTHYgMhFOMDkbHxWEy3tARCLcAFNNWSe5BbEv4mwT1mnsg8hHOAWQSeG8CtQ20QURhXAKZ84k5B4UA7EHQhXCJgcEnQYciHzEpBE3SYy7oAWRi3ADzymcOfeNCuwgHkOcab50zVu74Q8iGuEkrOowxyRhBrEvwg0+pzAy2hCD2AKhXjQZA0Q+wj34Jwukh/6nJBD5iOlB4Umjxe78gIhBPHmBAAEiGvEGujqJqRFlpTEAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用Plexdrive"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用Plexdrive</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用Rclone"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用Rclone</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">3.</span> <span class="post-toc-text">总结</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#编译Plexdrive"><span class="post-toc-number">4.</span> <span class="post-toc-text">编译Plexdrive</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#相关教程"><span class="post-toc-number">5.</span> <span class="post-toc-text">相关教程</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>一般我们玩<code>Plex</code>、<code>Emby</code>、<code>Jellyfin</code>这些媒体服务器的时候，都会考虑到硬盘大小的问题。如果考虑到成本的话，那就只能挂载无限网盘了，这里就建议用<code>Google Drive</code>，挂载方法的话可以用<code>Plexdrive</code>和<code>Rclone</code>。</p>
+<pre><code>提示：本教程需要国外的服务器，且挂载后看电影、听音乐的时候不需要梯子</code></pre><p><code>Plexdrive</code>是一个可以安装<code>Gdrive</code>应用的工具，看名字像是为<code>Plex</code>量身打造，其实其它应用也可以用，该工具可以直接从<code>Gdrive</code>读取媒体文件，专门争对媒体服务器优化，貌似是利用内存缓存原理，可以加快媒体访问并减少<code>API</code>的读取次数。所以可能需要内存大点，不够的可以添加个几<code>G</code>的虚拟内存，<code>Swap</code>一键脚本→传送门。</p>
+<p><code>Rclone</code>是一个强大的网盘挂载工具，很久前博主就经常介绍，不过考虑到用途，之前的挂载参数肯定是需要调整下的，所以会在这里单独说下，该工具目前也有适合媒体服务器的缓存读取功能，但缓存很容易占用本地硬盘空间，所以这里博主就不用缓存功能了，主要使用的是分段读取，读取会快点，对于<code>API</code>来说，读取次数也会变的非常少。</p>
+<pre><code>#两个工具的读取区别
+Plexdrive：只能读取和删除
+Rclone：可以写入、读取和删除，但不能当硬盘直接写入，只能将文件移动进去</code></pre><p>这<code>2</code>个工具都需要安装<code>fuse</code>，可以提前装下，使用命令：</p>
+<pre><code>#Debian/Ubuntu系统
+apt-get install fuse -y
+#CentOS系统
+yum install fuse -y</code></pre><h2 id="使用Plexdrive"><a href="#使用Plexdrive" class="headerlink" title="使用Plexdrive"></a>使用Plexdrive</h2><p><strong>Github地址：</strong><a href="https://github.com/dweidenfeld/plexdrive" target="_blank" rel="noopener">https://github.com/dweidenfeld/plexdrive</a></p>
+<p><strong>1、获取谷歌API凭据</strong><br>先启用<code>Google Drive API</code>，启用地址：点击进入。<br><img src="https://www.southcat.net/usr/picture/plexdrive(1).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>再创建一个<code>OAuth client ID</code>，创建地址：点击进入。应用类型选择其他(<code>Other</code>)，名称自己填，这里博主填的<code>Plexdrive</code>。<br><img src="https://www.southcat.net/usr/picture/plexdrive(2).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>然后你会获得自己的客户端<code>ID</code>和客户端密钥，再复制下来。<br><img src="https://www.southcat.net/usr/picture/plexdrive(3).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<p><strong>2、运行Plexdrive</strong><br><code>Plexdrive</code>下载地址→传送门，根据自己的架构选择对应的版本。</p>
+<pre><code>#下载最新的Plexdrive
+wget https://github.com/dweidenfeld/plexdrive/releases/download/5.0.0/plexdrive-linux-amd64
+#移动并命名
+mv plexdrive-linux-amd64 /usr/local/bin/plexdrive
+chmod +x /usr/local/bin/plexdrive
+#新建本地挂载目录
+mkdir -p /home/gdrive
+#开始挂载
+/usr/local/bin/plexdrive mount \
+ -c /home/.plexdrive \
+ -o allow_other \
+ -v 4 --refresh-interval=1m \
+ --chunk-check-threads=4 \
+ --chunk-load-threads=4 \
+ --chunk-load-ahead=4 \
+ --max-chunks=20 \
+ /home/gdrive</code></pre><p>挂载参数可以参考→传送门，可以根据你的需求自行调整以上参数。</p>
+<p>挂载后会要你输入客户端<code>ID</code>和密匙，然后打开获取到的链接绑定账号后，将自己获取到的<code>code</code>复制到<code>SSH</code>客户端确定即可。</p>
+<p>然后接下来<code>Plexdrive</code>将开始生成缓存，所以期间我们需要等几分钟。缓存完了后，你会看到<code>Gdrive</code>的文件已经同步到了本地挂载文件夹。然后使用<code>Plex</code>、<code>Emby</code>、<code>Jellyfin</code>等媒体服务器的时候，就可以直接把媒体文件夹指向本地挂载文件夹了。</p>
+<p><strong>3、开机自启</strong><br>这里使用<code>Systemctl</code>守护进程，只适用于<code>CentOS 7</code>、<code>Debian 8+</code>、<code>Ubuntu 16+</code>。</p>
+<pre><code>#以下是一整条命令，一起复制到SSH客户端运行
+cat &gt; /etc/systemd/system/plexdrive.service &lt;&lt;EOF
+[Unit]
+Description=Plexdrive
+AssertPathIsDirectory=/home/gdrive
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/plexdrive mount \
+ -c /home/.plexdrive \
+ -o allow_other \
+ -v 4 --refresh-interval=1m \
+ --chunk-check-threads=4 \
+ --chunk-load-threads=4 \
+ --chunk-load-ahead=4 \
+ --max-chunks=20 \
+ /home/gdrive
+ExecStop=/bin/fusermount -u /home/gdrive
+Restart=on-abort
+
+[Install]
+WantedBy=default.target
+EOF</code></pre><p>开始启动：</p>
+<pre><code>systemctl start plexdrive</code></pre><p>设置开机自启：</p>
+<pre><code>systemctl enable plexdrive</code></pre><p>其他命令：</p>
+<pre><code>重启：systemctl restart plexdrive
+停止：systemctl stop plexdrive
+状态：systemctl status plexdrive</code></pre><h2 id="使用Rclone"><a href="#使用Rclone" class="headerlink" title="使用Rclone"></a>使用Rclone</h2><p><strong>1、配置Rclone</strong><br>使用和挂载<code>Google Drive</code>的方法可以参考博主以前发的教程→传送门，但只参考教程安装和配置即可，挂载就看本文。</p>
+<p><strong>2、挂载Gdrive</strong><br>挂载需要<code>3</code>个主要参数，这里很多人容易搞混，就详细的说下，比如开头的参数如下：</p>
+<pre><code>/usr/bin/rclone mount DriveName:Folder LocalFolder</code></pre><p>参数解读：</p>
+<pre><code>DriveName为Rclone的配置名称，比如你配置rclone的时候，Name填的Rats
+Folder为网盘里的文件夹路径，如果你要挂载整个网盘，直接填/挂载整个根目录
+LocalFolder为本地服务器上的挂载文件夹，如果你需要将网盘的文件夹挂载到服务器上的/Drive文件夹，那就填/Drive</code></pre><p>博主目前针对媒体服务器测试了个比较不错的挂载参数，命令：</p>
+<pre><code>#记得修改DriveName:Folder和LocalFolder的值
+/usr/bin/rclone mount DriveName:Folder LocalFolder \
+ --umask 0000 \
+ --default-permissions \
+ --allow-non-empty \
+ --allow-other \
+ --buffer-size 32M \
+ --dir-cache-time 12h \
+ --vfs-read-chunk-size 64M \
+ --vfs-read-chunk-size-limit 1G</code></pre><p>更多参数可以查看→地址一和地址二，如果你喜欢折腾的话，可以测试下，看还有不有更适合的参数，然后留个言。</p>
+<p><strong>3、开机自启</strong><br>这里和<code>Plexdrive</code>一样，同样使用<code>Systemctl</code>守护进程，也只适用于<code>CentOS 7</code>、<code>Debian 8+</code>、<code>Ubuntu 16+</code>。</p>
+<pre><code>#以下是一整条命令，先修改DriveName:Folder和LocalFolder的值，再一起复制到SSH客户端运行
+cat &gt; /etc/systemd/system/rclone.service &lt;&lt;EOF
+[Unit]
+Description=Rclone
+AssertPathIsDirectory=LocalFolder
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount DriveName:Folder LocalFolder \
+ --umask 0000 \
+ --default-permissions \
+ --allow-non-empty \
+ --allow-other \
+ --buffer-size 32M \
+ --dir-cache-time 12h \
+ --vfs-read-chunk-size 64M \
+ --vfs-read-chunk-size-limit 1G
+ExecStop=/bin/fusermount -u LocalFolder
+Restart=on-abort
+User=root
+
+[Install]
+WantedBy=default.target
+EOF</code></pre><p>开始启动：</p>
+<pre><code>systemctl start rclone</code></pre><p>设置开机自启：</p>
+<pre><code>systemctl enable rclone</code></pre><p>其他命令：</p>
+<pre><code>重启：systemctl restart rclone
+停止：systemctl stop rclone
+状态：systemctl status rclone</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>现在<code>Plexdrive</code>项目好像很少更新了，不过还能用；至于<code>Rclone</code>的话，更新频繁，功能也强，所以博主还是偏向于<code>Rclone</code>的，不过博主体验了下下，貌似<code>Plexdrive</code>加载什么的更快些，当然也不能肯定<code>Plexdrive</code>要快，毕竟也可能与其它因素有关，对于这<code>2</code>个工具的选择，可以都体验下，觉得哪个适合自己就用那个。</p>
+<h2 id="编译Plexdrive"><a href="#编译Plexdrive" class="headerlink" title="编译Plexdrive"></a>编译Plexdrive</h2><p><strong>说明：</strong>由于作者<code>Github</code>源码更新了，二进制还没更新，为了可以使用最新版的功能，我们可以编译下，这里就说下方法。</p>
+<p><strong>1、安装Go</strong></p>
+<pre><code>#32位系统下载
+wget -O go.tar.gz https://dl.google.com/go/go1.13.3.linux-386.tar.gz
+#64位系统下载
+wget -O go.tar.gz https://dl.google.com/go/go1.13.3.linux-amd64.tar.gz
+
+#解压压缩包
+tar -zxvf go.tar.gz -C /usr/local
+#设置环境变量，将以下一起复制进ssh客户端运行
+mkdir $HOME/go
+echo &apos;export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin&apos; &gt;&gt; /etc/profile
+source /etc/profile
+#查看go版本，有输出即为安装成功
+go version</code></pre><p><strong>2、安装Git</strong></p>
+<pre><code>#Debian/Ubuntu系统
+apt-get -y install git
+
+#CentOS/RHEL系统
+yum -y install git</code></pre><p><strong>3、编译Plexdrive</strong></p>
+<pre><code>go get github.com/dweidenfeld/plexdrive
+cd $GOPATH/src/github.com/dweidenfeld/plexdrive
+#构建
+go build</code></pre><h2 id="相关教程"><a href="#相关教程" class="headerlink" title="相关教程"></a>相关教程</h2><ul>
+<li>一款开源免费且类似Emby的个人媒体服务器：Jellyfin安装教程</li>
+<li>使用Docker安装Aria2+AriaNg+H5ai+Plex，离线BT下载/建立私人影院</li>
+<li>建立你的私人在线影库：Plex云盘搭建及使用教程</li>
+</ul>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-02-13T03:28:34.000Z" itemprop="datePublished">2020-02-13</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.249Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/1844/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">使用Docker快速安装NextCloud个人私有云盘</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/1569/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">基于内核的单边加速Tcp_china和Tcp_TA安装教程</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

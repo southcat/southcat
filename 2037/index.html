@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>Linux VPS纯净版Debian/Ubuntu/CentOS/Windows系统一键安装脚本 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="Linux VPS纯净版Debian&#x2F;Ubuntu&#x2F;CentOS&#x2F;Windows系统一键安装脚本 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2037/"><meta property="og:locale" content="en"><meta name="description" content="说明：本脚本是Vicer大佬将其Debian、Ubuntu、CentOS、DD Windows一键安装脚本合体了，使用更加方便了。 背景 适用于由GRUB引导的CentOS、Ubuntu、Debian系统。 使用官方发行版去掉模板预装的软件。 同时也可以解决内核版本与软件不兼容的问题。 只要有root权限,还您一个纯净的系统。  相关文章 Linux VPS纯净版CentOS系统一键安装脚本 Li - John Doe - 南猫"><meta property="article:published_time" content="2019-11-20T02:43:38.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.234Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.234Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2037/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2037/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2037/"
+    },
+    "headline": "Linux VPS纯净版Debian/Ubuntu/CentOS/Windows系统一键安装脚本 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-11-20T02:43:38.000Z",
+    "dateModified": "2020-04-24T09:34:44.234Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：本脚本是Vicer大佬将其Debian、Ubuntu、CentOS、DD Windows一键安装脚本合体了，使用更加方便了。 背景 适用于由GRUB引导的CentOS、Ubuntu、Debian系统。 使用官方发行版去掉模板预装的软件。 同时也可以解决内核版本与软件不兼容的问题。 只要有root权限,还您一个纯净的系统。  相关文章 Linux VPS纯净版CentOS系统一键安装脚本 Li - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=Linux VPS纯净版Debian/Ubuntu/CentOS/Windows系统一键安装脚本" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=Linux VPS纯净版Debian/Ubuntu/CentOS/Windows系统一键安装脚本&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=Linux VPS纯净版Debian/Ubuntu/CentOS/Windows系统一键安装脚本" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABg0lEQVR42u3bwRKCMAyEYd7/pfXiRYZkN1VwZX4ujijtd8iQJoXtEXBsIECA+AvE1hxvF7y+V//Zn3PGBZGLOAya3QQdWl1fjgsiGnEUWEfn97/tJ1DXg7gHortpVf8FcX9El7QuC0wQlyKqROMkq9OzKIjLEd2C9JPPr622QVyKcANMLWyWghdEJKILJFUIuQVyhQORjegm7AZXC552fBCxCLfomTbZlpqpIGIQqoCpkpqb8A7HARGLUMHXNdAreNVQA5GPmARc1zztkluZDEFEIqzFxyDwVLFkZVEQP0VMME5zRAUyiP9BTBtpCu80V0FkIpwidhLEqukiq3IQUYjJJuxKIW03zkBEIFYWNt1GrXPDApGPUE3zLmCdm5R8ABBEBGJ1I85ezJ65OQviFMQ3muYqoVkJDEQUYtpEmySx6qYGIh8xaYKqxpm7EAZxH8RKY2T8JAmIaITzwokab1SBgYhAqKCavGiiHhABkY9Y2ah3JpMbeCAiEb88QIAAEY14ArPy2GgjSepFAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">Linux VPS纯净版Debian/Ubuntu/CentOS/Windows系统一键安装脚本</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-11-20</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=Linux VPS纯净版Debian/Ubuntu/CentOS/Windows系统一键安装脚本&url=http://hexo.southcat.net/2037/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=Linux VPS纯净版Debian/Ubuntu/CentOS/Windows系统一键安装脚本&url=http://hexo.southcat.net/2037/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2037/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2037/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2037/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2037/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2037/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABg0lEQVR42u3bwRKCMAyEYd7/pfXiRYZkN1VwZX4ujijtd8iQJoXtEXBsIECA+AvE1hxvF7y+V//Zn3PGBZGLOAya3QQdWl1fjgsiGnEUWEfn97/tJ1DXg7gHortpVf8FcX9El7QuC0wQlyKqROMkq9OzKIjLEd2C9JPPr622QVyKcANMLWyWghdEJKILJFUIuQVyhQORjegm7AZXC552fBCxCLfomTbZlpqpIGIQqoCpkpqb8A7HARGLUMHXNdAreNVQA5GPmARc1zztkluZDEFEIqzFxyDwVLFkZVEQP0VMME5zRAUyiP9BTBtpCu80V0FkIpwidhLEqukiq3IQUYjJJuxKIW03zkBEIFYWNt1GrXPDApGPUE3zLmCdm5R8ABBEBGJ1I85ezJ65OQviFMQ3muYqoVkJDEQUYtpEmySx6qYGIh8xaYKqxpm7EAZxH8RKY2T8JAmIaITzwokab1SBgYhAqKCavGiiHhABkY9Y2ah3JpMbeCAiEb88QIAAEY14ArPy2GgjSepFAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#背景"><span class="post-toc-number">1.</span> <span class="post-toc-text">背景</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#相关文章"><span class="post-toc-number">2.</span> <span class="post-toc-text">相关文章</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注意"><span class="post-toc-number">3.</span> <span class="post-toc-text">注意</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">4.</span> <span class="post-toc-text">使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#提示"><span class="post-toc-number">5.</span> <span class="post-toc-text">提示</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>本脚本是<code>Vicer</code>大佬将其<code>Debian</code>、<code>Ubuntu</code>、<code>CentOS</code>、<code>DD Windows</code>一键安装脚本合体了，使用更加方便了。</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
+<li>适用于由<code>GRUB</code>引导的<code>CentOS</code>、<code>Ubuntu</code>、<code>Debian</code>系统。</li>
+<li>使用官方发行版去掉模板预装的软件。</li>
+<li>同时也可以解决内核版本与软件不兼容的问题。</li>
+<li>只要有<code>root</code>权限,还您一个纯净的系统。</li>
+</ul>
+<h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ul>
+<li>Linux VPS纯净版CentOS系统一键安装脚本</li>
+<li>Linux VPS无限制一键全自动DD安装Windows脚本</li>
+<li>Linux VPS纯净版Debian/Ubuntu系统一键安装脚本</li>
+</ul>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<li>全自动安装默认<code>root</code>密码：<code>MoeClub.org</code>，安装完成后请立即更改密码。</li>
+<li>能够全自动重装<code>Debian</code>/<code>Ubuntu</code>/<code>CentOS</code>等系统。</li>
+<li>同时提供<code>dd</code>镜像功能，例如：全自动无救援dd安装windows系统。</li>
+<li>全自动安装<code>CentOS</code>时默认提供<code>VNC</code>功能，可使用<code>VNC Viewer</code>查看进度。</li>
+<li><code>VNC</code>端口为<code>1</code>或者<code>5901</code>，可自行尝试连接。(成功后<code>VNC</code>功能会消失)。</li>
+<li>目前只支持<code>CentOS 6.9</code>及以下版本(<code>5.x</code>、<code>6.x</code>)。</li>
+<li>特别注意：<code>OpenVZ</code>构架不适用。</li>
+</ul>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><strong>1、安装依赖</strong></p>
+<pre><code>#Debian/Ubuntu
+apt-get install -y xz-utils openssl gawk file
+
+#RedHat/CentOS
+yum install -y xz openssl gawk file</code></pre><p>如果出现错误请运行：</p>
+<pre><code>#Debian/Ubuntu
+apt-get update
+
+#RedHat/CentOS
+yum update</code></pre><p><strong>2、下载脚本及使用</strong></p>
+<pre><code>wget --no-check-certificate -qO InstallNET.sh &apos;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&apos; &amp;&amp; chmod a+x InstallNET.sh
+#脚本备份
+https://www.southcat.net/usr/shell/InstallNET.sh</code></pre><p>使用方法：</p>
+<pre><code>Usage:
+        bash InstallNET.sh      -d/--debian [dist-name]
+                                -u/--ubuntu [dist-name]
+                                -c/--centos [dist-version]
+                                -v/--ver [32/i386|64/amd64]
+                                --ip-addr/--ip-gate/--ip-mask
+                                -apt/-yum/--mirror
+                                -dd/--image
+                                -a/-m
+
+# dist-name：发行版本代号
+# dist-version：发行版本号
+# -apt/-yum/--mirror：使用定义镜像
+# -a/-m：询问是否能进入VNC自行操作。 -a为不提示(一般用于全自动安装)， -m为提示。</code></pre><p><strong>3、使用示例</strong></p>
+<pre><code>#使用默认镜像全自动安装
+bash InstallNET.sh -d 8 -v 64 -a
+
+#使用自定义镜像全自动安装
+bash InstallNET.sh -c 6.9 -v 64 -a --mirror &apos;http://mirror.centos.org/centos&apos;
+
+# 以下示例中,将X.X.X.X替换为自己的网络参数.
+# --ip-addr :IP Address/IP地址
+# --ip-gate :Gateway   /网关
+# --ip-mask :Netmask   /子网掩码
+
+#使用自定义镜像自定义网络参数全自动安装
+#bash InstallNET.sh -u 16.04 -v 64 -a --ip-addr x.x.x.x --ip-gate x.x.x.x --ip-mask x.x.x.x --mirror &apos;http://archive.ubuntu.com/ubuntu&apos;
+
+#使用自定义网络参数全自动dd方式安装
+#bash InstallNET.sh --ip-addr x.x.x.x --ip-gate x.x.x.x --ip-mask x.x.x.x -dd &apos;https://moeclub.org/get-win7embx86-auto&apos;
+
+#使用自定义网络参数全自动dd方式安装存储在谷歌网盘中的镜像
+#bash InstallNET.sh --ip-addr x.x.x.x --ip-gate x.x.x.x --ip-mask x.x.x.x -dd &quot;$(echo &quot;https://drive.google.com/open?id=0B8SvBXZ3I5QMcUduTMJEanRkMzQ&quot; |xargs -n1 bash &lt;(wget --no-check-certificate -qO- &apos;https://moeclub.org/get-gdlink&apos;))&quot;</code></pre><h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p><strong>1、在dd安装系统镜像时</strong></p>
+<ul>
+<li>在你的机器上全新安装，如果你有<code>VNC</code>，可以看到全部过程。</li>
+<li>在<code>dd</code>安装镜像的过程中，不会走进度条(进度条一直显示为<code>0%</code>)，完成后将会自动重启。</li>
+<li>分区界面标题一般显示为：“<code>Starting up the partitioner</code>“。</li>
+<li>使用谷歌网盘中的镜像：Google Drive网盘文件直链获取一键脚本。</li>
+</ul>
+<p><strong>2、在全自动安装CentOS时</strong></p>
+<ul>
+<li>如果看到 “<code>Starting graphical installation</code>” 或者类似表达，则表示正在安装。</li>
+<li>正常情况下只需要耐心等待安装完成即可。</li>
+<li>如果需要查看进度，使用<code>VNC Viewer</code>(或者其他<code>VNC</code>连接工具)。</li>
+<li>连接提示中的<code>IP</code>地址：端口进行连接，(端口一般为<code>1</code>或者<code>5901</code>)。</li>
+</ul>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-11-20T02:43:38.000Z" itemprop="datePublished">2019-11-20</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.234Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/1541/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">使用WordPress一些常用技巧</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/1696/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一款功能强大的Linux主机面板：Kloxo-MR安装教程</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

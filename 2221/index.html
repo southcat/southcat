@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>一款强大的网站在线客服聊天系统：whisper搭建教程 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="一款强大的网站在线客服聊天系统：whisper搭建教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2221/"><meta property="og:locale" content="en"><meta name="description" content="简介whisper是一个在线客服系统源码，采用thinkphp5+Gatewayworker编写，性能强悍。自己搭建，控制在自己，也无需为您的数据安全担心，您可以应用在任何的正规的网站，只需要添加一段简单的js代码，就可以使您的网站拥有在线客服功能。 官方网站：http:&#x2F;&#x2F;whisper.baiyf.com&#x2F; 截图 功能 支持客服分组，多客服服务，让您的服务更有条理。 支持客服转接，让会员接受最 - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/whisper(3).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/whisper(4).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/whisper(5).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/whisper(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/whisper(2).png"><meta property="article:published_time" content="2020-01-16T23:30:41.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.242Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.242Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2221/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2221/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2221/"
+    },
+    "headline": "一款强大的网站在线客服聊天系统：whisper搭建教程 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-01-16T23:30:41.000Z",
+    "dateModified": "2020-04-24T09:34:44.242Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "简介whisper是一个在线客服系统源码，采用thinkphp5+Gatewayworker编写，性能强悍。自己搭建，控制在自己，也无需为您的数据安全担心，您可以应用在任何的正规的网站，只需要添加一段简单的js代码，就可以使您的网站拥有在线客服功能。 官方网站：http://whisper.baiyf.com/ 截图 功能 支持客服分组，多客服服务，让您的服务更有条理。 支持客服转接，让会员接受最 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=一款强大的网站在线客服聊天系统：whisper搭建教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=一款强大的网站在线客服聊天系统：whisper搭建教程&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=一款强大的网站在线客服聊天系统：whisper搭建教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABiklEQVR42u3ay27DMAxEUf//T7erAIVgcoZu7IyC602KOLVOAEJ8KMdPwHWAAAFiC8TRXK/76+v6mfV957kgshGnQbMsfrZQtbjzXBD5iOphf+852C6QQXwH4iwYV1gFB/GdCGfhahMDsTeiTTQnxUr399uzKIjHEdNCd5q4bqm2QdyGkE1rk8icDe4tXTmIRxHdxqM2IpXsujVA5CNUE1xtbm7Q2lkURAzCbWgV3CmGQOQjVBBV91UTJL8AiEhEl8RUY9v9X9VIl5UViCiEaoSnAVluTm7zAyICoQbs6rBtchgHYh/EdPPqGiBV5ILIRbgFqlOwTAesIDIR3ULTQ9iuwGmbHxBRCHdYNh3IW4URiEjEpR/uDQ5i26YIRCziSoJSg3lrAwQRi3CC0E5KDfpfh7MgHkNMD+zdIYizYYHIRaiDemdQ1gWmfWAPIgrhDM6cImcS4CD2REwaHDUYudQQg4hEOAe5k2eA2APhJCI3SJ0iGUQ2QhW6k8anLWJAbIH45AUCBIhoxC8jDWnJXF/+CAAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">一款强大的网站在线客服聊天系统：whisper搭建教程</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-01-17</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=一款强大的网站在线客服聊天系统：whisper搭建教程&url=http://hexo.southcat.net/2221/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=一款强大的网站在线客服聊天系统：whisper搭建教程&url=http://hexo.southcat.net/2221/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2221/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2221/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2221/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2221/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2221/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABiklEQVR42u3ay27DMAxEUf//T7erAIVgcoZu7IyC602KOLVOAEJ8KMdPwHWAAAFiC8TRXK/76+v6mfV957kgshGnQbMsfrZQtbjzXBD5iOphf+852C6QQXwH4iwYV1gFB/GdCGfhahMDsTeiTTQnxUr399uzKIjHEdNCd5q4bqm2QdyGkE1rk8icDe4tXTmIRxHdxqM2IpXsujVA5CNUE1xtbm7Q2lkURAzCbWgV3CmGQOQjVBBV91UTJL8AiEhEl8RUY9v9X9VIl5UViCiEaoSnAVluTm7zAyICoQbs6rBtchgHYh/EdPPqGiBV5ILIRbgFqlOwTAesIDIR3ULTQ9iuwGmbHxBRCHdYNh3IW4URiEjEpR/uDQ5i26YIRCziSoJSg3lrAwQRi3CC0E5KDfpfh7MgHkNMD+zdIYizYYHIRaiDemdQ1gWmfWAPIgrhDM6cImcS4CD2REwaHDUYudQQg4hEOAe5k2eA2APhJCI3SJ0iGUQ2QhW6k8anLWJAbIH45AUCBIhoxC8jDWnJXF/+CAAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">2.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#功能"><span class="post-toc-number">3.</span> <span class="post-toc-text">功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#网站使用"><span class="post-toc-number">5.</span> <span class="post-toc-text">网站使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">6.</span> <span class="post-toc-text">总结</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><code>whisper</code>是一个在线客服系统源码，采用<code>thinkphp5</code>+<code>Gatewayworker</code>编写，性能强悍。自己搭建，控制在自己，也无需为您的数据安全担心，您可以应用在任何的正规的网站，只需要添加一段简单的<code>js</code>代码，就可以使您的网站拥有在线客服功能。</p>
+<p><strong>官方网站：</strong><a href="http://whisper.baiyf.com/" target="_blank" rel="noopener">http://whisper.baiyf.com/</a></p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/whisper(3).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/whisper(4).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/whisper(5).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
+<li>支持客服分组，多客服服务，让您的服务更有条理。</li>
+<li>支持客服转接，让会员接受最专业的服务。</li>
+<li>智能分配客户流量，让服务更加高效。</li>
+<li>问候语设置，服务更加亲切。</li>
+<li>历史聊天记录查看，方便监管和总结。</li>
+<li>支持数据趋势统计，随时掌握服务情况，做出最优的调整。</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>环境要求：</strong><code>PHP &gt;= 5.6</code></p>
+<p><strong>1、安装宝塔</strong></p>
+<pre><code>#Centos系统
+yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh
+#Ubuntu系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; sudo bash install.sh
+#Debian系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; bash install.sh</code></pre><p>安装完成后，进入面板，点击左侧软件管理，然后安装<code>PHP</code>、<code>Mysql</code>、<code>Nginx</code>、<code>phpmyadmin</code>。</p>
+<p><strong>2、拉取源码</strong><br>点击左侧网站，添加站点，使用命令：</p>
+<pre><code>cd www/wwwroot/xx.com
+git clone https://gitee.com/nickbai/whisper_tp5.git
+#如果移动的时候有mv提示，直接Enter即可
+mv whisper_tp5/{,.}* ./
+chmod 775 ./* ./runtime/temp/*</code></pre><p><strong>3、网站设置</strong><br>进入到域名设置，点击网站目录，去除跨站攻击的<code>√</code>，并设置运行目录为<code>public</code>。</p>
+<p>然后点击伪静态设置，填入以下代码：</p>
+<pre><code>location / {
+  if (!-e $request_filename) {
+  rewrite  ^(.*)$  /index.php?s=/$1  last;
+  break;
+   }
+}</code></pre><p><strong>4、新建数据库</strong><br>点击面板左侧数据库，点击<code>phpmyadmin</code>进入数据库管理界面，新建<code>whisper</code>数据库。再将根目录的<code>whisper.sql</code>文件导入到数据库，然后修改根目录<code>application/database.php</code>配置信息。</p>
+<pre><code>#修改如下
+// 服务器地址
+&apos;hostname&apos;        =&gt; &apos;127.0.0.1&apos;,
+// 数据库名
+&apos;database&apos;        =&gt; &apos;whisper&apos;,
+// 用户名
+&apos;username&apos;        =&gt; &apos;root&apos;,
+// 密码
+&apos;password&apos;        =&gt; &apos;root&apos;,
+// 端口
+&apos;hostport&apos;        =&gt; &apos;3306&apos;,</code></pre><p><strong>5、安装拓展</strong><br>环境一般只要安装两个扩展即可，一个是<code>pcntl</code>，一个是<code>libevent</code>（<code>event</code>）。<code>pcntl</code>为必须的，<code>libevent</code>为非必须的，但是起到高性能作用的恰恰是<code>libevent</code>（<code>event</code>）。如果你您的并发并不是很高，咨询量也不是很大，您可以不安装这个扩展，<code>Gatewayworker</code>会采用系统的<code>select</code>同样性能可观。</p>
+<p>查看已安装的<code>PHP</code>拓展：</p>
+<pre><code>php -m</code></pre><p>这时候发现必需的<code>pcntl</code>拓展已被安装，接下来就安装另外一个拓展了(一般情况下可以不用安装)，即<code>PHP5.x</code>安装<code>libevent</code>扩展，<code>PHP7.x</code>安装<code>event</code>拓展。</p>
+<p><code>PHP7.x</code>安装<code>event</code>拓展，博主以<code>PHP7.0</code>测试环境，如果你是<code>7.1</code>将下面目录<code>70</code>改成<code>71</code>即可：</p>
+<pre><code>#event包下载地址http://pecl.php.net/package/event，这里以最新版2.4.1为准
+cd /www/server/php
+wget http://pecl.php.net/get/event-2.4.1.tgz
+tar -zxvf event-2.4.1.tgz &amp;&amp; cd event-2.4.1
+/www/server/php/70/bin/phpize
+./configure --with-php-config=/www/server/php/70/bin/php-config --with-event-libevent-dir=/www/server/php/event-2.4.1/
+make &amp;&amp; make install
+echo &quot;extension=event.so&quot; &gt;&gt; /www/server/php/70/etc/php.ini</code></pre><p><code>PHP5.x</code>安装<code>libevent</code>扩展，这里以<code>PHP5.6</code>测试环境，使用命令：</p>
+<pre><code>cd /www/server/php
+wget https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz
+tar -zxvf libevent-2.1.8-stable.tar.gz &amp;&amp; cd libevent-2.1.8-stable
+/www/server/php/56/bin/phpize
+./configure --with-php-config=/usr/local/php/bin/php-config --with-libevent=/www/server/php/libevent-2.1.8-stable/
+make &amp;&amp; make install
+
+echo &quot;extension=libevent.so&quot; &gt;&gt; /www/server/php/56/etc/php.ini</code></pre><p>其实要求不高的，这步可以省略。</p>
+<p><strong>6、启动程序</strong><br>这时候需要先下载服务端文件，下载地址：whisper_server.zip，然后解压上传到网站根目录<code>vendor</code>目录里，再编辑以下文件。</p>
+<pre><code>#编辑vendor/GatewayWorker/Applications/whisper/Events.php文件
+#修改数据库名和密码
+self::$db = new \Workerman\MySQL\Connection(&apos;127.0.0.1&apos;, &apos;3306&apos;, &apos;root&apos;, &apos;pass&apos;, &apos;whisper&apos;);</code></pre><p>然后启动程序：</p>
+<pre><code>#进入服务端文件夹
+cd /www/wwwroot/xx.com/vendor/GatewayWorker
+#后台运行
+php start.php start -d</code></pre><p>然后再到宝塔的安全里开启<code>8282</code>端口。</p>
+<p>然后再配置<code>application/config.php</code>，进行如下修改：</p>
+<pre><code>&apos;socket&apos; =&gt; &apos;192.168.1.104:8282&apos;,</code></pre><p><code>ip</code>填写你服务器的<code>ip</code>。</p>
+<p>搭建成功后程序系统为<code>xx.com</code>，后台后<code>xx.com/admin</code>，管理员用户名密码均为<code>admin</code>，客服的工作台<code>xx.com/service</code>。</p>
+<p>接下来我们进入程序系统首页，点击右下角的客服按钮，如果出现以下提示，则为安装成功，不然请检查你的步骤。<br><img src="https://www.southcat.net/usr/picture/whisper(1).png" alt="请输入图片描述" title="请输入图片描述"><br>最后我们就将在线客服集成到自己网站。</p>
+<h2 id="网站使用"><a href="#网站使用" class="headerlink" title="网站使用"></a>网站使用</h2><p><strong>1、首先在您的网站上引入两段js</strong></p>
+<pre><code>&lt;script src=&quot;http://xxx.com/static/customer/js/layer/layer.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://xxx.com/static/customer/js/whisper-tool.js&quot;&gt;&lt;/script&gt;</code></pre><p>对应的地方，换成你刚才部署<code>whisper</code>事时采用的域名。其实你也可以放本地，只要这个资源能访问到即可。</p>
+<p><strong>2、配置参数</strong></p>
+<pre><code>var ws = new whisper();
+$(dom).click(function(){
+    var group = $(this).attr(&apos;data-group&apos;);
+    ws.init({
+        id: uid,
+        url: &apos;http://xxx.xxx.com/index/index/chat&apos;,
+        name: uname,
+        avatar: uavatar,
+        group: group
+    });
+});</code></pre><p><strong>3、参数解释</strong><br>1）<code>dom</code>是什么？<br>这里的<code>dom</code>就是您的客服咨询悬浮框，以<code>whisper</code>官网的为例子：<br><img src="https://www.southcat.net/usr/picture/whisper(2).png" alt="请输入图片描述" title="请输入图片描述"><br>即这两部分的<code>dom</code>的<code>id</code>，<code>#cs-pre-sales</code>和<code>#cs-after-sales</code>：</p>
+<pre><code>&lt;div id=&quot;cs-groups&quot;&gt;
+    &lt;div class=&quot;cs-groups__item&quot; id=&quot;cs-pre-sales&quot; data-group=&quot;1&quot;&gt;
+        &lt;span class=&quot;widget__icon&quot;&gt;&lt;/span&gt;售前客服
+    &lt;/div&gt;
+    &lt;div class=&quot;widget__divider&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;cs-groups__item&quot; id=&quot;cs-after-sales&quot; data-group=&quot;2&quot;&gt;
+        &lt;span class=&quot;widget__icon&quot;&gt;&lt;/span&gt;售后客服
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre><p>其实就是这两个地方的点击事件，此处在这个<code>dom</code>的地方，放置一个<code>data-group</code>来设置 这些客服分组的信息。这个<code>id</code>需要与管理端设置的 异一一对应，否则该分组的客服无法正常的工作。例如<code>whisper</code>站点上，这个点击事件这么配置的：</p>
+<pre><code>$(&quot;#cs-pre-sales,#cs-after-sales&quot;).click(function(){
+        // 其他业务代码
+})</code></pre><p>2）<code>init</code>中的参数是什么意思？</p>
+<pre><code>{
+        id: uid,
+        name: uname,
+        avatar: uavatar,
+        whisper_domain: &apos;http://xxx.xxx.com&apos;,
+        group: group
+}</code></pre><p>对应的信息为：</p>
+<pre><code>id    当前登录户用户的唯一id
+name    当前登录用户的昵称
+avatar    当前登录用户的头像
+whisper_domain    您搭建whisper系统的域名
+group    用户咨询的客服分组</code></pre><p>好了，到此为止，您的<code>whisper</code>系统算是搭建 和整合完毕了。你可以为你的访客提供咨询服务了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-01-16T23:30:41.000Z" itemprop="datePublished">2020-01-17</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.242Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/1515/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">使用vnstat来查看linux服务器带宽流量统计</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/1733/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Debian/Ubuntu/CentOS安装最新版的Node.js和NPM教程</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

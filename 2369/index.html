@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>采集各种美女图片站并下载图片、自动搭建属于自己的图片站 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="采集各种美女图片站并下载图片、自动搭建属于自己的图片站 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2369/"><meta property="og:locale" content="en"><meta name="description" content="说明：距离上次给男同学们分享爬虫福利已经有一年多了，福利就自己在博客翻下，现在再分享个大佬的爬虫项目，可以爬取mm131、mmjpg、妹子图等各大美女图片站，然后下载图片后，自动帮你发布并搭建一个属于你自己的图片站，该项目作者也在长期维护，貌似正在对接OneDrive，还是很不错的，如果营养快线多的可以自己搭建个慢慢欣赏吧。 截图 说明项目地址：https:&#x2F;&#x2F;git.coding.net&#x2F;zxy - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/94imm.png"><meta property="article:published_time" content="2020-03-10T06:05:19.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.251Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.251Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2369/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2369/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2369/"
+    },
+    "headline": "采集各种美女图片站并下载图片、自动搭建属于自己的图片站 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-03-10T06:05:19.000Z",
+    "dateModified": "2020-04-24T09:34:44.251Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：距离上次给男同学们分享爬虫福利已经有一年多了，福利就自己在博客翻下，现在再分享个大佬的爬虫项目，可以爬取mm131、mmjpg、妹子图等各大美女图片站，然后下载图片后，自动帮你发布并搭建一个属于你自己的图片站，该项目作者也在长期维护，貌似正在对接OneDrive，还是很不错的，如果营养快线多的可以自己搭建个慢慢欣赏吧。 截图 说明项目地址：https://git.coding.net/zxy - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=采集各种美女图片站并下载图片、自动搭建属于自己的图片站" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=采集各种美女图片站并下载图片、自动搭建属于自己的图片站&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=采集各种美女图片站并下载图片、自动搭建属于自己的图片站" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABhklEQVR42u3bwQ6CQAyEYd7/pfXkZUM7swZhan4uJoLwHZpu28XjFXAcIECAGIE4muNzfv1cr1m/d+4LIhtxGjTFw9ffKHR1XxD5iOpm68McrHtfEDMR3cO7YATxv4gK4ixoIGYj2oVGJKIz6KWrKIjbEbuF7u7C9ZNqG8TPELJpbQpXVQhd1pWDuBXRJR6ViBSwewaIGQinsK0Smhqa2A0xiMcRauhRAZwg7YIbRDaiG4ztLHBuwILIRpQXGIMRNWiVQzcQsQg3GXWDtSrBdRgQ+Qg1GHULYtUUg8hGuI3tbgOkilwQuQi32VFB6RS3IGYgnI3WKvC+2dgHkY+oAksVNmogr4YlIHIR7vBTFcNOcgMxB6FewnBwbuCCmIFwBmPVOVnMXrk5C+IWxM6GvSpi1ctistoGEYNwN+pV49MVxNaGPYgohFOwOknLfUEIxFyE+2cBZzAikxWIMYhuwOYMZe3NWRBRCNUg7wxF3ME9iFzE7otcqtFxGykQmYgnDxAgQEQj3jbE6UmCY9JhAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">采集各种美女图片站并下载图片、自动搭建属于自己的图片站</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-03-10</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=采集各种美女图片站并下载图片、自动搭建属于自己的图片站&url=http://hexo.southcat.net/2369/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=采集各种美女图片站并下载图片、自动搭建属于自己的图片站&url=http://hexo.southcat.net/2369/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2369/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2369/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2369/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2369/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2369/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABhklEQVR42u3bwQ6CQAyEYd7/pfXkZUM7swZhan4uJoLwHZpu28XjFXAcIECAGIE4muNzfv1cr1m/d+4LIhtxGjTFw9ffKHR1XxD5iOpm68McrHtfEDMR3cO7YATxv4gK4ixoIGYj2oVGJKIz6KWrKIjbEbuF7u7C9ZNqG8TPELJpbQpXVQhd1pWDuBXRJR6ViBSwewaIGQinsK0Smhqa2A0xiMcRauhRAZwg7YIbRDaiG4ztLHBuwILIRpQXGIMRNWiVQzcQsQg3GXWDtSrBdRgQ+Qg1GHULYtUUg8hGuI3tbgOkilwQuQi32VFB6RS3IGYgnI3WKvC+2dgHkY+oAksVNmogr4YlIHIR7vBTFcNOcgMxB6FewnBwbuCCmIFwBmPVOVnMXrk5C+IWxM6GvSpi1ctistoGEYNwN+pV49MVxNaGPYgohFOwOknLfUEIxFyE+2cBZzAikxWIMYhuwOYMZe3NWRBRCNUg7wxF3ME9iFzE7otcqtFxGykQmYgnDxAgQEQj3jbE6UmCY9JhAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#说明"><span class="post-toc-number">2.</span> <span class="post-toc-text">说明</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装环境"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#搭建站点"><span class="post-toc-number">4.</span> <span class="post-toc-text">搭建站点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#采集发布"><span class="post-toc-number">5.</span> <span class="post-toc-text">采集发布</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他说明"><span class="post-toc-number">6.</span> <span class="post-toc-text">其他说明</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>距离上次给男同学们分享爬虫福利已经有一年多了，福利就自己在博客翻下，现在再分享个大佬的爬虫项目，可以爬取<code>mm131</code>、<code>mmjpg</code>、妹子图等各大美女图片站，然后下载图片后，自动帮你发布并搭建一个属于你自己的图片站，该项目作者也在长期维护，貌似正在对接<code>OneDrive</code>，还是很不错的，如果营养快线多的可以自己搭建个慢慢欣赏吧。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/94imm.png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p><strong>项目地址：</strong><a href="https://git.coding.net/zxy_coding/94imm.git" target="_blank" rel="noopener">https://git.coding.net/zxy_coding/94imm.git</a></p>
+<p><strong>环境要求：</strong><code>Python 3.6</code>、<code>Mysql 5.5+</code>、<code>Nginx</code>/<code>Apache</code>(非必需)，本文只说<code>CentOS 6/7</code>、<code>Debian 8/9</code>。</p>
+<p>这里使用宝塔和手动<code>2</code>种方法安装，如果你需要快速上手就使用手动安装，想操作方便就宝塔，自行选择。</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p><strong>1、使用宝塔安装</strong></p>
+<pre><code>#CentOS系统
+wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh
+#Debian系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh</code></pre><p>安装完成后，进入面板，点击左侧软件管理，然后安装<code>Mysql 5.5+</code>、<code>Nginx</code>(如果你使用域名的话，就需要安装)。</p>
+<p>然后点击左侧数据库-添加数据库，设置好数据库信息。</p>
+<p><strong>2、手动安装环境</strong></p>
+<pre><code>提示：为了简单，这里采用Mysql 5.7+Caddy环境，这里也是，如果你需要使用到域名才安装Caddy。</code></pre><p>这里博主是用的<code>Mysql 5.7</code>，如果内存很低，<code>5.7</code>跑起来会有点吃力，建议增加点虚拟内存，可以用下<code>Swap</code>一键脚本→传送门。</p>
+<p>安装<code>Mysql 5.7</code>：</p>
+<pre><code>#CentOS 6系统
+rpm -ivh http://repo.mysql.com/mysql57-community-release-el6.rpm
+yum install mysql-community-server -y
+service mysqld start
+chkconfig mysqld on
+
+#CentOS 7系统
+rpm -ivh http://repo.mysql.com/mysql57-community-release-el7.rpm
+yum install mysql-community-server -y
+systemctl start mysqld
+systemctl enable mysqld
+
+#Debian 8系统
+echo &apos;deb http://repo.mysql.com/apt/debian/ jessie mysql-5.7
+deb-src http://repo.mysql.com/apt/debian/ jessie mysql-5.7&apos; &gt;/etc/apt/sources.list.d/mysql.list
+wget https://repo.mysql.com/RPM-GPG-KEY-mysql
+apt-key add RPM-GPG-KEY-mysql
+apt update
+#安装的时候会要你输入数据库密码
+apt install mysql-server -y
+
+#Debian 9系统
+echo &apos;deb http://repo.mysql.com/apt/debian/ stretch mysql-5.7
+deb-src http://repo.mysql.com/apt/debian/ stretch mysql-5.7&apos; &gt;/etc/apt/sources.list.d/mysql.list
+wget https://repo.mysql.com/RPM-GPG-KEY-mysql
+apt-key add RPM-GPG-KEY-mysql
+apt update
+#安装的时候会要你输入数据库密码
+apt install mysql-server -y</code></pre><p>这里<code>CentOS</code>安装<code>MySQL 5.7</code>的时候会生成一个随机密码，使用命令查看：</p>
+<pre><code>grep &quot;password&quot; /var/log/mysqld.log
+#大致信息，******为密码
+[Note] A temporary password is generated for root@localhost: ******</code></pre><p>然后<code>CentOS</code>还需要修改数据库密码：</p>
+<pre><code>#登录数据库，输入你上面看到的密码
+mysql -u root -p
+#稍微设置密码难度下，不然修改的时候，密码必须很复杂才行
+mysql&gt; set global validate_password_policy=0;
+mysql&gt; set global validate_password_length=4;
+#修改密码为moerats
+mysql&gt; set password=password(&quot;moerats&quot;);
+#退出数据库
+mysql&gt; exit;
+
+#CentOS 6重启数据库
+service mysqld restart
+#CentOS 7重启数据库
+systemctl restart mysqld</code></pre><p>创建新的数据库，使用命令：</p>
+<pre><code>#创建94imm数据库，moerats为数据库密码，自行修改
+mysql -uroot -pmoerats
+mysql &gt; create database 94imm;
+#退出
+mysql &gt; exit;</code></pre><p>此时<code>Mysql 5.7</code>算是安装完成了。</p>
+<p>安装<code>Caddy</code>：</p>
+<pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh
+#备用地址
+wget -N --no-check-certificate https://www.southcat.net/usr/shell/Caddy/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh</code></pre><h2 id="搭建站点"><a href="#搭建站点" class="headerlink" title="搭建站点"></a>搭建站点</h2><p><strong>1、安装Python3</strong><br>为了避免下面依赖安装出错，这里就不使用软件包安装<code>Python3</code>了，直接就使用脚本安装，使用命令：</p>
+<pre><code>#CentOS系统
+wget https://www.southcat.net/usr/shell/Python3/CentOS_Python3.6.sh &amp;&amp; sh CentOS_Python3.6.sh
+#Debian系统
+wget https://www.southcat.net/usr/shell/Python3/Debian_Python3.6.sh &amp;&amp; sh Debian_Python3.6.sh</code></pre><p><strong>2、搭建站点</strong></p>
+<pre><code>#下载源码
+git clone https://git.coding.net/zxy_coding/94imm.git
+#安装依赖
+cd 94imm
+pip3 install -r requirements.txt
+#导入目录的数据库文件，这里数据库名94imm，用户名和密码root、moerats，请自行修改
+mysql -uroot -pmoerats 94imm &lt; silumz.sql
+#编辑配置文件
+nano silumz/settings.py</code></pre><p>填上你的数据库信息，大致如下：</p>
+<pre><code>DATABASES = {
+    &apos;default&apos;: {
+        &apos;ENGINE&apos;: &apos;django.db.backends.mysql&apos;,
+        &apos;NAME&apos;: &apos;94imm&apos;,
+        &apos;USER&apos;: &apos;root&apos;,
+        &apos;PASSWORD&apos;: &apos;moerats&apos;,
+        &apos;HOST&apos;: &apos;127.0.0.1&apos;,
+        &apos;PORT&apos;: &apos;3306&apos;,
+    }
+}</code></pre><p>再使用<code>Ctrl+x</code>、<code>y</code>保存退出。</p>
+<p>编辑启动配置文件，使用命令：</p>
+<pre><code>nano uwsgi.ini</code></pre><p>然后看着改，大致修改如下：</p>
+<pre><code>#配置文件默认是将源码放在root目录，如果在其他目录可以自行修改
+#如果你要是用ip访问，将127.0.0.1:8000改成http=0.0.0.0:8000，端口也可以改</code></pre><p>启动程序：</p>
+<pre><code>uwsgi --ini uwsgi.ini</code></pre><p>此时站点地址为<code>ip:8000</code>。</p>
+<p><strong>3、域名反代</strong></p>
+<pre><code>提示：不需要域名的跳过该步骤</code></pre><p>宝塔面板设置：<br>然后点击左侧网站-添加站点，填上你的域名，其他默认，然后点击域名设置-反向代理，<code>url</code>设置<code>http://127.0.0.1:8000</code>即可。然后打开你的域名就可以看到站点了。</p>
+<p><code>Caddy</code>设置：</p>
+<pre><code>#以下全部内容是一个整体，请修改域名后一起复制到SSH运行！且会自动给你配置ssl证书
+echo &quot;www.southcat.net {
+ gzip
+ tls admin@southcat.net
+ proxy / 127.0.0.1:8000
+}&quot; &gt; /usr/local/caddy/Caddyfile
+
+#启动Caddy
+/etc/init.d/caddy start</code></pre><h2 id="采集发布"><a href="#采集发布" class="headerlink" title="采集发布"></a>采集发布</h2><p>光搭建站点是不够的，还需要采集并自动发布图片，爬虫和发布脚本在<code>crawler</code>目录，详细脚本说明：</p>
+<pre><code>crawler开头的脚本为图片采集爬虫，然后也会自动给你发布到文章，目前有6个美女站的爬虫脚本，后期可能会更多
+AutoPost.py为自动发布脚本，将你本地的图片自动发布到搭建的站点中
+Compress.py为图片压缩脚本，可以自动压缩图片，减少硬盘占用</code></pre><p>这里以<code>mm131</code>爬虫脚本为例，先编辑<code>crawler_mm131.py</code>爬虫脚本。</p>
+<pre><code>cd crawler
+nano crawler_mm131.py</code></pre><p>大致修改如下：</p>
+<pre><code>#修改为你的数据库连接信息
+dbhost = {
+    &quot;host&quot;: &quot;127.0.0.1&quot;,
+    &quot;dbname&quot;: &quot;94imm&quot;,
+    &quot;user&quot;: &quot;root&quot;,
+    &quot;password&quot;: &quot;moerats&quot;
+}
+#修改爬取的页数和图片保存路径，page为页数，img_path为路径，自行修改
+for i in [{&quot;page&quot;: 1, &quot;type&quot;: &quot;xinggan&quot;, &quot;type_id&quot;: 1}, {&quot;page&quot;: 1, &quot;type&quot;: &quot;qingchun&quot;, &quot;type_id&quot;: 3},
+          {&quot;page&quot;: 1, &quot;type&quot;: &quot;xiaohua&quot;, &quot;type_id&quot;: 3}, {&quot;page&quot;: 1, &quot;type&quot;: &quot;chemo&quot;, &quot;type_id&quot;: 1},
+          {&quot;page&quot;: 1, &quot;type&quot;: &quot;qipao&quot;, &quot;type_id&quot;: 2}, {&quot;page&quot;: 1, &quot;type&quot;: &quot;mingxing&quot;, &quot;type_id&quot;: 1}]:
+spider=Spider(page_num=i.get(&quot;page&quot;),img_path=&apos;/static/images/mm131/&apos;,thread_num=10,type_id=i.get(&quot;type_id&quot;),type=i.get(&quot;type&quot;))</code></pre><p>然后开始采集并自动发布到程序，使用命令：</p>
+<pre><code>#其它爬虫使用方法也都一样
+python3 crawler_mm131.py</code></pre><p>然后就可以再图片站看到你的图片了，要是不显示的话，可以尝试删除<code>cache</code>目录里的缓存文件。</p>
+<p>如果你的硬盘空间很小，可以使用压缩脚本压缩下，使用命令：</p>
+<pre><code>#压缩时，会要你选择图片等路径
+python3 Compress.py</code></pre><p>如果压缩报错<code>No module named &#39;PIL&#39;</code>，那需要先使用命令<code>pip3 install Pillow</code>。</p>
+<p>如果你要发布你本地的图片，就需要编辑<code>AutoPost.py</code>，填上你的数据库信息，再使用<code>python3 AutoPost.py</code>发布即可。</p>
+<p>最后你运行爬虫脚本的时候出现<code>UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode</code>错误，那就需要先将系统的默认语言环境编码设置为<code>UTF-8</code>格式，使用命令：</p>
+<pre><code>echo &apos;export LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8&apos; &gt;&gt; /etc/profile
+source /etc/profile</code></pre><h2 id="其他说明"><a href="#其他说明" class="headerlink" title="其他说明"></a>其他说明</h2><p>对于修改模板，目前模板总共有<code>3</code>套，位于<code>templates</code>文件夹下，需要先修改<code>silumz</code>下<code>settings</code>文件中的模板配置。</p>
+<pre><code>#94imm为模板名
+TEMPLATES = [
+{
+    &apos;BACKEND&apos;: &apos;django.template.backends.django.DjangoTemplates&apos;,
+    &apos;DIRS&apos;: [os.path.join(BASE_DIR, &apos;templates&apos;+&quot;/&quot;+&quot;94imm&quot;)]</code></pre><p>然后将模板目录下的<code>pagination.html</code>文件放入<code>python</code>安装目录的<code>pagination</code>下。</p>
+<p>一般为<code>/usr/local/lib/python3.6/site-packages/dj_pagination/templates/pagination</code></p>
+<p>然后自己修改模板，模板为<code>html</code>文件，可在页面添加统计代码和广告代码。</p>
+<pre><code>https://www.dablog.cn/index.php/archives/7/
+https://sunsea.im/139/94imm_tips/</code></pre><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-03-10T06:05:19.000Z" itemprop="datePublished">2020-03-10</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.251Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/1948/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Python 3.6一键安装脚本 for CentOS/Debian</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/1986/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">一个可以观看斗鱼/虎牙/熊猫/B站/全民等直播平台的第三方客户端：Moon Light v0.5</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

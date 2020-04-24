@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>如何查看无人机是否开启了FCC，及开启方法 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="如何查看无人机是否开启了FCC，及开启方法 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2254/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前博主发过几篇无人机开启FCC的教程，查看：大疆无人机通过开启FCC增大遥控距离，通过群里很多玩家的提问来看，大多数都不知道怎么样才算开启成功了，所以博主就单独拿该问题来发篇文章。 目前市面上常见的大疆无人机分为这几类，精灵3系列，精灵4系列，御系列，悟系列，高端玩家M600P系列。每一系列开启FCC后的状态不同，方法也有所差异，这里就介绍下如何判断自己是否开启了FCC。 注意：以下内容仅 - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/PD_FCC(1).jpg"><meta property="og:image" content="https://www.southcat.net/usr/picture/PD_FCC(2).jpg"><meta property="og:image" content="https://www.southcat.net/usr/picture/PD_FCC(3).jpg"><meta property="article:published_time" content="2019-11-01T21:59:20.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.232Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.232Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2254/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2254/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2254/"
+    },
+    "headline": "如何查看无人机是否开启了FCC，及开启方法 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-11-01T21:59:20.000Z",
+    "dateModified": "2020-04-24T09:34:44.232Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：之前博主发过几篇无人机开启FCC的教程，查看：大疆无人机通过开启FCC增大遥控距离，通过群里很多玩家的提问来看，大多数都不知道怎么样才算开启成功了，所以博主就单独拿该问题来发篇文章。 目前市面上常见的大疆无人机分为这几类，精灵3系列，精灵4系列，御系列，悟系列，高端玩家M600P系列。每一系列开启FCC后的状态不同，方法也有所差异，这里就介绍下如何判断自己是否开启了FCC。 注意：以下内容仅 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=如何查看无人机是否开启了FCC，及开启方法" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=如何查看无人机是否开启了FCC，及开启方法&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=如何查看无人机是否开启了FCC，及开启方法" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABjElEQVR42u3aMRKDMAxEUe5/6aRn0O4KMkbOfBqKEPMKYcmyj8+A6wABAsQWiENcd5+J/wNiLOIyaE4vON+vBq3+X44LYjTiKrCqF57v5+BMxgWxP6J6vkKB+G9ENQFVSQzEfyCqRFP9bovYX2ZREMsRqiB9cv9ZtQ1iKaITYA6nCt9Hq3IQSxEqkKrgvUpiySIaxD4IWXgEAydNk1YCA/E6Ii1iVWJKCpro6wDxOsIuUIICpyqQHQ7EbIRrgDmcg8kEBmIsIl3AuCZJGswg5iNc0KkFUtqEvf11gFiGSAoUtymXFEUygYEYhUgLWzVwGry2UwNiBMJtwnZe7A5xtHZ+QIxAqJccwaUmrTgwQYxDqGTlFkbdCQvEPojOhNWZpOwBQBAjEN2NdxeMblMGxHxEsrGeTkjJwZ54BQbiVYQ72HMnuSUNFxCzEZ2Dwi4g08PFIPZFpJuy7lBQq0kCYjxCbbKoSU4eNAYxGhE1P8XASbMFxD6ITiNMJTC1Gfeo2gaxFPHmBQIEiNGIL4b8OQiRRCwnAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">如何查看无人机是否开启了FCC，及开启方法</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-11-02</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=如何查看无人机是否开启了FCC，及开启方法&url=http://hexo.southcat.net/2254/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=如何查看无人机是否开启了FCC，及开启方法&url=http://hexo.southcat.net/2254/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2254/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2254/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2254/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2254/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2254/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABjElEQVR42u3aMRKDMAxEUe5/6aRn0O4KMkbOfBqKEPMKYcmyj8+A6wABAsQWiENcd5+J/wNiLOIyaE4vON+vBq3+X44LYjTiKrCqF57v5+BMxgWxP6J6vkKB+G9ENQFVSQzEfyCqRFP9bovYX2ZREMsRqiB9cv9ZtQ1iKaITYA6nCt9Hq3IQSxEqkKrgvUpiySIaxD4IWXgEAydNk1YCA/E6Ii1iVWJKCpro6wDxOsIuUIICpyqQHQ7EbIRrgDmcg8kEBmIsIl3AuCZJGswg5iNc0KkFUtqEvf11gFiGSAoUtymXFEUygYEYhUgLWzVwGry2UwNiBMJtwnZe7A5xtHZ+QIxAqJccwaUmrTgwQYxDqGTlFkbdCQvEPojOhNWZpOwBQBAjEN2NdxeMblMGxHxEsrGeTkjJwZ54BQbiVYQ72HMnuSUNFxCzEZ2Dwi4g08PFIPZFpJuy7lBQq0kCYjxCbbKoSU4eNAYxGhE1P8XASbMFxD6ITiNMJTC1Gfeo2gaxFPHmBQIEiNGIL4b8OQiRRCwnAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#精灵3系列"><span class="post-toc-number">1.</span> <span class="post-toc-text">精灵3系列</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#精灵4系列"><span class="post-toc-number">2.</span> <span class="post-toc-text">精灵4系列</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#御系列及精灵4P-2-0"><span class="post-toc-number">3.</span> <span class="post-toc-text">御系列及精灵4P 2.0</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#M600P系列"><span class="post-toc-number">4.</span> <span class="post-toc-text">M600P系列</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">5.</span> <span class="post-toc-text">总结</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>之前博主发过几篇无人机开启<code>FCC</code>的教程，查看：大疆无人机通过开启FCC增大遥控距离，通过群里很多玩家的提问来看，大多数都不知道怎么样才算开启成功了，所以博主就单独拿该问题来发篇文章。</p>
+<p>目前市面上常见的大疆无人机分为这几类，<code>精灵3</code>系列，<code>精灵4</code>系列，<code>御</code>系列，<code>悟</code>系列，高端玩家<code>M600P</code>系列。每一系列开启<code>FCC</code>后的状态不同，方法也有所差异，这里就介绍下如何判断自己是否开启了<code>FCC</code>。</p>
+<pre><code>注意：以下内容仅作技术交流，请勿用于实际用途，并且请按照当地法律法规操作无线电，否则后果自负！
+
+提示：如果对于FCC不懂的，可以去该论坛提问，地址：www.pilotbbs.com，里面会有大神帮助你。</code></pre><h2 id="精灵3系列"><a href="#精灵3系列" class="headerlink" title="精灵3系列"></a>精灵3系列</h2><p><strong>1、判断方法</strong><br>因为<code>精灵3</code>系列（包括<code>3s</code>、<code>3p</code>、<code>3se</code>、<code>3 4k</code>等），图传采用<code>Lightbridge</code>图传方案或<code>WIFI</code>图传，不像御系列，是采用<code>OcuSync</code>的高清数字图传系统。因此不能通过看<code>4KM</code>线条在纵坐标<code>100</code>以上来判断。那你说了，没法看，我怎么知道我开启成功了呢？简单，通过飞行测试。你在没开启的情况下，可以飞多远，然后同方向、同高度进行飞行测试，飞行距离比之前远的很明显就是开启成功。</p>
+<p><strong>2、开启方法</strong><br><code>精灵3s</code>、<code>3 4k</code>由于采用的是<code>WIFI</code>图传，因此开启方法有专用的工具，该工具会在群内分享，可以通过下方留的<code>QQ</code>群加群。不会用的可以在群里问下。<code>精灵3</code>系类其它飞机，建议是采用降级固件的方案，因为最新的固件就算你开启了<code>FCC</code>效果也不明显，实际测试过。降级过后再配合开启<code>FCC</code>，就可以像精灵<code>3</code>系列刚出来一样爽飞了。当然，你说有多爽，我觉得能问出这句话的，建议你买御哈苏，毕竟新机器，钱也到位了。御哈苏的图传比御姐升级了不少，除了价格贵，其他都挺好。</p>
+<h2 id="精灵4系列"><a href="#精灵4系列" class="headerlink" title="精灵4系列"></a>精灵4系列</h2><p><strong>1、判断方法</strong><br><code>精灵4</code>系列（包括<code>4a</code>、<code>4p</code>），开启<code>FCC</code>不能看图传状态，不过开启<code>32</code>信道是可以明显的看出来的。信道数量增加到了<code>32</code>，会数数的应该都懂。那么如何判断是否开启<code>FCC</code>，方法也是通过飞行测试。</p>
+<p><strong>2、开启方法</strong><br>不论安卓还是苹果都可以用低版本的<code>APP</code>来导入配置文件开启<code>FCC</code>，具体的方法可以查看教程→传送门。目前不论安卓还是苹果，最新<code>APP</code>均已支持开启<code>FCC</code>，有需要依然可以通过下方留的<code>QQ</code>群加群。最新苹果<code>APP</code>不仅可以开启<code>FCC</code>，还可以同时开启<code>32</code>信道，信号和图传都得到了加强，效果很好。</p>
+<h2 id="御系列及精灵4P-2-0"><a href="#御系列及精灵4P-2-0" class="headerlink" title="御系列及精灵4P 2.0"></a>御系列及精灵4P 2.0</h2><p><strong>1、判断方法</strong><br>大疆<code>御系列</code>无人机包括(<code>air</code>、<code>pro</code>、<code>御2</code>)，其中<code>air</code>是<code>WIFI</code>图传，和其他两款不同。<code>精灵4P 2.0</code>因为采用了和<code>御2</code>一样的图传技术，因此我们放在一起讨论。其中<code>AIR</code>是通过看信道判断，没开启的情况下，可以看到<code>12</code>、<code>13</code>两个信道，开启后，就没有这两个信道了。其他的都是存在的。</p>
+<p>下图为<code>air</code>没开启<code>FCC</code>的状态，还有<code>12</code>和<code>13</code>两个信道。<br><img src="https://www.southcat.net/usr/picture/PD_FCC(1).jpg" alt="请输入图片描述" title="请输入图片描述"></p>
+<p>下图为<code>air</code>开启了<code>FCC</code>的状态，<code>12</code>和<code>13</code>信道没有了。<br><img src="https://www.southcat.net/usr/picture/PD_FCC(2).jpg" alt="请输入图片描述" title="请输入图片描述"></p>
+<p><code>御姐</code>和<code>御2</code>系列、<code>精灵4p 2.0</code>无人机都可以通过看<code>4M</code>的线条在纵坐标<code>100</code>以上来判断，没开启的话<code>4KM</code>的线条在<code>100</code>以下。下图为开启<code>FCC</code>成功的状态。<br><img src="https://www.southcat.net/usr/picture/PD_FCC(3).jpg" alt="请输入图片描述" title="请输入图片描述"></p>
+<p><strong>2、开启方法</strong><br>愿意自己捣腾的用户可以使用低版本的<code>APP</code>来导入配置文件开启<code>FCC</code>或者<code>BOOST</code>，教程查看→传送门，但是低版本<code>APP</code>不支持<code>御2</code>、<code>精灵4p 2.0</code>等机型。</p>
+<h2 id="M600P系列"><a href="#M600P系列" class="headerlink" title="M600P系列"></a>M600P系列</h2><p><strong>1、判断方法</strong><br>和<code>精灵3</code>系列的相同，只有通过飞行测试感受出来。</p>
+<p><strong>2、开启方法</strong><br>因为使用的是<code>DJI GO</code>，目前最新的<code>DJI GO</code>还没有直接破解的，开启方法较为复杂，建议加群咨询大神们。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-11-01T21:59:20.000Z" itemprop="datePublished">2019-11-02</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.232Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/1609/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Let&#39;s Encrypt将从2018年1月起免费提供通配符证书</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/1514/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux VPS锐速破解版一键安装脚本</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

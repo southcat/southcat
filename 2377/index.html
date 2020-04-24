@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>一个可以保护个人隐私的网络搜索服务：秘迹搜索搭建教程 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="一个可以保护个人隐私的网络搜索服务：秘迹搜索搭建教程 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2377/"><meta property="og:locale" content="en"><meta name="description" content="说明：之前介绍过一个多平台聚合搜索服务Searx，都是以Google等国外搜索为主→传送门，然后这里说的秘迹搜索就是基于Searx二次开发，主要是聚合国内的百度、360、搜狗等搜索服务，专为国人开发，而且秘迹搜索可以最大程度的保护个人搜索隐私，Ta不会根据搜索关键词追踪用户，也不会通过历史搜索内容做广告推荐，目前该搜索源码开源，看见很多人想搭建个，发现教程挺简单的，这里就水个搭建教程。 截图 安装 - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/mijisousuo(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/mijisousuo(2).png"><meta property="article:published_time" content="2019-12-23T17:23:28.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.240Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.240Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2377/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2377/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2377/"
+    },
+    "headline": "一个可以保护个人隐私的网络搜索服务：秘迹搜索搭建教程 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-12-23T17:23:28.000Z",
+    "dateModified": "2020-04-24T09:34:44.240Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：之前介绍过一个多平台聚合搜索服务Searx，都是以Google等国外搜索为主→传送门，然后这里说的秘迹搜索就是基于Searx二次开发，主要是聚合国内的百度、360、搜狗等搜索服务，专为国人开发，而且秘迹搜索可以最大程度的保护个人搜索隐私，Ta不会根据搜索关键词追踪用户，也不会通过历史搜索内容做广告推荐，目前该搜索源码开源，看见很多人想搭建个，发现教程挺简单的，这里就水个搭建教程。 截图 安装 - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=一个可以保护个人隐私的网络搜索服务：秘迹搜索搭建教程" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=一个可以保护个人隐私的网络搜索服务：秘迹搜索搭建教程&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=一个可以保护个人隐私的网络搜索服务：秘迹搜索搭建教程" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABiElEQVR42u3awW7EIAyE4bz/S7ennhrPDCjNDtWfyx42gi8SMrbh+ip4LhAgQByBuMTz87969+6/ZFwQ3YjbRWMGU5Mn44LoRyQL8m7wafJoXBBHItzg02IE8X8RycRTEANxNkJtNCnq7p1HdlEQryOSRHfn9/FsG8QrCFu0DgvMBaJHq3IQryJU4FnZxGRQmgIaiHqE2pRcQHOFclwQg6hAJI2QpMhxhfQvEIhahNqsJphrsLmgB6IboYLS3SJzQW36kOjQBUQFYgwmmwvSjQeiGzG9lDbVVXDaKohBfByhFqba4FwB5JJcEGcgVJByB2xJcgviDESalLgGiQtysvgBUYVIG+M7F4FsYgSiEpFuOi4IqYJ4XPAgahFJcEmL4aQRB6IfkR7EbSWzTx/OgvhzRLIhrQasJMkB0Y1QC3Ll8ri7EGQzKxBViCRhdZc5XIITnRCDqEckl3XSxkjcvQNxJCItfmRDFkQ1Qk2ymvy6RAdEPyK9KLzSXE8+DEQn4pMPCBAgqhHf+gKJqVNczRgAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">一个可以保护个人隐私的网络搜索服务：秘迹搜索搭建教程</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2019-12-24</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=一个可以保护个人隐私的网络搜索服务：秘迹搜索搭建教程&url=http://hexo.southcat.net/2377/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=一个可以保护个人隐私的网络搜索服务：秘迹搜索搭建教程&url=http://hexo.southcat.net/2377/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2377/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2377/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2377/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2377/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2377/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABiElEQVR42u3awW7EIAyE4bz/S7ennhrPDCjNDtWfyx42gi8SMrbh+ip4LhAgQByBuMTz87969+6/ZFwQ3YjbRWMGU5Mn44LoRyQL8m7wafJoXBBHItzg02IE8X8RycRTEANxNkJtNCnq7p1HdlEQryOSRHfn9/FsG8QrCFu0DgvMBaJHq3IQryJU4FnZxGRQmgIaiHqE2pRcQHOFclwQg6hAJI2QpMhxhfQvEIhahNqsJphrsLmgB6IboYLS3SJzQW36kOjQBUQFYgwmmwvSjQeiGzG9lDbVVXDaKohBfByhFqba4FwB5JJcEGcgVJByB2xJcgviDESalLgGiQtysvgBUYVIG+M7F4FsYgSiEpFuOi4IqYJ4XPAgahFJcEmL4aQRB6IfkR7EbSWzTx/OgvhzRLIhrQasJMkB0Y1QC3Ll8ri7EGQzKxBViCRhdZc5XIITnRCDqEckl3XSxkjcvQNxJCItfmRDFkQ1Qk2ymvy6RAdEPyK9KLzSXE8+DEQn4pMPCBAgqhHf+gKJqVNczRgAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#域名反代"><span class="post-toc-number">3.</span> <span class="post-toc-text">域名反代</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置匿名访问"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置匿名访问</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong>之前介绍过一个多平台聚合搜索服务<code>Searx</code>，都是以<code>Google</code>等国外搜索为主→传送门，然后这里说的秘迹搜索就是基于<code>Searx</code>二次开发，主要是聚合国内的百度、<code>360</code>、搜狗等搜索服务，专为国人开发，而且秘迹搜索可以最大程度的保护个人搜索隐私，<code>Ta</code>不会根据搜索关键词追踪用户，也不会通过历史搜索内容做广告推荐，目前该搜索源码开源，看见很多人想搭建个，发现教程挺简单的，这里就水个搭建教程。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/mijisousuo(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/mijisousuo(2).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><strong>Github地址：</strong><a href="https://github.com/entropage/mijisou" target="_blank" rel="noopener">https://github.com/entropage/mijisou</a></p>
+<p><strong>官方网站：</strong><a href="https://mijisou.com，不想自己搭建的直接就使用这个地址搜索。" target="_blank" rel="noopener">https://mijisou.com，不想自己搭建的直接就使用这个地址搜索。</a></p>
+<p><strong>1、安装依赖</strong><br><code>CenOS 6</code>系统：</p>
+<pre><code>#安装EPEL
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+#安装Python3和Redis
+yum install python34 redis git screen -y
+#安装pip3
+wget https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py
+#启动Redis
+service redis start
+#设置Redis开机自启
+chkconfig redis on</code></pre><p><code>CenOS 7</code>系统：</p>
+<pre><code>#安装EPEL
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+#安装Python3和Redis
+yum install python36 redis git screen -y
+#安装pip3
+wget https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py
+#启动Redis
+systemctl start redis
+#设置Redis开机自启
+systemctl enable redis</code></pre><p><code>Debian</code>/<code>Ubuntu</code>系统：</p>
+<pre><code>#安装pip3和Redis
+apt update
+apt install python3-pip redis-server git screen -y</code></pre><p><strong>2、安装搜索</strong></p>
+<pre><code>#拉取源码
+git clone https://github.com/entropage/mijisou.git
+#安装依赖
+cd mijisou &amp;&amp; pip3 install -r requirements.txt
+#编辑配置文件
+nano searx/settings_et_dev.yml</code></pre><p>这里只说主要配置，先填写<code>Reids</code>服务器<code>IP</code>，参数如下：</p>
+<pre><code>cache_server : &quot;127.0.0.1&quot;</code></pre><p>然后设置匿名访问，这个之前没有在<code>Searx</code>教程提过，主要是秘迹搜索以隐私为主，所以就配合下，这里就说下配置过程，具体方法看后面，当然你不设置也是不影响基本使用的。</p>
+<p>运行的话，貌似<code>Github</code>只给了<code>flask</code>开发运行方法，这里不建议使用，所以就不写出来了，然后博主提供个<code>gunicorn</code>运行方法，使用命令：</p>
+<pre><code>#设置下变量
+export SEARX_SETTINGS_PATH=settings_et_dev.yml
+#启动，端口可以自行修改
+gunicorn searx.webapp:app -w 4 -b 127.0.0.1:8888 -D</code></pre><p>此时访问地址为<code>127.0.0.1:8888</code>，还需要使用域名反代才能访问，如果你要使用<code>ip</code>访问，将运行命令改成<code>0.0.0.0:8888</code>即可。</p>
+<h2 id="域名反代"><a href="#域名反代" class="headerlink" title="域名反代"></a>域名反代</h2><p>反代可以用<code>Nginx</code>、<code>Apache</code>、<code>Caddy</code>，这里只说宝塔和<code>Caddy</code>。如果你网站有宝塔，就可以使用宝塔进行反代，如果没有，建议使用第<code>2</code>种的<code>Caddy</code>反代，配置很快。</p>
+<p><strong>1、宝塔反代</strong><br>先进入宝塔面板，然后点击左侧网站，添加站点，然后再点击添加好了的域名名称，这时候就进入了站点配置，点击反向代理，目标<code>URL</code>填入<code>http://127.0.0.1:8888</code>，再启用反向代理即可。至于启用<code>SSL</code>就不说了，直接在站点配置就可以启用。</p>
+<p><strong>2、Caddy反代</strong><br>安装<code>Caddy</code>：</p>
+<pre><code>wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh
+#备用地址
+wget -N --no-check-certificate https://www.southcat.net/usr/shell/Caddy/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh</code></pre><p>配置<code>Caddy</code>：</p>
+<pre><code>#以下全部内容是一个整体，请修改域名后一起复制到SSH运行！
+
+#http访问，该配置不会自动签发SSL
+echo &quot;www.southcat.net {
+ gzip
+ proxy / 127.0.0.1:8888 
+}&quot; &gt;&gt; /usr/local/caddy/Caddyfile
+
+#https访问，该配置会自动签发SSL，请提前解析域名到VPS服务器
+echo &quot;www.southcat.net {
+ gzip
+ tls admin@southcat.net
+ proxy / 127.0.0.1:8888
+}&quot; &gt;&gt; /usr/local/caddy/Caddyfile</code></pre><p><code>tls</code>参数会自动帮你签发<code>ssl</code>证书，如果你要使用自己的<code>ssl</code>，改为<code>tls /root/xx.crt /root/xx.key</code>即可。后面为<code>ssl</code>证书路径。</p>
+<p>启动<code>Caddy</code>：</p>
+<pre><code>/etc/init.d/caddy start</code></pre><p>就可以打开域名进行访问了。</p>
+<p><strong>3、Nginx配置</strong><br>如果你使用其它的，这里就大概发个<code>Nginx</code>反代配置，直接添加到配置文件即可。</p>
+<pre><code>#在配置文件里添加
+  location / {
+      proxy_pass http://127.0.0.1:8888;
+      proxy_set_header        Host                 $host;
+      proxy_set_header        X-Real-IP            $remote_addr;
+      proxy_set_header        X-Forwarded-For      $proxy_add_x_forwarded_for;
+      proxy_set_header        X-Remote-Port        $remote_port;
+      proxy_set_header        X-Forwarded-Proto    $scheme;
+      proxy_redirect          off;
+  }</code></pre><p>就可以打开域名进行访问了。</p>
+<h2 id="配置匿名访问"><a href="#配置匿名访问" class="headerlink" title="配置匿名访问"></a>配置匿名访问</h2><p><strong>Morty项目地址：</strong><a href="https://github.com/asciimoo/morty" target="_blank" rel="noopener">https://github.com/asciimoo/morty</a></p>
+<p>该功能主要用的<code>Morty</code>，大致就是重写网页以排除恶意<code>HTML</code>标记和属性，还替换外部资源引用以防止第三方信息泄露。</p>
+<p><strong>1、安装Golang环境</strong></p>
+<pre><code>#Debian/Ubuntu系统
+apt-get -y install golang
+#创建目录并定义GOPATH环境变量指向该目录
+mkdir ~/mjsmorty
+echo &apos;export GOPATH=&quot;$HOME/mjsmorty&quot;&apos; &gt;&gt; ~/.bashrc
+source ~/.bashrc
+
+#CentOS/RHEL系统
+yum -y install golang
+#创建目录并定义GOPATH环境变量指向该目录。
+mkdir ~/mjsmorty
+echo &apos;export GOPATH=&quot;$HOME/mjsmorty&quot;&apos; &gt;&gt; ~/.bashrc
+source ~/.bashrc</code></pre><p><strong>2、安装Morty</strong></p>
+<pre><code>#安装
+go get github.com/asciimoo/morty
+mv ~/mjsmorty/bin/morty /usr/local/bin
+
+#查看版本，有版本输出信息即按照成功
+morty -version</code></pre><p><strong>3、启动Morty</strong><br>先随机生成一个十六进制的<code>key</code>，使用命令：</p>
+<pre><code>openssl rand -hex 16</code></pre><p>启动命令：</p>
+<pre><code>#监听端口和key值自行修改
+screen -dmS morty morty -listen 127.0.0.1:3000 -key moerats</code></pre><p>此时<code>Morty</code>监听地址为<code>http://127.0.0.1:3000</code>，然后再使用一个二级域名，比如<code>morty.southcat.net</code>对该地址反代，反代参考上面的教程，建议加上<code>SSL</code>。</p>
+<p>然后修改配置文件<code>searx/settings_et_dev.yml</code>，大致修改如下：</p>
+<pre><code>#这里的key值修改成上面随机生成的十六进制值
+secret_key : &quot;moerats&quot;
+
+#填入你的morty地址、key值、秘迹搜索地址，这里的key需要和上面的一致
+result_proxy:
+    url : https://morty.southcat.net
+    key : moerats
+    server_name : https://www.southcat.net</code></pre><p>然后重启秘迹搜索生效。最后主题目录为<code>searx/static/themes</code>，设置方法可以自己参考<code>Github</code>地址的提示。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-12-23T17:23:28.000Z" itemprop="datePublished">2019-12-24</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.240Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/2216/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Linux VPS一键安装桌面环境和RDP远程桌面连接</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/1824/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">Bitly：一个可以还原短网址链接的网站</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>

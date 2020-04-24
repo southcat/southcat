@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        hexo-theme-suka © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+    -->
+
+    <!-- ### Resource Hint ### -->
+
+    <!-- ## DNS Prefetch ## -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+    <!-- ## Preload ## -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="renderer" content="webkit">
+
+    <!-- Title -->
+    <title>yunBT：一个基于ThinkCMS的多用户BT离线下载程序，支持在线播放 | 南猫</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image&#x2F;ico" href="/img/suka-favicon.ico">
+
+    <!-- ### Import File ### -->
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css"><style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style><link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    <link rel="preload" href="/css/highlight/github.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/css/highlight/github.min.css"></noscript>
+
+
+
+
+
+<script>
+/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+</script>
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="南猫"><meta name="msapplication-starturl" content="http://hexo.southcat.net"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="南猫"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="yunBT：一个基于ThinkCMS的多用户BT离线下载程序，支持在线播放 | 南猫"><meta property="og:site_name" content="南猫"><meta property="og:type" content="article"><meta property="og:url" content="http://hexo.southcat.net/2319/"><meta property="og:locale" content="en"><meta name="description" content="说明：yunBT这个项目其实很早就有了，只是老没更新，现在作者基于ThinkCMS重做该程序，支持多用户注册下载，Magnet和HTTP下载。每个单独用户支持10个任务，默认下载文件最大为10GB，可以在后台修改。下载完成后用户可以直接查看下载的文件仅支持mp4文件在线播放。管理员可以添加用户的下载量及查看管理下载任务，支持在线转码，分享功能等。 由于该程序刚出来，功能较少，暂不支持下载工具下载， - John Doe - 南猫"><meta property="og:image" content="https://www.southcat.net/usr/picture/yunbt_(1).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/yunbt_(2).png"><meta property="og:image" content="https://www.southcat.net/usr/picture/yunbt_(3).png"><meta property="article:published_time" content="2020-01-27T23:03:59.000Z"><meta property="article:modified_time" content="2020-04-24T09:34:44.245Z"><meta property="og:updated_time" content="2020-04-24T09:34:44.245Z"><meta property="article:author" content="John Doe"><meta name="twitter:card" content="summary">
+
+    
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="http://hexo.southcat.net/2319/">
+
+    <meta name="generator" content="Hexo 4.2.0">
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "http://hexo.southcat.net/2319/",
+    "@type": "BlogPosting",
+    "logo": "http://hexo.southcat.net/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://hexo.southcat.net/2319/"
+    },
+    "headline": "yunBT：一个基于ThinkCMS的多用户BT离线下载程序，支持在线播放 | 南猫",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2020-01-27T23:03:59.000Z",
+    "dateModified": "2020-04-24T09:34:44.245Z",
+    "author": {
+        "@type": "Person",
+        "name": "John Doe",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/default_avatar.png"
+        },
+        "description": "Hi, nice to meet you."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "南猫",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://hexo.southcat.net/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://hexo.southcat.net/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "说明：yunBT这个项目其实很早就有了，只是老没更新，现在作者基于ThinkCMS重做该程序，支持多用户注册下载，Magnet和HTTP下载。每个单独用户支持10个任务，默认下载文件最大为10GB，可以在后台修改。下载完成后用户可以直接查看下载的文件仅支持mp4文件在线播放。管理员可以添加用户的下载量及查看管理下载任务，支持在线转码，分享功能等。 由于该程序刚出来，功能较少，暂不支持下载工具下载， - John Doe - 南猫"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+</head>
+
+    <body>
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">南猫</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=南猫&url=http://hexo.southcat.net&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=南猫&url=http://hexo.southcat.net&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net&title=yunBT：一个基于ThinkCMS的多用户BT离线下载程序，支持在线播放" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=yunBT：一个基于ThinkCMS的多用户BT离线下载程序，支持在线播放&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=http://hexo.southcat.net&text=yunBT：一个基于ThinkCMS的多用户BT离线下载程序，支持在线播放" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABgElEQVR42u3a0RKCMAxEUf7/p/WdabIbZHDLXF5EhXKciW0SOD4B2wECBIgtEEeznY9ZnVN9Zo0LIhaxDJrTBTq0Or8cF0Q0YhVYq8FWx3TfVeOCeAeimsC6Y0G8E7HaV+9B7I+oFhq1UJVJ7J2rKIjHEV1C+svrbdk2iEcRboBNLnp7VQ7iUUQXSM4EpIrodjwQWyFUcFYNka6RMsqsQPwVUSW1KgidC42aqSCiEF1C4xTAVaB3OBCZCNUAcYtfJ6BlZgUiAjE5eXIzRiXGIHIRVZBViUtVIHUNt/JHgohEOIvSpEBWEx6IfETXTHeaH25zxPp3gIhAuMmMWzg7kx6IfRBOI2xSMKnABZGN6BKZyQMekwkLxD4I54a92rcariAiEc6NOKeZ5k5+IPIR7oPCV7H2AgYiCuEUvk4B7Sa/IPZATB/ouVr0gHgHwimSVWI7Ln5AbINwb9g6CyGIbIQTVG5i6wYwiFyEaoTJSccspi9n2yAeRfxzAwECRDTiC6xlWOjxMzVjAAAAAElFTkSuQmCC" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    <div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">yunBT：一个基于ThinkCMS的多用户BT离线下载程序，支持在线播放</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/img/default_avatar.png" src="/img/suka-lazyload.gif" alt="John Doe's Avatar">
+        <span>2020-01-28</span>
+        
+            <span class="suka-devide-dot"></span>
+            <a class="category-link" href="/categories/cj/">cj</a>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=yunBT：一个基于ThinkCMS的多用户BT离线下载程序，支持在线播放&url=http://hexo.southcat.net/2319/&pic=http://hexo.southcat.net/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=yunBT：一个基于ThinkCMS的多用户BT离线下载程序，支持在线播放&url=http://hexo.southcat.net/2319/&via=John Doe" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://hexo.southcat.net/2319/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=http://hexo.southcat.net/2319/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://hexo.southcat.net/2319/&title=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=南猫&title=南猫&summary=&pics=http://hexo.southcat.net/img/suka-favicon.ico&url=http://hexo.southcat.net/2319/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=http://hexo.southcat.net/2319/&text=南猫" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABgElEQVR42u3a0RKCMAxEUf7/p/WdabIbZHDLXF5EhXKciW0SOD4B2wECBIgtEEeznY9ZnVN9Zo0LIhaxDJrTBTq0Or8cF0Q0YhVYq8FWx3TfVeOCeAeimsC6Y0G8E7HaV+9B7I+oFhq1UJVJ7J2rKIjHEV1C+svrbdk2iEcRboBNLnp7VQ7iUUQXSM4EpIrodjwQWyFUcFYNka6RMsqsQPwVUSW1KgidC42aqSCiEF1C4xTAVaB3OBCZCNUAcYtfJ6BlZgUiAjE5eXIzRiXGIHIRVZBViUtVIHUNt/JHgohEOIvSpEBWEx6IfETXTHeaH25zxPp3gIhAuMmMWzg7kx6IfRBOI2xSMKnABZGN6BKZyQMekwkLxD4I54a92rcariAiEc6NOKeZ5k5+IPIR7oPCV7H2AgYiCuEUvk4B7Sa/IPZATB/ouVr0gHgHwimSVWI7Ln5AbINwb9g6CyGIbIQTVG5i6wYwiFyEaoTJSccspi9n2yAeRfxzAwECRDTiC6xlWOjxMzVjAAAAAElFTkSuQmCC" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                        
+                            <div id="post-toc"><ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">截图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#功能"><span class="post-toc-number">2.</span> <span class="post-toc-text">功能</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更新"><span class="post-toc-number">3.</span> <span class="post-toc-text">更新</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#说明"><span class="post-toc-number">4.</span> <span class="post-toc-text">说明</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#LNMP安装"><span class="post-toc-number">5.</span> <span class="post-toc-text">LNMP安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#宝塔安装"><span class="post-toc-number">6.</span> <span class="post-toc-text">宝塔安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置python3"><span class="post-toc-number">7.</span> <span class="post-toc-text">配置python3</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置定时任务"><span class="post-toc-number">8.</span> <span class="post-toc-text">设置定时任务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装FFmpeg"><span class="post-toc-number">9.</span> <span class="post-toc-text">安装FFmpeg</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Aria2"><span class="post-toc-number">10.</span> <span class="post-toc-text">安装Aria2</span></a></li></ol></div>
+                        
+                    
+                    <article id="post-content">
+                        <p><strong>说明：</strong><code>yunBT</code>这个项目其实很早就有了，只是老没更新，现在作者基于<code>ThinkCMS</code>重做该程序，支持多用户注册下载，<code>Magnet</code>和<code>HTTP</code>下载。每个单独用户支持<code>10</code>个任务，默认下载文件最大为<code>10GB</code>，可以在后台修改。下载完成后用户可以直接查看下载的文件仅支持<code>mp4</code>文件在线播放。管理员可以添加用户的下载量及查看管理下载任务，支持在线转码，分享功能等。</p>
+<p>由于该程序刚出来，功能较少，暂不支持下载工具下载，可以在浏览器中下载，后续将添加，而且作者计划以后会增加积分功能、邀请功能、工具下载、使用<code>Onedrive</code>存储视频等，有兴趣的可以期待下。</p>
+<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://www.southcat.net/usr/picture/yunbt_(1).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/yunbt_(2).png" alt="请输入图片描述" title="请输入图片描述"><br><img src="https://www.southcat.net/usr/picture/yunbt_(3).png" alt="请输入图片描述" title="请输入图片描述"></p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
+<li>添加用户下载量</li>
+<li>下载管理</li>
+<li>修改当前最大下载文件量［默认<code>10GB</code>］</li>
+<li>分享功能</li>
+<li>视频转码</li>
+<li>工具下载</li>
+<li>后台转码控制</li>
+<li><code>Dplayer</code>播放器</li>
+<li>水印添加</li>
+<li>视频切片</li>
+</ul>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><pre><code>【2019年1月16】
+教程更新，新增python3环境
+【2018年12月30】
+由于功能变更，新增FFmpeg、Redis安装方法。</code></pre><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><pre><code>项目地址：https://github.com/maysrp/yunbt/tree/dev
+
+环境要求：Nginx、PHP &gt;= 7、Mysql、Aria2、Redis、FFmpeg、Python3、Fileinfo拓展。
+
+由于博主计划使用军哥的lnmp写教程，写完后发现有些同学想用宝塔面板，所以这里2种方法都写，纯小白建议用宝塔面板。</code></pre><h2 id="LNMP安装"><a href="#LNMP安装" class="headerlink" title="LNMP安装"></a>LNMP安装</h2><p><strong>1、安装lnmp</strong><br>这里使用军哥的<code>lnmp 1.5</code>一键包，使用命令：</p>
+<pre><code>#下载并解压压缩包
+wget http://soft.vpser.net/lnmp/lnmp1.5.tar.gz -cO lnmp1.5.tar.gz &amp;&amp; tar zxf lnmp1.5.tar.gz
+#进入安装文件夹
+cd lnmp1.5
+#由于一键包默认不安装Fileinfo拓展，所以我先编辑下安装配置文件
+nano lnmp.conf</code></pre><p>然后将<code>Enable_PHP_Fileinfo=&#39;n&#39;</code>后面的<code>n</code>改成<code>y</code>，然后使用<code>Ctrl+x</code>、<code>y</code>保存退出。</p>
+<p>如果不想用<code>nano</code>命令修改，那可以直接使用<code>sed</code>命令修改：</p>
+<pre><code>sed -i &quot;s#Enable_PHP_Fileinfo=.*#Enable_PHP_Fileinfo=&apos;y&apos;#&quot; &apos;lnmp.conf&apos;</code></pre><p>由于安装<code>Fileinfo</code>有点需要内存，如果内存太低(包括<code>512M</code>)，建议提前加点<code>Swap</code>，<code>Swap</code>一键脚本→传送门。</p>
+<p>开始安装<code>lnmp</code>，使用命令：</p>
+<pre><code>./install.sh lnmp</code></pre><p>然后输入数据库密码，选择<code>PHP 7+</code>版本，直到安装完成，更多安装选择查看→传送门。</p>
+<p><strong>2、安装Fileinfo</strong></p>
+<pre><code>提示：使用本教程的方法安装lnmp 1.5的可以跳过该步骤。</code></pre><p>如果你已经安装过军哥的<code>lnmp</code>一键包，那么你可以先看下有没有安装过<code>fileinfo</code>，使用命令：</p>
+<pre><code>#如果有输出fileinfo信息，则已安装
+php -m | grep fileinfo</code></pre><p>没输出信息的话，那就安装下，安装方法：</p>
+<pre><code>#lnmp 1.4及更低版本
+#进入到根目录下lnmp安装包目录，要是之前删除了，直接去https://lnmp.org/download.html下载并解压
+cd lnmp1.4
+#修改upgrade_php.sh，将里面的--disable-fileinfo全部删除
+nano include/upgrade_php.sh
+#然后升级php
+./upgrade.sh php
+
+#lnmp 1.5+版本
+方法参考上面，先修改lnmp安装包目录下的lnmp.conf文件，将里面的Enable_PHP_Fileinfo=&apos;n&apos;后面的n改成y保存，然后使用 ./upgrade.sh php升级。</code></pre><p><strong>3、安装Redis</strong></p>
+<pre><code>cd /root/lnmp1.5
+./addons.sh install redis</code></pre><p><strong>4、添加网站和数据库</strong></p>
+<pre><code>lnmp vhost add</code></pre><p>然后输入你的域名，并创建一个数据库，大致如下：</p>
+<pre><code>#创建数据库这里，这里演示的数据库名和用户为yunbt，密码为a123456。
+Create database and MySQL user with same name (y/n) y
+Enter database name: yunbt
+Please enter password for mysql user yunbt: a123456</code></pre><p><strong>5、下载源码</strong></p>
+<pre><code>#进入到网站根目录，请修改为自己网站根目录再运行
+cd /home/wwwroot/www.southcat.net
+#下载源码
+wget https://github.com/maysrp/yunBT/archive/dev.zip
+#解压并删除压缩包
+unzip dev.zip &amp;&amp; rm -rf dev.zip
+#移动到根目录
+mv yunBT*/* ./
+#授权
+chmod -R 777 data/
+chmod -R 777 public/
+#再导入根目录的yunbt数据库文件，先修改为自己的数据库名和密码后运行
+mysql -uyunbt -pa123456 yunbt &lt; yunbt.sql
+#编辑数据库信息
+nano data/conf/database.php</code></pre><p>修改你的数据库信息，然后使用<code>Ctrl+x</code>、<code>y</code>保存退出。</p>
+<p><strong>6、修改nginx配置</strong><br>编辑<code>fastcgi.conf</code>：</p>
+<pre><code>nano /usr/local/nginx/conf/fastcgi.conf</code></pre><p>修改以下参数：</p>
+<pre><code>#fastcgi_param PHP_ADMIN_VALUE &quot;open_basedir=$document_root/:/tmp/:/proc/&quot;;
+fastcgi_param PHP_ADMIN_VALUE &quot;open_basedir=$document_root/../:/tmp/:/proc/&quot;;</code></pre><p>再编辑域名配置文件：</p>
+<pre><code>#修改为自己域名后运行
+nano /usr/local/nginx/conf/vhost/www.southcat.net.conf</code></pre><p>在适当位置添加以下代码：</p>
+<pre><code>#先修改下面的域名路径后，再添加进去
+location / {
+if (!-e $request_filename) {
+        rewrite ^(.*)$ /index.php?s=/$1 last;
+    }
+        rewrite ^/file/(.*) /file.php?file=$1 last;
+}
+location /afile{
+            internal;
+            alias /home/wwwroot/www.southcat.net/public/file;
+    }
+location ~* ^/(file|upload)/.*\.(php|php5)$ {  
+    deny all; 
+}</code></pre><p>最后使用<code>lnmp restart</code>命令重启<code>lnmp</code>。</p>
+<p>完成上面步骤后还有最后几步就是配置<code>python3</code>、设置定时任务、安装<code>Aria2</code>和<code>FFmpeg</code>，这个教程看下面。</p>
+<h2 id="宝塔安装"><a href="#宝塔安装" class="headerlink" title="宝塔安装"></a>宝塔安装</h2><p><strong>1、安装宝塔</strong></p>
+<pre><code>#CentOS系统
+wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh
+#Ubuntu系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh
+#Debian系统
+wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh &amp;&amp; bash install.sh</code></pre><p>安装完成后，进入面板，点击左侧软件管理，然后安装<code>PHP 7+</code>、<code>Nginx</code>、<code>Mysql</code>和<code>Redis</code>。</p>
+<p>再找到左侧软件管理-<code>PHP</code>管理-设置-安装<code>Fileinfo</code>扩展。</p>
+<pre><code>#如果Fileinfo拓展安装失败，就是内存太小，我们可以添加swap，不适用于ovz
+1、脚本添加，脚本地址：https://www.southcat.net/archives/722/。
+2、面板添加，找到左侧软件管理-系统工具-安装Linux工具箱，然后进入工具箱添加。</code></pre><p><strong>2、下载源码</strong><br>先点击左侧网站-添加站点，然后使用命令：</p>
+<pre><code>#进入到网站根目录，请修改为自己网站根目录再运行
+cd /www/wwwroot/www.southcat.net
+#下载源码
+wget https://github.com/maysrp/yunBT/archive/dev.zip
+#解压并删除压缩包
+unzip dev.zip &amp;&amp; rm -rf dev.zip
+#移动到根目录
+mv yunBT*/* ./
+#授权
+chmod -R 777 data/
+chmod -R 777 public/</code></pre><p><strong>3、配置网站</strong><br>进入到域名设置，点击网站目录，去除跨站攻击的<code>√</code>，并设置运行目录为<code>public</code>。</p>
+<p>再点击伪静态设置，填入以下代码：</p>
+<pre><code>#先修改下面的域名路径后，再添加进去
+location / {
+if (!-e $request_filename) {
+        rewrite ^(.*)$ /index.php?s=/$1 last;
+    }
+        rewrite ^/file/(.*) /file.php?file=$1 last;
+}
+location /afile{
+            internal;
+            alias /www/wwwroot/www.southcat.net/public/file;
+    }
+location ~* ^/(file|upload)/.*\.(php|php5)$ {  
+    deny all; 
+}</code></pre><p><strong>4、配置数据库</strong><br>点击左侧数据库-添加数据库，设置好数据库名、密码，然后手动导入网站根目录的<code>yunbt.sql</code>数据库文件。</p>
+<p>然后编辑数据库信息，使用命令：</p>
+<pre><code>#进入到网站根目录，请修改为自己网站根目录再运行
+cd /www/wwwroot/www.southcat.net
+#编辑数据库信息
+nano data/conf/database.php</code></pre><p>修改你的数据库信息，然后使用<code>Ctrl+x</code>、<code>y</code>保存退出。</p>
+<p>完成上面步骤后还有最后几步就是配置<code>python3</code>、设置定时任务、安装<code>Aria2</code>和<code>FFmpeg</code>，这个教程看下面。</p>
+<h2 id="配置python3"><a href="#配置python3" class="headerlink" title="配置python3"></a>配置python3</h2><p>安装<code>python3</code>：</p>
+<pre><code>#CentOS系统
+wget https://www.southcat.net/usr/shell/Python3/CentOS_Python3.6.sh &amp;&amp; sh CentOS_Python3.6.sh
+
+#Debian系统
+wget https://www.southcat.net/usr/shell/Python3/Debian_Python3.6.sh &amp;&amp; sh Debian_Python3.6.sh
+
+#由于Ubuntu 16+自带Python3，所以只需要安装pip3就可以了
+apt install python3-pip -y</code></pre><p>安装依赖：</p>
+<pre><code>pip3 install pymysql</code></pre><p>编辑配置文件：</p>
+<pre><code>#配置文件均在根目录的python目录里
+#cron_ffmpeg.py文件
+44行:数据库配置
+50行:设置你的web路径
+
+#cron_move.py文件
+14行:设置你的web路径
+15行:视频文件[无须修改]
+74行:数据库配置
+
+#cron_download.py文件
+3行:限制下载最大值[单位GB]默认10GB
+
+#cron_m3u8.py文件
+10行:数据库配置
+17行:设置你的web路径[/public]</code></pre><h2 id="设置定时任务"><a href="#设置定时任务" class="headerlink" title="设置定时任务"></a>设置定时任务</h2><p>直接使用命令：</p>
+<pre><code>#将域名修改成自己的
+echo &quot;*/1 * * * * curl http://www.southcat.net/portal/cron/download
+*/3 * * * * python3 /home/wwwroot/www.southcat.net/python/cron_move.py
+*/1 * * * * python3 /home/wwwroot/www.southcat.net/python/cron_ffmpeg.py
+*/1 * * * * python3 /home/wwwroot/www.southcat.net/python/cron_m3u8.py
+*/30 * * * * python3 /home/wwwroot/www.southcat.net/python/cron_download.py&quot; &gt; bt.cron
+crontab bt.cron
+rm -rf bt.cron</code></pre><h2 id="安装FFmpeg"><a href="#安装FFmpeg" class="headerlink" title="安装FFmpeg"></a>安装FFmpeg</h2><pre><code>#下载ffmpeg二进制
+wget https://www.southcat.net/usr/down/ffmpeg/ffmpeg-git-$(getconf LONG_BIT)bit-static.tar.xz
+#解压文件
+tar xvf ffmpeg-git-*-static.tar.xz
+#移动ffmpeg可执行文件
+mv ffmpeg-git-*/ffmpeg  ffmpeg-git-*/ffprobe /usr/bin/
+#删除文件
+rm -rf ffmpeg-git-*</code></pre><h2 id="安装Aria2"><a href="#安装Aria2" class="headerlink" title="安装Aria2"></a>安装Aria2</h2><pre><code>#64位系统下载静态文件
+wget https://github.com/q3aql/aria2-static-builds/releases/download/v1.34.0/aria2-1.34.0-linux-gnu-64bit-build1.tar.bz2
+#32位系统下载静态文件
+wget https://github.com/q3aql/aria2-static-builds/releases/download/v1.34.0/aria2-1.34.0-linux-gnu-32bit-build1.tar.bz2
+
+#解压文件并进入文件夹
+tar jxvf aria2-*.tar.bz2 &amp;&amp; rm -rf aria2-*.tar.bz2 &amp;&amp; cd aria2-*
+#开始安装
+make install</code></pre><p>后台运行：</p>
+<pre><code>screen -dmS aria2 aria2c --enable-rpc --rpc-listen-all=true --rpc-allow-origin-all -c</code></pre><p>安装<code>Aria2</code>后，基本上算安装完成了。</p>
+<hr>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+    (function() {
+        var dateUpdate = Date.parse("2020-04-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    })();
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2020-01-27T23:03:59.000Z" itemprop="datePublished">2020-01-28</time>
+
+    , Updated at&nbsp;<time datetime="2020-04-24T09:34:44.245Z" itemprop="dateModified">2020-04-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+<span class="post-categories-list mt-2">
+
+<a class="post-categories-list-item" href='/categories/cj/'>cj</a>
+
+</span>
+
+
+
+
+</p>
+
+                </div>
+                <div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/1793/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">iptables封禁BT/PT/SPAM(垃圾邮件)和自定义端口/关键词一键脚本</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/1508/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">使用iptables封掉所有邮件端口</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    
+        <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span id="copyright-year"></span>
+            <a class="footer-copyright-a" href="http://hexo.southcat.net">南猫</a>
+        </p>
+
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+
+    
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+
+</script>
+
+<script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+    </body>
+
+</html>
